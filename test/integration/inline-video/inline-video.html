@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<!-- APT Vendor: Yahoo, Format: Standard Graphical -->
+
+<!-- Extra Css -->
+<style>
+#ad-north-base{position:relative;min-height:20px}#ad-north{display:block}#my-adsFPAD-base,.can_ad_slug,.fpad-reserve,.lrec-reserve{display:none}#Stencil .Pt-20{padding-top:0}#Stencil .Pb-10{padding-bottom:0}
+</style>
+
+<!-- ActJS Css -->
+<link rel="stylesheet" href="https://s.yimg.com/cv/eng/externals/actjs/1.0.0/min/assets/ACT_icons/ACT_icons.css" />
+
+<!-- ActJS Ad Container -->
+<div id="act-ad-container" style="margin:0px auto;padding:0px;width:970px;min-height:20px;">
+    <div id="act-ad" style="margin:0px;padding:0px;position:relative;font-size:11px;">
+        <noscript>
+            <a href="${CLICKURL?LREC_backup_img}https://uk.yahoo.com">
+                <img src="https://s.yimg.com/dh/ap/debug/actjs/backup-inline.png" border="0">
+            </a>
+        </noscript>
+    </div>
+
+    <!-- ActJS Hook -->
+    <script language="javascript">
+    (function() {
+        if (!window.ACT) {
+            window.ACT = {
+                "adQueue": []
+            };
+        }
+        ACT.adQueue.push(
+            function() {
+
+                // FPAD : Please, remove this code if served on mast position
+                var adNorth = ACT.Dom.byId('ad-north');
+                if (adNorth) {
+
+                    // fit the scooby page
+                    var stencil = ACT.Dom.byId('Stencil');
+                    if (stencil) {
+                        ACT.Dom.addClass(stencil, 'Billboard');
+                    }
+
+                    // fit ie8 body
+                    if (ACT.UA.ie != 0) {
+                        ACT.Dom.applyStyles(adNorth, {
+                            width: '970px',
+                            margin: 'auto'
+                        });
+                    }
+
+                    // append the ad in ad-north
+                    adAct = ACT.Dom.byId('act-ad');
+                    adNorth.appendChild(adAct);
+                }
+                // END FPAD
+
+                var ad = ACT.Base({
+                    conf: {
+                        adId: 'billboard_id',
+                        template: {
+                            width: 970,
+                            height: 250
+                        },
+                        cookie: {
+                            name: "${LIBRARYADID}",
+                        },
+                        tracking: {
+                            rB: '${CLICKURL?ClientSideEditable}',
+                            r0: '${CLICKURL}',
+                            z1: '${INTERACTION_URL}',
+                            cb: '${REQUESTID}'
+                        },
+                        customData: {
+                            "forceEnv.forcedBackupList.MSIE" : "<=9",
+
+                             //video position
+
+
+                            //video links
+                            "layers.mpu.video1.videoHtmlConfig.videoWebM": "https://s.yimg.com/cv/ae/video/bb/billboard-motion-area.webm",
+                            "layers.mpu.video1.videoHtmlConfig.videoMP4": "https://s.yimg.com/cv/ae/video/bb/billboard-motion-area.mp4",
+
+                            //Background image
+                            "layers.mpu.backup_image.imageConfig.src": "https://s.yimg.com/cv/ae/testing/image_300x250.jpg",
+
+                            //Background clickthrough
+                            "layers.mpu.buttonContainer.events.clickTAG.URLpath": "http://www.yahoo.com",
+
+
+                        }
+                    },
+                    superConf: "config-object-billboard",
+                    extend: {}
+                });
+            }
+        );
+    })();
+    </script>
+
+    <!-- ActJS FrameWork -->
+    <script src="{{ACTJS_core_file}}"></script>
+    <script src="https://s.yimg.com/zz/combo?/cv/ae/configu-object/demo/5/config-object.js"></script>
+
+
+</div>
+</body>
+</html>

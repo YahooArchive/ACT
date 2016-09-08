@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<!-- APT Vendor: Yahoo, Format: Standard Graphical -->
+
+<!-- Extra Css -->
+<style>
+.main-col-wrapper {max-width:1130px !important} .main-row-wrapper {max-width:1130px}#ad-north-base{position:relative;min-height:20px}#ad-north{display:block; width:970px;}#Stencil .Pt-20{padding-top:0}#Stencil .Pb-10{padding-bottom:0}
+</style>
+
+<!-- ActJS Css -->
+<link rel="stylesheet" href="https://s.yimg.com/cv/eng/externals/actjs/1.0.11/min/assets/ACT_icons/ACT_icons.css" />
+
+<!-- ActJS Ad Container -->
+<div id="act-ad-container" style="margin:0px auto;padding:0px;">
+    <div id="act-ad" style="margin:0px;padding:0px;position:relative;font-size:11px;min-height:20px;">
+        <noscript>
+            <a href="${CLICKURL?LREC_backup_img}https://uk.yahoo.com">
+                <img src="https://s.yimg.com/dh/ap/debug/actjs/backup-inline.png" border="0">
+            </a>
+        </noscript>
+    </div>
+
+    <!-- ActJS Hook -->
+    <script language="javascript">
+    (function() {
+        if (!window.ACT) {
+            window.ACT = {
+                "adQueue": []
+            };
+        }
+        ACT.adQueue.push(
+            function() {
+
+                var src = '<link rel="stylesheet" href="https://s.yimg.com/cv/ae/actjs/billboard-html/example/main.css"/><div id="billboard-inline"><a href="" id="clickArea" target="_blank"><div class="button">Click Button</div></a></div><scr'+'ipt src="https://s.yimg.com/cv/ae/actjs/billboard-html/example/scripts/main.js"></scr'+'ipt>';
+
+                /* for partner and FPAD position */
+                var adNorth = ACT.Dom.byId('ad-north');
+                var laPoste = ACT.Dom.byClassName('row')[1];
+                var AOL = ACT.Dom.byId('aol-hnav');
+                var adAct = ACT.Dom.byId('act-ad');
+
+                if (adNorth) {
+                    var stencil = ACT.Dom.byId('Stencil');
+                    if (stencil) {
+                        ACT.Dom.addClass(stencil, 'Billboard');
+                    }
+                    if (ACT.UA.ie != 0) {
+                        ACT.Dom.applyStyles(adNorth, {
+                            margin: 'auto'
+                        });
+                    }
+                    adNorth.appendChild(adAct);
+
+                    ACT.Dom.applyStyles(ACT.Dom.byId('my-adsFPAD-base'), {
+                        display: 'none'
+                    });
+                }
+                else if(AOL){
+                    ACT.Dom.applyStyles(adAct, {
+                        margin: '0 auto'
+                    });
+                    AOL.appendChild(adAct);
+                }
+                else if (laPoste) {
+                    var containerFluid = ACT.Dom.byClassName('container-fluid')[1];
+
+                    ACT.Dom.applyStyles(adAct, {
+                        margin: '0 auto',
+                        left: '-15px',
+                        position:'relative',
+                        overflow: 'hidden'
+                    });
+
+                    containerFluid.insertBefore(adAct, laPoste);
+                }
+
+                var ad = ACT.Base({
+                    conf: {
+                        adId: 'test_ad_id',
+                        cookie: {
+                            name: "${LIBRARYADID}"
+                        },
+                        template: {
+                            width: 970,
+                            height: 250
+                        },
+                        tracking: {
+                            rB: '${CLICKURL?ClientSideEditable}',
+                            r0: '${CLICKURL}',
+                            z1: '${INTERACTION_URL}',
+                            cb: '${REQUESTID}',
+                            trackUnique: true
+                        },
+                        customData: {
+                            /* Interactive */
+                            "layers.billboard.html5_container.html5Config.iframe": true,
+                            "layers.billboard.html5_container.html5Config.src": src,
+                            "layers.billboard.html5_container.html5Config.iframevars": {
+                                clickTag: '${CLICKURL?billboard_click_interactive_clicktaghtml}https://vn.yahoo.com'
+                            },
+                            /* Backup */
+                            "layers.billboard.billboard_backup_image.imageConfig.src": "https://s.yimg.com/cv/ae/actjs/billboard-html/example/images/backup_billboard.jpg",
+                            "layers.billboard.billboard_backup_image.imageConfig.alt": "Yahoo UK",
+                            "layers.billboard.billboard_backup_image.imageConfig.title": "Yahoo UK",
+                            "layers.billboard.backup_container.events.action0.URLpath": "https://vn.yahoo.com",
+                            /* Text Links */
+                            "layers.textLinks.openBtn.containerConfig.innerText": "Show Ad",
+                            "layers.textLinks.closeBtn.containerConfig.innerText": "Close Ad",
+                            "layers.textLinks.closeBtn.css.color": "#fff",
+                            /* Text Buttons */
+                            "layers.extraBtns.surveyBtn.containerConfig.innerText": "Survey",
+                            "layers.extraBtns.surveyBtn.events.action0.URLpath": "http://surveylink.yahoo.com/wix/p0828683.aspx",
+                            "layers.extraBtns.adchoicesBtn.containerConfig.innerText": "AdFeedback",
+                            "layers.extraBtns.adchoicesBtn.events.action0.URLpath": "http://info.yahoo.com/privacy/fr/yahoo/relevantads.html"
+                        }
+                    },
+                    superConf: "config-object-html5",
+                    extend: {}
+                });
+            }
+        );
+    })();
+    </script>
+
+    <!-- ActJS FrameWork -->
+    <script src="{{ACTJS_core_file}}"></script>
+    <script src="https://s.yimg.com/zz/combo?/cv/ae/actjs/billboard-html/config-object1442417348.js"></script>
+
+</div>
+</body>
+</html>

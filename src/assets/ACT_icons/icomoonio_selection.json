@@ -1,0 +1,512 @@
+{
+	"IcoMoonType": "selection",
+	"icons": [
+		{
+			"icon": {
+				"paths": [
+					"M64 576h384v384l-138.26-138.26-202 202-107.48-107.48 202-202zM821.74 714.26l202 202-107.48 107.48-202-202-138.26 138.26v-384h384zM960 448h-384v-384l138.26 138.26 202-202 107.48 107.48-202 202zM309.74 202.26l138.26-138.26v384h-384l138.26-138.26-202-202 107.48-107.48z"
+				],
+				"attrs": [
+					{}
+				],
+				"isMulticolor": false,
+				"tags": [
+					"contract",
+					"minimize",
+					"shrink",
+					"collapse"
+				],
+				"defaultCode": 57344,
+				"grid": 0
+			},
+			"attrs": [
+				{}
+			],
+			"properties": {
+				"id": 1804,
+				"order": 1,
+				"prevSize": 32,
+				"code": 57344,
+				"name": "contract"
+			},
+			"setIdx": 1,
+			"setId": 0,
+			"iconIdx": 0
+		},
+		{
+			"icon": {
+				"paths": [
+					"M1024 0v384l-138.26-138.26-212 212-107.48-107.48 212-212-138.26-138.26zM245.74 138.26l212 212-107.48 107.48-212-212-138.26 138.26v-384h384zM885.74 778.26l138.26-138.26v384h-384l138.26-138.26-212-212 107.48-107.48zM457.74 673.74l-212 212 138.26 138.26h-384v-384l138.26 138.26 212-212z"
+				],
+				"attrs": [
+					{}
+				],
+				"isMulticolor": false,
+				"tags": [
+					"expand",
+					"enlarge",
+					"maximize",
+					"fullscreen"
+				],
+				"defaultCode": 57345,
+				"grid": 0
+			},
+			"attrs": [
+				{}
+			],
+			"properties": {
+				"id": 1805,
+				"order": 2,
+				"prevSize": 32,
+				"code": 57345,
+				"name": "expand"
+			},
+			"setIdx": 1,
+			"setId": 0,
+			"iconIdx": 1
+		},
+		{
+			"icon": {
+				"paths": [
+					"M352 0h-192c-17.696 0-32 14.336-32 32v960c0 17.696 14.304 32 32 32h192c17.696 0 32-14.304 32-32v-960c0-17.664-14.304-32-32-32zM864 0h-192c-17.696 0-32 14.336-32 32v960c0 17.696 14.304 32 32 32h192c17.696 0 32-14.304 32-32v-960c0-17.664-14.304-32-32-32z"
+				],
+				"attrs": [
+					{}
+				],
+				"isMulticolor": false,
+				"tags": [
+					"pause",
+					"media control"
+				],
+				"defaultCode": 57349,
+				"grid": 0
+			},
+			"attrs": [
+				{}
+			],
+			"properties": {
+				"id": 1806,
+				"order": 3,
+				"prevSize": 32,
+				"code": 57349,
+				"name": "pause"
+			},
+			"setIdx": 1,
+			"setId": 0,
+			"iconIdx": 2
+		},
+		{
+			"icon": {
+				"paths": [
+					"M192 0v1024l640-511.264-640-512.736z"
+				],
+				"attrs": [
+					{}
+				],
+				"isMulticolor": false,
+				"tags": [
+					"play",
+					"media control"
+				],
+				"defaultCode": 57350,
+				"grid": 0
+			},
+			"attrs": [
+				{}
+			],
+			"properties": {
+				"id": 1807,
+				"order": 4,
+				"prevSize": 32,
+				"code": 57350,
+				"name": "play"
+			},
+			"setIdx": 1,
+			"setId": 0,
+			"iconIdx": 3
+		},
+		{
+			"icon": {
+				"paths": [
+					"M512 0c-282.752 0-512 229.248-512 512s229.248 512 512 512 512-229.248 512-512-229.248-512-512-512zM765.248 674.752l-90.496 90.496-162.752-162.752-162.752 162.752-90.496-90.496 162.752-162.752-162.752-162.752 90.496-90.496 162.752 162.752 162.752-162.752 90.496 90.496-162.752 162.752 162.752 162.752z"
+				],
+				"attrs": [
+					{}
+				],
+				"isMulticolor": false,
+				"tags": [
+					"x-altx-alt",
+					"cancel",
+					"close"
+				],
+				"defaultCode": 57351,
+				"grid": 0
+			},
+			"attrs": [
+				{}
+			],
+			"properties": {
+				"id": 1808,
+				"order": 5,
+				"prevSize": 32,
+				"code": 57351,
+				"name": "x-altx-alt"
+			},
+			"setIdx": 1,
+			"setId": 0,
+			"iconIdx": 4
+		},
+		{
+			"icon": {
+				"paths": [
+					"M0 512c0 282.752 229.248 512 512 512 282.784 0 512-229.248 512-512 0-282.784-229.216-512-512-512-282.752 0-512 229.216-512 512zM768 512l-256 256v-192h-256v-128h256v-192l256 256z"
+				],
+				"attrs": [
+					{}
+				],
+				"isMulticolor": false,
+				"tags": [
+					"arrow-right-alt1",
+					"right",
+					"next"
+				],
+				"defaultCode": 57352,
+				"grid": 0
+			},
+			"attrs": [
+				{}
+			],
+			"properties": {
+				"id": 1809,
+				"order": 6,
+				"prevSize": 32,
+				"code": 57352,
+				"name": "arrow-right-alt1"
+			},
+			"setIdx": 1,
+			"setId": 0,
+			"iconIdx": 5
+		},
+		{
+			"icon": {
+				"paths": [
+					"M1024 512c0-282.752-229.248-512-512-512-282.784 0-512 229.248-512 512 0 282.784 229.216 512 512 512 282.752 0 512-229.216 512-512zM256 512l256-256v192h256v128h-256v192l-256-256z"
+				],
+				"attrs": [
+					{}
+				],
+				"isMulticolor": false,
+				"tags": [
+					"arrow-left-alt1",
+					"left",
+					"previous"
+				],
+				"defaultCode": 57353,
+				"grid": 0
+			},
+			"attrs": [
+				{}
+			],
+			"properties": {
+				"id": 1810,
+				"order": 7,
+				"prevSize": 32,
+				"code": 57353,
+				"name": "arrow-left-alt1"
+			},
+			"setIdx": 1,
+			"setId": 0,
+			"iconIdx": 6
+		},
+		{
+			"icon": {
+				"paths": [
+					"M0 0l768 512-768 512z"
+				],
+				"width": 768,
+				"attrs": [
+					{}
+				],
+				"isMulticolor": false,
+				"tags": [
+					"play"
+				],
+				"defaultCode": 57354,
+				"grid": 0
+			},
+			"attrs": [
+				{}
+			],
+			"properties": {
+				"id": 1811,
+				"order": 8,
+				"prevSize": 32,
+				"code": 57354,
+				"name": "play2"
+			},
+			"setIdx": 1,
+			"setId": 0,
+			"iconIdx": 7
+		},
+		{
+			"icon": {
+				"paths": [
+					"M0 0h256v1024h-256zM512 0h256v1024h-256z"
+				],
+				"width": 768,
+				"attrs": [
+					{}
+				],
+				"isMulticolor": false,
+				"tags": [
+					"pause"
+				],
+				"defaultCode": 57355,
+				"grid": 0
+			},
+			"attrs": [
+				{}
+			],
+			"properties": {
+				"id": 1812,
+				"order": 9,
+				"prevSize": 32,
+				"code": 57355,
+				"name": "pause2"
+			},
+			"setIdx": 1,
+			"setId": 0,
+			"iconIdx": 8
+		},
+		{
+			"icon": {
+				"paths": [
+					"M0 0h1024v1024h-1024z"
+				],
+				"attrs": [
+					{}
+				],
+				"isMulticolor": false,
+				"tags": [
+					"stop"
+				],
+				"defaultCode": 57356,
+				"grid": 0
+			},
+			"attrs": [
+				{}
+			],
+			"properties": {
+				"id": 1813,
+				"order": 10,
+				"prevSize": 32,
+				"code": 57356,
+				"name": "stop"
+			},
+			"setIdx": 1,
+			"setId": 0,
+			"iconIdx": 9
+		},
+		{
+			"icon": {
+				"paths": [
+					"M401.332 78.668c25.668-25.668 46.668-16.968 46.668 19.332v828c0 36.3-21 44.998-46.668 19.33l-241.332-241.33h-160v-384h160l241.332-241.332zM960 619.148v84.852h-84.852l-107.148-107.148-107.148 107.148h-84.852v-84.852l107.148-107.148-107.148-107.148v-84.852h84.852l107.148 107.148 107.148-107.148h84.852v84.852l-107.148 107.148z"
+				],
+				"attrs": [
+					{}
+				],
+				"isMulticolor": false,
+				"tags": [
+					"volume-mute",
+					"speaker",
+					"media control",
+					"audio",
+					"mute"
+				],
+				"defaultCode": 57359,
+				"grid": 0
+			},
+			"attrs": [
+				{}
+			],
+			"properties": {
+				"id": 1814,
+				"order": 11,
+				"prevSize": 32,
+				"code": 57359,
+				"name": "volume-mute"
+			},
+			"setIdx": 1,
+			"setId": 0,
+			"iconIdx": 10
+		},
+		{
+			"icon": {
+				"paths": [
+					"M719.53 831.53c-12.286 0-24.568-4.686-33.942-14.058-18.744-18.744-18.744-49.136 0-67.882 131.006-131.006 131.006-344.17 0-475.176-18.744-18.746-18.744-49.138 0-67.882 18.744-18.742 49.138-18.744 67.882 0 81.594 81.592 126.53 190.076 126.53 305.468 0 115.39-44.936 223.876-126.53 305.47-9.372 9.374-21.656 14.060-33.94 14.060zM549.020 741.020c-12.286 0-24.568-4.686-33.942-14.058-18.746-18.746-18.746-49.136 0-67.882 81.1-81.1 81.1-213.058 0-294.156-18.746-18.746-18.746-49.138 0-67.882s49.136-18.744 67.882 0c118.53 118.53 118.53 311.392 0 429.922-9.372 9.37-21.656 14.056-33.94 14.056zM401.332 78.668c25.668-25.668 46.668-16.968 46.668 19.332v828c0 36.3-21 44.998-46.668 19.33l-241.332-241.33h-160v-384h160l241.332-241.332z"
+				],
+				"attrs": [
+					{}
+				],
+				"isMulticolor": false,
+				"tags": [
+					"volume-medium",
+					"speaker",
+					"media control",
+					"audio"
+				],
+				"defaultCode": 57360,
+				"grid": 0
+			},
+			"attrs": [
+				{}
+			],
+			"properties": {
+				"id": 1815,
+				"order": 12,
+				"prevSize": 32,
+				"code": 57360,
+				"name": "volume-medium"
+			},
+			"setIdx": 1,
+			"setId": 0,
+			"iconIdx": 11
+		},
+		{
+			"icon": {
+				"paths": [
+					"M960 780.736l-268.992-268.736 268.992-268.736-179.264-179.264-268.736 268.864-268.864-268.864-179.136 179.264 268.736 268.736-268.736 268.736 179.136 179.264 268.864-268.864 268.736 268.864z"
+				],
+				"attrs": [
+					{}
+				],
+				"isMulticolor": false,
+				"tags": [
+					"x",
+					"cancel",
+					"close"
+				],
+				"defaultCode": 57347,
+				"grid": 0
+			},
+			"attrs": [
+				{}
+			],
+			"properties": {
+				"id": 1816,
+				"order": 13,
+				"prevSize": 32,
+				"code": 57347,
+				"name": "x"
+			},
+			"setIdx": 1,
+			"setId": 0,
+			"iconIdx": 12
+		},
+		{
+			"icon": {
+				"paths": [
+					"M1024 384h-384l143.53-143.53c-72.53-72.526-168.96-112.47-271.53-112.47s-199 39.944-271.53 112.47c-72.526 72.53-112.47 168.96-112.47 271.53s39.944 199 112.47 271.53c72.53 72.526 168.96 112.47 271.53 112.47s199-39.944 271.528-112.472c6.056-6.054 11.86-12.292 17.456-18.668l96.32 84.282c-93.846 107.166-231.664 174.858-385.304 174.858-282.77 0-512-229.23-512-512s229.23-512 512-512c141.386 0 269.368 57.326 362.016 149.984l149.984-149.984v384z"
+				],
+				"attrs": [],
+				"tags": [
+					"spinner",
+					"loading",
+					"loading-wheel",
+					"refresh",
+					"repeat",
+					"busy",
+					"wait",
+					"arrow"
+				],
+				"grid": 16
+			},
+			"attrs": [],
+			"properties": {
+				"order": 22,
+				"id": 1817,
+				"prevSize": 32,
+				"ligatures": "spinner11, loading12",
+				"name": "spinner11",
+				"code": 59392
+			},
+			"setIdx": 1,
+			"setId": 0,
+			"iconIdx": 13
+		},
+		{
+			"icon": {
+				"paths": [
+					"M889.68 166.32c-93.608-102.216-228.154-166.32-377.68-166.32-282.77 0-512 229.23-512 512h96c0-229.75 186.25-416 416-416 123.020 0 233.542 53.418 309.696 138.306l-149.696 149.694h352v-352l-134.32 134.32z",
+					"M928 512c0 229.75-186.25 416-416 416-123.020 0-233.542-53.418-309.694-138.306l149.694-149.694h-352v352l134.32-134.32c93.608 102.216 228.154 166.32 377.68 166.32 282.77 0 512-229.23 512-512h-96z"
+				],
+				"attrs": [],
+				"tags": [
+					"loop",
+					"repeat",
+					"player",
+					"reload",
+					"refresh",
+					"update",
+					"synchronize",
+					"arrows"
+				],
+				"grid": 16
+			},
+			"attrs": [],
+			"properties": {
+				"order": 24,
+				"id": 1550,
+				"prevSize": 32,
+				"ligatures": "loop2, repeat2",
+				"name": "loop2",
+				"code": 59393
+			},
+			"setIdx": 1,
+			"setId": 0,
+			"iconIdx": 316
+		}
+	],
+	"height": 1024,
+	"metadata": {
+		"name": "actjs"
+	},
+	"preferences": {
+		"showGlyphs": true,
+		"showQuickUse": true,
+		"showQuickUse2": true,
+		"showSVGs": true,
+		"fontPref": {
+			"prefix": "actjs-icon-",
+			"metadata": {
+				"fontFamily": "actjs",
+				"majorVersion": 1,
+				"minorVersion": 0
+			},
+			"metrics": {
+				"emSize": 1024,
+				"baseline": 6.25,
+				"whitespace": 50
+			},
+			"embed": false,
+			"ie7": true,
+			"showSelector": true,
+			"selector": "",
+			"classSelector": ".actjs-icon",
+			"showMetrics": false,
+			"showMetadata": false,
+			"cssVars": false,
+			"showVersion": false
+		},
+		"imagePref": {
+			"prefix": "icon-",
+			"png": true,
+			"useClassSelector": true,
+			"color": 4473924,
+			"bgColor": 16777215,
+			"classSelector": ".icon"
+		},
+		"historySize": 100,
+		"showCodes": false
+	}
+}
