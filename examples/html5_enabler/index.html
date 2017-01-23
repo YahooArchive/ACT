@@ -1,0 +1,94 @@
+<link rel="stylesheet" href="../../src/assets/ACT_icons/ACT_icons.css" />
+
+<div id="act-ad-container" style="margin:0px auto;padding:0px;width:970px;min-height:20px">
+    <div id="act-ad" style="margin:0px;padding:0px;position:relative;font-size:11px"></div>
+</div>
+
+<script type="text/javascript">
+(function() {
+    if (!window.ACT) {
+        window.ACT = {
+            "adQueue": []
+        };
+    }
+    ACT.adQueue.push(
+        function() {
+
+            var src ='<link rel="stylesheet" type="text/css" href="https://s.yimg.com/cv/ae/hoang/audi_q7_en/css/2/style.css"><div id="main-container"> <a id="clickArea" target="_blank"> <div id="main-container"> </div></a> <div id="exit"></div><div class="feature" id="feature"> <div id="video-container-0"> <video id="video-0"> </video> <div class="whiteBlock"> <button id="play-btn-0" class="video-controls"></button> <button id="pause-btn-0" class="video-controls"></button> <button id="stop-btn-0" class="video-controls"></button> <button id="replay-btn-0" class="video-controls"></button> <button id="unmute-btn-0" class="video-controls"></button> <button id="mute-btn-0" class="video-controls"></button> </div><div id="progress-bar-0"></div></div></div></div><scr'+'ipt>var clickTAG="http://www.audi-me.com/content/me/brand/en/models/q7/q7_new.html";var clickArea=document.getElementById("clickArea");clickArea.addEventListener("click", function(){Enabler.exit("Audi Click", clickTAG);return false;});</scr'+'ipt><scr'+'ipt src="https://s.yimg.com/cv/ae/hoang/audi_q7_en/scripts/2/logic.js"></scr'+'ipt>';
+
+            var ad = ACT.Base({
+                conf: {
+                    adId: 'test_ad_id',
+                    cookie: {
+                    	"name": "uniqueAdName"
+                    },
+                    template: {
+                        width: 970,
+                        height: 250
+                    },
+                    tracking: {
+                        trackingFunctions: {
+                            overwrite: true,
+                            redirect: function() {},
+                            interaction: function() {}
+                        }
+                    },
+                    customData: {
+                        /* Interactive */
+                        "layers.billboard.html5_container.html5Config.enabler": true,
+                        "layers.billboard.html5_container.html5Config.iframe": true,
+                        "layers.billboard.html5_container.html5Config.src": src,
+                        "layers.billboard.html5_container.html5Config.iframevars": {},
+        				"layers.billboard.html5_container.html5Config.htmlRoot": "",
+                        /* Backup */
+                        "layers.billboard.billboard_backup_image.imageConfig.src": "https://s.yimg.com/cv/ae/hoang/audi_q7_en/images/BackupImage_970x250.jpg",
+                        "layers.billboard.billboard_backup_image.imageConfig.alt": "Audi Q7",
+                        "layers.billboard.billboard_backup_image.imageConfig.title": "Audi Q7",
+                        "layers.billboard.billboard_backup_image.eventConfig.action0.URLpath": "http://www.audi-me.com/content/me/brand/en/models/q7/q7_new.html",
+                        /* Text Links */
+                        "layers.textLinks.openBtn.containerConfig.innerText": "Show Ad",
+                        "layers.textLinks.closeBtn.containerConfig.innerText": "Close Ad",
+                        /* Text Buttons */
+                        "layers.extraBtns.surveyBtn.containerConfig.innerText": "Ad FeedBack",
+                        "layers.extraBtns.surveyBtn.eventConfig.action0.URLpath": "http://surveylink.yahoo.com/wix/p0767152.aspx",
+                        "layers.extraBtns.adchoicesBtn.containerConfig.innerText": "Ad Choices",
+                        "layers.extraBtns.adchoicesBtn.eventConfig.action0.URLpath": "https://info.yahoo.com/privacy/xe/yahoo/"
+                    }
+                },
+                superConf: "config-object-html5"
+            });
+        }
+    );
+})();
+</script>
+
+<script src="../src/core/ACT.js"></script>
+<script src="../src/core/ACT_Layerslist.js"></script>
+<script src="../src/core/ACT_Screen.js"></script>
+<script src="../src/core/ACT_StandardAd.js"></script>
+<script src="../src/core/ACT_TrackingFacade.js"></script>
+<script src="../src/core/ACT_actionsQueue.js"></script>
+<script src="../src/core/ACT_base.js"></script>
+<script src="../src/core/ACT_cookie.js"></script>
+<script src="../src/core/ACT_environment.js"></script>
+<script src="../src/core/ACT_layerStandard.js"></script>
+<script src="../src/core/ACT_scaffolding.js"></script>
+<script src="../src/core/ACT_secureDarla.js"></script>
+<script src="../src/library/ACT_IO.js"></script>
+<script src="../src/library/ACT_UA.js"></script>
+<script src="../src/library/ACT_animation.js"></script>
+<script src="../src/library/ACT_capability.js"></script>
+<script src="../src/library/ACT_class.js"></script>
+<script src="../src/library/ACT_customData.js"></script>
+<script src="../src/library/ACT_debug.js"></script>
+<script src="../src/library/ACT_dom.js"></script>
+<script src="../src/library/ACT_event.js"></script>
+<script src="../src/library/ACT_flash.js"></script>
+<script src="../src/library/ACT_json.js"></script>
+<script src="../src/library/ACT_lang.js"></script>
+<script src="../src/library/ACT_util.js"></script>
+<script src="../src/capabilities/ACT_contentContainer.js"></script>
+<script src="../src/capabilities/ACT_contentImage.js"></script>
+<script src="../src/capabilities/ACT_contentHtml5.js"></script>
+
+<script src="./config-object.js"></script>

@@ -1,0 +1,77 @@
+<div id="ad-container">
+    <div id="ad" style="margin:0px 0px">
+        <noscript>
+            <a href="https://uk.yahoo.com">
+                <img src="https://s.yimg.com/dh/ap/hoangnm/test/mpubackup-300x250.jpg" border="0" />
+            </a>
+        </noscript>
+    </div>
+</div>
+<script language="javascript">
+(function() {
+	if (!window.ACT) {
+		window.ACT = {
+			"adQueue": []
+		};
+	}
+
+	ACT.adQueue.push(
+		function() {
+			var trackingConfig = {
+				redirectMacro: 'https://www.example.com/?redirect=true',
+				interactionMacro: 'https://www.example.com/?interaction=true'
+			};
+			var trackingExampleInstance = new ACTTrackingExample(trackingConfig);
+
+			trackingConfig.trackingFunctions = {
+				overwrite: true,
+				redirect: trackingExampleInstance.getRedirect(),
+				interaction: trackingExampleInstance.getInteraction()
+			};
+
+			var ad = ACT.Base({
+				conf: {
+					adId: 'test_ad_id',
+					cookie: {
+						name: "CookieName",
+					},
+					tracking: trackingConfig
+				},
+				superConf: "config-object-demo_300x250",
+				extend: {}
+			});
+		});
+})();
+</script>
+
+<!-- ACT.js Framework loaded individually from local path -->
+<script src="../TrackingExample/ACTTrackingExample.js"></script>
+<script src="../src/core/ACT.js"></script>
+<script src="../src/core/ACT_Layerslist.js"></script>
+<script src="../src/core/ACT_Screen.js"></script>
+<script src="../src/core/ACT_StandardAd.js"></script>
+<script src="../src/core/ACT_TrackingFacade.js"></script>
+<script src="../src/core/ACT_actionsQueue.js"></script>
+<script src="../src/core/ACT_base.js"></script>
+<script src="../src/core/ACT_cookie.js"></script>
+<script src="../src/core/ACT_environment.js"></script>
+<script src="../src/core/ACT_layerStandard.js"></script>
+<script src="../src/core/ACT_scaffolding.js"></script>
+<script src="../src/core/ACT_secureDarla.js"></script>
+<script src="../src/library/ACT_IO.js"></script>
+<script src="../src/library/ACT_UA.js"></script>
+<script src="../src/library/ACT_animation.js"></script>
+<script src="../src/library/ACT_capability.js"></script>
+<script src="../src/library/ACT_class.js"></script>
+<script src="../src/library/ACT_customData.js"></script>
+<script src="../src/library/ACT_debug.js"></script>
+<script src="../src/library/ACT_dom.js"></script>
+<script src="../src/library/ACT_event.js"></script>
+<script src="../src/library/ACT_flash.js"></script>
+<script src="../src/library/ACT_json.js"></script>
+<script src="../src/library/ACT_lang.js"></script>
+<script src="../src/library/ACT_util.js"></script>
+<script src="../src/capabilities/ACT_contentContainer.js"></script>
+<script src="../src/capabilities/ACT_contentImage.js"></script>
+
+<script src="./config-object-demo_300x250.js"></script>

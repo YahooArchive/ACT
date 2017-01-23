@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+#ad-container {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+#viewport {
+    border: 2px solid black;
+    text-align: center;
+    -webkit-box-shadow: inset 0 0 15px#888;
+    box-shadow: inner 0 0 15x #888;
+    border-bottom-right-radius: 40px;
+    background-color: #eee;
+    position: absolute;
+    margin: 0;
+}
+
+.expand-collapse-transition {
+    transition: all 0.5s;
+}
+
+.collapse-viewport {
+    left: 0px;
+    top: 0px;
+    width: 296px;
+    height: 246px;
+}
+
+.expand-viewport {
+    width: 100%;
+    height: 100%;
+}
+
+#action {
+    display: none;
+}
