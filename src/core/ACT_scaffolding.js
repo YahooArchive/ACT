@@ -68,7 +68,7 @@ ACT.define('Scaffolding', [/*@<*/'Debug', /*>@*/ 'Lang', 'Class', 'Dom'], functi
         * @attribute version
         * @type String
         */
-        version: '1.0.22'
+        version: '1.0.41'
     };
 
     /* Private methods */
@@ -276,7 +276,15 @@ ACT.define('Scaffolding', [/*@<*/'Debug', /*>@*/ 'Lang', 'Class', 'Dom'], functi
             return false;
         }
         capabilitySpaceName = makeCapabilyNameSpace(refObj.type);
-        moduleInstance = new ACT[capabilitySpaceName](refObj);
+        /*@<*/
+        Debug.log('[ ACT_scaffolding.js ] Loading Capability: ', capabilitySpaceName);
+        /*>@*/
+        if (capabilitySpaceName in ACT) {
+            moduleInstance = new ACT[capabilitySpaceName](refObj);
+        } else {
+            /* We need to throw a missing capability error here. */
+            throw new Error('Missing capability: ' + capabilitySpaceName);
+        }
         objFromNode = moduleInstance.getContent(env, status.orientation);
 
         if (objFromNode.node !== 'undefined') {

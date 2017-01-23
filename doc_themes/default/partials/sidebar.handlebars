@@ -4,6 +4,7 @@
         <ul class="tabs">
             <li><a href="#api-classes">Classes</a></li>
             <li><a href="#api-modules">Modules</a></li>
+            <li><a href="#api-demos">Demo and Examples</a></li>
         </ul>
 
         <div id="api-tabview-filter">
@@ -22,6 +23,13 @@
                 <li><a href="{{../projectRoot}}modules/{{name}}.html">{{displayName}}</a></li>
             {{/allModules}}
             </ul>
+
+            <ul id="api-demos" class="apis demos">
+            {{#allDemo}}
+                <li><a href="{{../projectRoot}}demo/{{name}}.html">{{displayName}}</a></li>
+            {{/allDemo}}
+            </ul>
+
         </div>
     </div>
 </div>

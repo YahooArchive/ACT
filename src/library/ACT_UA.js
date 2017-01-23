@@ -337,7 +337,7 @@ ACT.define('UA', [/*@<*/'Debug', /*>@*/ 'Lang'], function (ACT) {
     var UA = {
         ATTRS: {
             NAME: 'UA',
-            version: '1.0.22'
+            version: '1.0.41'
         },
 
         /**

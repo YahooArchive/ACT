@@ -23,12 +23,6 @@ ACT.define('LayersList', [/*@<*/'Debug', /*>@*/ 'Lang', 'Dom', 'Event', 'Class',
     var Lang = ACT.Lang;
     var Class = ACT.Class;
     var LayerStandard = ACT.LayerStandard;
-    /**
-     * Default render position for layers
-     * @constant DEFAULT_BASE
-     * @private
-     */
-    var DEFAULT_BASE = 'act-ad';
 
     /**
      * Actions for LayersList module
@@ -100,12 +94,11 @@ ACT.define('LayersList', [/*@<*/'Debug', /*>@*/ 'Lang', 'Dom', 'Event', 'Class',
 
     LayersList.ATTRS = {
         NAME: 'LayersList',
-        version: '1.0.22',
+        version: '1.0.41',
         envToPlay: undefined,
         layersList: [],
         layersConfig: {},
-        layersMap: {},
-        isDarlaLayerPlaying: false
+        layersMap: {}
     };
 
     Lang.extend(LayersList, Class, {
@@ -129,16 +122,10 @@ ACT.define('LayersList', [/*@<*/'Debug', /*>@*/ 'Lang', 'Dom', 'Event', 'Class',
             var root = this;
             root.addEventListeners(
                 Event.on('layersList:open', function (to) {
-                    if (root.get('isDarlaLayerPlaying')) {
-                        Event.fire('complete:action', to.actionId);
-                        return;
-                    }
-
                     if (root.isLayerPlaying(to.layerToOpen)) {
                         Event.fire('complete:action', to.actionId);
                         return;
                     }
-
                     root.playLayer(to.layerToOpen, to.actionId);
                 }),
 
@@ -177,21 +164,6 @@ ACT.define('LayersList', [/*@<*/'Debug', /*>@*/ 'Lang', 'Dom', 'Event', 'Class',
         },
 
         /**
-         * Function to check type of layer
-         *
-         * @method whatTypeOfLayer
-         * @param {Object} layerConfig Config Object for layer
-         * @return {String} 'normal' or 'frame' (frame is darla-layer)
-         * @public
-         */
-        whatTypeOfLayer: function (layerConfig) {
-            if (layerConfig.base === DEFAULT_BASE) {
-                return 'normal';
-            }
-            return this.get('sDarlaAPI') && layerConfig.frame ? 'frame' : 'normal';
-        },
-
-        /**
          * Function to create layer objects based on theirs configObject
          * New layer objects will be pushed in layersList attributes
          *
@@ -206,22 +178,18 @@ ACT.define('LayersList', [/*@<*/'Debug', /*>@*/ 'Lang', 'Dom', 'Event', 'Class',
             var allowedToPlay;
 
             for (layer in copyLayersConfig) {
-				if (copyLayersConfig.hasOwnProperty(layer)) {
-					allowedToPlay = true;
-					if (copyLayersConfig[layer].contentLayer.env) {
-						allowedToPlay = Lang.inArray(copyLayersConfig[layer].contentLayer.env, this.get('envToPlay'));
-					}
+                if (copyLayersConfig.hasOwnProperty(layer)) {
+                    allowedToPlay = true;
+                    if (copyLayersConfig[layer].contentLayer.env) {
+                        allowedToPlay = Lang.inArray(copyLayersConfig[layer].contentLayer.env, this.get('envToPlay'));
+                    }
 
-					if (allowedToPlay === true) {
-						if (root.whatTypeOfLayer(copyLayersConfig[layer]) === 'normal') {
-							this.makeNormalLayer(copyLayersConfig[layer]);
-						} else {
-							this.makeSdarlaLayer(copyLayersConfig[layer]);
-						}
-					}
-				}
-			}
-		},
+                    if (allowedToPlay === true) {
+                        this.makeNormalLayer(copyLayersConfig[layer]);
+                    }
+                }
+            }
+        },
 
         /**
          * Function to create new LayerStandard from config object
@@ -242,28 +210,6 @@ ACT.define('LayersList', [/*@<*/'Debug', /*>@*/ 'Lang', 'Dom', 'Event', 'Class',
             layersList.push(normalLayer);
             this.set('layersList', layersList);
             layersMap[layerConfig.layerName] = normalLayer;
-            this.set('layersMap', layersMap);
-        },
-
-        /**
-         * Function to create new LayerSdarla from config object
-         *
-         * @method makeSdarlaLayer
-         * @param {Object} layerConfig Config object for new layer
-         * @public
-         */
-        makeSdarlaLayer: function (layerConfig) {
-            var layersList = this.get('layersList');
-            var layersMap = this.get('layersMap');
-            var sDarlaLayer = new ACT.LayerSdarla({
-                config: layerConfig,
-                envToPlay: this.get('envToPlay'),
-                status: this.get('status')
-            });
-
-            layersList.push(sDarlaLayer);
-            this.set('layersList', layersList);
-            layersMap[layerConfig.layerName] = sDarlaLayer;
             this.set('layersMap', layersMap);
         },
 
@@ -346,8 +292,8 @@ ACT.define('LayersList', [/*@<*/'Debug', /*>@*/ 'Lang', 'Dom', 'Event', 'Class',
                 this.playLayerAction(layer, actionId);
                 layer.play();
             } else {
-				/* Since the layer can't play - because it's not real, we want to fire a complete action to unclog the queue */
-				Event.fire('complete:action', actionId);
+                /* Since the layer can't play - because it's not real, we want to fire a complete action to unclog the queue */
+                Event.fire('complete:action', actionId);
             }
         },
 
@@ -355,7 +301,7 @@ ACT.define('LayersList', [/*@<*/'Debug', /*>@*/ 'Lang', 'Dom', 'Event', 'Class',
          * Defining action to be executed when layer is played
          *
          * @method playLayerAction
-         * @param {LayerStandard || LayerSdarla} layerObject Layer instance
+         * @param {LayerStandard} layerObject Layer instance
          * @param {Number} actionId Id of the playLayer action in the queue
          * @public
          */
@@ -365,10 +311,6 @@ ACT.define('LayersList', [/*@<*/'Debug', /*>@*/ 'Lang', 'Dom', 'Event', 'Class',
                 /* istanbul ignore else */
                 if (savedlayer.get('layerName') === e.layerName) {
                     eventPlay.remove();
-
-                    if (savedlayer.getType() === 'darla') {
-                        root.set('isDarlaLayerPlaying', true);
-                    }
 
                     /* istanbul ignore else */
                     if (savedlayer.get('config').onResize) {
@@ -422,18 +364,13 @@ ACT.define('LayersList', [/*@<*/'Debug', /*>@*/ 'Lang', 'Dom', 'Event', 'Class',
 
         /**
          * @method stopLayerAction
-         * @param {LayerStandard || LayerSdarla) savedLayer Layer to be stopped
+         * @param {LayerStandard} savedLayer Layer to be stopped
          * @param {Number} actionId Id of the stopLayer action in the queue
          * @public
          */
         stopLayerAction: function (savedlayer, actionId) {
-            var root = this;
             var eventPlay = Event.on('layer:stopped', function (e) {
                 if (savedlayer.get('layerName') === e.layerName) {
-                    /* istanbul ignore next */
-                    if (savedlayer.getType() === 'darla') {
-                        root.set('isDarlaLayerPlaying', false);
-                    }
                     if (Lang.isStrictNumber(actionId)) {
                         Event.fire('complete:action', actionId);
                     }

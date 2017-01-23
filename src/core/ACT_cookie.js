@@ -449,7 +449,7 @@ ACT.define('Cookie', [/*@<*/'Debug', /*>@*/ 'Json', 'Lang', 'Event'], function (
      *         path: '/',
      *         domain: 'yahoo.com',
      *         name: 'cookieName'
-     *       freq_cap : 1
+     *         freq_cap : 1
      *     };
      *     var cookie = new cookie( conf, this);
      *
@@ -491,7 +491,7 @@ ACT.define('Cookie', [/*@<*/'Debug', /*>@*/ 'Json', 'Lang', 'Event'], function (
      */
     cookie.ATTRS = {
         NAME: 'Cookie',
-        version: '1.0.22'
+        version: '1.0.41'
     };
 
     /**

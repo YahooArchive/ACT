@@ -851,7 +851,7 @@ ACT.define('ContentAdfeedback', ['Dom', 'Lang', 'Event', 'Util', 'Class', 'Capab
          * @attribute version
          * @type String
          */
-        version: '1.0.22',
+        version: '1.0.41',
 
         /**
          * @attribute triggerNode

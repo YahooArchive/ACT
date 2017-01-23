@@ -17,23 +17,22 @@
 <div id="act-ad-container" style="margin:0px auto;padding:0px;">
     <div id="act-ad" style="margin:0px;padding:0px;position:relative;font-size:11px;min-height:20px;">
         <noscript>
-            <a href="${CLICKURL?LREC_backup_img}https://uk.yahoo.com">
+            <a href="https://uk.yahoo.com">
                 <img src="https://s.yimg.com/dh/ap/debug/actjs/backup-inline.png" border="0">
             </a>
         </noscript>
     </div>
+</div>
 
-    <!-- ActJS Hook -->
-    <script language="javascript">
-    (function() {
+<script language="javascript">
+    (function () {
         if (!window.ACT) {
             window.ACT = {
                 "adQueue": []
             };
         }
         ACT.adQueue.push(
-            function() {
-
+            function () {
                 var src = '<link rel="stylesheet" href="https://s.yimg.com/cv/ae/actjs/billboard-html/example/main.css"/><div id="billboard-inline"><a href="" id="clickArea" target="_blank"><div class="button">Click Button</div></a></div><scr'+'ipt src="https://s.yimg.com/cv/ae/actjs/billboard-html/example/scripts/main.js"></scr'+'ipt>';
 
                 /* for partner and FPAD position */
@@ -58,7 +57,7 @@
                         display: 'none'
                     });
                 }
-                else if(AOL){
+                else if(AOL) {
                     ACT.Dom.applyStyles(adAct, {
                         margin: '0 auto'
                     });
@@ -81,25 +80,19 @@
                     conf: {
                         adId: 'test_ad_id',
                         cookie: {
-                            name: "${LIBRARYADID}"
+                            name: "adCookieName"
                         },
                         template: {
                             width: 970,
                             height: 250
                         },
-                        tracking: {
-                            rB: '${CLICKURL?ClientSideEditable}',
-                            r0: '${CLICKURL}',
-                            z1: '${INTERACTION_URL}',
-                            cb: '${REQUESTID}',
-                            trackUnique: true
-                        },
+                        tracking: {},
                         customData: {
                             /* Interactive */
                             "layers.billboard.html5_container.html5Config.iframe": true,
                             "layers.billboard.html5_container.html5Config.src": src,
                             "layers.billboard.html5_container.html5Config.iframevars": {
-                                clickTag: '${CLICKURL?billboard_click_interactive_clicktaghtml}https://vn.yahoo.com'
+                                clickTag: 'https://vn.yahoo.com'
                             },
                             /* Backup */
                             "layers.billboard.billboard_backup_image.imageConfig.src": "https://s.yimg.com/cv/ae/actjs/billboard-html/example/images/backup_billboard.jpg",
@@ -123,12 +116,10 @@
             }
         );
     })();
-    </script>
+</script>
 
-    <!-- ActJS FrameWork -->
-    <script src="{{ACTJS_core_file}}"></script>
-    <script src="https://s.yimg.com/zz/combo?/cv/ae/actjs/billboard-html/config-object1442417348.js"></script>
+<script src="{{ACTJS_core_file}}"></script>
+<script src="https://s.yimg.com/zz/combo?/cv/ae/actjs/billboard-html/config-object1442417348.js"></script>
 
-</div>
 </body>
 </html>

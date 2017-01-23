@@ -2,14 +2,6 @@ var path = require('path');
 var tempAssets = [];
 var temCoreLink = "";
 
-function fixXUnitXML() {
-	var fs = require('fs');
-	var path = 'artifacts/test/test.xml';
-	var xml = fs.readFileSync(path, 'utf8');
-	xml = '<testsuites>' + xml + '</testsuites>';
-	fs.writeFileSync(path, xml);
-}
-
 function getDateStr() {
     var today = new Date();
     var dd = today.getDate();
@@ -56,7 +48,7 @@ module.exports = function(grunt) {
         "core/ACT_Screen.js",
         "core/ACT_secureDarla.js",
         "core/ACT_StandardAd.js",
-        "core/ACT_tracking.js",
+        "core/ACT_TrackingFacade.js",
         "library/ACT_AdobeEdgeBridge.js",
         "library/ACT_animation.js",
         "library/ACT_capability.js",
@@ -92,11 +84,12 @@ module.exports = function(grunt) {
         "library/ACT_dom.js",
         "library/ACT_Enabler.js",
         "library/ACT_event.js",
+        "library/ACT_class.js",
         "library/ACT_lang.js",
         "library/ACT_UA.js",
         "library/ACT_VideoEvents.js",
         "library/ACT_json.js",
-        "core/ACT_tracking.js",
+        "core/ACT_TrackingFacade.js",
         "library/ACT_util.js",
         "core/ACT_actionsQueue.js"
     ];
@@ -152,8 +145,8 @@ module.exports = function(grunt) {
             },
             examples: {
                 expand: true,
-                cwd: 'ad-products/',
-                src: '**/production/**',
+                cwd: 'examples/',
+                src: '**',
                 dest: 'temp_examples/'
             },
             enabler_docs: {
@@ -173,38 +166,54 @@ module.exports = function(grunt) {
                 }]
             }
         },
-        instrument: {
-            files: 'src/!(assets)/*.js',
-            options: {
-                lazy: true,
-                basePath: 'artifacts/instrument/'
-            }
-        },
-        mocha: {
-            test: {
-                src: ['test/capabilities/**/index.html', 'test/core/**/index.html', 'test/library/**/index.html'],
-                dest: "artifacts/test/test.xml"
-            },
-            options: {
-                run: true,
-                timeout: 20000,
-                reporter: process.env.SCREWDRIVER ? 'XUnit' : 'Dot',
-                coverage: {
-                    jsonReport: 'artifacts/coverage/'
-                },
-                page: {
-                    settings: {
-                        resourceTimeout: 60000
+        karma: {
+            unit: {
+                options: {
+                    files: [
+                        'node_modules/chai/chai.js',
+                        'test/vendor/sinon.js',
+                        'test/globals.js',
+                        'src/core/ACT.js',
+                        'src/**/*.js',
+                        'test/**/*.js'
+                    ],
+                    exclude: [
+                        'src/capabilities/ACT_capability-skeleton.js',
+                        'test/integration/**/*.js'
+                    ],
+                    basePath: '',
+                    autoWatch: true,
+                    singleRun: true,
+                    frameworks: ['mocha'],
+                    browsers: ['PhantomJS'],
+                    //browserNoActivityTimeout: 100000,
+                    reporters: ['progress', 'coverage', 'tap', 'junit'],
+                    preprocessors: {
+                        'src/**/*.js': ['coverage']
+                    },
+                    coverageReporter: {
+                        type: 'lcov',
+                        dir: 'artifacts/',
+                        subdir: 'coverage/'
+                    },
+                    tapReporter: {
+                        outputFile: 'test/results.tap'
+                    },
+                    junitReporter: {
+                        outputDir: 'artifacts/test', // results will be saved as $outputDir/$browserName.xml
+                        outputFile: undefined, // if included, results will be saved as $outputDir/$browserName/$outputFile
+                        suite: '', // suite will become the package name attribute in xml testsuite element
+                        useBrowserName: false // add browser name to report and classes names
                     }
                 }
             }
         },
-        makeReport: {
-            src: 'artifacts/coverage/*.json',
+        mocha: {
+            test: {
+                src: ['./test/**/*.html']
+            },
             options: {
-                type: 'lcov',
-                dir: 'artifacts/coverage/',
-                print: 'detail'
+                run: true
             }
         },
         uglify: {
@@ -223,11 +232,14 @@ module.exports = function(grunt) {
                 description: '<%= pkg.description %>',
                 version: '<%= pkg.version %>',
                 url: '<%= pkg.url %>',
+                logo: '<%= pkg.logoURL %>',
+                type: 'doc',
                 options: {
                     paths: 'src/',
                     themedir: 'doc_themes/default/',
                     outdir: 'temp_docs/',
-                    tabtospace: 2
+                    tabtospace: 2,
+                    helpers: ["doc_themes/preprocessor/process.js"]
                 }
             },
             enabler: {
@@ -235,11 +247,14 @@ module.exports = function(grunt) {
                 description: '<%= pkg.description %>',
                 version: '<%= pkg.version %>',
                 url: '<%= pkg.url %>',
+                logo: '<%= pkg.logoURL %>',
+                type: 'enabler',
                 options: {
                     paths: 'temp_enabler/',
                     themedir: 'doc_themes/default/',
                     outdir: 'temp_enabler_docs/',
-                    tabtospace: 2
+                    tabtospace: 2,
+                    helpers: ["doc_themes/preprocessor/process.js"]
                 }
             }
         },
@@ -302,16 +317,15 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-yuidoc');
     grunt.loadNpmTasks('grunt-debug-code-remover');
-    grunt.loadNpmTasks('grunt-mocha-phantom-istanbul');
     grunt.loadNpmTasks('grunt-string-replace');
-    grunt.loadNpmTasks('grunt-istanbul');
+    grunt.loadNpmTasks('grunt-karma');
+    grunt.loadNpmTasks('grunt-mocha');
     grunt.loadNpmTasks('grunt-compile-handlebars');
     grunt.loadNpmTasks('grunt-eslint');
-	grunt.registerTask('fixXUnitXML', fixXUnitXML);
     grunt.registerTask('debug', ['debug_code_remover']);
     grunt.registerTask('build', ['copy', 'concat:debug', 'concat:enablerDebug', 'debug_code_remover', 'concat:deploy', 'concat:enabler', 'uglify', 'copy:assets']);
     grunt.registerTask('lint', ['eslint']);
-    grunt.registerTask('test', ['instrument', 'mocha', 'fixXUnitXML', 'makeReport']);
+    grunt.registerTask('test', ['karma']);
     grunt.registerTask('docs', ['yuidoc:all', 'copy:enabler_docs', 'yuidoc:enabler', 'string-replace', 'copy:examples']);
     grunt.registerTask('default', ['lint', 'test']);
 };

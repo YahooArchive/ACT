@@ -34,7 +34,7 @@ ACT.define('Util', [], function (ACT) {
 	*/
 	Util.ATTRS = {
 		NAME: 'Util',
-		version: '1.0.22'
+		version: '1.0.41'
 	};
 
 	Util.prototype = {

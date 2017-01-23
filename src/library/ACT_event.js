@@ -63,7 +63,7 @@ ACT.define('Event', [/*@<*/'Debug', /*>@*/ 'Lang'], function (ACT) {
      */
     Event.ATTRS = {
         NAME: 'event',
-        version: '1.0.22'
+        version: '1.0.41'
     };
 
 
@@ -140,6 +140,9 @@ ACT.define('Event', [/*@<*/'Debug', /*>@*/ 'Lang'], function (ACT) {
     }
 
     Event.prototype = {
+		/*@<*/
+		removable: [],
+		/*>@*/
 
         // exposing for debug and test
         /*@<*/
@@ -169,18 +172,19 @@ ACT.define('Event', [/*@<*/'Debug', /*>@*/ 'Lang'], function (ACT) {
          * @public
          *
          * @example
-         *	var Event = ACT.Event;
-         *	var Dom = ACT.Dom;
-         *	// custom event
-         *	Event.on( "customEventString", function( eventData ) { ...do something based on this event...}, null, this);
-         *	// 'vanilla' event
-         *	Event.on("click", function( eventData ) { Event.preventDefault(eventData); ... do something ...}, Dom.byId("some_node_id"), this);
+         *    var Event = ACT.Event;
+         *    var Dom = ACT.Dom;
+         *    // custom event
+         *    Event.on( "customEventString", function( eventData ) { ...do something based on this event...}, null, this);
+         *    // 'vanilla' event
+         *    Event.on("click", function( eventData ) { Event.preventDefault(eventData); ... do something ...}, Dom.byId("some_node_id"), this);
          *
          */
         on: function (evnt, fn, element, scope) {
             var root = this;
             var list;
             var index = eventIndex;
+            var returnSet;
             eventIndex++;
 
             /*@<*/
@@ -196,7 +200,9 @@ ACT.define('Event', [/*@<*/'Debug', /*>@*/ 'Lang'], function (ACT) {
             listeners[evnt][index] = list;
 
             // Provide handle back for removal of topic
-            return {
+			returnSet = {
+                eventType: evnt,
+                index: index,
                 remove: function () {
                     /* if the event is removed already then ignore it */
                     if (!listeners[evnt][index]) {
@@ -205,7 +211,7 @@ ACT.define('Event', [/*@<*/'Debug', /*>@*/ 'Lang'], function (ACT) {
 
                     if (listeners[evnt][index].element) {
                         /* NOTE: The call to removeListener deletes the listeners[event][index] automagically. Hence
-                        	the delete is in the else. This is done in case someone calls removeListener directly.
+                            the delete is in the else. This is done in case someone calls removeListener directly.
                         */
                         root.removeListener(evnt, fn, element);
                     } else {
@@ -213,6 +219,10 @@ ACT.define('Event', [/*@<*/'Debug', /*>@*/ 'Lang'], function (ACT) {
                     }
                 }
             };
+            /*@<*/
+            this.removable.push(returnSet);
+            /*>@*/
+            return returnSet;
         },
 
         /**
@@ -266,20 +276,20 @@ ACT.define('Event', [/*@<*/'Debug', /*>@*/ 'Lang'], function (ACT) {
             var el;
             for (key in list) {
                 if (list.hasOwnProperty(key)) {
-					el = list[key];
-					if (el && el.element === element && (el.fn === fn || el.bound === fn)) {
-						this.removeListenerHelper(evnt, el.bound, element);
-						delete listeners[evnt][key];
-					}
-				}
+                    el = list[key];
+                    if (el && el.element === element && (el.fn === fn || el.bound === fn)) {
+                        this.removeListenerHelper(evnt, el.bound, element);
+                        delete listeners[evnt][key];
+                    }
+                }
             }
         },
 
 
-		/**
-		 * The 'ready' function is a modified version of the JQuery 'ready' functionality found at http://api.jquery.com/ready/
-		 * The code below is modified according to the JQuery MIT License https://github.com/jquery/jquery
-		 */
+        /**
+         * The 'ready' function is a modified version of the JQuery 'ready' functionality found at http://api.jquery.com/ready/
+         * The code below is modified according to the JQuery MIT License https://github.com/jquery/jquery
+         */
         ready: (function () {
             var document = window.document;
             var readyBound = false;
@@ -390,12 +400,12 @@ ACT.define('Event', [/*@<*/'Debug', /*>@*/ 'Lang'], function (ACT) {
                 if (listeners.hasOwnProperty(evnt) && listeners[evnt] && lang.isObject(listeners[evnt])) {
                     for (key in listeners[evnt]) {
                         if (listeners[evnt].hasOwnProperty(key)) {
-							el = listeners[evnt][key];
-							if (el.element === element) {
-								this.removeListenerHelper(evnt, el.bound, element);
-								delete listeners[evnt][key];
-							}
-						}
+                            el = listeners[evnt][key];
+                            if (el.element === element) {
+                                this.removeListenerHelper(evnt, el.bound, element);
+                                delete listeners[evnt][key];
+                            }
+                        }
                     }
                 }
             }
@@ -409,28 +419,29 @@ ACT.define('Event', [/*@<*/'Debug', /*>@*/ 'Lang'], function (ACT) {
          * @public
          *
          * @example
-         *	// Now anyone can subscribe to the custom event.
-         *	var Event = ACT.Event;
-         *	var Dom = ACT.Dom;
-         *	// Example of listener
-         *	function listenForCustomEvent( event ) {
-         *		if( event.hasOwnProperty("node")){
-         *         	if(event.node.id === "node1"){
-         *         		// got this event from node1
-         *         	} else if( event.node.id === "node2" ){
-         *         		// got this event from node2
-         *      	}
-         *		} else if ( event.hasOwnProperty("meta") ){
-         *      	// heard first event.
-         *		}
-         *	}
-         *	Event.on( "customEventString", listenForCustomEvent, null, this);
+         * ```
+         *    // Now anyone can subscribe to the custom event.
+         *    var Event = ACT.Event;
+         *    var Dom = ACT.Dom;
+         *    // Example of listener
+         *    function listenForCustomEvent( event ) {
+         *        if( event.hasOwnProperty("node")){
+         *             if(event.node.id === "node1"){
+         *                 // got this event from node1
+         *             } else if( event.node.id === "node2" ){
+         *                 // got this event from node2
+         *          }
+         *        } else if ( event.hasOwnProperty("meta") ){
+         *          // heard first event.
+         *        }
+         *    }
+         *    Event.on( "customEventString", listenForCustomEvent, null, this);
          *
-         *	Event.fire( "customEventString", { meta:"data" });
-         *	// Event.fire example with the same event fired for two different elements.
-         *	Event.fire( "customEventString", { "node": Dom.byId("node1"); });
-         *	Event.fire( "customEventString", { "node": Dom.byId("node2"); });
-         *
+         *    Event.fire( "customEventString", { meta:"data" });
+         *    // Event.fire example with the same event fired for two different elements.
+         *    Event.fire( "customEventString", { "node": Dom.byId("node1"); });
+         *    Event.fire( "customEventString", { "node": Dom.byId("node2"); });
+         * ```
          */
         fire: function (evnt, info) {
             var params = info || {};

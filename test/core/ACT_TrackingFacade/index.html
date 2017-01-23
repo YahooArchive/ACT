@@ -15,7 +15,7 @@
 
 <script src="../../../src/core/ACT.js"></script>
 
-<script src="../../../artifacts/instrument/src/core/ACT_tracking.js"></script>
+<script src="../../../src/core/ACT_TrackingFacade.js"></script>
 
 <script src="../../../src/library/ACT_debug.js"></script>
 <script src="../../../src/library/ACT_class.js"></script>
@@ -24,7 +24,7 @@
 <script src="../../../src/library/ACT_util.js"></script>
 
 <script>mocha.setup('bdd')</script>
-<script src="ACT_tracking.spec.js"></script>
+<script src="ACT_TrackingFacade.spec.js"></script>
 <script>
   if (navigator.userAgent.indexOf('PhantomJS') < 0) {
     mocha.run();

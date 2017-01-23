@@ -39,7 +39,7 @@ ACT.define('Lang', [/*@<*/'Debug'/*>@*/], function (ACT) {
      */
     Lang.ATTRS = {
         NAME: 'Lang',
-        version: '1.0.22'
+        version: '1.0.41'
     };
 
     Lang.prototype = {
@@ -596,6 +596,47 @@ ACT.define('Lang', [/*@<*/'Debug'/*>@*/], function (ACT) {
          */
         cancelAnimFrame: function (id) {
             window.clearTimeout(id);
+        },
+
+        /**
+         * Url sanitizer to prevent xss injection
+         * @method urlSanitize
+         * @param {String} str
+         */
+        urlSanitize: function (str) {
+            var url = str.split('?');
+
+            if (url.length === 2) {
+                url = url[0] + '?' + encodeURIComponent(url[1]);
+            } else {
+                url = str;
+            }
+
+            return url;
+        },
+
+        /**
+         * Check if string is containing invalid cararters
+         * @method isInvalidChars
+         * @param {String} str
+         */
+        isInvalidChars: function (str) {
+            return /[\\/:"*?<>|]+/.test(str);
+        },
+
+        /**
+         * Check if the given url is hosted at the same origin
+         * @method isSameOrigin
+         * @param {String} url
+         */
+        isSameOrigin: function (url) {
+            var validChars = false;
+            var location = document.location;
+            var parser = document.createElement('a');
+            parser.setAttribute('href', this.urlSanitize(url));
+
+            validChars = !parser.search || !this.isInvalidChars(decodeURIComponent(parser.search).substr(1));
+            return validChars && parser.protocol === location.protocol && parser.hostname === location.hostname;
         }
     };
 

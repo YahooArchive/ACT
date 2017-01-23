@@ -71,7 +71,7 @@ describe('ACT.Enabler', function() {
 			/* Test video:events and automatic tracking in Enabler */
 			/***************************************************************************************************************/
 			/* start */
-            it('should listen to video:action event - start', function(done){
+            it('should listen to video:action event - start', function(){
                 ACT.Event.fire('video:action', {
                     "videoId": 'Video Tracking ID',
                     "videoNode": document.getElementById('testVideo'),
@@ -79,15 +79,14 @@ describe('ACT.Enabler', function() {
                     "eventType": 'start',
                     "event" : 'video:start'
                 });
-                window.setTimeout(function(){
+//                window.setTimeout(function(){
                     expect(Enabler.counter.calledWith('Video Tracking ID:start')).to.be.true;
-
-                    done();
-                }, 10);
+//                    done();
+  //              }, 10);
             });
 
 			/* 25% */
-            it('should listen to video:action event - 25', function(done){
+            it('should listen to video:action event - 25', function(){
                 ACT.Event.fire('video:action', {
                     "videoId": 'Video Tracking ID',
                     "videoNode": document.getElementById('testVideo'),
@@ -95,14 +94,14 @@ describe('ACT.Enabler', function() {
                     "eventType": '25',
                     "event" : 'video:25percent'
                 });
-                window.setTimeout(function(){
+//                window.setTimeout(function(){
                     expect(Enabler.counter.calledWith('Video Tracking ID:25')).to.be.true;
-                    done();
-                }, 10);
+  //                  done();
+//                }, 10);
             });
 
 			/* 50% */
-            it('should listen to video:action event - 50', function(done){
+            it('should listen to video:action event - 50', function(){
                 ACT.Event.fire('video:action', {
                     "videoId": 'Video Tracking ID',
                     "videoNode": document.getElementById('testVideo'),
@@ -110,14 +109,14 @@ describe('ACT.Enabler', function() {
                     "eventType": '50',
                     "event" : 'video:50percent'
                 });
-                window.setTimeout(function(){
+//                window.setTimeout(function(){
                     expect(Enabler.counter.calledWith('Video Tracking ID:50')).to.be.true;
-                    done();
-                }, 10);
+  //                  done();
+    //            }, 10);
             });
 
 			/* 75% */
-            it('should listen to video:action event - 75', function(done){
+            it('should listen to video:action event - 75', function(){
                 ACT.Event.fire('video:action', {
                     "videoId": 'Video Tracking ID',
                     "videoNode": document.getElementById('testVideo'),
@@ -125,14 +124,14 @@ describe('ACT.Enabler', function() {
                     "eventType": '75',
                     "event" : 'video:75percent'
                 });
-                window.setTimeout(function(){
+//                window.setTimeout(function(){
                     expect(Enabler.counter.calledWith('Video Tracking ID:75')).to.be.true;
-                    done();
-                }, 10);
+  //                  done();
+    //            }, 10);
             });
 
 			/* ended/complete  */
-            it('should listen to video:action event - ended/complete', function(done){
+            it('should listen to video:action event - ended/complete', function(){
                 ACT.Event.fire('video:action', {
                     "videoId": 'Video Tracking ID',
                     "videoNode": document.getElementById('testVideo'),
@@ -140,14 +139,14 @@ describe('ACT.Enabler', function() {
                     "eventType": 'ended',
                     "event" : 'video:complete'
                 });
-                window.setTimeout(function(){
+//                window.setTimeout(function(){
                     expect(Enabler.counter.calledWith('Video Tracking ID:ended')).to.be.true;
-                    done();
-                }, 10);
+  //                  done();
+    //            }, 10);
             });
 
             /* pause */
-            it('should listen to video:action event - pause', function(done){
+            it('should listen to video:action event - pause', function(){
                 ACT.Event.fire('video:action', {
                     "videoId": 'Video Tracking ID',
                     "videoNode": document.getElementById('testVideo'),
@@ -155,10 +154,10 @@ describe('ACT.Enabler', function() {
                     "eventType": 'pause',
                     "event" : 'video:pause'
                 });
-                window.setTimeout(function(){
+//                window.setTimeout(function(){
                     expect(Enabler.counter.calledWith('Video Tracking ID:pause')).to.be.true;
-                    done();
-                }, 10);
+  //                  done();
+    //            }, 10);
             });
 
             it('should detach a video identifier from reporting', function() {
@@ -283,20 +282,16 @@ describe('ACT.Enabler', function() {
             };
 
             describe('check visible', function(){
-
                 it('should return visibility and fire visible event', function(done){
-
                     Enabler.addEventListener(studio.events.StudioEvent.VISIBLE, function(e){
                         Enabler.removeEventListener(studio.events.StudioEvent.VISIBLE);
                         done();
                     });
-
                     expect(Enabler.isVisible()).to.be.truthy;
-
                 });
             });
 
-            it ('should open window for a simple exit', function(done) {
+            it ('should open window for a simple exit', function() {
                 var eventId = 'clickTAG';
 
                 // No fireEvent checked need as window.open will be called by Enabler and nothing need to send to parent
@@ -316,12 +311,9 @@ describe('ACT.Enabler', function() {
 
                 // window.open is called with correct URL
                 expect(window.open.calledWith('landingpage', '_blank')).to.be.true;
-
-                done();
-
             });
 
-            it ('should fire for an exit with redirect', function(done) {
+            it ('should fire for an exit with redirect', function() {
                 var eventId = 'clickTAG2';
 
                 // No fireEvent checked need as window.open will be called by Enabler and nothing need to send to parent
@@ -343,8 +335,6 @@ describe('ACT.Enabler', function() {
 
                 // exit link need to be updated
                 expect(Enabler.getConfigObject('exitUrls').clickTAG2).to.be.equal('http://www.yahoo.com');
-
-                done();
             });
 
             describe('interaction tracking', function(){
@@ -352,7 +342,7 @@ describe('ACT.Enabler', function() {
                     var eventId = 'CountingStars';
 
                     onEvent(eventId, function(e) {
-console.log("igor", e);
+
                         expect(e.eventType).to.equal('interaction');
                         expect(e.actionName).to.equal('track');
                         expect(e.url).to.be.null;
@@ -367,7 +357,7 @@ console.log("igor", e);
                     // test tracking interaction
                 });
 
-                it ('should call actTracking.interaction_track if enablerInteractionTracking is true', function(done) {
+                it ('should call actTracking.interaction_track if enablerInteractionTracking is true', function() {
 
                     // change Enable config
                     Enabler.setConfig(true, 'enablerInteractionTracking');
@@ -387,15 +377,12 @@ console.log("igor", e);
 
                     // restore actTracking
                     actTracking.interaction_track.restore();
-
-                    done();
                 });
-
             });
 
             describe('exitOverride', function() {
 
-                it('should fire for exitOverride', function(done) {
+                it('should fire for exitOverride', function() {
                     var eventId = 'clickTAG2';
 
                     // No fireEvent checked need as window.open will be called by Enabler and nothing need to send to parent
@@ -416,20 +403,16 @@ console.log("igor", e);
 
                     // exit link need to be updated
                     expect(Enabler.getConfigObject('exitUrls').clickTAG2).to.be.equal('https://vn.yahoo.com');
-
-                    done();
                 });
-
             });
 
             describe('exitQueryString', function() {
 
-                before(function(done) {
+                before(function() {
                     Enabler.exitOverride('exitQueryString test', 'https://www.yahoo.com');
-                    done();
                 });
 
-                it('should fire for exitQueryString', function(done) {
+                it('should fire for exitQueryString', function() {
                     var eventId = 'exitQueryString test';
                     // No fireEvent checked need as window.open will be called by Enabler and nothing need to send to parent
                     /*
@@ -447,10 +430,7 @@ console.log("igor", e);
 
                     // window.open is called with correct URL
                     expect(window.open.calledWith('https://www.yahoo.com?type=test', '_blank')).to.be.true;
-
-                    done();
                 });
-
             });
 
             describe('getFullUrl', function() {
@@ -1199,24 +1179,19 @@ console.log("igor", e);
         });
 
         describe('Listen to parent message', function(){
-
             it('should dispatch enabler event when receive data from parent', function(done){
-
                 Enabler.addEventListener(studio.events.StudioEvent.COLLAPSE_START, function(){
                     Enabler.removeEventListener(studio.events.StudioEvent.COLLAPSE_START);
                     done();
                 });
 
-                Enabler.Event.fire('message', {
+                ACT.Event.fire('message', {
                     data: {
                         eventName: "html5:message",
                         message: "COLLAPSE_START"
                     }
                 }, window);
-
-
             });
-
         });
 
         describe('getInstance', function() {
@@ -1317,6 +1292,7 @@ console.log("igor", e);
         });
 
     });
+
 });
 
 function createDummyElement(id, tag) {

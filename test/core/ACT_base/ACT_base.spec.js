@@ -2,58 +2,40 @@ var expect = chai.expect;
 
 describe("ACT.Base", function() {
 
-	before(function(){
-		if(ACT.Environment === undefined){
-			ACT.define('Environment', ['Lang', 'Class'], function(ACT) {
-				var lang = ACT.Lang;
-				var Class = ACT.Class;
+    var simpleConfig = {
+	    baseConfig: {
+	        forceEnv: {}
+	    },
+	    format: {
+			flow: [],
+    		layers: {
+	            mpu: {
+	                layerName: "mpu",
+	                base: "act-ad",
+	                type: "inline",
+	                width: "300px",
+	                height: "250px",
+	                x: "0",
+	                y: "0",
+	                contentLayer: {
+	                    type: "content-container",
+	                    id: "mpu_container",
+	                    env: ["flash", "html", "backup"],
+	                    content: []
+	                }
+	            }
 
-				function Environment(config) {
-					this.init(config);
-				}
-
-				Environment.ATTRS = {
-					'NAME': 'Environment',
-					'version': 'X.X.X',
-				};
-
-				lang.extend(Environment, Class, {
-
-					initializer: function(config) {
-						return null;
-					},
-
-					checkEnv: function(){
-						return null;
-					}
-
-				});
-
-				return Environment;
-			});
+    		}
 		}
+    };
 
+    ACT.setConfig("simple-super-conf", simpleConfig);
+    for(var itor = 0; itor < 20; itor++){
+    	ACT.setConfig("simple-super-conf"+itor, simpleConfig);
+    }
 
-		if(ACT.UA === undefined){
-			ACT.define('UA', [], function(ACT) {
-				var UA = {
-					ATTRS: {
-						'NAME': 'Environment',
-						'version': 'X.X.X'
-					},
-					isHtml5Supported: true
-				};
-
-				return UA;
-			});
-
-		}
-
-
-
-	});
-	
 	beforeEach(function(){
+//		refreshModule('Event');
 		sinon.stub(ACT.Event, 'on');
 		sinon.stub(ACT.Event, 'fire');
 	});
@@ -74,13 +56,13 @@ describe("ACT.Base", function() {
 			expect(ACT.Base.ATTRS.NAME).to.exist;
 		});
 	});
-	
+
 	describe("initialise of instance", function(){
 
 		before(function(){
 
 			noConf = {};
-			
+
 			customAdConf = {
 				conf: {
 					adId: 'test_ad_id',
@@ -152,11 +134,11 @@ describe("ACT.Base", function() {
 						cb: '1432218394.443105'
 					}
 				},
-				superConf: "simple-super-conf",
+				superConf: "simple-super-conf1",
 				extend: {}
 			};
 
-	
+
 		});
 
 		it("should not set data with an empty config", function(){
@@ -178,45 +160,12 @@ describe("ACT.Base", function() {
 			expect(ad.config.tracking.cb).to.equal(customAdConf.conf.tracking.cb);
 			expect(ad.config.superConf).to.equal(null);
 			expect(ad.config.standardAd).to.equal(false);
-		});	
+		});
 
 		it("should recognise a standard ad with supplied superConf", function(){
-	        ACT.setConfig("simple-super-conf", {
-    		    baseConfig: {
-			        forceEnv: {
-			            forcedFlash: {},
-			            forcedHTML5: {},
-			            forcedBackup: {}
-			        }
-			    },
-    		    format: {
-	    			flow: [],
-	        		layers: {
-			            mpu: {
-			                layerName: "mpu",
-			                base: "act-ad",
-			                type: "inline",
-			                width: "300px",
-			                height: "250px",
-			                x: "0",
-			                y: "0",
-			                contentLayer: {
-			                    type: "content-container",
-			                    id: "mpu_container",
-			                    env: ["flash", "html", "backup"],
-			                    content: []
-			                }
-			            }
-	         
-	        		}
-	    		}
-		    });
-
 			var ad = ACT.Base(standardAdConf);
-
-			expect(ad.config.standardAd).to.equal(true);		
-
-		});	
+			expect(ad.config.standardAd).to.equal(true);
+		});
 
 
 		it("should run the init function when defined", function(done){
@@ -230,7 +179,7 @@ describe("ACT.Base", function() {
 
 			var ad = ACT.Base(customAdInitConf);
 
-		});	
+		});
 
 		it("should run an undefined ad_init function on load", function(){
 
@@ -238,7 +187,7 @@ describe("ACT.Base", function() {
 			var res = ad.ad_init();
 			expect(res).to.equal(undefined);
 
-		});	
+		});
 
 		it("should run an overwritten the ad_init function on load", function(){
 
@@ -246,9 +195,9 @@ describe("ACT.Base", function() {
 			var res = ad.ad_init();
 			expect(res).to.equal('ad_init called');
 
-		});	
+		});
 
-	
+
 	});
 
 	describe("register function", function(){
@@ -284,7 +233,7 @@ describe("ACT.Base", function() {
 						cb: '1432218394.443105'
 					}
 				},
-				superConf: "simple-super-conf",
+				superConf: "simple-super-conf2",
 				extend: {}
 			};
 
@@ -304,7 +253,7 @@ describe("ACT.Base", function() {
 						"layers.mpu.mpu_container.css.height" : "500px"
 					}
 				},
-				superConf: "simple-super-conf",
+				superConf: "simple-super-conf3",
 				extend: {}
 			};
 
@@ -324,10 +273,10 @@ describe("ACT.Base", function() {
 					inputData: {
 	               		type:"JSON",
 	              		id: "myYT",
-	               		dataFeed: "json_feed.js"
+	               		dataFeed: "https://s.yimg.com/cv/ae/default/161201/json_feed.js"
 					}
 				},
-				superConf: "simple-super-conf",
+				superConf: "simple-super-conf4",
 				extend: {}
 			};
 
@@ -346,48 +295,16 @@ describe("ACT.Base", function() {
 					inputData: {
 	               		type:"JS",
 	              		id: "myYT",
-	               		dataFeed: "json_feed.js"
+	               		dataFeed: "https://s.yimg.com/cv/ae/default/161201/json_feed2.js"
 					}
 				},
-				superConf: "simple-super-conf",
+				superConf: "simple-super-conf5",
 				extend: {}
 			};
 
 		});
 
 		it("should track Pixels for custom ads only", function(done){
-
-	        ACT.setConfig("simple-super-conf", {
-    		    baseConfig: {
-			        forceEnv: {
-			            forcedFlash: {},
-			            forcedHTML5: {},
-			            forcedBackup: {}
-			        }
-			    },
-    		    format: {
-	    			flow: [],
-	        		layers: {
-			            mpu: {
-			                layerName: "mpu",
-			                base: "act-ad",
-			                type: "inline",
-			                width: "300px",
-			                height: "250px",
-			                x: "0",
-			                y: "0",
-			                contentLayer: {
-			                    type: "content-container",
-			                    id: "mpu_container",
-			                    env: ["flash", "html", "backup"],
-			                    content: []
-			                }
-			            }
-
-	        		}
-	    		}
-		    });
-
 			var ad = ACT.Base(customAdConf);
 
 			sinon.stub(ad, 'trackPixel', function(pixels){
@@ -400,7 +317,7 @@ describe("ACT.Base", function() {
 		});
 
 		it("should call loadStandard ad for standard ads", function(done){
-			
+
 			var ad = ACT.Base(standardAdConf);
 
 			sinon.stub(ad, 'loadStandardAd', function(){
@@ -413,9 +330,7 @@ describe("ACT.Base", function() {
 		});
 
 		it("should merge config and customData for standard ads", function(done){
-
 			var ad = ACT.Base(standardAdCustomDataConf);
-
 			sinon.stub(ad, 'loadStandardAd', function(){
 				expect(ad.config.format.layers.mpu).to.be.an('object');
 				ad.loadStandardAd.restore();
@@ -423,37 +338,35 @@ describe("ACT.Base", function() {
 			});
 
 			ad.register();
-
 		});
 
 		it("should merge JSON inputData for standard ads", function(done){
-
-			ACT.Event.fire.restore();
-			ACT.Event.on.restore();
 			var ad = ACT.Base(standardAdInputDataConf);
-
-			sinon.stub(ad, 'loadStandardAd', function(){
-				expect(ad.config.format.layers.mpu).to.be.an('object');
-				
-				sinon.stub(ACT.Event, 'fire');
-				sinon.stub(ACT.Event, 'on');
-				ad.loadStandardAd.restore();
-				done();
-			});
-
-
-			ad.register();
-
+			expect(ad.config.format.layers.mpu).to.be.an('object');
+			done();
+            // console.log('AD event', ACT.Event);
+			// ACT.Event.fire.restore();
+			// ACT.Event.on.restore();
+			// var ad = ACT.Base(standardAdInputDataConf);
+			// console.log('AD', ad);
+            //
+			// sinon.stub(ad, 'loadStandardAd', function(){
+			// 	expect(ad.config.format.layers.mpu).to.be.an('object');
+            //
+			// 	sinon.stub(ACT.Event, 'fire');
+			// 	sinon.stub(ACT.Event, 'on');
+			// 	ad.loadStandardAd.restore();
+			// 	done();
+			// });
+			// ad.register();
 		});
-
 	});
 
 	describe("loadStandardAd function", function(){
-		before(function(){
-
-			standardAdConf = {
+		it("should call trackPixel for standard ads", function(done){
+			var standardAdConf = {
 				conf: {
-					adId: 'test_ad_id',
+					adId: 'test_ad_id12',
 					cookie: {
 						name: "${LIBRARYADID}",
 					},
@@ -464,32 +377,21 @@ describe("ACT.Base", function() {
 						cb: '1432218394.443105'
 					}
 				},
-				superConf: "simple-super-conf",
+				superConf: "simple-super-conf7",
 				extend: {}
 			};
-
-		});
-
-
-		it("should call trackPixel for standard ads", function(done){
-			
 			var ad = ACT.Base(standardAdConf);
-
 			sinon.stub(ad, 'trackPixel', function(){
 				ad.trackPixel.restore();
 				done();
 			});
-
 			ad.loadStandardAd();
-
 		});
-
 	});
 
 
 	describe("trackPixel function", function(){
 		before(function(){
-
 			var customAdConf = {
 				conf: {
 					adId: 'test_ad_id',
@@ -505,12 +407,9 @@ describe("ACT.Base", function() {
 				},
 				extend: {}
 			};
-
-
 		});
 
 		it("should get its environment from currentEnv", function(){
-
 			var ad = ACT.Base(customAdConf);
 			ad.currentEnv = "backup";
 
@@ -520,26 +419,22 @@ describe("ACT.Base", function() {
 				backup: ['https://s.yimg.com/backup-pixel.gif']
 			};
 
-
 			sinon.stub(ACT.Util, 'pixelTrack', function(pixel){
 				expect(pixel).to.equal(pixels.backup[0]);
 				ACT.Util.pixelTrack.restore();
 			});
 
 			ad.trackPixel(pixels);
-
 		});
 
 		it("should set its environment to html from UA", function(){
-
 			var ad = ACT.Base(customAdConf);
-
+			ad.currentEnv = "html";
 			var pixels = {
 				html: ['https://s.yimg.com/html-pixel.gif'],
 				flash: ['https://s.yimg.com/flash-pixel.gif'],
 				backup: ['https://s.yimg.com/backup-pixel.gif']
 			};
-
 
 			sinon.stub(ACT.Util, 'pixelTrack', function(pixel){
 				expect(pixel).to.equal(pixels.html[0]);
@@ -581,9 +476,5 @@ describe("ACT.Base", function() {
 			ad.trackPixel(pixelParam);
 
 		});
-
-
 	});
-
-	
 });

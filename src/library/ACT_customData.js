@@ -166,12 +166,14 @@ ACT.define('CustomData', [/*@<*/'Debug', /*>@*/ 'Lang'], function (ACT) {
     *
     * overWriteEnv Change enviroment attributes
     * Some examples:
-    *   "forceEnv.forcedHTML5List.Chrome" : "*" // Forced Chrome to play in any other
-    *   // overwrite all the object
-    *   "forceEnv.forcedHTML5List" :{
-    *       "Manolo": "31",
-    *       "Chrome": "31"
-    *   }
+    *
+    * @example
+    *       "forceEnv.forcedHTML5List.Chrome" : "*" // Forced Chrome to play in any other
+    *       // overwrite all the object
+    *       "forceEnv.forcedHTML5List" :{
+    *           "Manolo": "31",
+    *           "Chrome": "31"
+    *       }
 
     * @method overWriteEnv
     * @param {Object} data.listToForce List to force
@@ -265,7 +267,7 @@ ACT.define('CustomData', [/*@<*/'Debug', /*>@*/ 'Lang'], function (ACT) {
     */
     CustomData.ATTRS = {
         NAME: 'CustomData',
-        version: '1.0.22'
+        version: '1.0.41'
     };
 
     CustomData.prototype = {
@@ -274,9 +276,10 @@ ACT.define('CustomData', [/*@<*/'Debug', /*>@*/ 'Lang'], function (ACT) {
         *
         * map Change superConfig attributes from base object
         * Some examples:
-        *   "layers.mpu.width" : "500px" // Change width attribute of mpu layer.
-        *   "layers.mpu.container_1_1.css.height" : "500px" // Change css attribute height of a content capability with id 'container_1_1'.
-        *   "layers.mpu.mpu_flash.swfConfig.flashvars" : { "clickTAG": "test"} // Adding a flashVars object into swf object.
+         * @example
+        *       "layers.mpu.width" : "500px" // Change width attribute of mpu layer.
+        *       "layers.mpu.container_1_1.css.height" : "500px" // Change css attribute height of a content capability with id 'container_1_1'.
+        *       "layers.mpu.mpu_flash.swfConfig.flashvars" : { "clickTAG": "test"} // Adding a flashVars object into swf object.
         *
         * @method mapCustomData
         * @param {Object} newData Custom data object

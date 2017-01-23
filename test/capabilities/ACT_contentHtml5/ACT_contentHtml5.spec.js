@@ -1,16 +1,24 @@
 var expect = chai.expect;
 var assert = chai.assert;
 
-var Event = ACT.Event;
-var Lang = ACT.Lang;
-var Dom = ACT.Dom;
-var Class = ACT.Class;
-var Capability = ACT.Capability;
-
 describe("ACT_contentHtml5", function() {
+	var Event;
+	var Lang;
+	var Dom;
+	var Class;
+	var Capability;
+
+
 
     before(function() {
-        Event.removeListener('complete:action');
+		refreshModule('Event');
+		refreshModule('ContentHtml5');
+		Event = ACT.Event;
+		Lang = ACT.Lang;
+		Dom = ACT.Dom;
+		Class = ACT.Class;
+		Capability = ACT.Capability;
+
     });
 
     describe("initialization", function() {
@@ -529,7 +537,6 @@ describe("ACT_contentHtml5", function() {
         };
 
         it("Check resize", function(done) {
-
             var contentHtml5 = new ACT.ContentHtml5(config);
             var node = contentHtml5.getContent().node;
             var container = document.createElement('div');
@@ -546,8 +553,10 @@ describe("ACT_contentHtml5", function() {
             assert.strictEqual('1024px', node.style.width, 'wrong new width');
             assert.strictEqual('800px', node.style.height, 'wrong new height');
 
-            contentHtml5.destroy();
-            done();
+            setTimeout(function() {
+                contentHtml5.destroy();
+                done();
+            }, 1);
         });
 
     });
@@ -557,29 +566,29 @@ describe("ACT_contentHtml5", function() {
         describe("send message to child", function() {
 
             it('should send iframe child via post message', function(done) {
-
-                var contentHtml5 = new ACT.ContentHtml5({
+                var contentHtml5_1 = new ACT.ContentHtml5({
                     id: 'content-html5',
                     type: 'content-html5',
                     html5Config: {
                         iframe: true
                     }
                 });
-                var iframe = contentHtml5.getContent().node;
+
+                var iframe = contentHtml5_1.getContent().node;
                 document.body.appendChild(iframe);
 
                 sinon.stub(iframe.contentWindow, 'postMessage');
 
-                contentHtml5.broadcastToHtml5('messageContent');
+                contentHtml5_1.broadcastToHtml5('messageContent');
+
                 expect(iframe.contentWindow.postMessage.calledWith(sinon.match({
                     eventName: 'html5:message',
                     message: 'messageContent'
                 }))).to.be.true;
 
                 iframe.contentWindow.postMessage.restore();
-                contentHtml5.destroy();
-                done();
-
+				// contentHtml5_1.destroy();
+				done();
             });
 
             it('should send to div child via event', function(done) {
@@ -607,11 +616,8 @@ describe("ACT_contentHtml5", function() {
         });
 
         describe('receive message from child', function() {
-
             describe('via postMessage', function() {
-
                 it('should fire event if message data has type', function(done) {
-
                     var contentHtml5 = new ACT.ContentHtml5({
                         id: 'content-html5',
                         type: 'content-html5',
@@ -619,27 +625,26 @@ describe("ACT_contentHtml5", function() {
                             iframe: true
                         }
                     });
-                    document.body.appendChild(contentHtml5.getContent().node);
 
-                    var contentWindow = contentHtml5.get('node').contentWindow;
+                    var contentWindow = {
+                    	contentWindow : 1
+                    }
+
+                    contentHtml5.set('node', contentWindow);
 
                     var tmp = Event.on('doingSomething', function(e) {
                         tmp.remove();
-
                         assert.ok(true, 'event called so it is passed');
-
-                        contentHtml5.destroy();
-                        done();
+						contentHtml5.destroy();
+						done();
                     });
 
                     Event.fire("message", {
                         data: {
                             type: 'doingSomething'
                         },
-                        source: contentWindow
-
+                        source: contentWindow.contentWindow
                     }, window);
-
                 });
 
                 it('should fire action if mesage data has actions', function(done) {
@@ -651,21 +656,22 @@ describe("ACT_contentHtml5", function() {
                             iframe: true
                         }
                     });
-                    document.body.appendChild(contentHtml5.getContent().node);
 
-                    var contentWindow = contentHtml5.get('node').contentWindow;
+                    var contentWindow = {
+                    	contentWindow : 1
+                    }
+
+                    contentHtml5.set('node', contentWindow);
 
                     var tmp = Event.on('add:actions', function(e) {
                         tmp.remove();
-
                         assert.deepEqual(e, {
                             type: 'openURL',
                             URLpath: 'http://uk.yahoo.com',
                             URLname: 'yahoo'
                         });
-
-                        contentHtml5.destroy();
-                        done();
+						contentHtml5.destroy();
+						done();
                     });
 
                     Event.fire("message", {
@@ -676,7 +682,7 @@ describe("ACT_contentHtml5", function() {
                                 URLname: 'yahoo'
                             }
                         },
-                        source: contentWindow
+                        source: contentWindow.contentWindow
 
                     }, window);
                 });
@@ -690,9 +696,12 @@ describe("ACT_contentHtml5", function() {
                             iframe: true
                         }
                     });
-                    document.body.appendChild(contentHtml5.getContent().node);
 
-                    var contentWindow = contentHtml5.get('node').contentWindow;
+                    var contentWindow = {
+                    	contentWindow : 1
+                    }
+
+                    contentHtml5.set('node', contentWindow);
 
                     var tmp = Event.on('Enabler:actions', function(e) {
                         tmp.remove();
@@ -702,9 +711,8 @@ describe("ACT_contentHtml5", function() {
                             frameId: 'content-html5',
                             actionName: 'something'
                         });
-
-                        contentHtml5.destroy();
-                        done();
+						contentHtml5.destroy();
+						done();
                     });
 
                     Event.fire("message", {
@@ -715,7 +723,7 @@ describe("ACT_contentHtml5", function() {
                                 actionName: 'something'
                             }
                         },
-                        source: contentWindow
+                        source: contentWindow.contentWindow
 
                     }, window);
 
@@ -838,7 +846,9 @@ describe("ACT_contentHtml5", function() {
         });
 
         after(function() {
-            contentHtml5.destroy();
+            setTimeout(function() {
+                contentHtml5.destroy();
+            }, 1);
         });
 
         it('should register correct actions', function(done) {

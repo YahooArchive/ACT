@@ -1,6 +1,5 @@
+/* globals browser */
 exports.config = {
-
-
     //
     // If you are using Sauce Labs, WebdriverIO takes care to update the job information
     // once the test is done. This option is set to `true` by default.
@@ -17,7 +16,7 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './test/integration/**/*-backup-specs.js'
+		'./test/integration/**/*-backup-specs.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -57,18 +56,13 @@ exports.config = {
             name: 'ie8-WinXP'
 
         },
-
         {
-
             browserName: 'internet explorer',
             version: '8.0',
             platform: 'Windows 7',
             tags: ['html'],
             name: 'ie8-Win7'
-
-        },
-
-
+        }
     ],
     //
     // ===================
@@ -90,7 +84,7 @@ exports.config = {
     baseUrl: 'http://localhost',
     //
     // Default timeout for all waitForXXX commands.
-    // waitforTimeout: 40000,
+    waitforTimeout: 300000,
 
 
     //
@@ -137,7 +131,8 @@ exports.config = {
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
     mochaOpts: {
-        ui: 'bdd'
+        ui: 'bdd',
+		timeout: 60000
     },
 
     //
@@ -149,25 +144,26 @@ exports.config = {
     // see also: http://webdriver.io/guide/testrunner/hooks.html
     //
     // Gets executed before all workers get launched.
-    onPrepare: function() {
+    onPrepare: function () {
 
     },
     //
     // Gets executed before test execution begins. At this point you will have access to all global
     // variables like `browser`. It is the perfect place to define custom commands.
-    before: function() {
+    before: function () {
 
     },
     //
     // Gets executed after all tests are done. You still have access to all global variables from
     // the test.
-    after: function(failures, pid) {
+    after: function (/* failures, pid */) {
         // do something
+		return browser.close();
     },
     //
     // Gets executed after all workers got shut down and the process is about to exit. It is not
     // possible to defer the end of the process using a promise.
-    onComplete: function() {
+    onComplete: function () {
         // do something
     }
 };

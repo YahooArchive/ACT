@@ -322,7 +322,7 @@ ACT.define('ContentVideoHtml', [/*@<*/'Debug', /*>@*/ 'Dom', 'Lang', 'Event', 'C
          * @attribute version
          * @type String
          */
-        version: '1.0.22',
+        version: '1.0.41',
 
         /**
          * @attribute videoConfig

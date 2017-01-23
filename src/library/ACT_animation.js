@@ -59,7 +59,7 @@ ACT.define('Animation', [/*@<*/'Debug', /*>@*/ 'Dom', 'Lang'], function (ACT) {
          * @attribute version
          * @type String
          */
-        version: '1.0.22'
+        version: '1.0.41'
     };
 
     /**

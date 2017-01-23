@@ -71,14 +71,12 @@ describe("ACT.Screen", function() {
 			ACT.Screen.prototype.setStatus.restore();
 		});
 
-		it("should be able to instantiate Screen", function(done) {
+		it("should be able to instantiate Screen", function() {
 			expect(ACT.Screen).to.exist;
-			done();
 		});
 
-		it("should call setStatus function", function(done){
+		it("should call setStatus function", function(){
 			expect(Screen.setStatus.called, 'setStatus function is called').to.be.true;
-			done();
 		})
 	});
 
@@ -101,16 +99,14 @@ describe("ACT.Screen", function() {
 			ACT.Screen.prototype.startListenScreenSF.restore();
 		});
 
-		it("should fire and listen to sframe to get API", function(done){
+		it("should fire and listen to sframe to get API", function(){
 			Screen.setStatus();
 
 			expect(ACT.Event.fire.calledWith('sframe:darlaCheck'), 'fire darlaCheck to Darla').to.be.true;
 			expect(ACT.Event.on.calledWith('sframe:darlaCheck:complete', sinon.match.func), 'fire darlaCheck to Darla').to.be.true;
-			
-			done();
 		});
 
-		it("should use standard functions of Darla is not available", function(done){
+		it("should use standard functions of Darla is not available", function(){
 			// temporarily retrieve original fire event for testing
 			ACT.Event.on.restore();
 
@@ -128,11 +124,9 @@ describe("ACT.Screen", function() {
 			// stub Event function again to prevent side effect
 			sinon.stub(ACT.Event, 'fire');
 			sinon.stub(ACT.Event, 'on');
-
-			done();
 		});
 
-		it("should use darla functions of Darla is available", function(done){
+		it("should use darla functions of Darla is available", function(){
 			// temporarily retrieve original fire event for testing
 			ACT.Event.on.restore();
 
@@ -151,10 +145,7 @@ describe("ACT.Screen", function() {
 			// stub Event function again to prevent side effect
 			sinon.stub(ACT.Event, 'fire');
 			sinon.stub(ACT.Event, 'on');
-
-			done();
 		});
-
 	});
 
 	describe('standard window screen height & width', function(){
@@ -220,8 +211,7 @@ describe("ACT.Screen", function() {
 		after(function(){
 		});
 
-		it("should return landscape", function(done) {
-
+		it("should return landscape", function() {
 			this.config.sDarlaAPI.geom = function(){
 					return {
 						win:{
@@ -237,29 +227,21 @@ describe("ACT.Screen", function() {
 	    	
 	    	var status = Screen.getStatus();
 	    	expect(status.orientation, 'status orientation').to.equal('L');
-
-	    	done();
 		});	
 
-		it("should return portrait", function(done) {
-
+		it("should return portrait", function() {
 			this.config.sDarlaAPI.geom = function(){
 					return {
 						win:{
 							w: 1000,
 							h: 1800
-						}
-						
+						}	
 					};
-					 
 			};
 
 			Screen.setStatusSF();
 	    	var status = Screen.getStatus();
-
 	    	expect(status.orientation, 'status orientation').to.equal('P');
-
-	    	done();
 		});					
 	});
 
@@ -290,39 +272,12 @@ describe("ACT.Screen", function() {
 		});
 
 		it("should get the status done event", function(done){
-
 			ACT.Event.on('screen:getStatus:Done', function(e){
 				expect(e).is.a('Object');
 				done();
 			});
-
 			ACT.Event.fire('screen:getStatus');
 		});
-
-	});
-
-	describe('standard window events listener', function(){
-		var Screen;
-
-		before(function(){
-			Screen = new ACT.Screen();
-		});
-
-
-		it("should fire resize", function(done) {
-
-			//TEST CAN BE FIRED IN PHANTOMJS 2.0.0
-			// ACT.Event.on('screen:status', function(e){
-			// 	expect(e).is.a('Object');
-			// 	done();
-			// });
-
-			// var evt = document.createEvent('UIEvents');
-			// evt.initUIEvent('resize', true, false,window,0);
-			// window.dispatchEvent(evt);
-			done();
-		});	
-
 	});
 
 	describe('safeframe window events listener', function(){
@@ -349,7 +304,6 @@ describe("ACT.Screen", function() {
 		});
 
 		it("should fire resize", function(done) {
-
 			var listener = ACT.Event.on('screen:status', function(e){
 				listener.remove();
 				expect(e).is.a('Object');
@@ -366,25 +320,20 @@ describe("ACT.Screen", function() {
 			}
 
 			ACT.Event.fire('secureDarla:geom-update', {});
-
 		});	
 		
+		// This test should be sinon.calledWith Event.on
 		it("should not fire resize if the window sizes match", function(done) {
-
-
-			setTimeout(function(){
-				var listener = ACT.Event.on('screen:status', function(e){
-					listener.remove();
-					should.fail();
-				});
-
+			var temp = 0;
+			var listener = ACT.Event.on('screen:status', function(e){
+				temp = 1;
+				listener.remove();
+			});
+			var listener2 = ACT.Event.on('secureDarla:geom-update', function(e){
+				expect(temp).to.equal(0);
 				done();
-   			}, 1000);
-
+			});
 			ACT.Event.fire('secureDarla:geom-update', {});
-
 		});	
-
 	});
-
 });

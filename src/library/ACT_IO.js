@@ -61,7 +61,7 @@ ACT.define('IO', [/*@<*/'Debug', /*>@*/ 'Event', 'Lang', 'Class'], function (ACT
          * @attribute version
          * @type String
          */
-        version: '1.0.22'
+        version: '1.0.41'
     };
 
     /**

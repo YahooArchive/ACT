@@ -434,7 +434,7 @@ ACT.define('Json', [/*@<*/'Debug'/*>@*/], function (ACT) {
     */
     ACTjson.ATTRS = {
         NAME: 'JSON',
-        version: '1.0.22'
+        version: '1.0.41'
     };
 
     ACTjson.prototype = {

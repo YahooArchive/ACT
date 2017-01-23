@@ -10,9 +10,9 @@
  * The new ACT.js global namespace object. If the `ACT` object is already defined, the existing ACT object will only be overwritten
  * IF the new one being loaded has a greater version than the existing one. Usage example is as follows:
  *
- *	ACT.define('name_of_module', [ 'required', 'sub', 'modules'], function (ACT) {
- *		// ACT is the global reference to the ACT instance with all the required modules loaded.
- *	});
+ * 		ACT.define('name_of_module', [ 'required', 'sub', 'modules'], function (ACT) {
+ * 			// ACT is the global reference to the ACT instance with all the required modules loaded.
+ * 		});
  *
  * @module ACT
  * @main ACT
@@ -164,6 +164,7 @@
 		modules: modules,
 		configQueue: configQueue,
 		configs: configs,
+		store: [],
 		/*>@*/
 
 		adQueue: [],
@@ -174,7 +175,7 @@
 		 */
 		ATTRS: {
 			NAME: 'ACT',
-			version: '1.0.22'
+			version: '1.0.41'
 		},
 
 		/**
@@ -186,6 +187,9 @@
 		 * @param {Object} factory Factory method
 		 */
 		define: function (name, requires, factory) {
+			/*@<*/
+			this.store.push({ name: name, requires: requires, factory: factory });
+			/*>@*/
 			includeModules(name, requires, factory);
 		},
 
