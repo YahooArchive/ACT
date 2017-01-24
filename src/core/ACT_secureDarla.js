@@ -278,7 +278,7 @@ ACT.define('SecureDarla', [/*@<*/'Debug', /*>@*/ 'Lang', 'Event', 'Json'], funct
 	 */
 	secureDarla.ATTRS = {
 		NAME: 'SecureDarla',
-		version: '1.0.22'
+		version: '1.0.41'
 	};
 
 	secureDarla.prototype = {

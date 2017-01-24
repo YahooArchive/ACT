@@ -312,6 +312,7 @@ ACT.define('Enabler', [/*@<*/'Debug', /*>@*/ 'Event', 'Lang', 'VideoEvents', 'Js
     /**
      * ACT Enabler
      *
+     * ```
      *     var conf = {
      *         tracking: {
      *             r0: '${CLICKURL}',
@@ -331,9 +332,11 @@ ACT.define('Enabler', [/*@<*/'Debug', /*>@*/ 'Event', 'Lang', 'VideoEvents', 'Js
      *             video1:75 : 'billboard_view_video1_75percent'
      *         },
      *         enablerInteractionTracking : false,
+     *         enablerTarget: 'http://cdn.path.here.com/ACT_Enabler.js',
      *         htmlRoot : 'http://cdn.path.here.com/'
      *     };
      *     Enabler.setConfig( conf );
+     * ```
      *
      * @module Enabler
      * @main Enabler
@@ -351,23 +354,37 @@ ACT.define('Enabler', [/*@<*/'Debug', /*>@*/ 'Event', 'Lang', 'VideoEvents', 'Js
      */
 
     function Enabler(conf) {
-        var enablerConfigData = null;
-        var tempData;
+        var enablerConfigData = {};
+        var enablerTarget;
+        var eventQueue;
+        var script;
+        var head;
+        var item;
 
-        /* istanbul ignore if */
+        /* istanbul ignore else */
         if (window.Enabler) {
-            enablerConfigData = window.Enabler.getConfig();
+            enablerConfigData = window.Enabler.getConfigObject();
             /*@<*/
             Debug.log('[ ACT_Enabler.js ]: Found a version of Enabler on page. Data set is:', enablerConfigData);
             /*>@*/
             this.setConfig(enablerConfigData);
+            /* reassign all the event listeners */
+            eventQueue = enablerConfigData.eventQueue;
+            if (Lang.isObject(eventQueue)) {
+                for (item in eventQueue) {
+                   if (eventQueue.hasOwnProperty(item)) {
+                       item = eventQueue[item];
+                       window.Enabler.removeEventListener(item.type);
+                       this.addEventListener(item.type, item.callback, item.opt_capture, item.opt_handlerScope);
+                   }
+                }
+            }
         }
 
         /* istanbul ignore else */
-        if ('name' in window) {
+        if (window.name) {
             try {
-                tempData = decodeURI(window.name);
-                enablerConfigData = Json.parse(tempData) || {};
+                enablerConfigData = (Lang.isString(window.name) && Json.parse(decodeURI(window.name))) || enablerConfigData;
                 /*@<*/
                 Debug.log('[ ACT_Enabler.js ]: Found Enabler data in window.name. Data set is:', enablerConfigData);
                 /*>@*/
@@ -377,6 +394,23 @@ ACT.define('Enabler', [/*@<*/'Debug', /*>@*/ 'Event', 'Lang', 'VideoEvents', 'Js
                 Debug.log('[ ACT_Enabler.js ]: no data passed via window.name ' + err);
                 /*>@*/
             }
+        }
+
+        /* reload enabler if config specify a target */
+        enablerTarget = enablerConfigData.enablerTarget;
+        if (enablerTarget &&
+            Lang.isString(enablerTarget) &&
+            Lang.isSameOrigin(enablerTarget)) {
+            head = document.head || document.getElementsByTagName('head')[0];
+            script = document.createElement('script');
+            enablerConfigData.enablerTarget = '';
+            /*@<*/
+            Debug.log('[ ACT_Enabler.js ]: Load a targeted version of Enabler on page. Data set is:', enablerConfigData);
+            /*>@*/
+            window.name = window.name && this.setConfig(enablerConfigData);
+            script.setAttribute('src', Lang.urlSanitize(enablerTarget));
+            head.appendChild(script);
+            return this;
         }
 
         /* Grab extra definitions / make request for extra definitions from "main page/frame" */
@@ -404,7 +438,7 @@ ACT.define('Enabler', [/*@<*/'Debug', /*>@*/ 'Event', 'Lang', 'VideoEvents', 'Js
          * @attribute version
          * @type String
          */
-        version: '1.0.22'
+        version: '1.0.41'
     };
 
     Enabler.prototype = {

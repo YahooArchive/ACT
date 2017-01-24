@@ -29,7 +29,7 @@ ACT.define('Capability', [/*@<*/'Debug', /*>@*/ 'Dom', 'Lang'], function (ACT) {
      */
     Capability.ATTRS = {
         NAME: 'Capability',
-        version: '1.0.22'
+        version: '1.0.41'
     };
 
     Capability.prototype = {

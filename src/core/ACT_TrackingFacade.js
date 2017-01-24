@@ -110,27 +110,39 @@ ACT.define('Tracking', [/*@<*/'Debug', /*>@*/ 'Util', 'Lang', 'Event', 'Class'],
     }
 
     /**
-     * ACT Tracking functionality. Helps send tracking pixels.
+     * ACT Generic Tracking functionality. This tracking file is a facade for tracking. It can either be completely overwritten, given that the
+     * overwritten version supplies similar functionality, or used with a a configuration section that defines appropriate overwrites. By default,
+     * this file will attempt to fire the tracking overwrite functions if they exist or simply return the tracking parameter set via the tracking complete event.
+     * for interaction tracking. In which case you should listen for ```tracking:track:complete``` event, that will provide the outcome of the tracking event that was fired.
+     * The contents of the data payload will be:
+     * @example
+     *     // Interaction Track :
+     *     returns: {Object} {
+     *             overwriteFired: false, // Did overwrite function get fired true if yes, false otherwise
+     *             trackingString: trackingString, // Tracking String provided
+     *             trackingID: trackingID, // Tracking ID provided or generated
+     *          result: {Mixed} // Result of calling the provided interaction tracking function.
+     *     };
      *
+     *     // Redirect Track:
+     *     returns: {String} The generated redirect string for the provided URL.
+     *
+     * @example
+     *     // Example of the config that can be passed in
+     *     var config = {
+     *         adid: '',
+     *         unique: 'u_',
+     *         trackingFunctions: {
+     *             overwrite: true / false,
+     *             redirect: function(trackingString, trackingID, redirectURL) { .... }
+     *             interaction: function(trackingString) { ... }
+     *         }
+     *     };
      * @class Tracking
      * @module Tracking
      * @requires Util
      * @requires Lang
      * @requires Debug
-     * @example
-     *     // Example of the config that can be passed in
-     *     var config = {
-     *         z1: '',
-     *         rB: '',
-     *         beap: [],
-     *         adid: '',
-     *         unique: 'u_',
-     *         trackingFunctions: {
-     *             overwrite: true / false,
-     *             redirect: function() { .... }
-     *             interaction: function() { ... }
-     *         }
-     *     };
      */
     function Tracking(config, ref) {
         this.init(config, ref);
@@ -143,7 +155,7 @@ ACT.define('Tracking', [/*@<*/'Debug', /*>@*/ 'Util', 'Lang', 'Event', 'Class'],
      */
     Tracking.ATTRS = {
         NAME: 'Tracking',
-        version: '1.0.22'
+        version: '1.0.41'
     };
 
     Lang.extend(Tracking, Class, {
@@ -155,13 +167,7 @@ ACT.define('Tracking', [/*@<*/'Debug', /*>@*/ 'Util', 'Lang', 'Event', 'Class'],
              * @property config
              * @type Object
              */
-            this.config = {
-                z1: '',
-                rB: '',
-                beap: [],
-                adid: '',
-                unique: 'u_'
-            };
+            this.config = {};
 
             /*@<*/
             Debug.log('[ ACT_tracking.js ] initialized with', config);
@@ -169,7 +175,6 @@ ACT.define('Tracking', [/*@<*/'Debug', /*>@*/ 'Util', 'Lang', 'Event', 'Class'],
 
             if (conf !== null) {
                 Lang.merge(this.config, conf);
-                this.config.beap = this.config.z1.split('{beap_client_event}');
             } /*@<*/ else {
                 Debug.log('[ ACT_tracking.js ]: conf was null. Make sure you have all the tracking defined');
             }
@@ -207,11 +212,6 @@ ACT.define('Tracking', [/*@<*/'Debug', /*>@*/ 'Util', 'Lang', 'Event', 'Class'],
                     Debug.log('[ ACT_tracking.js ]: ', REGISTER_REDIRECT_EVENT, ' called with: ', data, 'will redirect to:', redirectLink);
                     /*>@*/
                     Event.fire(REGISTER_REDIRECT_EVENT_COMPLETE, {
-                        /*  there is a problem with marcos, so temporary put original click tag here just for testing */
-                        // redirect_track is:         redirect_track: function (str, num, url)
-                        // First parameter is a string name of the redirect - 'clickTagName'
-                        // Second parameter is the numeric ID ( so we have to hash it here )
-                        // Final param is the URL itself.
                         link: redirectLink
                     });
                 }),
@@ -261,92 +261,95 @@ ACT.define('Tracking', [/*@<*/'Debug', /*>@*/ 'Util', 'Lang', 'Event', 'Class'],
             var overwrite = overwriteSet.overwrite || false;
 
             if (Lang.isFunction(callback)) {
-                callback.apply(this, args);
+                overwrite = callback.apply(this, args);
             }
             return overwrite;
         },
 
         /**
          * Redirect Track String Generating function
-         * @param {String} str StringID of the redirect track  'backup_image_noflash'
-         * @param {Integer} num NumericID of the redirect track  '135'
-         * @param {String} url URLString to redirect to http://sports.yahoo.com
+         * @param {String} trackingString StringID of the redirect track  'backup_image_noflash'
+         * @param {Integer} trackingID Numeric id of the redirect track  '135'
+         * @param {String} redirectURL URLString to redirect to http://sports.yahoo.com
          * @return {String} Redirect String
          * @method redirect_track
          * @public
          * @static
+         * @example
+         *     // Simple Example, no over write function provided:
+         *     var tracking = new ACT.Tracking();
+         *     var redirect = tracking.redirect_track(null, null, 'http://www.yahoo.com');
+         *     ACT.Dom.byId('exampleATag').href = redirect;
+         *
+         *     // Complex example with over write function:
+         *     var config = {
+         *         trackingFunctions: {
+         *             overwrite: true,
+         *             redirect: function(trackingString, trackingID, redirectURL) {
+         *                      var final_url = 'http://example.tracking.service.com/?name='+trackingString+'&id='+trackingID+'&url='+encodeURIComponent(redirectURL);
+         *                     return final_url;
+         *              },
+         *             interaction: function(trackingString) { ... }
+         *         }
+         *     };
+         *     var tracking = new ACT.tracking(config);
+         *       var redirect = tracking.redirect_track("yahooCTR", 456, 'http://www.yahoo.com');
          */
-        redirect_track: function (str, num, url) {
-            var conf = this.config;
-            var extraFunctions = conf.trackingFunctions || false;
-            var redirect = '';
-            var redirectString;
+        redirect_track: function (trackingString, trackingID, redirectURL) {
+            var extraFunctions = this.config.trackingFunctions || false;
+            redirectURL = redirectURL || '';
 
-            if (extraFunctions && this.overwriteTracking(extraFunctions, 'redirect', arguments)) {
-                return redirect;
+            if (Lang.isObject(this.config.trackingFunctions) === true && this.config.trackingFunctions.overwrite === true) {
+                redirectURL = this.overwriteTracking(extraFunctions, 'redirect', arguments);
             }
 
-            redirectString = conf.rB.split('))/');
-
-            if (!url || url.length < 5) {
-                /*@<*/
-                Debug.log('[ ACT_tracking.js ]: the redirect URL passed in is too short.', url);
-                /*>@*/
-                return redirect;
-            }
-
-            if (redirectString[0] && redirectString[1]) {
-                redirect = redirectString[0] + '))&id=' + str + '&r=' + num + '/' + redirectString[1] + url;
-            } /*@<*/ else {
-                Debug.log('[ ACT_tracking.js ]: rB is not set correctly and redirectString does not contain the expected elements:', redirectString, conf.rB);
-            }
-            /*>@*/
-            return redirect;
+            return redirectURL;
         },
 
         /**
          * Interaction tracking function
-         * @param {String} str String ID
+         * @param {String} trackingString String ID of the interaction to be tracked
          * @method interaction_track
+         * @return {Object} an object containing the results of this function call. Specifically:
+         *     {
+         *          overwriteFired: {Boolean}, // Did the overwrite function get fired
+         *          trackingString: {String}, // The tracking string submitted to the function
+         *          trackingID: {Int}, // ACT.js generated unique ID ( generated from supplied tracking string )
+         *          result: {Mixed} // Result of calling the provided interaction tracking function.
+         *     }
          * @public
          * @static
          */
-        interaction_track: function (str) {
-            var conf = this.config;
-            var beap = conf.beap;
-            var rand = Math.random();
-            var trackString = (str || '');
-            var num = Util.hashString(trackString);
-            var src = '';
-            var extraFunctions = conf.trackingFunctions || false;
+        interaction_track: function (trackingString) {
+            var extraFunctions = this.config.trackingFunctions || false;
+            var trackString = trackingString || '';
+            var outcome = {
+                overwriteFired: false,
+                trackingString: trackString,
+                trackingID: Util.hashString(trackString),
+                result: null
+            };
 
-            if (extraFunctions && this.overwriteTracking(extraFunctions, 'interaction', arguments)) {
-                return true;
+            if (Lang.isObject(this.config.trackingFunctions) === true && this.config.trackingFunctions.overwrite === true) {
+                outcome.result = this.overwriteTracking(extraFunctions, 'interaction', arguments);
+                outcome.overwriteFired = true;
             }
 
-            if (beap[0] && beap[1] && trackString.length > 4) {
-                src = beap[0] + 'seq$' + num + ',label$' + trackString + ',type$click,time$' + rand + beap[1];
-                Util.pixelTrack(src);
-                return true;
-            }
-            /*@<*/
-            Debug.log('[ ACT_tracking.js ]: beap[0] and beap[1] appear to be incorrectly set: ', beap);
-            /*>@*/
-            return false;
+            return outcome;
         },
 
         /**
          * @method track
-         * @param str
-         * @param num
-         * @param url
+         * @param trackingString
+         * @param trackingID
+         * @param redirectURL
          * @param callback
          * @public
          * @static
          */
-        track: function (str, num, url, callback) {
+        track: function (trackingString, trackingID, redirectURL, callback) {
             var root = this;
-            replaceMacros(str, function (label) {
+            replaceMacros(trackingString, function (label) {
                 root.saveEventLabel(root.config.trackUnique, label, function (unique, labelWithMacro) {
                     var result;
                     var trackingLabel;
@@ -357,13 +360,13 @@ ACT.define('Tracking', [/*@<*/'Debug', /*>@*/ 'Util', 'Lang', 'Event', 'Class'],
                         trackingLabel = labelWithMacro;
                     }
 
-                    if (url) {
-                        result = root.redirect_track(trackingLabel, num, url);
+                    if (redirectURL) {
+                        result = root.redirect_track(trackingLabel, trackingID, redirectURL);
                     } else {
                         result = root.interaction_track(trackingLabel);
                     }
 
-                    callback(result);
+                    return callback(result);
                 });
             });
         }

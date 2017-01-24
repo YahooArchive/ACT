@@ -1,10 +1,20 @@
 var expect = chai.expect;
 var assert = chai.assert;
 
-var Event = ACT.Event;
-var Lang = ACT.Lang;
-var Dom = ACT.Dom;
-var Animation = ACT.Animation;
+describe("Start test for ad feedback", function(){
+	var Event;
+	var Lang;
+	var Dom;
+	var Animation;
+
+	before(function(){
+		refreshModule('Event');
+		refreshModule('ContentAdfeedback');
+		Event = ACT.Event;
+		Lang = ACT.Lang;
+		Dom = ACT.Dom;
+		Animation = ACT.Animation;
+	});
 
 var wrapper = document.createElement('div');
 wrapper.setAttribute('id', 'adfeedback-act-ad');
@@ -61,17 +71,17 @@ describe("ContentAdfeedback actions", function(){
         triggerNode: 'adfeedback-act-ad',
         placement_config: fpad_fdb,
         translation_config: {
-          act_fdb_balloon_text: "I don't like this ad", 
-          fdb_srvy_title: "What don't you like about this ad?",   
-          fdb_srvy_thankyou_text: "Thank you for helping us improve your Yahoo experience",   
-          fdb_srvy_answers_one: "It's distracting", 
-          fdb_srvy_answers_two: "It's not relevant",   
-          fdb_srvy_answers_three: "It's offensive",   
-          fdb_srvy_answers_four: "Something else", 
-          fdb_srvy_details_submit: "Send",   
+          act_fdb_balloon_text: "I don't like this ad",
+          fdb_srvy_title: "What don't you like about this ad?",
+          fdb_srvy_thankyou_text: "Thank you for helping us improve your Yahoo experience",
+          fdb_srvy_answers_one: "It's distracting",
+          fdb_srvy_answers_two: "It's not relevant",
+          fdb_srvy_answers_three: "It's offensive",
+          fdb_srvy_answers_four: "Something else",
+          fdb_srvy_details_submit: "Send",
           fdb_srvy_why_text: "Why do I see ads?",
-          fdb_srvy_learn_text: "Learn more about your feedback.",   
-          fdb_srvy_done: "Done"   
+          fdb_srvy_learn_text: "Learn more about your feedback.",
+          fdb_srvy_done: "Done"
          },
         url_config: {
           adfeedback_open_why_url: 'https://uk.yahoo.com',
@@ -115,24 +125,24 @@ console.log(data);
           expect(enableAdFeedback.timeout.test(undefined)).to.be.true;
           expect(enableAdFeedback.timeout.test(null)).to.be.true;
 
-          expect(trackAdfeedback.interactionType.test("test")).to.be.true;   
-          expect(trackAdfeedback.suboption.test(1)).to.be.true; 
-          expect(trackAdfeedback.commentNodeId.test(1)).to.be.true; 
-          expect(trackAdfeedback.suboption.test("1")).to.be.true; 
-          expect(trackAdfeedback.commentNodeId.test("1")).to.be.true; 
+          expect(trackAdfeedback.interactionType.test("test")).to.be.true;
+          expect(trackAdfeedback.suboption.test(1)).to.be.true;
+          expect(trackAdfeedback.commentNodeId.test(1)).to.be.true;
+          expect(trackAdfeedback.suboption.test("1")).to.be.true;
+          expect(trackAdfeedback.commentNodeId.test("1")).to.be.true;
 
           expect(trackAdfeedback.timeout.test(10)).to.be.true;
           expect(trackAdfeedback.timeout.test("10")).to.be.true;
           expect(trackAdfeedback.timeout.test(undefined)).to.be.true;
           expect(trackAdfeedback.timeout.test(null)).to.be.true;
 
-          ACT.Event.fire.restore(); 
+          ACT.Event.fire.restore();
           done();
         } else {
             ACT.Event.originalEventFire(event, data);
         }
-        
-          
+
+
       });
 
     var adfeedback = new ACT.ContentAdfeedback(this.adfeedbackObject);
@@ -156,13 +166,13 @@ console.log(data);
           expect(enableAdFeedback.timeout.test("test")).to.be.false;
           expect(trackAdfeedback.timeout.test("test")).to.be.false;
 
-          ACT.Event.fire.restore(); 
+          ACT.Event.fire.restore();
           done();
         } else {
             ACT.Event.originalEventFire(event, data);
         }
-        
-          
+
+
       });
 
     var adfeedback = new ACT.ContentAdfeedback(this.adfeedbackObject);
@@ -198,17 +208,17 @@ describe("ContentAdfeedback getContent", function(){
         triggerNode: 'adfeedback-act-ad',
         placement_config: fpad_fdb,
         translation_config: {
-          act_fdb_balloon_text: "I don't like this ad", 
-          fdb_srvy_title: "What don't you like about this ad?",   
-          fdb_srvy_thankyou_text: "Thank you for helping us improve your Yahoo experience",   
-          fdb_srvy_answers_one: "It's distracting", 
-          fdb_srvy_answers_two: "It's not relevant",   
-          fdb_srvy_answers_three: "It's offensive",   
-          fdb_srvy_answers_four: "Something else", 
-          fdb_srvy_details_submit: "Send",   
+          act_fdb_balloon_text: "I don't like this ad",
+          fdb_srvy_title: "What don't you like about this ad?",
+          fdb_srvy_thankyou_text: "Thank you for helping us improve your Yahoo experience",
+          fdb_srvy_answers_one: "It's distracting",
+          fdb_srvy_answers_two: "It's not relevant",
+          fdb_srvy_answers_three: "It's offensive",
+          fdb_srvy_answers_four: "Something else",
+          fdb_srvy_details_submit: "Send",
           fdb_srvy_why_text: "Why do I see ads?",
-          fdb_srvy_learn_text: "Learn more about your feedback.",   
-          fdb_srvy_done: "Done"   
+          fdb_srvy_learn_text: "Learn more about your feedback.",
+          fdb_srvy_done: "Done"
          },
         url_config: {
           adfeedback_open_why_url: 'https://uk.yahoo.com',
@@ -361,17 +371,17 @@ describe("ContentAdfeedback interaction tracking", function(){
         triggerNode: 'adfeedback-act-ad',
         placement_config: fpad_fdb,
         translation_config: {
-          act_fdb_balloon_text: "I don't like this ad", 
-          fdb_srvy_title: "What don't you like about this ad?",   
-          fdb_srvy_thankyou_text: "Thank you for helping us improve your Yahoo experience",   
-          fdb_srvy_answers_one: "It's distracting", 
-          fdb_srvy_answers_two: "It's not relevant",   
-          fdb_srvy_answers_three: "It's offensive",   
-          fdb_srvy_answers_four: "Something else", 
-          fdb_srvy_details_submit: "Send",   
+          act_fdb_balloon_text: "I don't like this ad",
+          fdb_srvy_title: "What don't you like about this ad?",
+          fdb_srvy_thankyou_text: "Thank you for helping us improve your Yahoo experience",
+          fdb_srvy_answers_one: "It's distracting",
+          fdb_srvy_answers_two: "It's not relevant",
+          fdb_srvy_answers_three: "It's offensive",
+          fdb_srvy_answers_four: "Something else",
+          fdb_srvy_details_submit: "Send",
           fdb_srvy_why_text: "Why do I see ads?",
-          fdb_srvy_learn_text: "Learn more about your feedback.",   
-          fdb_srvy_done: "Done"   
+          fdb_srvy_learn_text: "Learn more about your feedback.",
+          fdb_srvy_done: "Done"
          },
         url_config: {
           adfeedback_open_why_url: 'https://uk.yahoo.com',
@@ -501,17 +511,17 @@ describe("ContentAdfeedback enable function", function(){
         triggerNode: 'adfeedback-act-ad',
         placement_config: fpad_fdb,
         translation_config: {
-          act_fdb_balloon_text: "I don't like this ad", 
-          fdb_srvy_title: "What don't you like about this ad?",   
-          fdb_srvy_thankyou_text: "Thank you for helping us improve your Yahoo experience",   
-          fdb_srvy_answers_one: "It's distracting", 
-          fdb_srvy_answers_two: "It's not relevant",   
-          fdb_srvy_answers_three: "It's offensive",   
-          fdb_srvy_answers_four: "Something else", 
-          fdb_srvy_details_submit: "Send",   
+          act_fdb_balloon_text: "I don't like this ad",
+          fdb_srvy_title: "What don't you like about this ad?",
+          fdb_srvy_thankyou_text: "Thank you for helping us improve your Yahoo experience",
+          fdb_srvy_answers_one: "It's distracting",
+          fdb_srvy_answers_two: "It's not relevant",
+          fdb_srvy_answers_three: "It's offensive",
+          fdb_srvy_answers_four: "Something else",
+          fdb_srvy_details_submit: "Send",
           fdb_srvy_why_text: "Why do I see ads?",
-          fdb_srvy_learn_text: "Learn more about your feedback.",   
-          fdb_srvy_done: "Done"   
+          fdb_srvy_learn_text: "Learn more about your feedback.",
+          fdb_srvy_done: "Done"
          },
         url_config: {
           adfeedback_open_why_url: 'https://uk.yahoo.com',
@@ -530,12 +540,12 @@ describe("ContentAdfeedback enable function", function(){
   it("should fire add:actions", function(){
     var fdbObject = this.adfeedbackObject;
 
-   
+
 
     var adfeedback = new ACT.ContentAdfeedback(fdbObject);
     var fdb = adfeedback.enableAdfeedback();
 
-    
+
     expect(Event.fire.calledWith('add:actions'), 'must fire event add:actions').to.be.true;
 
 
@@ -546,4 +556,4 @@ describe("ContentAdfeedback enable function", function(){
 });
 
 });
-
+});

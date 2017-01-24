@@ -1,36 +1,7 @@
 describe("ACT_LayerStandard", function() {
-
     var expect = chai.expect;
     var assert = chai.assert;
     var event = ACT.event;
-
-    // fake Scaffolding module
-    ACT.define('Scaffolding', [], function(ACT) {
-        console.log('Scaffolding loaded');
-
-        var Scaffolding = function(config) {
-            for (var i in config) {
-                this[i] = config[i];
-            }
-
-            this.node = document.createElement('div');
-            this.node.id = config.refObj.id;
-        };
-
-        Scaffolding.ATTRS = {
-            "NAME": "Scaffolding",
-            "version": "0.0.0"
-        }
-
-        Scaffolding.prototype.getHtmlParsered = function() {
-            return {
-                rawHtml: this.node,
-                capabilityInstances: []
-            };
-        }
-
-        return Scaffolding;
-    });
 
     var body = document.getElementsByTagName('body')[0];
 
@@ -42,11 +13,8 @@ describe("ACT_LayerStandard", function() {
         body.appendChild.restore();
     });
 
-    it("LayerStandard available", function(done) {
-
+    it("LayerStandard available", function() {
         expect(ACT.LayerStandard).is.exist;
-
-        done();
     });
 
     describe("Test constructor", function() {
@@ -61,8 +29,7 @@ describe("ACT_LayerStandard", function() {
             ACT.LayerStandard.prototype.addContent.restore();
         });
 
-        it("should be initialized", function(done) {
-
+        it("should be initialized", function() {
             var LayerStandard = new ACT.LayerStandard({
                 base: '#frescoAd',
                 layerName: 'mpu'
@@ -79,11 +46,9 @@ describe("ACT_LayerStandard", function() {
             expect(LayerStandard.createContainer.called, 'called createContainer function').to.be.true;
 
             expect(LayerStandard.getType(), 'layer type').to.be.equal('standard');
-
-            done();
         });
 
-        it("should be initialized with different instances", function(done) {
+        it("should be initialized with different instances", function() {
 
             var mpu = new ACT.LayerStandard({
                 base: '#frescoAd',
@@ -108,16 +73,11 @@ describe("ACT_LayerStandard", function() {
             // check these infor later to make sure new instance doesnt override old instance
             expect(mpu.get('layerName'), 'mpu layerName').to.be.equal('mpu');
             expect(mpu.get('base'), 'mpu base').to.be.equal('#frescoAd');
-
-            done();
         });
-
     });
 
     describe("Test render content", function() {
-
-        it("render container should create DOM node ", function(done) {
-
+        it("render container should create DOM node ", function() {
             var mpu = new ACT.LayerStandard({
                 base: 'body',
                 layerName: 'mpu',
@@ -130,15 +90,10 @@ describe("ACT_LayerStandard", function() {
             expect(container).to.be.exist;
             expect(container).to.have.property('id').to.be.equal('ACT_mpu');
             expect(container).to.have.property('tagName').to.be.equal('DIV');
-
             expect(body.appendChild.calledWith(container), 'body.appendChild called').to.be.true;
-
-            done();
         });
 
-        it("add content shoud passing contentConfig to Scaffolding and get rendered content back", function(done) {
-            // var spy = sinon.spy(ACT, 'Scaffolding');
-
+        it("add content shoud passing contentConfig to Scaffolding and get rendered content back", function() {
             sinon.stub(ACT.Scaffolding.prototype, "getHtmlParsered", function(config) {
                 // return document.createTextNode('content');
                 return {
@@ -167,8 +122,6 @@ describe("ACT_LayerStandard", function() {
             expect(mpu.get('capabilityInstances')).to.be.instanceof(Array);
 
             ACT.Scaffolding.prototype.getHtmlParsered.restore();
-
-            done();
         });
     });
 
@@ -190,8 +143,7 @@ describe("ACT_LayerStandard", function() {
             ACT.Event.fire.restore();
         });
 
-        it("shoud play layer", function(done) {
-
+        it("shoud play layer", function() {
             var mpu = new ACT.LayerStandard({
                 base: 'body',
                 layerName: 'mpu',
@@ -210,11 +162,9 @@ describe("ACT_LayerStandard", function() {
             expect(mpu.get('playing'), 'playing attr').to.be.true;
             // check event fired as well
             expect(ACT.Event.fire.calledWith('layer:played', { 'layerName': 'mpu' }), 'event fire').to.be.true;
-
-            done();
         });
 
-        it("should stop layer without destroy content", function(done) {
+        it("should stop layer without destroy content", function() {
             var mpu = new ACT.LayerStandard({
                 base: 'body',
                 layerName: 'mpu',
@@ -227,25 +177,16 @@ describe("ACT_LayerStandard", function() {
             });
 
             mpu.play();
-
-            // wait few secs
-            setTimeout(function() {
-
-                mpu.stop();
-
-                // now testing
-                expect(mpu.get('container').style.display, 'container display').to.be.equal('none');
-                expect(mpu.get('playing'), 'playing attr').to.be.false;
-                // check event fired as well
-                expect(ACT.Event.fire.calledWith('layer:stopped', { 'layerName': 'mpu' }), 'event fire').to.be.true;
-
-                done();
-
-            }, 50);
-
+			expect(mpu.get('container').style.display, 'container display').to.be.equal('block');
+			expect(mpu.get('playing'), 'playing attr').to.be.true;
+			
+			mpu.stop();
+			expect(mpu.get('container').style.display, 'container display').to.be.equal('none');
+			expect(mpu.get('playing'), 'playing attr').to.be.false;
+			expect(ACT.Event.fire.calledWith('layer:stopped', { 'layerName': 'mpu' }), 'event fire').to.be.true;
         });
 
-        it("should stop layer with destroy content", function(done) {
+        it("should stop layer with destroy content", function() {
             var mpu = new ACT.LayerStandard({
                 base: 'body',
                 layerName: 'mpu',
@@ -257,24 +198,16 @@ describe("ACT_LayerStandard", function() {
                 }
             });
             mpu.play();
+			expect(mpu.get('container').style.display, 'container display').to.be.equal('block');
+			expect(mpu.get('container').innerHTML, 'content in container').to.be.equal('false');
+			expect(mpu.get('playing'), 'playing attr').to.be.true;
 
-            // wait few secs
-            setTimeout(function() {
-
-                mpu.stop(true);
-
-                // now testing
-                expect(mpu.get('container').style.display, 'container display').to.be.equal('none');
-                expect(mpu.get('container').innerHTML, 'content in container').to.be.equal('');
-                expect(mpu.get('playing'), 'playing attr').to.be.false;
-                // check event fired as well
-                expect(ACT.Event.fire.calledWith('layer:stopped', { 'layerName': 'mpu' }), 'event fire').to.be.true;
-
-                done();
-
-            }, 50);
+			mpu.stop(true);
+			expect(mpu.get('container').style.display, 'container display').to.be.equal('none');
+			expect(mpu.get('container').innerHTML, 'content in container').to.be.equal('');
+			expect(mpu.get('playing'), 'playing attr').to.be.false;
+			expect(ACT.Event.fire.calledWith('layer:stopped', { 'layerName': 'mpu' }), 'event fire').to.be.true;
         });
-
     });
 
     describe("Test applying layer style", function() {
@@ -295,7 +228,7 @@ describe("ACT_LayerStandard", function() {
             Event.fire.restore();
         });
 
-        it("should have relative position for inline layer", function(done) {
+        it("should have relative position for inline layer", function() {
             var mpu = new ACT.LayerStandard({
                 type: 'inline',
                 base: 'body',
@@ -307,16 +240,12 @@ describe("ACT_LayerStandard", function() {
 
             mpu.play();
 
-
             expect(mpu.get('container').style.position, 'container position').to.be.equal('relative');
             expect(mpu.get('container').style.width, 'container width').to.be.equal('300px');
             expect(mpu.get('container').style.height, 'container height').to.be.equal('250px');
-
-            done();
-
         });
 
-        it("should have absoulte position for overlay layer", function(done) {
+        it("should have absoulte position for overlay layer", function() {
             var mpu = new ACT.LayerStandard({
                 type: 'overlay',
                 base: 'body',
@@ -330,11 +259,9 @@ describe("ACT_LayerStandard", function() {
 
             expect(mpu.get('container').style.position, 'container position').to.be.equal('absolute');
             expect(mpu.get('container').style['z-index'], 'container z-index').to.be.equal('1000000');
-
-            done();
         });
 
-        it("should have fixed position for anchor layer", function(done) {
+        it("should have fixed position for anchor layer", function() {
             var mpu = new ACT.LayerStandard({
                 type: 'anchor',
                 base: 'body',
@@ -348,10 +275,7 @@ describe("ACT_LayerStandard", function() {
 
             expect(mpu.get('container').style.position, 'container position').to.be.equal('fixed');
             expect(mpu.get('container').style['z-index'], 'container z-index').to.be.equal('1000000');
-
-            done();
         });
-
     });
 
     describe("Test layer alignment ", function() {
@@ -371,7 +295,7 @@ describe("ACT_LayerStandard", function() {
             ACT.Event.fire.restore();
         });
 
-        it('layer shoud have set to right if alignH is right', function(done) {
+        it('layer shoud have set to right if alignH is right', function() {
             var mpu = new ACT.LayerStandard({
                 type: 'overlay',
                 base: 'body',
@@ -385,14 +309,10 @@ describe("ACT_LayerStandard", function() {
             });
 
             mpu.play();
-
             expect(mpu.get('container').style['right'], 'container right').to.be.equal(mpu.get('x'));
-
-            done();
-
         });
 
-        it('layer should have set to left if alignH is left', function(done) {
+        it('layer should have set to left if alignH is left', function() {
             var mpu = new ACT.LayerStandard({
                 type: 'overlay',
                 base: 'body',
@@ -406,12 +326,9 @@ describe("ACT_LayerStandard", function() {
             mpu.play();
 
             expect(mpu.get('container').style['left'], 'container left').to.be.equal(mpu.get('x'));
-
-            done();
-
         });
 
-        it('layer should stick to top if alignV is Top', function(done) {
+        it('layer should stick to top if alignV is Top', function() {
 
             var mpu = new ACT.LayerStandard({
                 type: 'overlay',
@@ -427,11 +344,9 @@ describe("ACT_LayerStandard", function() {
             mpu.play();
 
             expect(mpu.get('container').style['top'], 'container top').to.be.equal(mpu.get('y'));
-
-            done();
         });
 
-        it('layer should stick to bottom if alignV is bottom', function(done) {
+        it('layer should stick to bottom if alignV is bottom', function() {
 
             var mpu = new ACT.LayerStandard({
                 type: 'overlay',
@@ -447,11 +362,9 @@ describe("ACT_LayerStandard", function() {
             mpu.play();
 
             expect(mpu.get('container').style['bottom'], 'container bottom').to.be.equal(mpu.get('y'));
-
-            done();
         });
 
-        it('layer css should match with center in horizontal', function(done) {
+        it('layer css should match with center in horizontal', function() {
             var mpu = new ACT.LayerStandard({
                 type: 'overlay',
                 base: 'body',
@@ -468,11 +381,9 @@ describe("ACT_LayerStandard", function() {
 
             expect(mpu.get('container').style['left'], 'container left').to.be.equal('50%');
             expect(mpu.get('container').style['margin-left'], 'container margin-left').to.be.equal('-150px');
-
-            done();
         });
 
-        it('layer css should match with center is vertical', function(done) {
+        it('layer css should match with center is vertical', function() {
             var mpu = new ACT.LayerStandard({
                 type: 'overlay',
                 base: 'body',
@@ -489,11 +400,9 @@ describe("ACT_LayerStandard", function() {
 
             expect(mpu.get('container').style['top'], 'container top').to.be.equal('50%');
             expect(mpu.get('container').style['margin-top'], 'container margin-top').to.be.equal('-125px');
-
-            done();
         });
 
-        it('layer css should match with center is both', function(done) {
+        it('layer css should match with center is both', function() {
             var mpu = new ACT.LayerStandard({
                 type: 'overlay',
                 base: 'body',
@@ -512,13 +421,11 @@ describe("ACT_LayerStandard", function() {
             expect(mpu.get('container').style['margin-left'], 'container margin-left').to.be.equal('-150px');
             expect(mpu.get('container').style['top'], 'container top').to.be.equal('50%');
             expect(mpu.get('container').style['margin-top'], 'container margin-top').to.be.equal('-125px');
-
-            done();
         });
     });
 
     describe("updateLayerPosition", function() {
-        it("should fire layersList:getLayerPosition event", function(done) {
+        it("should fire layersList:getLayerPosition event", function() {
             var Event = ACT.Event;
             sinon.stub(ACT.Event, 'fire');
 
@@ -544,10 +451,7 @@ describe("ACT_LayerStandard", function() {
             }
 
             expect(ACT.Event.fire.calledWith('layersList:getLayerPosition', passingParams), 'event called with right attribute').to.be.true;
-
             ACT.Event.fire.restore();
-
-            done();
         });
 
         it('should update layer X and Y when receive layersList:getLayerPosition:complete', function(done) {
@@ -577,22 +481,16 @@ describe("ACT_LayerStandard", function() {
             });
 
             mpu.updateLayerPosition(function() {
-
                 expect(mpu.get('x'), 'mpu.x').to.be.equal('100px');
                 expect(mpu.get('y'), 'mpu.y').to.be.equal('50px');
-
                 fakeEvent.remove();
-
                 done();
-
             });
-
         });
-
     });
 
     describe("test layer stick to other layer position", function() {
-        it('should return x and y for current position in page coordinate', function(done) {
+        it('should return x and y for current position in page coordinate', function() {
 
             var mpu = new ACT.LayerStandard({
                 layerName: 'mpu',
@@ -609,10 +507,7 @@ describe("ACT_LayerStandard", function() {
             expect(result, 'result').to.be.a('Array');
             expect(result[0], 'result[0]').to.be.a('number');
             expect(result[1], 'result[1]').to.be.a('number');
-
-            done();
         });
-
     });
 
     describe("dwelltime tracking", function(){
@@ -630,7 +525,7 @@ describe("ACT_LayerStandard", function() {
 
     	});
 
-    	it("shoud initlize dwelltime tracking if flag is on", function(done){
+    	it("shoud initlize dwelltime tracking if flag is on", function(){
             var mpu = new ACT.LayerStandard({
                 layerName: 'expandable',
                 type: 'inline',
@@ -640,14 +535,11 @@ describe("ACT_LayerStandard", function() {
                 contentLayer: {}
             });
 
-
             assert.isTrue(mpu.get("dwelltime"), "dwelltime flag must be on");
             assert.instanceOf(mpu.get("dwelltimeInstance"), ACT.DwellTime, "DwellTime Instance must be initialized");
-
-            done();
     	});
 
-    	it("should track dwelltime with correct label", function(done){
+    	it("should track dwelltime with correct label", function(){
             var mpu = new ACT.LayerStandard({
                 layerName: 'expandable',
                 type: 'inline',
@@ -660,10 +552,6 @@ describe("ACT_LayerStandard", function() {
 
             assert.isFalse(mpu.get("dwelltime"), "dwelltime flag must be off");
             assert.isNull(mpu.get("dwelltimeInstance"), "No DwellTime Instance must be initialized");
-
-    		done();
     	});
-
     });
-
-})
+});

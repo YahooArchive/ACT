@@ -1,13 +1,19 @@
+
 var expect = chai.expect;
 var assert = chai.assert;
 
-var Event = ACT.Event;
-var Lang = ACT.Lang;
-
 describe("ContentContainer", function() {
+	var Event;
+	var Lang;
+
+	before(function(){
+		refreshModule('Event');
+		refreshModule('ContentContainer');
+		Event = ACT.Event;
+		Lang = ACT.Lang;
+	});
 
     describe("ContentContainer: Check the init state", function() {
-
         it("should have ACT.ContentContainer instance", function() {
             expect(ACT.ContentContainer).to.exist;
         });
@@ -21,53 +27,52 @@ describe("ContentContainer", function() {
         });
 
         it("Actions registered", function(done) {
-
             var actions = null;
+			var contentContainer;
 
-            var listener = Event.on('register:Actions', function(e) {
-                actions = e;
+			sinon.stub(ACT.Event, 'fire', function(name, actions){
+				ACT.Event.fire.restore();
 
-                listener.remove();
-            });
+				assert.isArray(actions, 'reigstered action must be array');
+				assert.isObject(actions[0], 'first actions must be an Object');
+				assert.strictEqual('openURL', actions[0].type, 'first action is wrong');
+				assert.strictEqual('containerShow', actions[1].type, 'second action is wrong');
+				assert.strictEqual('containerHide', actions[2].type, 'third action is wrong');
+				assert.strictEqual('containerChangeStyles', actions[3].type, 'fourth action is wrong');
+				assert.strictEqual('containerStartFadeTo', actions[4].type, 'fifth action is wrong');
+				assert.strictEqual('containerStopFadeTo', actions[5].type, 'sixth action is wrong');
+				assert.strictEqual('containerAnimate', actions[6].type, 'seventh action is wrong');
+				assert.strictEqual('containerStopProcesses', actions[7].type, 'seventh action is wrong');
 
-            var contentContainer = new ACT.ContentContainer({
+				// Test value for the action definition
+				var i = e = 0,
+					actionParamType = [
+						['', ''],
+						[''],
+						[''],
+						['', {}],
+						['', '', 0],
+						[''],
+						['', {}, {}, 0, 0]
+					];
+
+
+				for (var action in actions) {
+					var argDefinition = actions[action].argument;
+					assert.isFunction(actions[action].process);
+					i++;
+				}
+
+				done();
+			});
+
+
+            contentContainer = new ACT.ContentContainer({
                 type: 'ContentContainer',
                 id: 'container4'
             });
 
-            assert.isArray(actions, 'reigstered action must be array');
-            assert.isObject(actions[0], 'first actions must be an Object');
-            assert.strictEqual('openURL', actions[0].type, 'first action is wrong');
-            assert.strictEqual('containerShow', actions[1].type, 'second action is wrong');
-            assert.strictEqual('containerHide', actions[2].type, 'third action is wrong');
-            assert.strictEqual('containerChangeStyles', actions[3].type, 'fourth action is wrong');
-            assert.strictEqual('containerStartFadeTo', actions[4].type, 'fifth action is wrong');
-            assert.strictEqual('containerStopFadeTo', actions[5].type, 'sixth action is wrong');
-            assert.strictEqual('containerAnimate', actions[6].type, 'seventh action is wrong');
-            assert.strictEqual('containerStopProcesses', actions[7].type, 'seventh action is wrong');
-
-            // Test value for the action definition
-            var i = e = 0,
-                actionParamType = [
-                    ['', ''],
-                    [''],
-                    [''],
-                    ['', {}],
-                    ['', '', 0],
-                    [''],
-                    ['', {}, {}, 0, 0]
-                ];
-
-
-            for (var action in actions) {
-                var argDefinition = actions[action].argument;
-                assert.isFunction(actions[action].process);
-                i++;
-            }
-
-            contentContainer.destroy();
-            done();
-
+			contentContainer.destroy();
         });
 
         it('should return true against valid action arguments', function(done){
@@ -142,7 +147,7 @@ describe("ContentContainer", function() {
 
                   expect(containerStopProcesses.timeout.test(10)).to.be.true;
 
-                  ACT.Event.fire.restore(); 
+                  ACT.Event.fire.restore();
                   done();
 
                 } else {
@@ -150,7 +155,7 @@ describe("ContentContainer", function() {
                 }
 
             });
-    
+
             var contentContainer = new ACT.ContentContainer({
                 type: 'ContentContainer',
                 id: 'container4'
@@ -251,7 +256,7 @@ describe("ContentContainer", function() {
 
                   expect(containerStopProcesses.timeout.test("test")).to.be.false;
 
-                  ACT.Event.fire.restore(); 
+                  ACT.Event.fire.restore();
                   done();
 
                 } else {
@@ -259,7 +264,7 @@ describe("ContentContainer", function() {
                 }
 
             });
-    
+
             var contentContainer = new ACT.ContentContainer({
                 type: 'ContentContainer',
                 id: 'container4'
@@ -278,7 +283,6 @@ describe("ContentContainer", function() {
                 id: 'container1',
                 classNode: 'funny-class'
             });
-
             var node = contentContainer.getContent().node;
 
             assert.strictEqual(node.nodeName, 'DIV', 'Wrong tag node');
@@ -543,7 +547,7 @@ describe("ContentContainer", function() {
                 assert.strictEqual(1, actions.length, 'number of click actions must be 1');
                 assert.strictEqual('containerHide', actions[0].type, 'type of first actions must be containerHide');
                 assert.strictEqual('container_click', actions[0].id, 'id of action must be container_click');
-                
+
                 contentContainer.destroy();
                 done();
             });
@@ -595,7 +599,7 @@ describe("ContentContainer", function() {
                 assert.strictEqual(1, actions.length, 'number of mouseleave actions must be 1');
                 assert.strictEqual('containerHide', actions[0].type, 'type of first actions must be containerHide');
                 assert.strictEqual('container_leave', actions[0].id, 'id of action must be container_leave');
-                
+
                 contentContainer.destroy();
                 done();
             });

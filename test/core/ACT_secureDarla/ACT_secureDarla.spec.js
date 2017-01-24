@@ -1,15 +1,22 @@
 var expect = chai.expect;
 
 describe("ACT.secureDarla", function() {
-	// using global variable here beacuse we only create 1 instance to use in all tests 
-	var sDarla;
 
-	// short hand for Darla API
-	var yAPI = 	window.Y.SandBox.vendor;	
+    var yAPI;
+	var sDarla;
 	var Event = ACT.Event;
 
+    before(function() {
+    	refreshSecureDarla(true);
+        yAPI = window.Y.SandBox.vendor;
+    });
+
+    after(function() {
+    	refreshSecureDarla(false);
+    	yAPI = null;
+    });
+
 	it("should have ACT secureDarla", function(done){
-        console.log(ACT);
 		expect(ACT.SecureDarla).to.exist;
 		done();
 	});
@@ -25,7 +32,7 @@ describe("ACT.secureDarla", function() {
 				width: 300,
 				height: 600
 			}
-		});
+		}, null, true);
 
 		expect(sDarla.config.width, 'config width').to.be.equal(300);
 		expect(sDarla.config.height, 'config height').to.be.equal(600);
@@ -49,12 +56,10 @@ describe("ACT.secureDarla", function() {
 		});
 
 		it("should register sDarla and events", function(done){
-			sinon.spy(sDarla, 'initializeEvents');			
+			sinon.spy(sDarla, 'initializeEvents');
 			sinon.stub(Event, 'fire');
 			// checking params passing into register:Actions event
 			var testActions = sinon.match(function(value){
-				console.log('value', value);
-				
 				if (!(value instanceof Array)) return false;
 				if (value.length !== 4) return false;
 				if (typeof value[0] !== 'object') return false;
@@ -210,7 +215,7 @@ describe("ACT.secureDarla", function() {
 			});
 
 			sDarla.register();
-		
+
 
 		});
 
@@ -249,7 +254,7 @@ describe("ACT.secureDarla", function() {
 			});
 
 			sDarla.register();
-		
+
 
 		});
 
@@ -299,7 +304,7 @@ describe("ACT.secureDarla", function() {
 				done();
 			});
 		});
-		
+
 		describe("contractInlineFrame action", function(){
 			it('should fire contractInlineFrame event', function(done){
 
@@ -353,7 +358,7 @@ describe("ACT.secureDarla", function() {
 				Event.fire.restore();
 
 				done();
-			});			
+			});
 
 			it("should complete action when resize finsh", function(done){
 				yAPI.geom.returns({
@@ -438,7 +443,7 @@ describe("ACT.secureDarla", function() {
 					sinon.match.has('h', 700).and(
 						sinon.match.has('animTime', 1000)
 					)
-				) 
+				)
 			), 'yAPI resizeTo is called with right params').to.be.true;
 
 			expect(Event.on.calledWith('secureDarla:resize-to', sinon.match.func), 'resize-to is listened').to.be.true;
@@ -472,7 +477,7 @@ describe("ACT.secureDarla", function() {
 
 		});
 	});
-	
+
 	describe("Darla Expand function", function(){
 		it("Should available", function(done){
 			expect(sDarla.expand).to.be.a('function');
@@ -527,7 +532,7 @@ describe("ACT.secureDarla", function() {
 				push: true
 			});
 
-			expect(yAPI.expand.calledWith(	
+			expect(yAPI.expand.calledWith(
 				sinon.match.has('t', 50).and(
 					sinon.match.has('r', 0).and(
 						sinon.match.has('b', 50).and(
@@ -571,7 +576,7 @@ describe("ACT.secureDarla", function() {
 			done();
 		});
 	});
-	
+
 	describe("Darla Collapse function", function(){
 		it("Should available", function(done){
 			expect(sDarla.collapse).to.be.a('function');

@@ -163,6 +163,7 @@ ACT.define('VideoEvents', [/*@<*/'Debug', /*>@*/ 'Event', 'Lang', 'Dom', 'UA'], 
      * @public
      *
      * @example
+     * ```
      *  // This example will track start, 25percent, 50percent, 75percent, complete, pause.
      *  // Will NOTE track: volume change ( sound on / sound off ) and seek.
      *  var config = {
@@ -185,7 +186,7 @@ ACT.define('VideoEvents', [/*@<*/'Debug', /*>@*/ 'Event', 'Lang', 'Dom', 'UA'], 
      *  // Now to attach to these events.
      *  var Event = ACT.Event;
      *  Event.on( 'video:action', function( event_data ){ event.event == 'video:<type>'; "..do something with data ..."; }, null, this );
-     *
+     * ```
      */
     function VideoEvent(videoNode, videoID, config) {
         /* Internal flags - keeping track of what cuePoint has been fired so far. */
@@ -241,7 +242,7 @@ ACT.define('VideoEvents', [/*@<*/'Debug', /*>@*/ 'Event', 'Lang', 'Dom', 'UA'], 
          * @attribute version
          * @type String
          */
-        version: '1.0.22'
+        version: '1.0.41'
     };
 
     VideoEvent.prototype = {

@@ -194,7 +194,7 @@ ACT.define('ContentCarousel', [/*@<*/'Debug', /*>@*/ 'Dom', 'Lang', 'Event', 'Cl
          * @attribute version
          * @type String
          */
-        version: '1.0.22',
+        version: '1.0.41',
 
         /**
          * @attribute node

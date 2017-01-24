@@ -43,7 +43,7 @@ ACT.define('AdobeEdgeBridge', [/*@<*/'Debug', /*>@*/ 'Event', 'Lang'], function 
 		 * @attribute version
 		 * @type String
 		 */
-		version: '1.0.22'
+		version: '1.0.41'
 
 	};
 

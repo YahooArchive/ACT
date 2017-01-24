@@ -83,7 +83,7 @@ ACT.define('ContentAdobeEdge', [/*@<*/'Debug', /*>@*/ 'Dom', 'Lang', 'Event', 'C
          * @attribute version
          * @type String
          */
-        version: '1.0.22',
+        version: '1.0.41',
 
         /**
          * @attributes instanceId

@@ -14,9 +14,7 @@
  * - If mouse leave after 10 minutes, the track will count as 10 minutes
  * - Maximum counting time is 10 minutes
  *
- * @module ACT.DwellTime
- *
- * @example
+ * ```
  *     // This example will start track dwelltime for ACT_mpu element
  *     var target = document.getElementById('ACT_mpu');
  *     var mpuDwellTimeTracker = new ACT.DwellTime({
@@ -27,7 +25,13 @@
  *
  *     // To stop tracking dwelltime
  *     mpuDwellTimeTracker.destroy();
+ * ```
  *
+ * @module DwellTime
+ * @main DwellTime
+ * @class DwellTime
+ * @requires Lang, Class, Dom, Event
+ * @global
  */
 
 /* global ACT */
@@ -45,9 +49,9 @@ ACT.define('DwellTime', [/*@<*/'Debug', /*>@*/ 'Dom', 'Lang', 'Class', 'Event'],
     var EVENT_MOUSE_LEAVE = 'mouseleave';
     var TRACK_EVENT = 'tracking:track';
 
-    var MAX_DWELL_TIME = 1000 * 60 * 10; // 10 minutes
-    var MIN_DEWLL_TIME = 1000; // 1 second
-    var BUFFER_TIME = 2000; // 2 seconds
+    var MAX_DWELL_TIME = 600;
+    var MIN_DWELL_TIME = 1;
+    var BUFFER_TIME = 2000;
 
     var TRACKING_CONVENTION = '[__NAME__]_view_dwell_[__TIME__]';
 
@@ -75,7 +79,7 @@ ACT.define('DwellTime', [/*@<*/'Debug', /*>@*/ 'Dom', 'Lang', 'Class', 'Event'],
      */
     DwellTime.ATTRS = {
         NAME: 'DwellTime',
-        version: '1.0.22',
+        version: '1.0.41',
 
         /**
          * @attribute targetElement
@@ -180,7 +184,7 @@ ACT.define('DwellTime', [/*@<*/'Debug', /*>@*/ 'Dom', 'Lang', 'Class', 'Event'],
             var label;
             var fire = root.get('fire');
             var name = root.get('targetName');
-            var stop = Math.round(Lang.dateNow() - (root.get('start') || root.get('begin')));
+            var stop = Math.round((Lang.dateNow() - (root.get('start') || root.get('begin'))) / 1000);
 
             if (fire) {
                 /*@<*/
@@ -190,11 +194,10 @@ ACT.define('DwellTime', [/*@<*/'Debug', /*>@*/ 'Dom', 'Lang', 'Class', 'Event'],
             }
 
             fire = setTimeout(function () {
-                if (stop > MIN_DEWLL_TIME) {
+                if (stop > MIN_DWELL_TIME) {
                     root.removeEventListeners();
 
-                    /* The time is set as 600 seconds if over 10 minutes */
-                    time = Math.floor((stop > MAX_DWELL_TIME ? MAX_DWELL_TIME : stop) / 1000);
+                    time = stop > MAX_DWELL_TIME ? MAX_DWELL_TIME : stop;
 
                     label = TRACKING_CONVENTION
                         .replace('[__NAME__]', name)

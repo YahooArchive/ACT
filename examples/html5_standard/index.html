@@ -1,0 +1,92 @@
+<link rel="stylesheet" href="../../src/assets/ACT_icons/ACT_icons.css" />
+
+<div id="act-ad-container" style="margin:0px auto;padding:0px;width:970px;min-height:20px">
+    <div id="act-ad" style="margin:0px;padding:0px;position:relative;font-size:11px"></div>
+</div>
+
+<script type="text/javascript">
+(function() {
+    if (!window.ACT) {
+        window.ACT = {
+            "adQueue": []
+        };
+    }
+    ACT.adQueue.push(
+        function() {
+
+            var src = '<link rel=stylesheet href=https://s.yimg.com/cv/ae/jonathan/html5/test/dior/styles/styles.css type=text/css><div class=container><div class=video-container><video class=video1 muted poster=https://s.yimg.com/cv/ae/jonathan/html5/test/dior/images/poster-img.jpg><source src=https://s.yimg.com/cv/ae/jonathan/html5/test/dior/media/970x250.mp4 type=video/mp4></video></div><img src=https://s.yimg.com/cv/ae/jonathan/html5/test/dior/images/shadow.jpg class=shadow><div class=star-map-elements><img class=loading-fr src=https://s.yimg.com/cv/ae/jonathan/html5/test/dior/images/loading.png> <img class=copy-1 src=https://s.yimg.com/cv/ae/jonathan/html5/test/dior/images/where.png> <img class=copy-2 src=https://s.yimg.com/cv/ae/jonathan/html5/test/dior/images/thedeparture.png> <img class=copy-3 src=https://s.yimg.com/cv/ae/jonathan/html5/test/dior/images/theroad.png> <img class=copy-4 src=https://s.yimg.com/cv/ae/jonathan/html5/test/dior/images/theedge.png></div><div class=end-frame><img class=copy-end src=https://s.yimg.com/cv/ae/jonathan/html5/test/dior/images/thenew.png> <img class=cta src=https://s.yimg.com/cv/ae/jonathan/html5/test/dior/images/explore.png></div><a id=clickArea target=_blank></a><div class=controls><div class=play-btn><img class=replay-img src=https://s.yimg.com/cv/ae/jonathan/html5/test/dior/images/replay.png> <img class=play-img src=https://s.yimg.com/cv/ae/jonathan/html5/test/dior/images/play.png> <img class=pause-img src=https://s.yimg.com/cv/ae/jonathan/html5/test/dior/images/pause.png></div><div class=sound-btn><img class=sound-on-img src=https://s.yimg.com/cv/ae/jonathan/html5/test/dior/images/sound-on.png> <img class=sound-off-img src=https://s.yimg.com/cv/ae/jonathan/html5/test/dior/images/sound-off.png></div></div></div><scr'+'ipt type=text/javascript>var YAHOOPATH="https://s.yimg.com/cv/ae/jonathan/html5/test/dior/";</scr'+'ipt><scr'+'ipt src=https://s.yimg.com/cv/ae/jonathan/html5/iframe/f/script.js></scr'+'ipt>';
+
+            var ad = ACT.Base({
+                conf: {
+                    adId: 'test_ad_id',
+                    cookie: {
+                        name: "uniqueAdName",
+                    },
+                    template: {
+                        width: 970,
+                        height: 250
+                    },
+                    tracking: {
+                        trackingFunctions: {
+                            overwrite: true,
+                            redirect: function() {},
+                            interaction: function() {}
+                        }
+                    },
+                    customData: {
+                        /* Interactive */
+                        "layers.billboard.html5_container.html5Config.iframe": true,
+                        "layers.billboard.html5_container.html5Config.src": src,
+                        "layers.billboard.html5_container.html5Config.iframevars": {clickTAG: 'http://www.dior.com'},
+                        /* Backup */
+                        "layers.billboard.billboard_backup_image.imageConfig.src": "https://s.yimg.com/cv/ae/jonathan/html5/test/dior/backup.jpg",
+                        "layers.billboard.billboard_backup_image.imageConfig.alt": "Dior",
+                        "layers.billboard.billboard_backup_image.imageConfig.title": "Dior",
+                        "layers.billboard.billboard_backup_image.eventConfig.action0.URLpath": "http://www.dior.com",
+                        /* Text Links */
+                        "layers.textLinks.openBtn.containerConfig.innerText": "Show Ad",
+                        "layers.textLinks.closeBtn.containerConfig.innerText": "Close Ad",
+                        /* Text Buttons */
+                        "layers.extraBtns.surveyBtn.containerConfig.innerText": "Ad FeedBack",
+                        "layers.extraBtns.surveyBtn.eventConfig.action0.URLpath": "http://surveylink.yahoo.com/wix/p0767152.aspx",
+                        "layers.extraBtns.adchoicesBtn.containerConfig.innerText": "Ad Choices",
+                        "layers.extraBtns.adchoicesBtn.eventConfig.action0.URLpath": "http://info.yahoo.com/privacy/uk/yahoo/relevantads.html"
+                    }
+                },
+                superConf: "config-object-html5"
+            });
+        }
+    );
+})();
+</script>
+
+<script src="../src/core/ACT.js"></script>
+<script src="../src/core/ACT_Layerslist.js"></script>
+<script src="../src/core/ACT_Screen.js"></script>
+<script src="../src/core/ACT_StandardAd.js"></script>
+<script src="../src/core/ACT_TrackingFacade.js"></script>
+<script src="../src/core/ACT_actionsQueue.js"></script>
+<script src="../src/core/ACT_base.js"></script>
+<script src="../src/core/ACT_cookie.js"></script>
+<script src="../src/core/ACT_environment.js"></script>
+<script src="../src/core/ACT_layerStandard.js"></script>
+<script src="../src/core/ACT_scaffolding.js"></script>
+<script src="../src/core/ACT_secureDarla.js"></script>
+<script src="../src/library/ACT_IO.js"></script>
+<script src="../src/library/ACT_UA.js"></script>
+<script src="../src/library/ACT_animation.js"></script>
+<script src="../src/library/ACT_capability.js"></script>
+<script src="../src/library/ACT_class.js"></script>
+<script src="../src/library/ACT_customData.js"></script>
+<script src="../src/library/ACT_debug.js"></script>
+<script src="../src/library/ACT_dom.js"></script>
+<script src="../src/library/ACT_event.js"></script>
+<script src="../src/library/ACT_flash.js"></script>
+<script src="../src/library/ACT_json.js"></script>
+<script src="../src/library/ACT_lang.js"></script>
+<script src="../src/library/ACT_util.js"></script>
+<script src="../src/capabilities/ACT_contentContainer.js"></script>
+<script src="../src/capabilities/ACT_contentImage.js"></script>
+<script src="../src/capabilities/ACT_contentHtml5.js"></script>
+
+<script src="./config-object.js"></script>

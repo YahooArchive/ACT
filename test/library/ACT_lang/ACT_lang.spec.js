@@ -7,9 +7,9 @@ describe("ACT.Lang", function() {
 
   describe('dateNow', function() {
     it('now should be same as Date.now()', function() {
-      var actDate = ACT.Lang.dateNow() / 10 ;
+      var actDate = ACT.Lang.dateNow() / 10;
       var vanillaDate = Date.now() / 10;
-      expect(actDate.to.equal(vanillaDate);
+      expect(actDate).to.equal(vanillaDate);
     });
   });
 
@@ -444,5 +444,6 @@ describe("ACT.Lang", function() {
       expect(func.firstCall.calledWith("a","va")).to.be.true;
       expect(func.secondCall.calledWith("b","vb")).to.be.true;
     });
+
   });
 });

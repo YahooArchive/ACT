@@ -1,56 +1,57 @@
 describe("ACT.Cookie", function() {
-
     var expect = chai.expect;
 
-    it("should have ACT.Cookie instance", function(done) {
-        expect(ACT.Cookie).to.exist;
-        done();
-    });
+	before(function(){
+		refreshModule('Event');
+		refreshModule('Cookie');
+		refreshModule('SecureDarla');
+	});
 
-    it("should have ACT.Json instance", function(done) {
-        expect(ACT.Json).to.exist;
-        done();
-    });
+	describe("Cookie Instance test", function() {
 
-    it("should have ACT.Lang instance", function(done) {
-        expect(ACT.Lang).to.exist;
-        done();
-    });
+		it("should have ACT.Cookie instance", function() {
+			expect(ACT.Cookie).to.exist;
+		});
 
-    it("should have ACT.Event instance", function(done) {
-        expect(ACT.Event).to.exist;
-        done();
-    });
+		it("should have ACT.Json instance", function() {
+			expect(ACT.Json).to.exist;
+		});
+
+		it("should have ACT.Lang instance", function() {
+			expect(ACT.Lang).to.exist;
+		});
+
+		it("should have ACT.Event instance", function() {
+			expect(ACT.Event).to.exist;
+		});
+	});
 
     describe("attributes", function() {
-        it("should have ATTRS defined", function(done) {
+        it("should have ATTRS defined", function() {
             expect(ACT.Cookie.ATTRS).to.exist;
-            done();
         });
 
-        it("should have ATTRS.version defined", function(done) {
+        it("should have ATTRS.version defined", function() {
             expect(ACT.Cookie.ATTRS.version).to.exist;
-            done();
         });
 
-        it("should have ATTRS.NAME defined", function(done) {
+        it("should have ATTRS.NAME defined", function() {
             expect(ACT.Cookie.ATTRS.NAME).to.exist;
-            done();
         });
     });
 
+	// Constructor
     describe('constructor', function() {
 
-        it("should be able to instantiate Cookie", function(done) {
+        it("should be able to instantiate Cookie", function() {
             var cookie = new ACT.Cookie({});
             expect(cookie).to.exist;
             cookie.destroy();
-            done();
         });
 
         describe('default', function() {
 
-            it("should have default config elements defined", function(done) {
+            it("should have default config elements defined", function() {
                 var cookie = new ACT.Cookie({});
 
                 expect(cookie.COOKIE_NAME).to.exist;
@@ -71,14 +72,12 @@ describe("ACT.Cookie", function() {
 
                 expect(cookie.FREQ_CAP).to.exist;
                 expect(cookie.FREQ_CAP).to.equal(1);
-
                 cookie.destroy();
-                done();
             });
         });
 
         describe('parameter instance', function() {
-            it("should use passed in 'name' from config", function(done) {
+            it("should use passed in 'name' from config", function() {
                 var config = {
                     "name": "ACT.Cookie.test"
                 };
@@ -103,10 +102,9 @@ describe("ACT.Cookie", function() {
                 expect(defined_cookie.FREQ_CAP).to.equal(1);
 
                 defined_cookie.destroy();
-                done();
             });
 
-            it("should use passed in 'domain' from config", function(done) {
+            it("should use passed in 'domain' from config", function() {
                 var config = {
                     "domain": "sports.yahoo.com"
                 };
@@ -130,10 +128,9 @@ describe("ACT.Cookie", function() {
                 expect(defined_cookie.FREQ_CAP).to.equal(1);
 
                 defined_cookie.destroy();
-                done();
             });
 
-            it("should use passed in 'expires' from config", function(done) {
+            it("should use passed in 'expires' from config", function() {
                 var config = {
                     "expires": 1500
                 };
@@ -157,10 +154,9 @@ describe("ACT.Cookie", function() {
                 expect(defined_cookie.FREQ_CAP).to.equal(1);
 
                 defined_cookie.destroy();
-                done();
             });
 
-            it("should use passed in 'path' from config", function(done) {
+            it("should use passed in 'path' from config", function() {
                 var config = {
                     "path": "www.yahoo.com/test/more/"
                 };
@@ -185,10 +181,9 @@ describe("ACT.Cookie", function() {
                 expect(defined_cookie.FREQ_CAP).to.equal(1);
 
                 defined_cookie.destroy();
-                done();
             });
 
-            it("should use passed in 'freq_cap' from config", function(done) {
+            it("should use passed in 'freq_cap' from config", function() {
                 var config = {
                     "freq_cap": 2
                 };
@@ -212,10 +207,9 @@ describe("ACT.Cookie", function() {
                 expect(defined_cookie.DEFAULT_EXPIRES).to.be.above(60);
 
                 defined_cookie.destroy();
-                done();
             });
 
-            it("should use the full set of config data", function(done) {
+            it("should use the full set of config data", function() {
                 var config = {
                     "domain": "sports.yahoo.com",
                     "path": "sports.yahoo.com/path/",
@@ -250,7 +244,6 @@ describe("ACT.Cookie", function() {
                 expect(defined_cookie.FREQ_CAP).to.equal(2);
 
                 defined_cookie.destroy();
-                done();
             });
         });
 
@@ -273,38 +266,33 @@ describe("ACT.Cookie", function() {
                 ACT.Event.fire.restore();
             });
 
-            it('should listen to Darla register event', function(done) {
+            it('should listen to Darla register event', function() {
                 expect(ACT.Event.on.calledWith('secureDarla:register', sinon.match.func)).to.be.true;
-                done();
             });
 
-            it('should listen to Darla register-update event', function(done) {
+            it('should listen to Darla register-update event', function() {
                 expect(ACT.Event.on.calledWith('secureDarla:register-update', sinon.match.func)).to.be.true;
-                done();
             });
 
-            it('should listen to registerAd event action', function(done) {
+            it('should listen to registerAd event action', function() {
                 expect(ACT.Event.on.calledWith('localRegister:registerAd', sinon.match.func)).to.be.true;
-                done();
             });
 
-            it('should listen to trackState event action', function(done) {
+            it('should listen to trackState event action', function() {
                 expect(ACT.Event.on.calledWith('localRegister:trackState', sinon.match.func)).to.be.true;
-                done();
             });
 
-            it('should listen to updateAdEvent event action', function(done) {
+            it('should listen to updateAdEvent event action', function() {
                 expect(ACT.Event.on.calledWith('localRegister:updateAdEvent', sinon.match.func)).to.be.true;
-                done();
             });
 
-            it('should fire registerAd event', function(done) {
+            it('should fire registerAd event', function() {
                 expect(ACT.Event.fire.calledWith('register:Actions', sinon.match.array)).to.be.true;
-                done();
             });
         });
     });
 
+	// Cookie Instance Functions
     describe('Cookie instance functions', function() {
         var cookie, helper;
 
@@ -325,7 +313,7 @@ describe("ACT.Cookie", function() {
         });
 
         describe('function test', function() {
-            it('should call helper test function', function(done) {
+            it('should call helper test function', function() {
 
                 sinon.stub(helper, 'test');
 
@@ -333,57 +321,37 @@ describe("ACT.Cookie", function() {
                 expect(helper.test.called, 'helper test function is called').to.be.true;
 
                 helper.test.restore();
-
-                done();
             });
         });
 
         describe('function set', function() {
-            it('should call helper set function', function(done) {
-
+            it('should call helper set function', function() {
                 sinon.stub(helper, 'set');
-
                 cookie.set('cookieContent');
-
                 expect(helper.set.calledWith(cookie.DEFAULT_COOKIE_NAME, sinon.match.object), 'helper set function is called').to.be.true;
-
                 helper.set.restore();
-
-                done();
             });
 
-            it('should update cookie content of existing cookie when cookies obj is not empty', function(done) {
+            it('should update cookie content of existing cookie when cookies obj is not empty', function() {
                 sinon.stub(helper, 'set');
-                cookie.clean = function() {
-                    return { "cookie": {}, "ACTCookie": {} } }
+                cookie.clean = function() { return { "cookie": {}, "ACTCookie": {} } }
                 cookie.set('cookieContent');
-
                 expect(helper.set.calledWith(cookie.DEFAULT_COOKIE_NAME, sinon.match.object), 'helper set function is called').to.be.true;
-
                 helper.set.restore();
-
-                done();
             });
-
         });
 
         describe('function get', function() {
-            it('should call helper get function', function(done) {
-
+            it('should call helper get function', function() {
                 sinon.stub(helper, 'get');
-
                 cookie.get();
-
                 expect(helper.get.calledWith(cookie.DEFAULT_COOKIE_NAME), 'helper get function is called with COOKIE_NAME').to.be.true;
-
                 helper.get.restore();
-
-                done();
             });
         });
-
     });
 
+	// Standard Cookie Helper
     describe('Standard cookie helper', function() {
         var defined_cookie, cookie, domain;
 
@@ -405,43 +373,35 @@ describe("ACT.Cookie", function() {
             ACT.Event.on.restore();
         });
 
-        it("should be using standard cookie", function(done) {
+        it("should be using standard cookie", function() {
             expect(cookie, 'cookie helper').to.exist;
             expect(cookie.TYPE).to.equal("standard");
-            done();
         });
 
         describe('cookie test function', function() {
-
-            it("should have test function", function(done) {
+            it("should have test function", function() {
                 expect(defined_cookie.cookie.test).to.exist;
                 expect(defined_cookie.cookie.test).to.be.a('function');
                 expect(defined_cookie.test()).to.be.true;
-                done();
             });
         });
 
         describe('function saveState', function() {
-            it('should call helper saveState function', function(done) {
+            it('should call helper saveState function', function() {
                 defined_cookie.saveState();
-                done();
             });
         });
 
-
         describe('function updateAdEvent', function() {
-            it('should call helper updateAdEvent function', function(done) {
+            it('should call helper updateAdEvent function', function() {
                 defined_cookie.updateAdEvent();
-                done();
             });
         });
 
         describe('cookie set function', function() {
-
-            it("should have set function", function(done) {
+            it("should have set function", function() {
                 expect(cookie.set).to.exist;
                 expect(cookie.set).to.be.a('function');
-                done();
             });
 
             it("should change document.cookie value", function(done) {
@@ -463,67 +423,43 @@ describe("ACT.Cookie", function() {
         });
 
         describe('cookie get function', function() {
-            it('should have get function', function(done) {
+            it('should have get function', function() {
                 expect(defined_cookie.cookie.get).to.exist;
                 expect(defined_cookie.cookie.get).to.be.a('function');
-
-                done();
-            });
-
-            it('should read from document.cookie', function(done) {
-                // TODO: find a way to test with document.cookie - unable to change document.cookie at the moment
-                // document.cookie = "CRZY=%7B%22a%22%3A1%7D; expires=Fri, 26 Jun 2015 15:27:03 GMT; domain=localhost; path=path";
-
-                // console.log(document.cookie);
-                // var result = defined_cookie.cookie.get("CRZY");
-                // console.log(result);
-                // expect(result.a).to.be.equal(1);
-
-                done();
             });
         });
 
         describe('cookie remove function', function() {
-            it('should have remove function', function(done) {
+            it('should have remove function', function() {
                 /* Fake the read function */
                 defined_cookie.read = function() {
                     return { "ACTCookie": {} }; };
                 expect(defined_cookie.cookie.remove).to.exist;
                 expect(defined_cookie.cookie.remove).to.be.a('function');
                 expect(defined_cookie.cookie.remove("CRZY", 'localhost', '/')).to.be.ok;
-                done();
             });
         });
 
         describe('cookie.remove function', function() {
-            it('should have remove function', function(done) {
+            it('should have remove function', function() {
                 expect(defined_cookie.remove).to.exist;
                 expect(defined_cookie.remove).to.be.a('function');
                 expect(defined_cookie.remove("ACTCookie", 'localhost', '/')).to.be.ok;
-                done();
             });
-
-            //          it('shoud clean document.cookie');
         });
 
-
         describe('cookie clean function', function() {
-
-            it('should have clean function', function(done) {
+            it('should have clean function', function() {
                 expect(defined_cookie.clean).to.exist;
                 expect(defined_cookie.clean).to.be.a('function');
                 expect(defined_cookie.clean()).to.be.ok;
-                done();
             });
         });
 
         describe('cookie getHelper function', function() {
-
-            it('should have getHelper function', function(done) {
-
+            it('should have getHelper function', function() {
                 expect(defined_cookie.getHelper).to.exist;
                 expect(defined_cookie.getHelper).to.be.a('function');
-
                 defined_cookie.getHelper({
                     status: 0,
                     data: {}
@@ -531,11 +467,9 @@ describe("ACT.Cookie", function() {
 
                 // all event functions have been stubbed so it will not do the actual work
                 expect(ACT.Event.fire.calledWith('Cookie:getData:complete'), 'Cookie:getData:complete event is fired').to.be.true;
-
-                done();
             });
 
-            it('should behave with data calling - getHelper function', function(done) {
+            it('should behave with data calling - getHelper function', function() {
                 // Fake the event return, to make sure the path is taken.
                 defined_cookie.cookie_ready_event = { "remove": function() {} };
 
@@ -545,13 +479,12 @@ describe("ACT.Cookie", function() {
                 defined_cookie.getHelper({ "status": 0, data: { "ACTCookie": {} } });
 
                 expect(ACT.Event.fire.calledWith('Cookie:getData:complete'), 'Cookie:getData:complete event is fired').to.be.true;
-
-                done();
             });
         });
 
     });
 
+	// Safe Frame Cookie Helper
     describe('sDarla cookie helper', function() {
         var yAPI = {
             supports: sinon.stub().returns(true),
@@ -561,103 +494,71 @@ describe("ACT.Cookie", function() {
         var cookie;
 
         before(function() {
+			refreshModule('Event');
+			refreshModule('Cookie');
+			refreshModule('SecureDarla');
+
             // stub all event function from happen so it will not effect other modules when run karma
             sinon.stub(ACT.Event, 'fire');
-
             cookie = new ACT.Cookie({});
-
         });
 
         after(function() {
             cookie.destroy();
-
             // test done, restore Event functions
             ACT.Event.fire.restore();
         });
 
-        it('should use darla cookie helper', function(done) {
-
+        it('should use darla cookie helper', function() {
             cookie.register({
                 yAPI: yAPI,
                 key: {}
             })
-
             expect(cookie.cookie.TYPE).to.be.equal('safeFrame');
-
-            done();
-
-        });
-
-        describe('read cookie', function() {
-
         });
 
         describe('write cookie', function() {
-
-            it('should use Darla cookie API', function(done) {
-
+            it('should use Darla cookie API', function() {
                 cookie.cookie.set('SD_name', 'content');
-
                 function checkCookieData(data) {
                     return (data.value !== undefined) && (data.key !== undefined);
                 }
 
                 expect(yAPI.cookie.calledWith('SD_name', sinon.match(checkCookieData))).to.be.true;
-
-                done();
-
             });
         });
 
         describe('get SF cookie', function() {
-
             it('should use Darla cookie API', function(done) {
-
                 cookie.cookie.getSFCookie('SD_name');
-
                 setTimeout(function() {
-
                     expect(yAPI.cookie.calledWith('SD_name', sinon.match.has('key'))).to.be.true;
                     done();
-
                 }, 110);
             });
 
             it('should use Darla cookie API with get', function(done) {
-
                 cookie.cookie.get('SD_name');
-
                 setTimeout(function() {
-
                     expect(yAPI.cookie.calledWith('SD_name', sinon.match.has('key'))).to.be.true;
                     done();
-
                 }, 110);
             });
-
         });
 
         describe('read SF cookie', function() {
-
             it('should use Darla cookie API', function(done) {
-
                 cookie.cookie.readSFCookie({ cmd: 'read-cookie' });
-
                 setTimeout(function() {
-
                     expect(yAPI.cookie.calledWith('SD_name', sinon.match.has('key'))).to.be.true;
                     done();
-
                 }, 110);
             });
-
-
         })
-
     });
 
+	// Functional Events 
     describe('functional events', function(){
-
         before(function() {
             // stub all event function from happen so it will not effect other modules when run karma
             // ACT.Event.originalFire = ACT.Event.fire;
@@ -743,26 +644,22 @@ describe("ACT.Cookie", function() {
                 ACT.Event.fire("localRegister:getState", {stateId: "stateId"});
             });
 
-            
+
         });
 
 
     });
 
+	// Frequency Test
     describe('Frequency Test', function(){
 
         it('should return firstPlay true if ad play the first time', function(done){
-
             var cookie = new ACT.Cookie({freq_cap : 2});
-
             sinon.stub(cookie, 'get', function(){
-
                 ACT.Event.fire('Cookie:getData:complete', {
                     status: 0
                 });
             });
-
-            
 
             var registerAdListener = ACT.Event.on('localRegister:registerAd:complete', function(result){
                 registerAdListener.remove();
@@ -778,7 +675,7 @@ describe("ACT.Cookie", function() {
             cookie.registerAd();
 
         });
-   
+
         it('should return firstPlay true if ad play the second time', function(done){
 
             var cookie = new ACT.Cookie({freq_cap : 2});
@@ -787,7 +684,7 @@ describe("ACT.Cookie", function() {
             sinon.stub(cookie, 'get', function(){
 
                 ACT.Event.fire('Cookie:getData:complete', {
-                    status: 0, 
+                    status: 0,
                     data: {play:0}
                 });
             });
@@ -807,31 +704,24 @@ describe("ACT.Cookie", function() {
         });
 
         it('should return firstPlay false if ad play the third time', function(done){
-
             var cookie = new ACT.Cookie({freq_cap : 2});
 
-
             sinon.stub(cookie, 'get', function(){
-
                 ACT.Event.fire('Cookie:getData:complete', {
-                    status: 0, 
+                    status: 0,
                     data: {play:1}
                 });
             });
 
             var registerAdListener = ACT.Event.on('localRegister:registerAd:complete', function(result){
                 registerAdListener.remove();
-
                 expect(result.firstPlay, 'firstPlay must be false').to.be.false;
-
                 cookie.get.restore();
                 cookie.destroy();
                 done();
             });
 
             cookie.registerAd();
-
         });
     })
-
 });

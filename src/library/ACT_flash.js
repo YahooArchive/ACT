@@ -111,7 +111,7 @@ ACT.define('Flash', [/*@<*/'Debug', /*>@*/'Dom', 'Lang', 'UA'], function (ACT) {
      */
     Flash.ATTRS = {
         NAME: 'Flash',
-        version: '1.0.22'
+        version: '1.0.41'
     };
 
     Flash.prototype = {
@@ -123,30 +123,34 @@ ACT.define('Flash', [/*@<*/'Debug', /*>@*/'Dom', 'Lang', 'UA'], function (ACT) {
          * @public
          * @static
          * @example
-             // Simple Example
-            var conf = {
-                src: "https://s.yimg.com/cv/ae/global/actjs/ACTPlayer1435242612.swf",
-                position: "adive" // ID of the parent div - doc.byId(conf.position).innerHTML = html_code;
-            };
-            var node = ACT.Flash.objectEmbed(conf);
-
-            @example
-            // A more Advanced Example
-            var conf = {
-                src: "https://s.yimg.com/cv/ae/global/actjs/ACTPlayer1435242612.swf", // src of the swf
-                width: 50,
-                height:150,
-                id: "mySWFId", // element ( swf element ) ID
-                wmode: "opaque",
-                menu: "true",
-                flashvars: {
-                    "clickTAG": "http://www.yahoo.com",
-                    "callback": "someFunction",
-                    "random_var": "value"
-                },
-                allowScriptAccess: "always",
-                position: "adive" // ID of the parent div - doc.byId(conf.position).innerHTML = html_code;
-            };
+         * ```
+         *    // Simple Example
+         *    var conf = {
+         *        src: "https://s.yimg.com/cv/ae/global/actjs/ACTPlayer1435242612.swf",
+         *        position: "adive" // ID of the parent div - doc.byId(conf.position).innerHTML = html_code;
+         *    };
+         *    var node = ACT.Flash.objectEmbed(conf);
+         * ```
+         *
+         * @example
+         * ```
+         *    // A more Advanced Example
+         *    var conf = {
+         *        src: "https://s.yimg.com/cv/ae/global/actjs/ACTPlayer1435242612.swf", // src of the swf
+         *        width: 50,
+         *        height:150,
+         *        id: "mySWFId", // element ( swf element ) ID
+         *        wmode: "opaque",
+         *        menu: "true",
+         *        flashvars: {
+         *            "clickTAG": "http://www.yahoo.com",
+         *            "callback": "someFunction",
+         *            "random_var": "value"
+         *        },
+         *        allowScriptAccess: "always",
+         *        position: "adive" // ID of the parent div - doc.byId(conf.position).innerHTML = html_code;
+         *    };
+         * ```
          */
         objectEmbed: function (conf) {
             var parameters = lang.merge({
@@ -190,11 +194,13 @@ ACT.define('Flash', [/*@<*/'Debug', /*>@*/'Dom', 'Lang', 'UA'], function (ACT) {
          * @public
          * @static
          * @example
-             // flash-9 implies the user has flash 9 installed.
-             // flash-gt# implies the user has flash greater than # version installed.
-             // flash-0 implies no flash
-             // jsenabled is always injected, implies javascript is enabled.
-             document.documentElement.className === "jsenabled flash-9 flash-gt8 flash-gt7 flash-gt6 flash-gt5 flash-gt4"
+         * ```
+         *     // flash-9 implies the user has flash 9 installed.
+         *     // flash-gt# implies the user has flash greater than # version installed.
+         *     // flash-0 implies no flash
+         *     // jsenabled is always injected, implies javascript is enabled.
+         *     document.documentElement.className === "jsenabled flash-9 flash-gt8 flash-gt7 flash-gt6 flash-gt5 flash-gt4"
+         * ```
          */
         injectFlashVersion: function () {
             var flashVersion = UA.flash;

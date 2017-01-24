@@ -68,9 +68,9 @@ describe('ACT.DwellTime', function() {
 
             assert.deepEqual(dwellTime.get('eventList').length, 2, 'must have 2 events registered');
 
-            ACT.Event.fire('mouseenter');
+            ACT.Event.fire('mouseenter', {preventDefault:function(){}});
             clock.tick(2000); // advance 2 seconds
-            ACT.Event.fire('mouseleave');
+            ACT.Event.fire('mouseleave', {preventDefault:function(){}});
             clock.tick(2000); // advance 2 seconds
 
             clock.restore();
@@ -108,7 +108,7 @@ describe('ACT.DwellTime', function() {
 
             // restore ACT.Event.fire event
             ACT.Event.fire.restore();
-            
+
             // Destroy dwell
             dwelltime.destroy();
 
@@ -117,9 +117,9 @@ describe('ACT.DwellTime', function() {
         });
 
         it('shouldn\'t track after mouse leave within 1 seconds', function(done) {
-            ACT.Event.fire('mouseenter');
+            ACT.Event.fire('mouseenter', {preventDefault:function(){}});
             clock.tick(1000); // advance 1 seconds
-            ACT.Event.fire('mouseleave');
+            ACT.Event.fire('mouseleave', {preventDefault:function(){}});
             clock.tick(2000); // advance 2 seconds
 
             // Shouldn't be 1 seconds
@@ -128,9 +128,9 @@ describe('ACT.DwellTime', function() {
         });
 
         it('should track after mouse leave', function(done) {
-            ACT.Event.fire('mouseenter');
+            ACT.Event.fire('mouseenter', {preventDefault:function(){}});
             clock.tick(5000); // advance 5 seconds
-            ACT.Event.fire('mouseleave');
+            ACT.Event.fire('mouseleave', {preventDefault:function(){}});
             clock.tick(2000); // advance 2 seconds
 
             // Should be 5 seconds
@@ -139,23 +139,23 @@ describe('ACT.DwellTime', function() {
         });
 
         it('should continue tracking if mouse back within 2 seconds', function(done) {
-            ACT.Event.fire('mouseenter');
+            ACT.Event.fire('mouseenter', {preventDefault:function(){}});
             clock.tick(5000); // advance 5 seconds
-            ACT.Event.fire('mouseleave');
+            ACT.Event.fire('mouseleave', {preventDefault:function(){}});
             clock.tick(1500); // advane 1.5 second
-            ACT.Event.fire('mouseenter');
-            ACT.Event.fire('mouseleave');
+            ACT.Event.fire('mouseenter', {preventDefault:function(){}});
+            ACT.Event.fire('mouseleave', {preventDefault:function(){}});
             clock.tick(2000); // advance 2 seconds
 
-            // Should be 6 seconds as it floor the numbers
-            assert.isTrue(ACT.Event.fire.calledWith("tracking:track", {label: "floating_view_dwell_6"}), "tracking label must be correct");
+            // Should be 7 seconds as it floor the numbers
+            assert.isTrue(ACT.Event.fire.calledWith("tracking:track", {label: "floating_view_dwell_7"}), "tracking label must be correct");
             done();
         });
 
         it('should track if mouse leave just before 10 minutes', function(done) {
-            ACT.Event.fire('mouseenter');
+            ACT.Event.fire('mouseenter', {preventDefault:function(){}});
             clock.tick(599000); // advance 9 minutes and 59 seconds
-            ACT.Event.fire('mouseleave');
+            ACT.Event.fire('mouseleave', {preventDefault:function(){}});
             clock.tick(2000); // advance 2 seconds
 
             // Should be 599 seconds
@@ -164,9 +164,9 @@ describe('ACT.DwellTime', function() {
         });
 
         it('should track 10 minutes if mouse leave over 10 minutes', function(done) {
-            ACT.Event.fire('mouseenter');
+            ACT.Event.fire('mouseenter', {preventDefault:function(){}});
             clock.tick(660000); // advance 11 minutes
-            ACT.Event.fire('mouseleave');
+            ACT.Event.fire('mouseleave', {preventDefault:function(){}});
             clock.tick(2000); // advance 2 seconds
 
             // Should be 600 seconds and not 660 seconds
@@ -176,7 +176,7 @@ describe('ACT.DwellTime', function() {
 
         it('should track if mouse leave element but never enter', function(done) {
             clock.tick(7000); // advance 7 seconds
-            ACT.Event.fire('mouseleave');
+            ACT.Event.fire('mouseleave', {preventDefault:function(){}});
             clock.tick(2000); // advance 2 seconds
 
             // Should be 7 seconds

@@ -1,6 +1,4 @@
 exports.config = {
-
-
     //
     // If you are using Sauce Labs, WebdriverIO takes care to update the job information
     // once the test is done. This option is set to `true` by default.
@@ -37,7 +35,6 @@ exports.config = {
     // https://docs.saucelabs.com/reference/platforms-configurator
     //
     capabilities: [
-        ////////// Windows 10 //////////
         {
             browserName: 'chrome',
             version: '46',
@@ -52,111 +49,20 @@ exports.config = {
             tags: ['html', 'windows', 'firefox'],
             name: 'firefox41-Win10'
         },
-        // {
-        //     browserName: 'firefox',
-        //     version: '42.0',
-        //     platform: 'Windows 10',
-        //     tags: ['html', 'windows', 'firefox'],
-        //     name: 'firefox42-Win10'
-        // },
-        //minimal support https://dev.windows.com/en-us/microsoft-edge/platform/status/webdriver/details/
-        // {
-        //     browserName: 'MicrosoftEdge',
-        //     version: '20.10240',
-        //     platform: 'Windows 10',
-        //     tags: ['html', 'windows', 'microsoftEdge'],
-        //     name: 'msEdge20-Win10'
-        // },
-
-
-        // {
-        //     browserName: 'internet explorer',
-        //     version: '11.0',
-        //     platform: 'Windows 10',
-        //     tags: ['html', 'windows', 'ie'],
-        //     name: 'ie11-Win10'
-        // },
-
-        // ////////// Windows 8 //////////
-
         {
-
             browserName: 'internet explorer',
             version: '10.0',
             platform: 'Windows 8',
             tags: ['html'],
             name: 'ie10-Win8'
-
         },
-
-
-        // ////////// Windows 7 //////////
-        // {
-        //     browserName: 'internet explorer',
-        //     version: '10.0',
-        //     platform: 'Windows 7',
-        //     tags: ['html', 'windows', 'ie'],
-        //     name: 'ie10-Win7'
-        // },
-
-
-        // {
-        //     browserName: 'internet explorer',
-        //     version: '11.0',
-        //     platform: 'Windows 7',
-        //     tags: ['html', 'windows', 'ie'],
-        //     name: 'ie11-Win7'
-        // },
-
-        // // ////////// opera //////////
-        // // //backup return false because Act UI does not detect opera yet
-        // // //  {
-        // // //     browserName: 'opera',
-        // // //     version: '12.12',
-        // // //     platform: 'Windows 7',
-        // // //     tags: ['html', 'windows', 'opera'],
-        // // //     name: 'opera12-Win7'
-        // // // },
-
-        // // ////////// mac //////////
-        // {
-        //     browserName: 'safari',
-        //     version: '9.0',
-        //     platform: 'OS X 10.11',
-        //     tags: ['html', 'elcapitan', 'safari'],
-        //     name: 'safari8-elcapitan'
-        // },
-
         {
             browserName: 'safari',
             version: '8.0',
             platform: 'OS X 10.10',
             tags: ['html', 'yosemite', 'safari'],
             name: 'safari8-yosemite'
-        },
-
-        // {
-        //     browserName: 'safari',
-        //     version: '7.0',
-        //     platform: 'OS X 10.9',
-        //     tags: ['html', 'mavericks', 'safari'],
-        //     name: 'safari8-mavericks'
-        // },
-
-        // {
-        //     browserName: 'chrome',
-        //     version: '46.0',
-        //     platform: 'OS X 10.10',
-        //     tags: ['html', 'yosemite', 'chrome'],
-        //     name: 'chrome-yosemite'
-        // }
-
-
-
-
-
-
-
+        }
     ],
     //
     // ===================
@@ -220,7 +126,8 @@ exports.config = {
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
     mochaOpts: {
-        ui: 'bdd'
+        ui: 'bdd',
+		timeout: 60000
     },
 
     //
@@ -232,13 +139,13 @@ exports.config = {
     // see also: http://webdriver.io/guide/testrunner/hooks.html
     //
     // Gets executed before all workers get launched.
-    onPrepare: function() {
+    onPrepare: function () {
 
     },
     //
     // Gets executed before test execution begins. At this point you will have access to all global
     // variables like `browser`. It is the perfect place to define custom commands.
-    before: function() {
+    before: function () {
         // console.log("-----browser----", browser);
         // console.log(this.desiredCapabilities)
         // console.log("-----browser----end /////");
@@ -247,14 +154,12 @@ exports.config = {
     //
     // Gets executed after all tests are done. You still have access to all global variables from
     // the test.
-    after: function(failures, pid) {
-
-        // do something
+    after: function (/* failures, pid */) {
     },
     //
     // Gets executed after all workers got shut down and the process is about to exit. It is not
     // possible to defer the end of the process using a promise.
-    onComplete: function() {
+    onComplete: function () {
         // do something
     }
 };

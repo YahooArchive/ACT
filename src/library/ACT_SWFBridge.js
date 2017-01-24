@@ -40,7 +40,7 @@ ACT.define('SWFBridge', [/*@<*/'Debug', /*>@*/ 'Lang'], function (ACT) {
          * @attribute version
          * @type String
          */
-		version: '1.0.22'
+		version: '1.0.41'
 
 	};
 

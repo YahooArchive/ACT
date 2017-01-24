@@ -1,10 +1,21 @@
 var expect = chai.expect;
 var assert = chai.assert;
 
-var Event = ACT.Event;
-var Lang = ACT.Lang;
-var Dom = ACT.Dom;
-var Animation = ACT.Animation;
+describe("Content Carousel", function(){
+
+	var Event;
+	var Lang;
+	var Dom;
+	var Animation;
+
+	before(function(){
+		refreshModule('Event');
+		refreshModule('ContentCarousel');
+		Event = ACT.Event;
+		Lang = ACT.Lang;
+		Dom = ACT.Dom;
+		Animation = ACT.Animation;
+	});
 
 carouselObject = {
         type: 'ContentCarousel',
@@ -427,3 +438,4 @@ describe("ContentCarousel animation", function(){
 
 });
 
+});

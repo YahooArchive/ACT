@@ -135,7 +135,7 @@ ACT.define('ContentHtml5', [/*@<*/'Debug', /*>@*/ 'Dom', 'Lang', 'Event', 'Class
          * @attribute version
          * @type String
          */
-        version: '1.0.22',
+        version: '1.0.41',
 
         /**
          * @attribute configObject
@@ -544,10 +544,11 @@ ACT.define('ContentHtml5', [/*@<*/'Debug', /*>@*/ 'Dom', 'Lang', 'Event', 'Class
             Debug.log('[ ACT_contentHtml5.js ] enablerActionHandler: receive event', data);
             /*>@*/
 
-            /* Need to make sure the event is came from child iframe. */
+            /* Need to make sure the event came from the child iframe. */
             if (data.frameId !== this.get('configObject').id) {
                 /*@<*/
-                Debug.log('[ ACT_contentHtml5.js ] enablerActionHandler: event from different iframe, ignore it');
+                Debug.log('[ ACT_contentHtml5.js ] enablerActionHandler: event from different iframe, ignore it. data.frameId is:',
+                    data.frameId, 'Config Obj ID is:', this.get('configObject').id, 'full data set is:', data);
                 /*>@*/
                 return false;
             }

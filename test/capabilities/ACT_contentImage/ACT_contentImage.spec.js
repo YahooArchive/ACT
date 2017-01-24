@@ -1,11 +1,20 @@
 var expect = chai.expect;
 var assert = chai.assert;
 
-var Event = ACT.Event;
-var Lang = ACT.Lang;
-var Dom = ACT.Dom;
-
 describe("ContentImage", function() {
+	var Event;
+	var Lang;
+	var Dom;
+
+	before(function(){
+		refreshModule('Event');
+		refreshModule('ContentImage');
+
+		Event = ACT.Event;
+		Lang = ACT.Lang;
+		Dom = ACT.Dom;
+	});
+
     describe("ContentImage: Check the init state", function() {
 
         it("should have ACT.ContentImage instance", function() {
@@ -116,8 +125,6 @@ describe("ContentImage", function() {
             assert.strictEqual(node.nodeName, 'IMG', 'Wrong tag node');
             assert.strictEqual(node.getAttribute('id'), 'img2', 'Wrong id node');
 
-
-
             assert.strictEqual(node.src, 'https://s.yimg.com/hl/ap/default/140911/BIGTS_YAHOO-VIDSPLASH_v2_031410429559.jpg', 'Wrong src node');
             assert.strictEqual(node.alt, 'test image', 'Wrong alt node');
             assert.strictEqual(node.title, 'Best image ever', 'Wrong title node');
@@ -159,7 +166,6 @@ describe("ContentImage", function() {
         document.body.appendChild(container);
 
         it("Resize using screen data", function(done) {
-
             Event.fire('screen:status', {
                 screenWidth: '1024px',
                 screenHeight: '800px'
@@ -167,9 +173,7 @@ describe("ContentImage", function() {
 
             assert.strictEqual('1024px', node.style.width, 'wrong new width');
             assert.strictEqual('800px', node.style.height, 'wrong new height');
-
             done();
-
         });
 
         it("Resize using parent data", function(done) {

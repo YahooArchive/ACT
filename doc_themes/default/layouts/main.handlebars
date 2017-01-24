@@ -15,13 +15,15 @@
     <div id="hd" class="yui3-g header">
         <div class="yui3-u-3-4">
             {{#if projectLogo}}
-                <h1><img src="{{projectLogo}}" title="{{projectName}}"></h1>
+                <h1><img src="{{projectLogo}}" title="{{projectName}}" width="150"></h1>
             {{else}}
                 <h1><img src="{{projectAssets}}/css/logo.png" title="{{projectName}}" width="126" height="100"></h1>
             {{/if}}
         </div>
         <div class="yui3-u-1-4 version">
+        	{{#if projectVersion}}
             <em>API Docs for: {{projectVersion}}</em>
+            {{/if}}
         </div>
     </div>
     <div id="bd" class="yui3-g">

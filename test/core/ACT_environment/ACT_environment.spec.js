@@ -164,10 +164,10 @@ describe("ACT.Environment", function() {
             _UATest.browser.name = "Chrome";
             _UATest.browser.version = 10;
 
-
             var env = new ACT.Environment({
                 forceEnv: envConfig
             });
+
             env.forceEnv(_UATest);
             var envToPlay = env.checkEnv();
 
@@ -246,7 +246,7 @@ describe("ACT.Environment", function() {
             var env = new ACT.Environment({
                 forceEnv: envConfig
             });
-                        
+
             env.forceEnv(_UATest);
             var envToPlay = env.checkEnv();
             expect(envToPlay).to.equal("flash")
@@ -277,7 +277,7 @@ describe("ACT.Environment", function() {
             var env = new ACT.Environment({
                 forceEnv: envConfig
             });
-                        
+
             env.forceEnv(_UATest);
             var envToPlay = env.checkEnv();
             expect(envToPlay).to.equal("flash")

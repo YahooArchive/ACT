@@ -34,7 +34,7 @@ ACT.define('Class', [/*@<*/'Debug', /*>@*/ 'Lang'], function (ACT) {
      */
     Class.ATTRS = {
         NAME: 'Class',
-        version: '1.0.22',
+        version: '1.0.41',
 
         /**
          * An array to keep references to all events created in the runtime of this class.
@@ -112,6 +112,7 @@ ACT.define('Class', [/*@<*/'Debug', /*>@*/ 'Lang'], function (ACT) {
          * @param {Objects} ...eventListeners List of event listeners to be removed when the instance is destroyed
          *
          * example:
+         * @example
          *    this.addEventListeners(eventListener1, eventListener2, eventListener3) // single elemenents
          */
         addEventListeners: function () {

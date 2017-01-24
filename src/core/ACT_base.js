@@ -18,7 +18,7 @@ ACT.define('Base', [/*@<*/'Debug', /*>@*/ 'Event', 'Cookie', 'Lang', 'Tracking',
     var UA = ACT.UA;
     var IO = ACT.IO;
     var Util = ACT.Util;
-    var cookiePathNameRegex = new RegExp('.*/', '');
+
     /*@<*/
     var debug = ACT.Debug;
     /*>@*/
@@ -105,7 +105,7 @@ ACT.define('Base', [/*@<*/'Debug', /*>@*/ 'Event', 'Cookie', 'Lang', 'Tracking',
     */
     Base.ATTRS = {
         NAME: 'Base',
-        version: '1.0.22'
+        version: '1.0.41'
     };
 
     Base.prototype = {
@@ -115,36 +115,7 @@ ACT.define('Base', [/*@<*/'Debug', /*>@*/ 'Event', 'Cookie', 'Lang', 'Tracking',
         * @property config
         * @type Object
         */
-        config: {
-            tracking: {
-                rd: '',
-                z1: '',
-                rB: '',
-                beap: [],
-                id: ''
-            },
-            pixels: {
-                html: [],
-                backup: [],
-                flash: []
-            },
-            cookie: {
-                domain: location.hostname.replace(/^www\./, ''),
-                pathname: location.pathname.match(cookiePathNameRegex)[0],
-                expires: 172800000,
-                name: 'ACTCookie' + (new Date()).getDay()
-            },
-            format: {
-                value: ''
-            },
-            template: {
-                name: 'act_base',
-                type: 'lrec',
-                format: 'lrec',
-                width: 300,
-                height: 250
-            }
-        },
+        config: { },
 
         /**
         * Start up the Standard Ad if the superConf is supplied.
@@ -164,8 +135,6 @@ ACT.define('Base', [/*@<*/'Debug', /*>@*/ 'Event', 'Cookie', 'Lang', 'Tracking',
                 if (conf.customData && !Lang.isObjectEmpty(conf.customData)) {
                     // if there any comming input
                     if (conf.inputData) {
-                        // load input
-                        comingData = new IO(conf.inputData);
                         /*@<*/
                         debug.log('[ ACT_base.js ] comingData', comingData);
                         /*>@*/
@@ -173,6 +142,7 @@ ACT.define('Base', [/*@<*/'Debug', /*>@*/ 'Event', 'Cookie', 'Lang', 'Tracking',
                         IOLoad = Event.on('IO:load:done', function (data) {
                             var customDataWithComing;
                             var onEventSuperConfMerged;
+                            IOLoad.remove();
                             /* istanbul ignore else */
                             if (conf.inputData.type === 'JSON') {
                                 customDataWithComing = CustomData.inputOntoCustomDataJSON(conf.inputData.id, conf.customData, data.response);
@@ -180,8 +150,9 @@ ACT.define('Base', [/*@<*/'Debug', /*>@*/ 'Event', 'Cookie', 'Lang', 'Tracking',
                             onEventSuperConfMerged = CustomData.map(customDataWithComing, ACT.getConfig(conf.superConf));
                             root.config = Lang.merge(conf, onEventSuperConfMerged);
                             root.loadStandardAd();
-                            IOLoad.remove();
                         });
+                        // load input
+                        comingData = new IO(conf.inputData);
                     } else {
                         superConfMerged = CustomData.map(conf.customData, ACT.getConfig(conf.superConf));
                         root.config = Lang.merge(conf, superConfMerged);

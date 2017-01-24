@@ -1,0 +1,107 @@
+<link rel="stylesheet" href="../../src/assets/ACT_icons/ACT_icons.css" />
+
+<div id="act-ad-container" style="margin:0px auto;padding:0px;width:300px;min-height:250px;">
+    <div id="act-ad" style="margin:0px;padding:0px;position:relative;font-size:11px;">
+        <noscript>
+            <a href="https://uk.yahoo.com">
+                <img src="https://s.yimg.com/dh/ap/actjs/expandable/rc/0-0-1/asset/300x250_yahoo.jpg" border="0">
+            </a>
+        </noscript>
+    </div>
+</div>
+
+<script language="javascript">
+	(function() {
+		if (!window.ACT) {
+			window.ACT = {
+				"adQueue": []
+			};
+		}
+	
+		ACT.adQueue.push(
+			function() {
+				var inline_src = '<link rel="stylesheet" href="https://s.yimg.com/cv/ae/actjs/example/enabler_expand/main.css" /><div id="ad-container"><div id="viewport" class="collapse-viewport"><h1>Expand Ad <br/> Example</h1><button type="button" id="action">Expand</button><button type="button" id="exit">exit</button><button type="button" id="exitOverride">exitOverride</button><div id="direction"></div> <video id="videoPlayer" ><source src="https://s.yimg.com/cv/ae/actjs/floatinghtml5/expandable/media/video.mp4" type="video/mp4"><source src="https://s.yimg.com/cv/ae/actjs/floatinghtml5/expandable/media/video.webm" type="video/webm"></video></div></div><scr'+'ipt src="https://s.yimg.com/cv/ae/actjs/example/enabler_expand/main.js"></scr'+'ipt>';
+				var trackingConfig = {
+						"trackUnique": true
+				};
+
+				var ad = ACT.Base({
+					conf: {
+						adId: 'test_ad_id',
+						cookie: {
+							"name": "uniqueAdName"
+						},
+						template: {
+							width: 300,
+							height: 250
+						},
+						tracking: trackingConfig,
+						customData: {
+							/* Inline  */
+							"layers.mpu.mpu_html.html5Config.enabler": true,
+							"layers.mpu.mpu_html.html5Config.enablerPath": "https://s.yimg.com/cv/eng/externals/actjs/1.0.11/debug/",
+							"layers.mpu.mpu_html.html5Config.iframe": true,
+							"layers.mpu.mpu_html.html5Config.src": inline_src,
+							"layers.mpu.mpu_html.html5Config.iframevars": {
+								tracking: trackingConfig,
+								exitUrls: {
+									"clickTag": "https://facebook.com"
+								}
+							},
+							"layers.mpu.mpu_html.trackingLabels.clickTagFB": "lrec_click_facebook_clicktagFB",
+							"layers.mpu.html5_container.html5Config.htmlRoot": "",
+
+							/* Backup */
+							"layers.mpu.backup_image.imageConfig.src": "https://s.yimg.com/dh/ap/debug/actjs/backup-inline.png",
+							"layers.mpu.backup_container.events.clicktagbackup.URLpath": "https://vn.yahoo.com",
+
+							/* Text Buttons */
+							"layers.mpu.replay_btn.containerConfig.innerText": "Replay Ad"
+						}
+					},
+					superConf: "config-object-floating",
+					extend: {}
+				});
+
+			}
+		);
+	})();
+</script>
+
+
+<script src="../../src/core/ACT.js"></script>
+<script src="../../src/core/ACT_base.js"></script>
+<script src="../../src/library/ACT_debug.js"></script>
+<script src="../../src/library/ACT_lang.js"></script>
+<script src="../../src/library/ACT_event.js"></script>
+<script src="../../src/library/ACT_json.js"></script>
+<script src="../../src/library/ACT_class.js"></script>
+<script src="../../src/library/ACT_IO.js"></script>
+<script src="../../src/library/ACT_UA.js"></script>
+<script src="../../src/library/ACT_dom.js"></script>
+<script src="../../src/library/ACT_animation.js"></script>
+<script src="../../src/library/ACT_capability.js"></script>
+<script src="../../src/core/ACT_cookie.js"></script>
+<script src="../../src/library/ACT_util.js"></script>
+<script src="../../src/core/ACT_secureDarla.js"></script>
+<script src="../../src/core/ACT_actionsQueue.js"></script>
+<script src="../../src/core/ACT_environment.js"></script>
+<script src="../../src/core/ACT_Screen.js"></script>
+<script src="../../src/library/ACT_flash.js"></script>
+<script src="../../src/library/ACT_SWFBridge.js"></script>
+<script src="../../src/library/ACT_DwellTime.js"></script>
+<script src="../../src/capabilities/ACT_contentSwf.js"></script>
+<script src="../../src/capabilities/ACT_contentVideoFlash.js"></script>
+<script src="../../src/capabilities/ACT_contentContainer.js"></script>
+<script src="../../src/capabilities/ACT_contentImage.js"></script>
+<script src="../../src/capabilities/ACT_contentVideoHtml.js"></script>
+<script src="../../src/capabilities/ACT_contentHtml5.js"></script>	
+<script src="../../src/core/ACT_scaffolding.js"></script>
+<script src="../../src/core/ACT_layerStandard.js"></script>
+<script src="../../src/core/ACT_Layerslist.js"></script>
+<script src="../../src/core/ACT_StandardAd.js"></script>
+<script src="../../src/core/ACT_TrackingFacade.js"></script>
+<script src="../../src/library/ACT_VideoEvents.js"></script>
+<script src="../../src/library/ACT_customData.js"></script>
+
+<script src="./config-object.js"></script>

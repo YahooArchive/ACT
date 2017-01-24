@@ -1,117 +1,6 @@
-/*global describe, before, after, it, ACT, sinon, chai */
-'use strict';
 describe("ACT.layersList", function() {
 
 	var expect = chai.expect;
-
-	if(ACT.LayerStandard === undefined){
-		ACT.define('LayerStandard', ['Event', 'Lang', 'Class'], function(ACT) {
-
-			var lang = ACT.Lang;
-			var Class = ACT.Class;
-
-			function LayerStandard(config) {
-				this.init(config);
-			}
-
-			LayerStandard.ATTRS = {
-				'NAME': 'LayerStandard',
-				'version': '0.0.1',
-				'playing': false
-			};
-
-			lang.extend(LayerStandard, Class, {
-				initializer: function(config){
-					this.set('config', config);
-				},
-
-				play: function() {
-					var root = this;
-					root.set('playing', true);
-					ACT.Event.fire('layer:played', {
-						layerName: root.get('layerName')
-					});
-
-				},
-
-				stop: function() {
-					var root = this;
-					root.set('playing', false);
-
-					ACT.Event.fire('layer:stopped', {
-						layerName: root.get('layerName')
-					});
-
-				},
-
-				getType: function() {
-					return 'normal';
-				},
-
-				currentLayerPosition: function() {
-					return [300, 800];
-				}
-
-			});
-
-			return LayerStandard;
-
-		});
-	}
-
-	ACT.define('LayerSdarla', ['Event', 'Lang', 'Class'], function(ACT) {
-
-		var lang = ACT.Lang;
-		var Class = ACT.Class;
-
-		function LayerSdarla(config) {
-			this.init(config);
-			//LayerSdarla.superclass.constructor.apply(this, arguments);
-		}
-		LayerSdarla.ATTRS = {
-
-			'NAME': 'LayerSdarla',
-			'version': '0.0.1'
-		};
-
-		lang.extend(LayerSdarla, Class, {
-			initializer: function(config){
-				this.ATTRS = lang.merge(this.ATTRS, config.config);
-			},
-
-			play: function() {
-				var root = this;
-				root.set('playing', true);
-
-				ACT.Event.fire('layer:played', {
-					layerName: root.get('layerName')
-				});
-
-			},
-
-			stop: function() {
-				var root = this;
-				root.set('playing', false);
-
-				ACT.Event.fire('layer:stopped', {
-					layerName: root.get('layerName')
-				});
-
-			},
-
-			getType: function() {
-				return 'darla';
-			},
-
-			currentLayerPosition: function() {
-				return [300, 800];
-			}
-
-		});
-
-		return LayerSdarla;
-
-	});
 
 	var sDarlaAPI = {
 		lyr: {
@@ -132,7 +21,6 @@ describe("ACT.layersList", function() {
 		supports: function(bool) {},
 		cookie: function(cookie, obj) {}
 	};
-
 
 	describe('constructor', function() {
 
@@ -193,7 +81,6 @@ describe("ACT.layersList", function() {
 		});
 
 	});
-
 
 	describe("ACT.layersList events in standard layers", function() {
 
@@ -271,7 +158,7 @@ describe("ACT.layersList", function() {
 				layerPositionHandlerEvent.remove();
 
 				expect(e.layerName).is.equal('floating');
-				expect(e.newValue.x).is.equal(300);
+				expect(e.newValue.x).is.equal(0);
 				expect(e.newValue.y).is.equal(800);
 
 				done();
@@ -311,9 +198,7 @@ describe("ACT.layersList", function() {
 	});
 
 	describe("ACT.layersList in darla layers", function() {
-
 		var layersList;
-
 		var layersConfig = {
 			mpu: {
 				layerName: 'mpu',
@@ -352,25 +237,20 @@ describe("ACT.layersList", function() {
 		});
 
 		it("should create a layerList with Darla API", function() {
-
 			var layerList = layersList.get('layersList');
-
 			expect(layerList.length).to.equal(2);
 			expect(layerList[0].get('layerName')).to.equal('mpu');
-			expect(layerList[0].getType()).to.equal('normal');
+			expect(layerList[0].getType()).to.equal('standard');
 			expect(layerList[1].get('layerName')).to.equal('floating');
-			expect(layerList[1].getType()).to.equal('darla');
+
+//			expect(layerList[1].getType()).to.equal('darla');
 			expect(layersList.get('envToPlay')).to.equal('html');
 			expect(layersList.get('sDarlaAPI')).is.a('object');
-
 		});
-
 	});
 
 	describe("ACT.layersList play & stop", function() {
-
 		var layersList;
-
 		var layersConfig = {
 			mpu: {
 				layerName: 'mpu',
@@ -575,10 +455,10 @@ describe("ACT.layersList", function() {
 		var layersConfig = {
 			mpu: {
 				layerName: 'mpu',
-				type: 'inline',
-				base: "act-ad",
-				x: 0,
-				y: 0,
+				type: 'overlay',
+				base: "body",
+				x: 300,
+				y: 300,
 				width: 300,
 				height: 250,
 				contentLayer: {}
@@ -616,8 +496,8 @@ describe("ACT.layersList", function() {
 			var layerPositionEvent = ACT.Event.on('layersList:getLayerPosition:complete', function(e) {
 				expect(e.layerName).is.equal('floating');
 
-				expect(e.newValue.x).is.equal(300);
-				expect(e.newValue.y).is.equal(800);
+				expect(e.newValue.x).is.equal(0);
+				expect(e.newValue.y).is.equal(0);
 
 
 				layerPositionEvent.remove();
@@ -636,8 +516,8 @@ describe("ACT.layersList", function() {
 
 			var layerPositionEvent = ACT.Event.on('layersList:getLayerPosition:complete', function(e) {
 				expect(e.layerName).is.equal('floating');
-				expect(e.newValue.x).is.equal(0);
-				expect(e.newValue.y).is.equal(800);
+				expect(e.newValue.x).is.equal(-300);
+				expect(e.newValue.y).is.equal(0);
 				layerPositionEvent.remove();
 				layersList.destroy();
 				done();
