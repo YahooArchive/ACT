@@ -14,7 +14,7 @@ Prior to ACT.js there were 2 main parallel paths for core ad development based o
 When the development teams from the regions came together to form a global dev community, ACT.js naturally emerged. While there is no perfect solution for all scenarios and ads, ACT.js is the closest we've come to offering both flexibility, standardization, and extensibility, and it will continue to evolve and advance.
 
 ## Primary User Base
-We touched upon who the primary users are in our last newsletter. We want to emphasize that ACT.js is for the global ad development community with intermediate to expert level javascript coding experience and knowledge.
+We want to emphasize that ACT.js is for the global ad development community with intermediate to expert level javascript coding experience and knowledge.
 
  * Intermediate: often starts from a template and relies on configuration based development for repeatable executions
  * Advanced/Expert : near "from scratch" development writes code using a mix of her own code and libraries for a highly, custom single execution
