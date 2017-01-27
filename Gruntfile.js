@@ -246,6 +246,17 @@ module.exports = function(grunt) {
                 }
             }
         },
+        version: {
+            options: {
+                pkg: 'package.json'
+            },
+            project: {
+                src: ['package.json']
+            },
+            modules: {
+                src: ['src/**/**.js']
+            }
+        },   
         'docs-demo': {
             demo: {
                 options: {
@@ -337,10 +348,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-mocha');
     grunt.loadNpmTasks('grunt-compile-handlebars');
     grunt.loadNpmTasks('grunt-eslint');
+    grunt.loadNpmTasks('grunt-version');
     // load the extra tasks defined in the ./tasks folder
     grunt.loadTasks('tasks');
     grunt.registerTask('debug', ['debug_code_remover']);
-    grunt.registerTask('build', ['copy', 'concat:debug', 'concat:enablerDebug', 'debug_code_remover', 'concat:deploy', 'concat:enabler', 'uglify', 'copy:assets']);
+    grunt.registerTask('build', ['version', 'copy', 'concat:debug', 'concat:enablerDebug', 'debug_code_remover', 'concat:deploy', 'concat:enabler', 'uglify', 'copy:assets']);
     grunt.registerTask('lint', ['eslint']);
     grunt.registerTask('test', ['karma']);
     grunt.registerTask('docs', ['yuidoc:all', 'copy:enabler_docs', 'yuidoc:enabler', 'docsdemo', 'string-replace', 'copy:examples', 'copy:src']);

@@ -94,7 +94,7 @@ ACT.define('ActionsQueue', [/*@<*/'Debug', /*>@*/ 'Event', 'Lang', 'Class'], fun
          * @attribute version
          * @type String
          */
-        version: '1.0.41',
+        version: '1.1.0',
 
         /**
          * List of actions have been registered

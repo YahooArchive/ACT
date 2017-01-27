@@ -39,7 +39,7 @@ ACT.define('Lang', [/*@<*/'Debug'/*>@*/], function (ACT) {
      */
     Lang.ATTRS = {
         NAME: 'Lang',
-        version: '1.0.41'
+        version: '1.1.0'
     };
 
     Lang.prototype = {

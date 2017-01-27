@@ -491,7 +491,7 @@ ACT.define('Cookie', [/*@<*/'Debug', /*>@*/ 'Json', 'Lang', 'Event'], function (
      */
     cookie.ATTRS = {
         NAME: 'Cookie',
-        version: '1.0.41'
+        version: '1.1.0'
     };
 
     /**

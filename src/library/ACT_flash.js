@@ -111,7 +111,7 @@ ACT.define('Flash', [/*@<*/'Debug', /*>@*/'Dom', 'Lang', 'UA'], function (ACT) {
      */
     Flash.ATTRS = {
         NAME: 'Flash',
-        version: '1.0.41'
+        version: '1.1.0'
     };
 
     Flash.prototype = {

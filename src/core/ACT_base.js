@@ -105,7 +105,7 @@ ACT.define('Base', [/*@<*/'Debug', /*>@*/ 'Event', 'Cookie', 'Lang', 'Tracking',
     */
     Base.ATTRS = {
         NAME: 'Base',
-        version: '1.0.41'
+        version: '1.1.0'
     };
 
     Base.prototype = {

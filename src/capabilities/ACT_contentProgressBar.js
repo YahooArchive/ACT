@@ -72,7 +72,7 @@ ACT.define('ContentProgressBar', [/*@<*/'Debug', /*>@*/ 'Dom', 'Lang', 'Event', 
          * @attribute version
          * @type String
          */
-        version: '1.0.41',
+        version: '1.1.0',
 
         /**
          * @attribute configObject

@@ -195,7 +195,7 @@ ACT.define('ContentThirdParty', [/*@<*/'Debug', /*>@*/ 'UA', 'Dom', 'Lang', 'Eve
          * @attribute version
          * @type String
          */
-        version: '1.0.41',
+        version: '1.1.0',
 
         /**
          * @attribute configObject

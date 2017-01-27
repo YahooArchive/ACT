@@ -438,7 +438,7 @@ ACT.define('Enabler', [/*@<*/'Debug', /*>@*/ 'Event', 'Lang', 'VideoEvents', 'Js
          * @attribute version
          * @type String
          */
-        version: '1.0.41'
+        version: '1.1.0'
     };
 
     Enabler.prototype = {

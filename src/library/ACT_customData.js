@@ -267,7 +267,7 @@ ACT.define('CustomData', [/*@<*/'Debug', /*>@*/ 'Lang'], function (ACT) {
     */
     CustomData.ATTRS = {
         NAME: 'CustomData',
-        version: '1.0.41'
+        version: '1.1.0'
     };
 
     CustomData.prototype = {
