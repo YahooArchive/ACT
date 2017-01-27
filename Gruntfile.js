@@ -2,23 +2,6 @@ var path = require('path');
 var tempAssets = [];
 var temCoreLink = "";
 
-function getDateStr() {
-    var today = new Date();
-    var dd = today.getDate();
-    var mm = today.getMonth() + 1; //January is 0!
-    var yyyy = today.getFullYear();
-    yyyy = "" + yyyy;
-    var yy = yyyy.substr(2, 2);
-
-    if (dd < 10) {
-        dd = '0' + dd
-    }
-    if (mm < 10) {
-        mm = '0' + mm
-    }
-    return yy + mm + dd;
-}
-
 function getFullPath(filesArr, path) {
     var p = path ? path : "";
     var f = filesArr && filesArr.length > 0 ? filesArr : [];
@@ -31,11 +14,9 @@ function getFullPath(filesArr, path) {
 }
 
 module.exports = function(grunt) {
-    var dateStr = getDateStr();
     var debug = 'build/debug/';
     var deploy = 'build/deploy/';
     var min = 'build/min/';
-
     var base_files = [
         "core/ACT.js",
         "core/ACT_actionsQueue.js",
@@ -103,11 +84,12 @@ module.exports = function(grunt) {
         "library/ACT_util.js"
     ];
     var baseDebug = getFullPath(base_files, debug);
-    baseDebug.push(debug + 'library/ACT_debug.js');
     var base = getFullPath(base_files, deploy);
     var base_min = getFullPath(base_files, min);
     var enabler = getFullPath(enablerFiles, deploy);
     var enablerDebug = getFullPath(enablerFiles, debug);
+
+    baseDebug.push(debug + 'library/ACT_debug.js');
     enablerDebug.push(debug + 'library/ACT_debug.js');
 
     grunt.initConfig({
@@ -258,9 +240,35 @@ module.exports = function(grunt) {
                 }
             }
         },
-       	eslint: {
-			target: ['./src/']
-		},
+        'docs-demo': {
+            demo: {
+                options: {
+                    src: ['examples'],
+                    storePath: 'temp_docs/demo/',
+                    filter: {
+                        ok:['js', 'html', 'json'],
+                        ignore: ['asset', '.DS_Store'],
+                        folder_ok: false
+                    },
+                    template: './doc_themes/default/layouts/main.handlebars'
+                }
+            },
+            demoEnabler: {
+                options: {
+                    src: ['examples'],
+                    storePath: 'temp_enabler_docs/demo/',
+                    filter: {
+                        ok:['js', 'html', 'json'],
+                        ignore: ['asset', '.DS_Store'],
+                        folder_ok: ['enabler']
+                    },
+                    template: './doc_themes/default/layouts/main.handlebars'
+                }
+            }
+        },
+        eslint: {
+            target: ['./src/']
+        },
         'compile-handlebars': {
             'integration-tests': {
                 files: [{
@@ -312,6 +320,7 @@ module.exports = function(grunt) {
             }
         },
     });
+
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -322,10 +331,13 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-mocha');
     grunt.loadNpmTasks('grunt-compile-handlebars');
     grunt.loadNpmTasks('grunt-eslint');
+    // load the extra tasks defined in the ./tasks folder
+    grunt.loadTasks('tasks');
     grunt.registerTask('debug', ['debug_code_remover']);
     grunt.registerTask('build', ['copy', 'concat:debug', 'concat:enablerDebug', 'debug_code_remover', 'concat:deploy', 'concat:enabler', 'uglify', 'copy:assets']);
     grunt.registerTask('lint', ['eslint']);
     grunt.registerTask('test', ['karma']);
-    grunt.registerTask('docs', ['yuidoc:all', 'copy:enabler_docs', 'yuidoc:enabler', 'string-replace', 'copy:examples']);
+    grunt.registerTask('docs', ['yuidoc:all', 'copy:enabler_docs', 'yuidoc:enabler', 'string-replace', 'copy:examples', 'docsdemo']);
+    grunt.registerTask('docsdemo', ['docs-demo:demo', 'docs-demo:demoEnabler']);
     grunt.registerTask('default', ['lint', 'test']);
 };
