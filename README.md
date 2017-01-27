@@ -65,7 +65,7 @@ grunt test
 
 ## Documentation
 
- * [ACT.js Documentation](https://yahoo.github.io/ACT/)
+ * [ACT.js Documentation](https://yahoo.github.io/ACT/docs/)
  * [ACT.js Enabler Documentation](https://yahoo.github.io/ACT/enabler/)
 
 The code documentation is generated every time we run `grunt deploy`. All files can be found under `./docs`.
