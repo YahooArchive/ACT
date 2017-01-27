@@ -337,7 +337,7 @@ module.exports = function(grunt) {
     grunt.registerTask('build', ['copy', 'concat:debug', 'concat:enablerDebug', 'debug_code_remover', 'concat:deploy', 'concat:enabler', 'uglify', 'copy:assets']);
     grunt.registerTask('lint', ['eslint']);
     grunt.registerTask('test', ['karma']);
-    grunt.registerTask('docs', ['yuidoc:all', 'copy:enabler_docs', 'yuidoc:enabler', 'string-replace', 'copy:examples', 'docsdemo']);
+    grunt.registerTask('docs', ['yuidoc:all', 'copy:enabler_docs', 'yuidoc:enabler', 'docsdemo', 'string-replace', 'copy:examples']);
     grunt.registerTask('docsdemo', ['docs-demo:demo', 'docs-demo:demoEnabler']);
     grunt.registerTask('default', ['lint', 'test']);
 };
