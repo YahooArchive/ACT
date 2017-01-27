@@ -29,10 +29,6 @@ ACT.define('Base', [/*@<*/'Debug', /*>@*/ 'Event', 'Cookie', 'Lang', 'Tracking',
     *     var conf = {
     *         conf: {
     *             tracking: {
-    *                 rd:'',
-    *                 z1:'',
-    *                 rB:'',
-    *                 beap:[],
     *                 id: ''
     *             },
     *             template: {

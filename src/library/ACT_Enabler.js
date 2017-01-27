@@ -315,10 +315,6 @@ ACT.define('Enabler', [/*@<*/'Debug', /*>@*/ 'Event', 'Lang', 'VideoEvents', 'Js
      * ```
      *     var conf = {
      *         tracking: {
-     *             r0: '${CLICKURL}',
-     *             rB: '${CLICKURL?ClientSideEditable}',
-     *             z1: '${INTERACTION_URL}',
-     *             cb: '${REQUESTID}',
      *             trackUnique: true
      *         },
      *         exitUrls: {
