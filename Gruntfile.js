@@ -136,6 +136,12 @@ module.exports = function(grunt) {
                 cwd: 'src/',
                 src: enablerPublic,
                 dest: 'temp_enabler/'
+            },
+            src: {
+                expand: true,
+                cwd: 'src/',
+                src: '**',
+                dest: 'temp_src/'
             }
         },
         debug_code_remover: {
