@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>Mocha Tests - Utils</title>
+  <link rel="stylesheet" media="all" href="../../../node_modules/mocha/mocha.css">
+</head>
+<body>
+<div id="mocha"><p><a href="">Index</a></p></div>
+<div id="messages"></div>
+<div id="fixtures"></div>
+<script src="../../../node_modules/mocha/mocha.js"></script>
+<script src="../../../node_modules/chai/chai.js"></script>
+<script src="../../vendor/sinon.js"></script>
+
+<script src="../../../src/core/ACT.js"></script>
+
+<script src="../../../src/core/ACT_TrackingFacade.js"></script>
+
+<script src="../../../src/library/ACT_debug.js"></script>
+<script src="../../../src/library/ACT_class.js"></script>
+<script src="../../../src/library/ACT_event.js"></script>
+<script src="../../../src/library/ACT_lang.js"></script>
+<script src="../../../src/library/ACT_util.js"></script>
+
+<script>mocha.setup('bdd')</script>
+<script src="ACT_TrackingFacade.spec.js"></script>
+<script>
+  if (navigator.userAgent.indexOf('PhantomJS') < 0) {
+    mocha.run();
+  }
+</script>
+</body>
+</html>

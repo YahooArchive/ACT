@@ -1,0 +1,14 @@
+{
+    "extends": "airbnb-base/legacy",
+    "rules": {
+        "no-use-before-define": ["warn", { "functions": true, "classes": true }],
+        "spaced-comment": ["error", "always", { "block": { "exceptions": ["@<", ">@"] } }],
+        "max-len": ["error", 200, 4 ],
+        "indent": 0,
+        "comma-dangle": ["error", "never"],
+        "no-param-reassign": 0,
+        "func-names": 0,
+        "no-restricted-syntax": ["error",  'DebuggerStatement', 'LabeledStatement', 'WithStatement'],
+        "no-control-regex": 0
+    }
+}

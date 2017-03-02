@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<!-- APT Vendor: Yahoo, Format: Standard Graphical -->
+<!-- Extra Css -->
+<style>
+.ad_slug_table {
+    margin: 0 auto !important;
+}
+</style>
+<!-- ActJS Css -->
+<link rel="stylesheet" href="https://s.yimg.com/cv/eng/externals/actjs/1.0.11/min/assets/ACT_icons/ACT_icons.css" />
+<!-- ActJS Ad Container -->
+<div id="act-ad-container" style="margin:280px 0 0 500px; padding:0px;width:300px;min-height:250px;">
+    <div id="act-ad" style="margin:0px;padding:0px;position:relative;font-size:11px;min-height:20px;">
+        <noscript>
+            <a href="https://uk.yahoo.com">
+                <img src="https://s.yimg.com/dh/ap/debug/actjs/backup-inline.png" border="0">
+            </a>
+        </noscript>
+    </div>
+</div>
+
+<script language="javascript">
+    (function () {
+        if (!window.ACT) {
+            window.ACT = {
+                "adQueue": []
+            };
+        }
+        ACT.adQueue.push(
+            function () {
+                var inline_src = ' <link rel="stylesheet" href="https://s.yimg.com/cv/ae/actjs/floatinghtml5/lrec/main.css"/> <div id="lrec-inline"> <video id="videoPlayer" style="position:relative; z-index:1;" controls> <source src="https://s.yimg.com/cv/ae/actjs/floatinghtml5/lrec/media/video.mp4" type="video/mp4"> <source src="https://s.yimg.com/cv/ae/actjs/floatinghtml5/lrec/media/video.webm" type="video/webm"> </video> <a target="_blank" style="display:block"> <div id="clickArea" class="button"> Click Button </div></a> <a id="FbButton" target="_blank"> <div class="buttonFB" style="display:block"> Facebook Button </div></a> </div><scr'+'ipt src="https://s.yimg.com/cv/ae/actjs/floatinghtml5/lrec/scripts/main1445276710.js"></scr'+'ipt>';
+                var expandable_src = '<link rel="stylesheet" href="https://s.yimg.com/cv/ae/actjs/floatinghtml5/expandable/main.css"/><div id="expandable"><video id="videoPlayer" controls autoplay><source src="https://s.yimg.com/cv/ae/actjs/floatinghtml5/expandable/media/video.mp4" type="video/mp4"><source src="https://s.yimg.com/cv/ae/actjs/floatinghtml5/expandable/media/video.webm" type="video/webm"></video><a id="facebookBtn" target="_blank"><div class="button" >Facebook</div></a><a id="clickArea" target="_blank"><div class="button" >Click Button</div></a><a id="twitterButton" target="_blank" style="display:block"><div class="button" >Twitter</div></a><a id="closeButton" target="_blank" style="display:block"></a></div><scr'+'ipt src="https://s.yimg.com/cv/ae/actjs/floatinghtml5/expandable/scripts/main1445276742.js"></scr'+'ipt>';
+                var floating_src = '<link rel="stylesheet" href="https://s.yimg.com/cv/ae/actjs/floatinghtml5/floating/main.css"/><div id="floating"><a id="clickArea" target="_blank"><div class="button" >Click Button</div></a><a id="closeButton" target="_blank" style="display:block"></a></div><scr'+'ipt src="https://s.yimg.com/cv/ae/actjs/floatinghtml5/floating/scripts/main.js"></scr'+'ipt>';
+                var trackingConfig = {}
+
+                var ad = ACT.Base({
+                    conf: {
+                        adId: '12345',
+                        cookie: {
+                            name: "adCookieName"
+                        },
+                        template: {
+                            width: 300,
+                            height: 250
+                        },
+                        tracking: trackingConfig,
+                        customData: {
+                            /* Inline  */
+                            "layers.mpu.mpu_html.html5Config.enabler": true,
+                            "layers.mpu.mpu_html.html5Config.enablerPath": "https://s.yimg.com/cv/eng/externals/actjs/1.0.14/min/",
+                            "layers.mpu.mpu_html.html5Config.iframe": true,
+                            "layers.mpu.mpu_html.html5Config.src": inline_src,
+                            "layers.mpu.mpu_html.html5Config.iframevars": {
+                                tracking: trackingConfig,
+                                exitUrls: {
+                                    "clickTagFB": "https://facebook.com"
+                                }
+                            },
+                            "layers.mpu.mpu_html.trackingLabels.clickTagFB": "lrec_click_facebook_clicktagFB",
+                            "layers.mpu.html5_container.html5Config.htmlRoot": "",
+
+                            /* Expandable */
+                            "layers.expandable.expandable_html.html5Config.enabler": true,
+                            "layers.expandable.expandable_html.html5Config.enablerPath": "https://s.yimg.com/cv/eng/externals/actjs/1.0.14/min/",
+                            "layers.expandable.expandable_html.html5Config.iframe": true,
+                            "layers.expandable.expandable_html.html5Config.src": expandable_src,
+                            "layers.expandable.expandable_html.html5Config.iframevars": {
+                                tracking: trackingConfig,
+                                exitUrls: {
+                                    "clickTag": "https://vn.yahoo.com",
+                                    "clickTagFacebook": "https://facebook.com",
+                                    "clickTagTwitter": "https://twitter.com"
+                                }
+                            },
+                            "layers.expandable.expandable_html.html5Config.htmlRoot": "",
+                            /* change the size of expandable layer in the below line*/
+                            "layers.expandable.width": "770px",
+                            "layers.expandable.height": "450px",
+                            "layers.expandable.expandable_html.css.width": "770px",
+                            "layers.expandable.expandable_html.css.height": "450px",
+                            /* Uncomment the below line to use ACTjs close button*/
+                            "layers.expandable.expandable_close_btn.css.display": "none",
+
+                            /* Expandable */
+                            "layers.floating.floating_html.html5Config.enabler": true,
+                            "layers.floating.floating_html.html5Config.enablerPath": "https://s.yimg.com/cv/eng/externals/actjs/1.0.14/min/",
+                            "layers.floating.floating_html.html5Config.iframe": true,
+                            "layers.floating.floating_html.html5Config.src": floating_src,
+                            "layers.floating.floating_html.html5Config.iframevars": {
+                                tracking: trackingConfig,
+                                exitUrls: {
+                                    "clickTag": "https://vn.yahoo.com",
+                                    "clickTagFacebook": "https://facebook.com",
+                                    "clickTagTwitter": "https://twitter.com"
+                                }
+                            },
+                            "layers.floating.floating_html.html5Config.htmlRoot": "",
+                            /* change the size of floating layer in the below line*/
+                            "layers.floating.width": "900px",
+                            "layers.floating.height": "250px",
+                            "layers.floating.floating_html.css.width": "900px",
+                            "layers.floating.floating_html.css.height": "250px",
+                            /* Uncomment the below line to use ACTjs close button*/
+                            "layers.floating.floating_close_btn.css.display": "none",
+
+                            /* Backup */
+                            "layers.mpu.backup_image.imageConfig.src": "https://s.yimg.com/dh/ap/debug/actjs/backup-inline.png",
+                            "layers.mpu.backup_container.events.clicktagbackup.URLpath": "https://fr.yahoo.com",
+
+                            /* Text Buttons */
+                            "layers.mpu.replay_btn.containerConfig.innerText": "Replay Ad"
+                        }
+                    },
+                    superConf: "config-object-floating",
+                    extend: {}
+                });
+            }
+        );
+    })();
+</script>
+<script src="{{ACTJS_core_file}}"></script>
+<script src="https://s.yimg.com/zz/combo?/cv/ae/flaoting/fuctional/config-object.js"></script>
+
+</body>
+</html>

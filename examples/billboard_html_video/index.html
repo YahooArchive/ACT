@@ -1,0 +1,108 @@
+<!-- ActJS Css -->
+<link rel="stylesheet" href="../../src/assets/ACT_icons/ACT_icons.css"/>
+
+<!-- ActJS Ad Container -->
+<div id="act-ad-container" style="margin:0px auto;padding:0px;width:970px;min-height:20px;">
+    <div id="act-ad" style="margin:0px;padding:0px;position:relative;font-size:11px;">
+        <noscript>
+            <a href="https://uk.yahoo.com">
+                <img src="https://s.yimg.com/dh/ap/debug/actjs/backup-inline.png" border="0">
+            </a>
+        </noscript>
+    </div>
+</div>
+<!-- ActJS Hook -->
+<script language="javascript">
+(function() {
+	if (!window.ACT) {
+		window.ACT = {
+			"adQueue": []
+		};
+	}
+	ACT.adQueue.push(
+		function() {
+			var ad = ACT.Base({
+				conf: {
+					adId: 'billboard_id',
+					template: {
+						width: 970,
+						height: 250
+					},
+					cookie: {
+						name: "uniqueAdName",
+					},
+					tracking: {},
+					customData: {
+						 // video position
+						"layers.billboard.video1.css.top": "10px",
+						"layers.billboard.video1.css.left": "180px",
+						"layers.billboard.video1.css.width": "400px",
+						"layers.billboard.video1.css.height": "224px",
+
+						// video setting
+						"layers.billboard.video1.videoHtmlConfig.autoplay": true,
+						"layers.billboard.video1.videoHtmlConfig.controls": false,
+						"layers.billboard.video1.videoHtmlConfig.loop": true,
+
+						// video links
+						"layers.billboard.video1.videoHtmlConfig.videoWebM": "https://s.yimg.com/cv/ae/actjs/demo/media/billboard-motion-area.webm",
+						"layers.billboard.video1.videoHtmlConfig.videoMP4": "https://s.yimg.com/cv/ae/actjs/demo/media/billboard-motion-area.mp4",
+						
+						// Background image
+						"layers.billboard.backup_image.imageConfig.src": "https://s.yimg.com/cv/ae/default/150916/970x2501442405209.jpg", 
+							
+						// Background clickthrough
+						"layers.billboard.buttonContainer.events.clickTAG.URLpath": "http://www.yahoo.com",
+
+						// extra buttons
+						"layers.textLinks.openBtn.css.color":"#000000",
+						"layers.textLinks.closeBtn.css.color":"#000000",
+						"layers.textLinks.openBtn.containerConfig.innerText": "Show Ad",
+						"layers.textLinks.closeBtn.containerConfig.innerText": "Close Ad",
+						"layers.extraBtns.surveyBtn.containerConfig.innerText": "Ad FeedBack",
+						"layers.extraBtns.surveyBtn.eventConfig.action0.URLpath": "http://surveylink.yahoo.com/wix/p0767152.aspx",
+						"layers.extraBtns.adchoicesBtn.containerConfig.innerText": "Ad Choices",
+						"layers.extraBtns.adchoicesBtn.eventConfig.action0.URLpath": "http://info.yahoo.com/privacy/uk/yahoo/relevantads.html"
+					}
+				},
+				superConf: "config-object-billboard",
+				extend: {}
+			});
+		}
+	);
+})();
+</script>
+
+
+<script src="../../src/core/ACT.js"></script>
+<script src="../../src/core/ACT_Layerslist.js"></script>
+<script src="../../src/core/ACT_Screen.js"></script>
+<script src="../../src/core/ACT_StandardAd.js"></script>
+<script src="../../src/core/ACT_TrackingFacade.js"></script>
+<script src="../../src/core/ACT_actionsQueue.js"></script>
+<script src="../../src/core/ACT_base.js"></script>
+<script src="../../src/core/ACT_cookie.js"></script>
+<script src="../../src/core/ACT_environment.js"></script>
+<script src="../../src/core/ACT_layerStandard.js"></script>
+<script src="../../src/core/ACT_scaffolding.js"></script>
+<script src="../../src/core/ACT_secureDarla.js"></script>
+<script src="../../src/library/ACT_IO.js"></script>
+<script src="../../src/library/ACT_UA.js"></script>
+<script src="../../src/library/ACT_animation.js"></script>
+<script src="../../src/library/ACT_capability.js"></script>
+<script src="../../src/library/ACT_class.js"></script>
+<script src="../../src/library/ACT_customData.js"></script>
+<script src="../../src/library/ACT_debug.js"></script>
+<script src="../../src/library/ACT_dom.js"></script>
+<script src="../../src/library/ACT_event.js"></script>
+<script src="../../src/library/ACT_flash.js"></script>
+<script src="../../src/library/ACT_json.js"></script>
+<script src="../../src/library/ACT_lang.js"></script>
+<script src="../../src/library/ACT_util.js"></script>
+<script src="../../src/library/ACT_SWFBridge.js"></script>
+<script src="../../src/library/ACT_VideoEvents.js"></script>
+<script src="../../src/capabilities/ACT_contentVideoHtml.js"></script>
+<script src="../../src/capabilities/ACT_contentContainer.js"></script>
+<script src="../../src/capabilities/ACT_contentImage.js"></script>
+
+<script type="text/javascript" src="./config-object.js"></script>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+
+<style>
+#ad-north-base{position:relative;min-height:20px}#ad-north{display:block}#my-adsFPAD-base,.can_ad_slug,.fpad-reserve,.lrec-reserve{display:none}#Stencil .Pt-20{padding-top:0}#Stencil .Pb-10{padding-bottom:0}
+</style>
+
+<!-- ActJS Css -->
+<link rel="stylesheet" href="https://s.yimg.com/cv/eng/externals/actjs/1.0.0/min/assets/ACT_icons/ACT_icons.css" />
+
+<!-- ActJS Ad Container -->
+<div id="act-ad-container" style="margin:0px auto;padding:0px;width:970px;min-height:20px;">
+    <div id="act-ad" style="margin:0px;padding:0px;position:relative;font-size:11px;">
+        <noscript>
+            <a href="https://uk.yahoo.com">
+                <img src="https://s.yimg.com/dh/ap/debug/actjs/backup-inline.png" border="0">
+            </a>
+        </noscript>
+    </div>
+</div>
+
+<script language="javascript">
+(function () {
+	if (!window.ACT) {
+		window.ACT = {
+			"adQueue": []
+		};
+	}
+	ACT.adQueue.push(
+		function () {
+			var ad = ACT.Base({
+				conf: {
+					adId: 'billboard_id',
+					template: {
+						width: 970,
+						height: 250
+					},
+					cookie: {
+						name: "adCookieName",
+					},
+					tracking: {},
+					customData: {
+						"forceEnv.forcedBackupList.MSIE" : "<=9",
+						"layers.mpu.video1.videoHtmlConfig.videoWebM": "https://s.yimg.com/cv/ae/video/bb/billboard-motion-area.webm",
+						"layers.mpu.video1.videoHtmlConfig.videoMP4": "https://s.yimg.com/cv/ae/video/bb/billboard-motion-area.mp4",
+						//Background image
+						"layers.mpu.backup_image.imageConfig.src": "https://s.yimg.com/cv/ae/testing/image_300x250.jpg",
+						//Background clickthrough
+						"layers.mpu.buttonContainer.events.clickTAG.URLpath": "http://www.yahoo.com"
+					}
+				},
+				superConf: "config-object-billboard",
+				extend: {}
+			});
+		}
+	);
+})();
+    </script>
+    <!-- ActJS FrameWork -->
+    <script src="{{ACTJS_core_file}}"></script>
+	<script src="https://s.yimg.com/cv/ae/actjs/demo/obj/inline_video-config-object.js"></script>
+</body>
+</html>
