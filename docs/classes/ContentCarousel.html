@@ -1,0 +1,1571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ContentCarousel - ACT.js</title>
+    <link rel="stylesheet" href="https://s.yimg.com/zz/combo?yui-s:3.14.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="https://s.yimg.com/rz/l/favicon.ico">
+    <script src="https://s.yimg.com/zz/combo?yui-s:3.14.1/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="https://s.yimg.com/cv/ae/global/ACTJS/logo/ACT.js.logo.png" title="ACT.js" width="150"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 1.1.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                            <li><a href="#api-demos">Demo and Examples</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/ACT.html">ACT</a></li>
+                                <li><a href="../classes/ActionsQueue.html">ActionsQueue</a></li>
+                                <li><a href="../classes/Base.html">Base</a></li>
+                                <li><a href="../classes/Capability.html">Capability</a></li>
+                                <li><a href="../classes/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../classes/Class.html">Class</a></li>
+                                <li><a href="../classes/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../classes/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../classes/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../classes/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../classes/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../classes/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../classes/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../classes/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../classes/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../classes/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../classes/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../classes/Cookie.html">Cookie</a></li>
+                                <li><a href="../classes/CustomData.html">CustomData</a></li>
+                                <li><a href="../classes/Debug.html">Debug</a></li>
+                                <li><a href="../classes/Dom.html">Dom</a></li>
+                                <li><a href="../classes/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../classes/Enabler.html">Enabler</a></li>
+                                <li><a href="../classes/Environment.html">Environment</a></li>
+                                <li><a href="../classes/Event.html">Event</a></li>
+                                <li><a href="../classes/Flash.html">Flash</a></li>
+                                <li><a href="../classes/IO.html">IO</a></li>
+                                <li><a href="../classes/Json.html">Json</a></li>
+                                <li><a href="../classes/Lang.html">Lang</a></li>
+                                <li><a href="../classes/LayersList.html">LayersList</a></li>
+                                <li><a href="../classes/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../classes/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../classes/Screen.html">Screen</a></li>
+                                <li><a href="../classes/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../classes/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../classes/Tracking.html">Tracking</a></li>
+                                <li><a href="../classes/UA.html">UA</a></li>
+                                <li><a href="../classes/Util.html">Util</a></li>
+                                <li><a href="../classes/VideoEvents.html">VideoEvents</a></li>
+                            </ul>
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/ACT.html">ACT</a></li>
+                                <li><a href="../modules/actionsQueue.html">actionsQueue</a></li>
+                                <li><a href="../modules/Base.html">Base</a></li>
+                                <li><a href="../modules/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../modules/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../modules/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../modules/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../modules/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../modules/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../modules/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../modules/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../modules/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../modules/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../modules/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../modules/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../modules/Cookie.html">Cookie</a></li>
+                                <li><a href="../modules/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../modules/Enabler.html">Enabler</a></li>
+                                <li><a href="../modules/environment.html">environment</a></li>
+                                <li><a href="../modules/IO.html">IO</a></li>
+                                <li><a href="../modules/LayersList.html">LayersList</a></li>
+                                <li><a href="../modules/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../modules/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../modules/Screen.html">Screen</a></li>
+                                <li><a href="../modules/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../modules/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../modules/Tracking.html">Tracking</a></li>
+                            </ul>
+                
+                            <ul id="api-demos" class="apis demos">
+                                <li><a href="../demo/ACT_Demo_300x250.html">300x250</a></li>
+                                <li><a href="../demo/ACT_Demo_300x250_tracking.html">300x250_tracking</a></li>
+                                <li><a href="../demo/ACT_Demo_TrackingExample.html">TrackingExample</a></li>
+                                <li><a href="../demo/ACT_Demo_animation.html">animation</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard.html">billboard</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-enabler.html">billboard-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-expandable-enabler.html">billboard-expandable-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video.html">billboard_html_video</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video_rtl.html">billboard_html_video_rtl</a></li>
+                                <li><a href="../demo/ACT_Demo_carousel.html">carousel</a></li>
+                                <li><a href="../demo/ACT_Demo_dwelltime.html">dwelltime</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_expand.html">enabler_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_fullscreen_expand.html">enabler_fullscreen_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_target.html">enabler_target</a></li>
+                                <li><a href="../demo/ACT_Demo_floating.html">floating</a></li>
+                                <li><a href="../demo/ACT_Demo_force_env.html">force_env</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_enabler.html">html5_enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_standard.html">html5_standard</a></li>
+                                <li><a href="../demo/ACT_Demo_icons.html">icons</a></li>
+                                <li><a href="../demo/ACT_Demo_input_data.html">input_data</a></li>
+                                <li><a href="../demo/ACT_Demo_login_html.html">login_html</a></li>
+                                <li><a href="../demo/ACT_Demo_overwrite_env.html">overwrite_env</a></li>
+                                <li><a href="../demo/ACT_Demo_splash_ad.html">splash_ad</a></li>
+                                <li><a href="../demo/ACT_Demo_tablet_expandable.html">tablet_expandable</a></li>
+                                <li><a href="../demo/ACT_Demo_video_event.html">video_event</a></li>
+                                <li><a href="../demo/ACT_Demo_video_html.html">video_html</a></li>
+                            </ul>
+                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1>ContentCarousel Class</h1>
+<div class="box meta">
+
+
+        <div class="foundat">
+            Defined in: <a href="../files/src_capabilities_ACT_contentCarousel.js.html#l178"><code>src&#x2F;capabilities&#x2F;ACT_contentCarousel.js:178</code></a>
+        </div>
+
+            Module: <a href="../modules/ContentCarousel.html">ContentCarousel</a>
+
+</div>
+
+
+<div class="box intro">
+    <p>The &#39;ContentCarousel&#39; is a capability made to render its contents into a carousel slideshow with actions available to move the slides</p>
+<p>Available &#39;actions&#39;:</p>
+<ul>
+<li>carouselNextSlide</li>
+<li>carouselPreviousSlide</li>
+<li>carouselJumpToSlide</li>
+</ul>
+<p>Available &#39;triggers&#39;:</p>
+<ul>
+<li>carouselAnimationStart</li>
+<li>carouselAnimationComplete</li>
+<li>carouselAnimationPanel[X]Play</li>
+</ul>
+<p>Example of &#39;SuperConf&#39; use case:</p>
+<pre class="code prettyprint"><code>{
+    id: &#39;carousel_one&#39;,
+    type: &#39;content-carousel&#39;,
+    classNode: &#39;mpu_container_class&#39;,
+    env: [&#39;html&#39;,&#39;flash&#39;,&#39;backup&#39;],
+    css: {
+      width: 300
+    },
+    ContentCarouselConfig: {
+       transitionTime: 500,
+       currentSlideId: 2
+     },
+    eventConfig: [],
+    content: []
+ }
+</code></pre>
+</div>
+
+    <div class="constructor">
+        <h2>Constructor</h2>
+        <div id="method_ContentCarousel" class="method item">
+            <h3 class="name"><code>ContentCarousel</code></h3>
+        
+                <span class="paren">()</span>
+        
+        
+        
+        
+        
+        
+        
+        
+            <div class="meta">
+                        <p>
+                        Defined in
+                <a href="../files/src_capabilities_ACT_contentCarousel.js.html#l178"><code>src&#x2F;capabilities&#x2F;ACT_contentCarousel.js:178</code></a>
+                </p>
+        
+        
+        
+            </div>
+        
+            <div class="description">
+                
+            </div>
+        
+        
+        
+        
+        </div>
+    </div>
+
+<div id="classdocs" class="tabview">
+    <ul class="api-class-tabs">
+        <li class="api-class-tab index"><a href="#index">Index</a></li>
+
+            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
+            <li class="api-class-tab attrs"><a href="#attrs">Attributes</a></li>
+    </ul>
+
+    <div>
+        <div id="index" class="api-class-tabpanel index">
+            <h2 class="off-left">Item Index</h2>
+
+                <div class="index-section methods">
+                    <h3>Methods</h3>
+
+                    <ul class="index-list methods">
+                            <li class="index-item method">
+                                <a href="#method_addSlideContent">addSlideContent</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_appendChildNode">appendChildNode</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#method_attachCarouselEventActions">attachCarouselEventActions</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_createHolderContainer">createHolderContainer</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_createRelativeContainer">createRelativeContainer</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_destructor">destructor</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getContent">getContent</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getNextSlideId">getNextSlideId</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_initializeListeners">initializeListeners</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_initializer">initializer</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_jumpToSlide">jumpToSlide</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_preparePosition">preparePosition</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_renderContent">renderContent</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_slideAnimation">slideAnimation</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_slideLeft">slideLeft</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_slideRight">slideRight</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#method_subscribeTriggerToCarouselEvent">subscribeTriggerToCarouselEvent</a>
+
+                            </li>
+                    </ul>
+                </div>
+
+
+                <div class="index-section attrs">
+                    <h3>Attributes</h3>
+
+                    <ul class="index-list attrs">
+                            <li class="index-item attr">
+                                <a href="#attr_currentSlideId">currentSlideId</a>
+                            </li>
+                            <li class="index-item attr">
+                                <a href="#attr_holderContainer">holderContainer</a>
+                            </li>
+                            <li class="index-item attr">
+                                <a href="#attr_NAME">NAME</a>
+                            </li>
+                            <li class="index-item attr">
+                                <a href="#attr_node">node</a>
+                            </li>
+                            <li class="index-item attr">
+                                <a href="#attr_relativeContainer">relativeContainer</a>
+                            </li>
+                            <li class="index-item attr">
+                                <a href="#attr_slideContentList">slideContentList</a>
+                            </li>
+                            <li class="index-item attr">
+                                <a href="#attr_transitionTime">transitionTime</a>
+                            </li>
+                            <li class="index-item attr">
+                                <a href="#attr_version">version</a>
+                            </li>
+                    </ul>
+                </div>
+
+        </div>
+
+            <div id="methods" class="api-class-tabpanel">
+                <h2 class="off-left">Methods</h2>
+
+<div id="method_addSlideContent" class="method item">
+    <h3 class="name"><code>addSlideContent</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>node</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_capabilities_ACT_contentCarousel.js.html#l429"><code>src&#x2F;capabilities&#x2F;ACT_contentCarousel.js:429</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Function to add new slide content to the slideContentList
+If new item is not a Node object, we will not add it to the list</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">node</code>
+                        <span class="type">Node</span>
+
+
+                    <div class="param-description">
+                        <p>to be add</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_appendChildNode" class="method item">
+    <h3 class="name"><code>appendChildNode</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>content</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_capabilities_ACT_contentCarousel.js.html#l418"><code>src&#x2F;capabilities&#x2F;ACT_contentCarousel.js:418</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Function to append new node content into Carousel</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">content</code>
+                        <span class="type">Node</span>
+
+
+                    <div class="param-description">
+                        <p>child Node to be appened</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_attachCarouselEventActions" class="method item private">
+    <h3 class="name"><code>attachCarouselEventActions</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>node,</code>
+                </li>
+                <li class="arg">
+                        <code>eventConfig,</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_capabilities_ACT_contentCarousel.js.html#l268"><code>src&#x2F;capabilities&#x2F;ACT_contentCarousel.js:268</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Attach action for an event</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">node,</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>node to attach events</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">eventConfig,</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>list of event</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_createHolderContainer" class="method item">
+    <h3 class="name"><code>createHolderContainer</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_capabilities_ACT_contentCarousel.js.html#l392"><code>src&#x2F;capabilities&#x2F;ACT_contentCarousel.js:392</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Function to create the Carousels main container and append content</p>
+
+    </div>
+
+
+
+
+</div>
+<div id="method_createRelativeContainer" class="method item">
+    <h3 class="name"><code>createRelativeContainer</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_capabilities_ACT_contentCarousel.js.html#l376"><code>src&#x2F;capabilities&#x2F;ACT_contentCarousel.js:376</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Function to create a relative container to ensure carousel position is correct on page</p>
+
+    </div>
+
+
+
+
+</div>
+<div id="method_destructor" class="method item">
+    <h3 class="name"><code>destructor</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_capabilities_ACT_contentCarousel.js.html#l609"><code>src&#x2F;capabilities&#x2F;ACT_contentCarousel.js:609</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Function to be called when the instance is destroyed</p>
+
+    </div>
+
+
+
+
+</div>
+<div id="method_getContent" class="method item">
+    <h3 class="name"><code>getContent</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>env</code>
+                </li>
+                <li class="arg">
+                        <code>orientation</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">HTMLElement</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_capabilities_ACT_contentCarousel.js.html#l359"><code>src&#x2F;capabilities&#x2F;ACT_contentCarousel.js:359</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Function to return the generated node for ACT Scaffolding</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">env</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>Environment for rendering content such as html/flash/backup</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">orientation</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>Orientation of current device such as landscape and portraits for mobile</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">HTMLElement</span>:
+                    <p>node</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getNextSlideId" class="method item">
+    <h3 class="name"><code>getNextSlideId</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>direction</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Number</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_capabilities_ACT_contentCarousel.js.html#l442"><code>src&#x2F;capabilities&#x2F;ACT_contentCarousel.js:442</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Function to get next ID base on direction</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">direction</code>
+                        <span class="type">Number</span>
+
+
+                    <div class="param-description">
+                        <p>of the next slide. Direction = 1 to move right, -1 to move left</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Number</span>:
+                    <p>Id of the next slide</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_initializeListeners" class="method item">
+    <h3 class="name"><code>initializeListeners</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_capabilities_ACT_contentCarousel.js.html#l316"><code>src&#x2F;capabilities&#x2F;ACT_contentCarousel.js:316</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Function to initialize event listeners for this instance</p>
+
+    </div>
+
+
+
+
+</div>
+<div id="method_initializer" class="method item">
+    <h3 class="name"><code>initializer</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>config</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_capabilities_ACT_contentCarousel.js.html#l296"><code>src&#x2F;capabilities&#x2F;ACT_contentCarousel.js:296</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Function auto initiated when the class is instantiated</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">config</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_jumpToSlide" class="method item">
+    <h3 class="name"><code>jumpToSlide</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>slidePositionId</code>
+                </li>
+                <li class="arg">
+                        <code>done</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_capabilities_ACT_contentCarousel.js.html#l462"><code>src&#x2F;capabilities&#x2F;ACT_contentCarousel.js:462</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Function to jump to a new slide without animation</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">slidePositionId</code>
+                        <span class="type">Number</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">done</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_preparePosition" class="method item">
+    <h3 class="name"><code>preparePosition</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>direction</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_capabilities_ACT_contentCarousel.js.html#l479"><code>src&#x2F;capabilities&#x2F;ACT_contentCarousel.js:479</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Prepare slides for next possible transition</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">direction</code>
+                        <span class="type">Number</span>
+
+
+                    <div class="param-description">
+                        <p>direction to follow</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_renderContent" class="method item">
+    <h3 class="name"><code>renderContent</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>configObject</code>
+                </li>
+                <li class="arg">
+                        <code>env</code>
+                </li>
+                <li class="arg">
+                        <code>orientation</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">HTMLElement</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_capabilities_ACT_contentCarousel.js.html#l343"><code>src&#x2F;capabilities&#x2F;ACT_contentCarousel.js:343</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Render the node from given config object, environment and orientation state</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">configObject</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">env</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">orientation</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">HTMLElement</span>:
+                    <p>node</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_slideAnimation" class="method item">
+    <h3 class="name"><code>slideAnimation</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>direction</code>
+                </li>
+                <li class="arg">
+                        <code>callback</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_capabilities_ACT_contentCarousel.js.html#l547"><code>src&#x2F;capabilities&#x2F;ACT_contentCarousel.js:547</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Animation for sliding behaviour</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">direction</code>
+                        <span class="type">1 | -1</span>
+
+
+                    <div class="param-description">
+                        <p>1 if sliding to the right and -1 if sliding to the left</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">callback</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_slideLeft" class="method item">
+    <h3 class="name"><code>slideLeft</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>done</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_capabilities_ACT_contentCarousel.js.html#l519"><code>src&#x2F;capabilities&#x2F;ACT_contentCarousel.js:519</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>sliding to the left behaviour</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">done</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_slideRight" class="method item">
+    <h3 class="name"><code>slideRight</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>done</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_capabilities_ACT_contentCarousel.js.html#l533"><code>src&#x2F;capabilities&#x2F;ACT_contentCarousel.js:533</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>sliding to the right behaviour</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">done</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_subscribeTriggerToCarouselEvent" class="method item private">
+    <h3 class="name"><code>subscribeTriggerToCarouselEvent</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>action,</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_capabilities_ACT_contentCarousel.js.html#l240"><code>src&#x2F;capabilities&#x2F;ACT_contentCarousel.js:240</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Subscribe trigger action to the carousels listeners</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">action,</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>action to fire</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+            </div>
+
+
+            <div id="attrs" class="api-class-tabpanel">
+                <h2 class="off-left">Attributes</h2>
+
+                    <div id="attr_currentSlideId" class="attr item">
+                        <a name="config_currentSlideId"></a> 
+                        <h3 class="name"><code>currentSlideId</code></h3>
+                        <span class="type">Number</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_capabilities_ACT_contentCarousel.js.html#l225"><code>src&#x2F;capabilities&#x2F;ACT_contentCarousel.js:225</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>ID of the current showing slide</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> 0</p>
+                    
+                    
+                    </div>
+                    <div id="attr_holderContainer" class="attr item">
+                        <a name="config_holderContainer"></a> 
+                        <h3 class="name"><code>holderContainer</code></h3>
+                        <span class="type">HTMLElement</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_capabilities_ACT_contentCarousel.js.html#l211"><code>src&#x2F;capabilities&#x2F;ACT_contentCarousel.js:211</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="attr_NAME" class="attr item">
+                        <a name="config_NAME"></a> 
+                        <h3 class="name"><code>NAME</code></h3>
+                        <span class="type">String</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_capabilities_ACT_contentCarousel.js.html#l187"><code>src&#x2F;capabilities&#x2F;ACT_contentCarousel.js:187</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="attr_node" class="attr item">
+                        <a name="config_node"></a> 
+                        <h3 class="name"><code>node</code></h3>
+                        <span class="type">HTMLElement</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_capabilities_ACT_contentCarousel.js.html#l199"><code>src&#x2F;capabilities&#x2F;ACT_contentCarousel.js:199</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="attr_relativeContainer" class="attr item">
+                        <a name="config_relativeContainer"></a> 
+                        <h3 class="name"><code>relativeContainer</code></h3>
+                        <span class="type">HTMLElement</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_capabilities_ACT_contentCarousel.js.html#l205"><code>src&#x2F;capabilities&#x2F;ACT_contentCarousel.js:205</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="attr_slideContentList" class="attr item">
+                        <a name="config_slideContentList"></a> 
+                        <h3 class="name"><code>slideContentList</code></h3>
+                        <span class="type">Array</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_capabilities_ACT_contentCarousel.js.html#l233"><code>src&#x2F;capabilities&#x2F;ACT_contentCarousel.js:233</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="attr_transitionTime" class="attr item">
+                        <a name="config_transitionTime"></a> 
+                        <h3 class="name"><code>transitionTime</code></h3>
+                        <span class="type">Number</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_capabilities_ACT_contentCarousel.js.html#l217"><code>src&#x2F;capabilities&#x2F;ACT_contentCarousel.js:217</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Transition time in milliseconds</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> 1000</p>
+                    
+                    
+                    </div>
+                    <div id="attr_version" class="attr item">
+                        <a name="config_version"></a> 
+                        <h3 class="name"><code>version</code></h3>
+                        <span class="type">String</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_capabilities_ACT_contentCarousel.js.html#l193"><code>src&#x2F;capabilities&#x2F;ACT_contentCarousel.js:193</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                    
+                    
+                    </div>
+            </div>
+
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

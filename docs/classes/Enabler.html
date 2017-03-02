@@ -1,0 +1,5224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Enabler - ACT.js</title>
+    <link rel="stylesheet" href="https://s.yimg.com/zz/combo?yui-s:3.14.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="https://s.yimg.com/rz/l/favicon.ico">
+    <script src="https://s.yimg.com/zz/combo?yui-s:3.14.1/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="https://s.yimg.com/cv/ae/global/ACTJS/logo/ACT.js.logo.png" title="ACT.js" width="150"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 1.1.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                            <li><a href="#api-demos">Demo and Examples</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/ACT.html">ACT</a></li>
+                                <li><a href="../classes/ActionsQueue.html">ActionsQueue</a></li>
+                                <li><a href="../classes/Base.html">Base</a></li>
+                                <li><a href="../classes/Capability.html">Capability</a></li>
+                                <li><a href="../classes/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../classes/Class.html">Class</a></li>
+                                <li><a href="../classes/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../classes/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../classes/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../classes/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../classes/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../classes/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../classes/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../classes/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../classes/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../classes/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../classes/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../classes/Cookie.html">Cookie</a></li>
+                                <li><a href="../classes/CustomData.html">CustomData</a></li>
+                                <li><a href="../classes/Debug.html">Debug</a></li>
+                                <li><a href="../classes/Dom.html">Dom</a></li>
+                                <li><a href="../classes/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../classes/Enabler.html">Enabler</a></li>
+                                <li><a href="../classes/Environment.html">Environment</a></li>
+                                <li><a href="../classes/Event.html">Event</a></li>
+                                <li><a href="../classes/Flash.html">Flash</a></li>
+                                <li><a href="../classes/IO.html">IO</a></li>
+                                <li><a href="../classes/Json.html">Json</a></li>
+                                <li><a href="../classes/Lang.html">Lang</a></li>
+                                <li><a href="../classes/LayersList.html">LayersList</a></li>
+                                <li><a href="../classes/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../classes/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../classes/Screen.html">Screen</a></li>
+                                <li><a href="../classes/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../classes/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../classes/Tracking.html">Tracking</a></li>
+                                <li><a href="../classes/UA.html">UA</a></li>
+                                <li><a href="../classes/Util.html">Util</a></li>
+                                <li><a href="../classes/VideoEvents.html">VideoEvents</a></li>
+                            </ul>
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/ACT.html">ACT</a></li>
+                                <li><a href="../modules/actionsQueue.html">actionsQueue</a></li>
+                                <li><a href="../modules/Base.html">Base</a></li>
+                                <li><a href="../modules/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../modules/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../modules/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../modules/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../modules/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../modules/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../modules/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../modules/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../modules/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../modules/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../modules/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../modules/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../modules/Cookie.html">Cookie</a></li>
+                                <li><a href="../modules/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../modules/Enabler.html">Enabler</a></li>
+                                <li><a href="../modules/environment.html">environment</a></li>
+                                <li><a href="../modules/IO.html">IO</a></li>
+                                <li><a href="../modules/LayersList.html">LayersList</a></li>
+                                <li><a href="../modules/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../modules/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../modules/Screen.html">Screen</a></li>
+                                <li><a href="../modules/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../modules/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../modules/Tracking.html">Tracking</a></li>
+                            </ul>
+                
+                            <ul id="api-demos" class="apis demos">
+                                <li><a href="../demo/ACT_Demo_300x250.html">300x250</a></li>
+                                <li><a href="../demo/ACT_Demo_300x250_tracking.html">300x250_tracking</a></li>
+                                <li><a href="../demo/ACT_Demo_TrackingExample.html">TrackingExample</a></li>
+                                <li><a href="../demo/ACT_Demo_animation.html">animation</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard.html">billboard</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-enabler.html">billboard-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-expandable-enabler.html">billboard-expandable-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video.html">billboard_html_video</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video_rtl.html">billboard_html_video_rtl</a></li>
+                                <li><a href="../demo/ACT_Demo_carousel.html">carousel</a></li>
+                                <li><a href="../demo/ACT_Demo_dwelltime.html">dwelltime</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_expand.html">enabler_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_fullscreen_expand.html">enabler_fullscreen_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_target.html">enabler_target</a></li>
+                                <li><a href="../demo/ACT_Demo_floating.html">floating</a></li>
+                                <li><a href="../demo/ACT_Demo_force_env.html">force_env</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_enabler.html">html5_enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_standard.html">html5_standard</a></li>
+                                <li><a href="../demo/ACT_Demo_icons.html">icons</a></li>
+                                <li><a href="../demo/ACT_Demo_input_data.html">input_data</a></li>
+                                <li><a href="../demo/ACT_Demo_login_html.html">login_html</a></li>
+                                <li><a href="../demo/ACT_Demo_overwrite_env.html">overwrite_env</a></li>
+                                <li><a href="../demo/ACT_Demo_splash_ad.html">splash_ad</a></li>
+                                <li><a href="../demo/ACT_Demo_tablet_expandable.html">tablet_expandable</a></li>
+                                <li><a href="../demo/ACT_Demo_video_event.html">video_event</a></li>
+                                <li><a href="../demo/ACT_Demo_video_html.html">video_html</a></li>
+                            </ul>
+                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1>Enabler Class</h1>
+<div class="box meta">
+
+
+        <div class="foundat">
+            Defined in: <a href="../files/src_library_ACT_Enabler.js.html#l312"><code>src&#x2F;library&#x2F;ACT_Enabler.js:312</code></a>
+        </div>
+
+            Module: <a href="../modules/Enabler.html">Enabler</a>
+
+</div>
+
+
+<div class="box intro">
+    <p>ACT Enabler</p>
+<pre class="code prettyprint"><code>    var conf = {
+        tracking: {
+            trackUnique: true
+        },
+        exitUrls: {
+            clickTAG: &#39;https://www.yahoo.com/?clickTAG=true&#39;,
+            clickTAG1: &#39;https://www.yahoo.com/?clickTAG=true&#39;,
+            clickTAG2: &#39;https://www.yahoo.com/?clickTAG=true&#39;
+        },
+        trackingLabels: {
+            video1:25 : &#39;billboard_view_video1_25percent&#39;,
+            video1:50 : &#39;billboard_view_video1_50percent&#39;,
+            video1:75 : &#39;billboard_view_video1_75percent&#39;
+        },
+        enablerInteractionTracking : false,
+        enablerTarget: &#39;http://cdn.path.here.com/ACT_Enabler.js&#39;,
+        htmlRoot : &#39;http://cdn.path.here.com/&#39;
+    };
+    Enabler.setConfig( conf );
+</code></pre>
+</div>
+
+
+<div id="classdocs" class="tabview">
+    <ul class="api-class-tabs">
+        <li class="api-class-tab index"><a href="#index">Index</a></li>
+
+            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
+            <li class="api-class-tab attrs"><a href="#attrs">Attributes</a></li>
+    </ul>
+
+    <div>
+        <div id="index" class="api-class-tabpanel index">
+            <h2 class="off-left">Item Index</h2>
+
+                <div class="index-section methods">
+                    <h3>Methods</h3>
+
+                    <ul class="index-list methods">
+                            <li class="index-item method">
+                                <a href="#method_addEventListener">addEventListener</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_addMessageHandler">addMessageHandler</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_attach">attach</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#method_calculateValue">calculateValue</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_callAfterInitialized">callAfterInitialized</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_close">close</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_closeCompanion">closeCompanion</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#method_containValue">containValue</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_counter">counter</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_detach">detach</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_dispatchEvent">dispatchEvent</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_dispatchPageLoaded">dispatchPageLoaded</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_displayCompanion">displayCompanion</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_enablerLogger Notifies of issues / missing things inside Enabler. For Internal Use Only.">enablerLogger Notifies of issues / missing things inside Enabler. For Internal Use Only.</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_exit">exit</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_exitOverride">exitOverride</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_exitQueryString">exitQueryString</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_finishCollapse">finishCollapse</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_finishExpand">finishExpand</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_finishFullscreenCollapse">finishFullscreenCollapse</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_finishFullscreenExpand">finishFullscreenExpand</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_fireEvent">fireEvent</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getConfig">getConfig</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getConfigObject">getConfigObject</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getContainerState">getContainerState</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#method_getCounter">getCounter</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getDartAdId">getDartAdId</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getDartAssetId">getDartAssetId</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getDartCreativeId">getDartCreativeId</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getDartPageId">getDartPageId</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getDartRenderingId">getDartRenderingId</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getDartSiteId">getDartSiteId</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getDartSiteName">getDartSiteName</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getExpandDirection">getExpandDirection</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getFullUrl">getFullUrl</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getInstance">getInstance</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getOrientation">getOrientation</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getParameter">getParameter</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getParameter">getParameter</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getParameterAsInteger">getParameterAsInteger</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getProfileId">getProfileId</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getStudio">getStudio</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getUrl">getUrl</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getUserBandwidth">getUserBandwidth</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getUserCountry">getUserCountry</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getUserDMACode">getUserDMACode</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getUserState">getUserState</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getUserZipCode">getUserZipCode</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_hasUserInteracted">hasUserInteracted</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_invokeExternalJsFunction">invokeExternalJsFunction</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_invokeMraidMethod">invokeMraidMethod</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_isInitialized">isInitialized</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_isPageLoaded">isPageLoaded</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_isServingInLiveEnvironment">isServingInLiveEnvironment</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_isVisible">isVisible</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_loadModule">loadModule</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_loadScript">loadScript</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#method_mapValue">mapValue</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_parentMessageHandle">parentMessageHandle</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_queryFullscreenDimensions">queryFullscreenDimensions</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_queryFullscreenSupport">queryFullscreenSupport</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_registerChargeableEventName">registerChargeableEventName</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_removeEventListener">removeEventListener</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_removeMessageHandler">removeMessageHandler</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_reportCustomVariableCount1">reportCustomVariableCount1</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_reportCustomVariableCount2">reportCustomVariableCount2</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_reportManualClose">reportManualClose</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_requestCollapse">requestCollapse</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_requestExpand">requestExpand</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_requestFullscreenCollapse">requestFullscreenCollapse</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_requestFullscreenExpand">requestFullscreenExpand</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_sendToParent">sendToParent</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_setConfig">setConfig</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#method_setCounter">setCounter</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_setDevDynamicContent">setDevDynamicContent</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_setExit">setExit</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_setExpandingPixelOffsets">setExpandingPixelOffsets</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_setFloatingPixelDimensions">setFloatingPixelDimensions</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_setHint">setHint</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_setIsMultiDirectional">setIsMultiDirectional</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_setProfileId">setProfileId</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_setStartExpanded">setStartExpanded</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_setUrl">setUrl</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_setUseCustomClose">setUseCustomClose</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_startTimer">startTimer</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_stopTimer">stopTimer</a>
+
+                            </li>
+                    </ul>
+                </div>
+
+
+                <div class="index-section attrs">
+                    <h3>Attributes</h3>
+
+                    <ul class="index-list attrs">
+                            <li class="index-item attr">
+                                <a href="#attr_ATTRS">ATTRS</a>
+                            </li>
+                            <li class="index-item attr">
+                                <a href="#attr_NAME">NAME</a>
+                            </li>
+                            <li class="index-item attr">
+                                <a href="#attr_version">version</a>
+                            </li>
+                    </ul>
+                </div>
+
+        </div>
+
+            <div id="methods" class="api-class-tabpanel">
+                <h2 class="off-left">Methods</h2>
+
+<div id="method_addEventListener" class="method item">
+    <h3 class="name"><code>addEventListener</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>type</code>
+                </li>
+                <li class="arg">
+                        <code>fn</code>
+                </li>
+                <li class="arg">
+                        <code>opt_capture</code>
+                </li>
+                <li class="arg">
+                        <code>opt_handlerScope</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l539"><code>src&#x2F;library&#x2F;ACT_Enabler.js:539</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Adds an event listener to the event target. The same handler can only be added once per the type.
+Even if you add the same handler multiple times using the same type then it will only be called once
+When the event is dispatched.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">type</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>The type of the event to listen for.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">fn</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>event callback</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">opt_capture</code>
+                        <span class="type">Boolean</span>
+
+
+                    <div class="param-description">
+                        <p>In DOM-compliant browsers, this determines whether the listener is fired
+during the capture or bubble phase of the event.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">opt_handlerScope</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>Object in whose scope to call the listener</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_addMessageHandler" class="method item">
+    <h3 class="name"><code>addMessageHandler</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>messageName</code>
+                </li>
+                <li class="arg">
+                        <code>handler</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l1136"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1136</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Adds a new handler for an otherwise unknown message.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">messageName</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>The name of the message, which cannot match an exported method on studio.Enabler.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">handler</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>The handler function</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_attach" class="method item">
+    <h3 class="name"><code>attach</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>videoReportingIdentifier</code>
+                </li>
+                <li class="arg">
+                        <code>videoElement</code>
+                </li>
+                <li class="arg">
+                        <code>opt_trackAsAutoPlay</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l1638"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1638</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Observes a video element for reporting</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">videoReportingIdentifier</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>The name the video should report as.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">videoElement</code>
+                        <span class="type">HTMLVideoElement</span>
+
+
+                    <div class="param-description">
+                        <p>The video element to report on.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">opt_trackAsAutoPlay</code>
+                        <span class="type">Boolean | Object</span>
+
+
+                    <div class="param-description">
+                        <p>Used to indicate whether to track the initial play as a "video interaction" OR a set of which elements to track.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>                // Track AutoPlay - start / 50 / end
+                studio.video.Reporter.attach("video_id", videoNode, true);
+
+                // Track Everything ( start / 25 / 50/ 75 / ended / pause / volume / seeked / replay )
+               studio.video.Reporter.attach("video_id", videoNode, false);
+
+               // Track Optional ( start / ended )
+               var vidTrackConf = {
+                   start: true,
+                   25: false,
+                   50: false,
+                   75: false,
+                   ended: true,
+                   pause: false,
+                   volumechange: false,
+                   seeked: false
+               };
+               studio.video.Reporter.attach(&#39;video_id&#39;, videoNode, vidTrackConf);
+</code></pre><p>for autoplay videos (the play event will always get tracked). This defaults to true.</p>
+
+            </div>
+        </div>
+</div>
+<div id="method_calculateValue" class="method item private">
+    <h3 class="name"><code>calculateValue</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                    <p>Provided by the <a href="../modules/DwellTime.html">DwellTime</a> module.</p>
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l291"><code>src&#x2F;library&#x2F;ACT_Enabler.js:291</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+
+</div>
+<div id="method_callAfterInitialized" class="method item">
+    <h3 class="name"><code>callAfterInitialized</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>callback</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l766"><code>src&#x2F;library&#x2F;ACT_Enabler.js:766</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Calls the callback when the enabler is initialized or after</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">callback</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>The callback to invoke when the Enabler is initialized or if it has already
+initialized, call immediately.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_close" class="method item">
+    <h3 class="name"><code>close</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l781"><code>src&#x2F;library&#x2F;ACT_Enabler.js:781</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Closes floating and popup creative types. If it is an expanding creative, close acts
+as a proxy to collapse.</p>
+
+    </div>
+
+
+
+
+</div>
+<div id="method_closeCompanion" class="method item">
+    <h3 class="name"><code>closeCompanion</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l1115"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1115</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Closes the companion asset for floating, reminder, and pop-up creative types.</p>
+
+    </div>
+
+
+
+
+</div>
+<div id="method_containValue" class="method item private">
+    <h3 class="name"><code>containValue</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                    <p>Provided by the <a href="../modules/DwellTime.html">DwellTime</a> module.</p>
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l80"><code>src&#x2F;library&#x2F;ACT_Enabler.js:80</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+
+</div>
+<div id="method_counter" class="method item">
+    <h3 class="name"><code>counter</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>eventId</code>
+                </li>
+                <li class="arg">
+                        <code>opt_isCumulative</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l646"><code>src&#x2F;library&#x2F;ACT_Enabler.js:646</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Tracks a counter event.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">eventId</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>The string ID of the event to count.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">opt_isCumulative</code>
+                        <span class="type">Boolean</span>
+
+
+                    <div class="param-description">
+                        <p>Optional parameter that indicates whether or not the counter event should
+be counted cumulatively. Defaults to true.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_detach" class="method item">
+    <h3 class="name"><code>detach</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>videoReportingIdentifier</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l1721"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1721</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Stops a video reporting identifier from reporting.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">videoReportingIdentifier</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_dispatchEvent" class="method item">
+    <h3 class="name"><code>dispatchEvent</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>event</code>
+                </li>
+                <li class="arg">
+                        <code>data</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l584"><code>src&#x2F;library&#x2F;ACT_Enabler.js:584</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Wrapper for Event.fire</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">event</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">data</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_dispatchPageLoaded" class="method item">
+    <h3 class="name"><code>dispatchPageLoaded</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l738"><code>src&#x2F;library&#x2F;ACT_Enabler.js:738</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Dispatches the PAGE LOADED event and sets the config parameter</p>
+
+    </div>
+
+
+
+
+</div>
+<div id="method_displayCompanion" class="method item">
+    <h3 class="name"><code>displayCompanion</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l1123"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1123</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Triggers the display of the companion asset for floating, reminder, and pop-up advert types.</p>
+
+    </div>
+
+
+
+
+</div>
+<div id="method_enablerLogger Notifies of issues / missing things inside Enabler. For Internal Use Only." class="method item">
+    <h3 class="name"><code>enablerLogger Notifies of issues / missing things inside Enabler. For Internal Use Only.</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>A</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                    <p>Provided by the <a href="../modules/DwellTime.html">DwellTime</a> module.</p>
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l164"><code>src&#x2F;library&#x2F;ACT_Enabler.js:164</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">A</code>
+                        <span class="type">Mixed</span>
+
+
+                    <div class="param-description">
+                        <p>mixed message to display to the user</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_exit" class="method item">
+    <h3 class="name"><code>exit</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>id</code>
+                </li>
+                <li class="arg">
+                        <code>opt_url</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l597"><code>src&#x2F;library&#x2F;ACT_Enabler.js:597</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Opens a new window with the URL as identified by the given exit ID.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">id</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>The exit ID.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">opt_url</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>The URL to navigate to.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_exitOverride" class="method item">
+    <h3 class="name"><code>exitOverride</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>id</code>
+                </li>
+                <li class="arg">
+                        <code>url</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l617"><code>src&#x2F;library&#x2F;ACT_Enabler.js:617</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Opens a new window with the URL as identified by the given exit ID. This differs from normal exit() as the
+URL value will always override the value modified in Studio or elsewhere.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">id</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>The exit ID.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">url</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>The URL to navigate to regardless of what has been set before.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_exitQueryString" class="method item">
+    <h3 class="name"><code>exitQueryString</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>id</code>
+                </li>
+                <li class="arg">
+                        <code>opt_queryString</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l632"><code>src&#x2F;library&#x2F;ACT_Enabler.js:632</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Opens a new window with the URL as identified by the given exit ID with an optional queryString appended.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">id</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>The exit ID.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">opt_queryString</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>Desired query string value(s) to append to the end of the exit URL.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_finishCollapse" class="method item">
+    <h3 class="name"><code>finishCollapse</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l970"><code>src&#x2F;library&#x2F;ACT_Enabler.js:970</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Clips the container or the html asset from the expanded dimensions to the collapsed dimensions.
+Please use event listeners to invoke the collapsed state of the ad as the collapse event may
+be dispatched by the environment independently of calling studio.Enabler#requestCollapse().</p>
+
+    </div>
+
+
+
+
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>    Enabler.addEventListener(
+        studio.events.StudioEvent.COLLAPSE_START,
+        function () {
+            // collapse action
+            Enabler.finishCollapse();
+        });
+    Enabler.requestCollapse();
+</code></pre>
+            </div>
+        </div>
+</div>
+<div id="method_finishExpand" class="method item">
+    <h3 class="name"><code>finishExpand</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l924"><code>src&#x2F;library&#x2F;ACT_Enabler.js:924</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Finalizes the expand call via the rendering code.</p>
+
+    </div>
+
+
+
+
+</div>
+<div id="method_finishFullscreenCollapse" class="method item">
+    <h3 class="name"><code>finishFullscreenCollapse</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l1020"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1020</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Finishes fullscreen collapse.</p>
+
+    </div>
+
+
+
+
+</div>
+<div id="method_finishFullscreenExpand" class="method item">
+    <h3 class="name"><code>finishFullscreenExpand</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l1030"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1030</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Finishes fullscreen expand.</p>
+
+    </div>
+
+
+
+
+</div>
+<div id="method_fireEvent" class="method item">
+    <h3 class="name"><code>fireEvent</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>id</code>
+                </li>
+                <li class="arg">
+                        <code>eventType</code>
+                </li>
+                <li class="arg">
+                        <code>actionName</code>
+                </li>
+                <li class="arg">
+                        <code>url</code>
+                </li>
+                <li class="arg">
+                        <code>special</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                    <p>Provided by the <a href="../modules/DwellTime.html">DwellTime</a> module.</p>
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l175"><code>src&#x2F;library&#x2F;ACT_Enabler.js:175</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">id</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>The id given from the user&#39;s calls. E.g: Enabler.exit("Something"); "Something" is this id</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">eventType</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>Comes from studio.events.StudioEvent Object - this should exist.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">actionName</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>More of the generic event/action (&#39;track&#39;, &#39;redirect&#39;, etc)</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">url</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>If you have a redirect, you can pass in the URL to redirect to.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">special</code>
+                        <span class="type">Mix</span>
+
+
+                    <div class="param-description">
+                        <p>Extra parameter. For URL can have the queries, for others, can be an object with the desired key: value pairs.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_getConfig" class="method item">
+    <h3 class="name"><code>getConfig</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>opt_element</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">String</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l498"><code>src&#x2F;library&#x2F;ACT_Enabler.js:498</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Returns the config object values</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">opt_element</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">String</span>:
+                    <p>The stringified config object</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getConfigObject" class="method item">
+    <h3 class="name"><code>getConfigObject</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>opt_element</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l483"><code>src&#x2F;library&#x2F;ACT_Enabler.js:483</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Returns the full config object if no parameter passed in, an element from config object or null if requested element doesn&#39;t exist.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">opt_element</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Object</span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getContainerState" class="method item">
+    <h3 class="name"><code>getContainerState</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">String</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l805"><code>src&#x2F;library&#x2F;ACT_Enabler.js:805</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Returns the current state of the container.</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">String</span>:
+                    <p>The container state from studio.sdk.ContainerState</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getCounter" class="method item private">
+    <h3 class="name"><code>getCounter</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                    <p>Provided by the <a href="../modules/DwellTime.html">DwellTime</a> module.</p>
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l278"><code>src&#x2F;library&#x2F;ACT_Enabler.js:278</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+
+</div>
+<div id="method_getDartAdId" class="method item">
+    <h3 class="name"><code>getDartAdId</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Number</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l1351"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1351</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Returns the DART ad ID.</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Number</span>:
+                    <p>Integer value of the ID number (generated by DART) that identifies the ad.</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getDartAssetId" class="method item">
+    <h3 class="name"><code>getDartAssetId</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">String</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l1361"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1361</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Returns the DART asset ID.</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">String</span>:
+                    <p>The ID (generated by DART) that identifies the creative.</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getDartCreativeId" class="method item">
+    <h3 class="name"><code>getDartCreativeId</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Number</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l1371"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1371</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Returns the DART creative ID.</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Number</span>:
+                    <p>The ID number (generated by DART) that identifies the creative.</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getDartPageId" class="method item">
+    <h3 class="name"><code>getDartPageId</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Number</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l1381"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1381</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Returns the DART page ID.</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Number</span>:
+                    <p>The ID number (generated by DART) that identifies the zone where the creative is served.</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getDartRenderingId" class="method item">
+    <h3 class="name"><code>getDartRenderingId</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">String</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l1391"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1391</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Returns the DART rendering ID.</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">String</span>:
+                    <p>The ID (generated by DART) that identifies the rendering version of the creative.</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getDartSiteId" class="method item">
+    <h3 class="name"><code>getDartSiteId</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Number</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l1401"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1401</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Returns the DART site ID.</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Number</span>:
+                    <p>Integer value of the ID number that identifies the site where the creative is served, as defined in DART.</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getDartSiteName" class="method item">
+    <h3 class="name"><code>getDartSiteName</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">String</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l1411"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1411</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Returns the DART site name.</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">String</span>:
+                    <p>The name of the site where the creative is served, as defined in DART.</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getExpandDirection" class="method item">
+    <h3 class="name"><code>getExpandDirection</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">String</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l817"><code>src&#x2F;library&#x2F;ACT_Enabler.js:817</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Returns the expand direction.</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">String</span>:
+                    <p>The direction to expand in from studio.common.mde.Direction</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getFullUrl" class="method item">
+    <h3 class="name"><code>getFullUrl</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>url</code>
+                </li>
+                <li class="arg">
+                        <code>params</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                    <p>Provided by the <a href="../modules/DwellTime.html">DwellTime</a> module.</p>
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l131"><code>src&#x2F;library&#x2F;ACT_Enabler.js:131</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Helper method to compose urls with queries</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">url</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">params</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_getInstance" class="method item">
+    <h3 class="name"><code>getInstance</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l1106"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1106</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Returns the instance of the enabler singleton.</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Object</span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getOrientation" class="method item">
+    <h3 class="name"><code>getOrientation</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l1155"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1155</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Returns an object representing the orientation of the device.</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Object</span>:
+                    <p>An object representing the orientation of the device.</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getParameter" class="method item">
+    <h3 class="name"><code>getParameter</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>name</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">String</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l1051"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1051</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Retrieves a creative parameter that the user can pass via queryString URL. This is also used internally to access ad configuration data.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">name</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>Name of the variable to get from the URL</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">String</span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getParameter" class="method item">
+    <h3 class="name"><code>getParameter</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>name</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">String</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l1079"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1079</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Retrieves a creative parameter as a nullable string.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">name</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>Name of the variable to get from the URL</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">String</span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getParameterAsInteger" class="method item">
+    <h3 class="name"><code>getParameterAsInteger</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>name</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Integer</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l1064"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1064</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Retrieves a creative parameter as an integer.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">name</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>Name of the variable to get from the URL</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Integer</span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getProfileId" class="method item">
+    <h3 class="name"><code>getProfileId</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Number</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l1332"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1332</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Get the dynamic creative profile id.</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Number</span>:
+                    <p>Returns the dynamic creative profile id.</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getStudio" class="method item">
+    <h3 class="name"><code>getStudio</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l1092"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1092</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Get studio object</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Object</span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getUrl" class="method item">
+    <h3 class="name"><code>getUrl</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>filepath</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">String</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l698"><code>src&#x2F;library&#x2F;ACT_Enabler.js:698</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Gets the runtime URL given the original compile-time filename.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">filepath</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>The oritinal full path of the asset</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">String</span>:
+                    <p>The URL to be used at runtime when served through Studio and DART.</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getUserBandwidth" class="method item">
+    <h3 class="name"><code>getUserBandwidth</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Number</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l1165"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1165</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Returns the user&#39;s bandwidth according to DART bandwidth codes.</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Number</span>:
+                    <p>An integer representing the user&#39;s bandwidth. Bandwidth values are:</p>
+<ol>
+<li>Unknown = 0</li>
+<li>Dialup = 1</li>
+<li>DSL = 2</li>
+<li>Cable = 3</li>
+<li>Broadband = 4</li>
+<li>T1 = 5</li>
+</ol>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getUserCountry" class="method item">
+    <h3 class="name"><code>getUserCountry</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">String</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l1181"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1181</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Returns the two-letter string representation of the user&#39;s country.</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">String</span>:
+                    <p>Two-letter string representation of the user&#39;s country.</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getUserDMACode" class="method item">
+    <h3 class="name"><code>getUserDMACode</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Number</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l1191"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1191</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Returns the DART representation of the user&#39;s Nielsen Designated Market Area.</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Number</span>:
+                    <p>A DART representation of the user&#39;s Nielson Designated Market Area.</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getUserState" class="method item">
+    <h3 class="name"><code>getUserState</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">String</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l1201"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1201</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Returns the two-letter string representation of the user&#39;s state or province.</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">String</span>:
+                    <p>Two-letter string representation of the user&#39;s state or province.</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getUserZipCode" class="method item">
+    <h3 class="name"><code>getUserZipCode</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">String</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l1211"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1211</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Returns the user&#39;s zip code (for users in the United States, U.S. territories, and Canada).</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">String</span>:
+                    <p>The user&#39;s zip code as supplied by the ad server.</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_hasUserInteracted" class="method item">
+    <h3 class="name"><code>hasUserInteracted</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l1221"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1221</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Checks if a user has interacted with the document.</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Boolean</span>:
+                    <p>Whether the user has interacted with the document.</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_invokeExternalJsFunction" class="method item">
+    <h3 class="name"><code>invokeExternalJsFunction</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>functionName</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l1231"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1231</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Invoke a function in the parent container. This could be the top frame if served via a adj (script) tag, the serving iframe if served via and adi (iframe) tag.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">functionName</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>The function name to invoke.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_invokeMraidMethod" class="method item">
+    <h3 class="name"><code>invokeMraidMethod</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>methodName</code>
+                </li>
+                <li class="arg">
+                        <code>opt_args</code>
+                </li>
+                <li class="arg">
+                        <code>opt_callback</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l1240"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1240</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Invoke a function on the mraid api. This is different from invokeExternalJsFunction as you are given the results of the function in a callback.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">methodName</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>The method name to invoke on the mraid object. You can also use dot accessors to access subobjects if they are ever introduced. For instance, &#39;package.method&#39;, would call window.mraid.package.method().</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">opt_args</code>
+                        <span class="type">Array</span>
+
+
+                    <div class="param-description">
+                        <p>The arguments to invoke the method with.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">opt_callback</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>A callback that gets invoked with the results of the function call.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_isInitialized" class="method item">
+    <h3 class="name"><code>isInitialized</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l757"><code>src&#x2F;library&#x2F;ACT_Enabler.js:757</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Returns whether the Enabler is initialized.</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Boolean</span>:
+                    <p>Whether the Enabler is initialized.</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_isPageLoaded" class="method item">
+    <h3 class="name"><code>isPageLoaded</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l747"><code>src&#x2F;library&#x2F;ACT_Enabler.js:747</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Returns whether the parent page has loaded. The iframe is notified when the page has loaded and dispatches
+the StudioEvent.PAGE_LOADED event.</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Boolean</span>:
+                    <p>Whether the parent page has loaded or not.</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_isServingInLiveEnvironment" class="method item">
+    <h3 class="name"><code>isServingInLiveEnvironment</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l1251"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1251</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Returns whether the ad is serving in the live environment or not.</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Boolean</span>:
+                    <p>Whether the ad is serving in the live environment or not.</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_isVisible" class="method item">
+    <h3 class="name"><code>isVisible</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l1041"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1041</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Returns whether the ad is visible. The Enabler dispatches the StudioEvent.VISIBLE event.</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Boolean</span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_loadModule" class="method item">
+    <h3 class="name"><code>loadModule</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>moduleType</code>
+                </li>
+                <li class="arg">
+                        <code>opt_loadedCallback</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l1446"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1446</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Loads an additional module</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">moduleType</code>
+                        <span class="type">studio.module.ModuleId</span>
+
+
+                    <div class="param-description">
+                        <p>The name of the module to load.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">opt_loadedCallback</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>The callback to invoke when the module is loaded</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_loadScript" class="method item">
+    <h3 class="name"><code>loadScript</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>scriptUrl</code>
+                </li>
+                <li class="arg">
+                        <code>opt_loadedCallback</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l1421"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1421</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Loads an additional script file</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">scriptUrl</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>The url of the script to load</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">opt_loadedCallback</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>The callback to invoke when the script is loaded</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_mapValue" class="method item private">
+    <h3 class="name"><code>mapValue</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                    <p>Provided by the <a href="../modules/DwellTime.html">DwellTime</a> module.</p>
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l299"><code>src&#x2F;library&#x2F;ACT_Enabler.js:299</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+
+</div>
+<div id="method_parentMessageHandle" class="method item">
+    <h3 class="name"><code>parentMessageHandle</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>data</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l468"><code>src&#x2F;library&#x2F;ACT_Enabler.js:468</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Handle message from parent frame</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">data</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>Data sent from parent</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_queryFullscreenDimensions" class="method item">
+    <h3 class="name"><code>queryFullscreenDimensions</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l1261"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1261</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Initiates a query for the maximum allowable fullscreen dimensions. A studio.event.StudioEvent.FULLSCREEN_DIMENSIONS event will be dispatched with the maximum allowed width and height as properties.
+Some publishers may pad the fullscreen window for a lightbox-like experience. Because of this the maximum allowable dimensions may not take up the entire browser window or screen.</p>
+
+    </div>
+
+
+
+
+</div>
+<div id="method_queryFullscreenSupport" class="method item">
+    <h3 class="name"><code>queryFullscreenSupport</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l1270"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1270</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Initiates a query to find out whether mock fullscreen expansion mode is supported. Please listen for the studio.event.StudioEvent.FULLSCREEN_SUPPORT event. This event will contain the support status.</p>
+
+    </div>
+
+
+
+
+</div>
+<div id="method_registerChargeableEventName" class="method item">
+    <h3 class="name"><code>registerChargeableEventName</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>eventName</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l1278"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1278</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Provide a method that allows the creative to define a chargeable event.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">eventName</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>String name for which a counter or timer event will be will be will be triggered in the creative execution.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_removeEventListener" class="method item">
+    <h3 class="name"><code>removeEventListener</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>event_type</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l569"><code>src&#x2F;library&#x2F;ACT_Enabler.js:569</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Wrapper for Event remove listener (gets values from EVENT QUEUE)</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">event_type</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>the id used in config.eventQueue</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_removeMessageHandler" class="method item">
+    <h3 class="name"><code>removeMessageHandler</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>messageName</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l1146"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1146</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Removes a new handler for an otherwise unknown message.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">messageName</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>The name of the message, which cannot match an exported method on studio.Enabler.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_reportCustomVariableCount1" class="method item">
+    <h3 class="name"><code>reportCustomVariableCount1</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>customString</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l1287"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1287</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Counts instances of the string parameter, aggregated as Custom Variable Count 1 in reports. The string must meet the following criteria:</p>
+<ul>
+<li>The string cannot exceed 100 characters</li>
+<li>The string must only contain Latin characters (0-9, Aa-Zz)</li>
+<li>The String must NOT contain any personally identifiable information such as name, email address, phone number, health info, financial info, etc.
+Additionally, all question marks (?) and anything after the first question mark in a string will be truncated.</li>
+</ul>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">customString</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>Value to record against custom variable count 1.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_reportCustomVariableCount2" class="method item">
+    <h3 class="name"><code>reportCustomVariableCount2</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>customString</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l1300"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1300</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Counts instances of the string parameter, aggregated as Custom Variable Count 2 in reports. The string must meet the following criteria:</p>
+<ul>
+<li>The string cannot exceed 100 characters</li>
+<li>The string must only contain Latin characters (0-9, Aa-Zz)</li>
+<li>The String must NOT contain any personally identifiable information such as name, email address, phone number, health info, financial info, etc.
+Additionally, all question marks (?) and anything after the first question mark in a string will be truncated.</li>
+</ul>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">customString</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>Value to record against custom variable count 2.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_reportManualClose" class="method item">
+    <h3 class="name"><code>reportManualClose</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l826"><code>src&#x2F;library&#x2F;ACT_Enabler.js:826</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Records a manual closing of a floating, pop-up, expanding, in-page with pop-up, or in-page with floating ad.</p>
+
+    </div>
+
+
+
+
+</div>
+<div id="method_requestCollapse" class="method item">
+    <h3 class="name"><code>requestCollapse</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l937"><code>src&#x2F;library&#x2F;ACT_Enabler.js:937</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Collapsing flow:</p>
+<pre class="code prettyprint"><code>1. Register event listeners.
+</code></pre><ol>
+<li>When you want to collapse call Enabler.requestCollapse().</li>
+<li>When the environment is ready to collapse the studio.events.StudioEvent.COLLAPSE_START is dispatched.
+ This can get dispatched independently of Enabler.requestCollapse() as sometimes the environment provides a close button outside of the creative.</li>
+<li>The Ad optionally performs an animated collapse.<ol>
+<li>Ad then calls Enabler.finishCollapse() to complete collapse and close div.</li>
+</ol>
+</li>
+</ol>
+<p>Initiates the collapse lifecycle. This begins by calling requestCollapse(), waiting for the
+COLLAPSE_START event, animating your collapse, then calling finishCollapse() when the
+creative has fully collapsed. Please use event listeners to invoke the collapsed state of
+the ad as the collapse event may be dispatched by the environment independently of calling
+studio.Enabler#requestCollapse().</p>
+
+    </div>
+
+
+
+
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>   Enabler.addEventListener(
+       studio.events.StudioEvent.COLLAPSE_START,
+       function () {
+           // Do collapse action then...
+           Enabler.finishCollapse();
+       });
+   Enabler.requestCollapse();
+</code></pre>
+            </div>
+        </div>
+</div>
+<div id="method_requestExpand" class="method item">
+    <h3 class="name"><code>requestExpand</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l890"><code>src&#x2F;library&#x2F;ACT_Enabler.js:890</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Expanding flow:</p>
+<pre class="code prettyprint"><code>1. Register event listeners.
+2. When you want to expand call Enabler.requestExpand().
+3. When the environment is ready to expand the studio.events.StudioEvent.EXPAND_START is dispatched.
+4. The Ad optionally performs an animated expansion.
+5. Ad then calls Enabler.finishExpand() to complete expansion. This makes sure pushdowns are syncronized.
+</code></pre><p>Initiates the expand lifecycle. This begins by calling requestExpand(), waiting for EXPAND_START
+event, animating your expand, then calling finishExpand() when the creative has fully expanded.
+Please use event listeners to invoke the expanded state of the ad as the expand may be dispatched
+by the environment independently of calling <code>studio.Enabler#requestExpand()</code>. Typical usage will
+look like:</p>
+
+    </div>
+
+
+
+
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>    Enabler.addEventListener(
+        studio.events.StudioEvent.EXPAND_START,
+        function(event) {
+            // For multi directional expands, direction to expand in can be obtained by
+            // calling Enabler.getExpandingDirection() (or from event.direction).
+            // Do expand action then...
+            Enabler.finishExpand();
+        });
+    Enabler.requestExpand();
+</code></pre>
+            </div>
+        </div>
+</div>
+<div id="method_requestFullscreenCollapse" class="method item">
+    <h3 class="name"><code>requestFullscreenCollapse</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l991"><code>src&#x2F;library&#x2F;ACT_Enabler.js:991</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Requests fullscreen collapse. Please listen for the studio.event.StudioEvent.FULLSCREEN_COLLAPSE_START
+event to start collapse.</p>
+
+    </div>
+
+
+
+
+</div>
+<div id="method_requestFullscreenExpand" class="method item">
+    <h3 class="name"><code>requestFullscreenExpand</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>opt_width</code>
+                </li>
+                <li class="arg">
+                        <code>opt_height</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l1002"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1002</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Requests fullscreen expand. If width and height are provided, expands to a rectangle of that width
+and height centered in the middle of the display (or browser window, if the browser is not
+fullscreen). Otherwise expands to the full size of the browser window/display. Note that on
+mobile devices the browser window typically takes up the entire display.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">opt_width</code>
+                        <span class="type">Number</span>
+
+
+                    <div class="param-description">
+                        <p>Width we would like to expand to in pixels</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">opt_height</code>
+                        <span class="type">Number</span>
+
+
+                    <div class="param-description">
+                        <p>Height we would like to expand to in pixels</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_sendToParent" class="method item">
+    <h3 class="name"><code>sendToParent</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                    <p>Provided by the <a href="../modules/DwellTime.html">DwellTime</a> module.</p>
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l96"><code>src&#x2F;library&#x2F;ACT_Enabler.js:96</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Send data to parent of this iframe</p>
+
+    </div>
+
+
+
+
+</div>
+<div id="method_setConfig" class="method item">
+    <h3 class="name"><code>setConfig</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>encoded</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">String</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l509"><code>src&#x2F;library&#x2F;ACT_Enabler.js:509</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>You can set new values to config using setConfig.
+Just use the same config structure.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">encoded</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">String</span>:
+                    <p>The stringified resulting config object</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_setCounter" class="method item private">
+    <h3 class="name"><code>setCounter</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                    <p>Provided by the <a href="../modules/DwellTime.html">DwellTime</a> module.</p>
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l260"><code>src&#x2F;library&#x2F;ACT_Enabler.js:260</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+
+</div>
+<div id="method_setDevDynamicContent" class="method item">
+    <h3 class="name"><code>setDevDynamicContent</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>value</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l1313"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1313</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Set the dynamic content development values.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">value</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>The Dynamic Content development values.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_setExit" class="method item">
+    <h3 class="name"><code>setExit</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>id</code>
+                </li>
+                <li class="arg">
+                        <code class="optional">[String]</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                    <p>Provided by the <a href="../modules/DwellTime.html">DwellTime</a> module.</p>
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l245"><code>src&#x2F;library&#x2F;ACT_Enabler.js:245</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Adding new url and it&#39;s key into the exitUrls list</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">id</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>Exit Url id</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name optional">[String]</code>
+                        <span class="type">Object</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+                    <div class="param-description">
+                        <p>opt_url New URL to be added</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_setExpandingPixelOffsets" class="method item">
+    <h3 class="name"><code>setExpandingPixelOffsets</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>left</code>
+                </li>
+                <li class="arg">
+                        <code>top</code>
+                </li>
+                <li class="arg">
+                        <code>opt_expandWidth</code>
+                </li>
+                <li class="arg">
+                        <code>opt_expandedHeight</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l834"><code>src&#x2F;library&#x2F;ACT_Enabler.js:834</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Sets the pixel offsets for the collapsed portion of the ad. This does not affect the local testing
+environment but when the ad is live the collapsed portion will be shown at 0x0. This method works
+by setting the marginLeft and marginTop of the body element which is set to relative positioning.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">left</code>
+                        <span class="type">Number</span>
+
+
+                    <div class="param-description">
+                        <p>The left offset to the collapsed portion of the ad.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">top</code>
+                        <span class="type">Number</span>
+
+
+                    <div class="param-description">
+                        <p>The top offset to the collapsed portion of the ad.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">opt_expandWidth</code>
+                        <span class="type">Number</span>
+
+
+                    <div class="param-description">
+                        <p>The expanded width of this asset.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">opt_expandedHeight</code>
+                        <span class="type">Number</span>
+
+
+                    <div class="param-description">
+                        <p>The expanded height of this asset.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_setFloatingPixelDimensions" class="method item">
+    <h3 class="name"><code>setFloatingPixelDimensions</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>width</code>
+                </li>
+                <li class="arg">
+                        <code>height</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l854"><code>src&#x2F;library&#x2F;ACT_Enabler.js:854</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Prepopulates the width and height of a floating or peeldown creative.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">width</code>
+                        <span class="type">Number</span>
+
+
+                    <div class="param-description">
+                        <p>The width of this asset.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">height</code>
+                        <span class="type">Number</span>
+
+
+                    <div class="param-description">
+                        <p>The height of this asset.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_setHint" class="method item">
+    <h3 class="name"><code>setHint</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>name</code>
+                </li>
+                <li class="arg">
+                        <code>value</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l1322"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1322</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Adds a Hint to this creative.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">name</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>The name of the hint we want to add.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">value</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>The value of the hint we want to add.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_setIsMultiDirectional" class="method item">
+    <h3 class="name"><code>setIsMultiDirectional</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>isMultiDirectional</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l868"><code>src&#x2F;library&#x2F;ACT_Enabler.js:868</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Sets the isMultiDirectional flag.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">isMultiDirectional</code>
+                        <span class="type">Boolean</span>
+
+
+                    <div class="param-description">
+                        <p>Whether the ad is configured as multidirectional.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_setProfileId" class="method item">
+    <h3 class="name"><code>setProfileId</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>value</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l1342"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1342</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Set the dynamic creative profile id.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">value</code>
+                        <span class="type">Number</span>
+
+
+                    <div class="param-description">
+                        <p>Profile id.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_setStartExpanded" class="method item">
+    <h3 class="name"><code>setStartExpanded</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>startExpanded</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l878"><code>src&#x2F;library&#x2F;ACT_Enabler.js:878</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Sets the startExpanded flag, which controls whether the asset starts in the expanded state or not.
+If true, then when the initial requestExpand call will not be tracked or logged and will not
+trigger an expansion timer.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">startExpanded</code>
+                        <span class="type">Boolean</span>
+
+
+                    <div class="param-description">
+                        <p>Value of the flag.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_setUrl" class="method item">
+    <h3 class="name"><code>setUrl</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>htmlRoot</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l725"><code>src&#x2F;library&#x2F;ACT_Enabler.js:725</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Force setting htmlRoot value that is returned from getURL. getURL will use window.location.href
+otherwise.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">htmlRoot</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>The HTML path URL value</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_setUseCustomClose" class="method item">
+    <h3 class="name"><code>setUseCustomClose</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>useCustomClose</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l793"><code>src&#x2F;library&#x2F;ACT_Enabler.js:793</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Sets useCustomClose. This is primarily of use in mobile environments using MRAID. When this flag
+is set, it means that the creative will provide its own close button, so MRAID doesn&#39;t have to
+provide one.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">useCustomClose</code>
+                        <span class="type">Boolean</span>
+
+
+                    <div class="param-description">
+                        <p>Value of the flag.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_startTimer" class="method item">
+    <h3 class="name"><code>startTimer</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>timerId</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l661"><code>src&#x2F;library&#x2F;ACT_Enabler.js:661</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Starts an event timer</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">timerId</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>The string ID of the timer to start</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_stopTimer" class="method item">
+    <h3 class="name"><code>stopTimer</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>timerId</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l677"><code>src&#x2F;library&#x2F;ACT_Enabler.js:677</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Stops an event timer</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">timerId</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>The string ID of the timer to stop</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+            </div>
+
+
+            <div id="attrs" class="api-class-tabpanel">
+                <h2 class="off-left">Attributes</h2>
+
+                    <div id="attr_ATTRS" class="attr item">
+                        <a name="config_ATTRS"></a> 
+                        <h3 class="name"><code>ATTRS</code></h3>
+                        <span class="type"></span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_library_ACT_Enabler.js.html#l421"><code>src&#x2F;library&#x2F;ACT_Enabler.js:421</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="attr_NAME" class="attr item">
+                        <a name="config_NAME"></a> 
+                        <h3 class="name"><code>NAME</code></h3>
+                        <span class="type">String</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_library_ACT_Enabler.js.html#l427"><code>src&#x2F;library&#x2F;ACT_Enabler.js:427</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="attr_version" class="attr item">
+                        <a name="config_version"></a> 
+                        <h3 class="name"><code>version</code></h3>
+                        <span class="type">String</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_library_ACT_Enabler.js.html#l433"><code>src&#x2F;library&#x2F;ACT_Enabler.js:433</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                    
+                    
+                    </div>
+            </div>
+
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

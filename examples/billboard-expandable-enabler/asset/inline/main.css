@@ -1,0 +1,24 @@
+/* Styles for billboard content*/
+
+#billboard-inline{
+	width: 970px;
+	height: 250px;
+	background: url('https://s.yimg.com/qq/ap/actjs/demo/images/banner-970x250.jpg');
+	position: relative;
+}
+
+.button{
+	background: #ddd;	
+	position: absolute;
+	right: 150px;
+	top: 100px;
+	padding: 20px 30px;
+	cursor: pointer;
+}
+
+#video1 {
+	position: absolute;
+	left: 5px;
+	top: 5px;
+	height: 240px;	
+}

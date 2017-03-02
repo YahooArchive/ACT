@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src/library/ACT_IO.js - ACT.js</title>
+    <link rel="stylesheet" href="https://s.yimg.com/zz/combo?yui-s:3.14.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="https://s.yimg.com/rz/l/favicon.ico">
+    <script src="https://s.yimg.com/zz/combo?yui-s:3.14.1/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../assets/css/logo.png" title="ACT.js" width="126" height="100"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 1.0.22</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                            <li><a href="#api-demos">Demo and Examples</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/ACT.html">ACT</a></li>
+                                <li><a href="../classes/ActionsQueue.html">ActionsQueue</a></li>
+                                <li><a href="../classes/Base.html">Base</a></li>
+                                <li><a href="../classes/Capability.html">Capability</a></li>
+                                <li><a href="../classes/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../classes/Class.html">Class</a></li>
+                                <li><a href="../classes/ContentAdfeedback.html">ContentAdfeedback</a></li>
+                                <li><a href="../classes/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../classes/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../classes/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../classes/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../classes/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../classes/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../classes/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../classes/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../classes/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../classes/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../classes/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../classes/ContentYtv.html">ContentYtv</a></li>
+                                <li><a href="../classes/Cookie.html">Cookie</a></li>
+                                <li><a href="../classes/CustomData.html">CustomData</a></li>
+                                <li><a href="../classes/Debug.html">Debug</a></li>
+                                <li><a href="../classes/Dom.html">Dom</a></li>
+                                <li><a href="../classes/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../classes/Enabler.html">Enabler</a></li>
+                                <li><a href="../classes/Environment.html">Environment</a></li>
+                                <li><a href="../classes/Event.html">Event</a></li>
+                                <li><a href="../classes/Flash.html">Flash</a></li>
+                                <li><a href="../classes/IO.html">IO</a></li>
+                                <li><a href="../classes/Json.html">Json</a></li>
+                                <li><a href="../classes/Lang.html">Lang</a></li>
+                                <li><a href="../classes/LayersList.html">LayersList</a></li>
+                                <li><a href="../classes/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../classes/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../classes/Screen.html">Screen</a></li>
+                                <li><a href="../classes/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../classes/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../classes/Tracking.html">Tracking</a></li>
+                                <li><a href="../classes/UA.html">UA</a></li>
+                                <li><a href="../classes/Util.html">Util</a></li>
+                                <li><a href="../classes/VideoEvents.html">VideoEvents</a></li>
+                            </ul>
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/ACT.html">ACT</a></li>
+                                <li><a href="../modules/actionsQueue.html">actionsQueue</a></li>
+                                <li><a href="../modules/Base.html">Base</a></li>
+                                <li><a href="../modules/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../modules/ContentAdfeedback.html">ContentAdfeedback</a></li>
+                                <li><a href="../modules/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../modules/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../modules/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../modules/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../modules/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../modules/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../modules/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../modules/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../modules/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../modules/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../modules/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../modules/ContentYtv.html">ContentYtv</a></li>
+                                <li><a href="../modules/Cookie.html">Cookie</a></li>
+                                <li><a href="../modules/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../modules/Enabler.html">Enabler</a></li>
+                                <li><a href="../modules/environment.html">environment</a></li>
+                                <li><a href="../modules/IO.html">IO</a></li>
+                                <li><a href="../modules/LayersList.html">LayersList</a></li>
+                                <li><a href="../modules/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../modules/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../modules/Screen.html">Screen</a></li>
+                                <li><a href="../modules/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../modules/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../modules/Tracking.html">Tracking</a></li>
+                            </ul>
+                
+                            <ul id="api-demos" class="apis demos">
+                                <li><a href="../demo/ACT_Demo_300x250.html">300x250</a></li>
+                                <li><a href="../demo/ACT_Demo_300x250_tracking.html">300x250_tracking</a></li>
+                                <li><a href="../demo/ACT_Demo_TrackingExample.html">TrackingExample</a></li>
+                                <li><a href="../demo/ACT_Demo_animation.html">animation</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard.html">billboard</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-enabler.html">billboard-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-expandable-enabler.html">billboard-expandable-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video.html">billboard_html_video</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video_rtl.html">billboard_html_video_rtl</a></li>
+                                <li><a href="../demo/ACT_Demo_carousel.html">carousel</a></li>
+                                <li><a href="../demo/ACT_Demo_dwelltime.html">dwelltime</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_expand.html">enabler_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_fullscreen_expand.html">enabler_fullscreen_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_target.html">enabler_target</a></li>
+                                <li><a href="../demo/ACT_Demo_floating.html">floating</a></li>
+                                <li><a href="../demo/ACT_Demo_force_env.html">force_env</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_enabler.html">html5_enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_standard.html">html5_standard</a></li>
+                                <li><a href="../demo/ACT_Demo_icons.html">icons</a></li>
+                                <li><a href="../demo/ACT_Demo_input_data.html">input_data</a></li>
+                                <li><a href="../demo/ACT_Demo_login_html.html">login_html</a></li>
+                                <li><a href="../demo/ACT_Demo_overwrite_env.html">overwrite_env</a></li>
+                                <li><a href="../demo/ACT_Demo_splash_ad.html">splash_ad</a></li>
+                                <li><a href="../demo/ACT_Demo_tablet_expandable.html">tablet_expandable</a></li>
+                                <li><a href="../demo/ACT_Demo_video_event.html">video_event</a></li>
+                                <li><a href="../demo/ACT_Demo_video_html.html">video_html</a></li>
+                            </ul>
+                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: src/library/ACT_IO.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+ * Copyright 2016, Yahoo Inc.
+ * Copyrights licensed under the New BSD License.
+ * See the accompanying LICENSE file for terms.
+ */
+
+/* global ACT */
+/* global getFeed */
+
+/**
+ * The &quot;IO&quot; helper class to dynamically load files.
+ *
+ * @module IO
+ * @main IO
+ * @class IO
+ * @requires Event, Lang, Dom, Class
+ * @global
+ */
+ACT.define(&#x27;IO&#x27;, [/*@&lt;*/&#x27;Debug&#x27;, /*&gt;@*/ &#x27;Event&#x27;, &#x27;Lang&#x27;, &#x27;Class&#x27;], function (ACT) {
+    &#x27;use strict&#x27;;
+
+    /* Shorthand */
+    var Lang = ACT.Lang;
+    var Event = ACT.Event;
+    var Class = ACT.Class;
+
+    /**
+     * EVENTS
+     */
+    var EVENT_LOAD_DONE = &#x27;IO:load:done&#x27;;
+
+    /*@&lt;*/
+    var Debug = ACT.Debug;
+    Debug.log(&#x27;IO Loaded&#x27;);
+    /*&gt;@*/
+
+    /**
+     * @constructor
+     */
+    function IO(config) {
+        this.init(config);
+        // Screen.superclass.constructor.apply(this, arguments);
+    }
+
+    /**
+     * default attribute
+     */
+    IO.ATTRS = {
+        /**
+         * @attribute NAME
+         * @type String
+         */
+        NAME: &#x27;IO&#x27;,
+        /**
+         * @attribute inputPath
+         * @type String
+         */
+        inputPath: &#x27;&#x27;,
+
+        /**
+         * @attribute version
+         * @type String
+         */
+        version: &#x27;1.0.41&#x27;
+    };
+
+    /**
+     * Public properties
+     */
+    Lang.extend(IO, Class, {
+        /**
+         * Method auto initiated when the class is instantiated
+         *
+         * @method initializer
+         * @public
+         * @param {Object} config
+         */
+        initializer: function (config) {
+            this.load(config.dataFeed);
+        },
+
+        /**
+         * Method load initiated when the class is instantiated
+         *
+         * @method load
+         * @public
+         * @param {String} path , Path to file to load
+         */
+        load: function (path) {
+            var script = document.createElement(&#x27;script&#x27;);
+            var head = document.getElementsByTagName(&#x27;head&#x27;)[0];
+
+            if (script.readyState) {  // IE
+                /* istanbul ignore next */
+                script.onreadystatechange = function () {
+                    if (script.readyState === &#x27;loaded&#x27; || script.readyState === &#x27;complete&#x27;) {
+                        script.onreadystatechange = null;
+                        Event.fire(EVENT_LOAD_DONE, getFeed());
+                    }
+                };
+            } else {  // Others
+                script.onload = function () {
+                    Event.fire(EVENT_LOAD_DONE, getFeed());
+                };
+            }
+
+            script.type = &#x27;text/javascript&#x27;;
+            script.src = path;
+            head.appendChild(script);
+        }
+    });
+
+    return IO;
+});
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

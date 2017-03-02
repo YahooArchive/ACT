@@ -1,0 +1,2343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Lang - ACT.js</title>
+    <link rel="stylesheet" href="https://s.yimg.com/zz/combo?yui-s:3.14.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="https://s.yimg.com/rz/l/favicon.ico">
+    <script src="https://s.yimg.com/zz/combo?yui-s:3.14.1/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="https://s.yimg.com/cv/ae/global/ACTJS/logo/ACT.js.logo.png" title="ACT.js" width="150"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 1.1.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                            <li><a href="#api-demos">Demo and Examples</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/Dom.html">Dom</a></li>
+                                <li><a href="../classes/Enabler.html">Enabler</a></li>
+                                <li><a href="../classes/Event.html">Event</a></li>
+                                <li><a href="../classes/Json.html">Json</a></li>
+                                <li><a href="../classes/Lang.html">Lang</a></li>
+                                <li><a href="../classes/UA.html">UA</a></li>
+                                <li><a href="../classes/Util.html">Util</a></li>
+                            </ul>
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/ACT.html">ACT</a></li>
+                                <li><a href="../modules/Enabler.html">Enabler</a></li>
+                            </ul>
+                
+                            <ul id="api-demos" class="apis demos">
+                                <li><a href="../demo/ACT_Demo_billboard-enabler.html">billboard-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-expandable-enabler.html">billboard-expandable-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_expand.html">enabler_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_fullscreen_expand.html">enabler_fullscreen_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_target.html">enabler_target</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_enabler.html">html5_enabler</a></li>
+                            </ul>
+                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1>Lang Class</h1>
+<div class="box meta">
+
+
+        <div class="foundat">
+            Defined in: <a href="../files/temp_enabler_library_ACT_lang.js.html#l19"><code>temp_enabler&#x2F;library&#x2F;ACT_lang.js:19</code></a>
+        </div>
+
+            Module: <a href="../modules/ACT.html">ACT</a>
+
+</div>
+
+
+<div class="box intro">
+    <p>ACT Language Additions - A singleton that adds functionality / ease of use.</p>
+
+</div>
+
+
+<div id="classdocs" class="tabview">
+    <ul class="api-class-tabs">
+        <li class="api-class-tab index"><a href="#index">Index</a></li>
+
+            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
+            <li class="api-class-tab attrs"><a href="#attrs">Attributes</a></li>
+    </ul>
+
+    <div>
+        <div id="index" class="api-class-tabpanel index">
+            <h2 class="off-left">Item Index</h2>
+
+                <div class="index-section methods">
+                    <h3>Methods</h3>
+
+                    <ul class="index-list methods">
+                            <li class="index-item method">
+                                <a href="#method_arrayDedupe">arrayDedupe</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_arrayIndexOf">arrayIndexOf</a>
+
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#method_bind">bind</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_cancelAnimFrame">cancelAnimFrame</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_capitaliseFirstLetter">capitaliseFirstLetter</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_clone">clone</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_create">create</a>
+
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#method_createHash">createHash</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#method_dateNow">dateNow</a>
+
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#method_delay">delay</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_extend">extend</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_forEach">forEach</a>
+
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#method_inString">inString</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_isArray">isArray</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_isFunction">isFunction</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_isInvalidChars">isInvalidChars</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_isNumber">isNumber</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_isObject">isObject</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_isSameOrigin">isSameOrigin</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_isStrictNumber">isStrictNumber</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_isString">isString</a>
+
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#method_merge">merge</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_mixin">mixin</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#method_numberific">numberific</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_objHasKey">objHasKey</a>
+
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#method_parseHash">parseHash</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_requestAnimFrame">requestAnimFrame</a>
+
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#method_size">size</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_urlSanitize">urlSanitize</a>
+
+                            </li>
+                    </ul>
+                </div>
+
+
+                <div class="index-section attrs">
+                    <h3>Attributes</h3>
+
+                    <ul class="index-list attrs">
+                            <li class="index-item attr">
+                                <a href="#attr_ATTRS">ATTRS</a>
+                            </li>
+                    </ul>
+                </div>
+
+        </div>
+
+            <div id="methods" class="api-class-tabpanel">
+                <h2 class="off-left">Methods</h2>
+
+<div id="method_arrayDedupe" class="method item">
+    <h3 class="name"><code>arrayDedupe</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>array</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Array</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/temp_enabler_library_ACT_lang.js.html#l427"><code>temp_enabler&#x2F;library&#x2F;ACT_lang.js:427</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Dedupes an array of strings, returning an array that&#39;s guaranteed to contain
+only one copy of a given string.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">array</code>
+                        <span class="type">String | Number</span>
+
+
+                    <div class="param-description">
+                        <p>Array of strings or numbers to dedupe.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Array</span>:
+                    <p>Copy of <em>array</em> containing no duplicate values.</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_arrayIndexOf" class="method item">
+    <h3 class="name"><code>arrayIndexOf</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>array</code>
+                </li>
+                <li class="arg">
+                        <code>value</code>
+                </li>
+                <li class="arg">
+                        <code class="optional">[from=0]</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Number</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/temp_enabler_library_ACT_lang.js.html#l378"><code>temp_enabler&#x2F;library&#x2F;ACT_lang.js:378</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Returns the index of the first item in the array that&#39;s equal (using a strict
+equality check) to the specified <em>value</em>, or <code>-1</code> if the value isn&#39;t found.</p>
+<p>This method wraps the native <code>Array.indexOf()</code> method if available.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">array</code>
+                        <span class="type">Array</span>
+
+
+                    <div class="param-description">
+                        <p>Array to search.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">value</code>
+                        <span class="type"></span>
+
+
+                    <div class="param-description">
+                        <p>Value to search for.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name optional">[from=0]</code>
+                        <span class="type">Number</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+                    <div class="param-description">
+                        <p>The index at which to begin the search.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Number</span>:
+                    <p>Index of the item strictly equal to <em>value</em>, or <code>-1</code> if not found.</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_bind" class="method item public">
+    <h3 class="name"><code>bind</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>obj</code>
+                </li>
+                <li class="arg">
+                        <code>args</code>
+                </li>
+                <li class="arg">
+                        <code>func</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type"></span>
+        </span>
+
+
+        <span class="flag public">public</span>
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/temp_enabler_library_ACT_lang.js.html#l58"><code>temp_enabler&#x2F;library&#x2F;ACT_lang.js:58</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Bind - binds the function to a scope</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">obj</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>the Scope object</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">args</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>Arguments to pass in to the function</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">func</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>Function to call in the scope</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                    <p>to the bound function</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_cancelAnimFrame" class="method item">
+    <h3 class="name"><code>cancelAnimFrame</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>id</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/temp_enabler_library_ACT_lang.js.html#l592"><code>temp_enabler&#x2F;library&#x2F;ACT_lang.js:592</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Polyfill for cancelAnimationFrame</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">id</code>
+                        <span class="type">Number</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_capitaliseFirstLetter" class="method item">
+    <h3 class="name"><code>capitaliseFirstLetter</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>string,</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">String</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/temp_enabler_library_ACT_lang.js.html#l483"><code>temp_enabler&#x2F;library&#x2F;ACT_lang.js:483</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Capitalise firt letter</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">string,</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>value to change</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">String</span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_clone" class="method item">
+    <h3 class="name"><code>clone</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>obj</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type"></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/temp_enabler_library_ACT_lang.js.html#l354"><code>temp_enabler&#x2F;library&#x2F;ACT_lang.js:354</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Clones Object</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">obj</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>Object to be cloned</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type"></span>:
+                    <p>Returns a cloned instance of the input Object</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_create" class="method item">
+    <h3 class="name"><code>create</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>prototype,</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/temp_enabler_library_ACT_lang.js.html#l507"><code>temp_enabler&#x2F;library&#x2F;ACT_lang.js:507</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Alternative solution of Object.create()</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">prototype,</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>list of prototype methods</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Object</span>:
+                    <p>Create, fresh instance</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_createHash" class="method item public">
+    <h3 class="name"><code>createHash</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>hash</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">String</span>
+        </span>
+
+
+        <span class="flag public">public</span>
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/temp_enabler_library_ACT_lang.js.html#l192"><code>temp_enabler&#x2F;library&#x2F;ACT_lang.js:192</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Formats a cookie value for an object containing multiple values.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">hash</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>An object of key-value pairs to create a string for.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">String</span>:
+                    <p>A string suitable for use as a cookie value.</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_dateNow" class="method item public">
+    <h3 class="name"><code>dateNow</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type"></span>
+        </span>
+
+
+        <span class="flag public">public</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/temp_enabler_library_ACT_lang.js.html#l47"><code>temp_enabler&#x2F;library&#x2F;ACT_lang.js:47</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Date.now() - Polyfill for now method for ie8</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                    <p>timestamp millisecond</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_delay" class="method item public">
+    <h3 class="name"><code>delay</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>func</code>
+                </li>
+                <li class="arg">
+                        <code>time</code>
+                </li>
+                <li class="arg">
+                        <code>scope</code>
+                </li>
+                <li class="arg">
+                        <code>args</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Number</span>
+        </span>
+
+
+        <span class="flag public">public</span>
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/temp_enabler_library_ACT_lang.js.html#l175"><code>temp_enabler&#x2F;library&#x2F;ACT_lang.js:175</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Wrapper for setTimeout to help trigger the function with a context.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">func</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>Function to call</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">time</code>
+                        <span class="type">Number</span>
+
+
+                    <div class="param-description">
+                        <p>Time in milliseconds after which to execute the function</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">scope</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>The scope to trigger the function in.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">args</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>Arguments to apss to the function <em>deprecated for now</em></p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Number</span>:
+                    <p>the reference to the setTimeout so it can be cancelled</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_extend" class="method item">
+    <h3 class="name"><code>extend</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>receiver</code>
+                </li>
+                <li class="arg">
+                        <code>supplier</code>
+                </li>
+                <li class="arg">
+                        <code>prototypes</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/temp_enabler_library_ACT_lang.js.html#l519"><code>temp_enabler&#x2F;library&#x2F;ACT_lang.js:519</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Extend a class from another and define its prototype</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">receiver</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">supplier</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">prototypes</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Object</span>:
+                    <p>receiver</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_forEach" class="method item">
+    <h3 class="name"><code>forEach</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>obj</code>
+                </li>
+                <li class="arg">
+                        <code>func</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/temp_enabler_library_ACT_lang.js.html#l558"><code>temp_enabler&#x2F;library&#x2F;ACT_lang.js:558</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Looping through the object and execute func for each item.
+If func return false then stop the loop immediately</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">obj</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>Object to be looped through</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">func</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>Function to be executed for each item. Func will take 2 args, the index and the value of item respectively</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_inString" class="method item public">
+    <h3 class="name"><code>inString</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>haystack</code>
+                </li>
+                <li class="arg">
+                        <code>needle</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+
+
+        <span class="flag public">public</span>
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/temp_enabler_library_ACT_lang.js.html#l454"><code>temp_enabler&#x2F;library&#x2F;ACT_lang.js:454</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Utility function to determine if string "A" contains string "B".</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">haystack</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>String to search in</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">needle</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>The string to search for</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Boolean</span>:
+                    <p>true if found false otherwise</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_isArray" class="method item">
+    <h3 class="name"><code>isArray</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>value</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/temp_enabler_library_ACT_lang.js.html#l310"><code>temp_enabler&#x2F;library&#x2F;ACT_lang.js:310</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Checks if element is an Array</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">value</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>Element to be tested</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Boolean</span>:
+                    <p>Returns true if element is an array</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_isFunction" class="method item">
+    <h3 class="name"><code>isFunction</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>value</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/temp_enabler_library_ACT_lang.js.html#l289"><code>temp_enabler&#x2F;library&#x2F;ACT_lang.js:289</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Returns true if value is a Function</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">value</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>Element to be checked</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Boolean</span>:
+                    <p>Returns true in case it is a Function</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_isInvalidChars" class="method item">
+    <h3 class="name"><code>isInvalidChars</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>str</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/temp_enabler_library_ACT_lang.js.html#l618"><code>temp_enabler&#x2F;library&#x2F;ACT_lang.js:618</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Check if string is containing invalid cararters</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">str</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_isNumber" class="method item">
+    <h3 class="name"><code>isNumber</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>value</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/temp_enabler_library_ACT_lang.js.html#l330"><code>temp_enabler&#x2F;library&#x2F;ACT_lang.js:330</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Checks if element value is a Number</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">value</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>Element to be evaluated</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Boolean</span>:
+                    <p>Returns true if element value is a Number</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_isObject" class="method item">
+    <h3 class="name"><code>isObject</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>value</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/temp_enabler_library_ACT_lang.js.html#l243"><code>temp_enabler&#x2F;library&#x2F;ACT_lang.js:243</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Returns true if value is an Object or Function</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">value</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>Element to be checked</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Boolean</span>:
+                    <p>Returns true in case it is an Object or a Function</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_isSameOrigin" class="method item">
+    <h3 class="name"><code>isSameOrigin</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>url</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/temp_enabler_library_ACT_lang.js.html#l627"><code>temp_enabler&#x2F;library&#x2F;ACT_lang.js:627</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Check if the given url is hosted at the same origin</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">url</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_isStrictNumber" class="method item">
+    <h3 class="name"><code>isStrictNumber</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>value</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/temp_enabler_library_ACT_lang.js.html#l344"><code>temp_enabler&#x2F;library&#x2F;ACT_lang.js:344</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Checks if element value and type is a Number</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">value</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>Element to be evaluated</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Boolean</span>:
+                    <p>Returns true if element value and type is a Number</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_isString" class="method item">
+    <h3 class="name"><code>isString</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>value</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/temp_enabler_library_ACT_lang.js.html#l320"><code>temp_enabler&#x2F;library&#x2F;ACT_lang.js:320</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Checks if element is a String</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">value</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>Element to be evaluated</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Boolean</span>:
+                    <p>Returns true if element is a String</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_merge" class="method item public">
+    <h3 class="name"><code>merge</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>target</code>
+                </li>
+                <li class="arg">
+                        <code>from</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type"></span>
+        </span>
+
+
+        <span class="flag public">public</span>
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/temp_enabler_library_ACT_lang.js.html#l123"><code>temp_enabler&#x2F;library&#x2F;ACT_lang.js:123</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Merge the two objects together recursively</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">target</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>Element to merge into</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">from</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>Element to merge properties out of</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                    <p>to the newly merged element</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_mixin" class="method item">
+    <h3 class="name"><code>mixin</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>receiver</code>
+                </li>
+                <li class="arg">
+                        <code>supplier</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/temp_enabler_library_ACT_lang.js.html#l493"><code>temp_enabler&#x2F;library&#x2F;ACT_lang.js:493</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Check if the reference is a singleton and merge accordingly</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">receiver</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">supplier</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_numberific" class="method item private">
+    <h3 class="name"><code>numberific</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>string</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Float</span>
+        </span>
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/temp_enabler_library_ACT_lang.js.html#l467"><code>temp_enabler&#x2F;library&#x2F;ACT_lang.js:467</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Parses out a Number out of a string 3.0.2 return 3.0</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">string</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Float</span>:
+                    <p>Number out of a string</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_objHasKey" class="method item">
+    <h3 class="name"><code>objHasKey</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>obj</code>
+                </li>
+                <li class="arg">
+                        <code>key</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Boolean | </span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/temp_enabler_library_ACT_lang.js.html#l299"><code>temp_enabler&#x2F;library&#x2F;ACT_lang.js:299</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Returns true if Object has the key</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">obj</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>Object to be checked</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">key</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>Key value to be checked against Object</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Boolean | </span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_parseHash" class="method item public">
+    <h3 class="name"><code>parseHash</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>text</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+
+
+        <span class="flag public">public</span>
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/temp_enabler_library_ACT_lang.js.html#l214"><code>temp_enabler&#x2F;library&#x2F;ACT_lang.js:214</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Parses a cookie hash string into an object.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">text</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>The cookie hash string to parse (format: n1=v1&amp;n2=v2).</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Object</span>:
+                    <p>An object containing entries for each cookie value.</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_requestAnimFrame" class="method item">
+    <h3 class="name"><code>requestAnimFrame</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>callback</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Number</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/temp_enabler_library_ACT_lang.js.html#l577"><code>temp_enabler&#x2F;library&#x2F;ACT_lang.js:577</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Polyfill for requestAnimationFrame</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">callback</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Number</span>:
+                    <p>id</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_size" class="method item public">
+    <h3 class="name"><code>size</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>obj</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type"></span>
+        </span>
+
+
+        <span class="flag public">public</span>
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/temp_enabler_library_ACT_lang.js.html#l103"><code>temp_enabler&#x2F;library&#x2F;ACT_lang.js:103</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Get length of an Object</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">obj</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                    <p>length</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_urlSanitize" class="method item">
+    <h3 class="name"><code>urlSanitize</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>str</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/temp_enabler_library_ACT_lang.js.html#l601"><code>temp_enabler&#x2F;library&#x2F;ACT_lang.js:601</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Url sanitizer to prevent xss injection</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">str</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+            </div>
+
+
+            <div id="attrs" class="api-class-tabpanel">
+                <h2 class="off-left">Attributes</h2>
+
+                    <div id="attr_ATTRS" class="attr item">
+                        <a name="config_ATTRS"></a> 
+                        <h3 class="name"><code>ATTRS</code></h3>
+                        <span class="type">NAME: string, version: string</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/temp_enabler_library_ACT_lang.js.html#l35"><code>temp_enabler&#x2F;library&#x2F;ACT_lang.js:35</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                    
+                    
+                    </div>
+            </div>
+
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

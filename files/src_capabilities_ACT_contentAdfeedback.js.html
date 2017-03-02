@@ -1,0 +1,1469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src/capabilities/ACT_contentAdfeedback.js - ACT.js</title>
+    <link rel="stylesheet" href="https://s.yimg.com/zz/combo?yui-s:3.14.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="https://s.yimg.com/rz/l/favicon.ico">
+    <script src="https://s.yimg.com/zz/combo?yui-s:3.14.1/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../assets/css/logo.png" title="ACT.js" width="126" height="100"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 1.0.22</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                            <li><a href="#api-demos">Demo and Examples</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/ACT.html">ACT</a></li>
+                                <li><a href="../classes/ActionsQueue.html">ActionsQueue</a></li>
+                                <li><a href="../classes/Base.html">Base</a></li>
+                                <li><a href="../classes/Capability.html">Capability</a></li>
+                                <li><a href="../classes/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../classes/Class.html">Class</a></li>
+                                <li><a href="../classes/ContentAdfeedback.html">ContentAdfeedback</a></li>
+                                <li><a href="../classes/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../classes/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../classes/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../classes/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../classes/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../classes/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../classes/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../classes/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../classes/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../classes/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../classes/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../classes/ContentYtv.html">ContentYtv</a></li>
+                                <li><a href="../classes/Cookie.html">Cookie</a></li>
+                                <li><a href="../classes/CustomData.html">CustomData</a></li>
+                                <li><a href="../classes/Debug.html">Debug</a></li>
+                                <li><a href="../classes/Dom.html">Dom</a></li>
+                                <li><a href="../classes/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../classes/Enabler.html">Enabler</a></li>
+                                <li><a href="../classes/Environment.html">Environment</a></li>
+                                <li><a href="../classes/Event.html">Event</a></li>
+                                <li><a href="../classes/Flash.html">Flash</a></li>
+                                <li><a href="../classes/IO.html">IO</a></li>
+                                <li><a href="../classes/Json.html">Json</a></li>
+                                <li><a href="../classes/Lang.html">Lang</a></li>
+                                <li><a href="../classes/LayersList.html">LayersList</a></li>
+                                <li><a href="../classes/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../classes/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../classes/Screen.html">Screen</a></li>
+                                <li><a href="../classes/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../classes/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../classes/Tracking.html">Tracking</a></li>
+                                <li><a href="../classes/UA.html">UA</a></li>
+                                <li><a href="../classes/Util.html">Util</a></li>
+                                <li><a href="../classes/VideoEvents.html">VideoEvents</a></li>
+                            </ul>
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/ACT.html">ACT</a></li>
+                                <li><a href="../modules/actionsQueue.html">actionsQueue</a></li>
+                                <li><a href="../modules/Base.html">Base</a></li>
+                                <li><a href="../modules/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../modules/ContentAdfeedback.html">ContentAdfeedback</a></li>
+                                <li><a href="../modules/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../modules/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../modules/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../modules/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../modules/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../modules/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../modules/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../modules/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../modules/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../modules/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../modules/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../modules/ContentYtv.html">ContentYtv</a></li>
+                                <li><a href="../modules/Cookie.html">Cookie</a></li>
+                                <li><a href="../modules/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../modules/Enabler.html">Enabler</a></li>
+                                <li><a href="../modules/environment.html">environment</a></li>
+                                <li><a href="../modules/IO.html">IO</a></li>
+                                <li><a href="../modules/LayersList.html">LayersList</a></li>
+                                <li><a href="../modules/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../modules/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../modules/Screen.html">Screen</a></li>
+                                <li><a href="../modules/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../modules/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../modules/Tracking.html">Tracking</a></li>
+                            </ul>
+                
+                            <ul id="api-demos" class="apis demos">
+                                <li><a href="../demo/ACT_Demo_300x250.html">300x250</a></li>
+                                <li><a href="../demo/ACT_Demo_300x250_tracking.html">300x250_tracking</a></li>
+                                <li><a href="../demo/ACT_Demo_TrackingExample.html">TrackingExample</a></li>
+                                <li><a href="../demo/ACT_Demo_animation.html">animation</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard.html">billboard</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-enabler.html">billboard-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-expandable-enabler.html">billboard-expandable-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video.html">billboard_html_video</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video_rtl.html">billboard_html_video_rtl</a></li>
+                                <li><a href="../demo/ACT_Demo_carousel.html">carousel</a></li>
+                                <li><a href="../demo/ACT_Demo_dwelltime.html">dwelltime</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_expand.html">enabler_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_fullscreen_expand.html">enabler_fullscreen_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_target.html">enabler_target</a></li>
+                                <li><a href="../demo/ACT_Demo_floating.html">floating</a></li>
+                                <li><a href="../demo/ACT_Demo_force_env.html">force_env</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_enabler.html">html5_enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_standard.html">html5_standard</a></li>
+                                <li><a href="../demo/ACT_Demo_icons.html">icons</a></li>
+                                <li><a href="../demo/ACT_Demo_input_data.html">input_data</a></li>
+                                <li><a href="../demo/ACT_Demo_login_html.html">login_html</a></li>
+                                <li><a href="../demo/ACT_Demo_overwrite_env.html">overwrite_env</a></li>
+                                <li><a href="../demo/ACT_Demo_splash_ad.html">splash_ad</a></li>
+                                <li><a href="../demo/ACT_Demo_tablet_expandable.html">tablet_expandable</a></li>
+                                <li><a href="../demo/ACT_Demo_video_event.html">video_event</a></li>
+                                <li><a href="../demo/ACT_Demo_video_html.html">video_html</a></li>
+                            </ul>
+                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: src/capabilities/ACT_contentAdfeedback.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+ * Copyright 2016, Yahoo Inc.
+ * Copyrights licensed under the New BSD License.
+ * See the accompanying LICENSE file for terms.
+ */
+
+/* global ACT */
+/**
+ * The &#x27;ContentAdfeedback&#x27; is a capability that renders the Yahoo! Ad Feedback implimentation
+ *
+ * Available &#x27;actions&#x27;:
+ * - enableAdFeedback
+ * - disableAdFeedbackInit
+ * - enableAdFeedbackInit
+ * - trackAdfeedback
+ *
+ * Available &#x27;eventTypes&#x27;:
+ * - adfeedbackEnabled
+ *
+ * Example of &#x27;SuperConf&#x27; use case:
+ *
+ *     {
+ *          id: &#x27;adfeedback_container&#x27;,
+ *          type: &#x27;content-adfeedback&#x27;,
+ *          env: [&#x27;html&#x27;, &#x27;flash&#x27;, &#x27;backup&#x27;],
+ *          css: {
+ *              width: &#x27;300px&#x27;,
+ *              height: &#x27;250px&#x27;,
+ *              display: &#x27;block&#x27;,
+ *              overflow: &#x27;visible&#x27;
+ *          },
+ *          AdfeedbackConfig: {
+ *              triggerNode: &#x27;act-ad&#x27;
+ *              placement_config: fpad_fdb // ADFEEDBACK CONFIG FROM PAGE
+ *              translation_config: {
+ *                     act_fdb_balloon_text: &#x27;I don\&#x27;t like this ad &#x27;,
+ *                     fdb_srvy_title: &#x27;What don\&#x27;t you like about this ad ? &#x27;,
+ *                     fdb_srvy_thankyou_text : &#x27;Thank you for helping us improve your Yahoo experience&#x27;,
+ *                     fdb_srvy_answers_one: &#x27;It\&#x27;s distracting &#x27;,
+ *                     fdb_srvy_answers_two: &#x27;It\&#x27;s not relevant &#x27;,
+ *                     fdb_srvy_answers_three: &#x27;It\&#x27;s offensive &#x27;,
+ *                     fdb_srvy_answers_four: &#x27;Something else&#x27;,
+ *                     fdb_srvy_details_submit: &#x27;Send&#x27;,
+ *                     fdb_srvy_why_text: &#x27;Why do I see ads?&#x27;,
+ *                     fdb_srvy_learn_text: &#x27;Learn more about your feedback.&#x27;,
+ *                     fdb_srvy_done: &#x27;Done&#x27;
+ *              },
+ *              url_config: {
+ *                     adfeedback_open_why_url: &#x27;https://......&#x27;,
+ *                     adfeedback_open_learn_url: &#x27;https://.....&#x27;
+ *              }
+ *          },
+ *          EventConfig: [{
+ *              eventType: &#x27;adfeedbackEnabled&#x27;,
+ *              actions: []
+ *          }]
+ *     }
+ *
+ * @module ContentAdfeedback
+ * @main ContentAdfeedback
+ * @class ContentAdfeedback
+ * @requires Dom, Lang, Event, Util, Class, Capability
+ * @global
+ */
+ACT.define(&#x27;ContentAdfeedback&#x27;, [&#x27;Dom&#x27;, &#x27;Lang&#x27;, &#x27;Event&#x27;, &#x27;Util&#x27;, &#x27;Class&#x27;, &#x27;Capability&#x27;], function (ACT) {
+    &#x27;use strict&#x27;;
+
+    /* Constants */
+    var Dom = ACT.Dom;
+    var Lang = ACT.Lang;
+    var Event = ACT.Event;
+    var Util = ACT.Util;
+    var Class = ACT.Class;
+    var Capability = ACT.Capability;
+
+    var TRIGGERNODE_MOUSEENTER_EVENT;
+    var TRIGGERNODE_MOUSELEAVE_EVENT;
+    var CLOSE_BTN_CONTAINER_ID = &#x27;fdb_close&#x27;;
+    var FORM_CONTAINER_ID = &#x27;act_fdb_form&#x27;;
+    var BUTTON_DOM_STRUCTURE = {
+        id: CLOSE_BTN_CONTAINER_ID,
+        type: &#x27;content-container&#x27;,
+        env: [&#x27;html&#x27;, &#x27;flash&#x27;, &#x27;backup&#x27;],
+        css: {
+            position: &#x27;absolute&#x27;,
+            top: &#x27;-20px&#x27;,
+            left: &#x27;0px&#x27;,
+            zIndex: &#x27;10&#x27;,
+            width: &#x27;300px&#x27;,
+            height: &#x27;20px&#x27;,
+            visibility: &#x27;inherit&#x27;,
+            display: &#x27;none&#x27;
+        },
+        eventConfig: [{
+            eventType: &#x27;mouseenter&#x27;,
+            actions: [{
+                type: &#x27;containerChangeStyles&#x27;,
+                id: &#x27;act_fdb_x&#x27;,
+                styles: {
+                    background: &quot;#fff url(&#x27;https://s.yimg.com/rq/darla/i/fdb1.gif&#x27;) no-repeat right 0px&quot;
+                }
+            }, {
+                type: &#x27;containerShow&#x27;,
+                id: &#x27;act_fdb_balloon&#x27;
+            }]
+        }, {
+            eventType: &#x27;mouseleave&#x27;,
+            actions: [{
+                type: &#x27;containerChangeStyles&#x27;,
+                id: &#x27;act_fdb_x&#x27;,
+                styles: {
+                    background: &quot;#fff url(&#x27;https://s.yimg.com/rq/darla/i/fdb1.gif&#x27;) no-repeat right -25px&quot;
+                }
+            }, {
+                type: &#x27;containerHide&#x27;,
+                id: &#x27;act_fdb_balloon&#x27;
+            }]
+        }],
+        content: [{
+            id: &#x27;act_fdb_x&#x27;,
+            type: &#x27;content-container&#x27;,
+            env: [&#x27;html&#x27;, &#x27;flash&#x27;, &#x27;backup&#x27;],
+            css: {
+                width: &#x27;20px&#x27;,
+                height: &#x27;20px&#x27;,
+                opacity: &#x27;0.78&#x27;,
+                msFilter: &#x27;progid:DXImageTransform.Microsoft.Alpha(Opacity=78)&#x27;,
+                filter: &#x27;alpha(opacity=78)&#x27;,
+                position: &#x27;absolute&#x27;,
+                right: &#x27;0px&#x27;,
+                background: &quot;#fff url(&#x27;https://s.yimg.com/rq/darla/i/fdb1.gif&#x27;) no-repeat right -25px&quot;,
+                cursor: &#x27;pointer&#x27;,
+                zIndex: &#x27;1000&#x27;
+            },
+            eventConfig: [{
+                eventType: &#x27;click&#x27;,
+                actions: [{
+                    type: &#x27;enableAdFeedback&#x27;
+                }, {
+                    type: &#x27;trackAdfeedback&#x27;,
+                    interactionType: &#x27;fdb_start&#x27;
+                }, {
+                    type: &#x27;disableAdFeedbackInit&#x27;
+                }]
+            }, {
+                eventType: &#x27;click&#x27;,
+                actions: [{
+                    type: &#x27;containerHide&#x27;,
+                    id: &#x27;fdb_srvy_buttons&#x27;
+                }, {
+                    type: &#x27;containerHide&#x27;,
+                    id: &#x27;fdb_srvy_title&#x27;
+                }, {
+                    type: &#x27;containerHide&#x27;,
+                    id: &#x27;fdb_srvy_why_text&#x27;
+                }, {
+                    type: &#x27;containerHide&#x27;,
+                    id: &#x27;fdb_srvy_done&#x27;
+                }, {
+                    type: &#x27;containerShow&#x27;,
+                    id: &#x27;fdb_srvy_thankyou_text&#x27;
+                }, {
+                    type: &#x27;containerShow&#x27;,
+                    id: &#x27;fdb_srvy_learn_text&#x27;
+                }],
+                timeTo: 10
+            }, {
+                eventType: &#x27;mouseenter&#x27;,
+                actions: [{
+                    type: &#x27;trackAdfeedback&#x27;,
+                    interactionType: &#x27;fdb_movr_x&#x27;
+                }]
+            }]
+        }, {
+            id: &#x27;act_fdb_balloon&#x27;,
+            type: &#x27;content-container&#x27;,
+            env: [&#x27;html&#x27;, &#x27;flash&#x27;, &#x27;backup&#x27;],
+            css: {
+                display: &#x27;none&#x27;,
+                position: &#x27;static&#x27;,
+                height: &#x27;20px&#x27;,
+                cursor: &#x27;pointer&#x27;,
+                background: &quot;url(&#x27;https://s.yimg.com/rq/darla/i/fdb1.gif&#x27;) no-repeat right 0&quot;,
+                textDecoration: &#x27;none&#x27;
+            },
+            content: [{
+                id: &#x27;act_fdb_balloon_content&#x27;,
+                type: &#x27;content-container&#x27;,
+                env: [&#x27;html&#x27;, &#x27;flash&#x27;, &#x27;backup&#x27;],
+                css: {
+                    display: &#x27;inline-block&#x27;,
+                    position: &#x27;absolute&#x27;,
+                    right: &#x27;0px&#x27;,
+                    background: &quot;url(&#x27;https://s.yimg.com/rq/darla/i/fdb1.gif&#x27;) no-repeat right -69px&quot;,
+                    paddingRight: &#x27;20px&#x27;,
+                    marginRight: &#x27;10px&#x27;,
+                    marginTop: &#x27;-6px&#x27;,
+                    whiteSpace: &#x27;nowrap&#x27;
+                },
+                eventConfig: [{
+                    eventType: &#x27;click&#x27;,
+                    actions: [{
+                        type: &#x27;containerShow&#x27;,
+                        id: &#x27;act_fdb_form&#x27;
+                    }]
+                }],
+                content: [{
+                    id: &#x27;act_fdb_balloon_text&#x27;,
+                    type: &#x27;content-container&#x27;,
+                    env: [&#x27;html&#x27;, &#x27;flash&#x27;, &#x27;backup&#x27;],
+                    css: {
+                        display: &#x27;inline-block&#x27;,
+                        fontSize: &#x27;11px&#x27;,
+                        fontFamily: &quot;&#x27;Helvetica Neue&#x27;,Helvetica,Arial,sans-serif&quot;,
+                        color: &#x27;#FFFFFF&#x27;,
+                        webkitBorderRadius: &#x27;4px&#x27;,
+                        mozBorderRadius: &#x27;4px&#x27;,
+                        borderRadius: &#x27;4px&#x27;,
+                        backgroundColor: &#x27;#F16150&#x27;,
+                        padding: &#x27;9px&#x27;
+                    },
+                    containerConfig: {
+                        innerText: &quot;I don&#x27;t like this ad&quot;
+                    }
+                }]
+            }]
+        }]
+    };
+    var FORM_DOM_STRUCTURE = {
+        id: FORM_CONTAINER_ID,
+        type: &#x27;content-container&#x27;,
+        env: [&#x27;html&#x27;, &#x27;flash&#x27;, &#x27;backup&#x27;],
+        css: {
+            fontFamily: &quot;&#x27;Helvetica Neue&#x27;,Helvetica,Arial,sans-serif&quot;,
+            width: &#x27;300px&#x27;,
+            height: &#x27;250px&#x27;,
+            color: &#x27;rgb(63, 63, 63)&#x27;,
+            position: &#x27;absolute&#x27;,
+            top: &#x27;0px&#x27;,
+            border: &#x27;1px solid rgb(229, 229, 233)&#x27;,
+            fontWeight: &#x27;300&#x27;,
+            overflow: &#x27;hidden&#x27;,
+            display: &#x27;none&#x27;,
+            textAlign: &#x27;left&#x27;,
+            direction: &#x27;ltr&#x27;,
+            boxSizing: &#x27;border-box&#x27;,
+            background: &#x27;rgb(250, 250, 253)&#x27;
+        },
+        content: [{
+            id: &#x27;fdb_wrapper&#x27;,
+            type: &#x27;content-container&#x27;,
+            env: [&#x27;html&#x27;, &#x27;flash&#x27;, &#x27;backup&#x27;],
+            css: {
+                fontFamily: &quot;&#x27;Helvetica Neue&#x27;,Helvetica,Arial,sans-serif&quot;,
+                height: &#x27;100%&#x27;,
+                width: &#x27;100%&#x27;,
+                position: &#x27;relative&#x27;,
+                display: &#x27;inline-block&#x27;,
+                bottom: &#x27;0px&#x27;,
+                webkitBoxSizing: &#x27;border-box&#x27;,
+                mozBoxSizing: &#x27;border-box&#x27;,
+                boxSizing: &#x27;border-box&#x27;
+            },
+            content: [{
+                id: &#x27;fdb_srvy_title&#x27;,
+                type: &#x27;content-container&#x27;,
+                env: [&#x27;html&#x27;, &#x27;flash&#x27;, &#x27;backup&#x27;],
+                css: {
+                    display: &#x27;block&#x27;,
+                    fontFamily: &quot;&#x27;Helvetica Neue&#x27;,Helvetica,Arial,sans-serif&quot;,
+                    fontSize: &#x27;16px&#x27;,
+                    fontWeight: &#x27;300&#x27;,
+                    whiteSpace: &#x27;normal&#x27;,
+                    textAlign: &#x27;left&#x27;,
+                    color: &#x27;#3f3f3f&#x27;,
+                    padding: &#x27;15px&#x27;,
+                    lineHeight: &#x27;18px&#x27;
+                },
+                containerConfig: {
+                    innerText: &quot;What don&#x27;t you like about this ad?&quot;
+                }
+            }, {
+                id: &#x27;fdb_srvy_thankyou_text&#x27;,
+                type: &#x27;content-container&#x27;,
+                env: [&#x27;html&#x27;, &#x27;flash&#x27;, &#x27;backup&#x27;],
+                css: {
+                    display: &#x27;none&#x27;,
+                    fontFamily: &quot;&#x27;Helvetica Neue&#x27;,Helvetica,Arial,sans-serif&quot;,
+                    fontSize: &#x27;16px&#x27;,
+                    fontWeight: &#x27;300&#x27;,
+                    whiteSpace: &#x27;normal&#x27;,
+                    textAlign: &#x27;left&#x27;,
+                    color: &#x27;#3f3f3f&#x27;,
+                    padding: &#x27;15px&#x27;,
+                    lineHeight: &#x27;18px&#x27;
+                },
+                containerConfig: {
+                    innerText: &#x27;Thank you for helping us improve your Yahoo experience&#x27;
+                }
+            }, {
+                id: &#x27;fdb_srvy_buttons&#x27;,
+                type: &#x27;content-container&#x27;,
+                env: [&#x27;html&#x27;, &#x27;flash&#x27;, &#x27;backup&#x27;],
+                css: {
+                    display: &#x27;block&#x27;,
+                    position: &#x27;relative&#x27;,
+                    background: &#x27;#fafafc&#x27;,
+                    textAlign: &#x27;left&#x27;
+                },
+                content: [{
+                    id: &#x27;fdb_srvy_button&#x27;,
+                    type: &#x27;content-container&#x27;,
+                    env: [&#x27;html&#x27;, &#x27;flash&#x27;, &#x27;backup&#x27;],
+                    css: {
+                        padding: &#x27;3px 0px 3px&#x27;,
+                        display: &#x27;inline-block&#x27;,
+                        textAlign: &#x27;left&#x27;,
+                        cursor: &#x27;pointer&#x27;,
+                        marginLeft: &#x27;15px&#x27;,
+                        marginBottom: &#x27;10px&#x27;,
+                        width: &#x27;250px&#x27;,
+                        height: &#x27;25px&#x27;
+                    },
+                    content: [{
+                        id: &#x27;fdb_srvy_answers_one_label&#x27;,
+                        type: &#x27;content-container&#x27;,
+                        env: [&#x27;html&#x27;, &#x27;flash&#x27;, &#x27;backup&#x27;],
+                        containerConfig: {
+                            innerText: &#x27;&lt;input name=&quot;option&quot; style=&quot;margin-right:10px;float:left;&quot; type=&quot;radio&quot;&gt;&#x27;
+                        },
+                        eventConfig: [{
+                            eventType: &#x27;click&#x27;,
+                            actions: [{
+                                type: &#x27;trackAdfeedback&#x27;,
+                                interactionType: &#x27;fdb_submit&#x27;,
+                                suboption: 5
+                            }, {
+                                type: &#x27;containerHide&#x27;,
+                                id: &#x27;fdb_srvy_buttons&#x27;
+                            }, {
+                                type: &#x27;containerHide&#x27;,
+                                id: &#x27;fdb_srvy_title&#x27;
+                            }, {
+                                type: &#x27;containerHide&#x27;,
+                                id: &#x27;fdb_srvy_why_text&#x27;
+                            }, {
+                                type: &#x27;containerHide&#x27;,
+                                id: &#x27;fdb_srvy_done&#x27;
+                            }, {
+                                type: &#x27;containerShow&#x27;,
+                                id: &#x27;fdb_srvy_thankyou_text&#x27;
+                            }, {
+                                type: &#x27;containerShow&#x27;,
+                                id: &#x27;fdb_srvy_learn_text&#x27;
+                            }, {
+                                type: &#x27;containerStopProcesses&#x27;
+                            }]
+                        }]
+                    }, {
+                        id: &#x27;fdb_srvy_answers_one&#x27;,
+                        type: &#x27;content-container&#x27;,
+                        env: [&#x27;html&#x27;, &#x27;flash&#x27;, &#x27;backup&#x27;],
+                        css: {
+                            fontFamily: &quot;&#x27;Helvetica Neue&#x27;,Helvetica,Arial,sans-serif&quot;,
+                            fontSize: &#x27;12px&#x27;,
+                            fontWeight: &#x27;300&#x27;,
+                            display: &#x27;inline-block&#x27;,
+                            color: &#x27;#3f3f3f&#x27;,
+                            whiteSpace: &#x27;normal&#x27;,
+                            width: &#x27;76%&#x27;,
+                            marginTop: &#x27;2px&#x27;
+                        },
+                        containerConfig: {
+                            innerText: &quot;It&#x27;s distracting&quot;
+                        }
+                    }]
+                }, {
+                    id: &#x27;fdb_srvy_button&#x27;,
+                    type: &#x27;content-container&#x27;,
+                    env: [&#x27;html&#x27;, &#x27;flash&#x27;, &#x27;backup&#x27;],
+                    css: {
+                        padding: &#x27;3px 0px 3px&#x27;,
+                        display: &#x27;inline-block&#x27;,
+                        textAlign: &#x27;left&#x27;,
+                        cursor: &#x27;pointer&#x27;,
+                        marginLeft: &#x27;15px&#x27;,
+                        marginBottom: &#x27;10px&#x27;,
+                        width: &#x27;250px&#x27;,
+                        height: &#x27;25px&#x27;
+                    },
+                    content: [{
+                        id: &#x27;fdb_srvy_answers_two_label&#x27;,
+                        type: &#x27;content-container&#x27;,
+                        env: [&#x27;html&#x27;, &#x27;flash&#x27;, &#x27;backup&#x27;],
+                        containerConfig: {
+                            innerText: &#x27;&lt;input name=&quot;option&quot; style=&quot;margin-right:10px;float:left;&quot; type=&quot;radio&quot; &gt;&#x27;
+                        },
+                        eventConfig: [{
+                            eventType: &#x27;click&#x27;,
+                            actions: [{
+                                type: &#x27;trackAdfeedback&#x27;,
+                                interactionType: &#x27;fdb_submit&#x27;,
+                                suboption: 4
+                            }, {
+                                type: &#x27;containerHide&#x27;,
+                                id: &#x27;fdb_srvy_buttons&#x27;
+                            }, {
+                                type: &#x27;containerHide&#x27;,
+                                id: &#x27;fdb_srvy_title&#x27;
+                            }, {
+                                type: &#x27;containerHide&#x27;,
+                                id: &#x27;fdb_srvy_why_text&#x27;
+                            }, {
+                                type: &#x27;containerHide&#x27;,
+                                id: &#x27;fdb_srvy_done&#x27;
+                            }, {
+                                type: &#x27;containerShow&#x27;,
+                                id: &#x27;fdb_srvy_thankyou_text&#x27;
+                            }, {
+                                type: &#x27;containerShow&#x27;,
+                                id: &#x27;fdb_srvy_learn_text&#x27;
+                            }, {
+                                type: &#x27;containerStopProcesses&#x27;
+                            }]
+                        }]
+                    }, {
+                        id: &#x27;fdb_srvy_answers_two&#x27;,
+                        type: &#x27;content-container&#x27;,
+                        env: [&#x27;html&#x27;, &#x27;flash&#x27;, &#x27;backup&#x27;],
+                        css: {
+                            fontFamily: &quot;&#x27;Helvetica Neue&#x27;,Helvetica,Arial,sans-serif&quot;,
+                            fontSize: &#x27;12px&#x27;,
+                            fontWeight: &#x27;300&#x27;,
+                            display: &#x27;inline-block&#x27;,
+                            color: &#x27;#3f3f3f&#x27;,
+                            whiteSpace: &#x27;normal&#x27;,
+                            width: &#x27;76%&#x27;,
+                            marginTop: &#x27;2px&#x27;
+                        },
+                        containerConfig: {
+                            innerText: &quot;It&#x27;s not relevant&quot;
+                        }
+                    }]
+                }, {
+                    id: &#x27;fdb_srvy_button&#x27;,
+                    type: &#x27;content-container&#x27;,
+                    env: [&#x27;html&#x27;, &#x27;flash&#x27;, &#x27;backup&#x27;],
+                    css: {
+                        padding: &#x27;3px 0px 3px&#x27;,
+                        display: &#x27;inline-block&#x27;,
+                        textAlign: &#x27;left&#x27;,
+                        cursor: &#x27;pointer&#x27;,
+                        marginLeft: &#x27;15px&#x27;,
+                        marginBottom: &#x27;10px&#x27;,
+                        width: &#x27;250px&#x27;,
+                        height: &#x27;25px&#x27;
+                    },
+                    content: [{
+                        id: &#x27;fdb_srvy_answers_three_label&#x27;,
+                        type: &#x27;content-container&#x27;,
+                        env: [&#x27;html&#x27;, &#x27;flash&#x27;, &#x27;backup&#x27;],
+                        containerConfig: {
+                            innerText: &#x27;&lt;input name=&quot;option&quot; style=&quot;margin-right:10px;float:left;&quot; type=&quot;radio&quot;&gt;&#x27;
+                        },
+                        eventConfig: [{
+                            type: &#x27;trackAdfeedback&#x27;,
+                            interactionType: &#x27;fdb_submit&#x27;,
+                            suboption: 1
+                        }, {
+                            eventType: &#x27;click&#x27;,
+                            actions: [{
+                                type: &#x27;containerHide&#x27;,
+                                id: &#x27;fdb_srvy_buttons&#x27;
+                            }, {
+                                type: &#x27;containerHide&#x27;,
+                                id: &#x27;fdb_srvy_title&#x27;
+                            }, {
+                                type: &#x27;containerHide&#x27;,
+                                id: &#x27;fdb_srvy_why_text&#x27;
+                            }, {
+                                type: &#x27;containerHide&#x27;,
+                                id: &#x27;fdb_srvy_done&#x27;
+                            }, {
+                                type: &#x27;containerShow&#x27;,
+                                id: &#x27;fdb_srvy_thankyou_text&#x27;
+                            }, {
+                                type: &#x27;containerShow&#x27;,
+                                id: &#x27;fdb_srvy_learn_text&#x27;
+                            }, {
+                                type: &#x27;containerStopProcesses&#x27;
+                            }]
+                        }]
+                    }, {
+                        id: &#x27;fdb_srvy_answers_three&#x27;,
+                        type: &#x27;content-container&#x27;,
+                        env: [&#x27;html&#x27;, &#x27;flash&#x27;, &#x27;backup&#x27;],
+                        css: {
+                            fontFamily: &quot;&#x27;Helvetica Neue&#x27;,Helvetica,Arial,sans-serif&quot;,
+                            fontSize: &#x27;12px&#x27;,
+                            fontWeight: &#x27;300&#x27;,
+                            display: &#x27;inline-block&#x27;,
+                            color: &#x27;#3f3f3f&#x27;,
+                            whiteSpace: &#x27;normal&#x27;,
+                            width: &#x27;76%&#x27;,
+                            marginTop: &#x27;2px&#x27;
+                        },
+                        containerConfig: {
+                            innerText: &quot;It&#x27;s offensive&quot;
+                        }
+                    }]
+                }, {
+                    id: &#x27;fdb_srvy_button&#x27;,
+                    type: &#x27;content-container&#x27;,
+                    env: [&#x27;html&#x27;, &#x27;flash&#x27;, &#x27;backup&#x27;],
+                    css: {
+                        padding: &#x27;3px 0px 3px&#x27;,
+                        display: &#x27;inline-block&#x27;,
+                        textAlign: &#x27;left&#x27;,
+                        cursor: &#x27;pointer&#x27;,
+                        marginLeft: &#x27;15px&#x27;,
+                        marginBottom: &#x27;10px&#x27;,
+                        width: &#x27;250px&#x27;,
+                        height: &#x27;25px&#x27;
+                    },
+                    content: [{
+                        id: &#x27;fdb_srvy_answers_four_label&#x27;,
+                        type: &#x27;content-container&#x27;,
+                        env: [&#x27;html&#x27;, &#x27;flash&#x27;, &#x27;backup&#x27;],
+                        containerConfig: {
+                            innerText: &#x27;&lt;input name=&quot;option&quot; style=&quot;margin-right:10px;float:left;&quot; type=&quot;radio&quot; &gt;&#x27;
+                        },
+                        eventConfig: [{
+                            eventType: &#x27;click&#x27;,
+                            actions: [{
+                                type: &#x27;containerHide&#x27;,
+                                id: &#x27;fdb_srvy_buttons&#x27;
+                            }, {
+                                type: &#x27;containerHide&#x27;,
+                                id: &#x27;fdb_srvy_why_text&#x27;
+                            }, {
+                                type: &#x27;containerHide&#x27;,
+                                id: &#x27;fdb_srvy_done&#x27;
+                            }, {
+                                type: &#x27;containerShow&#x27;,
+                                id: &#x27;fdb_details_container&#x27;
+                            }, {
+                                type: &#x27;containerHide&#x27;,
+                                id: &#x27;fdb_srvy_learn_text&#x27;
+                            }, {
+                                type: &#x27;containerStopProcesses&#x27;
+                            }]
+                        }]
+                    }, {
+                        id: &#x27;fdb_srvy_answers_four&#x27;,
+                        type: &#x27;content-container&#x27;,
+                        env: [&#x27;html&#x27;, &#x27;flash&#x27;, &#x27;backup&#x27;],
+                        css: {
+                            fontFamily: &quot;&#x27;Helvetica Neue&#x27;,Helvetica,Arial,sans-serif&quot;,
+                            fontSize: &#x27;12px&#x27;,
+                            fontWeight: &#x27;300&#x27;,
+                            display: &#x27;inline-block&#x27;,
+                            color: &#x27;#3f3f3f&#x27;,
+                            whiteSpace: &#x27;normal&#x27;,
+                            width: &#x27;76%&#x27;,
+                            marginTop: &#x27;2px&#x27;
+                        },
+                        containerConfig: {
+                            innerText: &#x27;Something else&#x27;
+                        }
+                    }]
+                }]
+            }, {
+                id: &#x27;fdb_details_container&#x27;,
+                type: &#x27;content-container&#x27;,
+                env: [&#x27;html&#x27;, &#x27;flash&#x27;, &#x27;backup&#x27;],
+                css: {
+                    display: &#x27;none&#x27;,
+                    position: &#x27;relative&#x27;,
+                    width: &#x27;270px&#x27;,
+                    height: &#x27;45%&#x27;,
+                    marginLeft: &#x27;15px&#x27;
+                },
+                content: [{
+                    id: &#x27;fdb_details_textarea&#x27;,
+                    type: &#x27;content-container&#x27;,
+                    env: [&#x27;html&#x27;, &#x27;flash&#x27;, &#x27;backup&#x27;],
+                    css: {},
+                    containerConfig: {
+                        innerText: &#x27;&lt;textarea id=&quot;act_fdb_textarea&quot; maxlength=&quot;512&quot; autofocus=&quot;autofocus&quot; id=&quot;fdb_srvy_details&quot; &#x27; +
+                                    &#x27;style=&quot;font-family:\&#x27;Helvetica Neue\&#x27;,Helvetica,Arial,sans-serif;position:absolute;height:100%;&#x27; +
+                                    &#x27;width:100%;text-align:left;border:1px solid #ccc;font-size:13px;font-weight:300;color:#3f3f3f;resize:none;&#x27; +
+                                    &#x27;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;&quot;&gt;&lt;/textarea&gt;&#x27;
+                    }
+                }, {
+                    id: &#x27;fdb_srvy_details_submit&#x27;,
+                    type: &#x27;content-container&#x27;,
+                    env: [&#x27;html&#x27;, &#x27;flash&#x27;, &#x27;backup&#x27;],
+                    css: {
+                        display: &#x27;block&#x27;,
+                        fontFamily: &quot;&#x27;Helvetica Neue&#x27;,Helvetica,Arial,sans-serif&quot;,
+                        backgroundColor: &#x27;#6c50a4&#x27;,
+                        webkitBoxShadow: &#x27;inset 0px -2px 0px #463763&#x27;,
+                        mozBoxShadow: &#x27;inset 0px -2px 0px #463763&#x27;,
+                        boxShadow: &#x27;inset 0px -2px 0px #463763&#x27;,
+                        webkitBorderRadius: &#x27;5px&#x27;,
+                        mozBorderRadius: &#x27;5px&#x27;,
+                        borderRadius: &#x27;5px&#x27;,
+                        border: &#x27;0&#x27;,
+                        color: &#x27;#FFFFFF&#x27;,
+                        padding: &#x27;8px 11px&#x27;,
+                        fontSize: &#x27;14px&#x27;,
+                        minWidth: &#x27;72px&#x27;,
+                        fontWeight: &#x27;300&#x27;,
+                        cursor: &#x27;pointer&#x27;,
+                        position: &#x27;absolute&#x27;,
+                        whiteSpace: &#x27;nowrap&#x27;,
+                        top: &#x27;100%&#x27;,
+                        marginTop: &#x27;15px&#x27;
+                    },
+                    containerConfig: {
+                        innerText: &#x27;Send&#x27;
+                    },
+                    eventConfig: [{
+                        eventType: &#x27;click&#x27;,
+                        actions: [{
+                            type: &#x27;trackAdfeedback&#x27;,
+                            interactionType: &#x27;fdb_submit&#x27;,
+                            suboption: 2,
+                            commentNodeId: &#x27;act_fdb_textarea&#x27;
+                        }, {
+                            type: &#x27;containerHide&#x27;,
+                            id: &#x27;fdb_details_container&#x27;
+                        }, {
+                            type: &#x27;containerHide&#x27;,
+                            id: &#x27;fdb_srvy_title&#x27;
+                        }, {
+                            type: &#x27;containerHide&#x27;,
+                            id: &#x27;fdb_srvy_why_text&#x27;
+                        }, {
+                            type: &#x27;containerShow&#x27;,
+                            id: &#x27;fdb_srvy_thankyou_text&#x27;
+                        }, {
+                            type: &#x27;containerShow&#x27;,
+                            id: &#x27;fdb_srvy_learn_text&#x27;
+                        }]
+                    }]
+                }]
+            }, {
+                id: &#x27;fdb_srvy_why_text&#x27;,
+                type: &#x27;content-container&#x27;,
+                env: [&#x27;html&#x27;, &#x27;flash&#x27;, &#x27;backup&#x27;],
+                css: {
+                    display: &#x27;block&#x27;,
+                    position: &#x27;absolute&#x27;,
+                    bottom: &#x27;7px&#x27;,
+                    marginLeft: &#x27;15px&#x27;,
+                    color: &#x27;#BAB9B9&#x27;,
+                    textDecoration: &#x27;none&#x27;,
+                    fontSize: &#x27;12px&#x27;
+                },
+                containerConfig: {
+                    innerText: &#x27;Why do I see ads?&#x27;
+                },
+                eventConfig: [{
+                    eventType: &#x27;click&#x27;,
+                    actions: [{
+                        type: &#x27;openURL&#x27;,
+                        id: &#x27;adfeedback_open_why_url&#x27;,
+                        URLpath: &#x27;https://www.yahoo.com&#x27;,
+                        URLname: &#x27;adfeedback_open_why_url&#x27;
+                    }]
+                }]
+            }, {
+                id: &#x27;fdb_srvy_done&#x27;,
+                type: &#x27;content-container&#x27;,
+                env: [&#x27;html&#x27;, &#x27;flash&#x27;, &#x27;backup&#x27;],
+                css: {
+                    fontFamily: &quot;&#x27;Helvetica Neue&#x27;,Helvetica,Arial,sans-serif&quot;,
+                    position: &#x27;absolute&#x27;,
+                    bottom: &#x27;7px&#x27;,
+                    right: &#x27;10px&#x27;,
+                    fontSize: &#x27;12px&#x27;,
+                    cursor: &#x27;pointer&#x27;,
+                    textDecoration: &#x27;none&#x27;,
+                    color: &#x27;#6c50a4&#x27;,
+                    fontWeight: &#x27;900&#x27;
+                },
+                eventConfig: [{
+                    eventType: &#x27;click&#x27;,
+                    actions: [{
+                        type: &#x27;containerHide&#x27;,
+                        id: &#x27;fdb_srvy_buttons&#x27;
+                    }, {
+                        type: &#x27;containerHide&#x27;,
+                        id: &#x27;fdb_srvy_title&#x27;
+                    }, {
+                        type: &#x27;containerHide&#x27;,
+                        id: &#x27;fdb_srvy_why_text&#x27;
+                    }, {
+                        type: &#x27;containerHide&#x27;,
+                        id: &#x27;fdb_srvy_done&#x27;
+                    }, {
+                        type: &#x27;containerShow&#x27;,
+                        id: &#x27;fdb_srvy_thankyou_text&#x27;
+                    }, {
+                        type: &#x27;containerShow&#x27;,
+                        id: &#x27;fdb_srvy_learn_text&#x27;
+                    }, {
+                        type: &#x27;containerStopProcesses&#x27;
+                    }]
+                }],
+                containerConfig: {
+                    innerText: &#x27;Done&#x27;
+                }
+            }, {
+                id: &#x27;fdb_srvy_learn_text&#x27;,
+                type: &#x27;content-container&#x27;,
+                env: [&#x27;html&#x27;, &#x27;flash&#x27;, &#x27;backup&#x27;],
+                css: {
+                    display: &#x27;none&#x27;,
+                    marginTop: &#x27;15px&#x27;,
+                    color: &#x27;#BAB9B9&#x27;,
+                    textDecoration: &#x27;none&#x27;,
+                    fontSize: &#x27;12px&#x27;,
+                    marginLeft: &#x27;15px&#x27;,
+                    whiteSpace: &#x27;normal&#x27;
+                },
+                containerConfig: {
+                    innerText: &#x27;Learn more about your feedback.&#x27;
+                },
+                eventConfig: [{
+                    eventType: &#x27;click&#x27;,
+                    actions: [{
+                        type: &#x27;openURL&#x27;,
+                        id: &#x27;adfeedback_open_learn_url&#x27;,
+                        URLpath: &#x27;https://www.yahoo.com&#x27;,
+                        URLname: &#x27;adfeedback_open_learn_url&#x27;
+                    }]
+                }]
+            }]
+        }]
+    };
+    var EVENT_ADFEEDBACK_ENABLE = &#x27;adfeedback:enable&#x27;;
+    var EVENT_ADFEEDBACK_ENABLE_INIT = &#x27;adfeedback:enableInit&#x27;;
+    var EVENT_ADFEEDBACK_DISABLE_INIT = &#x27;adfeedback:disableInit&#x27;;
+    var EVENT_ADFEEDBACK_INTERACTION_TRACK = &#x27;adfeeback:interactionTrack&#x27;;
+    var EVENT_GLOBAL_CHECK_ACTION_CONDITION = &#x27;standardAd:checkActionCondition&#x27;;
+    var EVENT_GLOBAL_ACTION_COMPLETE = &#x27;complete:action&#x27;;
+
+    var DEFAULT_ACTION_TRIGGERS = [
+        &#x27;adfeedbackEnabled&#x27;,
+        &#x27;adfeedbackDisabled&#x27;
+    ];
+
+    var contentActions = [{
+        type: &#x27;disableAdFeedbackInit&#x27;,
+        argument: {
+            timeout: {
+                name: &#x27;timeout&#x27;,
+                test: function (value) {
+                    return Lang.isNumber(value) || value === undefined || value === null;
+                }
+            }
+        },
+        process: function (actionId) {
+            Event.fire(EVENT_ADFEEDBACK_DISABLE_INIT, actionId);
+        }
+    }, {
+        type: &#x27;enableAdFeedbackInit&#x27;,
+        argument: {
+            timeout: {
+                name: &#x27;timeout&#x27;,
+                test: function (value) {
+                    return Lang.isNumber(value) || value === undefined || value === null;
+                }
+            }
+        },
+        process: function (actionId) {
+            Event.fire(EVENT_ADFEEDBACK_ENABLE_INIT, actionId);
+        }
+    }, {
+        type: &#x27;enableAdFeedback&#x27;,
+        argument: {
+            timeout: {
+                name: &#x27;timeout&#x27;,
+                test: function (value) {
+                    return Lang.isNumber(value) || value === undefined || value === null;
+                }
+            }
+        },
+        process: function (actionId) {
+            Event.fire(EVENT_ADFEEDBACK_ENABLE, actionId);
+        }
+    }, {
+        type: &#x27;trackAdfeedback&#x27;,
+        argument: {
+            interactionType: {
+                name: &#x27;interactionType&#x27;,
+                test: function (value) {
+                    return Lang.isString(value);
+                }
+            },
+            // TODO: Figure out proper inputs for suboption and commentNodeId - string / number
+            suboption: {
+                name: &#x27;suboption&#x27;,
+                test: function (value) {
+                    return Lang.isNumber(value) || Lang.isString(value) || value === undefined || value === null;
+                }
+            },
+            commentNodeId: {
+                name: &#x27;commentNodeId&#x27;,
+                test: function (value) {
+                    return Lang.isNumber(value) || Lang.isString(value) || value === undefined || value === null;
+                }
+            },
+            timeout: {
+                name: &#x27;timeout&#x27;,
+                test: function (value) {
+                    return Lang.isNumber(value) || value === undefined || value === null;
+                }
+            }
+        },
+        process: function (actionId, args) {
+            Event.fire(EVENT_ADFEEDBACK_INTERACTION_TRACK, {
+                interactionType: args.interactionType,
+                suboption: args.suboption,
+                commentNodeId: args.commentNodeId,
+                done: function () {
+                    Event.fire(EVENT_GLOBAL_ACTION_COMPLETE, actionId);
+                }
+            });
+        }
+    }];
+
+    /**
+     * @class ContentCarousel
+     * @constructor
+     */
+    function ContentAdfeedback(config) {
+        this.init(config);
+    }
+
+    ContentAdfeedback.ATTRS = {
+        /**
+         * @attribute NAME
+         * @type String
+         */
+        NAME: &#x27;ContentAdfeedback&#x27;,
+
+        /**
+         * @attribute version
+         * @type String
+         */
+        version: &#x27;1.0.41&#x27;,
+
+        /**
+         * @attribute triggerNode
+         * @type String
+         */
+        triggerNode: &#x27;act-ad&#x27;,
+
+        /**
+         * @attribute node
+         * @type HTMLElement
+         */
+        node: null
+    };
+
+    /**
+     * Returns a modified fdb url string with custom component removed
+     *
+     * @method retrieveFdbUrl
+     * @private
+     * @param {String} urlStr Feedback URL string
+     * @return {String} urlStr modified
+     */
+    function retrieveFdbUrl(urlStr) {
+        var urlArr = [];
+        var newArr = [];
+        var i;
+        urlArr = urlStr.split(&#x27;&amp;&#x27;);
+        for (i = 0; i &lt; urlArr.length; i++) {
+            if (urlArr[i].indexOf(&#x27;al=&#x27;) === -1) {
+                newArr.push(urlArr[i]);
+            }
+        }
+        return newArr.join(&#x27;&amp;&#x27;);
+    }
+
+    /**
+     * Returns an encoded string
+     *
+     * @method fixedEncodeURIComponent
+     * @private
+     * @param {String} str unencoded string
+     * @return {String} str encoded string
+     */
+    function fixedEncodeURIComponent(str) {
+        var escape;
+        return encodeURIComponent(str).replace(/[!&#x27;()]/g, escape).replace(/\*/g, &#x27;%2A&#x27;);
+    }
+
+    /**
+     * Subscribe trigger action to the container&#x27;s listeners
+     *
+     * @method subscribeTriggerToAdfeedbackEvent
+     * @private
+     * @param {String} action, action to fire
+     */
+    function subscribeTriggerToAdfeedbackEvent(actionConfig) {
+        Event.on(actionConfig.eventType, function () {
+            Event.fire(EVENT_GLOBAL_CHECK_ACTION_CONDITION, {
+                actionConfig: actionConfig,
+                callback: function (isExecutable) {
+                    if (isExecutable) {
+                        Event.fire(&#x27;add:actions&#x27;, actionConfig.actions);
+                    }
+                }
+            });
+        });
+    }
+
+    /**
+     * Attach action for an event
+     *
+     * @method attachEventActions
+     * @private
+     * @param {String} eventConfig, list of event
+     */
+    function attachEventActions(eventConfig) {
+        var name;
+        var action;
+        if (typeof eventConfig !== &#x27;object&#x27;) {
+            return;
+        }
+        for (name in eventConfig) {
+            /* istanbul ignore else */
+            if (eventConfig.hasOwnProperty(name)) {
+                action = eventConfig[name];
+                if (Lang.arrayIndexOf(DEFAULT_ACTION_TRIGGERS, action.eventType) !== -1) {
+                    subscribeTriggerToAdfeedbackEvent(action);
+                }
+            }
+        }
+    }
+    /**
+     * Modifies the defined adfeedback close button CSS
+     *
+     * @method toggleCloseBtn
+     * @private
+     * @param {Object} displayStyle
+     */
+    function toggleCloseBtn(displayStyle) {
+        var closeBtn = Dom.byId(CLOSE_BTN_CONTAINER_ID);
+        if (closeBtn) {
+            Dom.applyStyles(closeBtn, displayStyle);
+        }
+    }
+
+    /* Public methods */
+    Lang.extend(ContentAdfeedback, [Class, Capability], {
+
+        /**
+         * Function auto initiated when the class is instantiated
+         * @method initializer
+         * @param {Object} config
+         */
+        initializer: function (config) {
+            var strippedUrl;
+            var placementConfig;
+
+            this.set(&#x27;configObject&#x27;, config);
+
+            this.setConfig();
+            placementConfig = this.get(&#x27;placement_config&#x27;);
+
+
+            if (placementConfig !== undefined &amp;&amp; placementConfig.fdb_on === &#x27;1&#x27;) {
+                strippedUrl = retrieveFdbUrl(placementConfig.fdb_url);
+
+                placementConfig.fdb_url = strippedUrl;
+                this.set(&#x27;placement_config&#x27;, placementConfig);
+
+                BUTTON_DOM_STRUCTURE = this.parseElement(BUTTON_DOM_STRUCTURE);
+                FORM_DOM_STRUCTURE = this.parseElement(FORM_DOM_STRUCTURE);
+
+                attachEventActions(config.eventConfig);
+            }
+
+            this.initializeListeners(config);
+            Event.fire(&#x27;register:Actions&#x27;, contentActions);
+        },
+
+        /**
+         * Sets the instances ATTRS
+         *
+         * @method setConfig
+         */
+        setConfig: function () {
+            var attr;
+            if (Lang.isObject(this.get(&#x27;configObject&#x27;).AdfeedbackConfig)) {
+                for (attr in this.get(&#x27;configObject&#x27;).AdfeedbackConfig) {
+                    /* istanbul ignore else */
+                    if (this.get(&#x27;configObject&#x27;).AdfeedbackConfig.hasOwnProperty(attr)) {
+                        this.set(attr, this.get(&#x27;configObject&#x27;).AdfeedbackConfig[attr]);
+                    }
+                }
+            }
+        },
+
+        /**
+         * Function to initialize event listeners for this instance
+         *
+         * @method initializeListeners
+         */
+        initializeListeners: function () {
+            var root = this;
+
+            root.initializeCloseBtnListeners();
+            /* istanbul ignore next */
+            root.addEventListeners(
+                Event.on(EVENT_ADFEEDBACK_ENABLE_INIT, function (actionId) {
+                    root.initializeCloseBtnListeners();
+                    Event.fire(EVENT_GLOBAL_ACTION_COMPLETE, actionId);
+                }),
+
+                Event.on(EVENT_ADFEEDBACK_DISABLE_INIT, function (actionId) {
+                    toggleCloseBtn({
+                        display: &#x27;none&#x27;
+                    });
+                    TRIGGERNODE_MOUSEENTER_EVENT.remove();
+                    TRIGGERNODE_MOUSELEAVE_EVENT.remove();
+                    Event.fire(EVENT_GLOBAL_ACTION_COMPLETE, actionId);
+                }),
+                Event.on(EVENT_ADFEEDBACK_ENABLE, function (actionId) {
+                    root.enableAdfeedback();
+                    Event.fire(EVENT_GLOBAL_ACTION_COMPLETE, actionId);
+                }),
+
+                Event.on(EVENT_ADFEEDBACK_INTERACTION_TRACK, function (eventData) {
+                    root.interaction_track(eventData.interactionType, eventData.suboption, eventData.commentNodeId, eventData.done);
+                })
+            );
+        },
+
+        /**
+         * Function to initialize close button event listeners for this instance
+         *
+         * @method initializeCloseBtnListeners
+         */
+        initializeCloseBtnListeners: function () {
+            var root = this;
+            var triggerNode = Dom.byId(root.get(&#x27;triggerNode&#x27;));
+
+            if (triggerNode) {
+                TRIGGERNODE_MOUSEENTER_EVENT = Event.on(&#x27;mouseenter&#x27;, function () {
+                    toggleCloseBtn({
+                        display: &#x27;inline-block&#x27;
+                    });
+                    root.interaction_track(&#x27;fdb_movr_ad&#x27;, null, null, null);
+                }, triggerNode);
+
+                TRIGGERNODE_MOUSELEAVE_EVENT = Event.on(&#x27;mouseleave&#x27;, function () {
+                    toggleCloseBtn({
+                        display: &#x27;none&#x27;
+                    });
+                }, triggerNode);
+            }
+        },
+
+        /**
+         * Render the node from given config object, environment and orientation state
+         *
+         * @method renderContent
+         * @param {Object} configObject
+         * @param {String} env
+         * @param {String} orientation
+         * @return {HTMLElement} node
+         */
+        renderContent: function (configObject) {
+            var node = document.createElement(&#x27;div&#x27;);
+            node = this.applyNodeConfig(node, configObject);
+            return node;
+        },
+
+        /**
+         * Function to return the generated node for ACT Scaffolding
+         * @method getContent
+         * @param {String} env Environment for rendering content such as html/flash/backup
+         * @param {String} orientation Orientation of current device such as landscape and portraits for mobile
+         * @return {Object} node and contentConfig
+         */
+        getContent: function (env, orientation) {
+            var root = this;
+            var placementConfig = root.get(&#x27;placement_config&#x27;);
+            var contentConfig;
+            var node;
+
+            if (placementConfig !== undefined &amp;&amp; placementConfig.fdb_on === &#x27;1&#x27;) {
+                node = this.renderContent(root.get(&#x27;configObject&#x27;), env, orientation);
+                this.set(&#x27;node&#x27;, node);
+                contentConfig = root.getNodeContentConfig();
+                return {
+                    content: contentConfig,
+                    node: node
+                };
+            }
+            return false;
+        },
+
+        /**
+         * Function to return pre-defined content configuration of the capability node.
+         * @method getNodeContentConfig
+         */
+        getNodeContentConfig: function () {
+            var contentConfig = [BUTTON_DOM_STRUCTURE, FORM_DOM_STRUCTURE];
+            return contentConfig;
+        },
+
+        /**
+         * Function to set translated content for the specified node
+         * @method modifyTranslations
+         * @param {Object} container
+         */
+        modifyTranslations: function (container) {
+            var text;
+            var translations = this.get(&#x27;translation_config&#x27;);
+            for (text in translations) {
+                /* istanbul ignore else */
+                if (translations.hasOwnProperty(text)) {
+                    if (container.id === text) {
+                        container.containerConfig.innerText = translations[text];
+                    }
+                }
+            }
+        },
+
+        /**
+         * Function to set clickthrough url specified in config
+         * @method setClickthrough
+         * @param {Object} container
+         */
+        setClickthrough: function (action) {
+            var root = this;
+            var clickthroughs = root.get(&#x27;url_config&#x27;);
+            var urlId;
+            for (urlId in clickthroughs) {
+                /* istanbul ignore else */
+                if (clickthroughs.hasOwnProperty(urlId)) {
+                    if (urlId === action.id) {
+                        action.URLpath = clickthroughs[urlId];
+                    }
+                }
+            }
+            return action;
+        },
+
+        /**
+         * Function to set clickthrough content for the specified node
+         * @method modifyClickthroughs
+         * @param {Object} container
+         */
+        modifyClickthroughs: function (container) {
+            var root = this;
+            var eventData;
+            var i;
+            var newAction;
+            if (container.eventConfig) {
+                for (eventData in container.eventConfig) {
+                    if (Lang.isArray(container.eventConfig[eventData].actions)) {
+                        for (i = 0; i &lt; container.eventConfig[eventData].actions.length; i++) {
+                            newAction = root.setClickthrough(container.eventConfig[eventData].actions[i]);
+                            container.eventConfig[eventData].actions[i] = newAction;
+                        }
+                    }
+                }
+            }
+        },
+
+        /**
+         * Function to fetch and assign the child content of a container
+         * @method fetchChildren
+         * @param {Object} container
+         * @param {Object} chidrenObj
+         * @return {Object} container with children
+         */
+        fetchChildren: function (container, childrenObj) {
+            var i;
+            for (i = 0; i &lt; childrenObj.length; i++) {
+                container[childrenObj[i].id] = this.parseElement(childrenObj[i]);
+            }
+            return container;
+        },
+
+        /**
+         * Function to traverse through a container and perform actions, returning the parsed containerConfig
+         * @method parseElement
+         * @param {Object} containerConfig
+         * @return {Object} containerConfig
+         */
+        parseElement: function (containerConfig) {
+            this.modifyTranslations(containerConfig);
+            this.modifyClickthroughs(containerConfig);
+
+            if (Lang.isObject(containerConfig.content)) {
+                containerConfig = this.fetchChildren(containerConfig, containerConfig.content);
+            }
+            return containerConfig;
+        },
+
+        enableAdfeedback: function () {
+            var enableActions = [{
+                type: &#x27;containerShow&#x27;,
+                id: FORM_CONTAINER_ID
+            }];
+            Event.fire(&#x27;add:actions&#x27;, enableActions);
+            Event.fire(&#x27;adfeedbackEnabled&#x27;);
+        },
+
+        /**
+         * Interaction tracking function
+         * @param {String} TrackString ID
+         * @method interaction_track
+         * @public
+         */
+        interaction_track: function (type, suboption, commentNodeId, done) {
+            var config = this.get(&#x27;placement_config&#x27;);
+            var trackString = (type || &#x27;&#x27;);
+            var fdbStr = &#x27;&#x27;;
+            var cmnt;
+            var commentInput;
+
+            if (config !== undefined &amp;&amp; config.fdb_url !== undefined &amp;&amp; trackString.length &gt; 4) {
+                fdbStr = config.fdb_url + &#x27;&amp;al=(type$&#x27; + type;
+                if (suboption !== undefined &amp;&amp; suboption &gt;= 0 &amp;&amp; suboption !== null) {
+                    if (commentNodeId !== undefined &amp;&amp; suboption === 2 &amp;&amp; commentNodeId &amp;&amp; commentNodeId !== false) {
+                        commentInput = Dom.byId(commentNodeId).value;
+                        cmnt = fixedEncodeURIComponent(commentInput);
+                        fdbStr += &#x27;,cmnt$&#x27; + cmnt;
+                    }
+                    fdbStr += &#x27;,subo$&#x27; + suboption;
+                }
+                fdbStr += &#x27;)r=10&#x27;;
+
+                Util.pixelTrack(fdbStr);
+            }
+
+            if (done) {
+                done();
+            }
+        },
+
+        /**
+         * Function to be called when the instance is destroyed
+         *
+         * @method destructor
+         */
+        destructor: function () {
+            var node = this.get(&#x27;node&#x27;);
+            var nodeDom;
+            if (Dom.isDomElement(node) &amp;&amp; node.id !== undefined) {
+                nodeDom = Dom.byId(node.id);
+                nodeDom.parentNode.removeChild(nodeDom);
+            }
+        }
+    });
+
+    return ContentAdfeedback;
+});
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

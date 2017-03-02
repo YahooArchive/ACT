@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ACT.js Demo : animation</title>
+    <link rel="stylesheet" href="https://s.yimg.com/zz/combo?yui-s:3.14.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="https://s.yimg.com/rz/l/favicon.ico">
+    <script src="https://s.yimg.com/zz/combo?yui-s:3.14.1/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../assets/css/logo.png" title="ACT.js Demos" width="126" height="100"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">	<div id="api-tabview" class="tabview">		<ul class="tabs">			<li><a href="#act-js-examples">Demo and Examples</a></li>		</ul>		<div id="api-tabview-filter">			<input type="search" id="api-filter" style="display:none;" placeholder="Type to filter Demos">		</div>		<div id="api-tabview-panel">			<ul id="api-classes" class="apis classes">							<li><a href="ACT_Demo_300x250.html">300x250</a></li>							<li><a href="ACT_Demo_300x250_tracking.html">300x250_tracking</a></li>							<li><a href="ACT_Demo_TrackingExample.html">TrackingExample</a></li>							<li><a href="ACT_Demo_animation.html">animation</a></li>							<li><a href="ACT_Demo_billboard.html">billboard</a></li>							<li><a href="ACT_Demo_billboard-enabler.html">billboard-enabler</a></li>							<li><a href="ACT_Demo_billboard-expandable-enabler.html">billboard-expandable-enabler</a></li>							<li><a href="ACT_Demo_billboard_html_video.html">billboard_html_video</a></li>							<li><a href="ACT_Demo_billboard_html_video_rtl.html">billboard_html_video_rtl</a></li>							<li><a href="ACT_Demo_carousel.html">carousel</a></li>							<li><a href="ACT_Demo_dwelltime.html">dwelltime</a></li>							<li><a href="ACT_Demo_enabler_expand.html">enabler_expand</a></li>							<li><a href="ACT_Demo_enabler_fullscreen_expand.html">enabler_fullscreen_expand</a></li>							<li><a href="ACT_Demo_enabler_target.html">enabler_target</a></li>							<li><a href="ACT_Demo_floating.html">floating</a></li>							<li><a href="ACT_Demo_force_env.html">force_env</a></li>							<li><a href="ACT_Demo_html5_enabler.html">html5_enabler</a></li>							<li><a href="ACT_Demo_html5_standard.html">html5_standard</a></li>							<li><a href="ACT_Demo_icons.html">icons</a></li>							<li><a href="ACT_Demo_input_data.html">input_data</a></li>							<li><a href="ACT_Demo_login_html.html">login_html</a></li>							<li><a href="ACT_Demo_overwrite_env.html">overwrite_env</a></li>							<li><a href="ACT_Demo_splash_ad.html">splash_ad</a></li>							<li><a href="ACT_Demo_tablet_expandable.html">tablet_expandable</a></li>							<li><a href="ACT_Demo_video_event.html">video_event</a></li>							<li><a href="ACT_Demo_video_html.html">video_html</a></li>						</ul>		</div>	</div></div>            </div>
+        </div>
+        <div class="yui3-u-3-4">
+            <a href="../">Back to docs</a>            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1>Demo For animation</h1><div class="box meta">        <div class="foundat">File for this demo is found: examples/animation/index.html</div></div><div id="classdocs" class="tabview">    <ul class="api-class-tabs">        <li class="api-class-tab index"><a href="#index">Rendered Example</a></li> 				<li class="api-class-tab methods"><a href="#methods">Config Object</a></li> 		    </ul>    <div>        <div id="index" class="api-class-tabpanel index"><link rel="stylesheet" href="../../src/assets/ACT_icons/ACT_icons.css"/>
+
+<div id="act-ad-container" style="margin:0px auto;padding:0px;width:300px;height:250px;">
+    <div id="act-ad" style="margin:0px;padding:0px;position:relative;font-size:11px;">
+        <noscript>
+            <a href="https://uk.yahoo.com">
+                <img src="https://s.yimg.com/dh/ap/actjs/expandable/rc/0-0-../../examples/animation/asset/300x250_yahoo.jpg" border="0">
+            </a>
+        </noscript>
+    </div>
+</div>
+
+<script language="javascript">
+	if (!window.ACT) {
+		window.ACT = {
+			"adQueue": []
+		};
+	}
+
+	ACT.adQueue.push(
+		function() {
+			var ad = ACT.Base({
+				conf: {
+					adId: 'test_ad_id',
+					cookie: {
+						name: "uniqueAdName",
+					},
+					template: {
+						width: 300,
+						height: 250
+					},
+					tracking: {}
+				},
+				superConf: "config-object-animation",
+				extend: {}
+			});   
+	});
+</script>
+
+<script src="../../examples/TrackingExample/ACTTrackingExample.js"></script>
+<script src="../../src/core/ACT.js"></script>
+<script src="../../src/core/ACT_Layerslist.js"></script>
+<script src="../../src/core/ACT_Screen.js"></script>
+<script src="../../src/core/ACT_StandardAd.js"></script>
+<script src="../../src/core/ACT_TrackingFacade.js"></script>
+<script src="../../src/core/ACT_actionsQueue.js"></script>
+<script src="../../src/core/ACT_base.js"></script>
+<script src="../../src/core/ACT_cookie.js"></script>
+<script src="../../src/core/ACT_environment.js"></script>
+<script src="../../src/core/ACT_layerStandard.js"></script>
+<script src="../../src/core/ACT_scaffolding.js"></script>
+<script src="../../src/core/ACT_secureDarla.js"></script>
+<script src="../../src/library/ACT_IO.js"></script>
+<script src="../../src/library/ACT_UA.js"></script>
+<script src="../../src/library/ACT_animation.js"></script>
+<script src="../../src/library/ACT_capability.js"></script>
+<script src="../../src/library/ACT_class.js"></script>
+<script src="../../src/library/ACT_customData.js"></script>
+<script src="../../src/library/ACT_debug.js"></script>
+<script src="../../src/library/ACT_dom.js"></script>
+<script src="../../src/library/ACT_event.js"></script>
+<script src="../../src/library/ACT_flash.js"></script>
+<script src="../../src/library/ACT_json.js"></script>
+<script src="../../src/library/ACT_lang.js"></script>
+<script src="../../src/library/ACT_util.js"></script>
+<script src="../../src/capabilities/ACT_contentContainer.js"></script>
+<script src="../../src/capabilities/ACT_contentImage.js"></script>
+
+<script src="../../examples/animation/config-object.js"></script></div> 				<div id="methods" class="api-class-tabpanel methods">			<pre class="code prettyprint"><code>ACT.setConfig(&quot;config-object-animation&quot;, {
+    baseConfig: {
+        id: &quot;test&quot;,
+        template: &quot;thirdparty&quot;,
+        forceEnv: {
+            forcedFlashList: {},
+            forcedHTML5List: {
+                Chrome: &quot;*&quot;,
+                FireFox: &quot;*&quot;,
+                Safari: &quot;*&quot;,
+                MSIE: &quot;*&quot;
+            },
+            forcedBackupList: {}
+        }
+    },
+    tracking: {},
+    format: {
+        darlaLayer: {
+            holder: {
+                contractedWidth: &quot;300&quot;,
+                contractedHeight: &quot;250&quot;
+            }
+        },
+        flow: [{
+            eventType: &quot;firstPlay&quot;,
+            actions: [{
+                type: &quot;playLayer&quot;,
+                to: &quot;mpu&quot;,
+                animate: false
+            }, {
+                type: &quot;track&quot;,
+                label: &quot;mpu_firstplay_ad_html&quot;
+            }]
+        }, {
+            eventType: &quot;cappedPlay&quot;,
+            actions: [{
+                type: &quot;playLayer&quot;,
+                to: &quot;mpu&quot;,
+                animate: false
+            }, {
+                type: &quot;track&quot;,
+                label: &quot;mpu_cappedplay_ad_html&quot;
+            }]
+        }],
+        layers: {
+            mpu: {
+                layerName: &quot;mpu&quot;,
+                base: &quot;act-ad&quot;,
+                type: &quot;inline&quot;,
+                width: &quot;300px&quot;,
+                height: &quot;250px&quot;,
+                x: &quot;0&quot;,
+                y: &quot;0&quot;,
+                contentLayer: {
+                    type: &quot;ContentContainer&quot;,
+                    id: &quot;mpu_container&quot;,
+                    env: [&quot;html&quot;],
+                    css: {
+                        position: &quot;relative&quot;
+                    },
+                    content: [{
+                        type: &quot;ContentContainer&quot;,
+                        id: &quot;mpu_button&quot;,
+                        env: [&quot;html&quot;],
+                        css: {
+                            position: &quot;absolute&quot;,
+                            left: &quot;0px&quot;,
+                            zIndex: 10,
+                            border: &quot;1px solid green&quot;,
+                            top: &quot;0&quot;
+                        },
+                        content:[{
+                            type: &quot;ContentContainer&quot;,
+                            id: &quot;mpu_btn_1&quot;,
+                            env: [&quot;html&quot;],
+                            css: {
+                                background: &quot;yellow&quot;
+                            },
+                            containerConfig: {
+                                innerText: &#x27;Right&#x27;
+                            },
+                            eventConfig: [{
+                                eventType: &quot;click&quot;,
+                                actions:[{
+                                    type: &quot;containerAnimate&quot;,
+                                    id: &quot;mpu_slider&quot;,
+                                    from: {left:&quot;0&quot;,opacity:&quot;.5&quot;,height:&quot;500px&quot;},
+                                    to: {left:&quot;-300px&quot;,opacity:&quot;1&quot;,height:&quot;250px&quot;},
+                                    duration: 1000,
+                                    delay: 10
+                                }]
+                            }]
+                        }]
+                    }, {
+                        type: &quot;ContentContainer&quot;,
+                        id: &quot;mpu_container_slider&quot;,
+                        env: [&quot;html&quot;],
+                        css: {
+                            width: &quot;300px&quot;,
+                            height: &quot;250px&quot;,
+                            overflow: &quot;hidden&quot;,
+                            position: &quot;relative&quot;
+                        },
+                        content:[{
+                            type: &quot;ContentContainer&quot;,
+                            id: &quot;mpu_slider&quot;,
+                            env: [&quot;html&quot;],
+                            css: {
+                                width: &quot;900px&quot;,
+                                position: &quot;absolute&quot;
+                            },
+                            content: [{
+                                type: &quot;ContentContainer&quot;,
+                                id: &quot;mpu_slide_1&quot;,
+                                env: [&quot;html&quot;],
+                                css: {
+                                    width: &quot;300px&quot;,
+                                    height: &quot;250px&quot;,
+                                    background: &quot;blue&quot;,
+                                    display: &quot;inline-block&quot;
+                                }
+                            },
+                            {
+                                type: &quot;ContentContainer&quot;,
+                                id: &quot;mpu_slide_2&quot;,
+                                env: [&quot;html&quot;],
+                                css: {
+                                    width: &quot;300px&quot;,
+                                    height: &quot;250px&quot;,
+                                    background: &quot;yellow&quot;,
+                                    display: &quot;inline-block&quot;
+                                }
+                            }]
+                        }]
+                    }, {
+                        type: &quot;ContentContainer&quot;,
+                        id: &quot;mpu_button&quot;,
+                        env: [&quot;html&quot;],
+                        css: {
+                            position: &quot;absolute&quot;,
+                            right: &quot;0px&quot;,
+                            top: &quot;0&quot;,
+                            zIndex: 10,
+                            border: &quot;1px solid green&quot;
+                        },
+                        content:[{
+                            type: &quot;ContentContainer&quot;,
+                            id: &quot;mpu_btn_1&quot;,
+                            env: [&quot;html&quot;],
+                            css: {
+                                background: &quot;yellow&quot;
+                            },
+                            containerConfig: {
+                                innerText: &#x27;Left&#x27;
+                            },
+                            eventConfig: [{
+                                eventType: &quot;click&quot;,
+                                actions:[{
+                                    type: &quot;containerAnimate&quot;,
+                                    id: &quot;mpu_slider&quot;,
+                                    from: {left:&quot;-300px&quot;,opacity:&quot;1&quot;,height:&quot;250px&quot;},
+                                    to: {left:&quot;0&quot;,opacity:&quot;.5&quot;,height:&quot;500px&quot;},
+                                    duration: 1000,
+                                    delay: 10
+                                }]
+                            }]
+                        }]
+                    }]
+                }
+            }
+        }
+    }
+});</code></pre>		</div> 	   </div></div><div class="box intro">	<pre class="code prettyprint"><code>&lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;../../src/assets/ACT_icons/ACT_icons.css&quot;/&gt;
+
+&lt;div id&#x3D;&quot;act-ad-container&quot; style&#x3D;&quot;margin:0px auto;padding:0px;width:300px;height:250px;&quot;&gt;
+    &lt;div id&#x3D;&quot;act-ad&quot; style&#x3D;&quot;margin:0px;padding:0px;position:relative;font-size:11px;&quot;&gt;
+        &lt;noscript&gt;
+            &lt;a href&#x3D;&quot;https://uk.yahoo.com&quot;&gt;
+                &lt;img src&#x3D;&quot;https://s.yimg.com/dh/ap/actjs/expandable/rc/0-0-1/asset/300x250_yahoo.jpg&quot; border&#x3D;&quot;0&quot;&gt;
+            &lt;/a&gt;
+        &lt;/noscript&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script language&#x3D;&quot;javascript&quot;&gt;
+	if (!window.ACT) {
+		window.ACT &#x3D; {
+			&quot;adQueue&quot;: []
+		};
+	}
+
+	ACT.adQueue.push(
+		function() {
+			var ad &#x3D; ACT.Base({
+				conf: {
+					adId: &#x27;test_ad_id&#x27;,
+					cookie: {
+						name: &quot;uniqueAdName&quot;,
+					},
+					template: {
+						width: 300,
+						height: 250
+					},
+					tracking: {}
+				},
+				superConf: &quot;config-object-animation&quot;,
+				extend: {}
+			});   
+	});
+&lt;/script&gt;
+
+&lt;script src&#x3D;&quot;../TrackingExample/ACTTrackingExample.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../../src/core/ACT.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../../src/core/ACT_Layerslist.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../../src/core/ACT_Screen.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../../src/core/ACT_StandardAd.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../../src/core/ACT_TrackingFacade.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../../src/core/ACT_actionsQueue.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../../src/core/ACT_base.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../../src/core/ACT_cookie.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../../src/core/ACT_environment.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../../src/core/ACT_layerStandard.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../../src/core/ACT_scaffolding.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../../src/core/ACT_secureDarla.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../../src/library/ACT_IO.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../../src/library/ACT_UA.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../../src/library/ACT_animation.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../../src/library/ACT_capability.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../../src/library/ACT_class.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../../src/library/ACT_customData.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../../src/library/ACT_debug.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../../src/library/ACT_dom.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../../src/library/ACT_event.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../../src/library/ACT_flash.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../../src/library/ACT_json.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../../src/library/ACT_lang.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../../src/library/ACT_util.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../../src/capabilities/ACT_contentContainer.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../../src/capabilities/ACT_contentImage.js&quot;&gt;&lt;/script&gt;
+
+&lt;script src&#x3D;&quot;./config-object.js&quot;&gt;&lt;/script&gt;</code></pre></div>                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

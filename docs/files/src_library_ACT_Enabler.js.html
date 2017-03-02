@@ -1,0 +1,1944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src/library/ACT_Enabler.js - ACT.js</title>
+    <link rel="stylesheet" href="https://s.yimg.com/zz/combo?yui-s:3.14.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="https://s.yimg.com/rz/l/favicon.ico">
+    <script src="https://s.yimg.com/zz/combo?yui-s:3.14.1/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="https://s.yimg.com/cv/ae/global/ACTJS/logo/ACT.js.logo.png" title="ACT.js" width="150"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 1.1.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                            <li><a href="#api-demos">Demo and Examples</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/ACT.html">ACT</a></li>
+                                <li><a href="../classes/ActionsQueue.html">ActionsQueue</a></li>
+                                <li><a href="../classes/Base.html">Base</a></li>
+                                <li><a href="../classes/Capability.html">Capability</a></li>
+                                <li><a href="../classes/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../classes/Class.html">Class</a></li>
+                                <li><a href="../classes/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../classes/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../classes/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../classes/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../classes/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../classes/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../classes/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../classes/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../classes/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../classes/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../classes/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../classes/Cookie.html">Cookie</a></li>
+                                <li><a href="../classes/CustomData.html">CustomData</a></li>
+                                <li><a href="../classes/Debug.html">Debug</a></li>
+                                <li><a href="../classes/Dom.html">Dom</a></li>
+                                <li><a href="../classes/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../classes/Enabler.html">Enabler</a></li>
+                                <li><a href="../classes/Environment.html">Environment</a></li>
+                                <li><a href="../classes/Event.html">Event</a></li>
+                                <li><a href="../classes/Flash.html">Flash</a></li>
+                                <li><a href="../classes/IO.html">IO</a></li>
+                                <li><a href="../classes/Json.html">Json</a></li>
+                                <li><a href="../classes/Lang.html">Lang</a></li>
+                                <li><a href="../classes/LayersList.html">LayersList</a></li>
+                                <li><a href="../classes/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../classes/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../classes/Screen.html">Screen</a></li>
+                                <li><a href="../classes/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../classes/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../classes/Tracking.html">Tracking</a></li>
+                                <li><a href="../classes/UA.html">UA</a></li>
+                                <li><a href="../classes/Util.html">Util</a></li>
+                                <li><a href="../classes/VideoEvents.html">VideoEvents</a></li>
+                            </ul>
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/ACT.html">ACT</a></li>
+                                <li><a href="../modules/actionsQueue.html">actionsQueue</a></li>
+                                <li><a href="../modules/Base.html">Base</a></li>
+                                <li><a href="../modules/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../modules/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../modules/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../modules/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../modules/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../modules/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../modules/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../modules/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../modules/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../modules/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../modules/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../modules/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../modules/Cookie.html">Cookie</a></li>
+                                <li><a href="../modules/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../modules/Enabler.html">Enabler</a></li>
+                                <li><a href="../modules/environment.html">environment</a></li>
+                                <li><a href="../modules/IO.html">IO</a></li>
+                                <li><a href="../modules/LayersList.html">LayersList</a></li>
+                                <li><a href="../modules/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../modules/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../modules/Screen.html">Screen</a></li>
+                                <li><a href="../modules/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../modules/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../modules/Tracking.html">Tracking</a></li>
+                            </ul>
+                
+                            <ul id="api-demos" class="apis demos">
+                                <li><a href="../demo/ACT_Demo_300x250.html">300x250</a></li>
+                                <li><a href="../demo/ACT_Demo_300x250_tracking.html">300x250_tracking</a></li>
+                                <li><a href="../demo/ACT_Demo_TrackingExample.html">TrackingExample</a></li>
+                                <li><a href="../demo/ACT_Demo_animation.html">animation</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard.html">billboard</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-enabler.html">billboard-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-expandable-enabler.html">billboard-expandable-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video.html">billboard_html_video</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video_rtl.html">billboard_html_video_rtl</a></li>
+                                <li><a href="../demo/ACT_Demo_carousel.html">carousel</a></li>
+                                <li><a href="../demo/ACT_Demo_dwelltime.html">dwelltime</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_expand.html">enabler_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_fullscreen_expand.html">enabler_fullscreen_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_target.html">enabler_target</a></li>
+                                <li><a href="../demo/ACT_Demo_floating.html">floating</a></li>
+                                <li><a href="../demo/ACT_Demo_force_env.html">force_env</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_enabler.html">html5_enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_standard.html">html5_standard</a></li>
+                                <li><a href="../demo/ACT_Demo_icons.html">icons</a></li>
+                                <li><a href="../demo/ACT_Demo_input_data.html">input_data</a></li>
+                                <li><a href="../demo/ACT_Demo_login_html.html">login_html</a></li>
+                                <li><a href="../demo/ACT_Demo_overwrite_env.html">overwrite_env</a></li>
+                                <li><a href="../demo/ACT_Demo_splash_ad.html">splash_ad</a></li>
+                                <li><a href="../demo/ACT_Demo_tablet_expandable.html">tablet_expandable</a></li>
+                                <li><a href="../demo/ACT_Demo_video_event.html">video_event</a></li>
+                                <li><a href="../demo/ACT_Demo_video_html.html">video_html</a></li>
+                            </ul>
+                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: src/library/ACT_Enabler.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+ * Copyright 2016, Yahoo Inc.
+ * Copyrights licensed under the New BSD License.
+ * See the accompanying LICENSE file for terms.
+ */
+
+/* global ACT, console */
+/* eslint spaced-comment: 0, no-unused-vars: 0, no-use-before-define: 0, no-console: 0, camelcase: 0, new-cap: 0, max-len: 0, no-shadow: 0, no-return-assign: 0, no-unused-expressions: 0 */
+ACT.define(&#x27;Enabler&#x27;, [/*@&lt;*/&#x27;Debug&#x27;, /*&gt;@*/ &#x27;Event&#x27;, &#x27;Lang&#x27;, &#x27;VideoEvents&#x27;, &#x27;Json&#x27;, &#x27;Tracking&#x27;, &#x27;Util&#x27;, &#x27;Dom&#x27;, &#x27;UA&#x27;], function (ACT) {
+    &#x27;use strict&#x27;;
+
+    /* Shorthand */
+    var Event = ACT.Event;
+    var Lang = ACT.Lang;
+    var VideoEvents = ACT.VideoEvents; // Fix to be VideoEvents (plural)
+    var Json = ACT.Json;
+    var Tracking = ACT.Tracking;
+    var Util = ACT.Util;
+    var Dom = ACT.Dom;
+    var UA = ACT.UA;
+
+    /* Private Variables */
+    var studio;
+    var config = {
+        frameId: &#x27;&#x27;,
+        actTracking: {},
+        trackingLabels: {},
+        enablerInteractionTracking: false,
+        callbacks: [],
+        countersList: {},
+        eventQueue: {},
+        exitUrls: {},
+        htmlRoot: &#x27;&#x27;,
+        initialized: false,
+        pageLoaded: false,
+        timerCollection: {},
+        videoTracking: {},
+        videoListener: null,
+        visible: false,
+        expand: {
+            containerState: &#x27;&#x27;,
+            useCustomClose: false,
+            expandingPixelOffsets: {},
+            floatingPixelDimensions: {},
+            isMultiDirectional: false,
+            startExpanded: false,
+            expandDirection: &#x27;tl&#x27;,
+            fsExpandWidth: 0,
+            fsExpandHeight: 0
+        }
+    };
+
+    /* event name variable*/
+    var EVENTS_NAME = {
+        FROM_PARENT: &#x27;html5:message&#x27;,
+        TO_PARENT: &#x27;Enabler:actions&#x27;
+    };
+
+    /*@&lt;*/
+    var Debug = ACT.Debug;
+    Debug.log(&#x27;[ ACT_Enabler.js ]: loaded&#x27;);
+    /*&gt;@*/
+
+    /**
+     * Listen to parent frame post message and convert it to event
+     */
+    Event.on(&#x27;message&#x27;, function (arg) {
+        var eventData = arg.data;
+        /* istanbul ignore else */
+        if (eventData.hasOwnProperty(&#x27;eventName&#x27;) &amp;&amp; eventData.hasOwnProperty(&#x27;message&#x27;)) {
+            // update Event from parent name
+            EVENTS_NAME.FROM_PARENT = eventData.eventName;
+            // Convert this to actual event so we can align iframe and non-iframe method
+            Event.fire(EVENTS_NAME.FROM_PARENT, {
+                message: eventData.message
+            });
+        }
+    }, window);
+
+    /**
+     * @method containValue
+     * @private
+     */
+    function containValue(obj, value) {
+        var key;
+        for (key in obj) {
+            if (Lang.isObject(obj[key])) {
+                return containValue(obj[key], value);
+            } else if (obj[key] === value) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Send data to parent of this iframe
+     * @method sendToParent
+     */
+    function sendToParent(data) {
+        /* istanbul ignore next */
+        var Y = window.Y || null;
+        /* istanbul ignore next */
+        var yAPI = (Y &amp;&amp; Y.SandBox &amp;&amp; Y.SandBox.vendor) ? Y.SandBox.vendor : null;
+        /*
+            window.parent -&gt; parent window
+            window.top -&gt; top most window
+            window -&gt; current window
+
+             If we window === window.parent then we do not need to post a message to our parent window - because we are that parent .
+         */
+        /* istanbul ignore if */
+        if (yAPI === null &amp;&amp; window === window.parent) {
+            Event.fire(EVENTS_NAME.TO_PARENT, data);
+        } else {
+            // lets try to use ACTjs from parent directly first
+            // if it doesn&#x27;t work the will fall back to postMessage
+            try {
+                window.parent.ACT.Event.fire(EVENTS_NAME.TO_PARENT, data);
+            } catch (e) {
+                /*@&lt;*/
+                Debug.info(&#x27; [ ACT_Enabler.js ] sendToParent: ACTjs from parent is not available, try postMessage now&#x27;, e);
+                /*&gt;@*/
+                parent.postMessage({
+                    EnablerData: data
+                }, &#x27;*&#x27;);
+            }
+        }
+    }
+
+    /**
+     * Helper method to compose urls with queries
+     * @method getFullUrl
+     * @param {String} url
+     * @param {String} params
+     */
+    function getFullUrl(url, params) {
+        var fullUrl = Lang.isString(url) &amp;&amp; url.length &gt; 0 ? url : &#x27;&#x27;;
+        var append = params;
+        var connector = &#x27;?&#x27;;
+        var lastIndex = fullUrl.length - 1;
+        if (lastIndex &gt; 0) {
+            if (fullUrl.indexOf(&#x27;?&#x27;) === lastIndex) {
+                connector = &#x27;&#x27;;
+            } else if (fullUrl.indexOf(&#x27;?&#x27;) &gt; -1) {
+                connector = &#x27;&amp;&#x27;;
+            }
+        }
+        if (Lang.isArray(append)) {
+            append = append.join(&#x27;&amp;&#x27;);
+        } else if (Lang.isObject(append)) {
+            append = Lang.createHash(append);
+        }
+        // By the end, you should have a string.
+        if (Lang.isString(append) &amp;&amp; append.length &gt; 0) {
+            if (append.indexOf(&#x27;?&#x27;) === 0) {
+                append = append.slice(1, append.length);
+            }
+            fullUrl += connector + append;
+        }
+        return fullUrl;
+    }
+
+    /**
+     * @method enablerLogger Notifies of issues / missing things inside Enabler. For Internal Use Only.
+     * @param {Mixed} A mixed message to display to the user
+     *
+     */
+    function enablerLogger() {
+        if (window.console &amp;&amp; window.console.info) {
+            console.info(arguments);
+        }
+    }
+
+    /**
+     * @method fireEvent
+     * @param {String} id The id given from the user&#x27;s calls. E.g: Enabler.exit(&quot;Something&quot;); &quot;Something&quot; is this id
+     * @param {String} eventType Comes from studio.events.StudioEvent Object - this should exist.
+     * @param {String} actionName More of the generic event/action (&#x27;track&#x27;, &#x27;redirect&#x27;, etc)
+     * @param {String} url If you have a redirect, you can pass in the URL to redirect to.
+     * @param {Mix} special Extra parameter. For URL can have the queries, for others, can be an object with the desired key: value pairs.
+     */
+    function fireEvent(id, eventType, actionName, url, special) {
+        /* get the label for tracking if the label does not exist then use &#x27;id&#x27; as label */
+        var label = id;
+        var fullUrl;
+        var link;
+        var dataToSend;
+        /*
+            trackingLabels are passed into the Enabler via config.
+            config.trackingLabels = {
+                &quot;video1:25&quot; : &quot;billboard_view_video1_25percent&quot;,
+                ...
+            }
+        */
+        if (config.trackingLabels.hasOwnProperty(label)) {
+            label = config.trackingLabels[label];
+        }
+
+        /*
+            Open URL has to be done inside iframe due to Safari policy
+            Other tracking can be sent to parent frame so we can do unique and non-unique
+        */
+        if (actionName === &#x27;redirect&#x27;) {
+            // Tracking is fired when there is a tracking config info
+            /* istanbul ignore else */
+            if (config.hasOwnProperty(&#x27;actTracking&#x27;) &amp;&amp; Lang.isFunction(config.actTracking.redirect_track)) {
+                /* redirect_track is:         redirect_track: function(str, num, url) */
+                fullUrl = getFullUrl(url, special);
+                link = config.actTracking.redirect_track(label, Util.hashString(label), fullUrl) || fullUrl;
+                /*@&lt;*/
+                Debug.log(&#x27;[ ACT_Enabler.js ]: Generated Redirect : &#x27;, link);
+                /*&gt;@*/
+                window.open(link, &#x27;_blank&#x27;);
+            } else {
+                /* If the actTracking is not defined, and a redirect is fired we fail silently. */
+                enablerLogger(&#x27;[ ACT_Enabler.js ] : Attempted but did not redirect to: &quot;&#x27; + getFullUrl(url, special) + &#x27;&quot; identified by: &quot;&#x27; + id + &#x27;&quot;&#x27;);
+            }
+        } else if (actionName === &#x27;track&#x27; &amp;&amp; config.hasOwnProperty(&#x27;enablerInteractionTracking&#x27;) &amp;&amp; config.enablerInteractionTracking === true) {
+            /* If we want enabler to fire off all the interaction tracks by itself */
+            /* istanbul ignore else */
+            if (config.hasOwnProperty(&#x27;actTracking&#x27;) &amp;&amp; Lang.isFunction(config.actTracking.interaction_track)) {
+                /*@&lt;*/
+                Debug.log(&#x27;[ ACT_Enabler.js ]: Generated Interaction Track : &#x27;, label);
+                /*&gt;@*/
+                config.actTracking.interaction_track(label);
+            } else {
+                enablerLogger(&#x27;[ ACT_Enabler.js ]: Attempted but did not fire an Interaction Track : &#x27; + label);
+            }
+        } else {
+			dataToSend = {
+							frameId: config.frameId,
+							id: id,
+							eventType: eventType,
+							actionName: actionName,
+							url: url,
+							special: special
+						};
+			enablerLogger(&#x27;[ ACT_Enabler.js ]: Sending data to parent : &#x27;, dataToSend);
+            // send data to parent to do something
+            sendToParent(dataToSend);
+        }
+    }
+
+    /**
+     * Adding new url and it&#x27;s key into the exitUrls list
+     * @method setExit
+     * @param {String} id Exit Url id
+     * @param [String] opt_url New URL to be added
+     */
+    function setExit(id, opt_url) {
+        // only add if opt_url avaibler
+        if (Lang.isString(opt_url)) {
+            config.exitUrls[id] = opt_url;
+        }
+
+        return opt_url;
+    }
+
+    /**
+     * @method setCounter
+     * @private
+     */
+    function setCounter(id, cumulative) {
+        /* istanbul ignore else */
+        if (!config.countersList[id]) {
+            config.countersList[id] = {
+                count: 0,
+                cumulative: !!cumulative
+            };
+        }
+        /* istanbul ignore else */
+        if (config.countersList[id].cumulative) {
+            config.countersList[id].count += 1;
+        }
+    }
+
+    /**
+     * @method getCounter
+     * @private
+     */
+    function getCounter(id) {
+        var count = 0;
+        /* istanbul ignore else */
+        if (config.countersList[id]) {
+            count = config.countersList[id].count;
+        }
+        return count;
+    }
+
+    /**
+     * @method calculateValue
+     * @private
+     */
+    function calculateValue(value, integer1, integer2) {
+        (value &amp; integer1) === integer1 &amp;&amp; (studio.common.Environment.Value |= integer1, studio.common.Environment.Value &amp;= ~integer2);
+    }
+
+    /**
+     * @method mapValue
+     * @private
+     */
+    function mapValue(value) {
+        calculateValue(value, 2, 1);
+        calculateValue(value, 1, 2);
+        calculateValue(value, 4, 8);
+        calculateValue(value, 8, 4);
+        calculateValue(value, 128, 64);
+        calculateValue(value, 64, 128);
+    }
+
+    /**
+     * ACT Enabler
+     *
+     * &#x60;&#x60;&#x60;
+     *     var conf = {
+     *         tracking: {
+     *             trackUnique: true
+     *         },
+     *         exitUrls: {
+     *             clickTAG: &#x27;https://www.yahoo.com/?clickTAG=true&#x27;,
+     *             clickTAG1: &#x27;https://www.yahoo.com/?clickTAG=true&#x27;,
+     *             clickTAG2: &#x27;https://www.yahoo.com/?clickTAG=true&#x27;
+     *         },
+     *         trackingLabels: {
+     *             video1:25 : &#x27;billboard_view_video1_25percent&#x27;,
+     *             video1:50 : &#x27;billboard_view_video1_50percent&#x27;,
+     *             video1:75 : &#x27;billboard_view_video1_75percent&#x27;
+     *         },
+     *         enablerInteractionTracking : false,
+     *         enablerTarget: &#x27;http://cdn.path.here.com/ACT_Enabler.js&#x27;,
+     *         htmlRoot : &#x27;http://cdn.path.here.com/&#x27;
+     *     };
+     *     Enabler.setConfig( conf );
+     * &#x60;&#x60;&#x60;
+     *
+     * @module Enabler
+     * @main Enabler
+     * @class Enabler
+     * @requires Dom
+     * @requires Event
+     * @requires Lang
+     * @requires UA
+     * @requires VideoEvents
+     * @requires Json
+     * @requires Tracking
+     * @requires Util
+     * @requires ActionsQueue
+     * @param conf
+     */
+
+    function Enabler(conf) {
+        var enablerConfigData = {};
+        var enablerTarget;
+        var eventQueue;
+        var script;
+        var head;
+        var item;
+
+        /* istanbul ignore else */
+        if (window.Enabler) {
+            enablerConfigData = window.Enabler.getConfigObject();
+            /*@&lt;*/
+            Debug.log(&#x27;[ ACT_Enabler.js ]: Found a version of Enabler on page. Data set is:&#x27;, enablerConfigData);
+            /*&gt;@*/
+            this.setConfig(enablerConfigData);
+            /* reassign all the event listeners */
+            eventQueue = enablerConfigData.eventQueue;
+            if (Lang.isObject(eventQueue)) {
+                for (item in eventQueue) {
+                   if (eventQueue.hasOwnProperty(item)) {
+                       item = eventQueue[item];
+                       window.Enabler.removeEventListener(item.type);
+                       this.addEventListener(item.type, item.callback, item.opt_capture, item.opt_handlerScope);
+                   }
+                }
+            }
+        }
+
+        /* istanbul ignore else */
+        if (window.name) {
+            try {
+                enablerConfigData = (Lang.isString(window.name) &amp;&amp; Json.parse(decodeURI(window.name))) || enablerConfigData;
+                /*@&lt;*/
+                Debug.log(&#x27;[ ACT_Enabler.js ]: Found Enabler data in window.name. Data set is:&#x27;, enablerConfigData);
+                /*&gt;@*/
+                this.setConfig(enablerConfigData);
+            } catch (err) {
+                /*@&lt;*/
+                Debug.log(&#x27;[ ACT_Enabler.js ]: no data passed via window.name &#x27; + err);
+                /*&gt;@*/
+            }
+        }
+
+        /* reload enabler if config specify a target */
+        enablerTarget = enablerConfigData.enablerTarget;
+        if (enablerTarget &amp;&amp;
+            Lang.isString(enablerTarget) &amp;&amp;
+            Lang.isSameOrigin(enablerTarget)) {
+            head = document.head || document.getElementsByTagName(&#x27;head&#x27;)[0];
+            script = document.createElement(&#x27;script&#x27;);
+            enablerConfigData.enablerTarget = &#x27;&#x27;;
+            /*@&lt;*/
+            Debug.log(&#x27;[ ACT_Enabler.js ]: Load a targeted version of Enabler on page. Data set is:&#x27;, enablerConfigData);
+            /*&gt;@*/
+            window.name = window.name &amp;&amp; this.setConfig(enablerConfigData);
+            script.setAttribute(&#x27;src&#x27;, Lang.urlSanitize(enablerTarget));
+            head.appendChild(script);
+            return this;
+        }
+
+        /* Grab extra definitions / make request for extra definitions from &quot;main page/frame&quot; */
+        config.initialized = true;
+
+        /* This should probably wait to be fired - since Enabler is laoded at the top of the page. */
+        this.dispatchEvent(studio.events.StudioEvent.INIT);
+        Event.ready(Lang.bind(this, null, this.dispatchPageLoaded));
+        Event.on(EVENTS_NAME.FROM_PARENT, Lang.bind(this, null, this.parentMessageHandle));
+    }
+
+    /**
+     * @attribute ATTRS
+     * @initOnly
+     */
+    Enabler.ATTRS = {
+
+        /**
+         * @attribute NAME
+         * @type String
+         */
+        NAME: &#x27;Enabler&#x27;,
+
+        /**
+         * @attribute version
+         * @type String
+         */
+        version: &#x27;1.1.0&#x27;
+    };
+
+    Enabler.prototype = {
+
+        constructor: Enabler,
+
+        /* Exposing some utility modules: */
+        Event: Event,
+        Lang: Lang,
+        Util: Util,
+        Dom: Dom,
+        Json: Json,
+        UA: UA,
+
+        /*@&lt;*/
+        /* Helper method for development test */
+        getEventQueue: function () {
+            return config.eventQueue;
+        },
+
+        getTimerCollection: function () {
+            return config.timerCollection;
+        },
+
+        getFullUrl: function (url, params) {
+            return getFullUrl(url, params);
+        },
+
+        /*&gt;@*/
+
+        /**
+         * Handle message from parent frame
+         *
+         * @method parentMessageHandle
+         * @param {Object} data Data sent from parent
+         */
+        parentMessageHandle: function (data) {
+            var message = data.message;
+            var studioEvents = studio.events.StudioEvent;
+            /* istanbul ignore else */
+            if (studioEvents.hasOwnProperty(message)) {
+                this.dispatchEvent(studioEvents[message], null);
+            }
+        },
+
+        /**
+         * Returns the full config object if no parameter passed in, an element from config object or null if requested element doesn&#x27;t exist.
+         * @method getConfigObject
+         * @param {String} opt_element
+         * @returns {Object}
+         */
+        getConfigObject: function (opt_element) {
+            if (opt_element &amp;&amp; Lang.isString(opt_element) &amp;&amp; config.hasOwnProperty(opt_element)) {
+                return config[opt_element];
+            } else if (typeof opt_element === &#x27;undefined&#x27;) {
+                return config;
+            }
+            return null;
+        },
+
+        /**
+         * Returns the config object values
+         * @method getConfig
+         * @param {String} opt_element
+         * @returns {string} The stringified config object
+         */
+        getConfig: function (opt_element) {
+            var res = this.getConfigObject(opt_element);
+            return Json.stringify(res);
+        },
+
+        /**
+         * You can set new values to config using setConfig.
+         * Just use the same config structure.
+         * @method setConfig
+         * @param encoded
+         * @returns {string} The stringified resulting config object
+         */
+        setConfig: function (encoded, opt_element) {
+            var newConfig = encoded;
+            /* istanbul ignore else */
+            if (Lang.isString(encoded)) {
+                newConfig = Json.parse(encoded);
+            }
+            /* istanbul ignore else */
+            if (opt_element &amp;&amp; Lang.isString(opt_element) &amp;&amp; config.hasOwnProperty(opt_element)) {
+                newConfig = {};
+                newConfig[opt_element] = encoded;
+            }
+
+            config = Lang.merge(config, newConfig);
+
+            // create tracking if new config has tracking config
+            if (config.hasOwnProperty(&#x27;tracking&#x27;) &amp;&amp; Lang.isObject(config.tracking)) {
+                config.tracking.trackUnique = false; /* because Cookie is not availale in iFrame */
+                config.actTracking = new Tracking(config.tracking);
+            }
+
+            return this.getConfig(opt_element);
+        },
+
+        /**
+         * Adds an event listener to the event target. The same handler can only be added once per the type.
+         * Even if you add the same handler multiple times using the same type then it will only be called once
+         * When the event is dispatched.
+         * @method addEventListener
+         * @param {String} type The type of the event to listen for.
+         * @param {Function} fn event callback
+         * @param {boolean} opt_capture In DOM-compliant browsers, this determines whether the listener is fired
+         * during the capture or bubble phase of the event.
+         * @param {Object} opt_handlerScope Object in whose scope to call the listener
+         */
+        addEventListener: function (type, fn, opt_capture, opt_handlerScope) {
+            var attr = type.replace(/(.)([A-Z])/g, &#x27;$1_$2&#x27;).toUpperCase();
+            if (studio.events.StudioEvent.hasOwnProperty(attr)) {
+                if (config.eventQueue[type]) {
+                    this.removeEventListener(type);
+                }
+                Event.on(type, fn, opt_handlerScope, this);
+                config.eventQueue[type] = {
+                    type: type,
+                    callback: fn,
+                    opt_capture: opt_capture,
+                    opt_handlerScope: opt_handlerScope
+                };
+            } /*@&lt;*/ else {
+                Debug.log(&#x27;[ ACT_Enabler.js ]: the &#x27;, type, &#x27; is not supported.&#x27;);
+            }
+            /*&gt;@*/
+        },
+
+        /**
+         * Wrapper for Event remove listener (gets values from EVENT QUEUE)
+         * @method removeEventListener
+         * @param {String} event_type the id used in config.eventQueue
+         */
+        removeEventListener: function (event_type) {
+            var event;
+            /* istanbul ignore else */
+            if (config.eventQueue[event_type]) {
+                event = config.eventQueue[event_type];
+                Event.removeListener(event.type, event.callback, event.opt_handlerScope);
+                delete config.eventQueue[event_type];
+            }
+        },
+
+        /**
+         * Wrapper for Event.fire
+         * @method dispatchEvent
+         * @param {String} event
+         * @param {Object} data
+         */
+        dispatchEvent: function (event, data) {
+            /* istanbul ignore else */
+            if (Lang.isString(event)) {
+                Event.fire(event, data);
+            }
+        },
+
+        /**
+         * Opens a new window with the URL as identified by the given exit ID.
+         * @method exit
+         * @param {String} id The exit ID.
+         * @param {String} opt_url The URL to navigate to.
+         */
+        exit: function (id, opt_url) {
+            var url;
+            setExit(id, opt_url);
+            url = config.exitUrls[id];
+            /*@&lt;*/
+            /* istanbul ignore if */
+            if (!Lang.isString(url)) {
+                Debug.log(&#x27;[ ACT_Enabler.js ]: URL ID of &#x27; + id + &#x27; was not found. Make sure to define it.&#x27;);
+            }
+            /*&gt;@*/
+
+            fireEvent(id, studio.events.StudioEvent.EXIT, &#x27;redirect&#x27;, url, null);
+        },
+
+        /**
+         * Opens a new window with the URL as identified by the given exit ID. This differs from normal exit() as the
+         * URL value will always override the value modified in Studio or elsewhere.
+         * @method exitOverride
+         * @param {String} id The exit ID.
+         * @param {String} url The URL to navigate to regardless of what has been set before.
+         */
+        exitOverride: function (id, url) {
+            /* istanbul ignore else */
+            if (Lang.isString(url) &amp;&amp; url.indexOf(&#x27;http&#x27;) &gt;= 0) {
+                setExit(id, url);
+                fireEvent(id, studio.events.StudioEvent.EXIT, &#x27;redirect&#x27;, url, null);
+            }
+        },
+
+        /**
+         * Opens a new window with the URL as identified by the given exit ID with an optional queryString appended.
+         * @method exitQueryString
+         * @param {String} id The exit ID.
+         * @param {String} opt_queryString Desired query string value(s) to append to the end of the exit URL.
+         */
+        exitQueryString: function (id, opt_queryString) {
+            var url = config.exitUrls[id];
+            /* istanbul ignore else */
+            if (Lang.isString(opt_queryString) &amp;&amp; url.indexOf(&#x27;http&#x27;) &gt;= 0) {
+                fireEvent(id, studio.events.StudioEvent.EXIT, &#x27;redirect&#x27;, url, opt_queryString);
+            }
+        },
+
+        /**
+         * Tracks a counter event.
+         * @method counter
+         * @param {String} eventId The string ID of the event to count.
+         * @param {Boolean} opt_isCumulative Optional parameter that indicates whether or not the counter event should
+         * be counted cumulatively. Defaults to true.
+         */
+        counter: function (eventId, opt_isCumulative) {
+            // cumulative is true, unless explicitly set to false (undefined, empty etc is considered true)
+            var cumulative = opt_isCumulative || true;
+            setCounter(eventId, cumulative);
+            // counter number is passed in as special string
+            fireEvent(eventId, studio.events.StudioEvent.INTERACTION, &#x27;track&#x27;, null, getCounter(eventId));
+        },
+
+        /**
+         * Starts an event timer
+         * @method startTimer
+         * @param {String} timerId The string ID of the timer to start
+         */
+        startTimer: function (timerId) {
+            this.stopTimer(timerId);
+
+            config.timerCollection[timerId] = {
+                time: 0,
+                timer: setInterval(function () {
+                    config.timerCollection[timerId].time++;
+                }, 1000)
+            };
+        },
+
+        /**
+         * Stops an event timer
+         * @method stopTimer
+         * @param {String} timerId The string ID of the timer to stop
+         */
+        stopTimer: function (timerId) {
+            if (config.timerCollection[timerId]) {
+                clearInterval(config.timerCollection[timerId].timer);
+                delete config.timerCollection[timerId];
+            }
+        },
+
+
+        /*******************************************************************************************************************/
+        /* getFilename and getUrl function definitions */
+
+        // deprecated
+        // getFilename : function(filename){
+        // return this.getUrl(filename);
+        // },
+
+        /**
+         * Gets the runtime URL given the original compile-time filename.
+         * @method getUrl
+         * @param {String} filepath The oritinal full path of the asset
+         * @returns {String} The URL to be used at runtime when served through Studio and DART.
+         */
+        getUrl: function (filepath) {
+            var url;
+            if (!config.htmlRoot) {
+                // did not set htmlRoot yet ! - see if we can grab it.
+                url = Dom.getCurrentLocation();
+                config.htmlRoot = url.split(&#x27;/&#x27;)
+                                    .slice(0, -1)
+                                    .join(&#x27;/&#x27;)
+                                    .concat(&#x27;/&#x27;);
+            }
+            if (config.htmlRoot[config.htmlRoot.length - 1] !== &#x27;/&#x27;) {
+                config.htmlRoot = config.htmlRoot.concat(&#x27;/&#x27;);
+            }
+            if (filepath === undefined || filepath.length === 0) {
+                return config.htmlRoot;
+            }
+            /* Mind your slashes - check that htmlRoot is set with a trailing slash. */
+            return config.htmlRoot + filepath;
+        },
+
+        /* ACT Enabler only */
+        /**
+         * Force setting htmlRoot value that is returned from getURL. getURL will use window.location.href
+         * otherwise.
+         * @method setUrl
+         * @param {String} htmlRoot The HTML path URL value
+         */
+        setUrl: function (htmlRoot) {
+            config.htmlRoot = htmlRoot;
+        },
+
+        /******************************************************************************************************************/
+        /* PageLoaded Functions */
+
+        /**
+         * Dispatches the PAGE LOADED event and sets the config parameter
+         * @method dispatchPageLoaded
+         */
+        dispatchPageLoaded: function () {
+            config.pageLoaded = true;
+            this.dispatchEvent(studio.events.StudioEvent.PAGE_LOADED, null);
+        },
+
+        /**
+         * Returns whether the parent page has loaded. The iframe is notified when the page has loaded and dispatches
+         * the StudioEvent.PAGE_LOADED event.
+         * @method isPageLoaded
+         * @returns {boolean} Whether the parent page has loaded or not.
+         */
+        isPageLoaded: function () {
+            return config.pageLoaded;
+        },
+
+        /**
+         * Returns whether the Enabler is initialized.
+         * @method isInitialized
+         * @returns {boolean} Whether the Enabler is initialized.
+         */
+        isInitialized: function () {
+            return config.initialized;
+        },
+
+        /**
+         * Calls the callback when the enabler is initialized or after
+         * @method callAfterInitialized
+         * @param {Function} callback The callback to invoke when the Enabler is initialized or if it has already
+         * initialized, call immediately.
+         */
+        callAfterInitialized: function (callback) {
+            /* config.callbacks is a private variable to keep track of all the callbacks */
+            config.callbacks.push(callback);
+        },
+
+        /******************************************************************************************************************/
+        /* Expand, close, collapse */
+        // These methods trigger all actions set in the config object for this specific event
+
+        /**
+         * Closes floating and popup creative types. If it is an expanding creative, close acts
+         * as a proxy to collapse.
+         * @method close
+         */
+        close: function () {
+            // Event.fire(&#x27;close&#x27;);
+            config.expand.containerState = studio.sdk.ContainerState.COLLAPSING;
+            fireEvent(&#x27;close&#x27;, studio.events.StudioEvent.COLLAPSE_START, &#x27;close&#x27;, &#x27;&#x27;, config.expand);
+            Event.fire(studio.events.StudioEvent.COLLAPSE_START, config.expand);
+        },
+
+        /**
+         * Sets useCustomClose. This is primarily of use in mobile environments using MRAID. When this flag
+         * is set, it means that the creative will provide its own close button, so MRAID doesn&#x27;t have to
+         * provide one.
+         * @method setUseCustomClose
+         * @param {Boolean} useCustomClose Value of the flag.
+         */
+        setUseCustomClose: function (useCustomClose) {
+            config.expand.useCustomClose = !!useCustomClose;
+            return config.expand.useCustomClose;
+        },
+
+        /**
+         * Returns the current state of the container.
+         * @method getContainerState
+         * @returns {String} The container state from studio.sdk.ContainerState
+         */
+        getContainerState: function () {
+            if (!containValue(studio.sdk.ContainerState, config.expand.containerState)) {
+                config.expand.containerState = studio.sdk.ContainerState.COLLAPSED;
+            }
+            return config.expand.containerState;
+        },
+
+        /**
+         * Returns the expand direction.
+         * @method getExpandDirection
+         * @returns {String} The direction to expand in from studio.common.mde.Direction
+         */
+        getExpandDirection: function () {
+            return studio.common.mde.Direction();
+        },
+
+        /**
+         * Records a manual closing of a floating, pop-up, expanding, in-page with pop-up, or in-page with floating ad.
+         * @method reportManualClose
+         */
+        reportManualClose: function () {
+            fireEvent(&#x27;reportManualClose&#x27;, studio.events.StudioEvent.COLLAPSE, &#x27;collapse&#x27;, &#x27;&#x27;, config.expand);
+        },
+
+        /**
+         * Sets the pixel offsets for the collapsed portion of the ad. This does not affect the local testing
+         * environment but when the ad is live the collapsed portion will be shown at 0x0. This method works
+         * by setting the marginLeft and marginTop of the body element which is set to relative positioning.
+         * @method setExpandingPixelOffsets
+         * @param {Number} left The left offset to the collapsed portion of the ad.
+         * @param {Number} top The top offset to the collapsed portion of the ad.
+         * @param {Number} opt_expandWidth The expanded width of this asset.
+         * @param {Number} opt_expandedHeight The expanded height of this asset.
+         */
+        setExpandingPixelOffsets: function (left, top, opt_expandWidth, opt_expandedHeight) {
+            config.expand.expandingPixelOffsets = {
+                left: Lang.isStrictNumber(left) ? left : 0,
+                top: Lang.isStrictNumber(top) ? top : 0,
+                expandedWidth: Lang.isStrictNumber(opt_expandWidth) ? opt_expandWidth : 0,
+                expandedHeight: Lang.isStrictNumber(opt_expandedHeight) ? opt_expandedHeight : 0
+            };
+            return config.expand.expandingPixelOffsets;
+        },
+
+        /**
+         * Prepopulates the width and height of a floating or peeldown creative.
+         * @method setFloatingPixelDimensions
+         * @param {Number} width The width of this asset.
+         * @param {Number} height The height of this asset.
+         */
+        setFloatingPixelDimensions: function (width, height) {
+            config.expand.floatingPixelDimensions = {
+                width: Lang.isStrictNumber(width) ? width : 0,
+                height: Lang.isStrictNumber(height) ? height : 0
+            };
+            return config.expand.floatingPixelDimensions;
+        },
+
+        /**
+         * Sets the isMultiDirectional flag.
+         * @method setIsMultiDirectional
+         * @param {Boolean} isMultiDirectional Whether the ad is configured as multidirectional.
+         */
+        setIsMultiDirectional: function (isMultiDirectional) {
+            config.expand.isMultiDirectional = !!isMultiDirectional;
+            return config.expand.isMultiDirectional;
+        },
+
+        /**
+         * Sets the startExpanded flag, which controls whether the asset starts in the expanded state or not.
+         * If true, then when the initial requestExpand call will not be tracked or logged and will not
+         * trigger an expansion timer.
+         * @method setStartExpanded
+         * @param {Boolean} startExpanded Value of the flag.
+         */
+        setStartExpanded: function (startExpanded) {
+            config.expand.startExpanded = !!startExpanded;
+            return config.expand.startExpanded;
+        },
+
+        /**
+         * Expanding flow:
+         *     1. Register event listeners.
+         *     2. When you want to expand call Enabler.requestExpand().
+         *     3. When the environment is ready to expand the studio.events.StudioEvent.EXPAND_START is dispatched.
+         *     4. The Ad optionally performs an animated expansion.
+         *     5. Ad then calls Enabler.finishExpand() to complete expansion. This makes sure pushdowns are syncronized.
+         *
+         * Initiates the expand lifecycle. This begins by calling requestExpand(), waiting for EXPAND_START
+         * event, animating your expand, then calling finishExpand() when the creative has fully expanded.
+         * Please use event listeners to invoke the expanded state of the ad as the expand may be dispatched
+         * by the environment independently of calling &#x60;studio.Enabler#requestExpand()&#x60;. Typical usage will
+         * look like:
+         *
+         * @method requestExpand
+         * @example
+         *         Enabler.addEventListener(
+         *             studio.events.StudioEvent.EXPAND_START,
+         *             function(event) {
+         *                 // For multi directional expands, direction to expand in can be obtained by
+         *                 // calling Enabler.getExpandingDirection() (or from event.direction).
+         *                 // Do expand action then...
+         *                 Enabler.finishExpand();
+         *             });
+         *         Enabler.requestExpand();
+         */
+        requestExpand: function () {
+            // Event.fire(&#x27;requestExpand&#x27;);
+            this.setStartExpanded(true);
+            config.expand.containerState = studio.sdk.ContainerState.EXPANDING;
+            fireEvent(&#x27;requestExpand&#x27;, studio.events.StudioEvent.EXPAND_START, &#x27;expand&#x27;, &#x27;&#x27;, config.expand);
+            // Event.fire(studio.events.StudioEvent.EXPAND_START, config.expand); -- remove as it should be fired from framework
+        },
+
+        /**
+         * Finalizes the expand call via the rendering code.
+         * @method finishExpand
+         */
+        finishExpand: function () {
+            // Event.fire(&#x27;finishExpand&#x27;);
+
+            this.setStartExpanded(false);
+            config.expand.containerState = studio.sdk.ContainerState.EXPANDED;
+            fireEvent(&#x27;finishExpand&#x27;, studio.events.StudioEvent.EXPAND_FINISH, &#x27;expand&#x27;, &#x27;&#x27;, config.expand);
+            // Event.fire(studio.events.StudioEvent.EXPAND_FINISH, config.expand);
+        },
+
+        /**
+         * Collapsing flow:
+         *     1. Register event listeners.
+         *    2. When you want to collapse call Enabler.requestCollapse().
+         *    3. When the environment is ready to collapse the studio.events.StudioEvent.COLLAPSE_START is dispatched.
+         *        This can get dispatched independently of Enabler.requestCollapse() as sometimes the environment provides a close button outside of the creative.
+         *    4. The Ad optionally performs an animated collapse.
+         *     5. Ad then calls Enabler.finishCollapse() to complete collapse and close div.
+         *
+         * Initiates the collapse lifecycle. This begins by calling requestCollapse(), waiting for the
+         * COLLAPSE_START event, animating your collapse, then calling finishCollapse() when the
+         * creative has fully collapsed. Please use event listeners to invoke the collapsed state of
+         * the ad as the collapse event may be dispatched by the environment independently of calling
+         * studio.Enabler#requestCollapse().
+         *
+         * @method requestCollapse
+         * @example
+         *
+         *        Enabler.addEventListener(
+         *            studio.events.StudioEvent.COLLAPSE_START,
+         *            function () {
+         *                // Do collapse action then...
+         *                Enabler.finishCollapse();
+         *            });
+         *        Enabler.requestCollapse();
+         */
+        requestCollapse: function () {
+            // Event.fire(&#x27;requestCollapse&#x27;);
+            config.expand.containerState = studio.sdk.ContainerState.COLLAPSING;
+            fireEvent(&#x27;requestCollapse&#x27;, studio.events.StudioEvent.COLLAPSE_START, &#x27;collapse&#x27;, &#x27;&#x27;, config.expand);
+            // Event.fire(studio.events.StudioEvent.COLLAPSE_START, config.expand);
+        },
+
+        /**
+         * Clips the container or the html asset from the expanded dimensions to the collapsed dimensions.
+         * Please use event listeners to invoke the collapsed state of the ad as the collapse event may
+         * be dispatched by the environment independently of calling studio.Enabler#requestCollapse().
+         * @method finishCollapse
+         * @example
+         *         Enabler.addEventListener(
+         *             studio.events.StudioEvent.COLLAPSE_START,
+         *             function () {
+         *                 // collapse action
+         *                 Enabler.finishCollapse();
+         *             });
+         *         Enabler.requestCollapse();
+         */
+        finishCollapse: function () {
+            // Event.fire(&#x27;finishCollapse&#x27;);
+            config.expand.containerState = studio.sdk.ContainerState.COLLAPSED;
+            fireEvent(&#x27;finishCollapse&#x27;, studio.events.StudioEvent.COLLAPSE_FINISH, &#x27;collapse&#x27;, &#x27;&#x27;, config.expand);
+            // Event.fire(studio.events.StudioEvent.COLLAPSE_FINISH, config.expand);
+        },
+
+        /**
+         * Requests fullscreen collapse. Please listen for the studio.event.StudioEvent.FULLSCREEN_COLLAPSE_START
+         * event to start collapse.
+         * @method requestFullscreenCollapse
+         */
+        requestFullscreenCollapse: function () {
+            config.expand.containerState = studio.sdk.ContainerState.FS_COLLAPSING;
+            fireEvent(&#x27;requestFullscreenCollapse&#x27;, studio.events.StudioEvent.FULLSCREEN_COLLAPSE_START, &#x27;collapse&#x27;, &#x27;&#x27;, config.expand);
+            // Event.fire(studio.events.StudioEvent.FULLSCREEN_COLLAPSE_START, config.expand);
+        },
+
+        /**
+         * Requests fullscreen expand. If width and height are provided, expands to a rectangle of that width
+         * and height centered in the middle of the display (or browser window, if the browser is not
+         * fullscreen). Otherwise expands to the full size of the browser window/display. Note that on
+         * mobile devices the browser window typically takes up the entire display.
+         * @method requestFullscreenExpand
+         * @param {Number} opt_width Width we would like to expand to in pixels
+         * @param {Number} opt_height Height we would like to expand to in pixels
+         */
+        requestFullscreenExpand: function (opt_width, opt_height) {
+            this.setStartExpanded(true);
+            config.expand.containerState = studio.sdk.ContainerState.FS_EXPANDING;
+            config.expand.fsExpandWidth = Lang.isStrictNumber(opt_width) ? opt_width : config.expand.fsExpandWidth;
+            config.expand.fsExpandHeight = Lang.isStrictNumber(opt_height) ? opt_height : config.expand.fsExpandHeight;
+            fireEvent(&#x27;requestFullscreenExpand&#x27;, studio.events.StudioEvent.FULLSCREEN_EXPAND_START, &#x27;expand&#x27;, &#x27;&#x27;, config.expand);
+            // Event.fire(studio.events.StudioEvent.FULLSCREEN_EXPAND_START, config.expand);
+        },
+
+        /**
+         * Finishes fullscreen collapse.
+         * @method finishFullscreenCollapse
+         */
+        finishFullscreenCollapse: function () {
+            config.expand.containerState = studio.sdk.ContainerState.COLLAPSED;
+            fireEvent(&#x27;finishFullscreenCollapse&#x27;, studio.events.StudioEvent.FULLSCREEN_COLLAPSE_FINISH, &#x27;collapse&#x27;, &#x27;&#x27;, config.expand);
+            // Event.fire(studio.events.StudioEvent.FULLSCREEN_COLLAPSE_FINISH, config.expand);
+        },
+
+        /**
+         * Finishes fullscreen expand.
+         * @method finishFullscreenExpand
+         */
+        finishFullscreenExpand: function () {
+            this.setStartExpanded(false);
+            config.expand.containerState = studio.sdk.ContainerState.FS_EXPANDED;
+            fireEvent(&#x27;finishFullscreenExpand&#x27;, studio.events.StudioEvent.FULLSCREEN_EXPAND_FINISH, &#x27;expand&#x27;, &#x27;&#x27;, config.expand);
+            // Event.fire(studio.events.StudioEvent.FULLSCREEN_EXPAND_FINISH, config.expand);
+        },
+
+        /**
+         * Returns whether the ad is visible. The Enabler dispatches the StudioEvent.VISIBLE event.
+         * @method isVisible
+         * @returns {boolean}
+         */
+        isVisible: function () {
+            this.dispatchEvent(studio.events.StudioEvent.VISIBLE, null);
+            return true;
+        },
+
+        /**
+         * Retrieves a creative parameter that the user can pass via queryString URL. This is also used internally to access ad configuration data.
+         * @method getParameter
+         * @param {String} name Name of the variable to get from the URL
+         * @returns {String}
+         */
+        getParameter: function (name) {
+            if (name) {
+                return Util.getQStrVal(name);
+            }
+            return &#x27;&#x27;;
+        },
+
+        /**
+         * Retrieves a creative parameter as an integer.
+         * @method getParameterAsInteger
+         * @param {String} name Name of the variable to get from the URL
+         * @returns {Integer}
+         */
+        getParameterAsInteger: function (name) {
+            var numeric;
+            if (name) {
+                numeric = Util.getQStrVal(name);
+                return parseInt(numeric, 10) || 0;
+            }
+            return 0;
+        },
+
+        /**
+         * Retrieves a creative parameter as a nullable string.
+         * @method getParameter
+         * @param {String} name Name of the variable to get from the URL
+         * @returns {String}
+         */
+        getParameterAsNullableString: function (name) {
+            if (name) {
+                return Util.getQStrVal(name);
+            }
+            return 0;
+        },
+
+        /**
+         * Get studio object
+         * @method getStudio
+         * @returns {Object}
+         */
+        getStudio: function () {
+            var obj = null;
+            /* istanbul ignore else */
+            if (Lang.isObject(studio)) {
+                obj = studio;
+            }
+            return obj;
+        },
+
+        /**
+         * Returns the instance of the enabler singleton.
+         * @method getInstance
+         * @returns {Object}
+         */
+        getInstance: function () {
+            return this;
+        },
+
+        /**
+         * Closes the companion asset for floating, reminder, and pop-up creative types.
+         * @method closeCompanion
+         */
+        closeCompanion: function () {
+            fireEvent(&#x27;closeCompanion&#x27;);
+        },
+
+        /**
+         * Triggers the display of the companion asset for floating, reminder, and pop-up advert types.
+         * @method displayCompanion
+         */
+        displayCompanion: function () {
+            fireEvent(&#x27;displayCompanion&#x27;);
+        },
+
+        /*
+        ****************************************************************************************************************
+        */
+        // These methods are not implemented due to their specific use in Goo... environment.
+
+        /**
+         * Adds a new handler for an otherwise unknown message.
+         * @method addMessageHandler
+         * @param {String} messageName The name of the message, which cannot match an exported method on studio.Enabler.
+         * @param {Function} handler The handler function
+         */
+        addMessageHandler: function (messageName, handler) {
+            enablerLogger(&#x27;@addMessageHandler: Is not supported in this version of Enabler.&#x27;);
+        },
+
+        /**
+         * Removes a new handler for an otherwise unknown message.
+         * @method removeMessageHandler
+         * @param {String} messageName The name of the message, which cannot match an exported method on studio.Enabler.
+         */
+        removeMessageHandler: function (messageName) {
+            enablerLogger(&#x27;@removeMessageHandler: Is not supported in this version of Enabler.&#x27;);
+        },
+
+        /**
+         * Returns an object representing the orientation of the device.
+         * @method getOrientation
+         * @returns {Object} An object representing the orientation of the device.
+         */
+        getOrientation: function () {
+            enablerLogger(&#x27;@getOrientation: Is not supported in this version of Enabler.&#x27;);
+            return {};
+        },
+
+        /**
+         * Returns the user&#x27;s bandwidth according to DART bandwidth codes.
+         * @method getUserBandwidth
+         * @returns {Number} An integer representing the user&#x27;s bandwidth. Bandwidth values are:
+         *  1. Unknown = 0
+         *  2. Dialup = 1
+         *  3. DSL = 2
+         *  4. Cable = 3
+         *  5. Broadband = 4
+         *  6. T1 = 5
+         */
+        getUserBandwidth: function () {
+            enablerLogger(&#x27;@getUserBandwidth: Is not supported in this version of Enabler.&#x27;);
+            return 0;
+        },
+
+        /**
+         * Returns the two-letter string representation of the user&#x27;s country.
+         * @method getUserCountry
+         * @returns {String} Two-letter string representation of the user&#x27;s country.
+         */
+        getUserCountry: function () {
+            enablerLogger(&#x27;@getUserCountry: Is not supported in this version of Enabler.&#x27;);
+            return &#x27;&#x27;;
+        },
+
+        /**
+         * Returns the DART representation of the user&#x27;s Nielsen Designated Market Area.
+         * @method getUserDMACode
+         * @returns {Number} A DART representation of the user&#x27;s Nielson Designated Market Area.
+         */
+        getUserDMACode: function () {
+            enablerLogger(&#x27;@getUserDMACode: Is not supported in this version of Enabler.&#x27;);
+            return 0;
+        },
+
+        /**
+         * Returns the two-letter string representation of the user&#x27;s state or province.
+         * @method getUserState
+         * @returns {String} Two-letter string representation of the user&#x27;s state or province.
+         */
+        getUserState: function () {
+            enablerLogger(&#x27;@getUserState: Is not supported in this version of Enabler.&#x27;);
+            return &#x27;&#x27;;
+        },
+
+        /**
+         * Returns the user&#x27;s zip code (for users in the United States, U.S. territories, and Canada).
+         * @method getUserZipCode
+         * @returns {String} The user&#x27;s zip code as supplied by the ad server.
+         */
+        getUserZipCode: function () {
+            enablerLogger(&#x27;@getUserZipCode: Is not supported in this version of Enabler.&#x27;);
+            return &#x27;&#x27;;
+        },
+
+        /**
+         * Checks if a user has interacted with the document.
+         * @method hasUserInteracted
+         * @returns {Boolean} Whether the user has interacted with the document.
+         */
+        hasUserInteracted: function () {
+            enablerLogger(&#x27;@hasUserInteracted: Is not supported in this version of Enabler.&#x27;);
+            return false;
+        },
+
+        /**
+         * Invoke a function in the parent container. This could be the top frame if served via a adj (script) tag, the serving iframe if served via and adi (iframe) tag.
+         * @method invokeExternalJsFunction
+         * @param {String} functionName The function name to invoke.
+         */
+        invokeExternalJsFunction: function (functionName) {
+            enablerLogger(&#x27;@invokeExternalJsFunction: Is not supported in this version of Enabler.&#x27;);
+        },
+
+        /**
+         * Invoke a function on the mraid api. This is different from invokeExternalJsFunction as you are given the results of the function in a callback.
+         * @method invokeMraidMethod
+         * @param {String} methodName The method name to invoke on the mraid object. You can also use dot accessors to access subobjects if they are ever introduced. For instance, &#x27;package.method&#x27;, would call window.mraid.package.method().
+         * @param {Array} opt_args The arguments to invoke the method with.
+         * @param {Function} opt_callback A callback that gets invoked with the results of the function call.
+         */
+        invokeMraidMethod: function (methodName, opt_args, opt_callback) {
+            enablerLogger(&#x27;@invokeMraidMethod: Is not supported in this version of Enabler.&#x27;);
+        },
+
+        /**
+         * Returns whether the ad is serving in the live environment or not.
+         * @method isServingInLiveEnvironment
+         * @returns {Boolean} Whether the ad is serving in the live environment or not.
+         */
+        isServingInLiveEnvironment: function () {
+            enablerLogger(&#x27;@isServingInLiveEnvironment: Is not supported in this version of Enabler.&#x27;);
+            return false;
+        },
+
+        /**
+         * Initiates a query for the maximum allowable fullscreen dimensions. A studio.event.StudioEvent.FULLSCREEN_DIMENSIONS event will be dispatched with the maximum allowed width and height as properties.
+         * Some publishers may pad the fullscreen window for a lightbox-like experience. Because of this the maximum allowable dimensions may not take up the entire browser window or screen.
+         * @method queryFullscreenDimensions
+         */
+        queryFullscreenDimensions: function () {
+            enablerLogger(&#x27;@queryFullscreenDimensions: Is not supported in this version of Enabler.&#x27;);
+        },
+
+        /**
+         * Initiates a query to find out whether mock fullscreen expansion mode is supported. Please listen for the studio.event.StudioEvent.FULLSCREEN_SUPPORT event. This event will contain the support status.
+         * @method queryFullscreenSupport
+         */
+        queryFullscreenSupport: function () {
+            enablerLogger(&#x27;@queryFullscreenSupport: Is not supported in this version of Enabler.&#x27;);
+        },
+
+        /**
+         * Provide a method that allows the creative to define a chargeable event.
+         * @method registerChargeableEventName
+         * @param {String} eventName String name for which a counter or timer event will be will be will be triggered in the creative execution.
+         */
+        registerChargeableEventName: function (eventName) {
+            enablerLogger(&#x27;@registerChargeableEventName: Is not supported in this version of Enabler.&#x27;);
+        },
+
+        /**
+         * Counts instances of the string parameter, aggregated as Custom Variable Count 1 in reports. The string must meet the following criteria:
+         *  * The string cannot exceed 100 characters
+         *  * The string must only contain Latin characters (0-9, Aa-Zz)
+         *  * The String must NOT contain any personally identifiable information such as name, email address, phone number, health info, financial info, etc.
+         * Additionally, all question marks (?) and anything after the first question mark in a string will be truncated.
+         * @method reportCustomVariableCount1
+         * @param {String} customString Value to record against custom variable count 1.
+         */
+        reportCustomVariableCount1: function (customString) {
+            enablerLogger(&#x27;@reportCustomVariableCount1: Is not supported in this version of Enabler.&#x27;);
+        },
+
+        /**
+         * Counts instances of the string parameter, aggregated as Custom Variable Count 2 in reports. The string must meet the following criteria:
+         *  * The string cannot exceed 100 characters
+         *  * The string must only contain Latin characters (0-9, Aa-Zz)
+         *  * The String must NOT contain any personally identifiable information such as name, email address, phone number, health info, financial info, etc.
+         * Additionally, all question marks (?) and anything after the first question mark in a string will be truncated.
+         * @method reportCustomVariableCount2
+         * @param {String} customString Value to record against custom variable count 2.
+         */
+        reportCustomVariableCount2: function (customString) {
+            enablerLogger(&#x27;@reportCustomVariableCount2: Is not supported in this version of Enabler.&#x27;);
+        },
+
+        /**
+         * Set the dynamic content development values.
+         * @method setDevDynamicContent
+         * @param {Object} value The Dynamic Content development values.
+         */
+        setDevDynamicContent: function (value) {
+            enablerLogger(&#x27;@setDevDynamicContent: Is not supported in this version of Enabler.&#x27;);
+        },
+
+        /**
+         * Adds a Hint to this creative.
+         * @method setHint
+         * @param {String} name The name of the hint we want to add.
+         * @param {String} value The value of the hint we want to add.
+         */
+        setHint: function (name, value) {
+            enablerLogger(&#x27;@setHint: Is not supported in this version of Enabler.&#x27;);
+        },
+
+        /**
+         * Get the dynamic creative profile id.
+         * @method getProfileId
+         * @returns {Number} Returns the dynamic creative profile id.
+         */
+        getProfileId: function () {
+            enablerLogger(&#x27;@getProfileId: Is not supported in this version of Enabler.&#x27;);
+            return 0;
+        },
+
+        /**
+         * Set the dynamic creative profile id.
+         * @method setProfileId
+         * @param {Number} value Profile id.
+         */
+        setProfileId: function (value) {
+            enablerLogger(&#x27;@setProfileId: Is not supported in this version of Enabler.&#x27;);
+        },
+
+        /**
+         * Returns the DART ad ID.
+         * @method getDartAdId
+         * @returns {Number} Integer value of the ID number (generated by DART) that identifies the ad.
+         */
+        getDartAdId: function () {
+            enablerLogger(&#x27;@getDartAdId: Is not supported in this version of Enabler.&#x27;);
+            return 0;
+        },
+
+        /**
+         * Returns the DART asset ID.
+         * @method getDartAssetId
+         * @returns {String} The ID (generated by DART) that identifies the creative.
+         */
+        getDartAssetId: function () {
+            enablerLogger(&#x27;@getDartAssetId: Is not supported in this version of Enabler.&#x27;);
+            return &#x27;&#x27;;
+        },
+
+        /**
+         * Returns the DART creative ID.
+         * @method getDartCreativeId
+         * @returns {Number} The ID number (generated by DART) that identifies the creative.
+         */
+        getDartCreativeId: function () {
+            enablerLogger(&#x27;@getDartCreativeId: Is not supported in this version of Enabler.&#x27;);
+            return 0;
+        },
+
+        /**
+         * Returns the DART page ID.
+         * @method getDartPageId
+         * @returns {Number} The ID number (generated by DART) that identifies the zone where the creative is served.
+         */
+        getDartPageId: function () {
+            enablerLogger(&#x27;@getDartPageId: Is not supported in this version of Enabler.&#x27;);
+            return 0;
+        },
+
+        /**
+         * Returns the DART rendering ID.
+         * @method getDartRenderingId
+         * @returns {String} The ID (generated by DART) that identifies the rendering version of the creative.
+         */
+        getDartRenderingId: function () {
+            enablerLogger(&#x27;@getDartRenderingId: Is not supported in this version of Enabler.&#x27;);
+            return &#x27;&#x27;;
+        },
+
+        /**
+         * Returns the DART site ID.
+         * @method getDartSiteId
+         * @returns {Number} Integer value of the ID number that identifies the site where the creative is served, as defined in DART.
+         */
+        getDartSiteId: function () {
+            enablerLogger(&#x27;@getDartSiteId: Is not supported in this version of Enabler.&#x27;);
+            return 0;
+        },
+
+        /**
+         * Returns the DART site name.
+         * @method getDartSiteName
+         * @returns {String} The name of the site where the creative is served, as defined in DART.
+         */
+        getDartSiteName: function () {
+            enablerLogger(&#x27;@getDartSiteName: Is not supported in this version of Enabler.&#x27;);
+            return &#x27;&#x27;;
+        },
+
+        /**
+         * Loads an additional script file
+         * @method loadScript
+         * @param {String} scriptUrl The url of the script to load
+         * @param {Function} opt_loadedCallback The callback to invoke when the script is loaded
+         */
+        loadScript: function (scriptUrl, opt_loadedCallback) {
+            var script = document.createElement(&#x27;script&#x27;);
+
+            /* istanbul ignore else */
+            if (Lang.isFunction(opt_loadedCallback)) {
+                script.onload = script.onreadystatechange = function () {
+                    if (!this.readyState || this.readyState === &#x27;loaded&#x27; || this.readyState === &#x27;complete&#x27;) {
+                        opt_loadedCallback();
+                        script.onload = script.onreadystatechange = null;
+                    }
+                };
+            }
+            script.src = scriptUrl;
+            script.type = &#x27;text/javascript&#x27;;
+            document.body.appendChild(script);
+
+            return script;
+        },
+
+        /**
+         * Loads an additional module
+         * @method loadModule
+         * @param {studio.module.ModuleId} moduleType The name of the module to load.
+         * @param {Function} opt_loadedCallback The callback to invoke when the module is loaded
+         */
+        loadModule: function (moduleName, opt_loadedCallback) {
+            var studioObj = this.getStudio();
+            var module = {};
+            /* istanbul ignore else */
+            if (Lang.isObject(studioObj) &amp;&amp; Lang.isObject(studioObj.module) &amp;&amp; Lang.isObject(studioObj.module.ModuleId)) {
+                if (moduleName === &#x27;enabler&#x27;) {
+                    module = Enabler;
+                } else if (moduleName === &#x27;video&#x27;) {
+                    module = studioObj.video;
+                }
+                if (opt_loadedCallback) {
+                    opt_loadedCallback(module);
+                }
+                return module;
+            }
+            /*@&lt;*/
+            Debug.error(&#x27;[ ACT_Enabler.js ]: Error loading module from Enabler&#x27;, moduleName);
+            /*&gt;@*/
+            return null;
+        }
+    };
+
+    studio = {
+        events: {
+            StudioEvent: {
+                ABOUT_TO_EXPAND: &#x27;aboutToExpand&#x27;,
+                COLLAPSE: &#x27;collapse&#x27;,
+                COLLAPSE_FINISH: &#x27;collapseFinish&#x27;,
+                COLLAPSE_START: &#x27;collapseStart&#x27;,
+                EXIT: &#x27;exit&#x27;,
+                EXPAND_FINISH: &#x27;expandFinish&#x27;,
+                EXPAND_START: &#x27;expandStart&#x27;,
+                FULLSCREEN_COLLAPSE_FINISH: &#x27;fullscreenCollapseFinish&#x27;,
+                FULLSCREEN_COLLAPSE_START: &#x27;fullscreenCollapseStart&#x27;,
+                FULLSCREEN_DIMENSIONS: &#x27;fullscreenDimensions&#x27;,
+                FULLSCREEN_EXPAND_FINISH: &#x27;fullscreenExpandFinish&#x27;,
+                FULLSCREEN_EXPAND_START: &#x27;fullscreenExpandStart&#x27;,
+                FULLSCREEN_SUPPORT: &#x27;fullscreenSupport&#x27;,
+                HIDDEN: &#x27;hidden&#x27;,
+                INIT: &#x27;init&#x27;,
+                INTERACTION: &#x27;interaction&#x27;,
+                ORIENTATION: &#x27;orientation&#x27;,
+                PAGE_LOADED: &#x27;pageLoaded&#x27;,
+                VISIBILITY_CHANGE: &#x27;visibilityChange&#x27;,
+                VISIBLE: &#x27;visible&#x27;
+                    /**
+                     * Adds a dynamic property to the event.
+                     * @param {String} key The key to add.
+                     * @param {*} value The value of the property.
+                     * @returns Returns this event for convenience.
+                     */
+                    // addProperty: function (key, value) {
+                    //    return this;
+                    // }
+            }
+        },
+
+        common: {
+            mde: {
+                directionsList: [&#x27;tl&#x27;, &#x27;tr&#x27;, &#x27;bl&#x27;, &#x27;br&#x27;],
+
+                Direction: function () {
+                    var direction = this.directionsList[0];
+                    var index;
+                    var next;
+                    /* istanbul ignore else */
+                    if (config) {
+                        index = this.getDirectionIndex(config.expand.expandDirection);
+                        direction = config.expand.expandDirection;
+                        if (config.expand.isMultiDirectional) {
+                            next = this.directionsList[(index + 1) % 4];
+                            config.expand.expandDirection = next;
+                        }
+                    }
+                    return direction;
+                },
+
+                getDirectionIndex: function (dir) {
+                    var ind = 0;
+                    var i;
+                    for (i = 0; i &lt; this.directionsList.length; i++) {
+                        if (this.directionsList[i] === dir) {
+                            ind = i;
+                        }
+                    }
+                    return ind;
+                }
+            },
+            Environment: {
+                Type: {
+                    LIVE: 1,
+                    LOCAL: 2,
+                    BROWSER: 4,
+                    IN_APP: 8,
+                    LAYOUTS_PREVIEW: 16,
+                    CREATIVE_TOOLSET: 32,
+                    RENDERING_STUDIO: 64,
+                    RENDERING_TEST: 128
+                },
+
+                Value: 6,
+
+                addType: function (type) {
+                    this.Value = this.Value |= type;
+                    mapValue(type);
+                },
+
+                setType: function (type) {
+                    this.Value = type | 6;
+                    mapValue(this.Value);
+                },
+
+                hasType: function (type) {
+                    return (this.Value &amp; type) === type;
+                },
+
+                getValue: function () {
+                    return this.Value;
+                }
+            }
+        },
+
+        hint: {
+            ExpansionMode: {
+                LIGHTBOX: &#x27;lightbox&#x27;,
+                NORMAL: &#x27;normal&#x27;
+            },
+            ExpansionTrigger: {
+                ON_CLICK: &#x27;onClick&#x27;,
+                ON_HOVER: &#x27;onHover&#x27;
+            },
+            Hint: {
+                EXPANSION_MODE: &#x27;expansionMode&#x27;,
+                EXPANSION_TRIGGER: &#x27;expansionTrigger&#x27;
+            }
+        },
+
+        module: {
+            ModuleId: {
+                CONFIGURABLE: &#x27;configurable&#x27;,
+                CONFIGURABLE_FILLER: &#x27;configurablefiller&#x27;,
+                DCM_ENABLER: &#x27;dcmenabler&#x27;,
+                ENABLER: &#x27;enabler&#x27;,
+                FILLER: &#x27;layoutsfiller&#x27;,
+                GDN: &#x27;gdn&#x27;,
+                LAYOUTS: &#x27;layouts&#x27;,
+                RAD_VIDEO: &#x27;rad_ui_video&#x27;,
+                VIDEO: &#x27;video&#x27;
+            }
+        },
+
+        sdk: {
+            ContainerState: {
+                COLLAPSED: &#x27;collapsed&#x27;,
+                COLLAPSING: &#x27;collapsing&#x27;,
+                EXPANDED: &#x27;expanded&#x27;,
+                EXPANDING: &#x27;expanding&#x27;,
+                FS_COLLAPSING: &#x27;fs_collapsing&#x27;,
+                FS_EXPANDED: &#x27;fs_expanded&#x27;,
+                FS_EXPANDING: &#x27;fs_expanding&#x27;
+            },
+            ExitFlag: {
+                LOG_ONLY: 1,
+                NONE: 0
+            },
+            MraidMethod: {
+                CREATE_CALENDAR_EVENT: &#x27;createCalendarEvent&#x27;,
+                GET_CURRENT_POSITION: &#x27;getCurrentPosition&#x27;,
+                GET_DEFAULT_POSITION: &#x27;getDefaultPosition&#x27;,
+                GET_MAX_SIZE: &#x27;getMaxSize&#x27;,
+                GET_SCREEN_SIZE: &#x27;getScreenSize&#x27;,
+                PLAY_VIDEO: &#x27;playVideo&#x27;,
+                STORE_PICTURE: &#x27;storePicture&#x27;,
+                SUPPORTS: &#x27;supports&#x27;
+            }
+        },
+
+        video: {
+            Reporter: {
+
+                /*@&lt;*/
+                getVideoTracking: function () {
+                    return config.videoTracking;
+                },
+                /*&gt;@*/
+
+                /**
+                 * Observes a video element for reporting
+                 * @method attach
+                 * @param {String} videoReportingIdentifier The name the video should report as.
+                 * @param {HTMLVideoElement} videoElement The video element to report on.
+                 * @param {Boolean|Object} opt_trackAsAutoPlay Used to indicate whether to track the initial play as a &quot;video interaction&quot; OR a set of which elements to track.
+                 * @example
+                     // Track AutoPlay - start / 50 / end
+                     studio.video.Reporter.attach(&quot;video_id&quot;, videoNode, true);
+
+                     // Track Everything ( start / 25 / 50/ 75 / ended / pause / volume / seeked / replay )
+                    studio.video.Reporter.attach(&quot;video_id&quot;, videoNode, false);
+
+                    // Track Optional ( start / ended )
+                    var vidTrackConf = {
+                        start: true,
+                        25: false,
+                        50: false,
+                        75: false,
+                        ended: true,
+                        pause: false,
+                        volumechange: false,
+                        seeked: false
+                    };
+                    studio.video.Reporter.attach(&#x27;video_id&#x27;, videoNode, vidTrackConf);
+
+                 * for autoplay videos (the play event will always get tracked). This defaults to true.
+                 */
+                attach: function (videoReportingIdentifier, videoElement, opt_trackAsAutoPlay) {
+                    var conf = {};
+                    var videoTrack;
+                    if (opt_trackAsAutoPlay === true) {
+                        /*
+                         we have autoPlay so we track start/50/end
+                         */
+                        conf = {
+                            tracking: {
+                                start: true,
+                                25: false,
+                                50: true,
+                                75: false,
+                                ended: true,
+                                pause: false,
+                                volumechange: false,
+                                seeked: false
+                            }
+                        };
+                    } else if (Lang.isObject(opt_trackAsAutoPlay)) {
+                        conf = {
+                            tracking: opt_trackAsAutoPlay
+                        };
+                    }
+
+                    /* create a videoListener if it does not exist */
+                    if (config.videoListener === null) {
+                        /* istanbul ignore else */
+                        config.videoListener = Event.on(&#x27;video:action&#x27;, function (data) {
+                            var eventType;
+                            var generatedLabel;
+                            // only fire the tracking if data.videoId is in our video tracking list
+                            /* istanbul ignore else */
+                            if (config.videoTracking.hasOwnProperty(data.videoId)) {
+                                eventType = data.eventType;
+                                generatedLabel = data.videoId + &#x27;:&#x27; + eventType;
+                                /*@&lt;*/
+                                Debug.log(&#x27;[ ACT_Enabler.js ]: video tracking with ID: &#x27;, generatedLabel);
+                                /*&gt;@*/
+                                window.Enabler.counter(generatedLabel);
+                            }
+                        });
+                    }
+
+                    videoTrack = new VideoEvents(videoElement, videoReportingIdentifier, conf);
+
+                    /* istanbul ignore else */
+                    if (!config.videoTracking.hasOwnProperty(videoReportingIdentifier)) {
+                        config.videoTracking[videoReportingIdentifier] = [];
+                    }
+                    config.videoTracking[videoReportingIdentifier].push(videoTrack);
+
+                    return videoTrack;
+                },
+
+                /**
+                 * Stops a video reporting identifier from reporting.
+                 * @method detach
+                 * @param videoReportingIdentifier
+                 */
+                detach: function (videoReportingIdentifier) {
+                    var tracking;
+                    var itor;
+                    /* istanbul ignore else */
+                    if (config.videoTracking.hasOwnProperty(videoReportingIdentifier)) {
+                        tracking = config.videoTracking[videoReportingIdentifier];
+                        for (itor = 0; itor &lt; tracking.length; itor++) {
+                            tracking[itor].destroy();
+                            tracking[itor] = null;
+                        }
+                        delete config.videoTracking[videoReportingIdentifier];
+                    }
+                }
+            }
+        }
+    };
+
+    /* Startup Enabler */
+    window.Enabler = new Enabler();
+    window.studio = window.Enabler.getStudio();
+
+    return window.Enabler;
+});
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

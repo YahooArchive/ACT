@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src/library/ACT_customData.js - ACT.js</title>
+    <link rel="stylesheet" href="https://s.yimg.com/zz/combo?yui-s:3.14.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="https://s.yimg.com/rz/l/favicon.ico">
+    <script src="https://s.yimg.com/zz/combo?yui-s:3.14.1/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="https://s.yimg.com/cv/ae/global/ACTJS/logo/ACT.js.logo.png" title="ACT.js" width="150"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 1.1.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                            <li><a href="#api-demos">Demo and Examples</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/ACT.html">ACT</a></li>
+                                <li><a href="../classes/ActionsQueue.html">ActionsQueue</a></li>
+                                <li><a href="../classes/Base.html">Base</a></li>
+                                <li><a href="../classes/Capability.html">Capability</a></li>
+                                <li><a href="../classes/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../classes/Class.html">Class</a></li>
+                                <li><a href="../classes/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../classes/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../classes/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../classes/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../classes/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../classes/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../classes/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../classes/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../classes/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../classes/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../classes/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../classes/Cookie.html">Cookie</a></li>
+                                <li><a href="../classes/CustomData.html">CustomData</a></li>
+                                <li><a href="../classes/Debug.html">Debug</a></li>
+                                <li><a href="../classes/Dom.html">Dom</a></li>
+                                <li><a href="../classes/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../classes/Enabler.html">Enabler</a></li>
+                                <li><a href="../classes/Environment.html">Environment</a></li>
+                                <li><a href="../classes/Event.html">Event</a></li>
+                                <li><a href="../classes/Flash.html">Flash</a></li>
+                                <li><a href="../classes/IO.html">IO</a></li>
+                                <li><a href="../classes/Json.html">Json</a></li>
+                                <li><a href="../classes/Lang.html">Lang</a></li>
+                                <li><a href="../classes/LayersList.html">LayersList</a></li>
+                                <li><a href="../classes/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../classes/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../classes/Screen.html">Screen</a></li>
+                                <li><a href="../classes/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../classes/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../classes/Tracking.html">Tracking</a></li>
+                                <li><a href="../classes/UA.html">UA</a></li>
+                                <li><a href="../classes/Util.html">Util</a></li>
+                                <li><a href="../classes/VideoEvents.html">VideoEvents</a></li>
+                            </ul>
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/ACT.html">ACT</a></li>
+                                <li><a href="../modules/actionsQueue.html">actionsQueue</a></li>
+                                <li><a href="../modules/Base.html">Base</a></li>
+                                <li><a href="../modules/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../modules/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../modules/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../modules/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../modules/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../modules/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../modules/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../modules/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../modules/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../modules/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../modules/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../modules/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../modules/Cookie.html">Cookie</a></li>
+                                <li><a href="../modules/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../modules/Enabler.html">Enabler</a></li>
+                                <li><a href="../modules/environment.html">environment</a></li>
+                                <li><a href="../modules/IO.html">IO</a></li>
+                                <li><a href="../modules/LayersList.html">LayersList</a></li>
+                                <li><a href="../modules/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../modules/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../modules/Screen.html">Screen</a></li>
+                                <li><a href="../modules/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../modules/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../modules/Tracking.html">Tracking</a></li>
+                            </ul>
+                
+                            <ul id="api-demos" class="apis demos">
+                                <li><a href="../demo/ACT_Demo_300x250.html">300x250</a></li>
+                                <li><a href="../demo/ACT_Demo_300x250_tracking.html">300x250_tracking</a></li>
+                                <li><a href="../demo/ACT_Demo_TrackingExample.html">TrackingExample</a></li>
+                                <li><a href="../demo/ACT_Demo_animation.html">animation</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard.html">billboard</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-enabler.html">billboard-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-expandable-enabler.html">billboard-expandable-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video.html">billboard_html_video</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video_rtl.html">billboard_html_video_rtl</a></li>
+                                <li><a href="../demo/ACT_Demo_carousel.html">carousel</a></li>
+                                <li><a href="../demo/ACT_Demo_dwelltime.html">dwelltime</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_expand.html">enabler_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_fullscreen_expand.html">enabler_fullscreen_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_target.html">enabler_target</a></li>
+                                <li><a href="../demo/ACT_Demo_floating.html">floating</a></li>
+                                <li><a href="../demo/ACT_Demo_force_env.html">force_env</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_enabler.html">html5_enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_standard.html">html5_standard</a></li>
+                                <li><a href="../demo/ACT_Demo_icons.html">icons</a></li>
+                                <li><a href="../demo/ACT_Demo_input_data.html">input_data</a></li>
+                                <li><a href="../demo/ACT_Demo_login_html.html">login_html</a></li>
+                                <li><a href="../demo/ACT_Demo_overwrite_env.html">overwrite_env</a></li>
+                                <li><a href="../demo/ACT_Demo_splash_ad.html">splash_ad</a></li>
+                                <li><a href="../demo/ACT_Demo_tablet_expandable.html">tablet_expandable</a></li>
+                                <li><a href="../demo/ACT_Demo_video_event.html">video_event</a></li>
+                                <li><a href="../demo/ACT_Demo_video_html.html">video_html</a></li>
+                            </ul>
+                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: src/library/ACT_customData.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+ * Copyright 2016, Yahoo Inc.
+ * Copyrights licensed under the New BSD License.
+ * See the accompanying LICENSE file for terms.
+ */
+
+/* global ACT */
+ACT.define(&#x27;CustomData&#x27;, [/*@&lt;*/&#x27;Debug&#x27;, /*&gt;@*/ &#x27;Lang&#x27;], function (ACT) {
+    &#x27;use strict&#x27;;
+
+    /* Shorthand */
+    var Lang = ACT.Lang;
+
+    /*@&lt;*/
+    var debug = ACT.Debug;
+    /*&gt;@*/
+
+
+    /**
+     * default configuration objec sections and API
+    */
+    var MAIN_SUPER_CONF_SECTIONS = [&#x27;forceEnv&#x27;, &#x27;darlaLayer&#x27;, &#x27;flow&#x27;, &#x27;layers&#x27;];
+    var LAYER_API_PUBLIC = [&#x27;width&#x27;, &#x27;height&#x27;, &#x27;type&#x27;, &#x27;width&#x27;, &#x27;height&#x27;, &#x27;x&#x27;, &#x27;y&#x27;, &#x27;alignH&#x27;, &#x27;base&#x27;, &#x27;alignH&#x27;, &#x27;alignV&#x27;, &#x27;cor&#x27;];
+    var ILLEGAL_ATTRIBUTES = [&#x27;id&#x27;, &#x27;type&#x27;, &#x27;layerName&#x27;, &#x27;content&#x27;];
+
+   /**
+    *
+    * Transforms a string with dot dotation (&#x27;myObject.subObject&#x27;) into an object and maps that reference in a given object
+    * @method locate
+    * @param {Object} obj - Object to map string against to.
+    * @param {String} path - String with dot notation to be used as reference to map data in the obj
+    * @return {String || Object || Array}} Returns object value related with the reference
+    * @private
+    *
+    */
+    function locate(obj, path) {
+        var arrayPattern = /(.+)\[(\d+)\]/;
+        var i;
+        var match;
+        path = path.split(&#x27;.&#x27;);
+
+        for (i = 0; i &lt; path.length; i++) {
+            match = arrayPattern.exec(path[i]);
+            if (match) {
+                if (!obj[match[1]]) {
+                    return false;
+                }
+                obj = obj[match[1]][parseInt(match[2], 10)];
+            } else {
+                if (obj) {
+                    obj = obj[path[i]];
+                }
+            }
+        }
+        return obj;
+    }
+
+    /**
+    *
+    * findEvents Finds events actions in configuration object and replaces their attributes.
+    * @method findEvents
+    * @param {String} data.id - Event id to look for.
+    * @param {Object} data.partialObjectRef - Partial area of the configuration object that belongs to this events.
+    * @param {String} data.groupToChange - Event action attribute to change data or create.
+    * @param {String} data.attrToChange - Value to change.
+    * @param {String} data.extraLevelToChange - Extra Value to change
+    * @param {String || Array} data.newValue - New value to add or change to matched event action
+    * @return {Object} Partial of superConfiguration object with updated event action from newData object
+    * @private
+    *
+    */
+    function findEvents(data) {
+        // id, currentObject, GroupToChange, KeyWordToChange, newValue
+        var events = data.partialObjectRef;
+        var i;
+        var j;
+        // check if it is an array
+        if (!Lang.isArray(events)) {
+            /*@&lt;*/
+            debug.log(&#x27;[ ACT_customData.js ]: ERROR: target does not have events&#x27;);
+            /*&gt;@*/
+            return events;
+        }
+
+        if (!data.GroupToChange || Lang.inArray(ILLEGAL_ATTRIBUTES, data.GroupToChange)) {
+            /*@&lt;*/
+            debug.log(&#x27;[ ACT_customData.js ] ERROR: shorcuts cannot change the following illegal attributes: &#x27; + ILLEGAL_ATTRIBUTES.join());
+            /*&gt;@*/
+            return events;
+        }
+
+        // run events
+        for (i = 0; i &lt; events.length; i++) {
+            for (j = 0; j &lt; events[i].actions.length; j++) {
+                // check for the id
+                if (events[i].actions[j].id === data.id) {
+                    events[i].actions[j][data.GroupToChange] = data.newValue;
+                    return events;
+                }
+            }
+        }
+        return events;
+    }
+
+    /**
+    *
+    * findNode recursively finds nodes in configuration object by id and replaces their attributes.
+    * @method findNode
+    * @param {String} data.id - Node id to look for.
+    * @param {Object} data.partialObjectRef - Partial area of the configuration object that belongs to this node.
+    * @param {String} data.GroupToChange - Node attribute to change data or create.
+    * @param {String} data.attrToChange - Value to change
+    * @param {String || Array} data.newValue - New value to add or change to matched event action
+    * @return {Object} Partial of superConfiguration object with updated node attribute.
+    * @private
+    *
+    */
+    function findNode(data) {
+        var currentValue;
+        var i;
+        // look Id in the first level of the object
+        if (data.id === data.partialObjectRef.id) {
+            // group does not exist, so it needs to create it, i.e: layers.mpu.container_1_1.css.height where container does not have css yet
+            if (data.attrToChange &amp;&amp; !Lang.inArray(ILLEGAL_ATTRIBUTES, data.attrToChange) &amp;&amp; !data.partialObjectRef[data.GroupToChange] &amp;&amp; data.GroupToChange !== &#x27;events&#x27;) {
+                data.partialObjectRef[data.GroupToChange] = {};
+                data.partialObjectRef[data.GroupToChange][data.attrToChange] = data.newValue;
+            } else if (data.attrToChange &amp;&amp; !Lang.inArray(ILLEGAL_ATTRIBUTES, data.attrToChange) &amp;&amp; data.partialObjectRef[data.GroupToChange] &amp;&amp; data.GroupToChange !== &#x27;events&#x27;) {
+                // group does exist already, so it needs to extend current value by adding new value, i.e: layers.mpu.container_1_1.css.height where container has css already.
+                currentValue = data.partialObjectRef[data.GroupToChange];
+                currentValue[data.attrToChange] = data.newValue;
+                data.partialObjectRef[data.GroupToChange] = currentValue;
+            } else if (data.GroupToChange === &#x27;events&#x27; &amp;&amp; data.attrToChange &amp;&amp; data.partialObjectRef.eventConfig) {
+                // Looking to change events
+                // change events
+                data.partialObjectRef.eventConfig = findEvents({
+                    id: data.attrToChange,
+                    partialObjectRef: data.partialObjectRef.eventConfig,
+                    attrToChange: data.GroupToChange,
+                    GroupToChange: data.extraLevelToChange,
+                    newValue: data.newValue
+                });
+            } else if (!Lang.inArray(ILLEGAL_ATTRIBUTES, data.GroupToChange)) {
+                // change first level object
+                data.partialObjectRef[data.GroupToChange] = data.newValue;
+            }
+        } else {
+            // go a deeper level into capabilities content attributes.
+            /* istanbul ignore else */
+            if (Lang.objHasKey(data.partialObjectRef, &#x27;content&#x27;)) {
+                for (i = 0; i &lt; data.partialObjectRef.content.length; i++) {
+                    data.partialObjectRef.content[i] = findNode({
+                        id: data.id,
+                        partialObjectRef: data.partialObjectRef.content[i],
+                        GroupToChange: data.GroupToChange,
+                        attrToChange: data.attrToChange,
+                        newValue: data.newValue,
+                        extraLevelToChange: data.extraLevelToChange
+                    });
+                }
+            }
+        }
+        return data.partialObjectRef;
+    }
+
+   /**
+    *
+    * overWriteEnv Change enviroment attributes
+    * Some examples:
+    *
+    * @example
+    *       &quot;forceEnv.forcedHTML5List.Chrome&quot; : &quot;*&quot; // Forced Chrome to play in any other
+    *       // overwrite all the object
+    *       &quot;forceEnv.forcedHTML5List&quot; :{
+    *           &quot;Manolo&quot;: &quot;31&quot;,
+    *           &quot;Chrome&quot;: &quot;31&quot;
+    *       }
+
+    * @method overWriteEnv
+    * @param {Object} data.listToForce List to force
+    * @param {Object} data.groupAttrib Group of attribute
+    * @return {Object} data.newData Value to assign to the object
+    * @return {Object} data.config Original configuration object
+    * @private
+    *
+    */
+    function overWriteEnv(data) {
+        var envObject = data.config;
+
+        // if value is a object to merge
+        if (data.groupAttrib === undefined) {
+            envObject[data.listToForce] = Lang.merge(envObject[data.listToForce], data.newData);
+        } else {
+            // it is a single reference
+            envObject[data.listToForce][data.groupAttrib] = data.newData;
+        }
+
+        return envObject;
+    }
+
+    function mapLayer(pos, newData, keyWords, superConf) {
+        var layer;
+        // run all the superConfig layers
+        for (layer in superConf.format.layers) {
+            // TODO this can be removed to use shortcuts without layer name
+            // second word is a layer name &amp;&amp; 3rd word is a layer Public attribute &amp;&amp; there are only 4 words max &amp;&amp; attribute to change is not illegal
+            if (layer === superConf.format.layers[keyWords[1]].layerName &amp;&amp; Lang.inArray(LAYER_API_PUBLIC, keyWords[2]) &amp;&amp; keyWords.length === 3 &amp;&amp; !Lang.inArray(ILLEGAL_ATTRIBUTES, keyWords[2])) {
+                // var layerName
+                // change layer attributes
+                superConf.format.layers[keyWords[1]][keyWords[2]] = newData[pos];
+            } else {
+                // layer content
+                if (!Lang.inArray(LAYER_API_PUBLIC, keyWords[2]) &amp;&amp; keyWords.length &gt; 3) {
+                    superConf.format.layers[keyWords[1]].contentLayer = findNode({
+                        id: keyWords[2],
+                        partialObjectRef: superConf.format.layers[keyWords[1]].contentLayer,
+                        GroupToChange: keyWords[3],
+                        attrToChange: keyWords[4],
+                        extraLevelToChange: keyWords[5],
+                        newValue: newData[pos]
+                    });
+                }
+            }
+        }
+
+        return superConf;
+    }
+
+    function setInput(dataObject, dataValue, dataId, inputData) {
+        var data = dataValue.substr(dataId.length + 1);
+        // look for shortcut in data
+        var finalInput = locate(inputData, data);
+
+        if (finalInput === undefined) {
+            return dataObject;
+        }
+
+        // have callback/
+        if (dataObject.callback) {
+            finalInput = dataObject.callback(finalInput);
+        }
+
+        return finalInput;
+    }
+
+    /**
+     * ACT CustomData Utilities and Helpers
+     * @class CustomData
+     * @module ACT
+     * @requires lang, util
+     * @static
+     */
+    function CustomData() {
+        /*@&lt;*/
+        debug.log(&#x27;[ACT_CustomData.js]: instantiated&#x27;);
+        /*&gt;@*/
+        /* istanbul ignore if */
+        if (CustomData.prototype.singleton) {
+            return CustomData.prototype.singleton;
+        }
+        CustomData.prototype.singleton = this;
+    }
+
+    /**
+    * @attribute ATTRS
+    * @type {{NAME: string, version: string}}
+    * @initOnly
+    */
+    CustomData.ATTRS = {
+        NAME: &#x27;CustomData&#x27;,
+        version: &#x27;1.1.0&#x27;
+    };
+
+    CustomData.prototype = {
+
+        /**
+        *
+        * map Change superConfig attributes from base object
+        * Some examples:
+         * @example
+        *       &quot;layers.mpu.width&quot; : &quot;500px&quot; // Change width attribute of mpu layer.
+        *       &quot;layers.mpu.container_1_1.css.height&quot; : &quot;500px&quot; // Change css attribute height of a content capability with id &#x27;container_1_1&#x27;.
+        *       &quot;layers.mpu.mpu_flash.swfConfig.flashvars&quot; : { &quot;clickTAG&quot;: &quot;test&quot;} // Adding a flashVars object into swf object.
+        *
+        * @method mapCustomData
+        * @param {Object} newData Custom data object
+        * @param {Object} superConf Super Configuration object
+        * @return {Object} superConfiguration object with updated attributes from newData object.
+        *
+        */
+        map: function (newData, superConf) {
+            var i;
+            var keyWords;
+            var superConfArea;
+            var tempSuperConf;
+            for (i in newData) {
+                /* istanbul ignore if */
+                if (!newData.hasOwnProperty(i)) {
+                    continue;
+                }
+
+                keyWords = i.split(&#x27;.&#x27;); // key words from shorcuts: layers.mpu.width
+                superConfArea = keyWords[0]; // Main super configuration area to be changed
+                tempSuperConf = superConf;
+
+                // check for one of the main sections of super configuration
+                /*@&lt;*/
+                if (!Lang.inArray(MAIN_SUPER_CONF_SECTIONS, superConfArea)) {
+                    debug.log(&#x27;[ ACT_CustomData.js ] ERROR: shortcut must start with one of this references: &quot;darlaLayer&quot;, &quot;flow&quot; or &quot;layers&quot;&#x27;);
+                }
+                /*&gt;@*/
+
+                switch (superConfArea) {
+                    case &#x27;layers&#x27;:
+                        tempSuperConf = mapLayer(i, newData, keyWords, tempSuperConf);
+                    break;
+
+                    case &#x27;flow&#x27;:
+                        tempSuperConf.format[superConfArea] = findEvents({
+                            id: keyWords[1],
+                            partialObjectRef: tempSuperConf.format[superConfArea],
+                            GroupToChange: keyWords[2],
+                            attrToChange: keyWords[4],
+                            extraLevelToChange: keyWords[5],
+                            newValue: newData[i]
+
+                        });
+                    break;
+
+                    case &#x27;darlaLayer&#x27;:
+                        tempSuperConf.format[superConfArea].holder[keyWords[1]] = newData[i];
+                    break;
+
+                    case &#x27;forceEnv&#x27;:
+                        tempSuperConf.baseConfig.forceEnv = overWriteEnv({
+                            listToForce: keyWords[1],
+                            groupAttrib: keyWords[2],
+                            newData: newData[i],
+                            config: tempSuperConf.baseConfig.forceEnv
+                        });
+                    break;
+                    default:
+                    break;
+                }
+            }
+            return tempSuperConf;
+        },
+
+       /**
+        *
+        * inputOntoCustomDataJSON Maps shortcuts in custom Data object against input data object for JSON inputs
+        * @method inputOntoCustomDataJSON
+        * @param {String} dataID - Id reference to the input data.
+        * @param {Object} customData - Custom data object with all the shortcuts.
+        * @param {Function} customData.callback - Callback for extra manipulation of custom data
+        * @param {Object} inputData - Input data from external file.
+        * @return {Object} Custom data object with merged data from custom Data.
+        *
+        */
+        inputOntoCustomDataJSON: function (dataID, customData, inputData) {
+            var i;
+            var customDataValue;
+            // run custom data object for shortcuts
+            for (i in customData) {
+                /* istanbul ignore else  */
+                if (customData.hasOwnProperty(i)) {
+                    customDataValue = customData[i].value ? customData[i].value : customData[i];
+                    if (Lang.inArray(customDataValue, dataID)) {
+                        customData[i] = setInput(customData[i], customDataValue, dataID, inputData);
+                    } else if (customData[i].value) {
+                        // if it&#x27;s a object but it is not looking for data from the inputData
+                        customData[i] = customData[i].value;
+                    }
+                }
+            }
+            return customData;
+        }
+    };
+
+    return new CustomData();
+});
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

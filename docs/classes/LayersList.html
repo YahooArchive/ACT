@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>LayersList - ACT.js</title>
+    <link rel="stylesheet" href="https://s.yimg.com/zz/combo?yui-s:3.14.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="https://s.yimg.com/rz/l/favicon.ico">
+    <script src="https://s.yimg.com/zz/combo?yui-s:3.14.1/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="https://s.yimg.com/cv/ae/global/ACTJS/logo/ACT.js.logo.png" title="ACT.js" width="150"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 1.1.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                            <li><a href="#api-demos">Demo and Examples</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/ACT.html">ACT</a></li>
+                                <li><a href="../classes/ActionsQueue.html">ActionsQueue</a></li>
+                                <li><a href="../classes/Base.html">Base</a></li>
+                                <li><a href="../classes/Capability.html">Capability</a></li>
+                                <li><a href="../classes/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../classes/Class.html">Class</a></li>
+                                <li><a href="../classes/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../classes/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../classes/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../classes/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../classes/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../classes/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../classes/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../classes/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../classes/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../classes/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../classes/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../classes/Cookie.html">Cookie</a></li>
+                                <li><a href="../classes/CustomData.html">CustomData</a></li>
+                                <li><a href="../classes/Debug.html">Debug</a></li>
+                                <li><a href="../classes/Dom.html">Dom</a></li>
+                                <li><a href="../classes/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../classes/Enabler.html">Enabler</a></li>
+                                <li><a href="../classes/Environment.html">Environment</a></li>
+                                <li><a href="../classes/Event.html">Event</a></li>
+                                <li><a href="../classes/Flash.html">Flash</a></li>
+                                <li><a href="../classes/IO.html">IO</a></li>
+                                <li><a href="../classes/Json.html">Json</a></li>
+                                <li><a href="../classes/Lang.html">Lang</a></li>
+                                <li><a href="../classes/LayersList.html">LayersList</a></li>
+                                <li><a href="../classes/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../classes/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../classes/Screen.html">Screen</a></li>
+                                <li><a href="../classes/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../classes/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../classes/Tracking.html">Tracking</a></li>
+                                <li><a href="../classes/UA.html">UA</a></li>
+                                <li><a href="../classes/Util.html">Util</a></li>
+                                <li><a href="../classes/VideoEvents.html">VideoEvents</a></li>
+                            </ul>
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/ACT.html">ACT</a></li>
+                                <li><a href="../modules/actionsQueue.html">actionsQueue</a></li>
+                                <li><a href="../modules/Base.html">Base</a></li>
+                                <li><a href="../modules/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../modules/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../modules/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../modules/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../modules/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../modules/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../modules/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../modules/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../modules/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../modules/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../modules/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../modules/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../modules/Cookie.html">Cookie</a></li>
+                                <li><a href="../modules/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../modules/Enabler.html">Enabler</a></li>
+                                <li><a href="../modules/environment.html">environment</a></li>
+                                <li><a href="../modules/IO.html">IO</a></li>
+                                <li><a href="../modules/LayersList.html">LayersList</a></li>
+                                <li><a href="../modules/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../modules/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../modules/Screen.html">Screen</a></li>
+                                <li><a href="../modules/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../modules/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../modules/Tracking.html">Tracking</a></li>
+                            </ul>
+                
+                            <ul id="api-demos" class="apis demos">
+                                <li><a href="../demo/ACT_Demo_300x250.html">300x250</a></li>
+                                <li><a href="../demo/ACT_Demo_300x250_tracking.html">300x250_tracking</a></li>
+                                <li><a href="../demo/ACT_Demo_TrackingExample.html">TrackingExample</a></li>
+                                <li><a href="../demo/ACT_Demo_animation.html">animation</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard.html">billboard</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-enabler.html">billboard-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-expandable-enabler.html">billboard-expandable-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video.html">billboard_html_video</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video_rtl.html">billboard_html_video_rtl</a></li>
+                                <li><a href="../demo/ACT_Demo_carousel.html">carousel</a></li>
+                                <li><a href="../demo/ACT_Demo_dwelltime.html">dwelltime</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_expand.html">enabler_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_fullscreen_expand.html">enabler_fullscreen_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_target.html">enabler_target</a></li>
+                                <li><a href="../demo/ACT_Demo_floating.html">floating</a></li>
+                                <li><a href="../demo/ACT_Demo_force_env.html">force_env</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_enabler.html">html5_enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_standard.html">html5_standard</a></li>
+                                <li><a href="../demo/ACT_Demo_icons.html">icons</a></li>
+                                <li><a href="../demo/ACT_Demo_input_data.html">input_data</a></li>
+                                <li><a href="../demo/ACT_Demo_login_html.html">login_html</a></li>
+                                <li><a href="../demo/ACT_Demo_overwrite_env.html">overwrite_env</a></li>
+                                <li><a href="../demo/ACT_Demo_splash_ad.html">splash_ad</a></li>
+                                <li><a href="../demo/ACT_Demo_tablet_expandable.html">tablet_expandable</a></li>
+                                <li><a href="../demo/ACT_Demo_video_event.html">video_event</a></li>
+                                <li><a href="../demo/ACT_Demo_video_html.html">video_html</a></li>
+                            </ul>
+                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1>LayersList Class</h1>
+<div class="box meta">
+
+
+        <div class="foundat">
+            Defined in: <a href="../files/src_core_ACT_Layerslist.js.html#l8"><code>src&#x2F;core&#x2F;ACT_Layerslist.js:8</code></a>
+        </div>
+
+            Module: <a href="../modules/LayersList.html">LayersList</a>
+
+</div>
+
+
+<div class="box intro">
+    <p>The &#39;LayersList&#39; is a core module made to manage the layers functionalities.
+This module is used in &#39;StandardAd&#39;.</p>
+
+</div>
+
+
+<div id="classdocs" class="tabview">
+    <ul class="api-class-tabs">
+        <li class="api-class-tab index"><a href="#index">Index</a></li>
+
+            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
+    </ul>
+
+    <div>
+        <div id="index" class="api-class-tabpanel index">
+            <h2 class="off-left">Item Index</h2>
+
+                <div class="index-section methods">
+                    <h3>Methods</h3>
+
+                    <ul class="index-list methods">
+                            <li class="index-item method public">
+                                <a href="#method_applyingCoordinate">applyingCoordinate</a>
+
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#method_calculateLayerAttributeValue">calculateLayerAttributeValue</a>
+
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#method_checkLayerExists">checkLayerExists</a>
+
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#method_createLayers">createLayers</a>
+
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#method_destructor">destructor</a>
+
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#method_getLayer">getLayer</a>
+
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#method_getLayerPosition">getLayerPosition</a>
+
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#method_initListeners">initListeners</a>
+
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#method_isLayerPlaying">isLayerPlaying</a>
+
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#method_makeNormalLayer">makeNormalLayer</a>
+
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#method_onResize">onResize</a>
+
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#method_playAllLayers">playAllLayers</a>
+
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#method_playLayer">playLayer</a>
+
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#method_playLayerAction">playLayerAction</a>
+
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#method_stopAllLayers">stopAllLayers</a>
+
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#method_stopLayer">stopLayer</a>
+
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#method_stopLayerAction">stopLayerAction</a>
+
+                            </li>
+                    </ul>
+                </div>
+
+
+
+        </div>
+
+            <div id="methods" class="api-class-tabpanel">
+                <h2 class="off-left">Methods</h2>
+
+<div id="method_applyingCoordinate" class="method item public">
+    <h3 class="name"><code>applyingCoordinate</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>targetAttr</code>
+                </li>
+                <li class="arg">
+                        <code>layerPosition</code>
+                </li>
+                <li class="arg">
+                        <code>requestLayer</code>
+                </li>
+                <li class="arg">
+                        <code>targetLayer</code>
+                </li>
+                <li class="arg">
+                        <code>coordinate</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+        <span class="flag public">public</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_core_ACT_Layerslist.js.html#l398"><code>src&#x2F;core&#x2F;ACT_Layerslist.js:398</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">targetAttr</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>coordinate to get from</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">layerPosition</code>
+                        <span class="type">NUmber</span>
+
+
+                    <div class="param-description">
+                        <p>inline layer position</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">requestLayer</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>inline layer object</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">targetLayer</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>overlay layer object</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">coordinate</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>to use to stick layer to</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_calculateLayerAttributeValue" class="method item public">
+    <h3 class="name"><code>calculateLayerAttributeValue</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>layerName</code>
+                </li>
+                <li class="arg">
+                        <code>attrValue</code>
+                </li>
+                <li class="arg">
+                        <code>Coordinate</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+        <span class="flag public">public</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_core_ACT_Layerslist.js.html#l457"><code>src&#x2F;core&#x2F;ACT_Layerslist.js:457</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">layerName</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>Name of layer which need to calculate the position</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">attrValue</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>to be tested</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">Coordinate</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>for calculating (tl, tr, bl, br)</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_checkLayerExists" class="method item public">
+    <h3 class="name"><code>checkLayerExists</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>layerName</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+        <span class="flag public">public</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_core_ACT_Layerslist.js.html#l239"><code>src&#x2F;core&#x2F;ACT_Layerslist.js:239</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Function to check if the layer exists in the config</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">layerName</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>name of the layer</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_createLayers" class="method item public">
+    <h3 class="name"><code>createLayers</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code class="optional">[Object]</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+        <span class="flag public">public</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_core_ACT_Layerslist.js.html#l166"><code>src&#x2F;core&#x2F;ACT_Layerslist.js:166</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Function to create layer objects based on theirs configObject
+New layer objects will be pushed in layersList attributes</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name optional">[Object]</code>
+                        <span class="type">Object</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+                    <div class="param-description">
+                        <p>layersConfig</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_destructor" class="method item public">
+    <h3 class="name"><code>destructor</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+        <span class="flag public">public</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_core_ACT_Layerslist.js.html#l550"><code>src&#x2F;core&#x2F;ACT_Layerslist.js:550</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Destructor function</p>
+
+    </div>
+
+
+
+
+</div>
+<div id="method_getLayer" class="method item public">
+    <h3 class="name"><code>getLayer</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>layerName</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+
+
+        <span class="flag public">public</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_core_ACT_Layerslist.js.html#l216"><code>src&#x2F;core&#x2F;ACT_Layerslist.js:216</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Return the required layer from the layersList array, otherwise return false if not found</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">layerName</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Object</span>:
+                    <p>layer from layersList array</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getLayerPosition" class="method item public">
+    <h3 class="name"><code>getLayerPosition</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>layerName</code>
+                </li>
+                <li class="arg">
+                        <code>coordinate</code>
+                </li>
+                <li class="arg">
+                        <code>attributes</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+        <span class="flag public">public</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_core_ACT_Layerslist.js.html#l483"><code>src&#x2F;core&#x2F;ACT_Layerslist.js:483</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Function to calculate position for a layer based on other layer position</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">layerName</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>Name of layer which need to calculate the position</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">coordinate</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>Coordinate for calculating (tl, tr, bl, br)</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">attributes</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>List of attribute need to be calculated</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_initListeners" class="method item public">
+    <h3 class="name"><code>initListeners</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+        <span class="flag public">public</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_core_ACT_Layerslist.js.html#l114"><code>src&#x2F;core&#x2F;ACT_Layerslist.js:114</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Method to start off listeners</p>
+
+    </div>
+
+
+
+
+</div>
+<div id="method_isLayerPlaying" class="method item public">
+    <h3 class="name"><code>isLayerPlaying</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>layerName</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+
+
+        <span class="flag public">public</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_core_ACT_Layerslist.js.html#l382"><code>src&#x2F;core&#x2F;ACT_Layerslist.js:382</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>method to check if a layer is playing</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">layerName</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Boolean</span>:
+                    <p>true if layer is playing</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_makeNormalLayer" class="method item public">
+    <h3 class="name"><code>makeNormalLayer</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>layerConfig</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+        <span class="flag public">public</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_core_ACT_Layerslist.js.html#l194"><code>src&#x2F;core&#x2F;ACT_Layerslist.js:194</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Function to create new LayerStandard from config object</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">layerConfig</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>Config Object for new layer</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_onResize" class="method item public">
+    <h3 class="name"><code>onResize</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>savelayer</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+        <span class="flag public">public</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_core_ACT_Layerslist.js.html#l517"><code>src&#x2F;core&#x2F;ACT_Layerslist.js:517</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Function to stop or replay layer on resize.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">savelayer</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_playAllLayers" class="method item public">
+    <h3 class="name"><code>playAllLayers</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+        <span class="flag public">public</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_core_ACT_Layerslist.js.html#l256"><code>src&#x2F;core&#x2F;ACT_Layerslist.js:256</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Function to play all declared layers</p>
+
+    </div>
+
+
+
+
+</div>
+<div id="method_playLayer" class="method item public">
+    <h3 class="name"><code>playLayer</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>layerName</code>
+                </li>
+                <li class="arg">
+                        <code>actionId</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+        <span class="flag public">public</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_core_ACT_Layerslist.js.html#l280"><code>src&#x2F;core&#x2F;ACT_Layerslist.js:280</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Play a layer</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">layerName</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>Name of the layer to be played</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">actionId</code>
+                        <span class="type">Number</span>
+
+
+                    <div class="param-description">
+                        <p>ID of the action sent by actionsQueue to play layer</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_playLayerAction" class="method item public">
+    <h3 class="name"><code>playLayerAction</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>layerObject</code>
+                </li>
+                <li class="arg">
+                        <code>actionId</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+        <span class="flag public">public</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_core_ACT_Layerslist.js.html#l300"><code>src&#x2F;core&#x2F;ACT_Layerslist.js:300</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Defining action to be executed when layer is played</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">layerObject</code>
+                        <span class="type"><a href="../classes/LayerStandard.html" class="crosslink">LayerStandard</a></span>
+
+
+                    <div class="param-description">
+                        <p>Layer instance</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">actionId</code>
+                        <span class="type">Number</span>
+
+
+                    <div class="param-description">
+                        <p>Id of the playLayer action in the queue</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_stopAllLayers" class="method item public">
+    <h3 class="name"><code>stopAllLayers</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+        <span class="flag public">public</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_core_ACT_Layerslist.js.html#l327"><code>src&#x2F;core&#x2F;ACT_Layerslist.js:327</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Method to stop all the layers by creating a new close action per layers and add them into queue</p>
+
+    </div>
+
+
+
+
+</div>
+<div id="method_stopLayer" class="method item public">
+    <h3 class="name"><code>stopLayer</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>attrs</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+        <span class="flag public">public</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_core_ACT_Layerslist.js.html#l350"><code>src&#x2F;core&#x2F;ACT_Layerslist.js:350</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Stop a layer</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">attrs</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>Object containing action data of the layer to be stopped</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_stopLayerAction" class="method item public">
+    <h3 class="name"><code>stopLayerAction</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>savedLayer</code>
+                </li>
+                <li class="arg">
+                        <code>actionId</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+        <span class="flag public">public</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_core_ACT_Layerslist.js.html#l365"><code>src&#x2F;core&#x2F;ACT_Layerslist.js:365</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">savedLayer</code>
+                        <span class="type"><a href="../classes/LayerStandard.html" class="crosslink">LayerStandard</a></span>
+
+
+                    <div class="param-description">
+                        <p>Layer to be stopped</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">actionId</code>
+                        <span class="type">Number</span>
+
+
+                    <div class="param-description">
+                        <p>Id of the stopLayer action in the queue</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+            </div>
+
+
+
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

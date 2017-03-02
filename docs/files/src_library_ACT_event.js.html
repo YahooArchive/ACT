@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src/library/ACT_event.js - ACT.js</title>
+    <link rel="stylesheet" href="https://s.yimg.com/zz/combo?yui-s:3.14.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="https://s.yimg.com/rz/l/favicon.ico">
+    <script src="https://s.yimg.com/zz/combo?yui-s:3.14.1/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="https://s.yimg.com/cv/ae/global/ACTJS/logo/ACT.js.logo.png" title="ACT.js" width="150"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 1.1.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                            <li><a href="#api-demos">Demo and Examples</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/ACT.html">ACT</a></li>
+                                <li><a href="../classes/ActionsQueue.html">ActionsQueue</a></li>
+                                <li><a href="../classes/Base.html">Base</a></li>
+                                <li><a href="../classes/Capability.html">Capability</a></li>
+                                <li><a href="../classes/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../classes/Class.html">Class</a></li>
+                                <li><a href="../classes/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../classes/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../classes/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../classes/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../classes/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../classes/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../classes/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../classes/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../classes/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../classes/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../classes/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../classes/Cookie.html">Cookie</a></li>
+                                <li><a href="../classes/CustomData.html">CustomData</a></li>
+                                <li><a href="../classes/Debug.html">Debug</a></li>
+                                <li><a href="../classes/Dom.html">Dom</a></li>
+                                <li><a href="../classes/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../classes/Enabler.html">Enabler</a></li>
+                                <li><a href="../classes/Environment.html">Environment</a></li>
+                                <li><a href="../classes/Event.html">Event</a></li>
+                                <li><a href="../classes/Flash.html">Flash</a></li>
+                                <li><a href="../classes/IO.html">IO</a></li>
+                                <li><a href="../classes/Json.html">Json</a></li>
+                                <li><a href="../classes/Lang.html">Lang</a></li>
+                                <li><a href="../classes/LayersList.html">LayersList</a></li>
+                                <li><a href="../classes/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../classes/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../classes/Screen.html">Screen</a></li>
+                                <li><a href="../classes/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../classes/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../classes/Tracking.html">Tracking</a></li>
+                                <li><a href="../classes/UA.html">UA</a></li>
+                                <li><a href="../classes/Util.html">Util</a></li>
+                                <li><a href="../classes/VideoEvents.html">VideoEvents</a></li>
+                            </ul>
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/ACT.html">ACT</a></li>
+                                <li><a href="../modules/actionsQueue.html">actionsQueue</a></li>
+                                <li><a href="../modules/Base.html">Base</a></li>
+                                <li><a href="../modules/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../modules/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../modules/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../modules/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../modules/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../modules/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../modules/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../modules/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../modules/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../modules/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../modules/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../modules/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../modules/Cookie.html">Cookie</a></li>
+                                <li><a href="../modules/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../modules/Enabler.html">Enabler</a></li>
+                                <li><a href="../modules/environment.html">environment</a></li>
+                                <li><a href="../modules/IO.html">IO</a></li>
+                                <li><a href="../modules/LayersList.html">LayersList</a></li>
+                                <li><a href="../modules/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../modules/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../modules/Screen.html">Screen</a></li>
+                                <li><a href="../modules/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../modules/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../modules/Tracking.html">Tracking</a></li>
+                            </ul>
+                
+                            <ul id="api-demos" class="apis demos">
+                                <li><a href="../demo/ACT_Demo_300x250.html">300x250</a></li>
+                                <li><a href="../demo/ACT_Demo_300x250_tracking.html">300x250_tracking</a></li>
+                                <li><a href="../demo/ACT_Demo_TrackingExample.html">TrackingExample</a></li>
+                                <li><a href="../demo/ACT_Demo_animation.html">animation</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard.html">billboard</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-enabler.html">billboard-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-expandable-enabler.html">billboard-expandable-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video.html">billboard_html_video</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video_rtl.html">billboard_html_video_rtl</a></li>
+                                <li><a href="../demo/ACT_Demo_carousel.html">carousel</a></li>
+                                <li><a href="../demo/ACT_Demo_dwelltime.html">dwelltime</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_expand.html">enabler_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_fullscreen_expand.html">enabler_fullscreen_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_target.html">enabler_target</a></li>
+                                <li><a href="../demo/ACT_Demo_floating.html">floating</a></li>
+                                <li><a href="../demo/ACT_Demo_force_env.html">force_env</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_enabler.html">html5_enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_standard.html">html5_standard</a></li>
+                                <li><a href="../demo/ACT_Demo_icons.html">icons</a></li>
+                                <li><a href="../demo/ACT_Demo_input_data.html">input_data</a></li>
+                                <li><a href="../demo/ACT_Demo_login_html.html">login_html</a></li>
+                                <li><a href="../demo/ACT_Demo_overwrite_env.html">overwrite_env</a></li>
+                                <li><a href="../demo/ACT_Demo_splash_ad.html">splash_ad</a></li>
+                                <li><a href="../demo/ACT_Demo_tablet_expandable.html">tablet_expandable</a></li>
+                                <li><a href="../demo/ACT_Demo_video_event.html">video_event</a></li>
+                                <li><a href="../demo/ACT_Demo_video_html.html">video_html</a></li>
+                            </ul>
+                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: src/library/ACT_event.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+ * Copyright 2016, Yahoo Inc.
+ * Copyrights licensed under the New BSD License.
+ * See the accompanying LICENSE file for terms.
+ */
+
+/* global ACT */
+ACT.define(&#x27;Event&#x27;, [/*@&lt;*/&#x27;Debug&#x27;, /*&gt;@*/ &#x27;Lang&#x27;], function (ACT) {
+    &#x27;use strict&#x27;;
+
+    var lang = ACT.Lang;
+    /*@&lt;*/
+    var debug = ACT.Debug;
+    /*&gt;@*/
+
+    /**
+     * Pair of events and HTML tags used for testing event support for current browser.
+     * @readonly
+     * @type {{select: string, change: string, submit: string, reset: string, error: string, load: string, abort: string}}
+     */
+    var TAGNAMES = {
+        select: &#x27;input&#x27;,
+        change: &#x27;input&#x27;,
+        submit: &#x27;form&#x27;,
+        reset: &#x27;form&#x27;,
+        error: &#x27;img&#x27;,
+        load: &#x27;img&#x27;,
+        abort: &#x27;img&#x27;
+    };
+
+    /**
+     * Object containing all events being listened
+     * @private
+     * @type {{}}
+     */
+    var listeners = {};
+
+    /**
+     * Simple integer to keep generate a &#x27;random index&#x27; for added events.
+     * @private
+     * @type {Number}
+     */
+    var eventIndex = 0;
+
+    /**
+     * Event Utilities / Helpers
+     * @class Event
+     * @module ACT
+     * @requires lang
+     */
+    function Event() {
+        /* istanbul ignore if */
+        if (Event.prototype.singleton) {
+            return Event.prototype.singleton;
+        }
+        Event.prototype.singleton = this;
+    }
+
+    /**
+     * @attribute ATTRS
+     * @type {{NAME: string, version: string}}
+     * @initOnly
+     */
+    Event.ATTRS = {
+        NAME: &#x27;event&#x27;,
+        version: &#x27;1.1.0&#x27;
+    };
+
+
+    /**
+     * Checks event string against events supported by current browser.
+     * Used to decide if it&#x27;s custom event or not.
+     * @param eventName event string
+     * @param element element to test
+     * @returns {boolean} is a native browser event
+     * @private
+     */
+    function isEventSupported(eventName, element) {
+        var isSupported;
+        element = element || document.createElement(TAGNAMES[eventName] || &#x27;div&#x27;);
+        eventName = &#x27;on&#x27; + eventName;
+        isSupported = (eventName in element);
+
+        if (!isSupported) {
+            /* istanbul ignore else */
+            if (!element.setAttribute) {
+                element = document.createElement(&#x27;div&#x27;);
+            }
+
+            /* istanbul ignore else */
+            if (element.setAttribute &amp;&amp; element.removeAttribute) {
+                element.setAttribute(eventName, &#x27;&#x27;);
+                isSupported = typeof element[eventName] === &#x27;function&#x27;;
+
+                /* istanbul ignore else */
+                if (typeof element[eventName] !== &#x27;undefined&#x27;) {
+                    element[eventName] = undefined;
+                }
+                element.removeAttribute(eventName);
+            }
+        }
+        element = null;
+        return isSupported;
+    }
+
+    /**
+     * Wrapper to add event listeners to objects.
+     * @param {String} event Event to trigger on
+     * @param {Function} fn Function to call when the event is fired
+     * @param {Object} element Element to attach the event to
+     * @param {Object} scope Scope Object to trigger the function with
+     * @method addListener
+     * @private
+     * @static
+     */
+    function addListener(evnt, fn, element, scope) {
+        var bound = fn;
+
+        if (scope) {
+            bound = lang.bind(scope, [], fn);
+        }
+
+        if (element &amp;&amp; isEventSupported(evnt, element)) {
+            if (window.addEventListener) {
+                element.addEventListener(evnt, bound, 0);
+            } else if (window.attachEvent) {
+                element.attachEvent(&#x27;on&#x27; + evnt, bound);
+            }
+        } else {
+            element = null;
+        }
+
+        return {
+            element: element,
+            fn: fn,
+            scope: scope,
+            event: evnt,
+            bound: bound
+        };
+    }
+
+    Event.prototype = {
+		/*@&lt;*/
+		removable: [],
+		/*&gt;@*/
+
+        // exposing for debug and test
+        /*@&lt;*/
+        debugListeners: listeners,
+        debugEventIndex: function () {
+            return eventIndex;
+        },
+        debugIsEventSupported: isEventSupported,
+        debugAddListener: addListener,
+        debugGetListeners: function () {
+            return listeners;
+        },
+        debugSetListeners: function (key, value) {
+            listeners[key] = value;
+            return listeners;
+        },
+        /*&gt;@*/
+
+        /**
+         * Subscribe to listen to event
+         * @method on
+         * @param {String} event event string
+         * @param {Object} fn callback method
+         * @param {Object} element DOM element listening for event (optional)
+         * @param {Object} scope event scope - default to this
+         * @return {Object} obj.remove A simple wrapper to remove this event listener.
+         * @public
+         *
+         * @example
+         *    var Event = ACT.Event;
+         *    var Dom = ACT.Dom;
+         *    // custom event
+         *    Event.on( &quot;customEventString&quot;, function( eventData ) { ...do something based on this event...}, null, this);
+         *    // &#x27;vanilla&#x27; event
+         *    Event.on(&quot;click&quot;, function( eventData ) { Event.preventDefault(eventData); ... do something ...}, Dom.byId(&quot;some_node_id&quot;), this);
+         *
+         */
+        on: function (evnt, fn, element, scope) {
+            var root = this;
+            var list;
+            var index = eventIndex;
+            var returnSet;
+            eventIndex++;
+
+            /*@&lt;*/
+            debug.log(&#x27;[ ACT_event.js ] Attach ON for: &#x27;, evnt);
+            /*&gt;@*/
+
+            // Create the topic&#x27;s object if not yet created
+            if (!lang.objHasKey(listeners, evnt)) {
+                listeners[evnt] = {};
+            }
+
+            list = addListener(evnt, fn, element, scope);
+            listeners[evnt][index] = list;
+
+            // Provide handle back for removal of topic
+			returnSet = {
+                eventType: evnt,
+                index: index,
+                remove: function () {
+                    /* if the event is removed already then ignore it */
+                    if (!listeners[evnt][index]) {
+                        return;
+                    }
+
+                    if (listeners[evnt][index].element) {
+                        /* NOTE: The call to removeListener deletes the listeners[event][index] automagically. Hence
+                            the delete is in the else. This is done in case someone calls removeListener directly.
+                        */
+                        root.removeListener(evnt, fn, element);
+                    } else {
+                        delete listeners[evnt][index];
+                    }
+                }
+            };
+            /*@&lt;*/
+            this.removable.push(returnSet);
+            /*&gt;@*/
+            return returnSet;
+        },
+
+        /**
+         * Wrapper to add event listeners to CSS.
+         * @param {String} event Event to trigger on
+         * @param {Function} fn Function to call when the event is fired
+         * @param {Object} element Element to attach the event to
+         * @param {Object} scope Scope Object to trigger the function with
+         * @method addCSSListener
+         * @public
+         * @static
+         */
+        addCSSListener: function (evnt, fn, element, scope) {
+            this.on(evnt.toLowerCase(), fn, element, scope);
+            this.on(&#x27;webkit&#x27; + evnt, fn, element, scope);
+            this.on(&#x27;moz&#x27; + evnt, fn, element, scope);
+            this.on(&#x27;ms&#x27; + evnt, fn, element, scope);
+            this.on(&#x27;o&#x27; + evnt, fn, element, scope);
+        },
+
+        /**
+         * Helper Function to remove event listeners from objects.
+         * @param {String} event Event to remove
+         * @param {Function} fn Function to remove from the object
+         * @param {Object} element Element to remove the event from
+         * @method removeListenerHelper
+         * @private
+         * @static
+         */
+        removeListenerHelper: function (evnt, fn, element) {
+            if (window.removeEventListener) {
+                element.removeEventListener(evnt, fn, 0);
+                /* istanbul ignore else */
+            } else if (window.detachEvent) {
+                element.detachEvent(&#x27;on&#x27; + evnt, fn);
+            }
+        },
+
+        /**
+         * Wrapper to remove event listeners from objects.
+         * @param {String} event Event to remove
+         * @param {Function} fn Function to remove from the object
+         * @param {Object} element Element to remove the event from
+         * @method removeListener
+         * @public
+         * @static
+         */
+        removeListener: function (evnt, fn, element) {
+            var list = listeners[evnt] || {};
+            var key;
+            var el;
+            for (key in list) {
+                if (list.hasOwnProperty(key)) {
+                    el = list[key];
+                    if (el &amp;&amp; el.element === element &amp;&amp; (el.fn === fn || el.bound === fn)) {
+                        this.removeListenerHelper(evnt, el.bound, element);
+                        delete listeners[evnt][key];
+                    }
+                }
+            }
+        },
+
+
+        /**
+         * The &#x27;ready&#x27; function is a modified version of the JQuery &#x27;ready&#x27; functionality found at http://api.jquery.com/ready/
+         * The code below is modified according to the JQuery MIT License https://github.com/jquery/jquery
+         */
+        ready: (function () {
+            var document = window.document;
+            var readyBound = false;
+            var callbackQueue = [];
+            var ready;
+            var registerOrRunCallback = function (callback) {
+                /* istanbul ignore else */
+                if (typeof callback === &#x27;function&#x27;) {
+                    callbackQueue.push(callback);
+                }
+            };
+            var domReadyCallback = function () {
+                while (callbackQueue.length) {
+                    (callbackQueue.shift())();
+                }
+                registerOrRunCallback = function (callback) {
+                    callback();
+                };
+            };
+            var domReady = function () {
+                /* istanbul ignore else */
+                if (!ready.isReady) {
+                    /* istanbul ignore else */
+                    if (!document.body) {
+                        return setTimeout(domReady, 1);
+                    }
+                    ready.isReady = true;
+                    domReadyCallback();
+                }
+                return 0;
+            };
+            var DOMContentLoaded = function () {
+                if (document.addEventListener) {
+                    document.removeEventListener(&#x27;DOMContentLoaded&#x27;, DOMContentLoaded, false);
+                } else {
+                    document.detachEvent(&#x27;onreadystatechange&#x27;, DOMContentLoaded);
+                }
+                domReady();
+            };
+
+            var doScrollCheck = function () {
+                /* istanbul ignore else */
+                if (ready.isReady) {
+                    return;
+                }
+                try {
+                    document.documentElement.doScroll(&#x27;left&#x27;);
+                } catch (error) {
+                    setTimeout(doScrollCheck, 1);
+                    return;
+                }
+                domReady();
+            };
+            var bindReady = function () {
+                var toplevel = false;
+                /* istanbul ignore else */
+                if (readyBound) {
+                    return;
+                }
+                readyBound = true;
+
+                /* istanbul ignore else */
+                if (document.readyState === &#x27;complete&#x27;) {
+                    domReady();
+                }
+
+                if (document.addEventListener) {
+                    document.addEventListener(&#x27;DOMContentLoaded&#x27;, DOMContentLoaded, false);
+                    window.addEventListener(&#x27;load&#x27;, DOMContentLoaded, false);
+                    /* istanbul ignore else */
+                } else if (document.attachEvent) {
+                    document.attachEvent(&#x27;onreadystatechange&#x27;, DOMContentLoaded);
+                    window.attachEvent(&#x27;onload&#x27;, DOMContentLoaded);
+                    try {
+                        toplevel = window.frameElement === null;
+                    } catch (e) {
+                        /*@&lt;*/
+                        debug.log(&#x27;[ ACT_event.js ] Error in try catch for window.frameElement&#x27;, e);
+                        /*&gt;@*/
+                    }
+                    /* istanbul ignore else */
+                    if (document.documentElement.doScroll &amp;&amp; toplevel) {
+                        doScrollCheck();
+                    }
+                }
+            };
+            ready = function (callback) {
+                registerOrRunCallback(callback);
+                bindReady();
+            };
+            ready.isReady = false;
+            return ready;
+        }()),
+
+        /**
+         * Removes all listeners from the given element.
+         * @param {Object} object to have purged
+         * @method purgeListeners
+         * @public
+         * @static
+         */
+        purgeListeners: function (element) {
+            var evnt;
+            var key;
+            var el;
+
+            for (evnt in listeners) {
+                if (listeners.hasOwnProperty(evnt) &amp;&amp; listeners[evnt] &amp;&amp; lang.isObject(listeners[evnt])) {
+                    for (key in listeners[evnt]) {
+                        if (listeners[evnt].hasOwnProperty(key)) {
+                            el = listeners[evnt][key];
+                            if (el.element === element) {
+                                this.removeListenerHelper(evnt, el.bound, element);
+                                delete listeners[evnt][key];
+                            }
+                        }
+                    }
+                }
+            }
+        },
+
+        /**
+         * Publish event for listeners to execute
+         * @method fire
+         * @param {String} event Name of the event that is being fired
+         * @param {Object} info Meta data that is being fired with the event
+         * @public
+         *
+         * @example
+         * &#x60;&#x60;&#x60;
+         *    // Now anyone can subscribe to the custom event.
+         *    var Event = ACT.Event;
+         *    var Dom = ACT.Dom;
+         *    // Example of listener
+         *    function listenForCustomEvent( event ) {
+         *        if( event.hasOwnProperty(&quot;node&quot;)){
+         *             if(event.node.id === &quot;node1&quot;){
+         *                 // got this event from node1
+         *             } else if( event.node.id === &quot;node2&quot; ){
+         *                 // got this event from node2
+         *          }
+         *        } else if ( event.hasOwnProperty(&quot;meta&quot;) ){
+         *          // heard first event.
+         *        }
+         *    }
+         *    Event.on( &quot;customEventString&quot;, listenForCustomEvent, null, this);
+         *
+         *    Event.fire( &quot;customEventString&quot;, { meta:&quot;data&quot; });
+         *    // Event.fire example with the same event fired for two different elements.
+         *    Event.fire( &quot;customEventString&quot;, { &quot;node&quot;: Dom.byId(&quot;node1&quot;); });
+         *    Event.fire( &quot;customEventString&quot;, { &quot;node&quot;: Dom.byId(&quot;node2&quot;); });
+         * &#x60;&#x60;&#x60;
+         */
+        fire: function (evnt, info) {
+            var params = info || {};
+            var scope;
+            var index;
+            var item;
+
+            // If the topic doesn&#x27;t exist, or there&#x27;s no listeners in queue, just leave
+            /* istanbul ignore else */
+            if (!lang.objHasKey(listeners, evnt)) {
+                return;
+            }
+
+            // Cycle through topics queue, fire!
+            for (index in listeners[evnt]) {
+                /* istanbul ignore else */
+                if (listeners[evnt].hasOwnProperty(index)) {
+                    item = listeners[evnt][index];
+                    // if it doesn&#x27;t have a specific scope, just run through all events of the same type.
+                    scope = params.scope ? params.scope : item.scope;
+                    /* istanbul ignore else */
+                    if (scope === item.scope &amp;&amp; lang.isFunction(item.fn)) {
+                        if (scope) {
+                            item.fn.call(scope, info);
+                        } else {
+                            item.fn(info);
+                        }
+                    }
+                }
+            }
+        },
+
+        /**
+         * Wrapper to prevent default behaviour on an event
+         * @param {Object} event Event that was triggered
+         * @method preventDefault
+         * @public
+         * @static
+         */
+        preventDefault: function (evnt) {
+            if (evnt.preventDefault) {
+                evnt.preventDefault();
+            } else {
+                evnt.returnValue = false;
+            }
+        },
+
+        /**
+         * constructor
+         * @public
+         */
+        constructor: Event
+    };
+
+    return new Event();
+});
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

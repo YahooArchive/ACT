@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ACT.js Demo : TrackingExample</title>
+    <link rel="stylesheet" href="https://s.yimg.com/zz/combo?yui-s:3.14.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="https://s.yimg.com/rz/l/favicon.ico">
+    <script src="https://s.yimg.com/zz/combo?yui-s:3.14.1/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../assets/css/logo.png" title="ACT.js Demos" width="126" height="100"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">	<div id="api-tabview" class="tabview">		<ul class="tabs">			<li><a href="#act-js-examples">Demo and Examples</a></li>		</ul>		<div id="api-tabview-filter">			<input type="search" id="api-filter" style="display:none;" placeholder="Type to filter Demos">		</div>		<div id="api-tabview-panel">			<ul id="api-classes" class="apis classes">							<li><a href="ACT_Demo_300x250.html">300x250</a></li>							<li><a href="ACT_Demo_300x250_tracking.html">300x250_tracking</a></li>							<li><a href="ACT_Demo_TrackingExample.html">TrackingExample</a></li>							<li><a href="ACT_Demo_animation.html">animation</a></li>							<li><a href="ACT_Demo_billboard.html">billboard</a></li>							<li><a href="ACT_Demo_billboard-enabler.html">billboard-enabler</a></li>							<li><a href="ACT_Demo_billboard-expandable-enabler.html">billboard-expandable-enabler</a></li>							<li><a href="ACT_Demo_billboard_html_video.html">billboard_html_video</a></li>							<li><a href="ACT_Demo_billboard_html_video_rtl.html">billboard_html_video_rtl</a></li>							<li><a href="ACT_Demo_carousel.html">carousel</a></li>							<li><a href="ACT_Demo_dwelltime.html">dwelltime</a></li>							<li><a href="ACT_Demo_enabler_expand.html">enabler_expand</a></li>							<li><a href="ACT_Demo_enabler_fullscreen_expand.html">enabler_fullscreen_expand</a></li>							<li><a href="ACT_Demo_enabler_target.html">enabler_target</a></li>							<li><a href="ACT_Demo_floating.html">floating</a></li>							<li><a href="ACT_Demo_force_env.html">force_env</a></li>							<li><a href="ACT_Demo_html5_enabler.html">html5_enabler</a></li>							<li><a href="ACT_Demo_html5_standard.html">html5_standard</a></li>							<li><a href="ACT_Demo_icons.html">icons</a></li>							<li><a href="ACT_Demo_input_data.html">input_data</a></li>							<li><a href="ACT_Demo_login_html.html">login_html</a></li>							<li><a href="ACT_Demo_overwrite_env.html">overwrite_env</a></li>							<li><a href="ACT_Demo_splash_ad.html">splash_ad</a></li>							<li><a href="ACT_Demo_tablet_expandable.html">tablet_expandable</a></li>							<li><a href="ACT_Demo_video_event.html">video_event</a></li>							<li><a href="ACT_Demo_video_html.html">video_html</a></li>						</ul>		</div>	</div></div>            </div>
+        </div>
+        <div class="yui3-u-3-4">
+            <a href="../">Back to docs</a>            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1>Demo For TrackingExample</h1><div class="box meta">        <div class="foundat">File for this demo is found: examples/300x250_tracking/LREC_300x250_Custom_Tracking.html</div></div><div id="classdocs" class="tabview">    <ul class="api-class-tabs">        <li class="api-class-tab index"><a href="#index">Rendered Example</a></li> 				<li class="api-class-tab methods"><a href="#methods">Config Object</a></li> 		    </ul>    <div>        <div id="index" class="api-class-tabpanel index"><div id="ad-container">
+    <div id="ad" style="margin:0px 0px">
+        <noscript>
+            <a href="https://uk.yahoo.com">
+                <img src="https://s.yimg.com/dh/ap/hoangnm/test/mpubackup-300x250.jpg" border="0" />
+            </a>
+        </noscript>
+    </div>
+</div>
+<script language="javascript">
+(function() {
+	if (!window.ACT) {
+		window.ACT = {
+			"adQueue": []
+		};
+	}
+
+	ACT.adQueue.push(
+		function() {
+			var trackingConfig = {
+				redirectMacro: 'https://www.example.com/?redirect=true',
+				interactionMacro: 'https://www.example.com/?interaction=true'
+			};
+			var trackingExampleInstance = new ACTTrackingExample(trackingConfig);
+
+			trackingConfig.trackingFunctions = {
+				overwrite: true,
+				redirect: trackingExampleInstance.getRedirect(),
+				interaction: trackingExampleInstance.getInteraction()
+			};
+
+			var ad = ACT.Base({
+				conf: {
+					adId: 'test_ad_id',
+					cookie: {
+						name: "CookieName",
+					},
+					tracking: trackingConfig
+				},
+				superConf: "config-object-demo_300x250",
+				extend: {}
+			});
+		});
+})();
+</script>
+
+<!-- ACT.js Framework loaded individually from local path -->
+<script src="../../examples/TrackingExample/ACTTrackingExample.js"></script>
+<script src="../../src/core/ACT.js"></script>
+<script src="../../src/core/ACT_Layerslist.js"></script>
+<script src="../../src/core/ACT_Screen.js"></script>
+<script src="../../src/core/ACT_StandardAd.js"></script>
+<script src="../../src/core/ACT_TrackingFacade.js"></script>
+<script src="../../src/core/ACT_actionsQueue.js"></script>
+<script src="../../src/core/ACT_base.js"></script>
+<script src="../../src/core/ACT_cookie.js"></script>
+<script src="../../src/core/ACT_environment.js"></script>
+<script src="../../src/core/ACT_layerStandard.js"></script>
+<script src="../../src/core/ACT_scaffolding.js"></script>
+<script src="../../src/core/ACT_secureDarla.js"></script>
+<script src="../../src/library/ACT_IO.js"></script>
+<script src="../../src/library/ACT_UA.js"></script>
+<script src="../../src/library/ACT_animation.js"></script>
+<script src="../../src/library/ACT_capability.js"></script>
+<script src="../../src/library/ACT_class.js"></script>
+<script src="../../src/library/ACT_customData.js"></script>
+<script src="../../src/library/ACT_debug.js"></script>
+<script src="../../src/library/ACT_dom.js"></script>
+<script src="../../src/library/ACT_event.js"></script>
+<script src="../../src/library/ACT_flash.js"></script>
+<script src="../../src/library/ACT_json.js"></script>
+<script src="../../src/library/ACT_lang.js"></script>
+<script src="../../src/library/ACT_util.js"></script>
+<script src="../../src/capabilities/ACT_contentContainer.js"></script>
+<script src="../../src/capabilities/ACT_contentImage.js"></script>
+
+<script src="../../examples/300x250_tracking/config-object-demo_300x250.js"></script></div> 				<div id="methods" class="api-class-tabpanel methods">			<pre class="code prettyprint"><code>/*
+ * Copyright 2016, Yahoo Inc.
+ * Copyrights licensed under the New BSD License.
+ * See the accompanying LICENSE file for terms.
+ */
+
+function ACTTrackingExample (config){
+	this.init(config);
+}
+
+(function () {
+    &#x27;use strict&#x27;;
+
+	/* Useful helper functions */
+	/**
+	* Given a string returns a numeric value (hash) of it
+	* @param {String} string (any length) to hash
+	* @return {Number} hash number of the string.
+	* @method hashString
+	* @public
+	* @static
+	* @author FRESCO EMEA Team
+	*/
+	function hashString (stringify) {
+		var hash &#x3D; 0;
+		var	i &#x3D; 0;
+		var chars;
+
+		if (stringify.length &#x3D;&#x3D;&#x3D; 0) {
+			return hash;
+		}
+
+		for (i; i &lt; stringify.length; i++) {
+			chars &#x3D; stringify.charCodeAt(i);
+			hash &#x3D; ((hash &lt;&lt; 5) - hash) + chars;
+			hash &#x3D; hash &amp; hash; // Convert to 32bit integer
+		}
+
+		if (hash &lt; 0) {
+			hash &#x3D; -hash;
+		}
+
+		return hash;
+	}
+    
+	/**
+	* Calls the 1x1 pixel in javascript
+	* @param {String} pixel source of the image to request
+	* @method pixelTrack
+	* @public
+	* @static
+	*/
+	function pixelTrack(pixel) {
+		var adimg;
+		if (pixel) {
+			adimg &#x3D; new Image();
+			adimg.onload &#x3D; function () {
+				adimg &#x3D; null;
+			};
+			adimg.src &#x3D; pixel;
+		}
+	}
+	
+   /**
+	 * Bind - binds the function to a scope
+	 * @param {Object} obj the Scope object
+	 * @param {Function} func Function to call in the scope
+	 * @method bind
+	 * @return to the bound function
+	 * @public
+	 * @static
+	 */
+	function act_bind(obj, func) {
+		var bound;
+		if (!Function.prototype.bind) {
+			bound &#x3D; function () {
+				func.apply(obj, arguments);
+			};
+		} else {
+			bound &#x3D; func.bind(obj);
+		}
+		return bound;
+	}
+	
+	/* Prototype extension of the ACTTrackingExample */
+
+	ACTTrackingExample.prototype.init &#x3D; function(config) {
+		var defaultConfig &#x3D; {
+			redirectMacro: &#x27;https://www.example.com/?redirect&#x3D;true&#x27;,
+			interactionMacro: &#x27;https://www.example.com/?interaction&#x3D;true&#x27;
+		};
+		for (var itor in defaultConfig) {
+			if (defaultConfig.hasOwnProperty(itor) &amp;&amp; !config[itor]){
+				config[itor] &#x3D; defaultConfig[itor];
+			}
+		}
+		this.config &#x3D; config;
+	}
+
+	/* Simple helper methods that return links to the instantiated redirect and interaction functions defined here */
+	ACTTrackingExample.prototype.getRedirect &#x3D; function() {
+		return act_bind(this, this.redirect_track);
+	};
+	
+	ACTTrackingExample.prototype.getInteraction &#x3D; function() {
+		return act_bind(this, this.interaction_track);
+	};
+
+	/**
+	 * Redirect Track String Generating function
+	 * @param {String} trackingString StringID of the redirect track  &#x27;backup_image_noflash&#x27;
+	 * @param {Integer} trackingID Numeric id of the redirect track  &#x27;135&#x27;
+	 * @param {String} redirectURL URLString to redirect to http://sports.yahoo.com
+	 * @return {String} Redirect String
+	 * @method redirect_track
+	 * @public
+	 * @static
+	 * @example
+	 *     // Simple Example, no over write function provided:
+	 *     var tracking &#x3D; new ACT.Tracking();
+	 *     var redirect &#x3D; tracking.redirect_track(null, null, &#x27;http://www.yahoo.com&#x27;);
+	 *     ACT.Dom.byId(&#x27;exampleATag&#x27;).href &#x3D; redirect;
+	 *
+	 *     // Complex example with over write function:
+	 *     var config &#x3D; {
+	 *         trackingFunctions: {
+	 *             overwrite: true,
+	 *             redirect: function(trackingString, trackingID, redirectURL) {
+	 *                      var final_url &#x3D; &#x27;http://example.tracking.service.com/?name&#x3D;&#x27;+trackingString+&#x27;&amp;id&#x3D;&#x27;+trackingID+&#x27;&amp;url&#x3D;&#x27;+encodeURIComponent(redirectURL);
+	 *                     return final_url;
+	 *              },
+	 *             interaction: function(trackingString) { ... }
+	 *         }
+	 *     };
+	 *     var tracking &#x3D; new ACT.tracking(config);
+	 *       var redirect &#x3D; tracking.redirect_track(&quot;yahooCTR&quot;, 456, &#x27;http://www.yahoo.com&#x27;);
+	 */
+	ACTTrackingExample.prototype.redirect_track &#x3D; function (trackingString, trackingID, redirectURL) {
+		var finalURLArr &#x3D; [ 
+							this.config.redirectMacro,
+							&#x27;random&#x3D;&#x27;+Math.random(),
+							&#x27;trackingID&#x3D;&#x27;+trackingID,
+							&#x27;trackingString&#x3D;&#x27;+trackingString,
+							&#x27;redirectURL&#x3D;&#x27;+encodeURIComponent(redirectURL)
+							];
+		var finalURL &#x3D; finalURLArr.join(&#x27;&amp;&#x27;);
+		return finalURL;
+	};
+
+	/**
+	 * Interaction tracking function
+	 * @param {String} trackingString String ID of the interaction to be tracked
+	 * @method interaction_track
+	 * @return {Object} an object containing the results of this function call. Specifically:
+	 *     {
+	 *          overwriteFired: {Boolean}, // Did the overwrite function get fired
+	 *          trackingString: {String}, // The tracking string submitted to the function
+	 *          trackingID: {Int}, // ACT.js generated unique ID ( generated from supplied tracking string )
+	 *          result: {Mixed} // Result of calling the provided interaction tracking function.
+	 *     }
+	 * @public
+	 * @static
+	 */
+	ACTTrackingExample.prototype.interaction_track &#x3D; function (trackingString) {
+		var rand &#x3D; Math.random();
+		var src &#x3D; [];
+		var trackString &#x3D; trackingString || &#x27;&#x27;;
+		var outcome &#x3D; {
+			overwriteFired: false,
+			trackingString: trackString,
+			trackingID: hashString(trackString),
+			result: null
+		};
+
+		src.push(this.config.interactionMacro);
+		src.push(&#x27;trackingID&#x3D;&#x27; + outcome.trackingID);
+		src.push(&#x27;trackingString&#x3D;&#x27; + trackString);
+		src.push(&#x27;random&#x3D;&#x27; + rand);
+		outcome.result &#x3D; src.join(&#x27;&amp;&#x27;);
+		/* Call the helper function to request the pixel we&#x27;ve generated */
+		pixelTrack(outcome.result);
+		return outcome;
+	};
+	
+	/* Enabler Init Handler example of starting up the tracking overwrites */
+	function enablerInitHandler(){
+		/* Picks up the Enabler configuration set that was passed in from parent frame */
+		 var enablerTracking &#x3D; Enabler.getConfigObject(&#x27;tracking&#x27;);
+		 /* Instantiate a new ACTTrackingExample with the configuration that was passed in */
+		 var premiumTracking &#x3D; new ACTTrackingExample(enablerTracking);
+
+		/* Amend the configuration with overwrite, redirect and interaction functions
+			bound to our new instance of ACTTrackingExample 
+		*/
+		enablerTracking.trackingFunctions &#x3D; {
+			overwrite: true,
+			redirect: premiumTracking.getRedirect(),
+			interaction: premiumTracking.getInteraction()
+		};
+
+		/* Update the Enabler config / setup with the overwrites */
+		Enabler.setConfig(enablerTracking, &#x27;tracking&#x27;);
+	}
+
+	/**
+	 * In the case we are using this functionality inside a window with Enabler and want to
+	 * overwrite Enabler configuration. We use this if/else to call the enablerInitHandler.
+	 * Otherwise, we rely on the &#x27;main&#x27; ad footprint to use things correctly.
+	 **/
+	if (window.Enabler &amp;&amp; Enabler.isInitialized()) {
+		/* Initialize the tracking overwrite in Enabler */
+		enablerInitHandler();
+	} else if (window.Enabler) {
+		Enabler.addEventListener(studio.events.StudioEvent.INIT, enablerInitHandler);
+	}
+})();
+</code></pre>		</div> 	   </div></div><div class="box intro">	<pre class="code prettyprint"><code>&lt;div id&#x3D;&quot;ad-container&quot;&gt;
+    &lt;div id&#x3D;&quot;ad&quot; style&#x3D;&quot;margin:0px 0px&quot;&gt;
+        &lt;noscript&gt;
+            &lt;a href&#x3D;&quot;https://uk.yahoo.com&quot;&gt;
+                &lt;img src&#x3D;&quot;https://s.yimg.com/dh/ap/hoangnm/test/mpubackup-300x250.jpg&quot; border&#x3D;&quot;0&quot; /&gt;
+            &lt;/a&gt;
+        &lt;/noscript&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;script language&#x3D;&quot;javascript&quot;&gt;
+(function() {
+	if (!window.ACT) {
+		window.ACT &#x3D; {
+			&quot;adQueue&quot;: []
+		};
+	}
+
+	ACT.adQueue.push(
+		function() {
+			var trackingConfig &#x3D; {
+				redirectMacro: &#x27;https://www.example.com/?redirect&#x3D;true&#x27;,
+				interactionMacro: &#x27;https://www.example.com/?interaction&#x3D;true&#x27;
+			};
+			var trackingExampleInstance &#x3D; new ACTTrackingExample(trackingConfig);
+
+			trackingConfig.trackingFunctions &#x3D; {
+				overwrite: true,
+				redirect: trackingExampleInstance.getRedirect(),
+				interaction: trackingExampleInstance.getInteraction()
+			};
+
+			var ad &#x3D; ACT.Base({
+				conf: {
+					adId: &#x27;test_ad_id&#x27;,
+					cookie: {
+						name: &quot;CookieName&quot;,
+					},
+					tracking: trackingConfig
+				},
+				superConf: &quot;config-object-demo_300x250&quot;,
+				extend: {}
+			});
+		});
+})();
+&lt;/script&gt;
+
+&lt;!-- ACT.js Framework loaded individually from local path --&gt;
+&lt;script src&#x3D;&quot;../TrackingExample/ACTTrackingExample.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../src/core/ACT.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../src/core/ACT_Layerslist.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../src/core/ACT_Screen.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../src/core/ACT_StandardAd.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../src/core/ACT_TrackingFacade.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../src/core/ACT_actionsQueue.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../src/core/ACT_base.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../src/core/ACT_cookie.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../src/core/ACT_environment.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../src/core/ACT_layerStandard.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../src/core/ACT_scaffolding.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../src/core/ACT_secureDarla.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../src/library/ACT_IO.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../src/library/ACT_UA.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../src/library/ACT_animation.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../src/library/ACT_capability.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../src/library/ACT_class.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../src/library/ACT_customData.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../src/library/ACT_debug.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../src/library/ACT_dom.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../src/library/ACT_event.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../src/library/ACT_flash.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../src/library/ACT_json.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../src/library/ACT_lang.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../src/library/ACT_util.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../src/capabilities/ACT_contentContainer.js&quot;&gt;&lt;/script&gt;
+&lt;script src&#x3D;&quot;../src/capabilities/ACT_contentImage.js&quot;&gt;&lt;/script&gt;
+
+&lt;script src&#x3D;&quot;./config-object-demo_300x250.js&quot;&gt;&lt;/script&gt;</code></pre></div>                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

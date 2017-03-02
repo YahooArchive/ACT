@@ -1,0 +1,101 @@
+<link rel="stylesheet" href="../../src/assets/ACT_icons/ACT_icons.css" />
+<div id="act-ad-container" style="margin:0px auto;padding:0px;">
+    <div id="act-ad" style="margin:0px;padding:0px;position:relative;font-size:11px;width:970px;min-height:20px;">
+        <noscript>
+            <a href="https://uk.yahoo.com">
+                <img src="https://s.yimg.com/dh/ap/actjs/expandable/rc/0-0-1/asset/300x250_yahoo.jpg" border="0">
+            </a>
+        </noscript>
+    </div>
+</div>
+
+<script language="javascript">
+(function() {
+    if (!window.ACT) {
+        window.ACT = {
+            "adQueue": []
+        };
+    }
+    
+    ACT.adQueue.push(
+        function() {
+            var trackingConfig = {};
+            var ad = ACT.Base({
+                conf: {
+                    adId: 'test_ad_id',
+                    cookie: {
+                        "name": "uniqueAdName"
+                    },
+                    template: {
+                        width: 970,
+                        height: 250
+                    },
+                    tracking: trackingConfig,
+                    customData: {
+                        /* Interactive */
+                        "layers.billboard.html5_container.html5Config.enabler": true,
+                        "layers.billboard.html5_container.html5Config.iframe": true,
+						"layers.billboard.html5_container.html5Config.iframeUrlPath": "./asset/index.html",
+                        "layers.billboard.html5_container.html5Config.iframevars": {
+		                	"tracking": trackingConfig,
+                            "exitUrls": {
+                                "clickTag": "https://vn.yahoo.com"
+                            }
+                        },
+                        "layers.billboard.html5_container.html5Config.htmlRoot": "",
+
+                        /* Backup */
+                        "layers.billboard.billboard_backup_image.imageConfig.src": "https://s.yimg.com/cv/ae/hoang/audi_q7_en/images/BackupImage_970x250.jpg",
+                        "layers.billboard.billboard_backup_image.imageConfig.alt": "Audi Q7",
+                        "layers.billboard.billboard_backup_image.imageConfig.title": "Audi Q7",
+                        "layers.billboard.billboard_backup_image.events.action0.URLpath": "http://www.audi-me.com/content/me/brand/en/models/q7/q7_new.html",
+                        /* Text Links */
+                        "layers.textLinks.openBtn.containerConfig.innerText": "Show Ad",
+                        "layers.textLinks.closeBtn.containerConfig.innerText": "Close Ad",
+                        /* Text Buttons */
+                        "layers.extraBtns.surveyBtn.containerConfig.innerText": "Ad FeedBack",
+                        "layers.extraBtns.surveyBtn.events.action0.URLpath": "http://surveylink.yahoo.com/wix/p0767152.aspx",
+                        "layers.extraBtns.adchoicesBtn.containerConfig.innerText": "Ad Choices",
+                        "layers.extraBtns.adchoicesBtn.events.action0.URLpath": "https://info.yahoo.com/privacy/xe/yahoo/"
+                    }
+                },
+                superConf: "config-object-html5",
+                extend: {}
+            });
+        }
+    );
+})();
+</script>
+
+<script src="../../src/core/ACT.js"></script>
+<script src="../../src/core/ACT_Layerslist.js"></script>
+<script src="../../src/core/ACT_Screen.js"></script>
+<script src="../../src/core/ACT_StandardAd.js"></script>
+<script src="../../src/core/ACT_TrackingFacade.js"></script>
+<script src="../../src/core/ACT_actionsQueue.js"></script>
+<script src="../../src/core/ACT_base.js"></script>
+<script src="../../src/core/ACT_cookie.js"></script>
+<script src="../../src/core/ACT_environment.js"></script>
+<script src="../../src/core/ACT_layerStandard.js"></script>
+<script src="../../src/core/ACT_scaffolding.js"></script>
+<script src="../../src/core/ACT_secureDarla.js"></script>
+<script src="../../src/library/ACT_Enabler.js"></script>
+<script src="../../src/library/ACT_VideoEvents.js"></script>
+<script src="../../src/library/ACT_IO.js"></script>
+<script src="../../src/library/ACT_UA.js"></script>
+<script src="../../src/library/ACT_animation.js"></script>
+<script src="../../src/library/ACT_capability.js"></script>
+<script src="../../src/library/ACT_class.js"></script>
+<script src="../../src/library/ACT_customData.js"></script>
+<script src="../../src/library/ACT_debug.js"></script>
+<script src="../../src/library/ACT_dom.js"></script>
+<script src="../../src/library/ACT_event.js"></script>
+<script src="../../src/library/ACT_flash.js"></script>
+<script src="../../src/library/ACT_json.js"></script>
+<script src="../../src/library/ACT_lang.js"></script>
+<script src="../../src/library/ACT_util.js"></script>
+<script src="../../src/capabilities/ACT_contentContainer.js"></script>
+<script src="../../src/capabilities/ACT_contentImage.js"></script>
+<script src="../../src/capabilities/ACT_contentHtml5.js"></script>
+
+<script src="./config-object.js"></script>

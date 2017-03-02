@@ -1,0 +1,9 @@
+*.iml
+.idea
+build
+coverage
+node_modules
+*.log
+.DS_Store
+test
+temp*

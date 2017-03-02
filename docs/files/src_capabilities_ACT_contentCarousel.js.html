@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src/capabilities/ACT_contentCarousel.js - ACT.js</title>
+    <link rel="stylesheet" href="https://s.yimg.com/zz/combo?yui-s:3.14.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="https://s.yimg.com/rz/l/favicon.ico">
+    <script src="https://s.yimg.com/zz/combo?yui-s:3.14.1/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="https://s.yimg.com/cv/ae/global/ACTJS/logo/ACT.js.logo.png" title="ACT.js" width="150"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 1.1.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                            <li><a href="#api-demos">Demo and Examples</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/ACT.html">ACT</a></li>
+                                <li><a href="../classes/ActionsQueue.html">ActionsQueue</a></li>
+                                <li><a href="../classes/Base.html">Base</a></li>
+                                <li><a href="../classes/Capability.html">Capability</a></li>
+                                <li><a href="../classes/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../classes/Class.html">Class</a></li>
+                                <li><a href="../classes/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../classes/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../classes/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../classes/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../classes/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../classes/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../classes/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../classes/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../classes/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../classes/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../classes/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../classes/Cookie.html">Cookie</a></li>
+                                <li><a href="../classes/CustomData.html">CustomData</a></li>
+                                <li><a href="../classes/Debug.html">Debug</a></li>
+                                <li><a href="../classes/Dom.html">Dom</a></li>
+                                <li><a href="../classes/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../classes/Enabler.html">Enabler</a></li>
+                                <li><a href="../classes/Environment.html">Environment</a></li>
+                                <li><a href="../classes/Event.html">Event</a></li>
+                                <li><a href="../classes/Flash.html">Flash</a></li>
+                                <li><a href="../classes/IO.html">IO</a></li>
+                                <li><a href="../classes/Json.html">Json</a></li>
+                                <li><a href="../classes/Lang.html">Lang</a></li>
+                                <li><a href="../classes/LayersList.html">LayersList</a></li>
+                                <li><a href="../classes/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../classes/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../classes/Screen.html">Screen</a></li>
+                                <li><a href="../classes/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../classes/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../classes/Tracking.html">Tracking</a></li>
+                                <li><a href="../classes/UA.html">UA</a></li>
+                                <li><a href="../classes/Util.html">Util</a></li>
+                                <li><a href="../classes/VideoEvents.html">VideoEvents</a></li>
+                            </ul>
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/ACT.html">ACT</a></li>
+                                <li><a href="../modules/actionsQueue.html">actionsQueue</a></li>
+                                <li><a href="../modules/Base.html">Base</a></li>
+                                <li><a href="../modules/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../modules/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../modules/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../modules/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../modules/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../modules/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../modules/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../modules/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../modules/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../modules/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../modules/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../modules/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../modules/Cookie.html">Cookie</a></li>
+                                <li><a href="../modules/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../modules/Enabler.html">Enabler</a></li>
+                                <li><a href="../modules/environment.html">environment</a></li>
+                                <li><a href="../modules/IO.html">IO</a></li>
+                                <li><a href="../modules/LayersList.html">LayersList</a></li>
+                                <li><a href="../modules/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../modules/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../modules/Screen.html">Screen</a></li>
+                                <li><a href="../modules/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../modules/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../modules/Tracking.html">Tracking</a></li>
+                            </ul>
+                
+                            <ul id="api-demos" class="apis demos">
+                                <li><a href="../demo/ACT_Demo_300x250.html">300x250</a></li>
+                                <li><a href="../demo/ACT_Demo_300x250_tracking.html">300x250_tracking</a></li>
+                                <li><a href="../demo/ACT_Demo_TrackingExample.html">TrackingExample</a></li>
+                                <li><a href="../demo/ACT_Demo_animation.html">animation</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard.html">billboard</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-enabler.html">billboard-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-expandable-enabler.html">billboard-expandable-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video.html">billboard_html_video</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video_rtl.html">billboard_html_video_rtl</a></li>
+                                <li><a href="../demo/ACT_Demo_carousel.html">carousel</a></li>
+                                <li><a href="../demo/ACT_Demo_dwelltime.html">dwelltime</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_expand.html">enabler_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_fullscreen_expand.html">enabler_fullscreen_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_target.html">enabler_target</a></li>
+                                <li><a href="../demo/ACT_Demo_floating.html">floating</a></li>
+                                <li><a href="../demo/ACT_Demo_force_env.html">force_env</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_enabler.html">html5_enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_standard.html">html5_standard</a></li>
+                                <li><a href="../demo/ACT_Demo_icons.html">icons</a></li>
+                                <li><a href="../demo/ACT_Demo_input_data.html">input_data</a></li>
+                                <li><a href="../demo/ACT_Demo_login_html.html">login_html</a></li>
+                                <li><a href="../demo/ACT_Demo_overwrite_env.html">overwrite_env</a></li>
+                                <li><a href="../demo/ACT_Demo_splash_ad.html">splash_ad</a></li>
+                                <li><a href="../demo/ACT_Demo_tablet_expandable.html">tablet_expandable</a></li>
+                                <li><a href="../demo/ACT_Demo_video_event.html">video_event</a></li>
+                                <li><a href="../demo/ACT_Demo_video_html.html">video_html</a></li>
+                            </ul>
+                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: src/capabilities/ACT_contentCarousel.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+ * Copyright 2016, Yahoo Inc.
+ * Copyrights licensed under the New BSD License.
+ * See the accompanying LICENSE file for terms.
+ */
+
+/* global ACT */
+/**
+ * The &#x27;ContentCarousel&#x27; is a capability made to render its contents into a carousel slideshow with actions available to move the slides
+ *
+ * Available &#x27;actions&#x27;:
+ * - carouselNextSlide
+ * - carouselPreviousSlide
+ * - carouselJumpToSlide
+ *
+ * Available &#x27;triggers&#x27;:
+ * - carouselAnimationStart
+ * - carouselAnimationComplete
+ * - carouselAnimationPanel[X]Play
+ *
+ * Example of &#x27;SuperConf&#x27; use case:
+ *
+ *     {
+ *         id: &#x27;carousel_one&#x27;,
+ *         type: &#x27;content-carousel&#x27;,
+ *         classNode: &#x27;mpu_container_class&#x27;,
+ *         env: [&#x27;html&#x27;,&#x27;flash&#x27;,&#x27;backup&#x27;],
+ *         css: {
+ *           width: 300
+ *         },
+ *         ContentCarouselConfig: {
+ *            transitionTime: 500,
+ *            currentSlideId: 2
+ *          },
+ *         eventConfig: [],
+ *         content: []
+ *      }
+ *
+ * @module ContentCarousel
+ * @main ContentCarousel
+ * @class ContentCarousel
+ * @requires Dom, Lang, Event, Class, Animation, Capability
+ * @global
+ */
+ACT.define(&#x27;ContentCarousel&#x27;, [/*@&lt;*/&#x27;Debug&#x27;, /*&gt;@*/ &#x27;Dom&#x27;, &#x27;Lang&#x27;, &#x27;Event&#x27;, &#x27;Class&#x27;, &#x27;Animation&#x27;, &#x27;Capability&#x27;], function (ACT) {
+    &#x27;use strict&#x27;;
+
+    /* Constants */
+    var Dom = ACT.Dom;
+    var Lang = ACT.Lang;
+    var Event = ACT.Event;
+    var Animation = ACT.Animation;
+    var Class = ACT.Class;
+    var Capability = ACT.Capability;
+
+    var PRESET_CLASS = {
+        CAROUSEL_CONTAINER: &#x27;carousel-container&#x27;,
+        RELATIVE_CONTAINER: &#x27;carousel-relative-container&#x27;,
+        HOLDER_CONTAINER: &#x27;carousel-holder-container&#x27;
+    };
+    var PRESET_CSS = {
+        ROOT_CONTAINER: {
+            overflow: &#x27;hidden&#x27;
+        },
+        RELATIVE_CONTAINER: {
+            position: &#x27;relative&#x27;
+        },
+        HOLDER_CONTAINER: {
+            position: &#x27;absolute&#x27;,
+            cursor: &#x27;pointer&#x27;
+        }
+    };
+    var PRESET_DIRECTION = {
+        LEFT: -1,
+        RIGHT: 1
+    };
+    var EVENT_GLOBAL_ACTION_ADD = &#x27;add:actions&#x27;;
+    var EVENT_GLOBAL_ACTION_COMPLETE = &#x27;complete:action&#x27;;
+    var EVENT_GLOBAL_CHECK_ACTION_CONDITION = &#x27;standardAd:checkActionCondition&#x27;;
+    var EVENT_CAROUSEL_SLIDE_TRANSITION = &#x27;carousel:slideTransition&#x27;;
+    var EVENT_CAROUSEL_JUMP_TO_SLIDE = &#x27;carousel:jumpToSlide&#x27;;
+    var EVENT_CAROUSEL_ANIMATION_STATE = &#x27;carousel:animationState&#x27;;
+    var DEFAULT_CAROUSEL_PANEL_VIEW_EVENT_PREFIX = &#x27;carouselAnimationPanel&#x27;;
+    var DEFAULT_CAROUSEL_ANIMATION_EVENTS = {
+        carouselAnimationStart: &#x27;&#x27;,
+        carouselAnimationComplete: &#x27;&#x27;
+    };
+
+    /* istanbul ignore next */
+    var contentActions = [{
+        type: &#x27;carouselNextSlide&#x27;,
+        argument: {
+            to: {
+                name: &#x27;to&#x27;,
+                test: function (value) {
+                    return Lang.isString(value);
+                }
+            },
+            timeout: {
+                name: &#x27;timeout&#x27;,
+                test: function (value) {
+                    return Lang.isNumber(value) || value === undefined || value === null;
+                }
+            }
+        },
+        process: function (actionId, args) {
+            Event.fire(EVENT_CAROUSEL_SLIDE_TRANSITION, {
+                to: args.to,
+                direction: &#x27;LEFT&#x27;,
+                done: function () {
+                    Event.fire(EVENT_GLOBAL_ACTION_COMPLETE, actionId);
+                }
+            });
+        }
+    }, {
+        type: &#x27;carouselPreviousSlide&#x27;,
+        argument: {
+            to: {
+                name: &#x27;to&#x27;,
+                test: function (value) {
+                    return Lang.isString(value);
+                }
+            },
+            timeout: {
+                name: &#x27;timeout&#x27;,
+                test: function (value) {
+                    return Lang.isNumber(value) || value === undefined || value === null;
+                }
+            }
+        },
+        process: function (actionId, args) {
+            Event.fire(EVENT_CAROUSEL_SLIDE_TRANSITION, {
+                to: args.to,
+                direction: &#x27;RIGHT&#x27;,
+                done: function () {
+                    Event.fire(EVENT_GLOBAL_ACTION_COMPLETE, actionId);
+                }
+            });
+        }
+    }, {
+        type: &#x27;carouselJumpToSlide&#x27;,
+        argument: {
+            to: {
+                name: &#x27;to&#x27;,
+                test: function (value) {
+                    return Lang.isString(value);
+                }
+            },
+            slidePositionId: {
+                name: &#x27;slidePositionId&#x27;,
+                test: function (value) {
+                    return Lang.isNumber(value);
+                }
+            },
+            timeout: {
+                name: &#x27;timeout&#x27;,
+                test: function (value) {
+                    return Lang.isNumber(value) || value === undefined || value === null;
+                }
+            }
+        },
+        process: function (actionId, args) {
+            Event.fire(EVENT_CAROUSEL_JUMP_TO_SLIDE, {
+                to: args.to,
+                slidePositionId: args.slidePositionId,
+                done: function () {
+                    Event.fire(EVENT_GLOBAL_ACTION_COMPLETE, actionId);
+                }
+            });
+        }
+    }];
+
+    /*@&lt;*/
+    var Debug = ACT.Debug;
+    Debug.log(&#x27;ContentCarousel loaded&#x27;);
+    /*&gt;@*/
+
+    /**
+     * @class ContentCarousel
+     * @constructor
+     */
+    function ContentCarousel(config) {
+        this.init(config);
+    }
+
+    ContentCarousel.ATTRS = {
+        /**
+         * @attribute NAME
+         * @type String
+         */
+        NAME: &#x27;ContentCarousel&#x27;,
+
+        /**
+         * @attribute version
+         * @type String
+         */
+        version: &#x27;1.1.0&#x27;,
+
+        /**
+         * @attribute node
+         * @type HTMLElement
+         */
+        node: null,
+
+        /**
+         * @attribute relativeContainer
+         * @type HTMLElement
+         */
+        relativeContainer: null,
+
+        /**
+         * @attribute holderContainer
+         * @type HTMLElement
+         */
+        holderContainer: null,
+
+        /**
+         * Transition time in milliseconds
+         * @attribute transitionTime
+         * @type Number
+         * @default 1000
+         */
+        transitionTime: 1000,
+
+        /**
+         * ID of the current showing slide
+         * @attribute currentSlideId
+         * @type Number
+         * @default 0
+         */
+        currentSlideId: 0,
+
+        /**
+         * @attribute slideContentList
+         * @type Array
+         */
+        slideContentList: []
+    };
+
+    /**
+     * Subscribe trigger action to the carousels listeners
+     *
+     * @method subscribeTriggerToCarouselEvent
+     * @private
+     * @param {String} action, action to fire
+     */
+    function subscribeTriggerToCarouselEvent(actionConfig) {
+        Event.on(EVENT_CAROUSEL_ANIMATION_STATE, function (eventData) {
+            if (eventData.data === actionConfig.eventType) {
+                Event.fire(EVENT_GLOBAL_CHECK_ACTION_CONDITION, {
+                    actionConfig: actionConfig,
+                    callback: function (isExecutable) {
+                        if (isExecutable) {
+                            Event.fire(EVENT_GLOBAL_ACTION_ADD, actionConfig.actions);
+                        } /*@&lt;*/ else {
+                            Debug.warn(&#x27;Actions is not executable!&#x27;, actionConfig);
+                        }
+                        /*&gt;@*/
+                    }
+                });
+            }
+        });
+        /*@&lt;*/
+        Debug.log(&#x27;ContentCarousel: Attaching carousel event &#x27; + actionConfig);
+        /*&gt;@*/
+    }
+
+    /**
+     * Attach action for an event
+     *
+     * @method attachCarouselEventActions
+     * @private
+     * @param {String} node, node to attach events
+     * @param {String} eventConfig, list of event
+     */
+    function attachCarouselEventActions(eventConfig) {
+        var index;
+        var actionConfig;
+        if (!Lang.isArray(eventConfig)) {
+            return;
+        }
+
+        for (index = 0; index &lt; eventConfig.length; index++) {
+            actionConfig = eventConfig[index];
+            /* istanbul ignore next */
+            if (DEFAULT_CAROUSEL_ANIMATION_EVENTS.hasOwnProperty(actionConfig.eventType)) {
+                subscribeTriggerToCarouselEvent(actionConfig);
+            } else if (actionConfig.eventType.substring(0, 22) === DEFAULT_CAROUSEL_PANEL_VIEW_EVENT_PREFIX) {
+                subscribeTriggerToCarouselEvent(actionConfig);
+            }
+        }
+    }
+
+    /* Public methods */
+    Lang.extend(ContentCarousel, [Class, Capability], {
+        /**
+         * Function auto initiated when the class is instantiated
+         * @method initializer
+         * @param {Object} config
+         */
+        initializer: function (config) {
+            this.initializeListeners();
+            this.set(&#x27;configObject&#x27;, config);
+            if (Lang.isNumber(config.ContentCarouselConfig.transitionTime)) {
+                this.set(&#x27;transitionTime&#x27;, parseInt(config.ContentCarouselConfig.transitionTime, 10));
+            }
+
+            if (Lang.isNumber(config.ContentCarouselConfig.currentSlideId)) {
+                this.set(&#x27;currentSlideId&#x27;, parseInt(config.ContentCarouselConfig.currentSlideId, 10));
+            }
+
+            attachCarouselEventActions(config.eventConfig);
+            Event.fire(&#x27;register:Actions&#x27;, contentActions);
+        },
+
+        /**
+         * Function to initialize event listeners for this instance
+         *
+         * @method initializeListeners
+         */
+        initializeListeners: function () {
+            var root = this;
+            root.addEventListeners(
+                Event.on(EVENT_CAROUSEL_SLIDE_TRANSITION, function (eventData) {
+                    if (eventData.to === root.get(&#x27;configObject&#x27;).id) {
+                        if (eventData.direction === &#x27;LEFT&#x27;) {
+                            root.slideLeft(eventData.done);
+                        }
+                        if (eventData.direction === &#x27;RIGHT&#x27;) {
+                            root.slideRight(eventData.done);
+                        }
+                    }
+                }),
+
+                Event.on(EVENT_CAROUSEL_JUMP_TO_SLIDE, function (eventData) {
+                    if (eventData.to === root.get(&#x27;configObject&#x27;).id) {
+                        root.jumpToSlide(parseInt(eventData.slidePositionId, 10), eventData.done);
+                    }
+                })
+            );
+        },
+
+        /**
+         * Render the node from given config object, environment and orientation state
+         *
+         * @method renderContent
+         * @param {Object} configObject
+         * @param {String} env
+         * @param {String} orientation
+         * @return {HTMLElement} node
+         */
+        renderContent: function (configObject) {
+            var node = document.createElement(&#x27;div&#x27;);
+            node = this.applyNodeConfig(node, configObject);
+            Dom.applyStyles(node, PRESET_CSS.ROOT_CONTAINER);
+            return node;
+        },
+
+        /**
+         * Function to return the generated node for ACT Scaffolding
+         * @method getContent
+         * @param {String} env Environment for rendering content such as html/flash/backup
+         * @param {String} orientation Orientation of current device such as landscape and portraits for mobile
+         * @return {HTMLElement} node
+         */
+        getContent: function (env, orientation) {
+            var node = this.renderContent(this.get(&#x27;configObject&#x27;), env, orientation);
+            this.set(&#x27;node&#x27;, node);
+            this.createRelativeContainer();
+            this.createHolderContainer();
+            return {
+                node: node
+            };
+        },
+
+        /**
+         * Function to create a relative container to ensure carousel position is correct on page
+         * @method createRelativeContainer
+         */
+        createRelativeContainer: function () {
+            var relativeNode = document.createElement(&#x27;div&#x27;);
+
+            if (Lang.isString(PRESET_CLASS.RELATIVE_CONTAINER) &amp;&amp; PRESET_CLASS.RELATIVE_CONTAINER !== &#x27;&#x27;) {
+                relativeNode.className += &#x27; &#x27; + PRESET_CLASS.RELATIVE_CONTAINER;
+            }
+
+            Dom.applyStyles(relativeNode, PRESET_CSS.RELATIVE_CONTAINER);
+            this.set(&#x27;relativeContainer&#x27;, relativeNode);
+            this.get(&#x27;node&#x27;).appendChild(relativeNode);
+        },
+
+        /**
+         * Function to create the Carousels main container and append content
+         * @method createHolderContainer
+         */
+        createHolderContainer: function () {
+            var root = this;
+            var carouselContainer = this.get(&#x27;node&#x27;);
+            var holderNode = document.createElement(&#x27;div&#x27;);
+            var totalHolderWidth = 0;
+
+            if (Lang.isString(PRESET_CLASS.HOLDER_CONTAINER) &amp;&amp; PRESET_CLASS.HOLDER_CONTAINER !== &#x27;&#x27;) {
+                holderNode.className += &#x27; &#x27; + PRESET_CLASS.HOLDER_CONTAINER;
+            }
+
+            Dom.applyStyles(holderNode, PRESET_CSS.HOLDER_CONTAINER);
+            this.set(&#x27;holderContainer&#x27;, holderNode);
+            this.get(&#x27;relativeContainer&#x27;).appendChild(holderNode);
+            carouselContainer.appendChild = function (content) {
+                root.appendChildNode(content);
+                totalHolderWidth += parseInt(content.style.width, 10);
+                Dom.applyStyles(holderNode, {
+                    width: totalHolderWidth + &#x27;px&#x27;
+                });
+            };
+        },
+
+        /**
+         * Function to append new node content into Carousel
+         *
+         * @method appendChildNode
+         * @param {Node} content child Node to be appened
+         */
+        appendChildNode: function (content) {
+            this.get(&#x27;holderContainer&#x27;).appendChild(content);
+            this.addSlideContent(content);
+        },
+
+        /**
+         * Function to add new slide content to the slideContentList
+         * If new item is not a Node object, we will not add it to the list
+         *
+         * @method addSlideContent
+         * @param {Node} node to be add
+         */
+        addSlideContent: function (newItem) {
+            var items = this.get(&#x27;slideContentList&#x27;);
+            items.push(newItem);
+            this.preparePosition();
+        },
+
+        /**
+         * Function to get next ID base on direction
+         *
+         * @method getNextSlideId
+         * @param {Number} direction of the next slide. Direction = 1 to move right, -1 to move left
+         * @return {Number} Id of the next slide
+         */
+        getNextSlideId: function (direction) {
+            var nextID;
+            direction = direction &gt; 0 ? PRESET_DIRECTION.RIGHT : PRESET_DIRECTION.LEFT;
+            nextID = this.get(&#x27;currentSlideId&#x27;) + direction;
+
+            if (nextID &lt; 0) {
+                nextID = this.get(&#x27;slideContentList&#x27;).length - 1;
+            } else if (nextID &gt;= this.get(&#x27;slideContentList&#x27;).length) {
+                nextID = 0;
+            }
+            return nextID;
+        },
+
+        /**
+         * Function to jump to a new slide without animation
+         *
+         * @method jumpToSlide
+         * @param {Number} slidePositionId
+         * @param {Function} done
+         */
+        jumpToSlide: function (slidePositionId, done) {
+            this.set(&#x27;currentSlideId&#x27;, slidePositionId);
+            this.preparePosition(PRESET_DIRECTION.LEFT);
+
+            /* istanbul ignore else */
+            if (done) {
+                done();
+            }
+        },
+
+        /**
+         * Prepare slides for next possible transition
+         *
+         * @method preparePosition
+         * @param {Number} direction direction to follow
+         */
+        preparePosition: function (direction) {
+            var items = this.get(&#x27;slideContentList&#x27;);
+            var previousId = this.getNextSlideId(-1);
+            var nextId = this.getNextSlideId(1);
+            var holderWidth = ACT.Lang.numberific(this.get(&#x27;configObject&#x27;).css.width);
+            var index;
+
+            for (index = 0; index &lt; items.length; index++) {
+                if (index === this.get(&#x27;currentSlideId&#x27;)) {
+                    Dom.applyStyles(items[index], {
+                        position: &#x27;absolute&#x27;,
+                        left: &#x27;0px&#x27;,
+                        display: &#x27;block&#x27;
+                    });
+                } else if ((index === previousId) &amp;&amp; (direction === PRESET_DIRECTION.RIGHT)) {
+                    Dom.applyStyles(items[index], {
+                        left: &#x27;-&#x27; + (holderWidth) + &#x27;px&#x27;,
+                        display: &#x27;block&#x27;,
+                        position: &#x27;absolute&#x27;
+                    });
+                } else if ((index === nextId) &amp;&amp; (direction === PRESET_DIRECTION.LEFT)) {
+                    Dom.applyStyles(items[index], {
+                        left: (holderWidth) + &#x27;px&#x27;,
+                        display: &#x27;block&#x27;,
+                        position: &#x27;absolute&#x27;
+                    });
+                } else {
+                    Dom.applyStyles(items[index], {
+                        display: &#x27;none&#x27;
+                    });
+                }
+            }
+        },
+
+        /**
+         * sliding to the left behaviour
+         *
+         * @method slideLeft
+         * @param {Function} done
+         */
+        slideLeft: function (done) {
+            this.slideAnimation(PRESET_DIRECTION.LEFT);
+            /* istanbul ignore else */
+            if (done) {
+                done();
+            }
+        },
+
+        /**
+         * sliding to the right behaviour
+         *
+         * @method slideRight
+         * @param {Function} done
+         */
+        slideRight: function (done) {
+            this.slideAnimation(PRESET_DIRECTION.RIGHT);
+            /* istanbul ignore else */
+            if (done) {
+                done();
+            }
+        },
+
+        /**
+         * Animation for sliding behaviour
+         *
+         * @method slideAnimation
+         * @param {1 | -1} direction 1 if sliding to the right and -1 if sliding to the left
+         * @param {Function} callback
+         */
+        slideAnimation: function (direction) {
+            var root = this;
+            var holderContainer;
+            var items;
+            var currentSlide;
+            var movingDistance;
+            var transitionTime;
+            var transition;
+
+            if (root.get(&#x27;slideContentList&#x27;).length &lt; 2) {
+                return;
+            }
+
+            holderContainer = root.get(&#x27;holderContainer&#x27;);
+            items = root.get(&#x27;slideContentList&#x27;);
+            currentSlide = items[root.get(&#x27;currentSlideId&#x27;)];
+            movingDistance = direction * (holderContainer.clientWidth / items.length);
+            transitionTime = root.get(&#x27;transitionTime&#x27;);
+            transition = {
+                left: movingDistance
+            };
+            root.preparePosition(direction);
+
+
+            Animation.anim(holderContainer, transition, null, transitionTime, 0,
+                function () {
+                    Event.fire(EVENT_CAROUSEL_ANIMATION_STATE, {
+                        data: &#x27;carouselAnimationStart&#x27;
+                    });
+
+                    Event.fire(EVENT_CAROUSEL_ANIMATION_STATE, {
+                        data: &#x27;carouselAnimationPanel&#x27; + root.get(&#x27;currentSlideId&#x27;) + &#x27;Play&#x27;
+                    });
+
+                    root.set(&#x27;currentSlideId&#x27;, root.getNextSlideId(-1 * direction));
+                },
+
+                function () {
+                    Dom.applyStyles(holderContainer, {
+                        left: &#x27;0px&#x27;
+                    });
+                    Dom.applyStyles(currentSlide, {
+                        display: &#x27;none&#x27;
+                    });
+                    Dom.applyStyles(items[root.get(&#x27;currentSlideId&#x27;)], {
+                        display: &#x27;block&#x27;,
+                        left: &#x27;0px&#x27;
+                    });
+
+                    Event.fire(EVENT_CAROUSEL_ANIMATION_STATE, {
+                        data: &#x27;carouselAnimationComplete&#x27;
+                    });
+                });
+        },
+
+        /**
+         * Function to be called when the instance is destroyed
+         *
+         * @method destructor
+         */
+        destructor: function () {
+            var node = this.get(&#x27;node&#x27;);
+            var nodeDom;
+            if (Dom.isDomElement(node) &amp;&amp; node.id !== undefined) {
+                nodeDom = Dom.byId(node.id);
+                nodeDom.parentNode.removeChild(nodeDom);
+            }
+        }
+    });
+
+    return ContentCarousel;
+});
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

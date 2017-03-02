@@ -1,0 +1,139 @@
+<link rel="stylesheet" href="../../src/assets/ACT_icons/ACT_icons.css"/>
+
+<style type="text/css">
+    #act-ad .hotspot {
+        position: absolute;
+        top: 2px;
+        margin-left: -3px;
+        background: #fff;
+        border-radius: 50%;
+    }
+    #act-ad .hotspotBallon {
+        display: none;
+        position: absolute;
+        top: -65px;
+        margin-left: -18px;
+        opacity: 0.75;
+    }
+</style>
+
+<div id="act-ad-container" style="margin:0px auto;padding:0px;width:100%;height:100%">
+    <div id="act-ad" style="margin:0px;padding:0px;position:relative;font-size:11px;width:100%;height:100%">
+    </div>
+</div>
+
+<script type="text/javascript">
+    (function() {
+        if (!window.ACT) {
+            window.ACT = {
+                "adQueue": []
+            };
+        }
+        ACT.adQueue.push(
+            function() {
+
+                /* list of time for hotspots such as 10 seconds */
+                var hotspots = [10, 20, 25];
+                /* length of the video */
+                var videoDuration = 30;
+
+                /* calculate the position of hotspot in progressbar*/
+                var hotspotPosition = [];
+                for (var index = 0; index < hotspots.length; index++){
+                    hotspotPosition[index] = Math.round(100 * hotspots[index]/videoDuration);
+                }
+
+                var ad = ACT.Base({
+                    conf: {
+                        adId: 'test_ad_id',
+    					cookie: {
+    						name: "CookieName",
+    					},
+                        tracking: {
+                            trackingFunctions: {
+                				overwrite: true,
+                				redirect: function() {},
+                				interaction: function() {}
+                			}
+                        },
+                        "customData": {
+                            /* Video data */
+                            "layers.splash.video1.videoHtmlConfig.videoWebM": "https://s.yimg.com/hl/ap/ehab/splashadfresco/85714532_Deliver_Us_From_Evil_splashAd_200814_1280x720_1.webm",
+                            "layers.splash.video1.videoHtmlConfig.videoMP4": "https://s.yimg.com/hl/ap/ehab/splashadfresco/85714532_Deliver_Us_From_Evil_splashAd_200814_1280x720.mp4",
+                            "layers.splash.video1.videoHtmlConfig.postImage": "https://playground.yahoofs.com/splash-ad-video/Yahoo_1440x600_20154485249776.jpg",
+                            /* Wallpaper data */
+                            "layers.splash.wallpaper-image.imageConfig.src": 'https://playground.yahoofs.com/splash-ad-video/Yahoo_1440x600_20154485249776.jpg',
+                            "layers.splash.wallpaper-container.events.clickThrough.URLpath": 'https://uk.yahoo.com',
+                            /* hotspot 1 data */
+                            "layers.splash.video1.customEventActions.cuePoint1": hotspots[0], // second when this hot spot appear
+                            "layers.splash.hotspot-1.css.left": hotspotPosition[0] + '%', //
+                            "layers.splash.hotspot-1.events.hotspotClick.percentage": hotspotPosition[0],
+                            "layers.splash.ballon-1.css.left": hotspotPosition[0] + '%',
+                            "layers.splash.ballonimg-1.imageConfig.src": "https://s.yimg.com/cv/ae/hoang/test/splashad/hotspot11443534723.png",
+                            /* hotspot 2 data */
+                            "layers.splash.video1.customEventActions.cuePoint2": hotspots[1],
+                            "layers.splash.hotspot-2.css.left": hotspotPosition[1] + '%',
+                            "layers.splash.hotspot-2.events.hotspotClick.percentage": hotspotPosition[1],
+                            "layers.splash.ballon-2.css.left": hotspotPosition[1] + '%',
+                            "layers.splash.ballonimg-2.imageConfig.src": "https://s.yimg.com/cv/ae/hoang/test/splashad/hotspot11443534723.png",
+                            /* hotspot 3 data */
+                            "layers.splash.video1.customEventActions.cuePoint3": hotspots[2],
+                            "layers.splash.hotspot-3.css.left": hotspotPosition[2] + '%',
+                            "layers.splash.hotspot-3.events.hotspotClick.percentage": hotspotPosition[2],
+                            "layers.splash.ballon-3.css.left": hotspotPosition[2] + '%',
+                            "layers.splash.ballonimg-3.imageConfig.src": "https://s.yimg.com/cv/ae/hoang/test/splashad/hotspot11443534723.png",
+                            /* banner info 1*/
+                            "layers.splash.hotspot1-info.events.clickThrough.URLpath": "https://uk.yahoo.com",
+                            "layers.splash.infoimage-1.imageConfig.src": "https://s.yimg.com/cv/ae/hoang/test/splashad/banner11443535666.png",
+                            /* banner info 2*/
+                            "layers.splash.hotspot2-info.events.clickThrough.URLpath": "https://uk.yahoo.com",
+                            "layers.splash.infoimage-2.imageConfig.src": "https://s.yimg.com/cv/ae/hoang/test/splashad/banner11443535666.png",
+                            /* banner info 3*/
+                            "layers.splash.hotspot3-info.events.clickThrough.URLpath": "https://uk.yahoo.com",
+                            "layers.splash.infoimage-3.imageConfig.src": "https://s.yimg.com/cv/ae/hoang/test/splashad/banner11443535666.png",
+                            /* Company info */
+                            "layers.splash.company_name_text.containerConfig.innerText": "Paramount Picture Company",
+                            "layers.splash.title_text.containerConfig.innerText": "Paddington Movie",
+                            "layers.splash.description_text.containerConfig.innerText": "Some description for the movie going here"
+
+                        }
+                    },
+                    "superConf": "config-object"
+                });
+            }
+        );
+    })();
+</script>
+
+<script src="../../src/core/ACT.js"></script>
+<script src="../../src/core/ACT_Layerslist.js"></script>
+<script src="../../src/core/ACT_Screen.js"></script>
+<script src="../../src/core/ACT_StandardAd.js"></script>
+<script src="../../src/core/ACT_TrackingFacade.js"></script>
+<script src="../../src/core/ACT_actionsQueue.js"></script>
+<script src="../../src/core/ACT_base.js"></script>
+<script src="../../src/core/ACT_cookie.js"></script>
+<script src="../../src/core/ACT_environment.js"></script>
+<script src="../../src/core/ACT_layerStandard.js"></script>
+<script src="../../src/core/ACT_scaffolding.js"></script>
+<script src="../../src/core/ACT_secureDarla.js"></script>
+<script src="../../src/library/ACT_IO.js"></script>
+<script src="../../src/library/ACT_UA.js"></script>
+<script src="../../src/library/ACT_animation.js"></script>
+<script src="../../src/library/ACT_capability.js"></script>
+<script src="../../src/library/ACT_class.js"></script>
+<script src="../../src/library/ACT_customData.js"></script>
+<script src="../../src/library/ACT_debug.js"></script>
+<script src="../../src/library/ACT_dom.js"></script>
+<script src="../../src/library/ACT_event.js"></script>
+<script src="../../src/library/ACT_flash.js"></script>
+<script src="../../src/library/ACT_json.js"></script>
+<script src="../../src/library/ACT_lang.js"></script>
+<script src="../../src/library/ACT_util.js"></script>
+<script src="../../src/library/ACT_VideoEvents.js"></script>
+<script src="../../src/capabilities/ACT_contentContainer.js"></script>
+<script src="../../src/capabilities/ACT_contentImage.js"></script>
+<script src="../../src/capabilities/ACT_contentVideoHtml.js"></script>
+<script src="../../src/capabilities/ACT_contentProgressBar.js"></script>
+
+<script src="./config-object.js"></script>

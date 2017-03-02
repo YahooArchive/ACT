@@ -1,0 +1,193 @@
+<link rel="stylesheet" href="../../src/assets/ACT_icons/ACT_icons.css"/>
+
+<style>.edgeLoad-EDGE-14394255{visibility:hidden}</style>
+
+<div id="act-ad-container" style="margin:0px auto;padding:0px;width:970px;min-height:20px">
+    <div id="act-ad" style="margin:0px;padding:0px;position:relative;font-size:11px"></div>
+</div>
+
+<script src="https://s.yimg.com/cv/ae/latam/dev/libs/1440535501/edge.6.0.0.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        if (!window.ACT) {
+            window.ACT = {
+                "adQueue": []
+            };
+        }
+        ACT.adQueue.push(
+            function() {
+
+                var ss = ss || {};
+
+                var event = ACT.Event;
+                var dom = ACT.Dom;
+                var byID = dom.byId;
+                var ua = ACT.UA;
+                var lang = ACT.Lang;
+                var videoEvent;
+
+                /*
+                 * EDGE CONFIG
+                 */
+                var edgeConfig;
+                var edge;
+                var composition = "EDGE-14394255";
+                var divRedirect = {
+                    width: "526px",
+                    height: "250px"
+                };
+
+                var path = "https://s.yimg.com/cv/ae/br/adtech/cipol/1441283394/";
+                var ad_url = "http://br.yahoo.com";
+
+                var ad = ACT.Base({
+                    conf: {
+                        client: "CIPOL",
+                        cookie: {
+                            name: "uniqueAdName"
+                        },
+                        tracking: {
+                            trackingFunctions: {
+                				overwrite: true,
+                				redirect: function() {},
+                				interaction: function() {}
+                			}
+                        },
+                        backup: { w: 970, h: 250, src: path + "backup-billboard.jpg" },
+                        trkname: {
+                            backup: "billboard_load_ad_backup",
+                            html: "billboard_load_ad_html",
+                            hclicks: "billboard_click_$name_clicktaghtml"
+                        },
+                        pixels: [""]
+                    },
+                    extend: {
+                        ad_init: function(){
+                            var conf = this.config;
+                            var prefix = conf.client;
+                            edgeConfig = {
+                                id: prefix,
+                                adobeEdgeConfig: {
+                                    compositionLink: path+prefix,
+                                    compositionId: composition,
+                                    options: {
+                                        scaleToFit: "none",
+                                        centerStage: "none",
+                                        minW: "0px",
+                                        maxW: "undefined",
+                                        width: "970px",
+                                        height: "250px"
+                                    },
+                                    domBefore: {"dom":{}},
+                                    domAfter: {"dom":{}}
+                                }
+                            };
+                            edge = new ACT.ContentAdobeEdge(edgeConfig);
+                            this.loadBB();
+                        },
+                        loadBB: function(){
+                            if( ua.isHtml5Supported ) {
+                                var node = edge.getContent().node;
+                                if(node){
+                                    var tag = "<div id='redirect'></div>";
+                                    var clickNode = dom.nodeCreate(tag).firstChild;
+                                    if(clickNode!==null){
+                                        var style = {
+                                            background: "url('https://s.yimg.com/cv/eng/externals/131110/a/p.gif')",
+                                            position: "absolute",
+                                            right: 0,
+                                            zIndex: "10",
+                                            cursor: "pointer"
+                                        };
+                                        dom.applyStyles(clickNode, lang.merge(style, divRedirect));
+                                        clickNode.onclick = function(e){ ad.adRedirect(ad_url); };
+                                        node.appendChild(clickNode);
+                                    }
+                                    byID("act-ad").appendChild(node);
+                                    AdobeEdge.bootstrapCallback(ad.adLoaded);
+                                }
+                            } else {
+                                ad.loadBackup();
+                            }
+                        },
+                        adLoaded: function(compID){
+                            if(compID == composition){
+                                var video = AdobeEdge.$("#CIPOL_cipol30s250x444")[0];
+                                if(video){
+                                    var config = {
+                                        tracking: {
+                                            start : true,
+                                            25 : true,
+                                            50: true,
+                                            75: true,
+                                            ended: true,
+                                            pause: true,
+                                            volumechange: true,
+                                            seeked: false,
+                                            clicked: true
+                                        }
+                                    };
+                                    videoEvent = new ACT.VideoEvents(video, "cipol", config);
+                                    console.log(videoEvent);
+                                    event.on("video:action", ad.videoTrack);
+                                }
+                            }
+                        },
+                        videoTrack: function(data) {
+                            console.log(data);
+                        },
+                        adRedirect: function(url){
+                            var conf = this.config;
+                            var trName = conf.trkname.hclicks;
+                            var redirId = trName.replace("$name", conf.client.toLowerCase());
+                            var redir = this.redirect_track(redirId, 125, url);
+                            try{
+                                if(redir!=""){ window.open(redir, "_blank"); }
+                            } catch(e){}
+                        },
+                        loadBackup: function(){
+                            var conf = this.config;
+                            var img = conf.backup;
+                            var container = byID("act-ad");
+                            var node = "<img width='"+img.w+"' height='"+img.h+"' src='"+img.src+"' />";
+                            var tag = "<a href='"+ad_url+"'>"+node+"</a>";
+                            container.innerHTML = tag;
+                            this.interaction_track(conf.trkname.backup);
+                        }
+                    }
+                });
+            }
+        );
+    })();
+</script>
+
+<script src="../../src/core/ACT.js"></script>
+<script src="../../src/core/ACT_Layerslist.js"></script>
+<script src="../../src/core/ACT_Screen.js"></script>
+<script src="../../src/core/ACT_StandardAd.js"></script>
+<script src="../../src/core/ACT_TrackingFacade.js"></script>
+<script src="../../src/core/ACT_actionsQueue.js"></script>
+<script src="../../src/core/ACT_base.js"></script>
+<script src="../../src/core/ACT_cookie.js"></script>
+<script src="../../src/core/ACT_environment.js"></script>
+<script src="../../src/core/ACT_layerStandard.js"></script>
+<script src="../../src/core/ACT_scaffolding.js"></script>
+<script src="../../src/core/ACT_secureDarla.js"></script>
+<script src="../../src/library/ACT_IO.js"></script>
+<script src="../../src/library/ACT_UA.js"></script>
+<script src="../../src/library/ACT_animation.js"></script>
+<script src="../../src/library/ACT_capability.js"></script>
+<script src="../../src/library/ACT_class.js"></script>
+<script src="../../src/library/ACT_customData.js"></script>
+<script src="../../src/library/ACT_debug.js"></script>
+<script src="../../src/library/ACT_dom.js"></script>
+<script src="../../src/library/ACT_event.js"></script>
+<script src="../../src/library/ACT_flash.js"></script>
+<script src="../../src/library/ACT_json.js"></script>
+<script src="../../src/library/ACT_lang.js"></script>
+<script src="../../src/library/ACT_util.js"></script>
+<script src="../../src/library/ACT_VideoEvents.js"></script>
+<script src="../../src/capabilities/ACT_contentContainer.js"></script>
+<script src="../../src/capabilities/ACT_contentImage.js"></script>
+<script src="../../src/capabilities/ACT_contentAdobeEdge.js"></script>

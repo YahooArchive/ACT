@@ -1,0 +1,141 @@
+<link rel="stylesheet" href="../../src/assets/ACT_icons/ACT_icons.css"/>
+
+<div id="act-ad-container" style="margin:0px 0px">
+    <div id="act-ad" style="margin:0px;padding:0px;position:relative;font-size:11px"></div>
+</div>
+
+<script type="text/javascript">
+(function() {
+    if (!window.ACT) {
+        window.ACT = {
+            "adQueue": []
+        };
+    }
+    ACT.adQueue.push(
+        function() {
+
+            // Add client data
+            var companyName = "Mini";
+            var icon = "http://38.media.tumblr.com/avatar_6c82cb0690d8_128.png";
+            var dataFeedURL = "./asset/json_feed.js";
+            var language = "fr";
+            var Slide1Custom = undefined;  //add first slide custom title here
+            var Slide2Custom = undefined;  //add second slide custom title here
+            var Slide3Custom = undefined;  //add thrird slide custom title here
+
+            // Dont edit
+            var translations = {
+                en: {sponsorText: 'Sponsored by', discoverText: 'DISCOVER MORE'},
+                de: {sponsorText: 'pr&auml;sentiert von', discoverText: 'MEHR'},
+                fr: {sponsorText: 'Sponsoris&eacute; par', discoverText: 'EN SAVOIR PLUS'},
+                it: {sponsorText: 'In collaborazione con:', discoverText: 'Scopri di piú'},
+                pr: {sponsorText: 'Patrocinado por', discoverText: 'DESCUBRA MAIS'},
+                es: {sponsorText: 'Patrocinado por', discoverText: 'EXPLORAR POR AQU&Iacute;'}
+            }
+
+            var sponsorText = translations[language].sponsorText;
+            var buttonText = translations[language].discoverText;
+
+            var ad = ACT.Base({
+                conf: {
+                    adId: 'test_ad_id',
+                    cookie: {
+                        name: "uniqueAdName",
+                    },
+                    template: {
+                        width: 300,
+                        height: 250
+                    },
+                    tracking: {
+                        trackingFunctions: {
+                            overwrite: true,
+                            redirect: function() {},
+                            interaction: function() {}
+                        }
+                    },
+                    inputData:{
+                        type:"JSON",
+                        id: "myYT",
+                        dataFeed: dataFeedURL
+                    },
+                    customData:{
+                        //first slide
+                        "layers.mpu.avatar_one.imageConfig.src": icon,
+                        "layers.mpu.button_one.containerConfig.innerText": buttonText,
+                        "layers.mpu.main_title_one.containerConfig.innerText": 'myYT.blog.name',
+                        "layers.mpu.subTitle_one.containerConfig.innerText": sponsorText+' by '+companyName,
+                        "layers.mpu.image_one.imageConfig.src": {
+                            value: 'myYT.posts[0].photos[0].alt_sizes[2].url',
+                            callback: function(value){ return value.replace(/^http:/, 'https:') }
+                        },
+                        "layers.mpu.posttitle_one.containerConfig.innerText": {
+                            value: Slide1Custom || 'myYT.posts[0].slug',
+                            callback: function(value){ return ( value.replace(/-/g, " ") ).toUpperCase()}
+                        },
+                        "layers.mpu.content_one.events.actionSlide1.URLpath": "myYT.posts[0].post_url",
+                        //second slide
+                        "layers.mpu.avatar_two.imageConfig.src": icon,
+                        "layers.mpu.button_two.containerConfig.innerText": buttonText,
+                        "layers.mpu.main_title_two.containerConfig.innerText": 'myYT.blog.name',
+                        "layers.mpu.subTitle_two.containerConfig.innerText": sponsorText+' by '+companyName,
+                        "layers.mpu.image_two.imageConfig.src": {
+                            value: 'myYT.posts[1].photos[0].alt_sizes[2].url',
+                            callback: function(value){ return value.replace(/^http:/, 'https:') }
+                        },
+                        "layers.mpu.posttitle_two.containerConfig.innerText": {
+                            value: Slide2Custom || 'myYT.posts[1].slug',
+                            callback: function(value){  return ( value.replace(/-/g, " ") ).toUpperCase()}
+                        },
+                        "layers.mpu.content_two.events.actionSlide2.URLpath": "myYT.posts[1].post_url",
+                        //third slide
+                        "layers.mpu.avatar_three.imageConfig.src": icon,
+                        "layers.mpu.button_three.containerConfig.innerText": buttonText,
+                        "layers.mpu.main_title_three.containerConfig.innerText": 'myYT.blog.name',
+                        "layers.mpu.subTitle_three.containerConfig.innerText": sponsorText+' by '+companyName,
+                        "layers.mpu.image_three.imageConfig.src": {
+                            value: 'myYT.posts[2].photos[0].alt_sizes[2].url',
+                            callback: function(value){ console.log("value 3", value);  return value.replace(/^http:/, 'https:') }
+                        },
+                        "layers.mpu.posttitle_three.containerConfig.innerText": {
+                            value: Slide3Custom || 'myYT.posts[2].slug',
+                            callback: function(value){console.log('call back is called'); return ( value.replace(/-/g, " ") ).toUpperCase()}
+                        },
+                        "layers.mpu.content_three.events.actionSlide3.URLpath": "myYT.posts[2].post_url"
+                    }
+                },
+                "superConf": "config-object-boomerang"
+            });
+        }
+    );
+})();
+</script>
+
+<script src="../../src/core/ACT.js"></script>
+<script src="../../src/core/ACT_Layerslist.js"></script>
+<script src="../../src/core/ACT_Screen.js"></script>
+<script src="../../src/core/ACT_StandardAd.js"></script>
+<script src="../../src/core/ACT_TrackingFacade.js"></script>
+<script src="../../src/core/ACT_actionsQueue.js"></script>
+<script src="../../src/core/ACT_base.js"></script>
+<script src="../../src/core/ACT_cookie.js"></script>
+<script src="../../src/core/ACT_environment.js"></script>
+<script src="../../src/core/ACT_layerStandard.js"></script>
+<script src="../../src/core/ACT_scaffolding.js"></script>
+<script src="../../src/core/ACT_secureDarla.js"></script>
+<script src="../../src/library/ACT_IO.js"></script>
+<script src="../../src/library/ACT_UA.js"></script>
+<script src="../../src/library/ACT_animation.js"></script>
+<script src="../../src/library/ACT_capability.js"></script>
+<script src="../../src/library/ACT_class.js"></script>
+<script src="../../src/library/ACT_customData.js"></script>
+<script src="../../src/library/ACT_debug.js"></script>
+<script src="../../src/library/ACT_dom.js"></script>
+<script src="../../src/library/ACT_event.js"></script>
+<script src="../../src/library/ACT_flash.js"></script>
+<script src="../../src/library/ACT_json.js"></script>
+<script src="../../src/library/ACT_lang.js"></script>
+<script src="../../src/library/ACT_util.js"></script>
+<script src="../../src/capabilities/ACT_contentContainer.js"></script>
+<script src="../../src/capabilities/ACT_contentImage.js"></script>
+
+<script src="./config-object.js"></script>

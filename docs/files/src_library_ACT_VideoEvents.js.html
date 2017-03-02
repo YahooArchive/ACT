@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src/library/ACT_VideoEvents.js - ACT.js</title>
+    <link rel="stylesheet" href="https://s.yimg.com/zz/combo?yui-s:3.14.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="https://s.yimg.com/rz/l/favicon.ico">
+    <script src="https://s.yimg.com/zz/combo?yui-s:3.14.1/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="https://s.yimg.com/cv/ae/global/ACTJS/logo/ACT.js.logo.png" title="ACT.js" width="150"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 1.1.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                            <li><a href="#api-demos">Demo and Examples</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/ACT.html">ACT</a></li>
+                                <li><a href="../classes/ActionsQueue.html">ActionsQueue</a></li>
+                                <li><a href="../classes/Base.html">Base</a></li>
+                                <li><a href="../classes/Capability.html">Capability</a></li>
+                                <li><a href="../classes/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../classes/Class.html">Class</a></li>
+                                <li><a href="../classes/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../classes/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../classes/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../classes/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../classes/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../classes/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../classes/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../classes/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../classes/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../classes/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../classes/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../classes/Cookie.html">Cookie</a></li>
+                                <li><a href="../classes/CustomData.html">CustomData</a></li>
+                                <li><a href="../classes/Debug.html">Debug</a></li>
+                                <li><a href="../classes/Dom.html">Dom</a></li>
+                                <li><a href="../classes/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../classes/Enabler.html">Enabler</a></li>
+                                <li><a href="../classes/Environment.html">Environment</a></li>
+                                <li><a href="../classes/Event.html">Event</a></li>
+                                <li><a href="../classes/Flash.html">Flash</a></li>
+                                <li><a href="../classes/IO.html">IO</a></li>
+                                <li><a href="../classes/Json.html">Json</a></li>
+                                <li><a href="../classes/Lang.html">Lang</a></li>
+                                <li><a href="../classes/LayersList.html">LayersList</a></li>
+                                <li><a href="../classes/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../classes/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../classes/Screen.html">Screen</a></li>
+                                <li><a href="../classes/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../classes/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../classes/Tracking.html">Tracking</a></li>
+                                <li><a href="../classes/UA.html">UA</a></li>
+                                <li><a href="../classes/Util.html">Util</a></li>
+                                <li><a href="../classes/VideoEvents.html">VideoEvents</a></li>
+                            </ul>
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/ACT.html">ACT</a></li>
+                                <li><a href="../modules/actionsQueue.html">actionsQueue</a></li>
+                                <li><a href="../modules/Base.html">Base</a></li>
+                                <li><a href="../modules/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../modules/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../modules/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../modules/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../modules/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../modules/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../modules/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../modules/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../modules/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../modules/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../modules/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../modules/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../modules/Cookie.html">Cookie</a></li>
+                                <li><a href="../modules/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../modules/Enabler.html">Enabler</a></li>
+                                <li><a href="../modules/environment.html">environment</a></li>
+                                <li><a href="../modules/IO.html">IO</a></li>
+                                <li><a href="../modules/LayersList.html">LayersList</a></li>
+                                <li><a href="../modules/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../modules/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../modules/Screen.html">Screen</a></li>
+                                <li><a href="../modules/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../modules/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../modules/Tracking.html">Tracking</a></li>
+                            </ul>
+                
+                            <ul id="api-demos" class="apis demos">
+                                <li><a href="../demo/ACT_Demo_300x250.html">300x250</a></li>
+                                <li><a href="../demo/ACT_Demo_300x250_tracking.html">300x250_tracking</a></li>
+                                <li><a href="../demo/ACT_Demo_TrackingExample.html">TrackingExample</a></li>
+                                <li><a href="../demo/ACT_Demo_animation.html">animation</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard.html">billboard</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-enabler.html">billboard-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-expandable-enabler.html">billboard-expandable-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video.html">billboard_html_video</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video_rtl.html">billboard_html_video_rtl</a></li>
+                                <li><a href="../demo/ACT_Demo_carousel.html">carousel</a></li>
+                                <li><a href="../demo/ACT_Demo_dwelltime.html">dwelltime</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_expand.html">enabler_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_fullscreen_expand.html">enabler_fullscreen_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_target.html">enabler_target</a></li>
+                                <li><a href="../demo/ACT_Demo_floating.html">floating</a></li>
+                                <li><a href="../demo/ACT_Demo_force_env.html">force_env</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_enabler.html">html5_enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_standard.html">html5_standard</a></li>
+                                <li><a href="../demo/ACT_Demo_icons.html">icons</a></li>
+                                <li><a href="../demo/ACT_Demo_input_data.html">input_data</a></li>
+                                <li><a href="../demo/ACT_Demo_login_html.html">login_html</a></li>
+                                <li><a href="../demo/ACT_Demo_overwrite_env.html">overwrite_env</a></li>
+                                <li><a href="../demo/ACT_Demo_splash_ad.html">splash_ad</a></li>
+                                <li><a href="../demo/ACT_Demo_tablet_expandable.html">tablet_expandable</a></li>
+                                <li><a href="../demo/ACT_Demo_video_event.html">video_event</a></li>
+                                <li><a href="../demo/ACT_Demo_video_html.html">video_html</a></li>
+                            </ul>
+                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: src/library/ACT_VideoEvents.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+ * Copyright 2016, Yahoo Inc.
+ * Copyrights licensed under the New BSD License.
+ * See the accompanying LICENSE file for terms.
+ */
+
+/* global ACT */
+ACT.define(&#x27;VideoEvents&#x27;, [/*@&lt;*/&#x27;Debug&#x27;, /*&gt;@*/ &#x27;Event&#x27;, &#x27;Lang&#x27;, &#x27;Dom&#x27;, &#x27;UA&#x27;], function (ACT) {
+    &#x27;use strict&#x27;;
+    /**
+     * Video Event - A library that fires off events based on video progress / actions taken in an HTML Video Tag.
+     * @class VideoEvents
+     * @module ACT
+     * @requires event, lang, dom
+     */
+
+    /* Shorthand */
+    var Event = ACT.Event;
+    var Lang = ACT.Lang;
+    var Dom = ACT.Dom;
+    var UA = ACT.UA;
+    var VIDEO_START_THRESHOLD = 0.05;
+    var SOUND_STATE = {
+        ON: &#x27;On&#x27;,
+        OFF: &#x27;Off&#x27;
+    };
+
+    /* Fired Events Set */
+    var EVENT_VIDEO_STATE = {
+        /* The &quot;play&quot; event never gets fired out. It gets replaced with &quot;start&quot; / &quot;resume&quot; / &quot;replay&quot; instead */
+        /* &quot;play&quot;: &#x27;video:play&#x27;, */
+
+        /**
+         * Fired when video starts playing
+         * @event &#x27;video:start&#x27;
+         */
+        start: &#x27;video:start&#x27;,
+
+        /**
+         * Fired when video stops playing
+         * @event &#x27;video:stop&#x27;
+         */
+        stop: &#x27;video:stop&#x27;,
+
+        /**
+         * Fired when video playing is resumed ( from pause state )
+         * @event &#x27;video:resume&#x27;
+         */
+        resume: &#x27;video:resume&#x27;,
+
+        /**
+         * Fired when video is replayed.
+         * @event &#x27;video:replay&#x27;
+         */
+        replay: &#x27;video:replay&#x27;,
+
+        /**
+         * Fired when video is paused
+         * @event &#x27;video:pause&#x27;
+         */
+        pause: &#x27;video:pause&#x27;,
+
+        /**
+         * Fired when video sound is turned on
+         * @event &#x27;video:soundOn&#x27;
+         */
+        soundOn: &#x27;video:soundOn&#x27;,
+
+        /**
+         * Fired when video sound is turned off ( mute )
+         * @event &#x27;video:soundOff&#x27;
+         */
+        soundOff: &#x27;video:soundOff&#x27;,
+
+        /**
+         * Fired when video is being seeked/scrubbed by the user.
+         * @event &#x27;video:seeked&#x27;
+         */
+        seeked: &#x27;video:seeked&#x27;,
+
+        /**
+         * Fired when video has played 25%
+         * @event &#x27;video:25percent&#x27;
+         */
+        25: &#x27;video:25percent&#x27;,
+
+        /**
+         * Fired when video has played 50%
+         * @event &#x27;video:50percent&#x27;
+         */
+        50: &#x27;video:50percent&#x27;,
+
+        /**
+         * Fired when video has played 75%
+         * @event &#x27;video:75percent&#x27;
+         */
+        75: &#x27;video:75percent&#x27;,
+
+        /**
+         * Fired when video has finished playing
+         * @event &#x27;video:complete&#x27;
+         */
+        ended: &#x27;video:complete&#x27;,
+
+        /**
+         * Fired when video has being clicked
+         * @event &#x27;video:clicked&#x27;
+         */
+        clicked: &#x27;video:clicked&#x27;
+    };
+
+    var DEFAULT_CONFIG = {
+        resumeThreshold: VIDEO_START_THRESHOLD,
+        tracking: {},
+        cuePoints: {}
+    };
+
+    var itor;
+    /* control bar height for each browser */
+    var ctrlHeight = { Safari: 24, FireFox: 28, Chrome: 35, Edge: 0, MSIE: 0, WebKit: 35 };
+    /*@&lt;*/
+    var Debug = ACT.Debug;
+    Debug.log(&#x27;[ ACT_VideoEvents.js ]: loaded&#x27;);
+    /*&gt;@*/
+
+    /* Fill in the DEFAULT_CONFIG with allowed events. */
+    for (itor in EVENT_VIDEO_STATE) {
+        /* istanbul ignore else */
+        if (EVENT_VIDEO_STATE.hasOwnProperty(itor)) {
+            DEFAULT_CONFIG.tracking[itor] = (itor !== &#x27;clicked&#x27;);
+        }
+    }
+
+    /**
+     * Get if screen has been clicked or not
+     * @param node
+     * @param offset
+     * @return {boolean}
+     * @private
+     */
+    function screenClick(node, offset) {
+        var browser = UA.browser;
+        var agent = browser.name || &#x27;&#x27;;
+        var clicked = true;
+        var controls;
+        var height;
+        var screen;
+        /* istanbul ignore else */
+        if (node.controls) {
+            controls = ctrlHeight[agent] || 0;
+            height = node.offsetHeight || 0;
+            screen = (height - controls);
+            clicked = (offset.hasOwnProperty(&#x27;x&#x27;) &amp;&amp; offset.hasOwnProperty(&#x27;y&#x27;)) ? (offset.y &lt; screen) : false;
+        }
+        return clicked;
+    }
+
+    /**
+     * @method VideoEvent
+     * @param videoNode {Object} DOM Node of the video to track OR ID of the video node
+     * @param videoID {String} Identifier of the video for tracking.
+     * @param config {Object} Optional configuration for tracking.
+     * @public
+     *
+     * @example
+     * &#x60;&#x60;&#x60;
+     *  // This example will track start, 25percent, 50percent, 75percent, complete, pause.
+     *  // Will NOTE track: volume change ( sound on / sound off ) and seek.
+     *  var config = {
+     *      resumeThreshold: 0.05,
+     *      tracking : {
+     *          start : true,
+     *          25: true,
+     *          50: true,
+     *          75: true,
+     *          ended: true,
+     *          pause: true,
+     *          volumechange: false,
+     *          seeked: false,
+     *          clicked: false
+     *      }
+     *  }
+     *  var videoNode = Dom.ById(&quot;videoNodeId&quot;);
+     *  var videoEvents = new ACT.VideoEvents( videoNode, &quot;video1&quot;, config);
+     *
+     *  // Now to attach to these events.
+     *  var Event = ACT.Event;
+     *  Event.on( &#x27;video:action&#x27;, function( event_data ){ event.event == &#x27;video:&lt;type&gt;&#x27;; &quot;..do something with data ...&quot;; }, null, this );
+     * &#x60;&#x60;&#x60;
+     */
+    function VideoEvent(videoNode, videoID, config) {
+        /* Internal flags - keeping track of what cuePoint has been fired so far. */
+        var cuePointFired = {};
+        this.videoNode = videoNode;
+        this.videoID = videoID;
+        this.firstPlay = true;
+        this.videoEnded = false;
+        this.config = {};
+
+        Lang.merge(this.config, DEFAULT_CONFIG);
+        Lang.merge(this.config, config || {});
+
+        VIDEO_START_THRESHOLD = this.config.resumeThreshold;
+
+        /* Internal flags - keeping track of what percentage has been fired so far. */
+        this.progressParts = {
+             1: false,
+            25: false,
+            50: false,
+            75: false,
+            ended: false
+        };
+
+        Lang.forEach(this.config.cuePoints, function (cuePoint) {
+            cuePointFired[cuePoint] = false;
+        });
+        this.cuePointFired = cuePointFired;
+
+        this.progress = {};
+
+        /* istanbul ignore else */
+        if (this.validateVideoNode() === true) {
+            this.initializeVideoTracking();
+        } /*@&lt;*/ else {
+            Debug.log(&#x27;[ ACT_VideoEvents.js ]: The DOM Node provided is not of type &quot;video&quot;&#x27;);
+        }
+        /*&gt;@*/
+    }
+
+    /**
+     * @attribute ATTRS
+     * @initOnly
+     */
+    VideoEvent.ATTRS = {
+        /**
+         * @attribute NAME
+         * @type String
+         */
+        NAME: &#x27;VideoEvent&#x27;,
+
+        /**
+         * @attribute version
+         * @type String
+         */
+        version: &#x27;1.1.0&#x27;
+    };
+
+    VideoEvent.prototype = {
+
+        /**
+         * Function that broadcasts the events to the world. Checks that we want to broadcast the event.
+         *
+         * @method broadcast
+         * @private
+         */
+        broadcast: function (eventName, data) {
+            var config = this.config;
+            var tracking = config.tracking;
+            var eventVideoState;
+
+            /*@&lt;*/
+            Debug.log(&#x27;[ ACT_VideoEvents.js ]: broadcast video events &#x27;, eventName, data);
+            /*&gt;@*/
+
+            /* istanbul ignore else */
+            if (tracking.hasOwnProperty(eventName) &amp;&amp; tracking[eventName] === true) {
+                data = data || {};
+                /*
+                 Instead of firing a specific event &quot;video:25percent&quot; or &quot;video:complete&quot;
+                 It&#x27;s a little better to fire a standard event type &quot;video:action&quot;
+                 that has a payload of eventType - which is the event type being picked off ( &quot;ended&quot; or &quot;25&quot; &quot;pause&quot; )
+                 and also has &quot;event&quot; which is the video event that is fired &quot;video:25percent&quot;, &quot;video:complete&quot; etc.
+                 EVENT_VIDEO_STATE[eventName]
+                 */
+                eventVideoState = Lang.objHasKey(EVENT_VIDEO_STATE, eventName) ? EVENT_VIDEO_STATE[eventName] : &#x27;video:&#x27; + eventName;
+                Event.fire(
+                    &#x27;video:action&#x27;, {
+                        videoId: this.videoID,
+                        videoNode: this.videoNode,
+                        data: data,
+                        eventType: eventName,
+                        eventLongName: eventVideoState.replace(&#x27;video:&#x27;, &#x27;&#x27;),
+                        event: eventVideoState
+                    }
+                );
+            }
+        },
+
+        /**
+         * Function that confirms that the node that was passed in is in fact a VIDEO node.
+         *
+         * @method validateVideoNode
+         * @private
+         */
+        validateVideoNode: function () {
+            var videoNode = this.videoNode;
+
+            /* check that we have a proper video node */
+            if (Lang.isString(videoNode)) {
+                videoNode = Dom.byId(videoNode);
+                this.videoNode = videoNode;
+            }
+
+            /* istanbul ignore else */
+            if (videoNode &amp;&amp; &#x27;nodeName&#x27; in videoNode &amp;&amp; videoNode.nodeName.toLowerCase() === &#x27;video&#x27;) {
+                return true;
+            }
+            return false;
+        },
+
+        /**
+         * Function that initialized the events that will fire for the video node.
+         *
+         * @method initializeVideoTracking
+         * @private
+         */
+        initializeVideoTracking: function () {
+            var videoNode = this.videoNode;
+
+            /*
+                a flag for current video volumn which will be used for volumn change tracking
+            */
+            this.soundState = (videoNode.muted !== true &amp;&amp; videoNode.volume &gt; 0) ? SOUND_STATE.ON : SOUND_STATE.OFF;
+
+            this.events = {
+                play: Event.on(&#x27;play&#x27;, this.onPlay, videoNode, this),
+                pause: Event.on(&#x27;pause&#x27;, this.onPause, videoNode, this),
+                volumechange: Event.on(&#x27;volumechange&#x27;, this.onVolumeChange, videoNode, this),
+                timeupdate: Event.on(&#x27;timeupdate&#x27;, this.onTimeUpdate, videoNode, this),
+                ended: Event.on(&#x27;ended&#x27;, this.onEnded, videoNode, this),
+                seeked: Event.on(&#x27;seeked&#x27;, this.onSeeked, videoNode, this),
+                clicked: Event.on(&#x27;click&#x27;, this.onClicked, videoNode, this)
+            };
+        },
+
+        /**
+         * Function to calculate video percentage
+         *
+         * @method calculateVideoPercentage
+         * @private
+         */
+        calculateVideoPercentage: function () {
+            var videoNode = this.videoNode;
+            var videolength = videoNode.duration;
+            var val1;
+            var val25;
+            var val50;
+            var val75;
+            var progress;
+
+            /* istanbul ignore else */
+            if (Lang.isObjectEmpty(this.progress)) {
+                /* calculate the value of duration percentage */
+                val1 = Math.floor(videolength * 0.01);
+                val25 = Math.floor(videolength * 0.25);
+                val50 = Math.floor(videolength * 0.50);
+                val75 = Math.floor(videolength * 0.75);
+                progress = {};
+                /*
+                    Confirm that we have proper numbers for the track points.
+                    Fix for some IE&#x27;s that do not always return a number for node.duration.
+                */
+                if (!isNaN(val1) &amp;&amp; !isNaN(val25) &amp;&amp; !isNaN(val50) &amp;&amp; !isNaN(val75)) {
+                    progress[val1] = Lang.bind(this, val25, this.on1Percent);
+                    progress[val25] = Lang.bind(this, val25, this.on25Percent);
+                    progress[val50] = Lang.bind(this, val50, this.on50Percent);
+                    progress[val75] = Lang.bind(this, val75, this.on75Percent);
+
+                    this.progress = progress;
+
+                    /*@&lt;*/
+                    Debug.log(&#x27;[ ACT_VideoEvents.js ]: set the progress tracks:&#x27;, this.progress, val1, val25, val50, val75);
+                    /*&gt;@*/
+                }
+            }
+        },
+
+        /**
+         * Function to fire a seeked event
+         *
+         * @method onSeeked
+         * @param {Object} event data
+         * @private
+         */
+        onSeeked: function () {
+            this.broadcast(&#x27;seeked&#x27;);
+        },
+
+        /**
+         * Function to fire a pause event. Only fires the pause if we&#x27;re 5% ~ 95% of video play time.
+         * NOTE: The 5%/95% is based on the VIDEO_START_THRESHOLD which can be redefined to be more or less than the 5% used as default.
+         *
+         * @method onPause
+         * @param {Object} event data
+         * @private
+         */
+        onPause: function () {
+            var videoNode = this.videoNode;
+            var videoDuration = videoNode.duration;
+            var currentTime = videoNode.currentTime;
+            var nintyFivePercent = (videoDuration * (1 - VIDEO_START_THRESHOLD));
+            var pauseOrComplete = (currentTime &gt;= nintyFivePercent);
+
+            /*
+             IF currentTime is over 95% then we have a &quot;video complete&quot;
+             ELSE we have a &quot;pause&quot;
+             */
+            /* istanbul ignore else */
+            if (!pauseOrComplete) {
+                this.broadcast(&#x27;pause&#x27;);
+            }
+        },
+
+        /**
+         * Function to fire a onTimeUpdate event
+         *
+         * @method onTimeUpdate
+         * @param {Object} event data
+         * @private
+         */
+        onTimeUpdate: function () {
+            var self = this;
+            var videoNode = this.videoNode;
+            var currentTime = Math.floor(videoNode.currentTime);
+            /* Calculate the video length and attach tracking events to 25/50/75 */
+            this.calculateVideoPercentage();
+
+            /*@&lt;*/
+            Debug.log(&#x27;[ ACT_VideoEvents.js ]: onTimeUpdate : &#x27;, currentTime);
+            /*&gt;@*/
+
+            /* if currentTime is in progressAction list then fire off the track */
+            /* Every progress track knows it&#x27;s own state. */
+            if (currentTime in this.progress) {
+                this.progress[currentTime]();
+            }
+
+            /*
+            if currentTime is in cuePoints list then fire event related to it
+            We will go through all defined CuePoints and with each cuePoints we will
+            - if cuePoint time is equal currentTime and its flag is off then we broadcast cuePoint event and turn flag on
+            - All other cuePoints differ than currentTime will have its flag turned off
+            */
+            Lang.forEach(this.config.cuePoints, function (cuePoint, eventName) {
+                if (Math.floor(cuePoint) === currentTime) {
+                    if (self.cuePointFired[cuePoint] === false) {
+                        self.cuePointFired[currentTime] = true;
+                        self.broadcast(eventName);
+                    }
+                } else {
+                    self.cuePointFired[cuePoint] = false;
+                }
+            });
+        },
+
+        /**
+         * Function to be called when the sound of the video has been changed
+         *
+         * @method onVolumeChange
+         * @param {Object} event data
+         * @private
+         */
+        onVolumeChange: function () {
+            var videoNode = this.videoNode;
+            /*
+                Sound is only considered on if the video is not muted and volumn is more than 0
+                Otherwise sound is off.
+            */
+            var soundState = (videoNode.muted !== true &amp;&amp; videoNode.volume &gt; 0) ? SOUND_STATE.ON : SOUND_STATE.OFF;
+
+            /*
+                only fire event of soundState has been changed
+            */
+            if (soundState !== this.soundState) {
+                this.soundState = soundState;
+                this.broadcast(&#x27;sound&#x27; + soundState);
+            } else {
+                /*@&lt;*/
+                Debug.log(&#x27;[ ACT_VideoEvents.js ] onVolumeChange: sound state is not changed, no event is fired&#x27;);
+                /*&gt;@*/
+            }
+        },
+
+        /**
+         * Function to be called when we have reached our quartile milestones.
+         *
+         * @method progressTrack
+         * @param time video time.
+         * @private
+         */
+        progressTrack: function (time) {
+            /* istanbul ignore else */
+            if (this.progressParts.hasOwnProperty(time) &amp;&amp; this.progressParts[time] === false) {
+                /*@&lt;*/
+                Debug.log(&#x27;[ ACT_VideoEvents.js ]: firing progressTrack @ &#x27;, time);
+                /*&gt;@*/
+
+                this.broadcast(time);
+                this.progressParts[time] = true;
+            }
+        },
+
+        /**
+         * Function to be called when &#x27;play&#x27; is fired. Fires off a &quot;start&quot;, &quot;resume&quot; or &quot;replay&quot;
+         * Depending on the following logic:
+         *      IF firstPlay then we have a &quot;start&quot;
+         *      ELSE IF currentTime is between 5% and 95% then we have a &quot;resume&quot;
+         *      ELSE IF videoEnded then we have a &quot;replay&quot;
+         * @method onPlay
+         * @param {Object} event data
+         * @private
+         */
+        onPlay: function () {
+            var videoNode = this.videoNode;
+            var videoDuration = videoNode.duration;
+            var currentTime = videoNode.currentTime;
+
+            var fivePercent = (videoDuration * VIDEO_START_THRESHOLD);
+            var nintyFivePercent = (videoDuration * (1 - VIDEO_START_THRESHOLD));
+
+            /*
+             IF firstPlay then &quot;start&quot;
+             ELSE IF currentTime between the 5% and 95% then &quot;resume&quot;
+             ELSE IF videoEnded then we have a &quot;replay&quot;
+             */
+            if (this.firstPlay === true) {
+                this.firstPlay = false;
+                this.broadcast(&#x27;start&#x27;);
+            } else if (currentTime &gt;= fivePercent &amp;&amp; currentTime &lt;= nintyFivePercent) {
+                this.broadcast(&#x27;resume&#x27;);
+            } else if (this.videoEnded === true) {
+                this.videoEnded = false;
+                this.broadcast(&#x27;start&#x27;);
+                this.broadcast(&#x27;replay&#x27;);
+            }
+        },
+
+        /**
+         * Function to be called when the video is playing at 1 percent - and we missed our onPlay / start track
+         *
+         * @method on1Percent
+         * @private
+         */
+        on1Percent: function () {
+            if (this.firstPlay === true) {
+                this.firstPlay = false;
+                this.broadcast(&#x27;start&#x27;);
+            }
+        },
+
+        /**
+         * Function to be called when the video is playing at 25 percent
+         *
+         * @method on25Percent
+         * @private
+         */
+        on25Percent: function () {
+            this.progressTrack(&#x27;25&#x27;);
+        },
+
+        /**
+         * Function to be called when the video is playing at 50 percent
+         *
+         * @method on50Percent
+         * @private
+         */
+        on50Percent: function () {
+            this.progressTrack(&#x27;50&#x27;);
+        },
+
+        /**
+         * Function to be called when the video is playing at 75 percent
+         *
+         * @method on75Percent
+         * @private
+         */
+        on75Percent: function () {
+            this.progressTrack(&#x27;75&#x27;);
+        },
+
+        /**
+         * Function to be called when the video is complete.
+         *
+         * @method onEnded
+         * @param {Object} event data
+         * @private
+         */
+        onEnded: function () {
+            /* Since the video ended, we can reset all the progressParts */
+            if (this.videoEnded === false) {
+                this.videoEnded = true;
+            }
+            this.resetParts();
+            this.progressTrack(&#x27;ended&#x27;);
+        },
+
+        /**
+         * Function to be called when the video is clicked.
+         *
+         * @method onClicked
+         * @param {Object} event data
+         * @private
+         */
+        onClicked: function (event) {
+            var videoNode = this.videoNode;
+            var config = this.config;
+            var prevent = config.preventOnClick || true;
+            var off = {};
+            var offHelper;
+            var clicked;
+            if (event.offsetX &amp;&amp; event.offsetY) {
+                off = { x: event.offsetX, y: event.offsetY };
+            } else {
+                offHelper = Dom.viewportOffset(videoNode.id);
+                off = (offHelper.top &amp;&amp; offHelper.left) ? { x: offHelper.left, y: offHelper.top } : { x: 0, y: 0 };
+            }
+            clicked = screenClick(videoNode, off);
+            if (clicked &amp;&amp; !this.firstPlay) {
+                if (prevent) {
+                    Event.preventDefault(event);
+                }
+                this.broadcast(&#x27;clicked&#x27;);
+            }
+        },
+
+        /**
+         * Function to be called when the video flags need to be reset. Called after onEnded event
+         *
+         * @method resetParts
+         * @private
+         */
+        resetParts: function () {
+            var parts = this.progressParts;
+            var item;
+            for (item in parts) {
+                /* istanbul ignore else */
+                if (this.progressParts.hasOwnProperty(item)) {
+                    this.progressParts[item] = false;
+                }
+            }
+        },
+
+        /**
+         * Function to be called when we need to disconnect tracking from the video.
+         *
+         * @method destroy
+         * @public
+         */
+        destroy: function () {
+            var events = this.events;
+            var item;
+            for (item in events) {
+                /* istanbul ignore else */
+                if (events.hasOwnProperty(item)) {
+                    events[item].remove();
+                }
+            }
+        }
+    };
+
+    return VideoEvent;
+});
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

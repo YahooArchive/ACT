@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src/core/ACT.js - ACT.js</title>
+    <link rel="stylesheet" href="https://s.yimg.com/zz/combo?yui-s:3.14.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="https://s.yimg.com/rz/l/favicon.ico">
+    <script src="https://s.yimg.com/zz/combo?yui-s:3.14.1/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="https://s.yimg.com/cv/ae/global/ACTJS/logo/ACT.js.logo.png" title="ACT.js" width="150"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 1.1.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                            <li><a href="#api-demos">Demo and Examples</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/ACT.html">ACT</a></li>
+                                <li><a href="../classes/ActionsQueue.html">ActionsQueue</a></li>
+                                <li><a href="../classes/Base.html">Base</a></li>
+                                <li><a href="../classes/Capability.html">Capability</a></li>
+                                <li><a href="../classes/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../classes/Class.html">Class</a></li>
+                                <li><a href="../classes/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../classes/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../classes/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../classes/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../classes/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../classes/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../classes/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../classes/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../classes/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../classes/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../classes/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../classes/Cookie.html">Cookie</a></li>
+                                <li><a href="../classes/CustomData.html">CustomData</a></li>
+                                <li><a href="../classes/Debug.html">Debug</a></li>
+                                <li><a href="../classes/Dom.html">Dom</a></li>
+                                <li><a href="../classes/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../classes/Enabler.html">Enabler</a></li>
+                                <li><a href="../classes/Environment.html">Environment</a></li>
+                                <li><a href="../classes/Event.html">Event</a></li>
+                                <li><a href="../classes/Flash.html">Flash</a></li>
+                                <li><a href="../classes/IO.html">IO</a></li>
+                                <li><a href="../classes/Json.html">Json</a></li>
+                                <li><a href="../classes/Lang.html">Lang</a></li>
+                                <li><a href="../classes/LayersList.html">LayersList</a></li>
+                                <li><a href="../classes/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../classes/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../classes/Screen.html">Screen</a></li>
+                                <li><a href="../classes/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../classes/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../classes/Tracking.html">Tracking</a></li>
+                                <li><a href="../classes/UA.html">UA</a></li>
+                                <li><a href="../classes/Util.html">Util</a></li>
+                                <li><a href="../classes/VideoEvents.html">VideoEvents</a></li>
+                            </ul>
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/ACT.html">ACT</a></li>
+                                <li><a href="../modules/actionsQueue.html">actionsQueue</a></li>
+                                <li><a href="../modules/Base.html">Base</a></li>
+                                <li><a href="../modules/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../modules/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../modules/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../modules/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../modules/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../modules/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../modules/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../modules/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../modules/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../modules/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../modules/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../modules/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../modules/Cookie.html">Cookie</a></li>
+                                <li><a href="../modules/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../modules/Enabler.html">Enabler</a></li>
+                                <li><a href="../modules/environment.html">environment</a></li>
+                                <li><a href="../modules/IO.html">IO</a></li>
+                                <li><a href="../modules/LayersList.html">LayersList</a></li>
+                                <li><a href="../modules/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../modules/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../modules/Screen.html">Screen</a></li>
+                                <li><a href="../modules/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../modules/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../modules/Tracking.html">Tracking</a></li>
+                            </ul>
+                
+                            <ul id="api-demos" class="apis demos">
+                                <li><a href="../demo/ACT_Demo_300x250.html">300x250</a></li>
+                                <li><a href="../demo/ACT_Demo_300x250_tracking.html">300x250_tracking</a></li>
+                                <li><a href="../demo/ACT_Demo_TrackingExample.html">TrackingExample</a></li>
+                                <li><a href="../demo/ACT_Demo_animation.html">animation</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard.html">billboard</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-enabler.html">billboard-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-expandable-enabler.html">billboard-expandable-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video.html">billboard_html_video</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video_rtl.html">billboard_html_video_rtl</a></li>
+                                <li><a href="../demo/ACT_Demo_carousel.html">carousel</a></li>
+                                <li><a href="../demo/ACT_Demo_dwelltime.html">dwelltime</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_expand.html">enabler_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_fullscreen_expand.html">enabler_fullscreen_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_target.html">enabler_target</a></li>
+                                <li><a href="../demo/ACT_Demo_floating.html">floating</a></li>
+                                <li><a href="../demo/ACT_Demo_force_env.html">force_env</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_enabler.html">html5_enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_standard.html">html5_standard</a></li>
+                                <li><a href="../demo/ACT_Demo_icons.html">icons</a></li>
+                                <li><a href="../demo/ACT_Demo_input_data.html">input_data</a></li>
+                                <li><a href="../demo/ACT_Demo_login_html.html">login_html</a></li>
+                                <li><a href="../demo/ACT_Demo_overwrite_env.html">overwrite_env</a></li>
+                                <li><a href="../demo/ACT_Demo_splash_ad.html">splash_ad</a></li>
+                                <li><a href="../demo/ACT_Demo_tablet_expandable.html">tablet_expandable</a></li>
+                                <li><a href="../demo/ACT_Demo_video_event.html">video_event</a></li>
+                                <li><a href="../demo/ACT_Demo_video_html.html">video_html</a></li>
+                            </ul>
+                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: src/core/ACT.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+ * Copyright 2016, Yahoo Inc.
+ * Copyrights licensed under the New BSD License.
+ * See the accompanying LICENSE file for terms.
+ */
+
+/* global ACT */
+/* eslint no-use-before-define: 0 */
+/**
+ * The new ACT.js global namespace object. If the &#x60;ACT&#x60; object is already defined, the existing ACT object will only be overwritten
+ * IF the new one being loaded has a greater version than the existing one. Usage example is as follows:
+ *
+ * 		ACT.define(&#x27;name_of_module&#x27;, [ &#x27;required&#x27;, &#x27;sub&#x27;, &#x27;modules&#x27;], function (ACT) {
+ * 			// ACT is the global reference to the ACT instance with all the required modules loaded.
+ * 		});
+ *
+ * @module ACT
+ * @main ACT
+ * @class ACT
+ * @global
+ */
+(function (ACT_CURRENT) {
+	&#x27;use strict&#x27;;
+
+	/* Define private variables */
+	var modules = {};
+	var queue = {};
+	var execQueue = [];
+	var configs = {};
+	var configQueue = {};
+	var actObj;
+
+	/* Define Private functions */
+
+	/**
+	 * Traverse the queue of modules, if all the requirements have been met load it in.
+	 * @method checkQueue
+	 * @private
+	 */
+	function checkQueue() {
+		var key;
+		var obj;
+
+		for (key in queue) {
+			/* istanbul ignore else */
+			if (queue.hasOwnProperty(key)) {
+				obj = queue[key];
+				includeModules(key, obj.requires, obj.factory);
+			}
+		}
+	}
+
+	/**
+	 * Given that we have no more modules to load, run through the queue of functions that need to execute and execute them
+	 * @method runQueue
+	 * @private
+	 */
+	function runQueue() {
+		var count = countProperties(queue);
+		var temp;
+
+		if (count === 0) {
+			while (execQueue.length &gt; 0) {
+				temp = execQueue.shift();
+				temp();
+			}
+		}
+	}
+
+	/**
+	 * Given an object &#x27;{}&#x27; return the number of properties ( elements ) it contains.
+	 * @private
+	 * @method countProperties
+	 * @param {Object} obj Object to return the count from
+	 * @return {Number} count Number of properties contained in the object provided.
+	 */
+	function countProperties(obj) {
+		var count = 0;
+		var prop;
+
+		/* In case the object passed in is not of type &#x27;object&#x27; return 0 as the count */
+		if (typeof obj !== &#x27;object&#x27;) {
+			return count;
+		}
+
+		for (prop in obj) {
+			/* istanbul ignore else */
+			if (obj.hasOwnProperty(prop)) {
+				count++;
+			}
+		}
+		return count;
+	}
+
+	/**
+	 * Include module being loaded in. Make sure to only load the new version.
+	 * @private
+	 * @method includeModules
+	 * @param {String} name Name of the module being loaded in
+	 * @param {Array} requires Array of the modules that this one has dependencies on.
+	 * @param {Function} factory Function that executes to load in this modules.
+	 */
+	function includeModules(name, requires, factory) {
+		var obj;
+		if (checkDependencies(requires)) {
+			/* Execute the factory, sending ACT as the parameter. */
+			obj = factory(ACT);
+
+			/* Check that this module has not been included already AND confirm that the version of the new module
+			 is bigger than the already loaded one - if one already exists.
+			 */
+			if (!modules[name] || (&#x27;factory&#x27; in modules[name] &amp;&amp; &#x27;ATTRS&#x27; in modules[name].factory &amp;&amp; modules[name].factory.ATTRS.version &lt; obj.ATTRS.version)) {
+				include(modules, name, requires, obj);
+				ACT[name] = obj;
+			}
+			/* Remove the module from the queue */
+			delete queue[name];
+			/* Once the module is included, cycle through the queue and load in any modules that are depending on this one. */
+			checkQueue();
+			ACT.ready();
+		} else {
+			/* Since we do not yet have all the required dependencies loaded, put this one into the queue */
+			include(queue, name, requires, factory);
+		}
+	}
+
+	/**
+	 * Check that the dependencies for a given module have been loaded in.
+	 * @private
+	 * @method checkDependencies
+	 * @param {Array} requires Array of the required dependencies for this module to function
+	 * @return {Boolean} true if all dependencies have been met, false otherwise.
+	 */
+	function checkDependencies(requires) {
+		var itor = 0;
+		for (itor; itor &lt; requires.length; itor++) {
+			if (!modules[requires[itor]]) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	/**
+	 * Include the defined module - either into the queue or the defined module set.
+	 * @private
+	 * @method include
+	 * @param {Object} group Set to add the new factory / module
+	 * @param {String} name The name of the  module
+	 * @param {Array} requires Array of dependencies
+	 * @param {Function} factory The function to execute once all the requirements have been met.
+	 */
+	function include(group, name, requires, factory) {
+		group[name] = group[name] || {};
+		group[name].requires = requires;
+		group[name].factory = factory;
+	}
+
+	actObj = {
+		/*@&lt;*/
+		/* Expose these internal elements for Debug purposes */
+		queue: queue,
+		execQueue: execQueue,
+		modules: modules,
+		configQueue: configQueue,
+		configs: configs,
+		store: [],
+		/*&gt;@*/
+
+		adQueue: [],
+
+		/**
+		 * @attribute ATTRS
+		 * @type {{NAME: string, version: number}}
+		 */
+		ATTRS: {
+			NAME: &#x27;ACT&#x27;,
+			version: &#x27;1.1.0&#x27;
+		},
+
+		/**
+		 * Define a new module to be used with ACT
+		 * @public
+		 * @method define
+		 * @param {String} name Module name
+		 * @param {Array} requires Module dependencies
+		 * @param {Object} factory Factory method
+		 */
+		define: function (name, requires, factory) {
+			/*@&lt;*/
+			this.store.push({ name: name, requires: requires, factory: factory });
+			/*&gt;@*/
+			includeModules(name, requires, factory);
+		},
+
+		/**
+		 * Checks if all modules and dependencies were loaded
+		 * @public
+		 * @method ready
+		 * @param {Object} obj
+		 * @return {boolean}
+		 */
+		ready: function (obj) {
+			var temp;
+			var count = countProperties(queue);
+			var configCount = countProperties(configQueue);
+
+			while (ACT.adQueue.length &gt; 0) {
+				temp = temp = ACT.adQueue.shift();
+				execQueue.push(temp);
+			}
+
+			if (obj) {
+				execQueue.push(obj);
+			}
+
+			if (count === 0 &amp;&amp; configCount === 0) {
+				/* We&#x27;re ready, so run through the queue, and return true. */
+				runQueue();
+				return true;
+			}
+			/* The obj is already pushed into the queue. So return false. */
+			return false;
+		},
+
+		/**
+		 * Add a required module to the set of required modules
+		 * @public
+		 * @method addRequired
+		 * @param {String} String name of the modules
+		 * @return {boolean} true if already included, false otherwise.
+		 */
+		requireConfig: function (str) {
+			if (str in configs || str in configQueue) {
+				delete configQueue[str];
+				return true;
+			}
+			configQueue[str] = true;
+			return false;
+		},
+
+		/**
+		 * Return the configuration ( superConf ) by name.
+		 * @public
+		 * @method getConfig
+		 * @param {String} name Name of the configuration object to return.
+		 * @return {Object} Configuration object, empty if not found.
+		 */
+		getConfig: function (name) {
+			var ret = {};
+			/* If the config has been loaded, return it based on it&#x27;s name. Empty object otherwise */
+			/* istanbul ignore next */
+			if (name in configs) {
+				ret = configs[name];
+			}
+			return ret;
+		},
+
+		/**
+		 * Set the configuration object as it&#x27;s loaded.
+		 * @public
+		 * @method setConfig
+		 * @param {String} name Name of the configuration object that is being loaded in
+		 * @param {Object} obj Object defining the configuration that is being loaded.
+		 */
+		setConfig: function (name, obj) {
+			/* If something has requested this config before it loaded, it&#x27;s waiting in the config queue.
+			 Remove it once loaded.
+			 */
+			if (name in configQueue) {
+				delete configQueue[name];
+			}
+			/* Put the new config into the configs object for later user. */
+			configs[name] = obj;
+		}
+	};
+
+	/**
+	 NOTE: SafeFrames forces us to define the config before we include the library, like this:
+
+	 Traditional approach:
+	 &lt;script language=&#x27;javascript&#x27; src=&#x27;library/files.js&#x27;&gt;&lt;/script&gt;
+	 &lt;script&gt;
+	 var ad = ACT.base({});
+	 &lt;/script&gt;
+
+	 Because of the load sequence is async in some browsers due to SafeFrames, having the config queue up
+	 guarantees that we execute the ad after the full library loaded, and the traditional approach changes to:
+
+	 &lt;script&gt;
+
+	 if (!window.ACT) {
+				var ACT = {
+					adQueue:[];
+				};
+			}
+	 function MASTAD() {
+				var ad = ACT.base({});
+			}
+	 ACT.adQueue.push( MASTAD );
+
+	 &lt;/script&gt;
+	 &lt;script language=&#x27;javascript&#x27; src=&#x27;library/files.js&#x27;&gt;&lt;/script&gt;
+	 */
+	if (ACT_CURRENT &amp;&amp; ACT_CURRENT.hasOwnProperty(&#x27;version&#x27;) &amp;&amp; ACT_CURRENT.version &lt; actObj.version) {
+		actObj = ACT_CURRENT;
+	} else {
+		if (ACT_CURRENT.adQueue) {
+			actObj.adQueue = ACT_CURRENT.adQueue;
+		}
+	}
+
+	window.ACT = actObj;
+}(window.ACT || {}));
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

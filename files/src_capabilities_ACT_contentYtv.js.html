@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src/capabilities/ACT_contentYtv.js - ACT.js</title>
+    <link rel="stylesheet" href="https://s.yimg.com/zz/combo?yui-s:3.14.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="https://s.yimg.com/rz/l/favicon.ico">
+    <script src="https://s.yimg.com/zz/combo?yui-s:3.14.1/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../assets/css/logo.png" title="ACT.js" width="126" height="100"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 1.0.22</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                            <li><a href="#api-demos">Demo and Examples</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/ACT.html">ACT</a></li>
+                                <li><a href="../classes/ActionsQueue.html">ActionsQueue</a></li>
+                                <li><a href="../classes/Base.html">Base</a></li>
+                                <li><a href="../classes/Capability.html">Capability</a></li>
+                                <li><a href="../classes/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../classes/Class.html">Class</a></li>
+                                <li><a href="../classes/ContentAdfeedback.html">ContentAdfeedback</a></li>
+                                <li><a href="../classes/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../classes/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../classes/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../classes/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../classes/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../classes/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../classes/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../classes/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../classes/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../classes/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../classes/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../classes/ContentYtv.html">ContentYtv</a></li>
+                                <li><a href="../classes/Cookie.html">Cookie</a></li>
+                                <li><a href="../classes/CustomData.html">CustomData</a></li>
+                                <li><a href="../classes/Debug.html">Debug</a></li>
+                                <li><a href="../classes/Dom.html">Dom</a></li>
+                                <li><a href="../classes/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../classes/Enabler.html">Enabler</a></li>
+                                <li><a href="../classes/Environment.html">Environment</a></li>
+                                <li><a href="../classes/Event.html">Event</a></li>
+                                <li><a href="../classes/Flash.html">Flash</a></li>
+                                <li><a href="../classes/IO.html">IO</a></li>
+                                <li><a href="../classes/Json.html">Json</a></li>
+                                <li><a href="../classes/Lang.html">Lang</a></li>
+                                <li><a href="../classes/LayersList.html">LayersList</a></li>
+                                <li><a href="../classes/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../classes/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../classes/Screen.html">Screen</a></li>
+                                <li><a href="../classes/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../classes/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../classes/Tracking.html">Tracking</a></li>
+                                <li><a href="../classes/UA.html">UA</a></li>
+                                <li><a href="../classes/Util.html">Util</a></li>
+                                <li><a href="../classes/VideoEvents.html">VideoEvents</a></li>
+                            </ul>
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/ACT.html">ACT</a></li>
+                                <li><a href="../modules/actionsQueue.html">actionsQueue</a></li>
+                                <li><a href="../modules/Base.html">Base</a></li>
+                                <li><a href="../modules/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../modules/ContentAdfeedback.html">ContentAdfeedback</a></li>
+                                <li><a href="../modules/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../modules/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../modules/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../modules/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../modules/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../modules/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../modules/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../modules/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../modules/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../modules/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../modules/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../modules/ContentYtv.html">ContentYtv</a></li>
+                                <li><a href="../modules/Cookie.html">Cookie</a></li>
+                                <li><a href="../modules/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../modules/Enabler.html">Enabler</a></li>
+                                <li><a href="../modules/environment.html">environment</a></li>
+                                <li><a href="../modules/IO.html">IO</a></li>
+                                <li><a href="../modules/LayersList.html">LayersList</a></li>
+                                <li><a href="../modules/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../modules/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../modules/Screen.html">Screen</a></li>
+                                <li><a href="../modules/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../modules/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../modules/Tracking.html">Tracking</a></li>
+                            </ul>
+                
+                            <ul id="api-demos" class="apis demos">
+                                <li><a href="../demo/ACT_Demo_300x250.html">300x250</a></li>
+                                <li><a href="../demo/ACT_Demo_300x250_tracking.html">300x250_tracking</a></li>
+                                <li><a href="../demo/ACT_Demo_TrackingExample.html">TrackingExample</a></li>
+                                <li><a href="../demo/ACT_Demo_animation.html">animation</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard.html">billboard</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-enabler.html">billboard-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-expandable-enabler.html">billboard-expandable-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video.html">billboard_html_video</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video_rtl.html">billboard_html_video_rtl</a></li>
+                                <li><a href="../demo/ACT_Demo_carousel.html">carousel</a></li>
+                                <li><a href="../demo/ACT_Demo_dwelltime.html">dwelltime</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_expand.html">enabler_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_fullscreen_expand.html">enabler_fullscreen_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_target.html">enabler_target</a></li>
+                                <li><a href="../demo/ACT_Demo_floating.html">floating</a></li>
+                                <li><a href="../demo/ACT_Demo_force_env.html">force_env</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_enabler.html">html5_enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_standard.html">html5_standard</a></li>
+                                <li><a href="../demo/ACT_Demo_icons.html">icons</a></li>
+                                <li><a href="../demo/ACT_Demo_input_data.html">input_data</a></li>
+                                <li><a href="../demo/ACT_Demo_login_html.html">login_html</a></li>
+                                <li><a href="../demo/ACT_Demo_overwrite_env.html">overwrite_env</a></li>
+                                <li><a href="../demo/ACT_Demo_splash_ad.html">splash_ad</a></li>
+                                <li><a href="../demo/ACT_Demo_tablet_expandable.html">tablet_expandable</a></li>
+                                <li><a href="../demo/ACT_Demo_video_event.html">video_event</a></li>
+                                <li><a href="../demo/ACT_Demo_video_html.html">video_html</a></li>
+                            </ul>
+                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: src/capabilities/ACT_contentYtv.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+ * Copyright 2016, Yahoo Inc.
+ * Copyrights licensed under the New BSD License.
+ * See the accompanying LICENSE file for terms.
+ */
+
+/* global ACT */
+/**
+ * The &#x27;ContentYtv&#x27; is a capability made to generate a &#x27;DIV&#x27; tag use as a container for the YTV player.
+ *
+ * Available &#x27;actions&#x27;:
+ * - ytvStart
+ * - ytvStop
+ * - ytvPlay
+ * - ytvPause
+ * - ytvMute
+ * - ytvUnmute
+ *
+ * Available &#x27;triggers&#x27;:
+ * - start
+ * - replay
+ * - pause
+ * - play
+ * - soundon
+ * - soundoff
+ * - complete
+ * - fullscreen
+ * - error
+ *
+ * Example of &#x27;SuperConf&#x27; use case:
+ *
+ *      {
+ *          id: &#x27;ytv_player&#x27;,
+ *          type: &#x27;content-ytv&#x27;,
+ *          classNode: &#x27;ytv_class&#x27;,
+ *          env: [&#x27;html&#x27;,&#x27;flash&#x27;,&#x27;backup&#x27;],
+ *          css: {
+ *              width:&#x27;355px&#x27;,
+ *              height:&#x27;198px&#x27;
+ *          },
+ *          ytvConfig:{
+ *              pageSpaceId: &#x27;1180049988&#x27;,
+ *              comscoreC4: &#x27;IT Screen&#x27;,
+ *              playlist: {
+ *                  &#x27;mediaItems&#x27;: [
+ *                      {id: &#x27;fafc4b2f-5d71-3ef1-9cd6-7962e007c481&#x27;},
+ *                      {id: &#x27;671a92af-5903-33ce-a81f-9aac62f52f5f&#x27;}
+ *                  ]
+ *              },
+ *              YVAP: {
+ *                  accountId: &#x27;389&#x27;,
+ *                  playContext: &#x27;default&#x27; // defaultprerollemea, default, noads
+ *              },
+ *              site:&#x27;frontpage&#x27;,
+ *              region: &#x27;IT&#x27;, // GB, FR, IT, DE, ES, AE, ar
+ *              lang: &#x27;it-IT&#x27;, // en-GB, fr-FR, it-IT, de-DE, es-ES, en-AE, ar
+ *              autoplay: true,
+ *              mute: true,
+ *              continuousPlay:true,
+ *              loop: false
+ *          },
+ *          eventActions: [{
+ *              eventType: &#x27;start&#x27;,
+ *              actions: [
+ *                  {
+ *                      type: &#x27;track&#x27;,
+ *                      label: &#x27;ytv_player_start&#x27;
+ *                  }
+ *              ]
+ *          }]
+ *      }
+ *
+ * @module ContentYtv
+ * @main ContentYtv
+ * @class ContentYtv
+ * @requires Dom, lang, Event, Class, Capability
+ * @global
+ */
+ACT.define(&#x27;ContentYtv&#x27;, [/*@&lt;*/&#x27;Debug&#x27;, /*&gt;@*/ &#x27;Dom&#x27;, &#x27;Lang&#x27;, &#x27;Event&#x27;, &#x27;Class&#x27;, &#x27;Capability&#x27;], function (ACT) {
+    &#x27;use strict&#x27;;
+
+    /* Shorthand */
+    var Dom = ACT.Dom;
+    var Lang = ACT.Lang;
+    var Event = ACT.Event;
+    var Class = ACT.Class;
+    var Capability = ACT.Capability;
+
+    /**
+     * Constant values
+     */
+    var SOUND = false;
+    var PLAYER = null;
+    var PLAYLIST = [];
+    var PLAYERAPI = {};
+    var STARTED = false;
+
+    var EVENT_YTV_START = &#x27;ytv:start&#x27;;
+    var EVENT_YTV_STOP = &#x27;ytv:stop&#x27;;
+    var EVENT_YTV_PLAY = &#x27;ytv:play&#x27;;
+    var EVENT_YTV_PAUSE = &#x27;ytv:pause&#x27;;
+    var EVENT_YTV_SOUNDON = &#x27;ytv:soundOn&#x27;;
+    var EVENT_YTV_SOUNDOFF = &#x27;ytv:soundOff&#x27;;
+
+    var EVENT_GLOBAL_ACTION_COMPLETE = &#x27;complete:action&#x27;;
+    var EVENT_GLOBAL_STOP_CONTENT = &#x27;STOP_CONTENT&#x27;;
+
+    var DEFAULT_YTV_EVENT_ACTIONS = {
+        start: &#x27;PLAYBACK_START&#x27;,
+        replay: &#x27;PLAYLIST_POSITION_CHANGE&#x27;,
+        pause: &#x27;PLAYBACK_PAUSE&#x27;,
+        play: &#x27;PLAYBACK_RESUMED&#x27;,
+        soundon: &#x27;PLAYER_MUTE_CHANGE&#x27;,
+        soundoff: &#x27;PLAYER_MUTE_CHANGE&#x27;,
+        complete: &#x27;PLAYBACK_COMPLETE&#x27;,
+        fullscreen: &#x27;PLAYER_FULLSCREEN_CHANGE&#x27;,
+        error: &#x27;PLAYER_ERROR&#x27;
+    };
+
+    var DEFAULT_CONFIG = {
+        pageSpaceId: &#x27;2023392312&#x27;,
+        comscoreC4: &#x27;UK Screen&#x27;,
+        region: &#x27;GB&#x27;,
+        lang: &#x27;en-GB&#x27;,
+        site: &#x27;frontpage&#x27;,
+        continuousPlay: true,
+        autoplay: true,
+        html5: true,
+        mute: true,
+        loop: true
+    };
+
+    var DEFAULT_YTV_EVENT_CALLBACK = {
+        replay: function (actions) {
+            return function () {
+                if (PLAYER &amp;&amp; PLAYLIST[PLAYER.playlist.getCurrentItemId()] === true) {
+                    Event.fire(&#x27;add:actions&#x27;, actions);
+                }
+            };
+        },
+        soundoff: function (actions) {
+            return function (event) {
+                if (event === true &amp;&amp; SOUND === false) {
+                    SOUND = true;
+                    Event.fire(&#x27;add:actions&#x27;, actions);
+                }
+            };
+        },
+        soundon: function (actions) {
+            return function (event) {
+                if (event === false &amp;&amp; SOUND === true) {
+                    SOUND = false;
+                    Event.fire(&#x27;add:actions&#x27;, actions);
+                }
+            };
+        },
+        fullscreen: function (actions) {
+            return function (event) {
+                if (event === true) {
+                    Event.fire(&#x27;add:actions&#x27;, actions);
+                }
+            };
+        },
+        start: function (actions) {
+            return function () {
+                if (STARTED !== true) {
+                    STARTED = true;
+                    Event.fire(&#x27;add:actions&#x27;, actions);
+                }
+            };
+        },
+        complete: function (actions) {
+            return function () {
+                STARTED = false;
+                Event.fire(&#x27;add:actions&#x27;, actions);
+            };
+        },
+        defaults: function (actions) {
+            return function () {
+                Event.fire(&#x27;add:actions&#x27;, actions);
+            };
+        }
+    };
+
+    var contentActions = [{
+        type: &#x27;ytvStart&#x27;,
+        argument: {
+            id: {
+                name: &#x27;id&#x27;,
+                test: function (id) {
+                    return Lang.isString(id);
+                }
+            },
+            timeout: {
+              name: &#x27;timeout&#x27;,
+              test: function (value) {
+                return Lang.isNumber(value) || value === undefined || value === null;
+              }
+            }
+        },
+        process: function (actionId, args) {
+            Event.fire(EVENT_YTV_START, {
+                id: args.id
+            });
+            Event.fire(EVENT_GLOBAL_ACTION_COMPLETE, actionId);
+        }
+    }, {
+        type: &#x27;ytvStop&#x27;,
+        argument: {
+            id: {
+                name: &#x27;id&#x27;,
+                test: function (id) {
+                    return Lang.isString(id);
+                }
+            },
+            timeout: {
+              name: &#x27;timeout&#x27;,
+              test: function (value) {
+                return Lang.isNumber(value) || value === undefined || value === null;
+              }
+            }
+        },
+        process: function (actionId, args) {
+            Event.fire(EVENT_YTV_STOP, {
+                id: args.id
+            });
+            Event.fire(EVENT_GLOBAL_ACTION_COMPLETE, actionId);
+        }
+    }, {
+        type: &#x27;ytvPlay&#x27;,
+        argument: {
+            id: {
+                name: &#x27;id&#x27;,
+                test: function (id) {
+                    return Lang.isString(id);
+                }
+            },
+            timeout: {
+              name: &#x27;timeout&#x27;,
+              test: function (value) {
+                return Lang.isNumber(value) || value === undefined || value === null;
+              }
+            }
+        },
+        process: function (actionId, args) {
+            Event.fire(EVENT_YTV_PLAY, {
+                id: args.id
+            });
+            Event.fire(EVENT_GLOBAL_ACTION_COMPLETE, actionId);
+        }
+    }, {
+        type: &#x27;ytvPause&#x27;,
+        argument: {
+            id: {
+                name: &#x27;id&#x27;,
+                test: function (id) {
+                    return Lang.isString(id);
+                }
+            },
+            timeout: {
+              name: &#x27;timeout&#x27;,
+              test: function (value) {
+                return Lang.isNumber(value) || value === undefined || value === null;
+              }
+            }
+        },
+        process: function (actionId, args) {
+            Event.fire(EVENT_YTV_PAUSE, {
+                id: args.id
+            });
+            Event.fire(EVENT_GLOBAL_ACTION_COMPLETE, actionId);
+        }
+    }, {
+        type: &#x27;ytvUnmute&#x27;,
+        argument: {
+            id: {
+                name: &#x27;id&#x27;,
+                test: function (id) {
+                    return Lang.isString(id);
+                }
+            },
+            timeout: {
+              name: &#x27;timeout&#x27;,
+              test: function (value) {
+                return Lang.isNumber(value) || value === undefined || value === null;
+              }
+            }
+        },
+        process: function (actionId, args) {
+            Event.fire(EVENT_YTV_SOUNDON, {
+                id: args.id
+            });
+            Event.fire(EVENT_GLOBAL_ACTION_COMPLETE, actionId);
+        }
+    }, {
+        type: &#x27;ytvMute&#x27;,
+        argument: {
+            id: {
+                name: &#x27;id&#x27;,
+                test: function (id) {
+                    return Lang.isString(id);
+                }
+            },
+            timeout: {
+              name: &#x27;timeout&#x27;,
+              test: function (value) {
+                return Lang.isNumber(value) || value === undefined || value === null;
+              }
+            }
+        },
+        process: function (actionId, args) {
+            Event.fire(EVENT_YTV_SOUNDOFF, {
+                id: args.id
+            });
+            Event.fire(EVENT_GLOBAL_ACTION_COMPLETE, actionId);
+        }
+    }];
+
+    /*@&lt;*/
+    var Debug = ACT.Debug;
+    Debug.log(&#x27;ContentYtv Loaded&#x27;);
+    /*&gt;@*/
+
+    /**
+     * @constructor
+     */
+    function ContentYtv(config) {
+        this.init(config);
+        // ContentYtv.superclass.constructor.apply(this, arguments);
+    }
+
+    ContentYtv.ATTRS = {
+
+        /**
+         * @attribute NAME
+         * @type String
+         */
+        NAME: &#x27;ContentYtv&#x27;,
+
+        /**
+         * @attribute version
+         * @type String
+         */
+        version: &#x27;1.0.41&#x27;,
+
+        /**
+         * @attribute configObject
+         * @type Object
+         */
+        configObject: {},
+
+        /**
+         * @attribute node
+         * @type HTMLElement
+         */
+        node: null
+
+    };
+
+    /* Private methods */
+
+    /**
+     * Attach action for an event
+     * @method attachAction
+     * @private
+     * @param {Object} event, object event that will be attached
+     */
+    function attachAction(event) {
+        var callback = DEFAULT_YTV_EVENT_CALLBACK.hasOwnProperty(event.eventType) ? DEFAULT_YTV_EVENT_CALLBACK[event.eventType] : DEFAULT_YTV_EVENT_CALLBACK.defaults;
+
+        /*@&lt;*/
+        Debug.log(&#x27;ContentYtv: Attach ytv event &#x27; + DEFAULT_YTV_EVENT_ACTIONS[event.eventType]);
+        /*&gt;@*/
+
+        /*@&lt;*/
+        if (PLAYER) {
+        /*&gt;@*/
+            /* istanbul ignore next */ PLAYER.on(PLAYERAPI[DEFAULT_YTV_EVENT_ACTIONS[event.eventType]], callback(event.actions));
+        /*@&lt;*/
+        } else {
+            callback(event.actions)();
+        }
+        /*&gt;@*/
+    }
+
+    /**
+     * Loop all video events and subscribe them
+     * @method subscribeVideoEvents
+     * @private
+     * @param {Object} config
+     */
+    function subscribeVideoEvents(config) {
+        var events = config.hasOwnProperty(&#x27;eventActions&#x27;) ? config.eventActions : {};
+        var name;
+        for (name in events) {
+            if (events.hasOwnProperty(name) &amp;&amp; DEFAULT_YTV_EVENT_ACTIONS.hasOwnProperty(events[name].eventType)) {
+                attachAction(events[name]);
+            }
+        }
+    }
+
+    /**
+     * Generate the node ytv
+     *
+     * @method renderNodeYtv
+     * @private
+     * @param {Object} config
+     * @return {HTMLElement}
+     */
+    function renderNodeYtv(config) {
+        var lang;
+        var src;
+        var node;
+        var script;
+
+        config.ytvConfig = Lang.merge(DEFAULT_CONFIG, config.ytvConfig);
+
+        lang = &#x27;&amp;lang=&#x27; + ((config.ytvConfig.lang) ? config.ytvConfig.lang : &#x27;en-GB&#x27;);
+        src = &#x27;https://yep.video.yahoo.com/js/3/videoplayer-min.js?r=nextgen-desktop&#x27; + lang;
+        node = Dom.nodeCreate(&#x27;&lt;div id=&quot;&#x27; + config.id + &#x27;&quot;&gt;&lt;/div&gt;&#x27;).firstChild;
+
+        /*@&lt;*/
+        src = &#x27;https://yep.video.yahoo.com/js/3/videoplayer-debug.js?r=nextgen-desktop&#x27; + lang;
+        /*&gt;@*/
+
+        script = document.createElement(&#x27;script&#x27;);
+        script.src = src;
+        script.type = &#x27;text/javascript&#x27;;
+        script.onload = /* istanbul ignore next */ function () {
+            var YAHOO = window.YAHOO;
+
+            PLAYERAPI = YAHOO.VideoPlatform.API_Events;
+            PLAYER = new YAHOO.VideoPlatform.VideoPlayer(config.ytvConfig);
+            PLAYER.render(node);
+
+            PLAYER.on(&#x27;playbackComplete&#x27;, function (event) {
+                PLAYLIST[event] = true;
+            });
+
+            SOUND = PLAYER.controls.getMute();
+            subscribeVideoEvents(config);
+        };
+
+        node.appendChild(script);
+
+        return node;
+    }
+
+
+    /* Public methods */
+    Lang.extend(ContentYtv, [Capability, Class], {
+        /*@&lt;*/
+        /**
+         * Testing purpose only
+         */
+        subscribeVideoEvents: subscribeVideoEvents,
+        /*&gt;@*/
+
+        /**
+         * Function auto initiated when the class is instantiated
+         *
+         * @method initializer
+         * @public
+         * @param {Object} config
+         */
+        initializer: function (config) {
+            // Save config object
+            this.set(&#x27;configObject&#x27;, config);
+
+            // Register all events
+            Event.fire(&#x27;register:Actions&#x27;, contentActions);
+
+            // Create listeners actions
+            this.initializeListeners();
+        },
+
+        /**
+         * Function to initialize event listeners for this instance
+         *
+         * @method initializeListeners
+         */
+        initializeListeners: function () {
+            var root = this;
+
+            root.addEventListeners(
+                Event.on(EVENT_YTV_START, function (eventData) {
+                    if (root.get(&#x27;id&#x27;) === eventData.id) {
+                        root.start();
+                    }
+                }),
+                Event.on(EVENT_YTV_STOP, function (eventData) {
+                    if (root.get(&#x27;id&#x27;) === eventData.id) {
+                        root.stop();
+                    }
+                }),
+                Event.on(EVENT_YTV_PLAY, function (eventData) {
+                    if (root.get(&#x27;id&#x27;) === eventData.id) {
+                        root.play();
+                    }
+                }),
+                Event.on(EVENT_YTV_PAUSE, function (eventData) {
+                    if (root.get(&#x27;id&#x27;) === eventData.id) {
+                        root.pause();
+                    }
+                }),
+                Event.on(EVENT_YTV_SOUNDON, function (eventData) {
+                    if (root.get(&#x27;id&#x27;) === eventData.id) {
+                        root.soundOn();
+                    }
+                }),
+                Event.on(EVENT_YTV_SOUNDOFF, function (eventData) {
+                    if (root.get(&#x27;id&#x27;) === eventData.id) {
+                        root.soundOff();
+                    }
+                }),
+                Event.on(EVENT_GLOBAL_STOP_CONTENT, function () {
+                    root.pause();
+                })
+            );
+        },
+
+        /**
+         * Function called when the instance is destroyed
+         *
+         * @method destructor
+         * @public
+         */
+        destructor: function () {
+            var node = this.get(&#x27;node&#x27;);
+
+            /* Remove the node from the DOM */
+            if (node &amp;&amp; node.parentNode) {
+                node.parentNode.removeChild(node);
+            }
+        },
+
+        /**
+         * Render the node from given config object, environment and orientation state
+         *
+         * @method renderContent
+         * @param {Object} configObject
+         * @param {String} env
+         * @param {String} orientation
+         * @return {HTMLElement} node
+         */
+        renderContent: function (configObject, env) {
+            var node = renderNodeYtv(configObject, env);
+            node = this.applyNodeConfig(node, configObject);
+
+            return node;
+        },
+
+        /**
+         * Function generating the ytv node
+         *
+         * @method getContent
+         * @public
+         * @param {String} env Environment for rendering content such as html/flash/backup
+         * @param {String} orientation Orientation of current device such as landscape and portraits for mobile
+         * @return {HTMLElement} node
+         */
+        getContent: function (env, orientation) {
+            var node = this.renderContent(this.get(&#x27;configObject&#x27;), env, orientation);
+
+            this.set(&#x27;node&#x27;, node);
+
+            return {
+                node: node
+            };
+        },
+
+        /**
+         * Start the video
+         * @method start
+         */
+        start: function () {
+            var node = this.get(&#x27;node&#x27;);
+
+            if (node &amp;&amp; PLAYER) {
+                /* istanbul ignore next */ try {
+                    PLAYER.controls.play(0);
+                } catch (error) {
+                    /*@&lt;*/
+                    Debug.log(&#x27;YTV Player error: &#x27;, error);
+                    /*&gt;@*/
+                }
+            }
+        },
+
+        /**
+         * Stop the video
+         * @method stop
+         */
+        stop: function () {
+            var node = this.get(&#x27;node&#x27;);
+
+            if (node &amp;&amp; PLAYER) {
+                /* istanbul ignore next */ try {
+                    PLAYER.controls.seek(0);
+                    PLAYER.controls.pause();
+                } catch (error) {
+                    /*@&lt;*/
+                    Debug.log(&#x27;YTV Player error: &#x27;, error);
+                    /*&gt;@*/
+                }
+            }
+        },
+
+        /**
+         * Play the video
+         * @method play
+         */
+        play: function () {
+            var node = this.get(&#x27;node&#x27;);
+
+            if (node &amp;&amp; PLAYER) {
+                /* istanbul ignore next */ try {
+                    PLAYER.controls.play();
+                } catch (error) {
+                    /*@&lt;*/
+                    Debug.log(&#x27;YTV Player error: &#x27;, error);
+                    /*&gt;@*/
+                }
+            }
+        },
+
+        /**
+         * Pause the video
+         * @method pause
+         */
+        pause: function () {
+            var node = this.get(&#x27;node&#x27;);
+
+            if (node &amp;&amp; PLAYER) {
+                /* istanbul ignore next */ try {
+                    PLAYER.controls.pause();
+                } catch (error) {
+                    /*@&lt;*/
+                    Debug.log(&#x27;YTV Player error: &#x27;, error);
+                    /*&gt;@*/
+                }
+            }
+        },
+
+        /**
+         * Turn on the sound of the video
+         * @method soundOn
+         */
+        soundOn: function () {
+            var node = this.get(&#x27;node&#x27;);
+
+            if (node &amp;&amp; PLAYER) {
+                /* istanbul ignore next */ try {
+                    PLAYER.controls.setMute(false);
+                } catch (error) {
+                    /*@&lt;*/
+                    Debug.log(&#x27;YTV Player error: &#x27;, error);
+                    /*&gt;@*/
+                }
+            }
+        },
+
+        /**
+         * Turn off the sound of the video
+         * @method soundOff
+         */
+        soundOff: function () {
+            var node = this.get(&#x27;node&#x27;);
+
+            if (node &amp;&amp; PLAYER) {
+                /* istanbul ignore next */ try {
+                    PLAYER.controls.setMute(true);
+                } catch (error) {
+                    /*@&lt;*/
+                    Debug.log(&#x27;YTV Player error: &#x27;, error);
+                    /*&gt;@*/
+                }
+            }
+        }
+    });
+
+    return ContentYtv;
+});
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<link rel="stylesheet" href="../../src/assets/ACT_icons/ACT_icons.css"/>
+
+<div id="login-ad-container" style="margin:0px;position:relative;background:no-repeat center top">
+    <div id="login-ad" style="margin:0px 0px"></div>
+</div>
+
+<script type="text/javascript">
+    (function(){
+        if(!window.ACT){
+            window.ACT = {
+                "adQueue": []
+            };
+        }
+        ACT.adQueue.push(
+            function(){
+
+                var event = ACT.Event;
+                var dom = ACT.Dom;
+                var byId = dom.byId;
+
+                var path = "https://s.yimg.com/cv/ae/us/audience/080825/";
+                var size = {
+                    t: 59,
+                    l: 202,
+                    w: 450,
+                    h: 252
+                };
+
+                var ad = ACT.Base({
+                    conf: {
+                        adId: 'login_id',
+                        template: {
+                            format: "login",
+                            type: "video_login",
+                            width: 1440,
+                            height: 1024
+                        },
+                        cookie: {
+                            name: "uniqueAdName"
+                        },
+                        tracking: {
+                            trackingFunctions: {
+                				overwrite: true,
+                				redirect: function() {},
+                				interaction: function() {}
+                			}
+                        },
+                        customData: {
+                            //BG (HTML5) Config
+                            "layers.videoLogin.html_container.css.background": "url('"+path+"1440x1024xnhg6m97y.png')",
+                            //BG (Flash & Backup) Config
+                            "layers.videoLogin.bkp_container.css.background": "url('"+path+"1440x1024xnhg6mozc.jpg')",
+                            "layers.videoLogin.click_container.events.actHTMLClick.URLpath": "http://br.yahoo.com",
+                            "layers.videoLogin.bkp_container.events.actBKPClick.URLpath": "http://br.yahoo.com",
+                            "layers.videoLogin.video_container.css.marginTop": size.t+"px",
+                            "layers.videoLogin.video_container.css.marginLeft": size.l+"px",
+                            //Video (FULL) config
+                            "layers.videoLogin.video_login_full.videoHtmlConfig.autoplay": false,
+                            "layers.videoLogin.video_login_full.videoHtmlConfig.videoMuted": false,
+                            "layers.videoLogin.video_login_full.videoHtmlConfig.controls": true,
+                            "layers.videoLogin.video_login_full.css.width": size.w+"px",
+                            "layers.videoLogin.video_login_full.css.height": size.h+"px",
+                            "layers.videoLogin.video_login_full.videoHtmlConfig.videoWebM": path+"apple1441061696.webm",
+                            "layers.videoLogin.video_login_full.videoHtmlConfig.videoMP4": path+"apple1441060438.mp4",
+                            "layers.videoLogin.vclick_container.css.width": size.w+"px",
+                            "layers.videoLogin.vclick_container.css.height": (size.h-70)+"px",
+                            "layers.videoLogin.vclick_container.events.actVideoClick.URLpath": "http://uk.yahoo.com"
+                        },
+                        pixels:[]
+                    },
+                    superConf: "config-object-video-login",
+                    extend: {
+                        init: function () {
+                            event.on("layer:played", this.loaded);
+                        },
+                        loaded: function(data){
+                            var video = byId("video_login_full");
+                            video.addEventListener("error", function(event){
+                                console.log("VIDEO ERROR: "+video.error.code);
+                            });
+                        }
+                    }
+                });
+            }
+        );
+    })();
+</script>
+
+<script src="../../src/core/ACT.js"></script>
+<script src="../../src/core/ACT_Layerslist.js"></script>
+<script src="../../src/core/ACT_Screen.js"></script>
+<script src="../../src/core/ACT_StandardAd.js"></script>
+<script src="../../src/core/ACT_TrackingFacade.js"></script>
+<script src="../../src/core/ACT_actionsQueue.js"></script>
+<script src="../../src/core/ACT_base.js"></script>
+<script src="../../src/core/ACT_cookie.js"></script>
+<script src="../../src/core/ACT_environment.js"></script>
+<script src="../../src/core/ACT_layerStandard.js"></script>
+<script src="../../src/core/ACT_scaffolding.js"></script>
+<script src="../../src/core/ACT_secureDarla.js"></script>
+<script src="../../src/library/ACT_IO.js"></script>
+<script src="../../src/library/ACT_UA.js"></script>
+<script src="../../src/library/ACT_animation.js"></script>
+<script src="../../src/library/ACT_capability.js"></script>
+<script src="../../src/library/ACT_class.js"></script>
+<script src="../../src/library/ACT_customData.js"></script>
+<script src="../../src/library/ACT_debug.js"></script>
+<script src="../../src/library/ACT_dom.js"></script>
+<script src="../../src/library/ACT_event.js"></script>
+<script src="../../src/library/ACT_flash.js"></script>
+<script src="../../src/library/ACT_json.js"></script>
+<script src="../../src/library/ACT_lang.js"></script>
+<script src="../../src/library/ACT_util.js"></script>
+<script src="../../src/library/ACT_VideoEvents.js"></script>
+<script src="../../src/capabilities/ACT_contentContainer.js"></script>
+<script src="../../src/capabilities/ACT_contentImage.js"></script>
+<script src="../../src/capabilities/ACT_contentVideoHtml.js"></script>
+
+<script src="./config-object.js"></script>

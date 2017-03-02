@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>ACT.js Doc Redirect Splash Page</title>
+  <style>
+  	body {
+  		margin: 0 auto;
+  		padding: 0;
+  		background-color:  #000000;
+  	}
+  </style>
+</head>
+<body>
+<div style="width:100%;">
+	<div style="width:640px; margin:0 auto; padding-top: 150px;">
+		<a href="docs/">
+			<video width="640" height="360" autoplay id="act_js_fire">
+				<source src="./src/assets/ACT.js.logo/ACT_js_video/actjs_on_fire_1024K_96K_640x360.mp4" type="video/mp4"></source>
+			</video>
+		</a>
+	</div>
+</div>
+<div style="position: absolute; left: 0; bottom: 0; color: #ffffff;" id="redirect"></div>
+<script language="javascript">
+	var seconds = 10;
+	var interval = null;
+	function redirectText(){
+		seconds--;
+		document.getElementById("redirect").innerHTML = 'You will be redirected to the docs in '+seconds;
+		if (seconds <= 0) {
+			clearInterval(interval);
+			window.location = "docs/";
+		}
+	}
+	interval = setInterval(redirectText, 1000);
+</script>
+</body>
+</html>

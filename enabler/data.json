@@ -1,0 +1,4200 @@
+{
+    "project": {
+        "name": "ACT.js",
+        "description": "ACT.js Library",
+        "version": "1.1.0",
+        "url": "",
+        "logo": "https://s.yimg.com/cv/ae/global/ACTJS/logo/ACT.js.logo.png",
+        "type": "enabler"
+    },
+    "files": {
+        "temp_enabler/library/ACT_Enabler.js": {
+            "name": "temp_enabler/library/ACT_Enabler.js",
+            "modules": {
+                "Enabler": 1
+            },
+            "classes": {
+                "Enabler": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "temp_enabler/library/ACT_UA.js": {
+            "name": "temp_enabler/library/ACT_UA.js",
+            "modules": {
+                "ACT": 1
+            },
+            "classes": {
+                "UA": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "temp_enabler/library/ACT_dom.js": {
+            "name": "temp_enabler/library/ACT_dom.js",
+            "modules": {},
+            "classes": {
+                "Dom": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "temp_enabler/library/ACT_event.js": {
+            "name": "temp_enabler/library/ACT_event.js",
+            "modules": {},
+            "classes": {
+                "Event": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "temp_enabler/library/ACT_json.js": {
+            "name": "temp_enabler/library/ACT_json.js",
+            "modules": {},
+            "classes": {
+                "Json": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "temp_enabler/library/ACT_lang.js": {
+            "name": "temp_enabler/library/ACT_lang.js",
+            "modules": {},
+            "classes": {
+                "Lang": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "temp_enabler/library/ACT_util.js": {
+            "name": "temp_enabler/library/ACT_util.js",
+            "modules": {},
+            "classes": {
+                "Util": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {
+        "Enabler": {
+            "name": "Enabler",
+            "submodules": {},
+            "classes": {
+                "Enabler": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "main",
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 312,
+            "description": "ACT Enabler\n\n```\n    var conf = {\n        tracking: {\n            trackUnique: true\n        },\n        exitUrls: {\n            clickTAG: 'https://www.yahoo.com/?clickTAG=true',\n            clickTAG1: 'https://www.yahoo.com/?clickTAG=true',\n            clickTAG2: 'https://www.yahoo.com/?clickTAG=true'\n        },\n        trackingLabels: {\n            video1:25 : 'billboard_view_video1_25percent',\n            video1:50 : 'billboard_view_video1_50percent',\n            video1:75 : 'billboard_view_video1_75percent'\n        },\n        enablerInteractionTracking : false,\n        enablerTarget: 'http://cdn.path.here.com/ACT_Enabler.js',\n        htmlRoot : 'http://cdn.path.here.com/'\n    };\n    Enabler.setConfig( conf );\n```",
+            "itemtype": "main"
+        },
+        "ACT": {
+            "name": "ACT",
+            "submodules": {},
+            "classes": {
+                "UA": 1,
+                "Dom": 1,
+                "Event": 1,
+                "Json": 1,
+                "Lang": 1,
+                "Util": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "temp_enabler/library/ACT_util.js",
+            "line": 16,
+            "description": "User Agent Detection - UA\n\n    var env = ACT.UA;\n    env.browser;\n    env.os;\n    env.flash;\n    env.isHtml5Supported;\n    env.html;"
+        }
+    },
+    "classes": {
+        "Enabler": {
+            "name": "Enabler",
+            "shortname": "Enabler",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Enabler",
+            "namespace": "",
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 312,
+            "description": "ACT Enabler\n\n```\n    var conf = {\n        tracking: {\n            trackUnique: true\n        },\n        exitUrls: {\n            clickTAG: 'https://www.yahoo.com/?clickTAG=true',\n            clickTAG1: 'https://www.yahoo.com/?clickTAG=true',\n            clickTAG2: 'https://www.yahoo.com/?clickTAG=true'\n        },\n        trackingLabels: {\n            video1:25 : 'billboard_view_video1_25percent',\n            video1:50 : 'billboard_view_video1_50percent',\n            video1:75 : 'billboard_view_video1_75percent'\n        },\n        enablerInteractionTracking : false,\n        enablerTarget: 'http://cdn.path.here.com/ACT_Enabler.js',\n        htmlRoot : 'http://cdn.path.here.com/'\n    };\n    Enabler.setConfig( conf );\n```",
+            "mainName": "Enabler",
+            "tag": "main",
+            "itemtype": "main",
+            "_main": true
+        },
+        "UA": {
+            "name": "UA",
+            "shortname": "UA",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ACT",
+            "namespace": "",
+            "file": "temp_enabler/library/ACT_UA.js",
+            "line": 323,
+            "description": "User Agent Detection - UA\n\n    var env = ACT.UA;\n    env.browser;\n    env.os;\n    env.flash;\n    env.isHtml5Supported;\n    env.html;",
+            "requires": [
+                "lang"
+            ]
+        },
+        "Dom": {
+            "name": "Dom",
+            "shortname": "Dom",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ACT",
+            "namespace": "",
+            "file": "temp_enabler/library/ACT_dom.js",
+            "line": 17,
+            "description": "ACT DOM Utilities and Helpers",
+            "requires": [
+                "lang",
+                "UA"
+            ],
+            "static": 1
+        },
+        "Event": {
+            "name": "Event",
+            "shortname": "Event",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ACT",
+            "namespace": "",
+            "file": "temp_enabler/library/ACT_event.js",
+            "line": 45,
+            "description": "Event Utilities / Helpers",
+            "requires": [
+                "lang"
+            ]
+        },
+        "Json": {
+            "name": "Json",
+            "shortname": "Json",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ACT",
+            "namespace": "",
+            "file": "temp_enabler/library/ACT_json.js",
+            "line": 416,
+            "description": "JSON functionality for the ACT Framework. Most of the code in this file uses Public Domain code from https://github.com/douglascrockford/JSON-js/blob/master/json_parse.js"
+        },
+        "Lang": {
+            "name": "Lang",
+            "shortname": "Lang",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ACT",
+            "namespace": "",
+            "file": "temp_enabler/library/ACT_lang.js",
+            "line": 19,
+            "description": "ACT Language Additions - A singleton that adds functionality / ease of use.",
+            "optional": "debug"
+        },
+        "Util": {
+            "name": "Util",
+            "shortname": "Util",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ACT",
+            "namespace": "",
+            "file": "temp_enabler/library/ACT_util.js",
+            "line": 16,
+            "description": "ACT AD Utilities",
+            "static": 1
+        }
+    },
+    "classitems": [
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 64,
+            "description": "Listen to parent frame post message and convert it to event",
+            "class": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 80,
+            "itemtype": "method",
+            "name": "containValue",
+            "access": "private",
+            "tagname": "",
+            "class": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 96,
+            "description": "Send data to parent of this iframe",
+            "itemtype": "method",
+            "name": "sendToParent",
+            "class": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 131,
+            "description": "Helper method to compose urls with queries",
+            "itemtype": "method",
+            "name": "getFullUrl",
+            "params": [
+                {
+                    "name": "url",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "params",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "class": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 164,
+            "itemtype": "method",
+            "name": "enablerLogger Notifies of issues / missing things inside Enabler. For Internal Use Only.",
+            "params": [
+                {
+                    "name": "A",
+                    "description": "mixed message to display to the user",
+                    "type": "Mixed"
+                }
+            ],
+            "class": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 175,
+            "itemtype": "method",
+            "name": "fireEvent",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "The id given from the user's calls. E.g: Enabler.exit(\"Something\"); \"Something\" is this id",
+                    "type": "String"
+                },
+                {
+                    "name": "eventType",
+                    "description": "Comes from studio.events.StudioEvent Object - this should exist.",
+                    "type": "String"
+                },
+                {
+                    "name": "actionName",
+                    "description": "More of the generic event/action ('track', 'redirect', etc)",
+                    "type": "String"
+                },
+                {
+                    "name": "url",
+                    "description": "If you have a redirect, you can pass in the URL to redirect to.",
+                    "type": "String"
+                },
+                {
+                    "name": "special",
+                    "description": "Extra parameter. For URL can have the queries, for others, can be an object with the desired key: value pairs.",
+                    "type": "Mix"
+                }
+            ],
+            "class": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 245,
+            "description": "Adding new url and it's key into the exitUrls list",
+            "itemtype": "method",
+            "name": "setExit",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "Exit Url id",
+                    "type": "String"
+                },
+                {
+                    "name": "String",
+                    "description": "opt_url New URL to be added",
+                    "optional": true
+                }
+            ],
+            "class": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 260,
+            "itemtype": "method",
+            "name": "setCounter",
+            "access": "private",
+            "tagname": "",
+            "class": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 278,
+            "itemtype": "method",
+            "name": "getCounter",
+            "access": "private",
+            "tagname": "",
+            "class": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 291,
+            "itemtype": "method",
+            "name": "calculateValue",
+            "access": "private",
+            "tagname": "",
+            "class": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 299,
+            "itemtype": "method",
+            "name": "mapValue",
+            "access": "private",
+            "tagname": "",
+            "class": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 421,
+            "itemtype": "attribute",
+            "name": "ATTRS",
+            "initonly": "",
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 427,
+            "itemtype": "attribute",
+            "name": "NAME",
+            "type": "String",
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 433,
+            "itemtype": "attribute",
+            "name": "version",
+            "type": "String",
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 468,
+            "description": "Handle message from parent frame",
+            "itemtype": "method",
+            "name": "parentMessageHandle",
+            "params": [
+                {
+                    "name": "data",
+                    "description": "Data sent from parent",
+                    "type": "Object"
+                }
+            ],
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 483,
+            "description": "Returns the full config object if no parameter passed in, an element from config object or null if requested element doesn't exist.",
+            "itemtype": "method",
+            "name": "getConfigObject",
+            "params": [
+                {
+                    "name": "opt_element",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Object"
+            },
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 498,
+            "description": "Returns the config object values",
+            "itemtype": "method",
+            "name": "getConfig",
+            "params": [
+                {
+                    "name": "opt_element",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "The stringified config object",
+                "type": "String"
+            },
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 509,
+            "description": "You can set new values to config using setConfig.\nJust use the same config structure.",
+            "itemtype": "method",
+            "name": "setConfig",
+            "params": [
+                {
+                    "name": "encoded",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "The stringified resulting config object",
+                "type": "String"
+            },
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 539,
+            "description": "Adds an event listener to the event target. The same handler can only be added once per the type.\nEven if you add the same handler multiple times using the same type then it will only be called once\nWhen the event is dispatched.",
+            "itemtype": "method",
+            "name": "addEventListener",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "The type of the event to listen for.",
+                    "type": "String"
+                },
+                {
+                    "name": "fn",
+                    "description": "event callback",
+                    "type": "Function"
+                },
+                {
+                    "name": "opt_capture",
+                    "description": "In DOM-compliant browsers, this determines whether the listener is fired\nduring the capture or bubble phase of the event.",
+                    "type": "Boolean"
+                },
+                {
+                    "name": "opt_handlerScope",
+                    "description": "Object in whose scope to call the listener",
+                    "type": "Object"
+                }
+            ],
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 569,
+            "description": "Wrapper for Event remove listener (gets values from EVENT QUEUE)",
+            "itemtype": "method",
+            "name": "removeEventListener",
+            "params": [
+                {
+                    "name": "event_type",
+                    "description": "the id used in config.eventQueue",
+                    "type": "String"
+                }
+            ],
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 584,
+            "description": "Wrapper for Event.fire",
+            "itemtype": "method",
+            "name": "dispatchEvent",
+            "params": [
+                {
+                    "name": "event",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "data",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 597,
+            "description": "Opens a new window with the URL as identified by the given exit ID.",
+            "itemtype": "method",
+            "name": "exit",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "The exit ID.",
+                    "type": "String"
+                },
+                {
+                    "name": "opt_url",
+                    "description": "The URL to navigate to.",
+                    "type": "String"
+                }
+            ],
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 617,
+            "description": "Opens a new window with the URL as identified by the given exit ID. This differs from normal exit() as the\nURL value will always override the value modified in Studio or elsewhere.",
+            "itemtype": "method",
+            "name": "exitOverride",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "The exit ID.",
+                    "type": "String"
+                },
+                {
+                    "name": "url",
+                    "description": "The URL to navigate to regardless of what has been set before.",
+                    "type": "String"
+                }
+            ],
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 632,
+            "description": "Opens a new window with the URL as identified by the given exit ID with an optional queryString appended.",
+            "itemtype": "method",
+            "name": "exitQueryString",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "The exit ID.",
+                    "type": "String"
+                },
+                {
+                    "name": "opt_queryString",
+                    "description": "Desired query string value(s) to append to the end of the exit URL.",
+                    "type": "String"
+                }
+            ],
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 646,
+            "description": "Tracks a counter event.",
+            "itemtype": "method",
+            "name": "counter",
+            "params": [
+                {
+                    "name": "eventId",
+                    "description": "The string ID of the event to count.",
+                    "type": "String"
+                },
+                {
+                    "name": "opt_isCumulative",
+                    "description": "Optional parameter that indicates whether or not the counter event should\nbe counted cumulatively. Defaults to true.",
+                    "type": "Boolean"
+                }
+            ],
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 661,
+            "description": "Starts an event timer",
+            "itemtype": "method",
+            "name": "startTimer",
+            "params": [
+                {
+                    "name": "timerId",
+                    "description": "The string ID of the timer to start",
+                    "type": "String"
+                }
+            ],
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 677,
+            "description": "Stops an event timer",
+            "itemtype": "method",
+            "name": "stopTimer",
+            "params": [
+                {
+                    "name": "timerId",
+                    "description": "The string ID of the timer to stop",
+                    "type": "String"
+                }
+            ],
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 690,
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 698,
+            "description": "Gets the runtime URL given the original compile-time filename.",
+            "itemtype": "method",
+            "name": "getUrl",
+            "params": [
+                {
+                    "name": "filepath",
+                    "description": "The oritinal full path of the asset",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "The URL to be used at runtime when served through Studio and DART.",
+                "type": "String"
+            },
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 725,
+            "description": "Force setting htmlRoot value that is returned from getURL. getURL will use window.location.href\notherwise.",
+            "itemtype": "method",
+            "name": "setUrl",
+            "params": [
+                {
+                    "name": "htmlRoot",
+                    "description": "The HTML path URL value",
+                    "type": "String"
+                }
+            ],
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 735,
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 738,
+            "description": "Dispatches the PAGE LOADED event and sets the config parameter",
+            "itemtype": "method",
+            "name": "dispatchPageLoaded",
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 747,
+            "description": "Returns whether the parent page has loaded. The iframe is notified when the page has loaded and dispatches\nthe StudioEvent.PAGE_LOADED event.",
+            "itemtype": "method",
+            "name": "isPageLoaded",
+            "return": {
+                "description": "Whether the parent page has loaded or not.",
+                "type": "Boolean"
+            },
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 757,
+            "description": "Returns whether the Enabler is initialized.",
+            "itemtype": "method",
+            "name": "isInitialized",
+            "return": {
+                "description": "Whether the Enabler is initialized.",
+                "type": "Boolean"
+            },
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 766,
+            "description": "Calls the callback when the enabler is initialized or after",
+            "itemtype": "method",
+            "name": "callAfterInitialized",
+            "params": [
+                {
+                    "name": "callback",
+                    "description": "The callback to invoke when the Enabler is initialized or if it has already\ninitialized, call immediately.",
+                    "type": "Function"
+                }
+            ],
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 777,
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 781,
+            "description": "Closes floating and popup creative types. If it is an expanding creative, close acts\nas a proxy to collapse.",
+            "itemtype": "method",
+            "name": "close",
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 793,
+            "description": "Sets useCustomClose. This is primarily of use in mobile environments using MRAID. When this flag\nis set, it means that the creative will provide its own close button, so MRAID doesn't have to\nprovide one.",
+            "itemtype": "method",
+            "name": "setUseCustomClose",
+            "params": [
+                {
+                    "name": "useCustomClose",
+                    "description": "Value of the flag.",
+                    "type": "Boolean"
+                }
+            ],
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 805,
+            "description": "Returns the current state of the container.",
+            "itemtype": "method",
+            "name": "getContainerState",
+            "return": {
+                "description": "The container state from studio.sdk.ContainerState",
+                "type": "String"
+            },
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 817,
+            "description": "Returns the expand direction.",
+            "itemtype": "method",
+            "name": "getExpandDirection",
+            "return": {
+                "description": "The direction to expand in from studio.common.mde.Direction",
+                "type": "String"
+            },
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 826,
+            "description": "Records a manual closing of a floating, pop-up, expanding, in-page with pop-up, or in-page with floating ad.",
+            "itemtype": "method",
+            "name": "reportManualClose",
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 834,
+            "description": "Sets the pixel offsets for the collapsed portion of the ad. This does not affect the local testing\nenvironment but when the ad is live the collapsed portion will be shown at 0x0. This method works\nby setting the marginLeft and marginTop of the body element which is set to relative positioning.",
+            "itemtype": "method",
+            "name": "setExpandingPixelOffsets",
+            "params": [
+                {
+                    "name": "left",
+                    "description": "The left offset to the collapsed portion of the ad.",
+                    "type": "Number"
+                },
+                {
+                    "name": "top",
+                    "description": "The top offset to the collapsed portion of the ad.",
+                    "type": "Number"
+                },
+                {
+                    "name": "opt_expandWidth",
+                    "description": "The expanded width of this asset.",
+                    "type": "Number"
+                },
+                {
+                    "name": "opt_expandedHeight",
+                    "description": "The expanded height of this asset.",
+                    "type": "Number"
+                }
+            ],
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 854,
+            "description": "Prepopulates the width and height of a floating or peeldown creative.",
+            "itemtype": "method",
+            "name": "setFloatingPixelDimensions",
+            "params": [
+                {
+                    "name": "width",
+                    "description": "The width of this asset.",
+                    "type": "Number"
+                },
+                {
+                    "name": "height",
+                    "description": "The height of this asset.",
+                    "type": "Number"
+                }
+            ],
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 868,
+            "description": "Sets the isMultiDirectional flag.",
+            "itemtype": "method",
+            "name": "setIsMultiDirectional",
+            "params": [
+                {
+                    "name": "isMultiDirectional",
+                    "description": "Whether the ad is configured as multidirectional.",
+                    "type": "Boolean"
+                }
+            ],
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 878,
+            "description": "Sets the startExpanded flag, which controls whether the asset starts in the expanded state or not.\nIf true, then when the initial requestExpand call will not be tracked or logged and will not\ntrigger an expansion timer.",
+            "itemtype": "method",
+            "name": "setStartExpanded",
+            "params": [
+                {
+                    "name": "startExpanded",
+                    "description": "Value of the flag.",
+                    "type": "Boolean"
+                }
+            ],
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 890,
+            "description": "Expanding flow:\n    1. Register event listeners.\n    2. When you want to expand call Enabler.requestExpand().\n    3. When the environment is ready to expand the studio.events.StudioEvent.EXPAND_START is dispatched.\n    4. The Ad optionally performs an animated expansion.\n    5. Ad then calls Enabler.finishExpand() to complete expansion. This makes sure pushdowns are syncronized.\n\nInitiates the expand lifecycle. This begins by calling requestExpand(), waiting for EXPAND_START\nevent, animating your expand, then calling finishExpand() when the creative has fully expanded.\nPlease use event listeners to invoke the expanded state of the ad as the expand may be dispatched\nby the environment independently of calling `studio.Enabler#requestExpand()`. Typical usage will\nlook like:",
+            "itemtype": "method",
+            "name": "requestExpand",
+            "example": [
+                "\n        Enabler.addEventListener(\n            studio.events.StudioEvent.EXPAND_START,\n            function(event) {\n                // For multi directional expands, direction to expand in can be obtained by\n                // calling Enabler.getExpandingDirection() (or from event.direction).\n                // Do expand action then...\n                Enabler.finishExpand();\n            });\n        Enabler.requestExpand();"
+            ],
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 924,
+            "description": "Finalizes the expand call via the rendering code.",
+            "itemtype": "method",
+            "name": "finishExpand",
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 937,
+            "description": "Collapsing flow:\n    1. Register event listeners.\n   2. When you want to collapse call Enabler.requestCollapse().\n   3. When the environment is ready to collapse the studio.events.StudioEvent.COLLAPSE_START is dispatched.\n       This can get dispatched independently of Enabler.requestCollapse() as sometimes the environment provides a close button outside of the creative.\n   4. The Ad optionally performs an animated collapse.\n    5. Ad then calls Enabler.finishCollapse() to complete collapse and close div.\n\nInitiates the collapse lifecycle. This begins by calling requestCollapse(), waiting for the\nCOLLAPSE_START event, animating your collapse, then calling finishCollapse() when the\ncreative has fully collapsed. Please use event listeners to invoke the collapsed state of\nthe ad as the collapse event may be dispatched by the environment independently of calling\nstudio.Enabler#requestCollapse().",
+            "itemtype": "method",
+            "name": "requestCollapse",
+            "example": [
+                "\n\n       Enabler.addEventListener(\n           studio.events.StudioEvent.COLLAPSE_START,\n           function () {\n               // Do collapse action then...\n               Enabler.finishCollapse();\n           });\n       Enabler.requestCollapse();"
+            ],
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 970,
+            "description": "Clips the container or the html asset from the expanded dimensions to the collapsed dimensions.\nPlease use event listeners to invoke the collapsed state of the ad as the collapse event may\nbe dispatched by the environment independently of calling studio.Enabler#requestCollapse().",
+            "itemtype": "method",
+            "name": "finishCollapse",
+            "example": [
+                "\n        Enabler.addEventListener(\n            studio.events.StudioEvent.COLLAPSE_START,\n            function () {\n                // collapse action\n                Enabler.finishCollapse();\n            });\n        Enabler.requestCollapse();"
+            ],
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 991,
+            "description": "Requests fullscreen collapse. Please listen for the studio.event.StudioEvent.FULLSCREEN_COLLAPSE_START\nevent to start collapse.",
+            "itemtype": "method",
+            "name": "requestFullscreenCollapse",
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1002,
+            "description": "Requests fullscreen expand. If width and height are provided, expands to a rectangle of that width\nand height centered in the middle of the display (or browser window, if the browser is not\nfullscreen). Otherwise expands to the full size of the browser window/display. Note that on\nmobile devices the browser window typically takes up the entire display.",
+            "itemtype": "method",
+            "name": "requestFullscreenExpand",
+            "params": [
+                {
+                    "name": "opt_width",
+                    "description": "Width we would like to expand to in pixels",
+                    "type": "Number"
+                },
+                {
+                    "name": "opt_height",
+                    "description": "Height we would like to expand to in pixels",
+                    "type": "Number"
+                }
+            ],
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1020,
+            "description": "Finishes fullscreen collapse.",
+            "itemtype": "method",
+            "name": "finishFullscreenCollapse",
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1030,
+            "description": "Finishes fullscreen expand.",
+            "itemtype": "method",
+            "name": "finishFullscreenExpand",
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1041,
+            "description": "Returns whether the ad is visible. The Enabler dispatches the StudioEvent.VISIBLE event.",
+            "itemtype": "method",
+            "name": "isVisible",
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1051,
+            "description": "Retrieves a creative parameter that the user can pass via queryString URL. This is also used internally to access ad configuration data.",
+            "itemtype": "method",
+            "name": "getParameter",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "Name of the variable to get from the URL",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1064,
+            "description": "Retrieves a creative parameter as an integer.",
+            "itemtype": "method",
+            "name": "getParameterAsInteger",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "Name of the variable to get from the URL",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Integer"
+            },
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1079,
+            "description": "Retrieves a creative parameter as a nullable string.",
+            "itemtype": "method",
+            "name": "getParameter",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "Name of the variable to get from the URL",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1092,
+            "description": "Get studio object",
+            "itemtype": "method",
+            "name": "getStudio",
+            "return": {
+                "description": "",
+                "type": "Object"
+            },
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1106,
+            "description": "Returns the instance of the enabler singleton.",
+            "itemtype": "method",
+            "name": "getInstance",
+            "return": {
+                "description": "",
+                "type": "Object"
+            },
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1115,
+            "description": "Closes the companion asset for floating, reminder, and pop-up creative types.",
+            "itemtype": "method",
+            "name": "closeCompanion",
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1123,
+            "description": "Triggers the display of the companion asset for floating, reminder, and pop-up advert types.",
+            "itemtype": "method",
+            "name": "displayCompanion",
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1136,
+            "description": "Adds a new handler for an otherwise unknown message.",
+            "itemtype": "method",
+            "name": "addMessageHandler",
+            "params": [
+                {
+                    "name": "messageName",
+                    "description": "The name of the message, which cannot match an exported method on studio.Enabler.",
+                    "type": "String"
+                },
+                {
+                    "name": "handler",
+                    "description": "The handler function",
+                    "type": "Function"
+                }
+            ],
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1146,
+            "description": "Removes a new handler for an otherwise unknown message.",
+            "itemtype": "method",
+            "name": "removeMessageHandler",
+            "params": [
+                {
+                    "name": "messageName",
+                    "description": "The name of the message, which cannot match an exported method on studio.Enabler.",
+                    "type": "String"
+                }
+            ],
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1155,
+            "description": "Returns an object representing the orientation of the device.",
+            "itemtype": "method",
+            "name": "getOrientation",
+            "return": {
+                "description": "An object representing the orientation of the device.",
+                "type": "Object"
+            },
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1165,
+            "description": "Returns the user's bandwidth according to DART bandwidth codes.",
+            "itemtype": "method",
+            "name": "getUserBandwidth",
+            "return": {
+                "description": "An integer representing the user's bandwidth. Bandwidth values are:\n 1. Unknown = 0\n 2. Dialup = 1\n 3. DSL = 2\n 4. Cable = 3\n 5. Broadband = 4\n 6. T1 = 5",
+                "type": "Number"
+            },
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1181,
+            "description": "Returns the two-letter string representation of the user's country.",
+            "itemtype": "method",
+            "name": "getUserCountry",
+            "return": {
+                "description": "Two-letter string representation of the user's country.",
+                "type": "String"
+            },
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1191,
+            "description": "Returns the DART representation of the user's Nielsen Designated Market Area.",
+            "itemtype": "method",
+            "name": "getUserDMACode",
+            "return": {
+                "description": "A DART representation of the user's Nielson Designated Market Area.",
+                "type": "Number"
+            },
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1201,
+            "description": "Returns the two-letter string representation of the user's state or province.",
+            "itemtype": "method",
+            "name": "getUserState",
+            "return": {
+                "description": "Two-letter string representation of the user's state or province.",
+                "type": "String"
+            },
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1211,
+            "description": "Returns the user's zip code (for users in the United States, U.S. territories, and Canada).",
+            "itemtype": "method",
+            "name": "getUserZipCode",
+            "return": {
+                "description": "The user's zip code as supplied by the ad server.",
+                "type": "String"
+            },
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1221,
+            "description": "Checks if a user has interacted with the document.",
+            "itemtype": "method",
+            "name": "hasUserInteracted",
+            "return": {
+                "description": "Whether the user has interacted with the document.",
+                "type": "Boolean"
+            },
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1231,
+            "description": "Invoke a function in the parent container. This could be the top frame if served via a adj (script) tag, the serving iframe if served via and adi (iframe) tag.",
+            "itemtype": "method",
+            "name": "invokeExternalJsFunction",
+            "params": [
+                {
+                    "name": "functionName",
+                    "description": "The function name to invoke.",
+                    "type": "String"
+                }
+            ],
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1240,
+            "description": "Invoke a function on the mraid api. This is different from invokeExternalJsFunction as you are given the results of the function in a callback.",
+            "itemtype": "method",
+            "name": "invokeMraidMethod",
+            "params": [
+                {
+                    "name": "methodName",
+                    "description": "The method name to invoke on the mraid object. You can also use dot accessors to access subobjects if they are ever introduced. For instance, 'package.method', would call window.mraid.package.method().",
+                    "type": "String"
+                },
+                {
+                    "name": "opt_args",
+                    "description": "The arguments to invoke the method with.",
+                    "type": "Array"
+                },
+                {
+                    "name": "opt_callback",
+                    "description": "A callback that gets invoked with the results of the function call.",
+                    "type": "Function"
+                }
+            ],
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1251,
+            "description": "Returns whether the ad is serving in the live environment or not.",
+            "itemtype": "method",
+            "name": "isServingInLiveEnvironment",
+            "return": {
+                "description": "Whether the ad is serving in the live environment or not.",
+                "type": "Boolean"
+            },
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1261,
+            "description": "Initiates a query for the maximum allowable fullscreen dimensions. A studio.event.StudioEvent.FULLSCREEN_DIMENSIONS event will be dispatched with the maximum allowed width and height as properties.\nSome publishers may pad the fullscreen window for a lightbox-like experience. Because of this the maximum allowable dimensions may not take up the entire browser window or screen.",
+            "itemtype": "method",
+            "name": "queryFullscreenDimensions",
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1270,
+            "description": "Initiates a query to find out whether mock fullscreen expansion mode is supported. Please listen for the studio.event.StudioEvent.FULLSCREEN_SUPPORT event. This event will contain the support status.",
+            "itemtype": "method",
+            "name": "queryFullscreenSupport",
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1278,
+            "description": "Provide a method that allows the creative to define a chargeable event.",
+            "itemtype": "method",
+            "name": "registerChargeableEventName",
+            "params": [
+                {
+                    "name": "eventName",
+                    "description": "String name for which a counter or timer event will be will be will be triggered in the creative execution.",
+                    "type": "String"
+                }
+            ],
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1287,
+            "description": "Counts instances of the string parameter, aggregated as Custom Variable Count 1 in reports. The string must meet the following criteria:\n * The string cannot exceed 100 characters\n * The string must only contain Latin characters (0-9, Aa-Zz)\n * The String must NOT contain any personally identifiable information such as name, email address, phone number, health info, financial info, etc.\nAdditionally, all question marks (?) and anything after the first question mark in a string will be truncated.",
+            "itemtype": "method",
+            "name": "reportCustomVariableCount1",
+            "params": [
+                {
+                    "name": "customString",
+                    "description": "Value to record against custom variable count 1.",
+                    "type": "String"
+                }
+            ],
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1300,
+            "description": "Counts instances of the string parameter, aggregated as Custom Variable Count 2 in reports. The string must meet the following criteria:\n * The string cannot exceed 100 characters\n * The string must only contain Latin characters (0-9, Aa-Zz)\n * The String must NOT contain any personally identifiable information such as name, email address, phone number, health info, financial info, etc.\nAdditionally, all question marks (?) and anything after the first question mark in a string will be truncated.",
+            "itemtype": "method",
+            "name": "reportCustomVariableCount2",
+            "params": [
+                {
+                    "name": "customString",
+                    "description": "Value to record against custom variable count 2.",
+                    "type": "String"
+                }
+            ],
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1313,
+            "description": "Set the dynamic content development values.",
+            "itemtype": "method",
+            "name": "setDevDynamicContent",
+            "params": [
+                {
+                    "name": "value",
+                    "description": "The Dynamic Content development values.",
+                    "type": "Object"
+                }
+            ],
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1322,
+            "description": "Adds a Hint to this creative.",
+            "itemtype": "method",
+            "name": "setHint",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "The name of the hint we want to add.",
+                    "type": "String"
+                },
+                {
+                    "name": "value",
+                    "description": "The value of the hint we want to add.",
+                    "type": "String"
+                }
+            ],
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1332,
+            "description": "Get the dynamic creative profile id.",
+            "itemtype": "method",
+            "name": "getProfileId",
+            "return": {
+                "description": "Returns the dynamic creative profile id.",
+                "type": "Number"
+            },
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1342,
+            "description": "Set the dynamic creative profile id.",
+            "itemtype": "method",
+            "name": "setProfileId",
+            "params": [
+                {
+                    "name": "value",
+                    "description": "Profile id.",
+                    "type": "Number"
+                }
+            ],
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1351,
+            "description": "Returns the DART ad ID.",
+            "itemtype": "method",
+            "name": "getDartAdId",
+            "return": {
+                "description": "Integer value of the ID number (generated by DART) that identifies the ad.",
+                "type": "Number"
+            },
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1361,
+            "description": "Returns the DART asset ID.",
+            "itemtype": "method",
+            "name": "getDartAssetId",
+            "return": {
+                "description": "The ID (generated by DART) that identifies the creative.",
+                "type": "String"
+            },
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1371,
+            "description": "Returns the DART creative ID.",
+            "itemtype": "method",
+            "name": "getDartCreativeId",
+            "return": {
+                "description": "The ID number (generated by DART) that identifies the creative.",
+                "type": "Number"
+            },
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1381,
+            "description": "Returns the DART page ID.",
+            "itemtype": "method",
+            "name": "getDartPageId",
+            "return": {
+                "description": "The ID number (generated by DART) that identifies the zone where the creative is served.",
+                "type": "Number"
+            },
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1391,
+            "description": "Returns the DART rendering ID.",
+            "itemtype": "method",
+            "name": "getDartRenderingId",
+            "return": {
+                "description": "The ID (generated by DART) that identifies the rendering version of the creative.",
+                "type": "String"
+            },
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1401,
+            "description": "Returns the DART site ID.",
+            "itemtype": "method",
+            "name": "getDartSiteId",
+            "return": {
+                "description": "Integer value of the ID number that identifies the site where the creative is served, as defined in DART.",
+                "type": "Number"
+            },
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1411,
+            "description": "Returns the DART site name.",
+            "itemtype": "method",
+            "name": "getDartSiteName",
+            "return": {
+                "description": "The name of the site where the creative is served, as defined in DART.",
+                "type": "String"
+            },
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1421,
+            "description": "Loads an additional script file",
+            "itemtype": "method",
+            "name": "loadScript",
+            "params": [
+                {
+                    "name": "scriptUrl",
+                    "description": "The url of the script to load",
+                    "type": "String"
+                },
+                {
+                    "name": "opt_loadedCallback",
+                    "description": "The callback to invoke when the script is loaded",
+                    "type": "Function"
+                }
+            ],
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1446,
+            "description": "Loads an additional module",
+            "itemtype": "method",
+            "name": "loadModule",
+            "params": [
+                {
+                    "name": "moduleType",
+                    "description": "The name of the module to load.",
+                    "type": "studio.module.ModuleId"
+                },
+                {
+                    "name": "opt_loadedCallback",
+                    "description": "The callback to invoke when the module is loaded",
+                    "type": "Function"
+                }
+            ],
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1497,
+            "description": "Adds a dynamic property to the event.",
+            "params": [
+                {
+                    "name": "key",
+                    "description": "The key to add.",
+                    "type": "String"
+                },
+                {
+                    "name": "value",
+                    "description": "The value of the property.",
+                    "type": "*"
+                }
+            ],
+            "return": {
+                "description": "Returns this event for convenience."
+            },
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1638,
+            "description": "Observes a video element for reporting",
+            "itemtype": "method",
+            "name": "attach",
+            "params": [
+                {
+                    "name": "videoReportingIdentifier",
+                    "description": "The name the video should report as.",
+                    "type": "String"
+                },
+                {
+                    "name": "videoElement",
+                    "description": "The video element to report on.",
+                    "type": "HTMLVideoElement"
+                },
+                {
+                    "name": "opt_trackAsAutoPlay",
+                    "description": "Used to indicate whether to track the initial play as a \"video interaction\" OR a set of which elements to track.",
+                    "type": "Boolean|Object"
+                }
+            ],
+            "example": [
+                "\n                    // Track AutoPlay - start / 50 / end\n                    studio.video.Reporter.attach(\"video_id\", videoNode, true);\n\n                    // Track Everything ( start / 25 / 50/ 75 / ended / pause / volume / seeked / replay )\n                   studio.video.Reporter.attach(\"video_id\", videoNode, false);\n\n                   // Track Optional ( start / ended )\n                   var vidTrackConf = {\n                       start: true,\n                       25: false,\n                       50: false,\n                       75: false,\n                       ended: true,\n                       pause: false,\n                       volumechange: false,\n                       seeked: false\n                   };\n                   studio.video.Reporter.attach('video_id', videoNode, vidTrackConf);\n\nfor autoplay videos (the play event will always get tracked). This defaults to true."
+            ],
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_Enabler.js",
+            "line": 1721,
+            "description": "Stops a video reporting identifier from reporting.",
+            "itemtype": "method",
+            "name": "detach",
+            "params": [
+                {
+                    "name": "videoReportingIdentifier",
+                    "description": ""
+                }
+            ],
+            "class": "Enabler",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_UA.js",
+            "line": 19,
+            "description": "Detect current OS",
+            "access": "private",
+            "tagname": "",
+            "return": {
+                "description": "}",
+                "type": "Name: string, version: number"
+            },
+            "class": "UA",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_UA.js",
+            "line": 72,
+            "description": "Detect Mobiles",
+            "access": "private",
+            "tagname": "",
+            "return": {
+                "description": "}",
+                "type": "Boolean"
+            },
+            "class": "UA",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_UA.js",
+            "line": 84,
+            "description": "Detect Tablets",
+            "access": "private",
+            "tagname": "",
+            "return": {
+                "description": "}",
+                "type": "Boolean"
+            },
+            "class": "UA",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_UA.js",
+            "line": 96,
+            "description": "Detect if current browser supports Flash, and if so, returns the version which is installed",
+            "access": "private",
+            "tagname": "",
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "UA",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_UA.js",
+            "line": 143,
+            "description": "Identifies the browser in use.\nIn case the browser is being used, returns the browser version, it returns 0 otherwise.",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "str",
+                    "description": "navigator.userAgent.toString()",
+                    "type": "String"
+                },
+                {
+                    "name": "regex",
+                    "description": "Regex used to identify a specific browser version",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Browser version or 0",
+                "type": "Number"
+            },
+            "class": "UA",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_UA.js",
+            "line": 166,
+            "description": "Detects if Canvas is supported by browser",
+            "access": "private",
+            "tagname": "",
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "UA",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_UA.js",
+            "line": 177,
+            "description": "Detects if Drag and Drop is supported by browser",
+            "access": "private",
+            "tagname": "",
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "UA",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_UA.js",
+            "line": 188,
+            "description": "Detects if canvas and text on canvas is supported by browser",
+            "access": "private",
+            "tagname": "",
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "UA",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_UA.js",
+            "line": 200,
+            "description": "Detects if playing audio is supported by browser",
+            "access": "private",
+            "tagname": "",
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "UA",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_UA.js",
+            "line": 233,
+            "description": "Detects if native video playing is supported by browser",
+            "access": "private",
+            "tagname": "",
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "UA",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_UA.js",
+            "line": 291,
+            "description": "Detects browser",
+            "access": "private",
+            "tagname": "",
+            "return": {
+                "description": "}",
+                "type": "Name: string, version: number"
+            },
+            "class": "UA",
+            "module": "Enabler"
+        },
+        {
+            "file": "temp_enabler/library/ACT_UA.js",
+            "line": 343,
+            "description": "Helper reference to document.documentElement",
+            "itemtype": "method",
+            "name": "doc",
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "class": "UA",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_UA.js",
+            "line": 353,
+            "description": "Identifies the browser in use. In case the browser is being used, returns the browser version, it returns 0 otherwise.",
+            "itemtype": "method",
+            "name": "checkBrowser",
+            "params": [
+                {
+                    "name": "str",
+                    "description": "navigator.userAgent.toString()",
+                    "type": "String"
+                },
+                {
+                    "name": "regex",
+                    "description": "Regex used to identify a specific browser version",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Browser version or 0*",
+                "type": "Number"
+            },
+            "class": "UA",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_UA.js",
+            "line": 362,
+            "description": "Detect current OS",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "userAgent",
+                    "description": "navigator.userAgent.toString()",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "}",
+                "type": "Name: string, version: number"
+            },
+            "class": "UA",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_UA.js",
+            "line": 370,
+            "description": "Test to figure out which OS is in use",
+            "itemtype": "method",
+            "name": "os",
+            "return": {
+                "description": "OS in use.",
+                "type": "String"
+            },
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "class": "UA",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_UA.js",
+            "line": 379,
+            "description": "Return the current browser",
+            "itemtype": "method",
+            "name": "browser",
+            "return": {
+                "description": "}.",
+                "type": "Name: string, version: number"
+            },
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "class": "UA",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_UA.js",
+            "line": 388,
+            "description": "Test to see if the browser in use is Internet Explorer",
+            "itemtype": "method",
+            "name": "isIE",
+            "return": {
+                "description": "version of the IE browser in use.",
+                "type": "Number"
+            },
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "class": "UA",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_UA.js",
+            "line": 397,
+            "description": "Test to see if the browser in use is FireFox",
+            "itemtype": "method",
+            "name": "isFireFox",
+            "return": {
+                "description": "version of the FireFox browser in use.",
+                "type": "Number"
+            },
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "class": "UA",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_UA.js",
+            "line": 406,
+            "description": "Test to see if the browser in use is Safari",
+            "itemtype": "method",
+            "name": "isSafari",
+            "return": {
+                "description": "version of the Safari browser in use.",
+                "type": "Number"
+            },
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "class": "UA",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_UA.js",
+            "line": 415,
+            "description": "Test to see if the browser in use is Chrome",
+            "itemtype": "method",
+            "name": "isChrome",
+            "return": {
+                "description": "major version of the Chrome browser in use.",
+                "type": "Number"
+            },
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "class": "UA",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_UA.js",
+            "line": 424,
+            "description": "Test to see if the browser is WebKit compatible",
+            "itemtype": "method",
+            "name": "isWebKit",
+            "return": {
+                "description": "WebKit version",
+                "type": "Number"
+            },
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "class": "UA",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_UA.js",
+            "line": 433,
+            "description": "Determine the flash version the user has",
+            "itemtype": "method",
+            "name": "isFlash",
+            "return": {
+                "description": "version of Flash on the users computer or 0 if no flash.",
+                "type": "Number"
+            },
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "class": "UA",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_UA.js",
+            "line": 443,
+            "description": "Checks if the current browser supports the drag and drop feature",
+            "itemtype": "method",
+            "name": "dragDropSupport",
+            "access": "private",
+            "tagname": "",
+            "type": "Function",
+            "class": "UA",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_UA.js",
+            "line": 451,
+            "description": "Check HTML5 text canvas element supports",
+            "itemtype": "method",
+            "name": "canvasTextSupport",
+            "access": "private",
+            "tagname": "",
+            "type": "Function",
+            "class": "UA",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_UA.js",
+            "line": 459,
+            "description": "Checks HTML5 canvas supports",
+            "itemtype": "method",
+            "name": "canvasSupport",
+            "access": "private",
+            "tagname": "",
+            "type": "Function",
+            "class": "UA",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_UA.js",
+            "line": 467,
+            "description": "Checks HTML5 audio support",
+            "itemtype": "method",
+            "name": "audioSupport",
+            "access": "private",
+            "tagname": "",
+            "type": "Function",
+            "class": "UA",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_UA.js",
+            "line": 475,
+            "description": "Checks HTML5 video support",
+            "itemtype": "method",
+            "name": "videoSupport",
+            "access": "private",
+            "tagname": "",
+            "type": "Function",
+            "class": "UA",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_UA.js",
+            "line": 483,
+            "description": "Checks HTML5 support",
+            "itemtype": "method",
+            "name": "isHtml5Supported",
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "return": {
+                "description": "true if have HTML5, false if not",
+                "type": "Boolean"
+            },
+            "class": "UA",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_UA.js",
+            "line": 492,
+            "description": "Check for mobiles",
+            "itemtype": "method",
+            "name": "checkMobile",
+            "class": "UA",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_UA.js",
+            "line": 498,
+            "description": "Check for tablet",
+            "itemtype": "method",
+            "name": "checkTablet",
+            "class": "UA",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_UA.js",
+            "line": 504,
+            "description": "Is a Mobile",
+            "itemtype": "method",
+            "name": "isMobile",
+            "class": "UA",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_UA.js",
+            "line": 510,
+            "description": "Is a Tablet",
+            "itemtype": "method",
+            "name": "isTablet",
+            "class": "UA",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_dom.js",
+            "line": 33,
+            "itemtype": "attribute",
+            "name": "ATTRS",
+            "type": "{{NAME: string, version: string}}",
+            "initonly": "",
+            "class": "Dom",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_dom.js",
+            "line": 45,
+            "description": "Wrapper for document.getElementById",
+            "params": [
+                {
+                    "name": "obj",
+                    "description": "ID of the element on the page",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Reference to the embeded object",
+                "type": "Object"
+            },
+            "itemtype": "method",
+            "name": "byId",
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "class": "Dom",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_dom.js",
+            "line": 57,
+            "description": "Determine viewport offset for an element",
+            "params": [
+                {
+                    "name": "forElement",
+                    "description": "Element id to get the offset info for",
+                    "type": "String | Object"
+                }
+            ],
+            "itemtype": "method",
+            "name": "viewportOffset",
+            "return": {
+                "description": "set of two values, left and top wich are offset in pixels.",
+                "type": "Object"
+            },
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "class": "Dom",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_dom.js",
+            "line": 82,
+            "description": "Helper function to dtermine if a given element has the given class name",
+            "params": [
+                {
+                    "name": "element",
+                    "description": "Element to test against",
+                    "type": "Object"
+                },
+                {
+                    "name": "className",
+                    "description": "Classname to test for",
+                    "type": "String"
+                }
+            ],
+            "itemtype": "method",
+            "name": "hasClass",
+            "return": {
+                "description": "true if the classname exists false otherwise",
+                "type": "Boolean"
+            },
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "class": "Dom",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_dom.js",
+            "line": 102,
+            "description": "Wrapper function to get elements by Class Name",
+            "params": [
+                {
+                    "name": "className",
+                    "description": "that the elements contain",
+                    "type": "String"
+                },
+                {
+                    "name": "refObj",
+                    "description": "node or null to search the entire document",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "elements with the given class name - empty array if none",
+                "type": "Array"
+            },
+            "itemtype": "method",
+            "name": "byClassName",
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "class": "Dom",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_dom.js",
+            "line": 135,
+            "description": "Adds a new class to a DOM element's classList",
+            "params": [
+                {
+                    "name": "element",
+                    "description": ""
+                },
+                {
+                    "name": "className",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "Dom",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_dom.js",
+            "line": 155,
+            "description": "Removes one existing class name from the element's class list",
+            "params": [
+                {
+                    "name": "DOM",
+                    "description": "element",
+                    "type": "Object"
+                },
+                {
+                    "name": "className",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Success",
+                "type": "Boolean"
+            },
+            "access": "public",
+            "tagname": "",
+            "class": "Dom",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_dom.js",
+            "line": 180,
+            "description": "Given HTML in text form returns a documentFragment reference",
+            "params": [
+                {
+                    "name": "html",
+                    "description": "The HTML to convert to documentFragment",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "documentFragment Node reference.",
+                "type": "Object"
+            },
+            "itemtype": "method",
+            "name": "nodeCreate",
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "class": "Dom",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_dom.js",
+            "line": 200,
+            "description": "Given an element and a selector (className) returns the first parentNode with that className",
+            "params": [
+                {
+                    "name": "selector",
+                    "description": "ClassName of the parent we're looking for",
+                    "type": "String"
+                },
+                {
+                    "name": "element",
+                    "description": "Element to start from",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "returns the object reference to the node or null if none found",
+                "type": "Object"
+            },
+            "itemtype": "method",
+            "name": "getParent",
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "class": "Dom",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_dom.js",
+            "line": 221,
+            "description": "Helper function to empty nodes innerHTML",
+            "params": [
+                {
+                    "name": "element",
+                    "description": "Element to empty",
+                    "type": "Object"
+                }
+            ],
+            "itemtype": "method",
+            "name": "clear",
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "class": "Dom",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_dom.js",
+            "line": 235,
+            "description": "Helper function to set the nodes visibility to hidden or visible",
+            "params": [
+                {
+                    "name": "element",
+                    "description": "Element to hide",
+                    "type": "Object"
+                },
+                {
+                    "name": "true",
+                    "description": "to set to visible false to hidden",
+                    "type": "Boolean"
+                }
+            ],
+            "itemtype": "method",
+            "name": "visible",
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "class": "Dom",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_dom.js",
+            "line": 255,
+            "description": "Helper function to change the display style of a nodes to block",
+            "params": [
+                {
+                    "name": "element",
+                    "description": "Element to display",
+                    "type": "Object"
+                },
+                {
+                    "name": "\"block\",",
+                    "description": "\"inline\", \"none\" or null to revert to default",
+                    "type": "String"
+                }
+            ],
+            "itemtype": "method",
+            "name": "display",
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "class": "Dom",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_dom.js",
+            "line": 275,
+            "description": "Allows to register CSS rules within the stylesheet",
+            "params": [
+                {
+                    "name": "sheet",
+                    "description": "- StyleSheet.sheet",
+                    "type": "Object"
+                },
+                {
+                    "name": "selector",
+                    "description": "- CSS selector",
+                    "type": "String"
+                },
+                {
+                    "name": "rules",
+                    "description": "- CSS rules (don't forget to end all lines with \";\" )",
+                    "type": "String"
+                },
+                {
+                    "name": "index",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "itemtype": "method",
+            "name": "addCSSRule",
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "class": "Dom",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_dom.js",
+            "line": 294,
+            "description": "Creates a new style tag and returns its stylesheet",
+            "itemtype": "method",
+            "name": "createStylesheet",
+            "return": {
+                "description": "StyleSheet.sheet"
+            },
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "class": "Dom",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_dom.js",
+            "line": 319,
+            "description": "Calculates browser window size returning its width and height",
+            "itemtype": "method",
+            "name": "getWindowSize",
+            "return": {
+                "description": "}",
+                "type": "Width: (Number), height: (Number)"
+            },
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "class": "Dom",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_dom.js",
+            "line": 355,
+            "description": "Get current position of given dom elment",
+            "itemtype": "method",
+            "name": "getElementPosition",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "element",
+                    "description": "Element to get position",
+                    "type": "DomElement"
+                }
+            ],
+            "return": {
+                "description": "Position X and Y. E.g [x, y]",
+                "type": "Array"
+            },
+            "class": "Dom",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_dom.js",
+            "line": 375,
+            "description": "Applies a set of styles to an element",
+            "itemtype": "method",
+            "name": "applyStyles",
+            "params": [
+                {
+                    "name": "el",
+                    "description": "Element upon which to apply the styles defined",
+                    "type": "Object"
+                },
+                {
+                    "name": "styles",
+                    "description": "Object of styles to apply",
+                    "type": "Object"
+                }
+            ],
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "class": "Dom",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_dom.js",
+            "line": 393,
+            "description": "Set attributes to given node",
+            "itemtype": "method",
+            "name": "setAttributes",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "node",
+                    "description": "",
+                    "type": "HTMLElement"
+                },
+                {
+                    "name": "attrs",
+                    "description": "a key->value set where key is the attribute name and value is the value to be set.",
+                    "type": "Object"
+                }
+            ],
+            "class": "Dom",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_dom.js",
+            "line": 411,
+            "description": "Checks if parameter is a DOM element",
+            "params": [
+                {
+                    "name": "o",
+                    "description": "DOM element",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "true for DOM element",
+                "type": "Boolean"
+            },
+            "class": "Dom",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_dom.js",
+            "line": 421,
+            "description": "Calculates the right proportion based on maximum width and height when\nbrowser window is smaller than image.",
+            "params": [
+                {
+                    "name": "width",
+                    "description": "- image width",
+                    "type": "Number"
+                },
+                {
+                    "name": "height",
+                    "description": "- image height",
+                    "type": "Number"
+                }
+            ],
+            "itemtype": "method",
+            "name": "getMinProportion",
+            "return": {
+                "description": "proportion value",
+                "type": "Number"
+            },
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "class": "Dom",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_dom.js",
+            "line": 445,
+            "description": "Return the current url of the window\nThe main reason for this method is to help us with the testing",
+            "itemtype": "method",
+            "name": "getCurrentLocation",
+            "class": "Dom",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_event.js",
+            "line": 16,
+            "description": "Pair of events and HTML tags used for testing event support for current browser.",
+            "readonly": "",
+            "type": "{{select: string, change: string, submit: string, reset: string, error: string, load: string, abort: string}}",
+            "class": "Event",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_event.js",
+            "line": 31,
+            "description": "Object containing all events being listened",
+            "access": "private",
+            "tagname": "",
+            "type": "{{}}",
+            "class": "Event",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_event.js",
+            "line": 38,
+            "description": "Simple integer to keep generate a 'random index' for added events.",
+            "access": "private",
+            "tagname": "",
+            "type": "{Number}",
+            "class": "Event",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_event.js",
+            "line": 59,
+            "itemtype": "attribute",
+            "name": "ATTRS",
+            "type": "{{NAME: string, version: string}}",
+            "initonly": "",
+            "class": "Event",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_event.js",
+            "line": 70,
+            "description": "Checks event string against events supported by current browser.\nUsed to decide if it's custom event or not.",
+            "params": [
+                {
+                    "name": "eventName",
+                    "description": "event string"
+                },
+                {
+                    "name": "element",
+                    "description": "element to test"
+                }
+            ],
+            "return": {
+                "description": "is a native browser event",
+                "type": "Boolean"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "Event",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_event.js",
+            "line": 106,
+            "description": "Wrapper to add event listeners to objects.",
+            "params": [
+                {
+                    "name": "event",
+                    "description": "Event to trigger on",
+                    "type": "String"
+                },
+                {
+                    "name": "fn",
+                    "description": "Function to call when the event is fired",
+                    "type": "Function"
+                },
+                {
+                    "name": "element",
+                    "description": "Element to attach the event to",
+                    "type": "Object"
+                },
+                {
+                    "name": "scope",
+                    "description": "Scope Object to trigger the function with",
+                    "type": "Object"
+                }
+            ],
+            "itemtype": "method",
+            "name": "addListener",
+            "access": "private",
+            "tagname": "",
+            "static": 1,
+            "class": "Event",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_event.js",
+            "line": 164,
+            "description": "Subscribe to listen to event",
+            "itemtype": "method",
+            "name": "on",
+            "params": [
+                {
+                    "name": "event",
+                    "description": "event string",
+                    "type": "String"
+                },
+                {
+                    "name": "fn",
+                    "description": "callback method",
+                    "type": "Object"
+                },
+                {
+                    "name": "element",
+                    "description": "DOM element listening for event (optional)",
+                    "type": "Object"
+                },
+                {
+                    "name": "scope",
+                    "description": "event scope - default to this",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "obj.remove A simple wrapper to remove this event listener.",
+                "type": "Object"
+            },
+            "access": "public",
+            "tagname": "",
+            "example": [
+                "\n   var Event = ACT.Event;\n   var Dom = ACT.Dom;\n   // custom event\n   Event.on( \"customEventString\", function( eventData ) { ...do something based on this event...}, null, this);\n   // 'vanilla' event\n   Event.on(\"click\", function( eventData ) { Event.preventDefault(eventData); ... do something ...}, Dom.byId(\"some_node_id\"), this);\n"
+            ],
+            "class": "Event",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_event.js",
+            "line": 228,
+            "description": "Wrapper to add event listeners to CSS.",
+            "params": [
+                {
+                    "name": "event",
+                    "description": "Event to trigger on",
+                    "type": "String"
+                },
+                {
+                    "name": "fn",
+                    "description": "Function to call when the event is fired",
+                    "type": "Function"
+                },
+                {
+                    "name": "element",
+                    "description": "Element to attach the event to",
+                    "type": "Object"
+                },
+                {
+                    "name": "scope",
+                    "description": "Scope Object to trigger the function with",
+                    "type": "Object"
+                }
+            ],
+            "itemtype": "method",
+            "name": "addCSSListener",
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "class": "Event",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_event.js",
+            "line": 246,
+            "description": "Helper Function to remove event listeners from objects.",
+            "params": [
+                {
+                    "name": "event",
+                    "description": "Event to remove",
+                    "type": "String"
+                },
+                {
+                    "name": "fn",
+                    "description": "Function to remove from the object",
+                    "type": "Function"
+                },
+                {
+                    "name": "element",
+                    "description": "Element to remove the event from",
+                    "type": "Object"
+                }
+            ],
+            "itemtype": "method",
+            "name": "removeListenerHelper",
+            "access": "private",
+            "tagname": "",
+            "static": 1,
+            "class": "Event",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_event.js",
+            "line": 264,
+            "description": "Wrapper to remove event listeners from objects.",
+            "params": [
+                {
+                    "name": "event",
+                    "description": "Event to remove",
+                    "type": "String"
+                },
+                {
+                    "name": "fn",
+                    "description": "Function to remove from the object",
+                    "type": "Function"
+                },
+                {
+                    "name": "element",
+                    "description": "Element to remove the event from",
+                    "type": "Object"
+                }
+            ],
+            "itemtype": "method",
+            "name": "removeListener",
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "class": "Event",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_event.js",
+            "line": 289,
+            "description": "The 'ready' function is a modified version of the JQuery 'ready' functionality found at http://api.jquery.com/ready/\nThe code below is modified according to the JQuery MIT License https://github.com/jquery/jquery",
+            "class": "Event",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_event.js",
+            "line": 387,
+            "description": "Removes all listeners from the given element.",
+            "params": [
+                {
+                    "name": "object",
+                    "description": "to have purged",
+                    "type": "Object"
+                }
+            ],
+            "itemtype": "method",
+            "name": "purgeListeners",
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "class": "Event",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_event.js",
+            "line": 414,
+            "description": "Publish event for listeners to execute",
+            "itemtype": "method",
+            "name": "fire",
+            "params": [
+                {
+                    "name": "event",
+                    "description": "Name of the event that is being fired",
+                    "type": "String"
+                },
+                {
+                    "name": "info",
+                    "description": "Meta data that is being fired with the event",
+                    "type": "Object"
+                }
+            ],
+            "access": "public",
+            "tagname": "",
+            "example": [
+                "\n```\n   // Now anyone can subscribe to the custom event.\n   var Event = ACT.Event;\n   var Dom = ACT.Dom;\n   // Example of listener\n   function listenForCustomEvent( event ) {\n       if( event.hasOwnProperty(\"node\")){\n            if(event.node.id === \"node1\"){\n                // got this event from node1\n            } else if( event.node.id === \"node2\" ){\n                // got this event from node2\n         }\n       } else if ( event.hasOwnProperty(\"meta\") ){\n         // heard first event.\n       }\n   }\n   Event.on( \"customEventString\", listenForCustomEvent, null, this);\n\n   Event.fire( \"customEventString\", { meta:\"data\" });\n   // Event.fire example with the same event fired for two different elements.\n   Event.fire( \"customEventString\", { \"node\": Dom.byId(\"node1\"); });\n   Event.fire( \"customEventString\", { \"node\": Dom.byId(\"node2\"); });\n```"
+            ],
+            "class": "Event",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_event.js",
+            "line": 477,
+            "description": "Wrapper to prevent default behaviour on an event",
+            "params": [
+                {
+                    "name": "event",
+                    "description": "Event that was triggered",
+                    "type": "Object"
+                }
+            ],
+            "itemtype": "method",
+            "name": "preventDefault",
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "class": "Event",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_event.js",
+            "line": 492,
+            "description": "constructor",
+            "access": "public",
+            "tagname": "",
+            "class": "Event",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_json.js",
+            "line": 15,
+            "description": "JSON encode functionality.",
+            "type": "Mixed",
+            "access": "private",
+            "tagname": "",
+            "final": 1,
+            "static": 1,
+            "class": "Json",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_json.js",
+            "line": 34,
+            "itemtype": "method",
+            "name": "quote",
+            "params": [
+                {
+                    "name": "string",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "access": "private",
+            "tagname": "",
+            "class": "Json",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_json.js",
+            "line": 48,
+            "access": "private",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "str",
+            "params": [
+                {
+                    "name": "key",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "holder",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "Json",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_json.js",
+            "line": 125,
+            "access": "private",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "stringify",
+            "params": [
+                {
+                    "name": "value",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "replacer",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "space",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "class": "Json",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_json.js",
+            "line": 430,
+            "itemtype": "attribute",
+            "name": "ATTRS",
+            "type": "{{NAME: string, version: string}}",
+            "initonly": "",
+            "class": "Json",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_json.js",
+            "line": 441,
+            "itemtype": "method",
+            "name": "stringify",
+            "return": {
+                "description": "object in JSON String Notation",
+                "type": "String"
+            },
+            "params": [
+                {
+                    "name": "object",
+                    "description": "Given a mixed object/element",
+                    "type": "Mixed"
+                }
+            ],
+            "class": "Json",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_json.js",
+            "line": 448,
+            "itemtype": "method",
+            "name": "parse",
+            "return": {
+                "description": "object",
+                "type": "Object"
+            },
+            "params": [
+                {
+                    "name": "string",
+                    "description": "Given a string parses it into a proper JavaScript structure",
+                    "type": "String"
+                }
+            ],
+            "class": "Json",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_lang.js",
+            "line": 35,
+            "itemtype": "attribute",
+            "name": "ATTRS",
+            "type": "{{NAME: string, version: string}}",
+            "initonly": "",
+            "class": "Lang",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_lang.js",
+            "line": 47,
+            "description": "Date.now() - Polyfill for now method for ie8",
+            "itemtype": "method",
+            "name": "dateNow",
+            "return": {
+                "description": "timestamp millisecond"
+            },
+            "access": "public",
+            "tagname": "",
+            "author": "Mozilla",
+            "class": "Lang",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_lang.js",
+            "line": 58,
+            "description": "Bind - binds the function to a scope",
+            "params": [
+                {
+                    "name": "obj",
+                    "description": "the Scope object",
+                    "type": "Object"
+                },
+                {
+                    "name": "args",
+                    "description": "Arguments to pass in to the function",
+                    "type": "Object"
+                },
+                {
+                    "name": "func",
+                    "description": "Function to call in the scope",
+                    "type": "Function"
+                }
+            ],
+            "itemtype": "method",
+            "name": "bind",
+            "return": {
+                "description": "to the bound function"
+            },
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "class": "Lang",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_lang.js",
+            "line": 84,
+            "description": "Mixing properties of 2 objects. Properties in 'from' will overide the same properies in 'to'.\nThe 'to' object will also be overrided after the mix",
+            "params": [
+                {
+                    "name": "to",
+                    "description": "tagert object to be mixed in",
+                    "type": "Object"
+                },
+                {
+                    "name": "from",
+                    "description": "The source object",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "Mixed object.",
+                "type": "Object"
+            },
+            "class": "Lang",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_lang.js",
+            "line": 103,
+            "description": "Get length of an Object",
+            "params": [
+                {
+                    "name": "obj",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "itemtype": "method",
+            "name": "size",
+            "return": {
+                "description": "length"
+            },
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "class": "Lang",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_lang.js",
+            "line": 123,
+            "description": "Merge the two objects together recursively",
+            "params": [
+                {
+                    "name": "target",
+                    "description": "Element to merge into",
+                    "type": "Object"
+                },
+                {
+                    "name": "from",
+                    "description": "Element to merge properties out of",
+                    "type": "Object"
+                }
+            ],
+            "itemtype": "method",
+            "name": "merge",
+            "return": {
+                "description": "to the newly merged element"
+            },
+            "access": "public",
+            "tagname": "",
+            "static": "Author : jQuery",
+            "class": "Lang",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_lang.js",
+            "line": 175,
+            "description": "Wrapper for setTimeout to help trigger the function with a context.",
+            "params": [
+                {
+                    "name": "func",
+                    "description": "Function to call",
+                    "type": "Function"
+                },
+                {
+                    "name": "time",
+                    "description": "Time in milliseconds after which to execute the function",
+                    "type": "Number"
+                },
+                {
+                    "name": "scope",
+                    "description": "The scope to trigger the function in.",
+                    "type": "Object"
+                },
+                {
+                    "name": "args",
+                    "description": "Arguments to apss to the function *deprecated for now*",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "the reference to the setTimeout so it can be cancelled",
+                "type": "Number"
+            },
+            "itemtype": "method",
+            "name": "delay",
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "class": "Lang",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_lang.js",
+            "line": 192,
+            "description": "Formats a cookie value for an object containing multiple values.",
+            "params": [
+                {
+                    "name": "hash",
+                    "description": "An object of key-value pairs to create a string for.",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "A string suitable for use as a cookie value.",
+                "type": "String"
+            },
+            "itemtype": "method",
+            "name": "createHash",
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "class": "Lang",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_lang.js",
+            "line": 214,
+            "description": "Parses a cookie hash string into an object.",
+            "params": [
+                {
+                    "name": "text",
+                    "description": "The cookie hash string to parse (format: n1=v1&n2=v2).",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "An object containing entries for each cookie value.",
+                "type": "Object"
+            },
+            "itemtype": "method",
+            "name": "parseHash",
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "author": "YUI3 - cookie.js",
+            "class": "Lang",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_lang.js",
+            "line": 243,
+            "description": "Returns true if value is an Object or Function",
+            "itemtype": "method",
+            "name": "isObject",
+            "params": [
+                {
+                    "name": "value",
+                    "description": "Element to be checked",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "Returns true in case it is an Object or a Function",
+                "type": "Boolean"
+            },
+            "class": "Lang",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_lang.js",
+            "line": 256,
+            "description": "Return true if object is null or has no property",
+            "params": [
+                {
+                    "name": "obj",
+                    "description": "Target object to be checked again",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "Return true if object is empty",
+                "type": "Boolean"
+            },
+            "class": "Lang",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_lang.js",
+            "line": 289,
+            "description": "Returns true if value is a Function",
+            "itemtype": "method",
+            "name": "isFunction",
+            "params": [
+                {
+                    "name": "value",
+                    "description": "Element to be checked",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "Returns true in case it is a Function",
+                "type": "Boolean"
+            },
+            "class": "Lang",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_lang.js",
+            "line": 299,
+            "description": "Returns true if Object has the key",
+            "itemtype": "method",
+            "name": "objHasKey",
+            "params": [
+                {
+                    "name": "obj",
+                    "description": "Object to be checked",
+                    "type": "Object"
+                },
+                {
+                    "name": "key",
+                    "description": "Key value to be checked against Object",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Boolean|*"
+            },
+            "class": "Lang",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_lang.js",
+            "line": 310,
+            "description": "Checks if element is an Array",
+            "itemtype": "method",
+            "name": "isArray",
+            "params": [
+                {
+                    "name": "value",
+                    "description": "Element to be tested",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "Returns true if element is an array",
+                "type": "Boolean"
+            },
+            "class": "Lang",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_lang.js",
+            "line": 320,
+            "description": "Checks if element is a String",
+            "itemtype": "method",
+            "name": "isString",
+            "params": [
+                {
+                    "name": "value",
+                    "description": "Element to be evaluated",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "Returns true if element is a String",
+                "type": "Boolean"
+            },
+            "class": "Lang",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_lang.js",
+            "line": 330,
+            "description": "Checks if element value is a Number",
+            "itemtype": "method",
+            "name": "isNumber",
+            "params": [
+                {
+                    "name": "value",
+                    "description": "Element to be evaluated",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "Returns true if element value is a Number",
+                "type": "Boolean"
+            },
+            "class": "Lang",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_lang.js",
+            "line": 344,
+            "description": "Checks if element value and type is a Number",
+            "itemtype": "method",
+            "name": "isStrictNumber",
+            "params": [
+                {
+                    "name": "value",
+                    "description": "Element to be evaluated",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "Returns true if element value and type is a Number",
+                "type": "Boolean"
+            },
+            "class": "Lang",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_lang.js",
+            "line": 354,
+            "description": "Clones Object",
+            "itemtype": "method",
+            "name": "clone",
+            "params": [
+                {
+                    "name": "obj",
+                    "description": "Object to be cloned",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "Returns a cloned instance of the input Object",
+                "type": "*"
+            },
+            "class": "Lang",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_lang.js",
+            "line": 378,
+            "description": "Returns the index of the first item in the array that's equal (using a strict\nequality check) to the specified _value_, or `-1` if the value isn't found.\n\nThis method wraps the native `Array.indexOf()` method if available.",
+            "itemtype": "method",
+            "name": "arrayIndexOf",
+            "params": [
+                {
+                    "name": "array",
+                    "description": "Array to search.",
+                    "type": "Array"
+                },
+                {
+                    "name": "value",
+                    "description": "Value to search for.",
+                    "type": "*"
+                },
+                {
+                    "name": "from",
+                    "description": "The index at which to begin the search.",
+                    "type": "Number",
+                    "optional": true,
+                    "optdefault": "0"
+                }
+            ],
+            "return": {
+                "description": "Index of the item strictly equal to _value_, or `-1` if not found.",
+                "type": "Number"
+            },
+            "class": "Lang",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_lang.js",
+            "line": 417,
+            "description": "Check if an element exists in an array",
+            "params": [
+                {
+                    "name": "array",
+                    "description": "Target Array"
+                },
+                {
+                    "name": "el",
+                    "description": "Element to be checked"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "Lang",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_lang.js",
+            "line": 427,
+            "description": "Dedupes an array of strings, returning an array that's guaranteed to contain\nonly one copy of a given string.",
+            "itemtype": "method",
+            "name": "arrayDedupe",
+            "params": [
+                {
+                    "name": "array",
+                    "description": "Array of strings or numbers to dedupe.",
+                    "type": "String[]|Number[]"
+                }
+            ],
+            "return": {
+                "description": "Copy of _array_ containing no duplicate values.",
+                "type": "Array"
+            },
+            "class": "Lang",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_lang.js",
+            "line": 454,
+            "description": "Utility function to determine if string \"A\" contains string \"B\".",
+            "params": [
+                {
+                    "name": "haystack",
+                    "description": "String to search in",
+                    "type": "String"
+                },
+                {
+                    "name": "needle",
+                    "description": "The string to search for",
+                    "type": "String"
+                }
+            ],
+            "itemtype": "method",
+            "name": "inString",
+            "return": {
+                "description": "true if found false otherwise",
+                "type": "Boolean"
+            },
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "class": "Lang",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_lang.js",
+            "line": 467,
+            "description": "Parses out a Number out of a string 3.0.2 return 3.0",
+            "itemtype": "method",
+            "name": "numberific",
+            "return": {
+                "description": "Number out of a string",
+                "type": "Float"
+            },
+            "params": [
+                {
+                    "name": "string",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "author": "Igor Zingerman ( igorz@yahoo-inc.com )",
+            "access": "private",
+            "tagname": "",
+            "class": "Lang",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_lang.js",
+            "line": 483,
+            "description": "Capitalise firt letter",
+            "itemtype": "method",
+            "name": "capitaliseFirstLetter",
+            "params": [
+                {
+                    "name": "string,",
+                    "description": "value to change",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "Lang",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_lang.js",
+            "line": 493,
+            "description": "Check if the reference is a singleton and merge accordingly",
+            "itemtype": "method",
+            "name": "mixin",
+            "params": [
+                {
+                    "name": "receiver",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "supplier",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "Lang",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_lang.js",
+            "line": 507,
+            "description": "Alternative solution of Object.create()",
+            "itemtype": "method",
+            "name": "create",
+            "params": [
+                {
+                    "name": "prototype,",
+                    "description": "list of prototype methods",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "Create, fresh instance",
+                "type": "Object"
+            },
+            "class": "Lang",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_lang.js",
+            "line": 519,
+            "description": "Extend a class from another and define its prototype",
+            "itemtype": "method",
+            "name": "extend",
+            "params": [
+                {
+                    "name": "receiver",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "supplier",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "prototypes",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "receiver",
+                "type": "Object"
+            },
+            "class": "Lang",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_lang.js",
+            "line": 558,
+            "description": "Looping through the object and execute func for each item.\nIf func return false then stop the loop immediately",
+            "itemtype": "method",
+            "name": "forEach",
+            "params": [
+                {
+                    "name": "obj",
+                    "description": "Object to be looped through",
+                    "type": "Object"
+                },
+                {
+                    "name": "func",
+                    "description": "Function to be executed for each item. Func will take 2 args, the index and the value of item respectively",
+                    "type": "Function"
+                }
+            ],
+            "class": "Lang",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_lang.js",
+            "line": 577,
+            "description": "Polyfill for requestAnimationFrame",
+            "itemtype": "method",
+            "name": "requestAnimFrame",
+            "params": [
+                {
+                    "name": "callback",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "return": {
+                "description": "id",
+                "type": "Number"
+            },
+            "author": "Darius Bacon",
+            "class": "Lang",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_lang.js",
+            "line": 592,
+            "description": "Polyfill for cancelAnimationFrame",
+            "itemtype": "method",
+            "name": "cancelAnimFrame",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "class": "Lang",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_lang.js",
+            "line": 601,
+            "description": "Url sanitizer to prevent xss injection",
+            "itemtype": "method",
+            "name": "urlSanitize",
+            "params": [
+                {
+                    "name": "str",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "class": "Lang",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_lang.js",
+            "line": 618,
+            "description": "Check if string is containing invalid cararters",
+            "itemtype": "method",
+            "name": "isInvalidChars",
+            "params": [
+                {
+                    "name": "str",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "class": "Lang",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_lang.js",
+            "line": 627,
+            "description": "Check if the given url is hosted at the same origin",
+            "itemtype": "method",
+            "name": "isSameOrigin",
+            "params": [
+                {
+                    "name": "url",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "class": "Lang",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_util.js",
+            "line": 30,
+            "itemtype": "attribute",
+            "name": "ATTRS",
+            "type": "{{NAME: string, version: string}}",
+            "initonly": "",
+            "class": "Util",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_util.js",
+            "line": 42,
+            "description": "Wrapper function for ad_takeover call.",
+            "params": [
+                {
+                    "name": "takeover",
+                    "description": "True to set takeover or false to turn it off",
+                    "type": "Boolean"
+                }
+            ],
+            "itemtype": "method",
+            "name": "toggleTakeover",
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "class": "Util",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_util.js",
+            "line": 55,
+            "description": "Wrapper for the function ad_running to pause or play the Today module",
+            "params": [
+                {
+                    "name": "running",
+                    "description": "True to let the page know the ad is running, false otherwise",
+                    "type": "Boolean"
+                }
+            ],
+            "itemtype": "method",
+            "name": "adRunning",
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "class": "Util",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_util.js",
+            "line": 68,
+            "description": "Object keeping references to function that need to be called on ad_action",
+            "access": "private",
+            "tagname": "",
+            "type": "Object",
+            "itemtype": "property",
+            "name": "adAction",
+            "deprecated": true,
+            "deprecationMessage": "DEPRECATED",
+            "class": "Util",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_util.js",
+            "line": 77,
+            "description": "Registration function to callback when ad_action is called",
+            "params": [
+                {
+                    "name": "conf",
+                    "description": "params: callback:function, args:arguments, context: ad_context, ad: placement_name",
+                    "type": "Object"
+                }
+            ],
+            "itemtype": "method",
+            "name": "registerAdAction",
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "deprecated": true,
+            "deprecationMessage": "DEPRECATED",
+            "class": "Util",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_util.js",
+            "line": 91,
+            "description": "Search for all the numbers in a string and return them.",
+            "params": [
+                {
+                    "name": "haystack",
+                    "description": "String to search for numbers in",
+                    "type": "String"
+                }
+            ],
+            "itemtype": "method",
+            "name": "getInt",
+            "return": {
+                "description": "all the numbers in Number format or zero if none found",
+                "type": "Number"
+            },
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "class": "Util",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_util.js",
+            "line": 107,
+            "description": "Calls the 1x1 pixel in javascript",
+            "params": [
+                {
+                    "name": "pixel",
+                    "description": "source of the image to request",
+                    "type": "String"
+                }
+            ],
+            "itemtype": "method",
+            "name": "pixelTrack",
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "class": "Util",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_util.js",
+            "line": 125,
+            "description": "Given a date returns true if it's today false otherwise. Today or after today.",
+            "params": [
+                {
+                    "name": "date",
+                    "description": "in the \"2012/10/23\" : YYYY/mm/dd format",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "true if the date is equal or greater than the passed in date. False otherwise",
+                "type": "Boolean"
+            },
+            "itemtype": "method",
+            "name": "adDate",
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "class": "Util",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_util.js",
+            "line": 139,
+            "description": "Given a string returns a numeric value (hash) of it",
+            "params": [
+                {
+                    "name": "string",
+                    "description": "(any length) to hash",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "hash number of the string.",
+                "type": "Number"
+            },
+            "itemtype": "method",
+            "name": "hashString",
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "author": "FRESCO EMEA Team",
+            "class": "Util",
+            "module": "ACT"
+        },
+        {
+            "file": "temp_enabler/library/ACT_util.js",
+            "line": 170,
+            "description": "Given a variable name, returns value of a first matched variable from URL's query string if found",
+            "params": [
+                {
+                    "name": "name,",
+                    "description": "variable name to be matched",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "results, string value of first matched variable if found, \"\" otherwise",
+                "type": "String"
+            },
+            "itemtype": "method",
+            "name": "getQStrVal",
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "class": "Util",
+            "module": "ACT"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_Enabler.js:483"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_Enabler.js:498"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_Enabler.js:509"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_Enabler.js:698"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_Enabler.js:747"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_Enabler.js:757"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_Enabler.js:805"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_Enabler.js:817"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_Enabler.js:1041"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_Enabler.js:1051"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_Enabler.js:1064"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_Enabler.js:1079"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_Enabler.js:1092"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_Enabler.js:1106"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_Enabler.js:1155"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_Enabler.js:1165"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_Enabler.js:1181"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_Enabler.js:1191"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_Enabler.js:1201"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_Enabler.js:1211"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_Enabler.js:1221"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_Enabler.js:1251"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_Enabler.js:1332"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_Enabler.js:1351"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_Enabler.js:1361"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_Enabler.js:1371"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_Enabler.js:1381"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_Enabler.js:1391"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_Enabler.js:1401"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_Enabler.js:1411"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_Enabler.js:1497"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_dom.js:135"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_dom.js:155"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_dom.js:319"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_dom.js:411"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_event.js:70"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_lang.js:243"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_lang.js:289"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_lang.js:299"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_lang.js:310"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_lang.js:320"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_lang.js:330"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_lang.js:344"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " temp_enabler/library/ACT_lang.js:354"
+        },
+        {
+            "message": "Missing item type\nListen to parent frame post message and convert it to event",
+            "line": " temp_enabler/library/ACT_Enabler.js:64"
+        },
+        {
+            "message": "Missing item type",
+            "line": " temp_enabler/library/ACT_Enabler.js:690"
+        },
+        {
+            "message": "Missing item type",
+            "line": " temp_enabler/library/ACT_Enabler.js:735"
+        },
+        {
+            "message": "Missing item type",
+            "line": " temp_enabler/library/ACT_Enabler.js:777"
+        },
+        {
+            "message": "Missing item type\nAdds a dynamic property to the event.",
+            "line": " temp_enabler/library/ACT_Enabler.js:1497"
+        },
+        {
+            "message": "Missing item type\nDetect current OS",
+            "line": " temp_enabler/library/ACT_UA.js:19"
+        },
+        {
+            "message": "Missing item type\nDetect Mobiles",
+            "line": " temp_enabler/library/ACT_UA.js:72"
+        },
+        {
+            "message": "Missing item type\nDetect Tablets",
+            "line": " temp_enabler/library/ACT_UA.js:84"
+        },
+        {
+            "message": "Missing item type\nDetect if current browser supports Flash, and if so, returns the version which is installed",
+            "line": " temp_enabler/library/ACT_UA.js:96"
+        },
+        {
+            "message": "Missing item type\nIdentifies the browser in use.\nIn case the browser is being used, returns the browser version, it returns 0 otherwise.",
+            "line": " temp_enabler/library/ACT_UA.js:143"
+        },
+        {
+            "message": "Missing item type\nDetects if Canvas is supported by browser",
+            "line": " temp_enabler/library/ACT_UA.js:166"
+        },
+        {
+            "message": "Missing item type\nDetects if Drag and Drop is supported by browser",
+            "line": " temp_enabler/library/ACT_UA.js:177"
+        },
+        {
+            "message": "Missing item type\nDetects if canvas and text on canvas is supported by browser",
+            "line": " temp_enabler/library/ACT_UA.js:188"
+        },
+        {
+            "message": "Missing item type\nDetects if playing audio is supported by browser",
+            "line": " temp_enabler/library/ACT_UA.js:200"
+        },
+        {
+            "message": "Missing item type\nDetects if native video playing is supported by browser",
+            "line": " temp_enabler/library/ACT_UA.js:233"
+        },
+        {
+            "message": "Missing item type\nDetects browser",
+            "line": " temp_enabler/library/ACT_UA.js:291"
+        },
+        {
+            "message": "Missing item type\nDetect current OS",
+            "line": " temp_enabler/library/ACT_UA.js:362"
+        },
+        {
+            "message": "Missing item type\nAdds a new class to a DOM element's classList",
+            "line": " temp_enabler/library/ACT_dom.js:135"
+        },
+        {
+            "message": "Missing item type\nRemoves one existing class name from the element's class list",
+            "line": " temp_enabler/library/ACT_dom.js:155"
+        },
+        {
+            "message": "Missing item type\nChecks if parameter is a DOM element",
+            "line": " temp_enabler/library/ACT_dom.js:411"
+        },
+        {
+            "message": "Missing item type\nPair of events and HTML tags used for testing event support for current browser.",
+            "line": " temp_enabler/library/ACT_event.js:16"
+        },
+        {
+            "message": "Missing item type\nObject containing all events being listened",
+            "line": " temp_enabler/library/ACT_event.js:31"
+        },
+        {
+            "message": "Missing item type\nSimple integer to keep generate a 'random index' for added events.",
+            "line": " temp_enabler/library/ACT_event.js:38"
+        },
+        {
+            "message": "Missing item type\nChecks event string against events supported by current browser.\nUsed to decide if it's custom event or not.",
+            "line": " temp_enabler/library/ACT_event.js:70"
+        },
+        {
+            "message": "Missing item type\nThe 'ready' function is a modified version of the JQuery 'ready' functionality found at http://api.jquery.com/ready/\nThe code below is modified according to the JQuery MIT License https://github.com/jquery/jquery",
+            "line": " temp_enabler/library/ACT_event.js:289"
+        },
+        {
+            "message": "Missing item type\nconstructor",
+            "line": " temp_enabler/library/ACT_event.js:492"
+        },
+        {
+            "message": "Missing item type\nJSON encode functionality.",
+            "line": " temp_enabler/library/ACT_json.js:15"
+        },
+        {
+            "message": "Missing item type\nMixing properties of 2 objects. Properties in 'from' will overide the same properies in 'to'.\nThe 'to' object will also be overrided after the mix",
+            "line": " temp_enabler/library/ACT_lang.js:84"
+        },
+        {
+            "message": "Missing item type\nReturn true if object is null or has no property",
+            "line": " temp_enabler/library/ACT_lang.js:256"
+        },
+        {
+            "message": "Missing item type\nCheck if an element exists in an array",
+            "line": " temp_enabler/library/ACT_lang.js:417"
+        }
+    ]
+}

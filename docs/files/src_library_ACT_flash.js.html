@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src/library/ACT_flash.js - ACT.js</title>
+    <link rel="stylesheet" href="https://s.yimg.com/zz/combo?yui-s:3.14.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="https://s.yimg.com/rz/l/favicon.ico">
+    <script src="https://s.yimg.com/zz/combo?yui-s:3.14.1/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="https://s.yimg.com/cv/ae/global/ACTJS/logo/ACT.js.logo.png" title="ACT.js" width="150"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 1.1.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                            <li><a href="#api-demos">Demo and Examples</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/ACT.html">ACT</a></li>
+                                <li><a href="../classes/ActionsQueue.html">ActionsQueue</a></li>
+                                <li><a href="../classes/Base.html">Base</a></li>
+                                <li><a href="../classes/Capability.html">Capability</a></li>
+                                <li><a href="../classes/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../classes/Class.html">Class</a></li>
+                                <li><a href="../classes/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../classes/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../classes/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../classes/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../classes/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../classes/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../classes/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../classes/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../classes/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../classes/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../classes/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../classes/Cookie.html">Cookie</a></li>
+                                <li><a href="../classes/CustomData.html">CustomData</a></li>
+                                <li><a href="../classes/Debug.html">Debug</a></li>
+                                <li><a href="../classes/Dom.html">Dom</a></li>
+                                <li><a href="../classes/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../classes/Enabler.html">Enabler</a></li>
+                                <li><a href="../classes/Environment.html">Environment</a></li>
+                                <li><a href="../classes/Event.html">Event</a></li>
+                                <li><a href="../classes/Flash.html">Flash</a></li>
+                                <li><a href="../classes/IO.html">IO</a></li>
+                                <li><a href="../classes/Json.html">Json</a></li>
+                                <li><a href="../classes/Lang.html">Lang</a></li>
+                                <li><a href="../classes/LayersList.html">LayersList</a></li>
+                                <li><a href="../classes/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../classes/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../classes/Screen.html">Screen</a></li>
+                                <li><a href="../classes/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../classes/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../classes/Tracking.html">Tracking</a></li>
+                                <li><a href="../classes/UA.html">UA</a></li>
+                                <li><a href="../classes/Util.html">Util</a></li>
+                                <li><a href="../classes/VideoEvents.html">VideoEvents</a></li>
+                            </ul>
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/ACT.html">ACT</a></li>
+                                <li><a href="../modules/actionsQueue.html">actionsQueue</a></li>
+                                <li><a href="../modules/Base.html">Base</a></li>
+                                <li><a href="../modules/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../modules/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../modules/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../modules/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../modules/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../modules/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../modules/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../modules/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../modules/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../modules/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../modules/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../modules/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../modules/Cookie.html">Cookie</a></li>
+                                <li><a href="../modules/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../modules/Enabler.html">Enabler</a></li>
+                                <li><a href="../modules/environment.html">environment</a></li>
+                                <li><a href="../modules/IO.html">IO</a></li>
+                                <li><a href="../modules/LayersList.html">LayersList</a></li>
+                                <li><a href="../modules/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../modules/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../modules/Screen.html">Screen</a></li>
+                                <li><a href="../modules/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../modules/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../modules/Tracking.html">Tracking</a></li>
+                            </ul>
+                
+                            <ul id="api-demos" class="apis demos">
+                                <li><a href="../demo/ACT_Demo_300x250.html">300x250</a></li>
+                                <li><a href="../demo/ACT_Demo_300x250_tracking.html">300x250_tracking</a></li>
+                                <li><a href="../demo/ACT_Demo_TrackingExample.html">TrackingExample</a></li>
+                                <li><a href="../demo/ACT_Demo_animation.html">animation</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard.html">billboard</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-enabler.html">billboard-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-expandable-enabler.html">billboard-expandable-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video.html">billboard_html_video</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video_rtl.html">billboard_html_video_rtl</a></li>
+                                <li><a href="../demo/ACT_Demo_carousel.html">carousel</a></li>
+                                <li><a href="../demo/ACT_Demo_dwelltime.html">dwelltime</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_expand.html">enabler_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_fullscreen_expand.html">enabler_fullscreen_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_target.html">enabler_target</a></li>
+                                <li><a href="../demo/ACT_Demo_floating.html">floating</a></li>
+                                <li><a href="../demo/ACT_Demo_force_env.html">force_env</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_enabler.html">html5_enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_standard.html">html5_standard</a></li>
+                                <li><a href="../demo/ACT_Demo_icons.html">icons</a></li>
+                                <li><a href="../demo/ACT_Demo_input_data.html">input_data</a></li>
+                                <li><a href="../demo/ACT_Demo_login_html.html">login_html</a></li>
+                                <li><a href="../demo/ACT_Demo_overwrite_env.html">overwrite_env</a></li>
+                                <li><a href="../demo/ACT_Demo_splash_ad.html">splash_ad</a></li>
+                                <li><a href="../demo/ACT_Demo_tablet_expandable.html">tablet_expandable</a></li>
+                                <li><a href="../demo/ACT_Demo_video_event.html">video_event</a></li>
+                                <li><a href="../demo/ACT_Demo_video_html.html">video_html</a></li>
+                            </ul>
+                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: src/library/ACT_flash.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+ * Copyright 2016, Yahoo Inc.
+ * Copyrights licensed under the New BSD License.
+ * See the accompanying LICENSE file for terms.
+ */
+
+/* global ACT */
+ACT.define(&#x27;Flash&#x27;, [/*@&lt;*/&#x27;Debug&#x27;, /*&gt;@*/&#x27;Dom&#x27;, &#x27;Lang&#x27;, &#x27;UA&#x27;], function (ACT) {
+    &#x27;use strict&#x27;;
+
+    var dom = ACT.Dom;
+    var lang = ACT.Lang;
+    var UA = ACT.UA;
+
+    /* Private Variables */
+    var DEFAULT_PARAMS = {
+        metadata: &#x27;&#x27;,
+        allowFullScreen: &#x27;&#x27;,
+        allowNetworking: &#x27;&#x27;,
+        allowScriptAccess: &#x27;&#x27;,
+        fullScreenAspectRatio: &#x27;&#x27;,
+        flashvars: &#x27;&#x27;,
+        base: &#x27;&#x27;,
+        bgcolor: &#x27;&#x27;,
+        loop: &#x27;&#x27;,
+        menu: &#x27;&#x27;,
+        play: &#x27;&#x27;,
+        quality: &#x27;&#x27;,
+        salign: &#x27;&#x27;,
+        align: &#x27;&#x27;,
+        scale: &#x27;&#x27;,
+        wmode: &#x27;&#x27;,
+        src: &#x27;&#x27;,
+        width: &#x27;&#x27;,
+        height: &#x27;&#x27;,
+        movie: &#x27;&#x27;
+    };
+    /*@&lt;*/
+    var debug = ACT.Debug;
+    debug.log(&#x27;[ ACT_flash.js ]: loaded&#x27;);
+    /*&gt;@*/
+
+    /**
+     * Generate the set of parameters for the &lt;object&gt; or the &lt;embed&gt; tags
+     * @private
+     * @param {String} type Helpes determine which parameter types to return. Default OBJECT style.
+     * @return {Array} params The set of parameters that are defined for this embed
+     * @method params
+     */
+    function params(paramSet) {
+        var ret = [];
+        var itor;
+
+        for (itor in paramSet) {
+            if (paramSet.hasOwnProperty(itor) &amp;&amp; DEFAULT_PARAMS.hasOwnProperty(itor)) {
+                if (UA.ie &gt; 0) {
+                    ret.push(&#x27;&lt;param name=&#x27; + itor + &#x27; value=&quot;&#x27; + paramSet[itor] + &#x27;&quot;&gt;&#x27;);
+                } else {
+                    ret.push(itor + &#x27;=&quot;&#x27; + paramSet[itor] + &#x27;&quot;&#x27;);
+                }
+            }
+        }
+
+        return ret.join(&#x27; &#x27;);
+    }
+
+    /**
+     * Helper of objectEmbed embeds the SWF Object into a given div with the given variables, parameters and location.
+     * @private
+     * @param {Object} conf Array of embed instructions / parameters.
+     * @return {Object} swf_el Reference to the embeded object
+     * @method ad_embedObj
+     */
+    function generateTag(conf) {
+        var obj = &#x27;&#x27;;
+        var div = dom.byId(conf.position) || null;
+        var embedParams = params(conf);
+
+        if (UA.ie &gt; 0) {
+            obj = &#x27;&lt;object style=&quot;&#x27; + conf.style + &#x27;&quot; type=&quot;&#x27; + conf.type + &#x27;&quot; data=&quot;&#x27; + conf.src + &#x27;&quot; alt=&quot;&#x27; + conf.alt + &#x27;&quot; classid=&quot;&#x27; +
+                conf.clsid + &#x27;&quot; id=&quot;&#x27; + conf.id + &#x27;&quot; width=&quot;&#x27; + conf.width + &#x27;&quot; height=&quot;&#x27; + conf.height + &#x27;&quot;&gt;&#x27; + embedParams + &#x27;&lt;/object&gt;&#x27;;
+        } else {
+            obj = &#x27;&lt;embed style=&quot;&#x27; + conf.style + &#x27;&quot; alt=&quot;&#x27; + conf.alt + &#x27;&quot; name=&quot;&#x27; + conf.id + &#x27;_name&quot; id=&quot;&#x27; + conf.id + &#x27;&quot; &#x27; + embedParams + &#x27;&gt;&lt;/embed&gt;&#x27;;
+        }
+        if (div !== null) {
+            div.innerHTML = obj;
+            return div.firstChild;
+        }
+        return obj;
+    }
+
+    /**
+     * Flash Embed Library.
+     * @module ACT
+     * @class Flash
+     * @requires dom, lang, UA
+     */
+    function Flash() {
+        /* This is a singleton. */
+        /* istanbul ignore if */
+        if (Flash.prototype.singleton) {
+            return Flash.prototype.singleton;
+        }
+        Flash.prototype.singleton = this;
+    }
+
+    /**
+     * @attribute ATTRS
+     * @type {{NAME: string, version: string}}
+     * @initOnly
+     */
+    Flash.ATTRS = {
+        NAME: &#x27;Flash&#x27;,
+        version: &#x27;1.1.0&#x27;
+    };
+
+    Flash.prototype = {
+
+        /**
+         * Embed the SWF Object into a given div with the given variables, parameters and location.
+         * @param {Object} conf Configuration object.
+         * @method objectEmbed
+         * @public
+         * @static
+         * @example
+         * &#x60;&#x60;&#x60;
+         *    // Simple Example
+         *    var conf = {
+         *        src: &quot;https://s.yimg.com/cv/ae/global/actjs/ACTPlayer1435242612.swf&quot;,
+         *        position: &quot;adive&quot; // ID of the parent div - doc.byId(conf.position).innerHTML = html_code;
+         *    };
+         *    var node = ACT.Flash.objectEmbed(conf);
+         * &#x60;&#x60;&#x60;
+         *
+         * @example
+         * &#x60;&#x60;&#x60;
+         *    // A more Advanced Example
+         *    var conf = {
+         *        src: &quot;https://s.yimg.com/cv/ae/global/actjs/ACTPlayer1435242612.swf&quot;, // src of the swf
+         *        width: 50,
+         *        height:150,
+         *        id: &quot;mySWFId&quot;, // element ( swf element ) ID
+         *        wmode: &quot;opaque&quot;,
+         *        menu: &quot;true&quot;,
+         *        flashvars: {
+         *            &quot;clickTAG&quot;: &quot;http://www.yahoo.com&quot;,
+         *            &quot;callback&quot;: &quot;someFunction&quot;,
+         *            &quot;random_var&quot;: &quot;value&quot;
+         *        },
+         *        allowScriptAccess: &quot;always&quot;,
+         *        position: &quot;adive&quot; // ID of the parent div - doc.byId(conf.position).innerHTML = html_code;
+         *    };
+         * &#x60;&#x60;&#x60;
+         */
+        objectEmbed: function (conf) {
+            var parameters = lang.merge({
+                width: &#x27;100%&#x27;,
+                height: &#x27;100%&#x27;,
+                src: &#x27;&#x27;,
+                id: &#x27;swf_&#x27; + (Math.random()),
+                position: null,
+                wmode: &#x27;transparent&#x27;,
+                alt: &#x27;&#x27;,
+                quality: &#x27;high&#x27;,
+                menu: &#x27;false&#x27;,
+                play: &#x27;true&#x27;,
+                flashvars: {},
+                allowFullScreen: &#x27;true&#x27;,
+                allowScriptAccess: &#x27;always&#x27;,
+                type: &#x27;application/x-shockwave-flash&#x27;,
+                pluginspage: &#x27;http://www.adobe.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash&#x27;,
+                clsid: &#x27;clsid:D27CDB6E-AE6D-11cf-96B8-444553540000&#x27;,
+                style: &#x27;display:block&#x27;
+            }, conf);
+
+            var ie = UA.ie;
+
+            /* istanbul ignore else */
+            if (lang.isObject(parameters.flashvars)) {
+                parameters.flashvars = lang.createHash(parameters.flashvars);
+            }
+
+            if (ie !== 0) {
+                // IE &quot;object&quot; node
+                parameters.movie = parameters.src;
+            }
+
+            return generateTag(parameters);
+        },
+
+        /**
+         * Add class names to the documentElement signifying which flash version ( if any ) are available.
+         * @method injectFlashVersion
+         * @public
+         * @static
+         * @example
+         * &#x60;&#x60;&#x60;
+         *     // flash-9 implies the user has flash 9 installed.
+         *     // flash-gt# implies the user has flash greater than # version installed.
+         *     // flash-0 implies no flash
+         *     // jsenabled is always injected, implies javascript is enabled.
+         *     document.documentElement.className === &quot;jsenabled flash-9 flash-gt8 flash-gt7 flash-gt6 flash-gt5 flash-gt4&quot;
+         * &#x60;&#x60;&#x60;
+         */
+        injectFlashVersion: function () {
+            var flashVersion = UA.flash;
+            var minFlashVersion = 4;
+            var htmlClasses = [&#x27;jsenabled&#x27;, &#x27;flash-&#x27; + flashVersion];
+            var docRef = UA.html;
+
+            while ((flashVersion) &gt; (minFlashVersion)) {
+                flashVersion--;
+                htmlClasses.push(&#x27;flash-gt&#x27; + flashVersion);
+            }
+            /* istanbul ignore else */
+            if (lang.isObject(docRef)) {
+                docRef.className += htmlClasses.join(&#x27; &#x27;);
+            }
+        }
+    };
+
+    return new Flash();
+});
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

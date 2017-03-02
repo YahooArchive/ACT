@@ -1,0 +1,63 @@
+/* Styles for billboard content*/
+/*
+Custom font can be defined as follow (more info at http://www.w3schools.com/css/css3_fonts.asp)
+
+@font-face {
+    font-family: myFont;
+    src: url(myFont.woff);
+}
+
+Example of using font
+
+div {
+    font-family: myFont;
+}
+*/
+
+#billboard-expandable{
+	width: 970px;
+	height: 970px;
+	background: #eee;
+	position: relative;	
+}
+
+.button{
+	background: #ddd;	
+	padding: 20px 30px;
+	cursor: pointer;
+}
+
+#clickArea {
+	position: absolute;
+	left: 450px;
+	bottom: 50px;
+}
+
+#facebookBtn {
+	position: absolute;
+	left: 250px;
+	bottom: 50px;
+}
+
+#twitterButton {
+	position: absolute;
+	right: 200px;
+	bottom: 50px;
+}
+
+#closeButton {
+	position: absolute;
+	width: 55px;
+	height: 55px;
+	padding: 0px;
+	right: 0px;
+	top: 5px;	
+	background: #000;
+}
+
+#videoPlayer {
+    height: 475px;
+    left: 60px;
+    position: absolute;
+    top: 230px;	
+}

@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src/core/ACT_TrackingFacade.js - ACT.js</title>
+    <link rel="stylesheet" href="https://s.yimg.com/zz/combo?yui-s:3.14.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="https://s.yimg.com/rz/l/favicon.ico">
+    <script src="https://s.yimg.com/zz/combo?yui-s:3.14.1/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="https://s.yimg.com/cv/ae/global/ACTJS/logo/ACT.js.logo.png" title="ACT.js" width="150"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 1.1.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                            <li><a href="#api-demos">Demo and Examples</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/ACT.html">ACT</a></li>
+                                <li><a href="../classes/ActionsQueue.html">ActionsQueue</a></li>
+                                <li><a href="../classes/Base.html">Base</a></li>
+                                <li><a href="../classes/Capability.html">Capability</a></li>
+                                <li><a href="../classes/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../classes/Class.html">Class</a></li>
+                                <li><a href="../classes/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../classes/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../classes/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../classes/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../classes/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../classes/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../classes/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../classes/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../classes/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../classes/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../classes/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../classes/Cookie.html">Cookie</a></li>
+                                <li><a href="../classes/CustomData.html">CustomData</a></li>
+                                <li><a href="../classes/Debug.html">Debug</a></li>
+                                <li><a href="../classes/Dom.html">Dom</a></li>
+                                <li><a href="../classes/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../classes/Enabler.html">Enabler</a></li>
+                                <li><a href="../classes/Environment.html">Environment</a></li>
+                                <li><a href="../classes/Event.html">Event</a></li>
+                                <li><a href="../classes/Flash.html">Flash</a></li>
+                                <li><a href="../classes/IO.html">IO</a></li>
+                                <li><a href="../classes/Json.html">Json</a></li>
+                                <li><a href="../classes/Lang.html">Lang</a></li>
+                                <li><a href="../classes/LayersList.html">LayersList</a></li>
+                                <li><a href="../classes/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../classes/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../classes/Screen.html">Screen</a></li>
+                                <li><a href="../classes/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../classes/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../classes/Tracking.html">Tracking</a></li>
+                                <li><a href="../classes/UA.html">UA</a></li>
+                                <li><a href="../classes/Util.html">Util</a></li>
+                                <li><a href="../classes/VideoEvents.html">VideoEvents</a></li>
+                            </ul>
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/ACT.html">ACT</a></li>
+                                <li><a href="../modules/actionsQueue.html">actionsQueue</a></li>
+                                <li><a href="../modules/Base.html">Base</a></li>
+                                <li><a href="../modules/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../modules/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../modules/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../modules/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../modules/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../modules/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../modules/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../modules/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../modules/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../modules/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../modules/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../modules/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../modules/Cookie.html">Cookie</a></li>
+                                <li><a href="../modules/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../modules/Enabler.html">Enabler</a></li>
+                                <li><a href="../modules/environment.html">environment</a></li>
+                                <li><a href="../modules/IO.html">IO</a></li>
+                                <li><a href="../modules/LayersList.html">LayersList</a></li>
+                                <li><a href="../modules/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../modules/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../modules/Screen.html">Screen</a></li>
+                                <li><a href="../modules/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../modules/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../modules/Tracking.html">Tracking</a></li>
+                            </ul>
+                
+                            <ul id="api-demos" class="apis demos">
+                                <li><a href="../demo/ACT_Demo_300x250.html">300x250</a></li>
+                                <li><a href="../demo/ACT_Demo_300x250_tracking.html">300x250_tracking</a></li>
+                                <li><a href="../demo/ACT_Demo_TrackingExample.html">TrackingExample</a></li>
+                                <li><a href="../demo/ACT_Demo_animation.html">animation</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard.html">billboard</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-enabler.html">billboard-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-expandable-enabler.html">billboard-expandable-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video.html">billboard_html_video</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video_rtl.html">billboard_html_video_rtl</a></li>
+                                <li><a href="../demo/ACT_Demo_carousel.html">carousel</a></li>
+                                <li><a href="../demo/ACT_Demo_dwelltime.html">dwelltime</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_expand.html">enabler_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_fullscreen_expand.html">enabler_fullscreen_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_target.html">enabler_target</a></li>
+                                <li><a href="../demo/ACT_Demo_floating.html">floating</a></li>
+                                <li><a href="../demo/ACT_Demo_force_env.html">force_env</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_enabler.html">html5_enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_standard.html">html5_standard</a></li>
+                                <li><a href="../demo/ACT_Demo_icons.html">icons</a></li>
+                                <li><a href="../demo/ACT_Demo_input_data.html">input_data</a></li>
+                                <li><a href="../demo/ACT_Demo_login_html.html">login_html</a></li>
+                                <li><a href="../demo/ACT_Demo_overwrite_env.html">overwrite_env</a></li>
+                                <li><a href="../demo/ACT_Demo_splash_ad.html">splash_ad</a></li>
+                                <li><a href="../demo/ACT_Demo_tablet_expandable.html">tablet_expandable</a></li>
+                                <li><a href="../demo/ACT_Demo_video_event.html">video_event</a></li>
+                                <li><a href="../demo/ACT_Demo_video_html.html">video_html</a></li>
+                            </ul>
+                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: src/core/ACT_TrackingFacade.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+ * Copyright 2016, Yahoo Inc.
+ * Copyrights licensed under the New BSD License.
+ * See the accompanying LICENSE file for terms.
+ */
+
+/* global ACT */
+ACT.define(&#x27;Tracking&#x27;, [/*@&lt;*/&#x27;Debug&#x27;, /*&gt;@*/ &#x27;Util&#x27;, &#x27;Lang&#x27;, &#x27;Event&#x27;, &#x27;Class&#x27;], function (ACT) {
+    &#x27;use strict&#x27;;
+
+    var Lang = ACT.Lang;
+    var Util = ACT.Util;
+    var Event = ACT.Event;
+    var Class = ACT.Class;
+
+    /**
+     * event list
+     */
+    var TRACK_EVENT = &#x27;tracking:track&#x27;;
+    var TRACK_EVENT_COMPLETE = &#x27;tracking:track:complete&#x27;;
+    var REGISTER_REDIRECT_EVENT = &#x27;tracking:registerRedirect&#x27;;
+    var REGISTER_REDIRECT_EVENT_COMPLETE = &#x27;tracking:registerRedirect:complete&#x27;;
+    var EVENT_GET_ENVIRONMENT_RENDERED = &#x27;env:envRendered&#x27;;
+    var EVENT_RETURNED_ENVIRONMENT_RENDERED = &#x27;env:envRendered:Done&#x27;;
+
+    /**
+     * Actions for tracking
+     *
+     */
+    /* istanbul ignore next */
+    var trackingActions = [{
+        type: &#x27;track&#x27;,
+        argument: {
+            label: {
+                name: &#x27;label&#x27;, // Layer name that fires event
+                test: function (value) {
+                    return Lang.isString(value);
+                }
+            },
+            timeout: {
+                name: &#x27;timeout&#x27;,
+                test: function (value) {
+                    return Lang.isNumber(value) || value === undefined || value === null;
+                }
+            }
+        },
+        process: function (actionId, values) {
+            var eventCompleteListener = Event.on(TRACK_EVENT_COMPLETE, function () {
+                eventCompleteListener.remove();
+                Event.fire(&#x27;complete:action&#x27;, actionId);
+            });
+
+            Event.fire(TRACK_EVENT, { label: values.label });
+        }
+    }];
+
+    var macrosWordsActions = {
+        envRendered: {
+            process: function (label, macro, callback) {
+                var renderEvent = Event.on(EVENT_RETURNED_ENVIRONMENT_RENDERED, function (envRendered) {
+                    renderEvent.remove();
+                    callback(label.replace(new RegExp(macro, &#x27;g&#x27;), envRendered));
+                });
+                Event.fire(EVENT_GET_ENVIRONMENT_RENDERED);
+            }
+        }
+    };
+
+    /*@&lt;*/
+    var Debug = ACT.Debug;
+    Debug.log(&#x27;[ ACT_tracking.js ] : loaded&#x27;);
+    /*&gt;@*/
+
+    /**
+     * @method getMacrosFromString
+     * @private
+     */
+    function getMacrosFromString(str) {
+        var match = str.match(/::(.*?)::/g);
+        return match;
+    }
+
+    /**
+     * @method replaceMacros
+     * @private
+     */
+    function replaceMacros(str, callback) {
+        var rawMacros;
+        var macro;
+        var strWithoutInvalidMacros;
+        if (str !== undefined &amp;&amp; str !== null) {
+            rawMacros = getMacrosFromString(str);
+            if (Lang.isArray(rawMacros)) {
+                macro = rawMacros[0].substr(2, rawMacros[0].length - 4);
+                if (macrosWordsActions.hasOwnProperty(macro)) {
+                    macrosWordsActions[macro].process(str, rawMacros[0], function (result) {
+                        result = result.replace(rawMacros[0], &#x27;&#x27;);
+                        str = replaceMacros(result, callback);
+                    });
+                } else {
+                    strWithoutInvalidMacros = str.replace(new RegExp(rawMacros[0], &#x27;g&#x27;), &#x27;&#x27;);
+                    str = replaceMacros(strWithoutInvalidMacros, callback);
+                }
+            } else {
+                callback(str);
+            }
+        } else {
+            callback(str);
+        }
+    }
+
+    /**
+     * ACT Generic Tracking functionality. This tracking file is a facade for tracking. It can either be completely overwritten, given that the
+     * overwritten version supplies similar functionality, or used with a a configuration section that defines appropriate overwrites. By default,
+     * this file will attempt to fire the tracking overwrite functions if they exist or simply return the tracking parameter set via the tracking complete event.
+     * for interaction tracking. In which case you should listen for &#x60;&#x60;&#x60;tracking:track:complete&#x60;&#x60;&#x60; event, that will provide the outcome of the tracking event that was fired.
+     * The contents of the data payload will be:
+     * @example
+     *     // Interaction Track :
+     *     returns: {Object} {
+     *             overwriteFired: false, // Did overwrite function get fired true if yes, false otherwise
+     *             trackingString: trackingString, // Tracking String provided
+     *             trackingID: trackingID, // Tracking ID provided or generated
+     *          result: {Mixed} // Result of calling the provided interaction tracking function.
+     *     };
+     *
+     *     // Redirect Track:
+     *     returns: {String} The generated redirect string for the provided URL.
+     *
+     * @example
+     *     // Example of the config that can be passed in
+     *     var config = {
+     *         adid: &#x27;&#x27;,
+     *         unique: &#x27;u_&#x27;,
+     *         trackingFunctions: {
+     *             overwrite: true / false,
+     *             redirect: function(trackingString, trackingID, redirectURL) { .... }
+     *             interaction: function(trackingString) { ... }
+     *         }
+     *     };
+     * @class Tracking
+     * @module Tracking
+     * @requires Util
+     * @requires Lang
+     * @requires Debug
+     */
+    function Tracking(config, ref) {
+        this.init(config, ref);
+    }
+
+    /**
+     * @attribute ATTRS
+     * @type {{NAME: string, version: string}}
+     * @initOnly
+     */
+    Tracking.ATTRS = {
+        NAME: &#x27;Tracking&#x27;,
+        version: &#x27;1.1.0&#x27;
+    };
+
+    Lang.extend(Tracking, Class, {
+        init: function (config, ref) {
+            var conf = config || null;
+
+            /**
+             * The configuration property for the Tracking instance
+             * @property config
+             * @type Object
+             */
+            this.config = {};
+
+            /*@&lt;*/
+            Debug.log(&#x27;[ ACT_tracking.js ] initialized with&#x27;, config);
+            /*&gt;@*/
+
+            if (conf !== null) {
+                Lang.merge(this.config, conf);
+            } /*@&lt;*/ else {
+                Debug.log(&#x27;[ ACT_tracking.js ]: conf was null. Make sure you have all the tracking defined&#x27;);
+            }
+            /*&gt;@*/
+
+            if (ref) {
+                ref.interaction_track = Lang.bind(this, null, this.interaction_track);
+                ref.redirect_track = Lang.bind(this, null, this.redirect_track);
+                ref.track = Lang.bind(this, null, this.track);
+            }
+
+            // initialize event listeners
+            this.initializeEvents();
+
+            // register action to the queue
+            Event.fire(&#x27;register:Actions&#x27;, trackingActions);
+        },
+
+        /**
+         * Function to initialize tracking events
+         * @method initializeEvents
+         * @private
+         */
+        initializeEvents: function () {
+            var root = this;
+
+            this.addEventListeners(
+                /**
+                 * Event for register redirect
+                 */
+                Event.on(REGISTER_REDIRECT_EVENT, function (data) {
+                    var clickTAGName = data.clickTagName || &#x27;clickTAG&#x27;;
+                    var redirectLink = root.redirect_track(clickTAGName, Util.hashString(clickTAGName), data.clickTag) || data.clickTag;
+                    /*@&lt;*/
+                    Debug.log(&#x27;[ ACT_tracking.js ]: &#x27;, REGISTER_REDIRECT_EVENT, &#x27; called with: &#x27;, data, &#x27;will redirect to:&#x27;, redirectLink);
+                    /*&gt;@*/
+                    Event.fire(REGISTER_REDIRECT_EVENT_COMPLETE, {
+                        link: redirectLink
+                    });
+                }),
+
+                /**
+                 * Event for interaction tracking
+                 */
+                Event.on(TRACK_EVENT, function (eventData) {
+                    /* eventData.label */
+                    root.track(eventData.label, null, null, function (result) {
+                        Event.fire(TRACK_EVENT_COMPLETE, { data: result });
+                    });
+                })
+            );
+        },
+
+        /**
+         * @method saveEventLabel
+         */
+        saveEventLabel: function (trackUnique, eventName, callback) {
+            var labelPrefix;
+            var localRegisterListener;
+            if (trackUnique === true) {
+                localRegisterListener = Event.on(&#x27;localRegister:updateAdEvent:complete&#x27;, function (eventData) {
+                    localRegisterListener.remove();
+                    labelPrefix = (eventData.unique) ? &#x27;u_&#x27; : &#x27;nu_&#x27;;
+                    callback(labelPrefix, eventName);
+                });
+
+                Event.fire(&#x27;localRegister:updateAdEvent&#x27;, {
+                    eventName: eventName
+                });
+            } else {
+                callback(&#x27;&#x27;, eventName);
+            }
+        },
+
+        /**
+         * Helper function to call overwriting or supporting tracking functions passed in via the configuration.
+         * @method overwriteTracking
+         * @param {Object} overwriteSet The set of overwrite parameters passed in
+         * @param {String} type The type of the function we need - either redirect OR interaction
+         * @param {Array} args The arguments that came into the function either to redirect OR to interaction
+         */
+        overwriteTracking: function (overwriteSet, type, args) {
+            var callback = overwriteSet[type] || null;
+            var overwrite = overwriteSet.overwrite || false;
+
+            if (Lang.isFunction(callback)) {
+                overwrite = callback.apply(this, args);
+            }
+            return overwrite;
+        },
+
+        /**
+         * Redirect Track String Generating function
+         * @param {String} trackingString StringID of the redirect track  &#x27;backup_image_noflash&#x27;
+         * @param {Integer} trackingID Numeric id of the redirect track  &#x27;135&#x27;
+         * @param {String} redirectURL URLString to redirect to http://sports.yahoo.com
+         * @return {String} Redirect String
+         * @method redirect_track
+         * @public
+         * @static
+         * @example
+         *     // Simple Example, no over write function provided:
+         *     var tracking = new ACT.Tracking();
+         *     var redirect = tracking.redirect_track(null, null, &#x27;http://www.yahoo.com&#x27;);
+         *     ACT.Dom.byId(&#x27;exampleATag&#x27;).href = redirect;
+         *
+         *     // Complex example with over write function:
+         *     var config = {
+         *         trackingFunctions: {
+         *             overwrite: true,
+         *             redirect: function(trackingString, trackingID, redirectURL) {
+         *                      var final_url = &#x27;http://example.tracking.service.com/?name=&#x27;+trackingString+&#x27;&amp;id=&#x27;+trackingID+&#x27;&amp;url=&#x27;+encodeURIComponent(redirectURL);
+         *                     return final_url;
+         *              },
+         *             interaction: function(trackingString) { ... }
+         *         }
+         *     };
+         *     var tracking = new ACT.tracking(config);
+         *       var redirect = tracking.redirect_track(&quot;yahooCTR&quot;, 456, &#x27;http://www.yahoo.com&#x27;);
+         */
+        redirect_track: function (trackingString, trackingID, redirectURL) {
+            var extraFunctions = this.config.trackingFunctions || false;
+            redirectURL = redirectURL || &#x27;&#x27;;
+
+            if (Lang.isObject(this.config.trackingFunctions) === true &amp;&amp; this.config.trackingFunctions.overwrite === true) {
+                redirectURL = this.overwriteTracking(extraFunctions, &#x27;redirect&#x27;, arguments);
+            }
+
+            return redirectURL;
+        },
+
+        /**
+         * Interaction tracking function
+         * @param {String} trackingString String ID of the interaction to be tracked
+         * @method interaction_track
+         * @return {Object} an object containing the results of this function call. Specifically:
+         *     {
+         *          overwriteFired: {Boolean}, // Did the overwrite function get fired
+         *          trackingString: {String}, // The tracking string submitted to the function
+         *          trackingID: {Int}, // ACT.js generated unique ID ( generated from supplied tracking string )
+         *          result: {Mixed} // Result of calling the provided interaction tracking function.
+         *     }
+         * @public
+         * @static
+         */
+        interaction_track: function (trackingString) {
+            var extraFunctions = this.config.trackingFunctions || false;
+            var trackString = trackingString || &#x27;&#x27;;
+            var outcome = {
+                overwriteFired: false,
+                trackingString: trackString,
+                trackingID: Util.hashString(trackString),
+                result: null
+            };
+
+            if (Lang.isObject(this.config.trackingFunctions) === true &amp;&amp; this.config.trackingFunctions.overwrite === true) {
+                outcome.result = this.overwriteTracking(extraFunctions, &#x27;interaction&#x27;, arguments);
+                outcome.overwriteFired = true;
+            }
+
+            return outcome;
+        },
+
+        /**
+         * @method track
+         * @param trackingString
+         * @param trackingID
+         * @param redirectURL
+         * @param callback
+         * @public
+         * @static
+         */
+        track: function (trackingString, trackingID, redirectURL, callback) {
+            var root = this;
+            replaceMacros(trackingString, function (label) {
+                root.saveEventLabel(root.config.trackUnique, label, function (unique, labelWithMacro) {
+                    var result;
+                    var trackingLabel;
+
+                    if (labelWithMacro !== null) {
+                        trackingLabel = unique + labelWithMacro;
+                    } else {
+                        trackingLabel = labelWithMacro;
+                    }
+
+                    if (redirectURL) {
+                        result = root.redirect_track(trackingLabel, trackingID, redirectURL);
+                    } else {
+                        result = root.interaction_track(trackingLabel);
+                    }
+
+                    return callback(result);
+                });
+            });
+        }
+    });
+
+    return Tracking;
+});
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

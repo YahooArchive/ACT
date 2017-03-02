@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src/core/ACT_Layerslist.js - ACT.js</title>
+    <link rel="stylesheet" href="https://s.yimg.com/zz/combo?yui-s:3.14.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="https://s.yimg.com/rz/l/favicon.ico">
+    <script src="https://s.yimg.com/zz/combo?yui-s:3.14.1/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="https://s.yimg.com/cv/ae/global/ACTJS/logo/ACT.js.logo.png" title="ACT.js" width="150"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 1.1.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                            <li><a href="#api-demos">Demo and Examples</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/ACT.html">ACT</a></li>
+                                <li><a href="../classes/ActionsQueue.html">ActionsQueue</a></li>
+                                <li><a href="../classes/Base.html">Base</a></li>
+                                <li><a href="../classes/Capability.html">Capability</a></li>
+                                <li><a href="../classes/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../classes/Class.html">Class</a></li>
+                                <li><a href="../classes/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../classes/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../classes/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../classes/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../classes/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../classes/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../classes/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../classes/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../classes/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../classes/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../classes/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../classes/Cookie.html">Cookie</a></li>
+                                <li><a href="../classes/CustomData.html">CustomData</a></li>
+                                <li><a href="../classes/Debug.html">Debug</a></li>
+                                <li><a href="../classes/Dom.html">Dom</a></li>
+                                <li><a href="../classes/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../classes/Enabler.html">Enabler</a></li>
+                                <li><a href="../classes/Environment.html">Environment</a></li>
+                                <li><a href="../classes/Event.html">Event</a></li>
+                                <li><a href="../classes/Flash.html">Flash</a></li>
+                                <li><a href="../classes/IO.html">IO</a></li>
+                                <li><a href="../classes/Json.html">Json</a></li>
+                                <li><a href="../classes/Lang.html">Lang</a></li>
+                                <li><a href="../classes/LayersList.html">LayersList</a></li>
+                                <li><a href="../classes/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../classes/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../classes/Screen.html">Screen</a></li>
+                                <li><a href="../classes/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../classes/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../classes/Tracking.html">Tracking</a></li>
+                                <li><a href="../classes/UA.html">UA</a></li>
+                                <li><a href="../classes/Util.html">Util</a></li>
+                                <li><a href="../classes/VideoEvents.html">VideoEvents</a></li>
+                            </ul>
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/ACT.html">ACT</a></li>
+                                <li><a href="../modules/actionsQueue.html">actionsQueue</a></li>
+                                <li><a href="../modules/Base.html">Base</a></li>
+                                <li><a href="../modules/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../modules/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../modules/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../modules/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../modules/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../modules/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../modules/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../modules/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../modules/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../modules/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../modules/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../modules/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../modules/Cookie.html">Cookie</a></li>
+                                <li><a href="../modules/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../modules/Enabler.html">Enabler</a></li>
+                                <li><a href="../modules/environment.html">environment</a></li>
+                                <li><a href="../modules/IO.html">IO</a></li>
+                                <li><a href="../modules/LayersList.html">LayersList</a></li>
+                                <li><a href="../modules/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../modules/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../modules/Screen.html">Screen</a></li>
+                                <li><a href="../modules/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../modules/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../modules/Tracking.html">Tracking</a></li>
+                            </ul>
+                
+                            <ul id="api-demos" class="apis demos">
+                                <li><a href="../demo/ACT_Demo_300x250.html">300x250</a></li>
+                                <li><a href="../demo/ACT_Demo_300x250_tracking.html">300x250_tracking</a></li>
+                                <li><a href="../demo/ACT_Demo_TrackingExample.html">TrackingExample</a></li>
+                                <li><a href="../demo/ACT_Demo_animation.html">animation</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard.html">billboard</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-enabler.html">billboard-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-expandable-enabler.html">billboard-expandable-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video.html">billboard_html_video</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video_rtl.html">billboard_html_video_rtl</a></li>
+                                <li><a href="../demo/ACT_Demo_carousel.html">carousel</a></li>
+                                <li><a href="../demo/ACT_Demo_dwelltime.html">dwelltime</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_expand.html">enabler_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_fullscreen_expand.html">enabler_fullscreen_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_target.html">enabler_target</a></li>
+                                <li><a href="../demo/ACT_Demo_floating.html">floating</a></li>
+                                <li><a href="../demo/ACT_Demo_force_env.html">force_env</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_enabler.html">html5_enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_standard.html">html5_standard</a></li>
+                                <li><a href="../demo/ACT_Demo_icons.html">icons</a></li>
+                                <li><a href="../demo/ACT_Demo_input_data.html">input_data</a></li>
+                                <li><a href="../demo/ACT_Demo_login_html.html">login_html</a></li>
+                                <li><a href="../demo/ACT_Demo_overwrite_env.html">overwrite_env</a></li>
+                                <li><a href="../demo/ACT_Demo_splash_ad.html">splash_ad</a></li>
+                                <li><a href="../demo/ACT_Demo_tablet_expandable.html">tablet_expandable</a></li>
+                                <li><a href="../demo/ACT_Demo_video_event.html">video_event</a></li>
+                                <li><a href="../demo/ACT_Demo_video_html.html">video_html</a></li>
+                            </ul>
+                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: src/core/ACT_Layerslist.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+ * Copyright 2016, Yahoo Inc.
+ * Copyrights licensed under the New BSD License.
+ * See the accompanying LICENSE file for terms.
+ */
+
+/* global ACT */
+/**
+ * The &#x27;LayersList&#x27; is a core module made to manage the layers functionalities.
+ * This module is used in &#x27;StandardAd&#x27;.
+ *
+ * @module LayersList
+ * @main LayersList
+ * @class LayersList
+ * @requires Lang, Dom, Event, Class, LayerStandard
+ * @global
+ */
+ACT.define(&#x27;LayersList&#x27;, [/*@&lt;*/&#x27;Debug&#x27;, /*&gt;@*/ &#x27;Lang&#x27;, &#x27;Dom&#x27;, &#x27;Event&#x27;, &#x27;Class&#x27;, &#x27;LayerStandard&#x27;], function (ACT) {
+    &#x27;use strict&#x27;;
+
+    /* Shorthand */
+    var Event = ACT.Event;
+    var Lang = ACT.Lang;
+    var Class = ACT.Class;
+    var LayerStandard = ACT.LayerStandard;
+
+    /**
+     * Actions for LayersList module
+     *
+     * @array actions
+     * @private
+     */
+    var actions = [{
+        type: &#x27;playLayer&#x27;,
+        argument: {
+            to: {
+                name: &#x27;to&#x27;
+            },
+            timeout: {
+                name: &#x27;timeout&#x27;,
+                test: function (value) {
+                    return Lang.isNumber(value) || value === undefined || value === null;
+                }
+            }
+        },
+
+        process: function (actionId, values) {
+            /* istanbul ignore next */
+            var to = values.to;
+            Event.fire(&#x27;layersList:open&#x27;, {
+                layerToOpen: to,
+                actionId: actionId
+            });
+        }
+    }, {
+        type: &#x27;stopLayer&#x27;,
+        argument: {
+            to: {
+                name: &#x27;to&#x27;
+            },
+            destroy: {
+                name: &#x27;destroy&#x27;
+            },
+            timeout: {
+                name: &#x27;timeout&#x27;,
+                test: function (value) {
+                    return Lang.isNumber(value) || value === undefined || value === null;
+                }
+            }
+        },
+        process: function (actionId, values) {
+            var attrs;
+            /* istanbul ignore next */
+            values.destroy = (values.destroy === &#x27;true&#x27; || values.destroy === true);
+            attrs = {
+                layerToStop: values.to,
+                destroy: values.destroy,
+                actionId: actionId
+            };
+            Event.fire(&#x27;layersList:stop&#x27;, attrs);
+        }
+    }];
+    /*@&lt;*/
+    var Debug = ACT.Debug;
+    Debug.log(&#x27;[ ACT_Layerslist.js ]: Loaded&#x27;);
+    /*&gt;@*/
+
+    /**
+     * @constructor
+     */
+    function LayersList(config) {
+        this.init(config);
+    }
+
+    LayersList.ATTRS = {
+        NAME: &#x27;LayersList&#x27;,
+        version: &#x27;1.1.0&#x27;,
+        envToPlay: undefined,
+        layersList: [],
+        layersConfig: {},
+        layersMap: {}
+    };
+
+    Lang.extend(LayersList, Class, {
+
+        initializer: function (config) {
+            var root = this;
+            root.set(&#x27;layersConfig&#x27;, config.layersConfig);
+            root.createLayers();
+            root.initializeEvents();
+            Event.fire(&#x27;register:Actions&#x27;, actions);
+        },
+
+        /**
+         * Method to start off listeners
+         *
+         * @method initListeners
+         * @public
+        */
+
+        initializeEvents: function () {
+            var root = this;
+            root.addEventListeners(
+                Event.on(&#x27;layersList:open&#x27;, function (to) {
+                    if (root.isLayerPlaying(to.layerToOpen)) {
+                        Event.fire(&#x27;complete:action&#x27;, to.actionId);
+                        return;
+                    }
+                    root.playLayer(to.layerToOpen, to.actionId);
+                }),
+
+                Event.on(&#x27;layersList:stop&#x27;, function (attrs) {
+                    if (!root.isLayerPlaying(attrs.layerToStop)) {
+                        Event.fire(&#x27;complete:action&#x27;, attrs.actionId);
+                        return;
+                    }
+                    root.stopLayer(attrs);
+                }),
+
+                Event.on(&#x27;layersList:playAllLayers&#x27;, function () {
+                    root.playAllLayers();
+                }),
+
+                Event.on(&#x27;layersList:stopAllLayers&#x27;, function () {
+                    root.stopAllLayers();
+                }),
+
+                Event.on(&#x27;layersList:existLayer&#x27;, function (e) {
+                    var layerExists = root.checkLayerExists(e.layerName);
+                    Event.fire(&#x27;layersList:existLayerResult&#x27;, layerExists);
+                }),
+
+                Event.on(&#x27;layersList:resetInlineFrame&#x27;, function () {
+                    var action = {
+                        type: &#x27;contractInlineFrame&#x27;
+                    };
+                    Event.fire(&#x27;add:actions&#x27;, action);
+                }),
+
+                Event.on(&#x27;layersList:getLayerPosition&#x27;, function (e) {
+                    root.getLayerPosition(e.layerName, e.coordinate, e.attributes);
+                })
+            );
+        },
+
+        /**
+         * Function to create layer objects based on theirs configObject
+         * New layer objects will be pushed in layersList attributes
+         *
+         * @method createLayers
+         * @param [Object] layersConfig
+         * @public
+         */
+        createLayers: function (layersConfig) {
+            var root = this;
+            var copyLayersConfig = layersConfig || root.get(&#x27;layersConfig&#x27;);
+            var layer;
+            var allowedToPlay;
+
+            for (layer in copyLayersConfig) {
+                if (copyLayersConfig.hasOwnProperty(layer)) {
+                    allowedToPlay = true;
+                    if (copyLayersConfig[layer].contentLayer.env) {
+                        allowedToPlay = Lang.inArray(copyLayersConfig[layer].contentLayer.env, this.get(&#x27;envToPlay&#x27;));
+                    }
+
+                    if (allowedToPlay === true) {
+                        this.makeNormalLayer(copyLayersConfig[layer]);
+                    }
+                }
+            }
+        },
+
+        /**
+         * Function to create new LayerStandard from config object
+         *
+         * @method makeNormalLayer
+         * @param {Object} layerConfig Config Object for new layer
+         * @public
+         */
+        makeNormalLayer: function (layerConfig) {
+            var layersList = this.get(&#x27;layersList&#x27;);
+            var layersMap = this.get(&#x27;layersMap&#x27;);
+            var normalLayer;
+
+            // should put env and status into layerConfig
+            layerConfig.envToPlay = this.get(&#x27;envToPlay&#x27;);
+            layerConfig.status = this.get(&#x27;status&#x27;);
+            normalLayer = new LayerStandard(layerConfig);
+            layersList.push(normalLayer);
+            this.set(&#x27;layersList&#x27;, layersList);
+            layersMap[layerConfig.layerName] = normalLayer;
+            this.set(&#x27;layersMap&#x27;, layersMap);
+        },
+
+        /**
+         * Return the required layer from the layersList array, otherwise return false if not found
+         *
+         * @method getLayer
+         * @param {String} layerName
+         * @return {Object} layer from layersList array
+         * @public
+         */
+        getLayer: function (layerName) {
+            var i;
+            var savedLayer;
+            var allLayers = this.get(&#x27;layersList&#x27;);
+
+            for (i = 0; i &lt; allLayers.length; i++) {
+                savedLayer = allLayers[i];
+                if (savedLayer.get(&#x27;layerName&#x27;) === layerName) {
+                    return savedLayer;
+                }
+            }
+
+            return false;
+        },
+
+        /**
+         * Function to check if the layer exists in the config
+         *
+         * @method checkLayerExists
+         * @param {String} layerName name of the layer
+         * @public
+         */
+        checkLayerExists: function (layerName) {
+            var layerExists = false;
+            var layer = this.getLayer(layerName);
+            /* istanbul ignore else */
+            if (layer) {
+                layerExists = true;
+            }
+            return layerExists;
+        },
+
+        /**
+         * Function to play all declared layers
+         * @method playAllLayers
+         * @public
+         */
+        playAllLayers: function () {
+            var root = this;
+            var actionsSet = [];
+            var action;
+            var allLayers = root.get(&#x27;layersList&#x27;);
+            var i;
+
+            for (i = 0; i &lt; allLayers.length; i++) {
+                action = {
+                    type: &#x27;playLayer&#x27;,
+                    to: allLayers[i].get(&#x27;layerName&#x27;),
+                    animate: false
+                };
+                actionsSet.push(action);
+            }
+
+            Event.fire(&#x27;add:actions&#x27;, actionsSet);
+        },
+
+        /**
+         * Play a layer
+         *
+         * @method playLayer
+         * @param {String} layerName Name of the layer to be played
+         * @param {Number} actionId ID of the action sent by actionsQueue to play layer
+         * @public
+         */
+        playLayer: function (layerName, actionId) {
+            var layer = this.getLayer(layerName);
+            /* istanbul ignore else */
+            if (layer) {
+                this.playLayerAction(layer, actionId);
+                layer.play();
+            } else {
+                /* Since the layer can&#x27;t play - because it&#x27;s not real, we want to fire a complete action to unclog the queue */
+                Event.fire(&#x27;complete:action&#x27;, actionId);
+            }
+        },
+
+        /**
+         * Defining action to be executed when layer is played
+         *
+         * @method playLayerAction
+         * @param {LayerStandard} layerObject Layer instance
+         * @param {Number} actionId Id of the playLayer action in the queue
+         * @public
+         */
+        playLayerAction: function (savedlayer, actionId) {
+            var root = this;
+            var eventPlay = Event.on(&#x27;layer:played&#x27;, function (e) {
+                /* istanbul ignore else */
+                if (savedlayer.get(&#x27;layerName&#x27;) === e.layerName) {
+                    eventPlay.remove();
+
+                    /* istanbul ignore else */
+                    if (savedlayer.get(&#x27;config&#x27;).onResize) {
+                        root.onResize(savedlayer);
+                    }
+
+                    if (Lang.isStrictNumber(actionId)) {
+                        Event.fire(&#x27;complete:action&#x27;, actionId);
+                    }
+                }
+            });
+        },
+
+        /**
+         * Method to stop all the layers by creating a new close action per layers and add them into queue
+         *
+         * @method stopAllLayers
+         * @public
+         */
+        stopAllLayers: function () {
+            var root = this;
+            var allLayers = root.get(&#x27;layersList&#x27;);
+            var actionsSet = [];
+            var i;
+            var action;
+            for (i = 0; i &lt; allLayers.length; i++) {
+                action = {
+                    type: &#x27;stopLayer&#x27;,
+                    to: allLayers[i].get(&#x27;layerName&#x27;),
+                    animate: false
+                };
+                actionsSet.push(action);
+            }
+            Event.fire(&#x27;add:actions&#x27;, actionsSet);
+        },
+
+        /**
+         * Stop a layer
+         *
+         * @method stopLayer
+         * @param {Object} attrs Object containing action data of the layer to be stopped
+         * @public
+         */
+        stopLayer: function (attrs) {
+            var layer = this.getLayer(attrs.layerToStop);
+            if (layer) {
+                this.stopLayerAction(layer, attrs.actionId);
+                layer.stop(attrs.destroy);
+            }
+        },
+
+        /**
+         * @method stopLayerAction
+         * @param {LayerStandard} savedLayer Layer to be stopped
+         * @param {Number} actionId Id of the stopLayer action in the queue
+         * @public
+         */
+        stopLayerAction: function (savedlayer, actionId) {
+            var eventPlay = Event.on(&#x27;layer:stopped&#x27;, function (e) {
+                if (savedlayer.get(&#x27;layerName&#x27;) === e.layerName) {
+                    if (Lang.isStrictNumber(actionId)) {
+                        Event.fire(&#x27;complete:action&#x27;, actionId);
+                    }
+                    eventPlay.remove();
+                }
+            });
+        },
+
+        /**
+         * method to check if a layer is playing
+         *
+         * @method isLayerPlaying
+         * @param {String} layerName
+         * @return {Boolean} true if layer is playing
+         * @public
+         */
+        isLayerPlaying: function (layerName) {
+            var layer = this.getLayer(layerName);
+            if (layer) {
+                return layer.get(&#x27;playing&#x27;);
+            }
+            return false;
+        },
+
+        /**
+         * @method applyingCoordinate
+         * @param {String} targetAttr coordinate to get from
+         * @param {NUmber} layerPosition inline layer position
+         * @param {Object} requestLayer inline layer object
+         * @param {Object} targetLayer overlay layer object
+         * @param {String} coordinate to use to stick layer to
+         * @public
+         */
+        applyingCoordinate: function (targetAttr, layerPosition, requestLayer, targetLayer, coordinate) {
+            var newValue = 0;
+            var requestLayerWidth;
+            var targetLayerWidth;
+            var requestLayerHeight;
+            var targetLayerHeight;
+            if (targetAttr === &#x27;x&#x27;) {
+                newValue = layerPosition[0];
+                requestLayerWidth = parseInt(requestLayer.get(&#x27;width&#x27;), 10);
+                targetLayerWidth = parseInt(targetLayer.get(&#x27;width&#x27;), 10);
+
+                if (coordinate.split(&#x27;&#x27;)[1] === &#x27;r&#x27;) {
+                    /*@&lt;*/
+                    Debug.log(&#x27;[ ACT_Layerslist.js ]: x right calculate&#x27;, layerPosition[0], requestLayerWidth, targetLayerWidth);
+                    /*&gt;@*/
+                    newValue = targetLayerWidth - requestLayerWidth + layerPosition[0];
+                /* istanbul ignore else */
+                } else if (coordinate.split(&#x27;&#x27;)[1] === &#x27;l&#x27;) {
+                    /*@&lt;*/
+                    Debug.log(&#x27;[ ACT_Layerslist.js ]: x left calculate&#x27;, layerPosition[0]);
+                    /*&gt;@*/
+                    newValue = layerPosition[0];
+                }
+
+            /* istanbul ignore else */
+            } else if (targetAttr === &#x27;y&#x27;) {
+                newValue = layerPosition[1];
+                requestLayerHeight = parseInt(requestLayer.get(&#x27;height&#x27;), 10);
+                targetLayerHeight = parseInt(targetLayer.get(&#x27;height&#x27;), 10);
+
+                // bottom
+                if (coordinate.split(&#x27;&#x27;)[0] === &#x27;b&#x27;) {
+                    /*@&lt;*/
+                    Debug.log(&#x27;[ ACT_Layerslist.js ]: y bottom calculate&#x27;, layerPosition[1], requestLayerHeight, targetLayerHeight);
+                    /*&gt;@*/
+                    newValue = targetLayerHeight - requestLayerHeight + layerPosition[1];
+
+                // top
+                /* istanbul ignore else */
+                } else if (coordinate.split(&#x27;&#x27;)[0] === &#x27;t&#x27;) {
+                    /*@&lt;*/
+                    Debug.log(&#x27;[ ACT_Layerslist.js ]: y top calculate&#x27;, layerPosition[1]);
+                    /*&gt;@*/
+                    newValue = layerPosition[1];
+                }
+            }
+
+            return newValue;
+        },
+
+        /**
+         * @method calculateLayerAttributeValue
+         * @param {String} layerName Name of layer which need to calculate the position
+         * @param {String} attrValue to be tested
+         * @param {String} Coordinate for calculating (tl, tr, bl, br)
+         * @public
+         */
+        calculateLayerAttributeValue: function (layerName, attrValue, coordinate) {
+            var newValue = attrValue;
+            var targetLayerName = attrValue.split(&#x27;:&#x27;)[1];
+            var targetAttr = attrValue.split(&#x27;:&#x27;)[2];
+            var targetLayer = this.get(&#x27;layersMap&#x27;)[targetLayerName];
+            var requestLayer = this.get(&#x27;layersMap&#x27;)[layerName];
+            var layerPosition = targetLayer.currentLayerPosition();
+
+            if (this.get(&#x27;sDarlaAPI&#x27;)) {
+                layerPosition = [
+                    parseInt(this.get(&#x27;sDarlaAPI&#x27;).geom().self.l, 10) + 1,
+                    parseInt(this.get(&#x27;sDarlaAPI&#x27;).geom().self.t, 10) + 1
+                ];
+            }
+
+            newValue = this.applyingCoordinate(targetAttr, layerPosition, requestLayer, targetLayer, coordinate);
+            return newValue;
+        },
+
+        /**
+         * Function to calculate position for a layer based on other layer position
+         *
+         * @method getLayerPosition
+         * @param {String} layerName Name of layer which need to calculate the position
+         * @param {String} coordinate Coordinate for calculating (tl, tr, bl, br)
+         * @param {Object} attributes List of attribute need to be calculated
+         * @public
+         */
+        getLayerPosition: function (layerName, coordinate, attributes) {
+            var root = this;
+            var result = {};
+            var attrName;
+            var attrValue;
+
+            for (attrName in attributes) {
+                /* istanbul ignore else */
+                if (attributes.hasOwnProperty(attrName)) {
+                    attrValue = attributes[attrName];
+
+                    if (attrValue.toString().indexOf(&#x27;get:&#x27;) &gt; -1) {
+                        attrValue = root.calculateLayerAttributeValue(layerName, attrValue, coordinate);
+                    }
+
+                    result[attrName] = attrValue;
+                }
+            }
+
+            Event.fire(&#x27;layersList:getLayerPosition:complete&#x27;, {
+                layerName: layerName,
+                newValue: result
+            });
+        },
+
+        /**
+         * Function to stop or replay layer on resize.
+         *
+         * @method onResize
+         * @param {String} savelayer
+         * @public
+         */
+        onResize: function (savedlayer) {
+            var root = this;
+            var statusRegistration = Event.on(&#x27;screen:status&#x27;, function () {
+                var layerName = savedlayer.get(&#x27;layerName&#x27;);
+                var onResizeAction;
+                var action = [{
+                    type: &#x27;stopLayer&#x27;,
+                    from: layerName,
+                    to: layerName,
+                    destroy: &#x27;true&#x27;,
+                    animate: false
+                }, {
+                    type: &#x27;playLayer&#x27;,
+                    from: layerName,
+                    to: layerName,
+                    animate: false
+                }];
+                statusRegistration.remove();
+                /* istanbul ignore else */
+                if (root.isLayerPlaying(layerName)) {
+                    onResizeAction = savedlayer.get(&#x27;config&#x27;).onResize === &#x27;refresh&#x27; ? action : [action[0]];
+                    Event.fire(&#x27;add:actions&#x27;, onResizeAction);
+                }
+            });
+        },
+
+        /**
+         * Destructor function
+         *
+         * @method destructor
+         * @public
+         */
+        destructor: function () {
+        }
+    });
+
+    return LayersList;
+});
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

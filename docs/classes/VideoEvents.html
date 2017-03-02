@@ -1,0 +1,1683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>VideoEvents - ACT.js</title>
+    <link rel="stylesheet" href="https://s.yimg.com/zz/combo?yui-s:3.14.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="https://s.yimg.com/rz/l/favicon.ico">
+    <script src="https://s.yimg.com/zz/combo?yui-s:3.14.1/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="https://s.yimg.com/cv/ae/global/ACTJS/logo/ACT.js.logo.png" title="ACT.js" width="150"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 1.1.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                            <li><a href="#api-demos">Demo and Examples</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/ACT.html">ACT</a></li>
+                                <li><a href="../classes/ActionsQueue.html">ActionsQueue</a></li>
+                                <li><a href="../classes/Base.html">Base</a></li>
+                                <li><a href="../classes/Capability.html">Capability</a></li>
+                                <li><a href="../classes/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../classes/Class.html">Class</a></li>
+                                <li><a href="../classes/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../classes/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../classes/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../classes/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../classes/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../classes/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../classes/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../classes/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../classes/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../classes/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../classes/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../classes/Cookie.html">Cookie</a></li>
+                                <li><a href="../classes/CustomData.html">CustomData</a></li>
+                                <li><a href="../classes/Debug.html">Debug</a></li>
+                                <li><a href="../classes/Dom.html">Dom</a></li>
+                                <li><a href="../classes/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../classes/Enabler.html">Enabler</a></li>
+                                <li><a href="../classes/Environment.html">Environment</a></li>
+                                <li><a href="../classes/Event.html">Event</a></li>
+                                <li><a href="../classes/Flash.html">Flash</a></li>
+                                <li><a href="../classes/IO.html">IO</a></li>
+                                <li><a href="../classes/Json.html">Json</a></li>
+                                <li><a href="../classes/Lang.html">Lang</a></li>
+                                <li><a href="../classes/LayersList.html">LayersList</a></li>
+                                <li><a href="../classes/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../classes/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../classes/Screen.html">Screen</a></li>
+                                <li><a href="../classes/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../classes/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../classes/Tracking.html">Tracking</a></li>
+                                <li><a href="../classes/UA.html">UA</a></li>
+                                <li><a href="../classes/Util.html">Util</a></li>
+                                <li><a href="../classes/VideoEvents.html">VideoEvents</a></li>
+                            </ul>
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/ACT.html">ACT</a></li>
+                                <li><a href="../modules/actionsQueue.html">actionsQueue</a></li>
+                                <li><a href="../modules/Base.html">Base</a></li>
+                                <li><a href="../modules/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../modules/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../modules/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../modules/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../modules/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../modules/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../modules/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../modules/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../modules/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../modules/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../modules/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../modules/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../modules/Cookie.html">Cookie</a></li>
+                                <li><a href="../modules/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../modules/Enabler.html">Enabler</a></li>
+                                <li><a href="../modules/environment.html">environment</a></li>
+                                <li><a href="../modules/IO.html">IO</a></li>
+                                <li><a href="../modules/LayersList.html">LayersList</a></li>
+                                <li><a href="../modules/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../modules/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../modules/Screen.html">Screen</a></li>
+                                <li><a href="../modules/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../modules/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../modules/Tracking.html">Tracking</a></li>
+                            </ul>
+                
+                            <ul id="api-demos" class="apis demos">
+                                <li><a href="../demo/ACT_Demo_300x250.html">300x250</a></li>
+                                <li><a href="../demo/ACT_Demo_300x250_tracking.html">300x250_tracking</a></li>
+                                <li><a href="../demo/ACT_Demo_TrackingExample.html">TrackingExample</a></li>
+                                <li><a href="../demo/ACT_Demo_animation.html">animation</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard.html">billboard</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-enabler.html">billboard-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-expandable-enabler.html">billboard-expandable-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video.html">billboard_html_video</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video_rtl.html">billboard_html_video_rtl</a></li>
+                                <li><a href="../demo/ACT_Demo_carousel.html">carousel</a></li>
+                                <li><a href="../demo/ACT_Demo_dwelltime.html">dwelltime</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_expand.html">enabler_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_fullscreen_expand.html">enabler_fullscreen_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_target.html">enabler_target</a></li>
+                                <li><a href="../demo/ACT_Demo_floating.html">floating</a></li>
+                                <li><a href="../demo/ACT_Demo_force_env.html">force_env</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_enabler.html">html5_enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_standard.html">html5_standard</a></li>
+                                <li><a href="../demo/ACT_Demo_icons.html">icons</a></li>
+                                <li><a href="../demo/ACT_Demo_input_data.html">input_data</a></li>
+                                <li><a href="../demo/ACT_Demo_login_html.html">login_html</a></li>
+                                <li><a href="../demo/ACT_Demo_overwrite_env.html">overwrite_env</a></li>
+                                <li><a href="../demo/ACT_Demo_splash_ad.html">splash_ad</a></li>
+                                <li><a href="../demo/ACT_Demo_tablet_expandable.html">tablet_expandable</a></li>
+                                <li><a href="../demo/ACT_Demo_video_event.html">video_event</a></li>
+                                <li><a href="../demo/ACT_Demo_video_html.html">video_html</a></li>
+                            </ul>
+                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1>VideoEvents Class</h1>
+<div class="box meta">
+
+
+        <div class="foundat">
+            Defined in: <a href="../files/src_library_ACT_VideoEvents.js.html#l10"><code>src&#x2F;library&#x2F;ACT_VideoEvents.js:10</code></a>
+        </div>
+
+            Module: <a href="../modules/ACT.html">ACT</a>
+
+</div>
+
+
+<div class="box intro">
+    <p>Video Event - A library that fires off events based on video progress / actions taken in an HTML Video Tag.</p>
+
+</div>
+
+
+<div id="classdocs" class="tabview">
+    <ul class="api-class-tabs">
+        <li class="api-class-tab index"><a href="#index">Index</a></li>
+
+            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
+            <li class="api-class-tab attrs"><a href="#attrs">Attributes</a></li>
+            <li class="api-class-tab events"><a href="#events">Events</a></li>
+    </ul>
+
+    <div>
+        <div id="index" class="api-class-tabpanel index">
+            <h2 class="off-left">Item Index</h2>
+
+                <div class="index-section methods">
+                    <h3>Methods</h3>
+
+                    <ul class="index-list methods">
+                            <li class="index-item method private">
+                                <a href="#method_broadcast">broadcast</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#method_calculateVideoPercentage">calculateVideoPercentage</a>
+
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#method_destroy">destroy</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#method_initializeVideoTracking">initializeVideoTracking</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#method_on1Percent">on1Percent</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#method_on25Percent">on25Percent</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#method_on50Percent">on50Percent</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#method_on75Percent">on75Percent</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#method_onClicked">onClicked</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#method_onEnded">onEnded</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#method_onPause">onPause</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#method_onPlay">onPlay</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#method_onSeeked">onSeeked</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#method_onTimeUpdate">onTimeUpdate</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#method_onVolumeChange">onVolumeChange</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#method_progressTrack">progressTrack</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#method_resetParts">resetParts</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#method_validateVideoNode">validateVideoNode</a>
+
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#method_VideoEvent">VideoEvent</a>
+
+                            </li>
+                    </ul>
+                </div>
+
+
+                <div class="index-section attrs">
+                    <h3>Attributes</h3>
+
+                    <ul class="index-list attrs">
+                            <li class="index-item attr">
+                                <a href="#attr_ATTRS">ATTRS</a>
+                            </li>
+                            <li class="index-item attr">
+                                <a href="#attr_NAME">NAME</a>
+                            </li>
+                            <li class="index-item attr">
+                                <a href="#attr_version">version</a>
+                            </li>
+                    </ul>
+                </div>
+
+                <div class="index-section events">
+                    <h3>Events</h3>
+
+                    <ul class="index-list events">
+                            <li class="index-item event">
+                                <a href="#event_&#x27;video:25percent&#x27;">&#x27;video:25percent&#x27;</a>
+
+                            </li>
+                            <li class="index-item event">
+                                <a href="#event_&#x27;video:50percent&#x27;">&#x27;video:50percent&#x27;</a>
+
+                            </li>
+                            <li class="index-item event">
+                                <a href="#event_&#x27;video:75percent&#x27;">&#x27;video:75percent&#x27;</a>
+
+                            </li>
+                            <li class="index-item event">
+                                <a href="#event_&#x27;video:clicked&#x27;">&#x27;video:clicked&#x27;</a>
+
+                            </li>
+                            <li class="index-item event">
+                                <a href="#event_&#x27;video:complete&#x27;">&#x27;video:complete&#x27;</a>
+
+                            </li>
+                            <li class="index-item event">
+                                <a href="#event_&#x27;video:pause&#x27;">&#x27;video:pause&#x27;</a>
+
+                            </li>
+                            <li class="index-item event">
+                                <a href="#event_&#x27;video:replay&#x27;">&#x27;video:replay&#x27;</a>
+
+                            </li>
+                            <li class="index-item event">
+                                <a href="#event_&#x27;video:resume&#x27;">&#x27;video:resume&#x27;</a>
+
+                            </li>
+                            <li class="index-item event">
+                                <a href="#event_&#x27;video:seeked&#x27;">&#x27;video:seeked&#x27;</a>
+
+                            </li>
+                            <li class="index-item event">
+                                <a href="#event_&#x27;video:soundOff&#x27;">&#x27;video:soundOff&#x27;</a>
+
+                            </li>
+                            <li class="index-item event">
+                                <a href="#event_&#x27;video:soundOn&#x27;">&#x27;video:soundOn&#x27;</a>
+
+                            </li>
+                            <li class="index-item event">
+                                <a href="#event_&#x27;video:start&#x27;">&#x27;video:start&#x27;</a>
+
+                            </li>
+                            <li class="index-item event">
+                                <a href="#event_&#x27;video:stop&#x27;">&#x27;video:stop&#x27;</a>
+
+                            </li>
+                    </ul>
+                </div>
+        </div>
+
+            <div id="methods" class="api-class-tabpanel">
+                <h2 class="off-left">Methods</h2>
+
+<div id="method_broadcast" class="method item private">
+    <h3 class="name"><code>broadcast</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_VideoEvents.js.html#l250"><code>src&#x2F;library&#x2F;ACT_VideoEvents.js:250</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Function that broadcasts the events to the world. Checks that we want to broadcast the event.</p>
+
+    </div>
+
+
+
+
+</div>
+<div id="method_calculateVideoPercentage" class="method item private">
+    <h3 class="name"><code>calculateVideoPercentage</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_VideoEvents.js.html#l336"><code>src&#x2F;library&#x2F;ACT_VideoEvents.js:336</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Function to calculate video percentage</p>
+
+    </div>
+
+
+
+
+</div>
+<div id="method_destroy" class="method item public">
+    <h3 class="name"><code>destroy</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+        <span class="flag public">public</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_VideoEvents.js.html#l643"><code>src&#x2F;library&#x2F;ACT_VideoEvents.js:643</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Function to be called when we need to disconnect tracking from the video.</p>
+
+    </div>
+
+
+
+
+</div>
+<div id="method_initializeVideoTracking" class="method item private">
+    <h3 class="name"><code>initializeVideoTracking</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_VideoEvents.js.html#l311"><code>src&#x2F;library&#x2F;ACT_VideoEvents.js:311</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Function that initialized the events that will fire for the video node.</p>
+
+    </div>
+
+
+
+
+</div>
+<div id="method_on1Percent" class="method item private">
+    <h3 class="name"><code>on1Percent</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_VideoEvents.js.html#l538"><code>src&#x2F;library&#x2F;ACT_VideoEvents.js:538</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Function to be called when the video is playing at 1 percent - and we missed our onPlay / start track</p>
+
+    </div>
+
+
+
+
+</div>
+<div id="method_on25Percent" class="method item private">
+    <h3 class="name"><code>on25Percent</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_VideoEvents.js.html#l551"><code>src&#x2F;library&#x2F;ACT_VideoEvents.js:551</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Function to be called when the video is playing at 25 percent</p>
+
+    </div>
+
+
+
+
+</div>
+<div id="method_on50Percent" class="method item private">
+    <h3 class="name"><code>on50Percent</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_VideoEvents.js.html#l561"><code>src&#x2F;library&#x2F;ACT_VideoEvents.js:561</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Function to be called when the video is playing at 50 percent</p>
+
+    </div>
+
+
+
+
+</div>
+<div id="method_on75Percent" class="method item private">
+    <h3 class="name"><code>on75Percent</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_VideoEvents.js.html#l571"><code>src&#x2F;library&#x2F;ACT_VideoEvents.js:571</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Function to be called when the video is playing at 75 percent</p>
+
+    </div>
+
+
+
+
+</div>
+<div id="method_onClicked" class="method item private">
+    <h3 class="name"><code>onClicked</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>event</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_VideoEvents.js.html#l597"><code>src&#x2F;library&#x2F;ACT_VideoEvents.js:597</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Function to be called when the video is clicked.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">event</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>data</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_onEnded" class="method item private">
+    <h3 class="name"><code>onEnded</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>event</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_VideoEvents.js.html#l581"><code>src&#x2F;library&#x2F;ACT_VideoEvents.js:581</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Function to be called when the video is complete.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">event</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>data</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_onPause" class="method item private">
+    <h3 class="name"><code>onPause</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>event</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_VideoEvents.js.html#l389"><code>src&#x2F;library&#x2F;ACT_VideoEvents.js:389</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Function to fire a pause event. Only fires the pause if we&#39;re 5% ~ 95% of video play time.
+NOTE: The 5%/95% is based on the VIDEO_START_THRESHOLD which can be redefined to be more or less than the 5% used as default.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">event</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>data</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_onPlay" class="method item private">
+    <h3 class="name"><code>onPlay</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>event</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_VideoEvents.js.html#l503"><code>src&#x2F;library&#x2F;ACT_VideoEvents.js:503</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Function to be called when &#39;play&#39; is fired. Fires off a "start", "resume" or "replay"
+Depending on the following logic:
+     IF firstPlay then we have a "start"
+     ELSE IF currentTime is between 5% and 95% then we have a "resume"
+     ELSE IF videoEnded then we have a "replay"</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">event</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>data</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_onSeeked" class="method item private">
+    <h3 class="name"><code>onSeeked</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>event</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_VideoEvents.js.html#l378"><code>src&#x2F;library&#x2F;ACT_VideoEvents.js:378</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Function to fire a seeked event</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">event</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>data</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_onTimeUpdate" class="method item private">
+    <h3 class="name"><code>onTimeUpdate</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>event</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_VideoEvents.js.html#l414"><code>src&#x2F;library&#x2F;ACT_VideoEvents.js:414</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Function to fire a onTimeUpdate event</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">event</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>data</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_onVolumeChange" class="method item private">
+    <h3 class="name"><code>onVolumeChange</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>event</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_VideoEvents.js.html#l456"><code>src&#x2F;library&#x2F;ACT_VideoEvents.js:456</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Function to be called when the sound of the video has been changed</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">event</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>data</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_progressTrack" class="method item private">
+    <h3 class="name"><code>progressTrack</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>time</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_VideoEvents.js.html#l484"><code>src&#x2F;library&#x2F;ACT_VideoEvents.js:484</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Function to be called when we have reached our quartile milestones.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">time</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>video time.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_resetParts" class="method item private">
+    <h3 class="name"><code>resetParts</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_VideoEvents.js.html#l626"><code>src&#x2F;library&#x2F;ACT_VideoEvents.js:626</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Function to be called when the video flags need to be reset. Called after onEnded event</p>
+
+    </div>
+
+
+
+
+</div>
+<div id="method_validateVideoNode" class="method item private">
+    <h3 class="name"><code>validateVideoNode</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_VideoEvents.js.html#l289"><code>src&#x2F;library&#x2F;ACT_VideoEvents.js:289</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Function that confirms that the node that was passed in is in fact a VIDEO node.</p>
+
+    </div>
+
+
+
+
+</div>
+<div id="method_VideoEvent" class="method item public">
+    <h3 class="name"><code>VideoEvent</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>videoNode</code>
+                </li>
+                <li class="arg">
+                        <code>videoID</code>
+                </li>
+                <li class="arg">
+                        <code>config</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+        <span class="flag public">public</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_VideoEvents.js.html#l158"><code>src&#x2F;library&#x2F;ACT_VideoEvents.js:158</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">videoNode</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>DOM Node of the video to track OR ID of the video node</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">videoID</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>Identifier of the video for tracking.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">config</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>Optional configuration for tracking.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code> // This example will track start, 25percent, 50percent, 75percent, complete, pause.
+ // Will NOTE track: volume change ( sound on / sound off ) and seek.
+ var config = {
+     resumeThreshold: 0.05,
+     tracking : {
+         start : true,
+         25: true,
+         50: true,
+         75: true,
+         ended: true,
+         pause: true,
+         volumechange: false,
+         seeked: false,
+         clicked: false
+     }
+ }
+ var videoNode = Dom.ById("videoNodeId");
+ var videoEvents = new ACT.VideoEvents( videoNode, "video1", config);
+
+ // Now to attach to these events.
+ var Event = ACT.Event;
+ Event.on( &#39;video:action&#39;, function( event_data ){ event.event == &#39;video:&lt;type&gt;&#39;; "..do something with data ..."; }, null, this );
+</code></pre>
+            </div>
+        </div>
+</div>
+            </div>
+
+
+            <div id="attrs" class="api-class-tabpanel">
+                <h2 class="off-left">Attributes</h2>
+
+                    <div id="attr_ATTRS" class="attr item">
+                        <a name="config_ATTRS"></a> 
+                        <h3 class="name"><code>ATTRS</code></h3>
+                        <span class="type"></span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_library_ACT_VideoEvents.js.html#l230"><code>src&#x2F;library&#x2F;ACT_VideoEvents.js:230</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="attr_NAME" class="attr item">
+                        <a name="config_NAME"></a> 
+                        <h3 class="name"><code>NAME</code></h3>
+                        <span class="type">String</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_library_ACT_VideoEvents.js.html#l235"><code>src&#x2F;library&#x2F;ACT_VideoEvents.js:235</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="attr_version" class="attr item">
+                        <a name="config_version"></a> 
+                        <h3 class="name"><code>version</code></h3>
+                        <span class="type">String</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_library_ACT_VideoEvents.js.html#l241"><code>src&#x2F;library&#x2F;ACT_VideoEvents.js:241</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                    
+                    
+                    </div>
+            </div>
+
+            <div id="events" class="api-class-tabpanel">
+                <h2 class="off-left">Events</h2>
+
+                    <div id="event_&#x27;video:25percent&#x27;" class="events item">
+                        <h3 class="name"><code>&#x27;video:25percent&#x27;</code></h3>
+                        <span class="type"></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_library_ACT_VideoEvents.js.html#l81"><code>src&#x2F;library&#x2F;ACT_VideoEvents.js:81</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Fired when video has played 25%</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="event_&#x27;video:50percent&#x27;" class="events item">
+                        <h3 class="name"><code>&#x27;video:50percent&#x27;</code></h3>
+                        <span class="type"></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_library_ACT_VideoEvents.js.html#l87"><code>src&#x2F;library&#x2F;ACT_VideoEvents.js:87</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Fired when video has played 50%</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="event_&#x27;video:75percent&#x27;" class="events item">
+                        <h3 class="name"><code>&#x27;video:75percent&#x27;</code></h3>
+                        <span class="type"></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_library_ACT_VideoEvents.js.html#l93"><code>src&#x2F;library&#x2F;ACT_VideoEvents.js:93</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Fired when video has played 75%</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="event_&#x27;video:clicked&#x27;" class="events item">
+                        <h3 class="name"><code>&#x27;video:clicked&#x27;</code></h3>
+                        <span class="type"></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_library_ACT_VideoEvents.js.html#l105"><code>src&#x2F;library&#x2F;ACT_VideoEvents.js:105</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Fired when video has being clicked</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="event_&#x27;video:complete&#x27;" class="events item">
+                        <h3 class="name"><code>&#x27;video:complete&#x27;</code></h3>
+                        <span class="type"></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_library_ACT_VideoEvents.js.html#l99"><code>src&#x2F;library&#x2F;ACT_VideoEvents.js:99</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Fired when video has finished playing</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="event_&#x27;video:pause&#x27;" class="events item">
+                        <h3 class="name"><code>&#x27;video:pause&#x27;</code></h3>
+                        <span class="type"></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_library_ACT_VideoEvents.js.html#l57"><code>src&#x2F;library&#x2F;ACT_VideoEvents.js:57</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Fired when video is paused</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="event_&#x27;video:replay&#x27;" class="events item">
+                        <h3 class="name"><code>&#x27;video:replay&#x27;</code></h3>
+                        <span class="type"></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_library_ACT_VideoEvents.js.html#l51"><code>src&#x2F;library&#x2F;ACT_VideoEvents.js:51</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Fired when video is replayed.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="event_&#x27;video:resume&#x27;" class="events item">
+                        <h3 class="name"><code>&#x27;video:resume&#x27;</code></h3>
+                        <span class="type"></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_library_ACT_VideoEvents.js.html#l45"><code>src&#x2F;library&#x2F;ACT_VideoEvents.js:45</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Fired when video playing is resumed ( from pause state )</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="event_&#x27;video:seeked&#x27;" class="events item">
+                        <h3 class="name"><code>&#x27;video:seeked&#x27;</code></h3>
+                        <span class="type"></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_library_ACT_VideoEvents.js.html#l75"><code>src&#x2F;library&#x2F;ACT_VideoEvents.js:75</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Fired when video is being seeked/scrubbed by the user.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="event_&#x27;video:soundOff&#x27;" class="events item">
+                        <h3 class="name"><code>&#x27;video:soundOff&#x27;</code></h3>
+                        <span class="type"></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_library_ACT_VideoEvents.js.html#l69"><code>src&#x2F;library&#x2F;ACT_VideoEvents.js:69</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Fired when video sound is turned off ( mute )</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="event_&#x27;video:soundOn&#x27;" class="events item">
+                        <h3 class="name"><code>&#x27;video:soundOn&#x27;</code></h3>
+                        <span class="type"></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_library_ACT_VideoEvents.js.html#l63"><code>src&#x2F;library&#x2F;ACT_VideoEvents.js:63</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Fired when video sound is turned on</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="event_&#x27;video:start&#x27;" class="events item">
+                        <h3 class="name"><code>&#x27;video:start&#x27;</code></h3>
+                        <span class="type"></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_library_ACT_VideoEvents.js.html#l33"><code>src&#x2F;library&#x2F;ACT_VideoEvents.js:33</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Fired when video starts playing</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="event_&#x27;video:stop&#x27;" class="events item">
+                        <h3 class="name"><code>&#x27;video:stop&#x27;</code></h3>
+                        <span class="type"></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_library_ACT_VideoEvents.js.html#l39"><code>src&#x2F;library&#x2F;ACT_VideoEvents.js:39</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Fired when video stops playing</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+            </div>
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

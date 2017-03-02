@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src/library/ACT_DwellTime.js - ACT.js</title>
+    <link rel="stylesheet" href="https://s.yimg.com/zz/combo?yui-s:3.14.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="https://s.yimg.com/rz/l/favicon.ico">
+    <script src="https://s.yimg.com/zz/combo?yui-s:3.14.1/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="https://s.yimg.com/cv/ae/global/ACTJS/logo/ACT.js.logo.png" title="ACT.js" width="150"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 1.1.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                            <li><a href="#api-demos">Demo and Examples</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/ACT.html">ACT</a></li>
+                                <li><a href="../classes/ActionsQueue.html">ActionsQueue</a></li>
+                                <li><a href="../classes/Base.html">Base</a></li>
+                                <li><a href="../classes/Capability.html">Capability</a></li>
+                                <li><a href="../classes/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../classes/Class.html">Class</a></li>
+                                <li><a href="../classes/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../classes/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../classes/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../classes/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../classes/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../classes/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../classes/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../classes/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../classes/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../classes/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../classes/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../classes/Cookie.html">Cookie</a></li>
+                                <li><a href="../classes/CustomData.html">CustomData</a></li>
+                                <li><a href="../classes/Debug.html">Debug</a></li>
+                                <li><a href="../classes/Dom.html">Dom</a></li>
+                                <li><a href="../classes/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../classes/Enabler.html">Enabler</a></li>
+                                <li><a href="../classes/Environment.html">Environment</a></li>
+                                <li><a href="../classes/Event.html">Event</a></li>
+                                <li><a href="../classes/Flash.html">Flash</a></li>
+                                <li><a href="../classes/IO.html">IO</a></li>
+                                <li><a href="../classes/Json.html">Json</a></li>
+                                <li><a href="../classes/Lang.html">Lang</a></li>
+                                <li><a href="../classes/LayersList.html">LayersList</a></li>
+                                <li><a href="../classes/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../classes/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../classes/Screen.html">Screen</a></li>
+                                <li><a href="../classes/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../classes/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../classes/Tracking.html">Tracking</a></li>
+                                <li><a href="../classes/UA.html">UA</a></li>
+                                <li><a href="../classes/Util.html">Util</a></li>
+                                <li><a href="../classes/VideoEvents.html">VideoEvents</a></li>
+                            </ul>
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/ACT.html">ACT</a></li>
+                                <li><a href="../modules/actionsQueue.html">actionsQueue</a></li>
+                                <li><a href="../modules/Base.html">Base</a></li>
+                                <li><a href="../modules/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../modules/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../modules/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../modules/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../modules/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../modules/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../modules/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../modules/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../modules/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../modules/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../modules/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../modules/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../modules/Cookie.html">Cookie</a></li>
+                                <li><a href="../modules/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../modules/Enabler.html">Enabler</a></li>
+                                <li><a href="../modules/environment.html">environment</a></li>
+                                <li><a href="../modules/IO.html">IO</a></li>
+                                <li><a href="../modules/LayersList.html">LayersList</a></li>
+                                <li><a href="../modules/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../modules/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../modules/Screen.html">Screen</a></li>
+                                <li><a href="../modules/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../modules/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../modules/Tracking.html">Tracking</a></li>
+                            </ul>
+                
+                            <ul id="api-demos" class="apis demos">
+                                <li><a href="../demo/ACT_Demo_300x250.html">300x250</a></li>
+                                <li><a href="../demo/ACT_Demo_300x250_tracking.html">300x250_tracking</a></li>
+                                <li><a href="../demo/ACT_Demo_TrackingExample.html">TrackingExample</a></li>
+                                <li><a href="../demo/ACT_Demo_animation.html">animation</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard.html">billboard</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-enabler.html">billboard-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-expandable-enabler.html">billboard-expandable-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video.html">billboard_html_video</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video_rtl.html">billboard_html_video_rtl</a></li>
+                                <li><a href="../demo/ACT_Demo_carousel.html">carousel</a></li>
+                                <li><a href="../demo/ACT_Demo_dwelltime.html">dwelltime</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_expand.html">enabler_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_fullscreen_expand.html">enabler_fullscreen_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_target.html">enabler_target</a></li>
+                                <li><a href="../demo/ACT_Demo_floating.html">floating</a></li>
+                                <li><a href="../demo/ACT_Demo_force_env.html">force_env</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_enabler.html">html5_enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_standard.html">html5_standard</a></li>
+                                <li><a href="../demo/ACT_Demo_icons.html">icons</a></li>
+                                <li><a href="../demo/ACT_Demo_input_data.html">input_data</a></li>
+                                <li><a href="../demo/ACT_Demo_login_html.html">login_html</a></li>
+                                <li><a href="../demo/ACT_Demo_overwrite_env.html">overwrite_env</a></li>
+                                <li><a href="../demo/ACT_Demo_splash_ad.html">splash_ad</a></li>
+                                <li><a href="../demo/ACT_Demo_tablet_expandable.html">tablet_expandable</a></li>
+                                <li><a href="../demo/ACT_Demo_video_event.html">video_event</a></li>
+                                <li><a href="../demo/ACT_Demo_video_html.html">video_html</a></li>
+                            </ul>
+                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: src/library/ACT_DwellTime.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+ * Copyright 2016, Yahoo Inc.
+ * Copyrights licensed under the New BSD License.
+ * See the accompanying LICENSE file for terms.
+ */
+
+/**
+ * This module is helping tracking dwelltime for seletect dome element.
+ * Following IAB definition, dwelltime for desktop will be tracked as describe below
+ * - Start counting when mouse in target element
+ * - Stop counting when mouse leave target element
+ * - If mouse leave and come back within 2 seconds, continues counting
+ * - If mouse leave for more than 2 seconds, stop counting and send tracking label
+ * - If mouse leave after 10 minutes, the track will count as 10 minutes
+ * - Maximum counting time is 10 minutes
+ *
+ * &#x60;&#x60;&#x60;
+ *     // This example will start track dwelltime for ACT_mpu element
+ *     var target = document.getElementById(&#x27;ACT_mpu&#x27;);
+ *     var mpuDwellTimeTracker = new ACT.DwellTime({
+ *           &#x27;targetElement&#x27;: target,
+ *           &#x27;targetName&#x27;: &#x27;mpu&#x27;
+ *        // some other custom config
+ *     });
+ *
+ *     // To stop tracking dwelltime
+ *     mpuDwellTimeTracker.destroy();
+ * &#x60;&#x60;&#x60;
+ *
+ * @module DwellTime
+ * @main DwellTime
+ * @class DwellTime
+ * @requires Lang, Class, Dom, Event
+ * @global
+ */
+
+/* global ACT */
+ACT.define(&#x27;DwellTime&#x27;, [/*@&lt;*/&#x27;Debug&#x27;, /*&gt;@*/ &#x27;Dom&#x27;, &#x27;Lang&#x27;, &#x27;Class&#x27;, &#x27;Event&#x27;], function (ACT) {
+    &#x27;use strict&#x27;;
+
+    /* Shortcuts */
+    var Dom = ACT.Dom;
+    var Lang = ACT.Lang;
+    var Class = ACT.Class;
+    var Event = ACT.Event;
+
+    /* Constants */
+    var EVENT_MOUSE_ENTER = &#x27;mouseenter&#x27;;
+    var EVENT_MOUSE_LEAVE = &#x27;mouseleave&#x27;;
+    var TRACK_EVENT = &#x27;tracking:track&#x27;;
+
+    var MAX_DWELL_TIME = 600;
+    var MIN_DWELL_TIME = 1;
+    var BUFFER_TIME = 2000;
+
+    var TRACKING_CONVENTION = &#x27;[__NAME__]_view_dwell_[__TIME__]&#x27;;
+
+    /*@&lt;*/
+    var Debug = ACT.Debug;
+    var debugLog = function (message) {
+        Debug.log(&#x27;[ ACT_DwellTime.js ] : &#x27; + message);
+    };
+    debugLog(&#x27;loaded&#x27;);
+    /*&gt;@*/
+
+    /**
+     * @method DwellTime
+     * @contructor
+     * @param {Object} config Configuration for dwell time tracking
+     * @public
+     */
+    function DwellTime(config) {
+        this.init(config);
+    }
+
+    /**
+     * @attribute ATTRS
+     * @initOnly
+     */
+    DwellTime.ATTRS = {
+        NAME: &#x27;DwellTime&#x27;,
+        version: &#x27;1.1.0&#x27;,
+
+        /**
+         * @attribute targetElement
+         */
+        targetElement: null,
+
+        /**
+         * This name will be used in tracking label.
+         * e.g if targetName = &#x27;mpu&#x27;, tracking label will be mpu_view_dwell_10
+         * @attribute targetName
+         */
+        targetName: &#x27;&#x27;,
+
+        /**
+         * @attribute begin
+         * @type Number
+         */
+        begin: 0,
+
+        /**
+         * @attribute start
+         * @type Number
+         */
+        start: 0,
+
+        /**
+         * @attribute stop
+         * @type Number
+         */
+        stop: 0,
+
+        /**
+         * @attribute fire
+         * @type Number
+         */
+        fire: 0
+
+    };
+
+    /**
+     * List of public function for DwellTime instance
+     */
+    Lang.extend(DwellTime, Class, {
+
+        /**
+         * @method initializer
+         */
+        initializer: function () {
+            var root = this;
+            var name = root.get(&#x27;targetName&#x27;);
+            var target = root.get(&#x27;targetElement&#x27;);
+
+            if (!Dom.isDomElement(target) &amp;&amp; name !== &#x27;&#x27;) {
+                /*@&lt;*/
+                debugLog(&#x27;targetElement must be a DOMElement or targetName should be define&#x27;);
+                /*&gt;@*/
+                return;
+            }
+
+            /* Set begin in case the user is interacting with the Ad and the mouse is already in when the page load */
+            root.set(&#x27;begin&#x27;, Lang.dateNow());
+
+            root.addEventListeners(
+                Event.on(EVENT_MOUSE_ENTER, root.startCounting, target, root),
+                Event.on(EVENT_MOUSE_LEAVE, root.stopCounting, target, root)
+            );
+        },
+
+        /**
+         * Start counting dwelltime for target element if it&#x27;s not started.
+         * If dwelltime counting is already started and it&#x27;s still in buffer time then clear out the buffer time
+         *
+         * @method startCounting
+         */
+        startCounting: function () {
+            var root = this;
+            var fire = root.get(&#x27;fire&#x27;);
+            var start = root.get(&#x27;start&#x27;);
+
+            /* Set start if doesn&#x27;t exist yet */
+            root.set(&#x27;start&#x27;, start || Lang.dateNow());
+
+            if (fire) {
+                /*@&lt;*/
+                debugLog(&#x27;clearout 2 second buffer when enter&#x27;);
+                /*&gt;@*/
+                clearTimeout(fire);
+            }
+
+            /* Re-assign fire to instance */
+            root.set(&#x27;fire&#x27;, fire);
+        },
+
+        /**
+         * Stop counting dwelltime for target element
+         *
+         * @method stopCounting
+         */
+        stopCounting: function () {
+            var root = this;
+            var time;
+            var label;
+            var fire = root.get(&#x27;fire&#x27;);
+            var name = root.get(&#x27;targetName&#x27;);
+            var stop = Math.round((Lang.dateNow() - (root.get(&#x27;start&#x27;) || root.get(&#x27;begin&#x27;))) / 1000);
+
+            if (fire) {
+                /*@&lt;*/
+                debugLog(&#x27;clearout 2 second buffer when leave&#x27;);
+                /*&gt;@*/
+                clearTimeout(fire);
+            }
+
+            fire = setTimeout(function () {
+                if (stop &gt; MIN_DWELL_TIME) {
+                    root.removeEventListeners();
+
+                    time = stop &gt; MAX_DWELL_TIME ? MAX_DWELL_TIME : stop;
+
+                    label = TRACKING_CONVENTION
+                        .replace(&#x27;[__NAME__]&#x27;, name)
+                        .replace(&#x27;[__TIME__]&#x27;, time);
+
+                    /*@&lt;*/
+                    debugLog(&#x27;sending tracking label &#x27; + label);
+                    /*&gt;@*/
+
+                    Event.fire(TRACK_EVENT, {
+                        label: label
+                    });
+                }
+
+                clearTimeout(fire);
+            }, BUFFER_TIME);
+
+            /* Re-assign fire to instance */
+            root.set(&#x27;fire&#x27;, fire);
+        }
+
+    });
+
+    return DwellTime;
+});
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

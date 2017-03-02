@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src/core/ACT_secureDarla.js - ACT.js</title>
+    <link rel="stylesheet" href="https://s.yimg.com/zz/combo?yui-s:3.14.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="https://s.yimg.com/rz/l/favicon.ico">
+    <script src="https://s.yimg.com/zz/combo?yui-s:3.14.1/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../assets/css/logo.png" title="ACT.js" width="126" height="100"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 1.0.22</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                            <li><a href="#api-demos">Demo and Examples</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/ACT.html">ACT</a></li>
+                                <li><a href="../classes/ActionsQueue.html">ActionsQueue</a></li>
+                                <li><a href="../classes/Base.html">Base</a></li>
+                                <li><a href="../classes/Capability.html">Capability</a></li>
+                                <li><a href="../classes/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../classes/Class.html">Class</a></li>
+                                <li><a href="../classes/ContentAdfeedback.html">ContentAdfeedback</a></li>
+                                <li><a href="../classes/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../classes/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../classes/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../classes/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../classes/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../classes/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../classes/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../classes/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../classes/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../classes/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../classes/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../classes/ContentYtv.html">ContentYtv</a></li>
+                                <li><a href="../classes/Cookie.html">Cookie</a></li>
+                                <li><a href="../classes/CustomData.html">CustomData</a></li>
+                                <li><a href="../classes/Debug.html">Debug</a></li>
+                                <li><a href="../classes/Dom.html">Dom</a></li>
+                                <li><a href="../classes/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../classes/Enabler.html">Enabler</a></li>
+                                <li><a href="../classes/Environment.html">Environment</a></li>
+                                <li><a href="../classes/Event.html">Event</a></li>
+                                <li><a href="../classes/Flash.html">Flash</a></li>
+                                <li><a href="../classes/IO.html">IO</a></li>
+                                <li><a href="../classes/Json.html">Json</a></li>
+                                <li><a href="../classes/Lang.html">Lang</a></li>
+                                <li><a href="../classes/LayersList.html">LayersList</a></li>
+                                <li><a href="../classes/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../classes/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../classes/Screen.html">Screen</a></li>
+                                <li><a href="../classes/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../classes/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../classes/Tracking.html">Tracking</a></li>
+                                <li><a href="../classes/UA.html">UA</a></li>
+                                <li><a href="../classes/Util.html">Util</a></li>
+                                <li><a href="../classes/VideoEvents.html">VideoEvents</a></li>
+                            </ul>
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/ACT.html">ACT</a></li>
+                                <li><a href="../modules/actionsQueue.html">actionsQueue</a></li>
+                                <li><a href="../modules/Base.html">Base</a></li>
+                                <li><a href="../modules/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../modules/ContentAdfeedback.html">ContentAdfeedback</a></li>
+                                <li><a href="../modules/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../modules/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../modules/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../modules/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../modules/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../modules/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../modules/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../modules/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../modules/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../modules/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../modules/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../modules/ContentYtv.html">ContentYtv</a></li>
+                                <li><a href="../modules/Cookie.html">Cookie</a></li>
+                                <li><a href="../modules/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../modules/Enabler.html">Enabler</a></li>
+                                <li><a href="../modules/environment.html">environment</a></li>
+                                <li><a href="../modules/IO.html">IO</a></li>
+                                <li><a href="../modules/LayersList.html">LayersList</a></li>
+                                <li><a href="../modules/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../modules/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../modules/Screen.html">Screen</a></li>
+                                <li><a href="../modules/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../modules/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../modules/Tracking.html">Tracking</a></li>
+                            </ul>
+                
+                            <ul id="api-demos" class="apis demos">
+                                <li><a href="../demo/ACT_Demo_300x250.html">300x250</a></li>
+                                <li><a href="../demo/ACT_Demo_300x250_tracking.html">300x250_tracking</a></li>
+                                <li><a href="../demo/ACT_Demo_TrackingExample.html">TrackingExample</a></li>
+                                <li><a href="../demo/ACT_Demo_animation.html">animation</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard.html">billboard</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-enabler.html">billboard-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-expandable-enabler.html">billboard-expandable-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video.html">billboard_html_video</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video_rtl.html">billboard_html_video_rtl</a></li>
+                                <li><a href="../demo/ACT_Demo_carousel.html">carousel</a></li>
+                                <li><a href="../demo/ACT_Demo_dwelltime.html">dwelltime</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_expand.html">enabler_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_fullscreen_expand.html">enabler_fullscreen_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_target.html">enabler_target</a></li>
+                                <li><a href="../demo/ACT_Demo_floating.html">floating</a></li>
+                                <li><a href="../demo/ACT_Demo_force_env.html">force_env</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_enabler.html">html5_enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_standard.html">html5_standard</a></li>
+                                <li><a href="../demo/ACT_Demo_icons.html">icons</a></li>
+                                <li><a href="../demo/ACT_Demo_input_data.html">input_data</a></li>
+                                <li><a href="../demo/ACT_Demo_login_html.html">login_html</a></li>
+                                <li><a href="../demo/ACT_Demo_overwrite_env.html">overwrite_env</a></li>
+                                <li><a href="../demo/ACT_Demo_splash_ad.html">splash_ad</a></li>
+                                <li><a href="../demo/ACT_Demo_tablet_expandable.html">tablet_expandable</a></li>
+                                <li><a href="../demo/ACT_Demo_video_event.html">video_event</a></li>
+                                <li><a href="../demo/ACT_Demo_video_html.html">video_html</a></li>
+                            </ul>
+                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: src/core/ACT_secureDarla.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+ * Copyright 2016, Yahoo Inc.
+ * Copyrights licensed under the New BSD License.
+ * See the accompanying LICENSE file for terms.
+ */
+
+/* global ACT, window */
+ACT.define(&#x27;SecureDarla&#x27;, [/*@&lt;*/&#x27;Debug&#x27;, /*&gt;@*/ &#x27;Lang&#x27;, &#x27;Event&#x27;, &#x27;Json&#x27;], function (ACT) {
+	&#x27;use strict&#x27;;
+
+	/* shorthand */
+	var Event = ACT.Event;
+	var Lang = ACT.Lang;
+	var Debug = ACT.Debug;
+	var JSON = ACT.Json;
+	var Y = window.Y || null;
+	var yAPI = (Y &amp;&amp; Y.SandBox &amp;&amp; Y.SandBox.vendor) ? Y.SandBox.vendor : null;
+
+	/**
+	 * EVENTS CONSTANT
+	 */
+	var EVENT_DARLA_PREFIX = &#x27;secureDarla:&#x27;; // this prefix to use for message coming from sDarla API
+	// list of available messages come from Darla API
+	var EVENT_DARLA_REGISTER = &#x27;register&#x27;;
+	var EVENT_DARLA_REGISTER_UPDATE = &#x27;register-update&#x27;;
+	var EVENT_DARLA_EXPANDED = &#x27;expanded&#x27;;
+	var EVENT_DARLA_COLLAPSED = &#x27;collapsed&#x27;;
+	var EVENT_DARLA_RESIZE_TO = &#x27;resize-to&#x27;;
+	// var EVENT_DARLA_GEOM_UPDATE		= &#x27;geom-update&#x27;;
+	// var EVENT_DARLA_FOCUSE_UPDATE	= &#x27;focus-update&#x27;;
+	// var EVENT_DARLA_FAILED			= &#x27;failed&#x27;;
+	// var EVENT_DARLA_LAYER_OPEN		= &#x27;lyr&#x27;;
+	// var EVENT_DARLA_LAYER_CLOSE		= &#x27;lyr-close&#x27;;
+	// var EVENT_DARLA_LAYER_MSG		= &#x27;lyr-msg&#x27;;
+	// var EVENT_DARLA_READ_COOKIE		= &#x27;read-cookie&#x27;;
+	// var EVENT_DARLA_WRITE_COOKIE		= &#x27;write-cookie&#x27;;
+
+	var EVENT_DARLA_CHECK = &#x27;sframe:darlaCheck&#x27;;
+
+	/**
+	 * @event &#x27;sframe:darlaCheck:complete&#x27; Fires this event once the getAPI function is ready to return data.
+	 */
+	var EVENT_DARLA_CHECK_COMPLETE = &#x27;sframe:darlaCheck:complete&#x27;;
+
+	/* actions related message */
+	var EVENT_REGISTER_ACTION = &#x27;register:Actions&#x27;;
+	var EVENT_COMPLETE_ACTION = &#x27;complete:action&#x27;;
+
+	var EVENT_ACTION_MSG = &#x27;sframe:msg&#x27;;
+	var EVENT_ACTION_MSG_COMPLETE = &#x27;sframe:msg:complete&#x27;;
+	var EVENT_ACTION_RESIZE_TO = &#x27;sframe:resize-to&#x27;;
+	var EVENT_ACTION_RESIZE_TO_COMPLETE = &#x27;sframe:resize-to:complete&#x27;;
+	var EVENT_ACTION_EXPAND = &#x27;sframe:expand&#x27;;
+	var EVENT_ACTION_EXPAND_COMPLETE = &#x27;sframe:expand:complete&#x27;;
+	var EVENT_ACTION_COLLAPSE = &#x27;sframe:collapse&#x27;;
+	var EVENT_ACTION_COLLAPSE_COMPLETE = &#x27;sframe:collapse:complete&#x27;;
+	var EVENT_NO_SAFEFRAME = &#x27;sframe:nosupport&#x27;;
+
+	/**
+	 * List action for SafeFrame
+	 */
+	var darlaActions = [{
+		type: &#x27;darlaMessage&#x27;,
+		argument: {
+			msg: {
+				test: function (value) {
+					return Lang.isString(value);
+				}
+			},
+			timeout: {
+				name: &#x27;timeout&#x27;,
+				test: function (value) {
+					return Lang.isNumber(value) || value === undefined || value === null;
+				}
+			}
+		},
+		process: function (actionId, values) {
+			var eventMessage;
+			if (yAPI) {
+				eventMessage = Event.on(EVENT_ACTION_MSG_COMPLETE, function () {
+					Event.fire(EVENT_COMPLETE_ACTION, actionId);
+					eventMessage.remove();
+				});
+				Event.fire(EVENT_ACTION_MSG, values);
+			} else {
+				Event.fire(EVENT_COMPLETE_ACTION, actionId);
+			}
+		}
+	}, {
+		type: &#x27;expandInlineFrame&#x27;,
+		argument: {
+			top: {
+				test: function (value) {
+					return Lang.isNumber(value) &amp;&amp; value &gt;= 0;
+				}
+			},
+			right: {
+				test: function (value) {
+					return Lang.isNumber(value) &amp;&amp; value &gt;= 0;
+				}
+			},
+			bottom: {
+				test: function (value) {
+					return Lang.isNumber(value) &amp;&amp; value &gt;= 0;
+				}
+			},
+			left: {
+				test: function (value) {
+					return Lang.isNumber(value) &amp;&amp; value &gt;= 0;
+				}
+			},
+			push: {
+				test: function (value) {
+					return (typeof value === &#x27;boolean&#x27;);
+				}
+			},
+			timeout: {
+				name: &#x27;timeout&#x27;,
+				test: function (value) {
+					return Lang.isNumber(value) || value === undefined || value === null;
+				}
+			}
+		},
+		process: function (actionId, values) {
+			var eventInlineExpanded;
+			/* istanbul ignore else */
+			if (yAPI) {
+				eventInlineExpanded = Event.on(EVENT_ACTION_EXPAND_COMPLETE, function () {
+					Event.fire(EVENT_COMPLETE_ACTION, actionId);
+					eventInlineExpanded.remove();
+				});
+				Event.fire(EVENT_ACTION_EXPAND, values);
+			} else {
+				Event.fire(EVENT_COMPLETE_ACTION, actionId);
+				return;
+			}
+		}
+	}, {
+		type: &#x27;contractInlineFrame&#x27;,
+		argument: {
+			timeout: {
+				name: &#x27;timeout&#x27;,
+				test: function (value) {
+					return Lang.isNumber(value) || value === undefined || value === null;
+				}
+			}
+		},
+		process: function (actionId) {
+			var eventInlineCollapsed;
+			/* istanbul ignore else */
+			if (yAPI) {
+				eventInlineCollapsed = Event.on(EVENT_ACTION_COLLAPSE_COMPLETE, function () {
+					Event.fire(EVENT_COMPLETE_ACTION, actionId);
+					eventInlineCollapsed.remove();
+				});
+				Event.fire(EVENT_ACTION_COLLAPSE);
+			} else {
+				Event.fire(EVENT_COMPLETE_ACTION, actionId);
+				return;
+			}
+		}
+	}, {
+		type: &#x27;resizeInlineFrame&#x27;,
+		argument: {
+			width: {
+				name: &#x27;width&#x27;,
+				test: function (value) {
+					return Lang.isNumber(value) || value === undefined || value === null;
+				}
+			},
+			height: {
+				name: &#x27;height&#x27;,
+				test: function (value) {
+					return Lang.isNumber(value) || value === undefined || value === null;
+				}
+			},
+			animationLength: {
+				name: &#x27;animationLength&#x27;,
+				test: function (value) {
+					return Lang.isNumber(value) || value === undefined || value === null;
+				}
+			},
+			timeout: {
+				name: &#x27;timeout&#x27;,
+				test: function (value) {
+					return Lang.isNumber(value) || value === undefined || value === null;
+				}
+			}
+		},
+		process: function (actionId, values) {
+			var eventInlineResized;
+			/* istanbul ignore else */
+			if (yAPI) {
+				/* listener for darla resizeTo message */
+				eventInlineResized = Event.on(EVENT_ACTION_RESIZE_TO_COMPLETE, function () {
+					Event.fire(EVENT_COMPLETE_ACTION, actionId);
+					eventInlineResized.remove();
+				});
+				Event.fire(EVENT_ACTION_RESIZE_TO, values);
+			} else {
+				Event.fire(EVENT_COMPLETE_ACTION, actionId);
+				return;
+			}
+		}
+	}];
+
+	/*@&lt;*/
+	Debug.log(&#x27;[ ACT_secureDarla.js ]: &#x27;, window.Y);
+	Debug.info(&#x27;[ ACT_secureDarla.js ]: Darla API &#x27;, yAPI);
+	/*&gt;@*/
+
+	/**
+	 * ACT Wrapper for SecureDarla communication layer and ad registration methods.
+	 *
+	 *	var config = {
+	 *		name: &#x27;name_of_ad&#x27;,
+	 *		type: &#x27;type_of_ad&#x27;,
+	 *		format: &#x27;format_of_ad&#x27;,
+	 *		width: 300,
+	 *		height: 250
+	 *	};
+	 *	var ref = this; // optional
+	 *	var SD = new ACT.SecureDarla(config, ref);
+	 *
+	 * @class SecureDarla
+	 * @module SecureDarla
+	 * @param {Object} config Object defining simple minimum data for the ad.
+	 * @param {Object} ref Reference to the parent object that is instantiating secureDarla. Optional.
+	 * @requires Lang
+	 * @requires Event
+	 * @requires Debug
+	 */
+	function secureDarla(config, ref) {
+		Lang.merge(this.config, config.template);
+
+		this.yAPI = yAPI;
+		if (this.yAPI === null) {
+			this.secureDarla = false;
+		} else {
+			this.secureDarla = true;
+		}
+
+		if (ref) {
+			ref.isSafeFrame = Lang.bind(this, null, this.isSafeFrame);
+		}
+		/* register the ad, attach notify to SD if it exists. */
+		this.register();
+		return this;
+	}
+
+	/**
+	 * @method compareCurrentSize
+	 */
+	function compareCurrentSize(currentWidth, currentHeight, width, height) {
+		if (currentHeight === height &amp;&amp; currentWidth === width) {
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * Check if passing value is valid for Darla expand function
+	 * @method isValidForExpand
+	 * @param  {Number}  top
+	 * @param  {Number}  right
+	 * @param  {Number}  bottom
+	 * @param  {Number}  left
+	 * @return {Boolean} trus if they are all value, else return false
+	 */
+	function isValidForExpand(top, right, bottom, left) {
+		return (top &gt;= 0) &amp;&amp; (right &gt;= 0) &amp;&amp; (bottom &gt;= 0) &amp;&amp; (left &gt;= 0);
+	}
+
+	/**
+	 * @attribute ATTRS
+	 * @type {{NAME: string, version: string}}
+	 * @initOnly
+	 */
+	secureDarla.ATTRS = {
+		NAME: &#x27;SecureDarla&#x27;,
+		version: &#x27;1.0.41&#x27;
+	};
+
+	secureDarla.prototype = {
+		/**
+		 * Simple default config. Assume 300x250
+		 *
+		 *	config: {
+		 *		name: &#x27;act_base&#x27;,
+		 *		type: &#x27;lrec&#x27;,
+		 *		format: &#x27;lrec&#x27;,
+		 *		width: 300,
+		 *		height: 250
+		 *	}
+		 *
+		 * @property config
+		 * @type {{width: number, height: number}}
+		 * @initOnly
+		 */
+		config: {
+			width: 300,
+			height: 250
+		},
+
+		/**
+		 * secureDarla is set to &#x27;undefined&#x27; - easy way to check if it&#x27;s in a safe frame or not
+		 * @property secureDarla
+		 * @type {Boolean}
+		 * @initOnly
+		 */
+		secureDarla: undefined,
+
+		/**
+		 * Property to save the status of sDarla expanded
+		 * @property isInlineExpanded
+		 * @default false
+		 */
+		isInlineExpanded: false,
+
+		/**
+		 * Register the ad with SecureDarla. Bind the local instance of &#x60;notify&#x60; for SecureDarla communication.
+		 * @method register
+		 */
+		register: function () {
+			var conf = this.config;
+
+			/*@&lt;*/
+			Debug.info(&#x27;[ ACT_secureDarla.js ]: config width and height&#x27;, conf.width, conf.height);
+			/*&gt;@*/
+
+			if (this.isSafeFrame() === true) {
+				this.yAPI.register(conf.width, conf.height, Lang.bind(this, null, this.notify));
+				/* if Darla is available then register related event and actions */
+				this.initializeEvents();
+				Event.fire(EVENT_REGISTER_ACTION, darlaActions);
+			} else {
+				Event.fire(EVENT_NO_SAFEFRAME, {
+					error: &#x27;Not in SafeFrame&#x27;
+				});
+			}
+			Event.on(EVENT_DARLA_CHECK, this.getAPI, null, this);
+		},
+
+		/**
+		 * SafeFrame API / Key getter function
+		 * @method getAPI
+		 * @returns {Object} { key: Object, yAPI: Object} An object containing the key and a reference to the SafeFrame API
+		 * @public
+		 */
+		getAPI: function () {
+			var result = {
+				key: null,
+				yAPI: null
+			};
+			if (this.isSafeFrame()) {
+				result = {
+					key: this.key(),
+					yAPI: yAPI
+				};
+			}
+			Event.fire(EVENT_DARLA_CHECK_COMPLETE, result);
+			return result;
+		},
+
+		/**
+         * Initialize all events
+		 * @method initializeEvents
+		 * @private
+		 */
+		initializeEvents: function () {
+			var root = this;
+
+			Event.on(EVENT_ACTION_MSG, function (data) {
+				root.msg(data);
+			});
+
+			Event.on(EVENT_ACTION_RESIZE_TO, function (data) {
+				root.resizeTo(data);
+			});
+
+			Event.on(EVENT_ACTION_EXPAND, function (data) {
+				root.expand(data);
+			});
+
+			Event.on(EVENT_ACTION_COLLAPSE, function () {
+				root.collapse();
+			});
+		},
+
+		/**
+         * @param {Object} data Contains msg field with the message for safeFrame
+		 * @method msg
+		 */
+		msg: function (data) {
+			if (!data.msg || !Lang.isString(data.msg)) {
+				/*@&lt;*/
+				Debug.warn(&#x27;[ ACT_secureDarla.js ]: sFrame, darla message should be a string&#x27;);
+				/*&gt;@*/
+				return;
+			}
+
+			Event.fire(EVENT_ACTION_MSG_COMPLETE);
+			yAPI.msg(data.msg);
+		},
+
+        /**
+         * Resize SafeFrames
+         * @method resizeTo
+         * @param {Object} data Information for resize safeFrame including:
+         * 	- width: new width for safeFrame
+         * 	- height: new height for safeFrame
+         * 	- animationLength: animation length
+         */
+		resizeTo: function (data) {
+			var root = this;
+			/* No longer necessary, since we don&#x27;t do our own restrictions testing */
+			var currentWidth = (window.innerWidth || document.documentElement.clientWidth) || yAPI.geom().self.w;
+			var currentHeight = (window.innerHeight || document.documentElement.clientHeight) || yAPI.geom().self.h;
+
+			var width = parseInt(data.width, 10) || 0;
+			var height = parseInt(data.height, 10) || 0;
+			var animationLength = parseInt(data.animationLength, 10) || 0;
+
+			if (compareCurrentSize(currentWidth, currentHeight, width, height)) {
+				/*@&lt;*/
+				Debug.warn(&#x27;[ ACT_secureDarla.js ]: sFrame, resize method, error=nothing to resize, at least one of widthTo or heightTo values has to be greater than original ad frame size&#x27;);
+				/*&gt;@*/
+				// stop action immediately
+				Event.fire(EVENT_ACTION_RESIZE_TO_COMPLETE);
+				return;
+			}
+
+			if (this.darlaEventResizeTo !== null) {
+				/* Call the &#x27;resizeTo&#x27; function from darla API and wait for it&#x27;s message */
+				// var darlaEvent
+				this.darlaEventResizeTo = Event.on(EVENT_DARLA_PREFIX + EVENT_DARLA_RESIZE_TO, function () {
+					/*@&lt;*/
+					Debug.warn(&#x27;[ ACT_secureDarla.js ]: Fire &#x27;, EVENT_ACTION_RESIZE_TO_COMPLETE);
+					/*&gt;@*/
+					Event.fire(EVENT_ACTION_RESIZE_TO_COMPLETE);
+					/*
+					We no longer want to remove this event, instead the onResize event that comes from SafeFrame&#x27;s API is caught and fired
+					for the internal framework only once. This solves the stalled / multi-click issue.
+					// darlaEvent.remove();
+					*/
+				});
+			}
+
+			yAPI.resizeTo({
+				w: width,
+				h: height,
+				key: root.key(),
+				animTime: animationLength
+			});
+		},
+
+		/**
+		 * Expand sframe holder to new size
+		 * @method expand
+		 * @param {Object} data Information for expanding safeFrame including: (please note that all number must be positive)
+		 * 	- top (number): amount of pixel to expand to the top
+		 * 	- right (number): amount of pixel to expand to the right
+		 * 	- bottom (number): amount of pixel to expand to the bottom
+		 * 	- left (number): amount of pixel to expand to the left
+		 *  - push (boolean): using expand push or not (default to false)
+		 */
+		expand: function (data) {
+			var root = this;
+			var darlaEvent;
+			var top;
+			var right;
+			var bottom;
+			var left;
+			var push;
+
+			/*@&lt;*/
+			Debug.log(&#x27;[ ACT_secureDarla.js ]: expand method, data: &#x27;, JSON.stringify(data));
+			/*&gt;@*/
+
+			/* check if safeFrame is already expanded or not */
+			if (root.isInlineExpanded) {
+				/*@&lt;*/
+				Debug.warn(&#x27;[ ACT_secureDarla.js ]: sFrame, expand method, error=inline expanded previously already&#x27;);
+				/*&gt;@*/
+				/* stop action immediately */
+				Event.fire(EVENT_ACTION_EXPAND_COMPLETE);
+				return;
+			}
+
+			top = parseInt(data.top, 10) || 0;
+			right = parseInt(data.right, 10) || 0;
+			bottom = parseInt(data.bottom, 10) || 0;
+			left = parseInt(data.left, 10) || 0;
+			push = data.push || false;
+
+			/* check if data is ok or not */
+			if (!isValidForExpand(top, right, bottom, left)) {
+				/*@&lt;*/
+				Debug.warn(&#x27;[ ACT_secureDarla.js ]: sFrame, expand method doenst allow any negative number&#x27;);
+				/*&gt;@*/
+				/* stop action immediately */
+				Event.fire(EVENT_ACTION_EXPAND_COMPLETE);
+				return;
+			}
+
+			/*@&lt;*/
+			Debug.log(&#x27;[ ACT_secureDarla.js ]: expand method&#x27;, data);
+			/*&gt;@*/
+
+			/* Call darla expand function and wait for it to message back */
+			darlaEvent = Event.on(EVENT_DARLA_PREFIX + EVENT_DARLA_EXPANDED, function () {
+				root.isInlineExpanded = true;
+				Event.fire(EVENT_ACTION_EXPAND_COMPLETE);
+				darlaEvent.remove();
+			});
+
+			yAPI.expand({
+				t: top,
+				r: right,
+				b: bottom,
+				l: left,
+				push: push
+			});
+		},
+
+		/**
+		 * Function to collapse safeFrame holder
+		 * @method collapse
+		 */
+		collapse: function () {
+			var root = this;
+			var darlaEvent;
+
+			/* check it is expanded */
+			if (!root.isInlineExpanded) {
+				/*@&lt;*/
+				Debug.warn(&#x27;[ ACT_secureDarla.js ]: sFrame, collapse method, error=nothing to collapse, inline has to be expanded previously&#x27;);
+				/*&gt;@*/
+
+				// stop action immediately
+				Event.fire(EVENT_ACTION_COLLAPSE_COMPLETE);
+				return;
+			}
+
+			/* call darla collapse function and wait for its message */
+			darlaEvent = Event.on(EVENT_DARLA_PREFIX + EVENT_DARLA_COLLAPSED, function () {
+				/* turn off inlineExpand flag and fire complete action */
+				root.isInlineExpanded = false;
+				Event.fire(EVENT_ACTION_COLLAPSE_COMPLETE);
+				darlaEvent.remove();
+			});
+
+			yAPI.collapse();
+		},
+
+		/**
+		 * Simple wrapper to pick up the SD Key
+		 * @method key
+		 * @return {Object} SecureDARLA Key that is necessary for communication with restricted SD components
+		 */
+		key: function () {
+			return this.config.sdKey;
+		},
+
+		/**
+		 * A simple check to help ads figure out if they are in a SafeFrame or not.
+		 * @method isSafeFrame
+		 * @return {Boolean} true if in a SafeFrame false otherwise.
+		 */
+		isSafeFrame: function () {
+			/* Technically, this.secureDarla will never be &#x27;undefined&#x27;, however if it is. We reply with FALSE */
+			if (this.secureDarla === undefined) {
+				return false;
+			}
+			return this.secureDarla;
+		},
+
+		/**
+		 * Generic notify function - this is where all SD communications come into.
+		 * @method notify
+		 * @param {String} cmd Command coming from SecureDarla
+		 * @param {Object} data Data coming in from SecureDarla
+		 * @event secureDarla:[type of cmd]
+		 */
+		notify: function (cmd, data) {
+			/*@&lt;*/
+			Debug.log(&#x27;[ ACT_secureDarla.js ]: &#x27;, cmd, JSON.stringify(data));
+			/*&gt;@*/
+
+			if (EVENT_DARLA_REGISTER === cmd || EVENT_DARLA_REGISTER_UPDATE === cmd) {
+				this.config.sdKey = data.key;
+			}
+
+			/* augment the data object with the key and a reference to yAPI */
+			if (Lang.isObject(data)) {
+				data.yAPI = yAPI;
+				/* If the &#x27;key&#x27; is part of the payload send it, otherwise default to locally stored one. */
+				data.key = data.key || this.key();
+			}
+
+			/* Fire the SecureDarla Event for whomever is interested in it can see */
+			Event.fire(EVENT_DARLA_PREFIX + cmd, data);
+		}
+	};
+
+	return secureDarla;
+});
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

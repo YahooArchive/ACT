@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Util - ACT.js</title>
+    <link rel="stylesheet" href="https://s.yimg.com/zz/combo?yui-s:3.14.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="https://s.yimg.com/rz/l/favicon.ico">
+    <script src="https://s.yimg.com/zz/combo?yui-s:3.14.1/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="https://s.yimg.com/cv/ae/global/ACTJS/logo/ACT.js.logo.png" title="ACT.js" width="150"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 1.1.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                            <li><a href="#api-demos">Demo and Examples</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/Dom.html">Dom</a></li>
+                                <li><a href="../classes/Enabler.html">Enabler</a></li>
+                                <li><a href="../classes/Event.html">Event</a></li>
+                                <li><a href="../classes/Json.html">Json</a></li>
+                                <li><a href="../classes/Lang.html">Lang</a></li>
+                                <li><a href="../classes/UA.html">UA</a></li>
+                                <li><a href="../classes/Util.html">Util</a></li>
+                            </ul>
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/ACT.html">ACT</a></li>
+                                <li><a href="../modules/Enabler.html">Enabler</a></li>
+                            </ul>
+                
+                            <ul id="api-demos" class="apis demos">
+                                <li><a href="../demo/ACT_Demo_billboard-enabler.html">billboard-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-expandable-enabler.html">billboard-expandable-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_expand.html">enabler_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_fullscreen_expand.html">enabler_fullscreen_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_target.html">enabler_target</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_enabler.html">html5_enabler</a></li>
+                            </ul>
+                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1>Util Class</h1>
+<div class="box meta">
+
+
+        <div class="foundat">
+            Defined in: <a href="../files/temp_enabler_library_ACT_util.js.html#l16"><code>temp_enabler&#x2F;library&#x2F;ACT_util.js:16</code></a>
+        </div>
+
+            Module: <a href="../modules/ACT.html">ACT</a>
+
+</div>
+
+
+<div class="box intro">
+    <p>ACT AD Utilities</p>
+
+</div>
+
+
+<div id="classdocs" class="tabview">
+    <ul class="api-class-tabs">
+        <li class="api-class-tab index"><a href="#index">Index</a></li>
+
+            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
+            <li class="api-class-tab properties"><a href="#properties">Properties</a></li>
+            <li class="api-class-tab attrs"><a href="#attrs">Attributes</a></li>
+    </ul>
+
+    <div>
+        <div id="index" class="api-class-tabpanel index">
+            <h2 class="off-left">Item Index</h2>
+
+                <div class="index-section methods">
+                    <h3>Methods</h3>
+
+                    <ul class="index-list methods">
+                            <li class="index-item method public">
+                                <a href="#method_adDate">adDate</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#method_adRunning">adRunning</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#method_getInt">getInt</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#method_getQStrVal">getQStrVal</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#method_hashString">hashString</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#method_pixelTrack">pixelTrack</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item method public deprecated">
+                                <a href="#method_registerAdAction">registerAdAction</a>
+
+                                    <span class="flag static">static</span>
+                                    <span class="flag deprecated">deprecated</span>
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#method_toggleTakeover">toggleTakeover</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                    </ul>
+                </div>
+
+                <div class="index-section properties">
+                    <h3>Properties</h3>
+
+                    <ul class="index-list properties">
+                            <li class="index-item property private deprecated">
+                                <a href="#property_adAction">adAction</a>
+
+                                    <span class="flag deprecated">deprecated</span>
+                            </li>
+                    </ul>
+                </div>
+
+                <div class="index-section attrs">
+                    <h3>Attributes</h3>
+
+                    <ul class="index-list attrs">
+                            <li class="index-item attr">
+                                <a href="#attr_ATTRS">ATTRS</a>
+                            </li>
+                    </ul>
+                </div>
+
+        </div>
+
+            <div id="methods" class="api-class-tabpanel">
+                <h2 class="off-left">Methods</h2>
+
+<div id="method_adDate" class="method item public">
+    <h3 class="name"><code>adDate</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>date</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+
+
+        <span class="flag public">public</span>
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/temp_enabler_library_ACT_util.js.html#l125"><code>temp_enabler&#x2F;library&#x2F;ACT_util.js:125</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Given a date returns true if it&#39;s today false otherwise. Today or after today.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">date</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>in the "2012/10/23" : YYYY/mm/dd format</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Boolean</span>:
+                    <p>true if the date is equal or greater than the passed in date. False otherwise</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_adRunning" class="method item public">
+    <h3 class="name"><code>adRunning</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>running</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+        <span class="flag public">public</span>
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/temp_enabler_library_ACT_util.js.html#l55"><code>temp_enabler&#x2F;library&#x2F;ACT_util.js:55</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Wrapper for the function ad_running to pause or play the Today module</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">running</code>
+                        <span class="type">Boolean</span>
+
+
+                    <div class="param-description">
+                        <p>True to let the page know the ad is running, false otherwise</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_getInt" class="method item public">
+    <h3 class="name"><code>getInt</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>haystack</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Number</span>
+        </span>
+
+
+        <span class="flag public">public</span>
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/temp_enabler_library_ACT_util.js.html#l91"><code>temp_enabler&#x2F;library&#x2F;ACT_util.js:91</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Search for all the numbers in a string and return them.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">haystack</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>String to search for numbers in</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Number</span>:
+                    <p>all the numbers in Number format or zero if none found</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getQStrVal" class="method item public">
+    <h3 class="name"><code>getQStrVal</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>name,</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">String</span>
+        </span>
+
+
+        <span class="flag public">public</span>
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/temp_enabler_library_ACT_util.js.html#l170"><code>temp_enabler&#x2F;library&#x2F;ACT_util.js:170</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Given a variable name, returns value of a first matched variable from URL&#39;s query string if found</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">name,</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>variable name to be matched</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">String</span>:
+                    <p>results, string value of first matched variable if found, "" otherwise</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_hashString" class="method item public">
+    <h3 class="name"><code>hashString</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>string</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Number</span>
+        </span>
+
+
+        <span class="flag public">public</span>
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/temp_enabler_library_ACT_util.js.html#l139"><code>temp_enabler&#x2F;library&#x2F;ACT_util.js:139</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Given a string returns a numeric value (hash) of it</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">string</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>(any length) to hash</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Number</span>:
+                    <p>hash number of the string.</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_pixelTrack" class="method item public">
+    <h3 class="name"><code>pixelTrack</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>pixel</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+        <span class="flag public">public</span>
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/temp_enabler_library_ACT_util.js.html#l107"><code>temp_enabler&#x2F;library&#x2F;ACT_util.js:107</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Calls the 1x1 pixel in javascript</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">pixel</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>source of the image to request</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_registerAdAction" class="method item public deprecated">
+    <h3 class="name"><code>registerAdAction</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>conf</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+        <span class="flag deprecated" title="DEPRECATED">deprecated</span>
+
+        <span class="flag public">public</span>
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/temp_enabler_library_ACT_util.js.html#l77"><code>temp_enabler&#x2F;library&#x2F;ACT_util.js:77</code></a>
+        </p>
+
+
+            <p>Deprecated: DEPRECATED</p>
+
+    </div>
+
+    <div class="description">
+        <p>Registration function to callback when ad_action is called</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">conf</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>params: callback:function, args:arguments, context: ad_context, ad: placement_name</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_toggleTakeover" class="method item public">
+    <h3 class="name"><code>toggleTakeover</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>takeover</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+        <span class="flag public">public</span>
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/temp_enabler_library_ACT_util.js.html#l42"><code>temp_enabler&#x2F;library&#x2F;ACT_util.js:42</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Wrapper function for ad_takeover call.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">takeover</code>
+                        <span class="type">Boolean</span>
+
+
+                    <div class="param-description">
+                        <p>True to set takeover or false to turn it off</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+            </div>
+
+            <div id="properties" class="api-class-tabpanel">
+                <h2 class="off-left">Properties</h2>
+
+                    <div id="property_adAction" class="property item private deprecated">
+                        <h3 class="name"><code>adAction</code></h3>
+                        <span class="type">Object</span>
+                    
+                            <span class="flag deprecated" title="DEPRECATED">deprecated</span>
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/temp_enabler_library_ACT_util.js.html#l68"><code>temp_enabler&#x2F;library&#x2F;ACT_util.js:68</code></a>
+                            </p>
+                    
+                                <p>Deprecated: DEPRECATED</p>
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Object keeping references to function that need to be called on ad_action</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+            </div>
+
+            <div id="attrs" class="api-class-tabpanel">
+                <h2 class="off-left">Attributes</h2>
+
+                    <div id="attr_ATTRS" class="attr item">
+                        <a name="config_ATTRS"></a> 
+                        <h3 class="name"><code>ATTRS</code></h3>
+                        <span class="type">NAME: string, version: string</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/temp_enabler_library_ACT_util.js.html#l30"><code>temp_enabler&#x2F;library&#x2F;ACT_util.js:30</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                    
+                    
+                    </div>
+            </div>
+
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

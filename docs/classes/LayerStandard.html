@@ -1,0 +1,1583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>LayerStandard - ACT.js</title>
+    <link rel="stylesheet" href="https://s.yimg.com/zz/combo?yui-s:3.14.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="https://s.yimg.com/rz/l/favicon.ico">
+    <script src="https://s.yimg.com/zz/combo?yui-s:3.14.1/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="https://s.yimg.com/cv/ae/global/ACTJS/logo/ACT.js.logo.png" title="ACT.js" width="150"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 1.1.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                            <li><a href="#api-demos">Demo and Examples</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/ACT.html">ACT</a></li>
+                                <li><a href="../classes/ActionsQueue.html">ActionsQueue</a></li>
+                                <li><a href="../classes/Base.html">Base</a></li>
+                                <li><a href="../classes/Capability.html">Capability</a></li>
+                                <li><a href="../classes/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../classes/Class.html">Class</a></li>
+                                <li><a href="../classes/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../classes/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../classes/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../classes/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../classes/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../classes/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../classes/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../classes/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../classes/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../classes/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../classes/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../classes/Cookie.html">Cookie</a></li>
+                                <li><a href="../classes/CustomData.html">CustomData</a></li>
+                                <li><a href="../classes/Debug.html">Debug</a></li>
+                                <li><a href="../classes/Dom.html">Dom</a></li>
+                                <li><a href="../classes/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../classes/Enabler.html">Enabler</a></li>
+                                <li><a href="../classes/Environment.html">Environment</a></li>
+                                <li><a href="../classes/Event.html">Event</a></li>
+                                <li><a href="../classes/Flash.html">Flash</a></li>
+                                <li><a href="../classes/IO.html">IO</a></li>
+                                <li><a href="../classes/Json.html">Json</a></li>
+                                <li><a href="../classes/Lang.html">Lang</a></li>
+                                <li><a href="../classes/LayersList.html">LayersList</a></li>
+                                <li><a href="../classes/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../classes/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../classes/Screen.html">Screen</a></li>
+                                <li><a href="../classes/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../classes/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../classes/Tracking.html">Tracking</a></li>
+                                <li><a href="../classes/UA.html">UA</a></li>
+                                <li><a href="../classes/Util.html">Util</a></li>
+                                <li><a href="../classes/VideoEvents.html">VideoEvents</a></li>
+                            </ul>
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/ACT.html">ACT</a></li>
+                                <li><a href="../modules/actionsQueue.html">actionsQueue</a></li>
+                                <li><a href="../modules/Base.html">Base</a></li>
+                                <li><a href="../modules/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../modules/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../modules/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../modules/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../modules/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../modules/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../modules/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../modules/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../modules/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../modules/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../modules/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../modules/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../modules/Cookie.html">Cookie</a></li>
+                                <li><a href="../modules/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../modules/Enabler.html">Enabler</a></li>
+                                <li><a href="../modules/environment.html">environment</a></li>
+                                <li><a href="../modules/IO.html">IO</a></li>
+                                <li><a href="../modules/LayersList.html">LayersList</a></li>
+                                <li><a href="../modules/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../modules/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../modules/Screen.html">Screen</a></li>
+                                <li><a href="../modules/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../modules/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../modules/Tracking.html">Tracking</a></li>
+                            </ul>
+                
+                            <ul id="api-demos" class="apis demos">
+                                <li><a href="../demo/ACT_Demo_300x250.html">300x250</a></li>
+                                <li><a href="../demo/ACT_Demo_300x250_tracking.html">300x250_tracking</a></li>
+                                <li><a href="../demo/ACT_Demo_TrackingExample.html">TrackingExample</a></li>
+                                <li><a href="../demo/ACT_Demo_animation.html">animation</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard.html">billboard</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-enabler.html">billboard-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-expandable-enabler.html">billboard-expandable-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video.html">billboard_html_video</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video_rtl.html">billboard_html_video_rtl</a></li>
+                                <li><a href="../demo/ACT_Demo_carousel.html">carousel</a></li>
+                                <li><a href="../demo/ACT_Demo_dwelltime.html">dwelltime</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_expand.html">enabler_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_fullscreen_expand.html">enabler_fullscreen_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_target.html">enabler_target</a></li>
+                                <li><a href="../demo/ACT_Demo_floating.html">floating</a></li>
+                                <li><a href="../demo/ACT_Demo_force_env.html">force_env</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_enabler.html">html5_enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_standard.html">html5_standard</a></li>
+                                <li><a href="../demo/ACT_Demo_icons.html">icons</a></li>
+                                <li><a href="../demo/ACT_Demo_input_data.html">input_data</a></li>
+                                <li><a href="../demo/ACT_Demo_login_html.html">login_html</a></li>
+                                <li><a href="../demo/ACT_Demo_overwrite_env.html">overwrite_env</a></li>
+                                <li><a href="../demo/ACT_Demo_splash_ad.html">splash_ad</a></li>
+                                <li><a href="../demo/ACT_Demo_tablet_expandable.html">tablet_expandable</a></li>
+                                <li><a href="../demo/ACT_Demo_video_event.html">video_event</a></li>
+                                <li><a href="../demo/ACT_Demo_video_html.html">video_html</a></li>
+                            </ul>
+                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1>LayerStandard Class</h1>
+<div class="box meta">
+
+
+        <div class="foundat">
+            Defined in: <a href="../files/src_core_ACT_layerStandard.js.html#l8"><code>src&#x2F;core&#x2F;ACT_layerStandard.js:8</code></a>
+        </div>
+
+            Module: <a href="../modules/LayerStandard.html">LayerStandard</a>
+
+</div>
+
+
+<div class="box intro">
+    <p>The &#39;LayerStandard&#39; is a core module made to generate a parent &#39;DIV&#39; tag container with a specific position/configuration.
+This module is used in &#39;Layerslist&#39;.</p>
+
+</div>
+
+
+<div id="classdocs" class="tabview">
+    <ul class="api-class-tabs">
+        <li class="api-class-tab index"><a href="#index">Index</a></li>
+
+            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
+            <li class="api-class-tab attrs"><a href="#attrs">Attributes</a></li>
+    </ul>
+
+    <div>
+        <div id="index" class="api-class-tabpanel index">
+            <h2 class="off-left">Item Index</h2>
+
+                <div class="index-section methods">
+                    <h3>Methods</h3>
+
+                    <ul class="index-list methods">
+                            <li class="index-item method public">
+                                <a href="#method_addContent">addContent</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#method_alignHorizontal">alignHorizontal</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#method_alignVertical">alignVertical</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#method_applyStyles">applyStyles</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#method_centerBoth">centerBoth</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#method_centerHorizontal">centerHorizontal</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#method_centerVertical">centerVertical</a>
+
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#method_cleanCapabilityInstance">cleanCapabilityInstance</a>
+
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#method_createContainer">createContainer</a>
+
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#method_currentLayerPosition">currentLayerPosition</a>
+
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#method_getType">getType</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_initDwellTimeTracking">initDwellTimeTracking</a>
+
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#method_initializer">initializer</a>
+
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#method_play">play</a>
+
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#method_stop">stop</a>
+
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#method_updateLayerPosition">updateLayerPosition</a>
+
+                            </li>
+                    </ul>
+                </div>
+
+
+                <div class="index-section attrs">
+                    <h3>Attributes</h3>
+
+                    <ul class="index-list attrs">
+                            <li class="index-item attr public">
+                                <a href="#attr_alignH">alignH</a>
+                            </li>
+                            <li class="index-item attr public">
+                                <a href="#attr_alignV">alignV</a>
+                            </li>
+                            <li class="index-item attr">
+                                <a href="#attr_base">base</a>
+                            </li>
+                            <li class="index-item attr">
+                                <a href="#attr_capabilityInstances">capabilityInstances</a>
+                            </li>
+                            <li class="index-item attr">
+                                <a href="#attr_config">config</a>
+                            </li>
+                            <li class="index-item attr">
+                                <a href="#attr_container">container</a>
+                            </li>
+                            <li class="index-item attr">
+                                <a href="#attr_contentAppended">contentAppended</a>
+                            </li>
+                            <li class="index-item attr">
+                                <a href="#attr_coordinate">coordinate</a>
+                            </li>
+                            <li class="index-item attr">
+                                <a href="#attr_currentDevice">currentDevice</a>
+                            </li>
+                            <li class="index-item attr">
+                                <a href="#attr_dwelltime">dwelltime</a>
+                            </li>
+                            <li class="index-item attr">
+                                <a href="#attr_envToPlay">envToPlay</a>
+                            </li>
+                            <li class="index-item attr">
+                                <a href="#attr_layerName">layerName</a>
+                            </li>
+                            <li class="index-item attr">
+                                <a href="#attr_playing">playing</a>
+                            </li>
+                    </ul>
+                </div>
+
+        </div>
+
+            <div id="methods" class="api-class-tabpanel">
+                <h2 class="off-left">Methods</h2>
+
+<div id="method_addContent" class="method item public">
+    <h3 class="name"><code>addContent</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code class="optional">[content]</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+        <span class="flag public">public</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_core_ACT_layerStandard.js.html#l386"><code>src&#x2F;core&#x2F;ACT_layerStandard.js:386</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Add content directly or from config-object to layer container</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name optional">[content]</code>
+                        <span class="type">Element | String</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+                    <div class="param-description">
+                        <p>new content to add to layer container</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_alignHorizontal" class="method item private">
+    <h3 class="name"><code>alignHorizontal</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>config</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_core_ACT_layerStandard.js.html#l125"><code>src&#x2F;core&#x2F;ACT_layerStandard.js:125</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">config</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>Object for setting style</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Object</span>:
+                    <p>Object style</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_alignVertical" class="method item private">
+    <h3 class="name"><code>alignVertical</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>config</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_core_ACT_layerStandard.js.html#l139"><code>src&#x2F;core&#x2F;ACT_layerStandard.js:139</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">config</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>Object for setting style</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Object</span>:
+                    <p>Object style</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_applyStyles" class="method item private">
+    <h3 class="name"><code>applyStyles</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>config</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_core_ACT_layerStandard.js.html#l153"><code>src&#x2F;core&#x2F;ACT_layerStandard.js:153</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">config</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>Object for setting style</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Object</span>:
+                    <p>Object style</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_centerBoth" class="method item private">
+    <h3 class="name"><code>centerBoth</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>config</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_core_ACT_layerStandard.js.html#l100"><code>src&#x2F;core&#x2F;ACT_layerStandard.js:100</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Creating Css object for centering content in both horizontal and vertical coordinates</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">config</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>Style config for calculation</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Object</span>:
+                    <p>CSS object for applying center in both coordinates (horizonal and vertical)</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_centerHorizontal" class="method item private">
+    <h3 class="name"><code>centerHorizontal</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>config</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_core_ACT_layerStandard.js.html#l67"><code>src&#x2F;core&#x2F;ACT_layerStandard.js:67</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Creating Css object for centering content in horizontal coordinate</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">config</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>Style config for calculation</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Object</span>:
+                    <p>CSS object for applying center in horizontal coordinate</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_centerVertical" class="method item private">
+    <h3 class="name"><code>centerVertical</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>config</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_core_ACT_layerStandard.js.html#l84"><code>src&#x2F;core&#x2F;ACT_layerStandard.js:84</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Creating Css object for centering content in vertical coordinate</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">config</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>Style config for calculation</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Object</span>:
+                    <p>CSS object for applying center in vertical coordinate</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_cleanCapabilityInstance" class="method item public">
+    <h3 class="name"><code>cleanCapabilityInstance</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+        <span class="flag public">public</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_core_ACT_layerStandard.js.html#l468"><code>src&#x2F;core&#x2F;ACT_layerStandard.js:468</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Function to clean all capability instances belong to this layer</p>
+
+    </div>
+
+
+
+
+</div>
+<div id="method_createContainer" class="method item public">
+    <h3 class="name"><code>createContainer</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Element</span>
+        </span>
+
+
+        <span class="flag public">public</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_core_ACT_layerStandard.js.html#l358"><code>src&#x2F;core&#x2F;ACT_layerStandard.js:358</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Function to render layer container</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Element</span>:
+                    <p>node container</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_currentLayerPosition" class="method item public">
+    <h3 class="name"><code>currentLayerPosition</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Array</span>
+        </span>
+
+
+        <span class="flag public">public</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_core_ACT_layerStandard.js.html#l555"><code>src&#x2F;core&#x2F;ACT_layerStandard.js:555</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Get current position of the layer</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Array</span>:
+                    <p>Position X and Y. E.g [x, y]</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getType" class="method item public">
+    <h3 class="name"><code>getType</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">String</span>
+        </span>
+
+
+        <span class="flag public">public</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_core_ACT_layerStandard.js.html#l347"><code>src&#x2F;core&#x2F;ACT_layerStandard.js:347</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Method to return the type of the layer</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">String</span>:
+                    <p>type of the layer</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_initDwellTimeTracking" class="method item">
+    <h3 class="name"><code>initDwellTimeTracking</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_core_ACT_layerStandard.js.html#l566"><code>src&#x2F;core&#x2F;ACT_layerStandard.js:566</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Setup dwelltime tracking for the layer</p>
+
+    </div>
+
+
+
+
+</div>
+<div id="method_initializer" class="method item public">
+    <h3 class="name"><code>initializer</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>config</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+        <span class="flag public">public</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_core_ACT_layerStandard.js.html#l315"><code>src&#x2F;core&#x2F;ACT_layerStandard.js:315</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Function auto initiated when the class is instantiated</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">config</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_play" class="method item public">
+    <h3 class="name"><code>play</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+        <span class="flag public">public</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_core_ACT_layerStandard.js.html#l432"><code>src&#x2F;core&#x2F;ACT_layerStandard.js:432</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Function to play layer</p>
+
+    </div>
+
+
+
+
+</div>
+<div id="method_stop" class="method item public">
+    <h3 class="name"><code>stop</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>forceToDestroy</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+        <span class="flag public">public</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_core_ACT_layerStandard.js.html#l484"><code>src&#x2F;core&#x2F;ACT_layerStandard.js:484</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Function to stop layer</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">forceToDestroy</code>
+                        <span class="type">Boolean</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_updateLayerPosition" class="method item public">
+    <h3 class="name"><code>updateLayerPosition</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>callback</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+        <span class="flag public">public</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_core_ACT_layerStandard.js.html#l513"><code>src&#x2F;core&#x2F;ACT_layerStandard.js:513</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Function to update current layer position</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">callback</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>Function to be executed when the update finish</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+            </div>
+
+
+            <div id="attrs" class="api-class-tabpanel">
+                <h2 class="off-left">Attributes</h2>
+
+                    <div id="attr_alignH" class="attr item public">
+                        <a name="config_alignH"></a> 
+                        <h3 class="name"><code>alignH</code></h3>
+                        <span class="type">String</span>
+                    
+                    
+                            <span class="flag public">public</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_core_ACT_layerStandard.js.html#l266"><code>src&#x2F;core&#x2F;ACT_layerStandard.js:266</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>The alignH is used in anchor and overlay layers to define if posX should move the layer vertically from &#39;left&#39; or &#39;right&#39;. Default is &#39;left&#39;</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="attr_alignV" class="attr item public">
+                        <a name="config_alignV"></a> 
+                        <h3 class="name"><code>alignV</code></h3>
+                        <span class="type">String</span>
+                    
+                    
+                            <span class="flag public">public</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_core_ACT_layerStandard.js.html#l257"><code>src&#x2F;core&#x2F;ACT_layerStandard.js:257</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>The alignV is used in anchor and overlay layers to define if posY should move the layer vertically from &#39;top&#39; or &#39;bottom&#39;. Default is &#39;top&#39;</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> top</p>
+                    
+                    
+                    </div>
+                    <div id="attr_base" class="attr item">
+                        <a name="config_base"></a> 
+                        <h3 class="name"><code>base</code></h3>
+                        <span class="type">String</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_core_ACT_layerStandard.js.html#l227"><code>src&#x2F;core&#x2F;ACT_layerStandard.js:227</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Position to render layer, sShould be div id/class or body tag</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> body</p>
+                    
+                    
+                    </div>
+                    <div id="attr_capabilityInstances" class="attr item">
+                        <a name="config_capabilityInstances"></a> 
+                        <h3 class="name"><code>capabilityInstances</code></h3>
+                        <span class="type"></span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_core_ACT_layerStandard.js.html#l289"><code>src&#x2F;core&#x2F;ACT_layerStandard.js:289</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>List of capability instances rendered inside this layer</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="attr_config" class="attr item">
+                        <a name="config_config"></a> 
+                        <h3 class="name"><code>config</code></h3>
+                        <span class="type">Object</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_core_ACT_layerStandard.js.html#l206"><code>src&#x2F;core&#x2F;ACT_layerStandard.js:206</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Config Object for initializing layer instance</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> null</p>
+                    
+                    
+                    </div>
+                    <div id="attr_container" class="attr item">
+                        <a name="config_container"></a> 
+                        <h3 class="name"><code>container</code></h3>
+                        <span class="type">HTMLElement</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_core_ACT_layerStandard.js.html#l220"><code>src&#x2F;core&#x2F;ACT_layerStandard.js:220</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                            <p><strong>Default:</strong> null</p>
+                    
+                    
+                    </div>
+                    <div id="attr_contentAppended" class="attr item">
+                        <a name="config_contentAppended"></a> 
+                        <h3 class="name"><code>contentAppended</code></h3>
+                        <span class="type">Boolean</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_core_ACT_layerStandard.js.html#l282"><code>src&#x2F;core&#x2F;ACT_layerStandard.js:282</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                            <p><strong>Default:</strong> false</p>
+                    
+                    
+                    </div>
+                    <div id="attr_coordinate" class="attr item">
+                        <a name="config_coordinate"></a> 
+                        <h3 class="name"><code>coordinate</code></h3>
+                        <span class="type">String</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_core_ACT_layerStandard.js.html#l274"><code>src&#x2F;core&#x2F;ACT_layerStandard.js:274</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Only accept tl - tr - bl - br</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> tl</p>
+                    
+                    
+                    </div>
+                    <div id="attr_currentDevice" class="attr item">
+                        <a name="config_currentDevice"></a> 
+                        <h3 class="name"><code>currentDevice</code></h3>
+                        <span class="type">String</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_core_ACT_layerStandard.js.html#l250"><code>src&#x2F;core&#x2F;ACT_layerStandard.js:250</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                            <p><strong>Default:</strong> desktop</p>
+                    
+                    
+                    </div>
+                    <div id="attr_dwelltime" class="attr item">
+                        <a name="config_dwelltime"></a> 
+                        <h3 class="name"><code>dwelltime</code></h3>
+                        <span class="type"></span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_core_ACT_layerStandard.js.html#l295"><code>src&#x2F;core&#x2F;ACT_layerStandard.js:295</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Flag to indicate if the layer should be tracked by dwelltime or not</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> false</p>
+                    
+                    
+                    </div>
+                    <div id="attr_envToPlay" class="attr item">
+                        <a name="config_envToPlay"></a> 
+                        <h3 class="name"><code>envToPlay</code></h3>
+                        <span class="type">String</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_core_ACT_layerStandard.js.html#l243"><code>src&#x2F;core&#x2F;ACT_layerStandard.js:243</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                            <p><strong>Default:</strong> html</p>
+                    
+                    
+                    </div>
+                    <div id="attr_layerName" class="attr item">
+                        <a name="config_layerName"></a> 
+                        <h3 class="name"><code>layerName</code></h3>
+                        <span class="type">String</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_core_ACT_layerStandard.js.html#l214"><code>src&#x2F;core&#x2F;ACT_layerStandard.js:214</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="attr_playing" class="attr item">
+                        <a name="config_playing"></a> 
+                        <h3 class="name"><code>playing</code></h3>
+                        <span class="type">Boolean</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_core_ACT_layerStandard.js.html#l235"><code>src&#x2F;core&#x2F;ACT_layerStandard.js:235</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Attribute for keeping playing state of the layer</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> false</p>
+                    
+                    
+                    </div>
+            </div>
+
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

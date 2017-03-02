@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src/capabilities/ACT_contentThirdParty.js - ACT.js</title>
+    <link rel="stylesheet" href="https://s.yimg.com/zz/combo?yui-s:3.14.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="https://s.yimg.com/rz/l/favicon.ico">
+    <script src="https://s.yimg.com/zz/combo?yui-s:3.14.1/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../assets/css/logo.png" title="ACT.js" width="126" height="100"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 1.0.22</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                            <li><a href="#api-demos">Demo and Examples</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/ACT.html">ACT</a></li>
+                                <li><a href="../classes/ActionsQueue.html">ActionsQueue</a></li>
+                                <li><a href="../classes/Base.html">Base</a></li>
+                                <li><a href="../classes/Capability.html">Capability</a></li>
+                                <li><a href="../classes/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../classes/Class.html">Class</a></li>
+                                <li><a href="../classes/ContentAdfeedback.html">ContentAdfeedback</a></li>
+                                <li><a href="../classes/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../classes/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../classes/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../classes/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../classes/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../classes/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../classes/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../classes/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../classes/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../classes/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../classes/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../classes/ContentYtv.html">ContentYtv</a></li>
+                                <li><a href="../classes/Cookie.html">Cookie</a></li>
+                                <li><a href="../classes/CustomData.html">CustomData</a></li>
+                                <li><a href="../classes/Debug.html">Debug</a></li>
+                                <li><a href="../classes/Dom.html">Dom</a></li>
+                                <li><a href="../classes/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../classes/Enabler.html">Enabler</a></li>
+                                <li><a href="../classes/Environment.html">Environment</a></li>
+                                <li><a href="../classes/Event.html">Event</a></li>
+                                <li><a href="../classes/Flash.html">Flash</a></li>
+                                <li><a href="../classes/IO.html">IO</a></li>
+                                <li><a href="../classes/Json.html">Json</a></li>
+                                <li><a href="../classes/Lang.html">Lang</a></li>
+                                <li><a href="../classes/LayersList.html">LayersList</a></li>
+                                <li><a href="../classes/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../classes/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../classes/Screen.html">Screen</a></li>
+                                <li><a href="../classes/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../classes/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../classes/Tracking.html">Tracking</a></li>
+                                <li><a href="../classes/UA.html">UA</a></li>
+                                <li><a href="../classes/Util.html">Util</a></li>
+                                <li><a href="../classes/VideoEvents.html">VideoEvents</a></li>
+                            </ul>
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/ACT.html">ACT</a></li>
+                                <li><a href="../modules/actionsQueue.html">actionsQueue</a></li>
+                                <li><a href="../modules/Base.html">Base</a></li>
+                                <li><a href="../modules/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../modules/ContentAdfeedback.html">ContentAdfeedback</a></li>
+                                <li><a href="../modules/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../modules/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../modules/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../modules/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../modules/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../modules/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../modules/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../modules/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../modules/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../modules/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../modules/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../modules/ContentYtv.html">ContentYtv</a></li>
+                                <li><a href="../modules/Cookie.html">Cookie</a></li>
+                                <li><a href="../modules/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../modules/Enabler.html">Enabler</a></li>
+                                <li><a href="../modules/environment.html">environment</a></li>
+                                <li><a href="../modules/IO.html">IO</a></li>
+                                <li><a href="../modules/LayersList.html">LayersList</a></li>
+                                <li><a href="../modules/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../modules/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../modules/Screen.html">Screen</a></li>
+                                <li><a href="../modules/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../modules/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../modules/Tracking.html">Tracking</a></li>
+                            </ul>
+                
+                            <ul id="api-demos" class="apis demos">
+                                <li><a href="../demo/ACT_Demo_300x250.html">300x250</a></li>
+                                <li><a href="../demo/ACT_Demo_300x250_tracking.html">300x250_tracking</a></li>
+                                <li><a href="../demo/ACT_Demo_TrackingExample.html">TrackingExample</a></li>
+                                <li><a href="../demo/ACT_Demo_animation.html">animation</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard.html">billboard</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-enabler.html">billboard-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-expandable-enabler.html">billboard-expandable-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video.html">billboard_html_video</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video_rtl.html">billboard_html_video_rtl</a></li>
+                                <li><a href="../demo/ACT_Demo_carousel.html">carousel</a></li>
+                                <li><a href="../demo/ACT_Demo_dwelltime.html">dwelltime</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_expand.html">enabler_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_fullscreen_expand.html">enabler_fullscreen_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_target.html">enabler_target</a></li>
+                                <li><a href="../demo/ACT_Demo_floating.html">floating</a></li>
+                                <li><a href="../demo/ACT_Demo_force_env.html">force_env</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_enabler.html">html5_enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_standard.html">html5_standard</a></li>
+                                <li><a href="../demo/ACT_Demo_icons.html">icons</a></li>
+                                <li><a href="../demo/ACT_Demo_input_data.html">input_data</a></li>
+                                <li><a href="../demo/ACT_Demo_login_html.html">login_html</a></li>
+                                <li><a href="../demo/ACT_Demo_overwrite_env.html">overwrite_env</a></li>
+                                <li><a href="../demo/ACT_Demo_splash_ad.html">splash_ad</a></li>
+                                <li><a href="../demo/ACT_Demo_tablet_expandable.html">tablet_expandable</a></li>
+                                <li><a href="../demo/ACT_Demo_video_event.html">video_event</a></li>
+                                <li><a href="../demo/ACT_Demo_video_html.html">video_html</a></li>
+                            </ul>
+                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: src/capabilities/ACT_contentThirdParty.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+ * Copyright 2016, Yahoo Inc.
+ * Copyrights licensed under the New BSD License.
+ * See the accompanying LICENSE file for terms.
+ */
+
+/* global ACT */
+/**
+ * The &#x27;ContentThirdParty&#x27; is a capability made to generate a &#x27;DIV&#x27; or an &#x27;IFRAME&#x27; tag use as a container for a third party element.
+ *
+ * Available &#x27;actions&#x27;:
+ * - thirdpartyStart
+ * - thirdpartyStop
+ * - thirdpartyBroadcast
+ *
+ * Available &#x27;triggers&#x27; for thirdparty tag:
+ * - expandEvent
+ * - contractEvent
+ * - closeEvent
+ * - openEvent
+ *
+ *
+ * Example of &#x27;SuperConf&#x27; use case:
+ *
+ *      {
+ *          id: &#x27;thirdparty_container&#x27;,
+ *          type: &#x27;content-thirdparty&#x27;,
+ *          classNode: &#x27;thirdparty_class&#x27;,
+ *          env: [&#x27;html&#x27;,&#x27;flash&#x27;],
+ *          css: {
+ *              width:&#x27;970px&#x27;,
+ *              height:&#x27;250px&#x27;
+ *          },
+ *          thirdPartyConfig:{
+ *              id: &#x27;thirparty-id&#x27;,
+ *              iframe: true
+ *          },
+ *          eventActions: [{
+ *              eventType: &#x27;expandEvent&#x27;,
+ *              actions: [
+ *                  {
+ *                      type: &#x27;thirdpartyStart&#x27;,
+ *                      to: &#x27;thirdparty_container&#x27;
+ *                  },
+ *                  {
+ *                      type: &#x27;thirdpartyBroadcast&#x27;,
+ *                      to: &#x27;thirdparty_container&#x27;,
+ *                      name: &#x27;expandedEvent&#x27;
+ *                  }
+ *              ]
+ *          }, {
+ *              eventType: &#x27;contractEvent&#x27;,
+ *              actions: [
+ *                  {
+ *                      type: &#x27;thirdpartyStop&#x27;,
+ *                      id: &#x27;thirdparty_container&#x27;
+ *                  },
+ *                  {
+ *                      type: &#x27;thirdpartyBroadcast&#x27;,
+ *                      to: &#x27;thirdparty_container&#x27;,
+ *                      name: &#x27;contractedEvent&#x27;
+ *                  }
+ *              ]
+ *          }]
+ *      }
+ *
+ * @module ContentThirdParty
+ * @main ContentThirdParty
+ * @class ContentThirdParty
+ * @requires UA, Dom, lang, Event, Class, Capability
+ * @global
+ */
+ACT.define(&#x27;ContentThirdParty&#x27;, [/*@&lt;*/&#x27;Debug&#x27;, /*&gt;@*/ &#x27;UA&#x27;, &#x27;Dom&#x27;, &#x27;Lang&#x27;, &#x27;Event&#x27;, &#x27;Class&#x27;, &#x27;Capability&#x27;], function (ACT) {
+    &#x27;use strict&#x27;;
+
+    /* Shorthand */
+    var UA = ACT.UA;
+    var Dom = ACT.Dom;
+    var Lang = ACT.Lang;
+    var Class = ACT.Class;
+    var Event = ACT.Event;
+    var Capability = ACT.Capability;
+
+    var EVENT_THIRDPARTY_BROADCAST = &#x27;thirdparty:broadcast&#x27;;
+    var EVENT_THIRDPARTY_START = &#x27;thirdparty:start&#x27;;
+    var EVENT_THIRDPARTY_STOP = &#x27;thirdparty:stop&#x27;;
+
+    var EVENT_GLOBAL_ACTION_COMPLETE = &#x27;complete:action&#x27;;
+    var EVENT_GLOBAL_SCREEN_STATUS = &#x27;screen:status&#x27;;
+    var EVENT_GLOBAL_STOP_CONTENT = &#x27;STOP_CONTENT&#x27;;
+
+    var DEFAULT_CUSTOM_EVENT = {
+        expandEvent: &#x27;expandedEvent&#x27;,
+        contractEvent: &#x27;contractedEvent&#x27;,
+        closeEvent: &#x27;closedEvent&#x27;,
+        openEvent: &#x27;openedEvent&#x27;
+    };
+
+    var contentActions = [{
+        type: &#x27;thirdpartyStart&#x27;,
+        argument: {
+            to: {
+                name: &#x27;to&#x27;,
+                test: function (value) {
+                    return Lang.isString(value);
+                }
+            },
+            timeout: {
+              name: &#x27;timeout&#x27;,
+              test: function (value) {
+                return Lang.isNumber(value) || value === undefined || value === null;
+              }
+            }
+        },
+        process: function (actionId, args) {
+            Event.fire(EVENT_THIRDPARTY_START, {
+                containerId: args.to
+            });
+            Event.fire(EVENT_GLOBAL_ACTION_COMPLETE, actionId);
+        }
+    }, {
+        type: &#x27;thirdpartyStop&#x27;,
+        argument: {
+            to: {
+                name: &#x27;to&#x27;,
+                test: function (value) {
+                    return Lang.isString(value);
+                }
+            },
+            timeout: {
+              name: &#x27;timeout&#x27;,
+              test: function (value) {
+                return Lang.isNumber(value) || value === undefined || value === null;
+              }
+            }
+        },
+        process: function (actionId, args) {
+            Event.fire(EVENT_THIRDPARTY_STOP, {
+                containerId: args.to
+            });
+            Event.fire(EVENT_GLOBAL_ACTION_COMPLETE, actionId);
+        }
+    }, {
+        type: &#x27;thirdpartyBroadcast&#x27;,
+        argument: {
+            to: {
+                name: &#x27;to&#x27;,
+                test: function (value) {
+                    return Lang.isString(value);
+                }
+            },
+            name: {
+                name: &#x27;name&#x27;,
+                test: function (value) {
+                    return Lang.isString(value);
+                }
+            },
+            timeout: {
+              name: &#x27;timeout&#x27;,
+              test: function (value) {
+                return Lang.isNumber(value) || value === undefined || value === null;
+              }
+            }
+        },
+        process: function (actionId, args) {
+            Event.fire(EVENT_THIRDPARTY_BROADCAST, {
+                containerId: args.to,
+                name: args.name
+            });
+            Event.fire(EVENT_GLOBAL_ACTION_COMPLETE, actionId);
+        }
+    }];
+
+    /*@&lt;*/
+    var Debug = ACT.Debug;
+    Debug.log(&#x27;ContentThirdParty Loaded&#x27;);
+    /*&gt;@*/
+
+    /**
+     * @constructor
+     */
+    function ContentThirdParty(config) {
+        this.init(config);
+        // ContentThirdParty.superclass.constructor.apply(this, arguments);
+    }
+
+    ContentThirdParty.ATTRS = {
+        /**
+         * @attribute NAME
+         * @type String
+         */
+        NAME: &#x27;ContentThirdParty&#x27;,
+
+        /**
+         * @attribute version
+         * @type String
+         */
+        version: &#x27;1.0.41&#x27;,
+
+        /**
+         * @attribute configObject
+         * @type Object
+         */
+        configObject: {},
+
+        /**
+         * @attribute node
+         * @type HTMLElement
+         */
+        node: null
+    };
+
+    /* Private methods */
+
+    /**
+     * Generate the node div tag with params
+     *
+     * @method renderDiv
+     * @private
+     * @param {Object} config
+     * @param {HTMLElement} thirdParty
+     * @return {HTMLElement}
+     */
+    function renderDiv(config, thirdParty) {
+        thirdParty.style.display = &#x27;&#x27;;
+        thirdParty.setAttribute(&#x27;id&#x27;, config.id);
+        return thirdParty;
+    }
+
+    /**
+     * Function to uncomment tags of string format
+     * @method trimAndUncommentTags
+     * @private
+     * @param {String} tag
+     * @retun {String} trimmed tag
+     *
+     */
+    function trimAndUncommentTags(tag) {
+        if (tag.substr(0, 4) === &#x27;&lt;!--&#x27; &amp;&amp; tag.substr(tag.length - 3, 3) === &#x27;--&gt;&#x27;) {
+            tag = tag.substr(4);
+            tag = tag.substring(0, tag.length - 3);
+        }
+        return tag;
+    }
+
+    /**
+     * Generate the node iframe tag with params
+     *
+     * @method renderIframe
+     * @private
+     * @param {Object} config
+     * @param {HTMLElement} thirdParty
+     * @return {HTMLElement}
+     */
+    function renderIframe(config, thirdParty) {
+        var iframe = document.createElement(&#x27;iframe&#x27;);
+        var load;
+        iframe.setAttribute(&#x27;id&#x27;, config.id);
+        iframe.setAttribute(&#x27;marginwidth&#x27;, 0);
+        iframe.setAttribute(&#x27;marginheight&#x27;, 0);
+        iframe.setAttribute(&#x27;hspace&#x27;, 0);
+        iframe.setAttribute(&#x27;vspace&#x27;, 0);
+        iframe.setAttribute(&#x27;frameborder&#x27;, 0);
+        iframe.setAttribute(&#x27;scrolling&#x27;, &#x27;no&#x27;);
+
+        if (config.thirdPartyConfig.src !== undefined &amp;&amp; config.thirdPartyConfig.src !== &#x27;&#x27;) {
+            iframe.setAttribute(&#x27;src&#x27;, config.thirdPartyConfig.src);
+            return iframe;
+        }
+
+        load = function () {
+            if (UA.ie === 8) {
+                iframe.detachEvent(&#x27;onload&#x27;, load, false);
+            } else {
+                iframe.onload = null;
+            }
+
+            setTimeout(function () {
+                var iframeContent = (iframe.contentWindow || iframe.contentDocument);
+                var iframeDocument = (iframeContent.document) ? iframeContent.document : iframeContent;
+                var code = (UA.ie === 8) ? thirdParty.childNodes[0].innerHTML : thirdParty.innerHTML;
+                code = trimAndUncommentTags(code.replace(/^[\s\uFEFF]+|[\s\uFEFF]+$/g, &#x27;&#x27;));
+
+                if (!UA.ie) {
+                    iframeDocument.open();
+                }
+                iframeDocument.write(&#x27;&lt;body&gt;&#x27; + code + &#x27;&lt;/body&gt;&#x27;);
+                if (!UA.ie) {
+                    iframeDocument.close();
+                }
+            }, 1);
+        };
+
+        if (UA.ie === 8) {
+            iframe.attachEvent(&#x27;onload&#x27;, load, false);
+        } else {
+            iframe.onload = load;
+        }
+
+        return iframe;
+    }
+
+    /**
+     * @method genarateEventActions
+     * @private
+     * @param {Object} eventActions
+     */
+    function genarateEventActions(eventActions, callback) {
+        var name;
+        var action;
+        /* istanbul ignore next */
+        if (typeof eventActions !== &#x27;object&#x27;) {
+            return;
+        }
+
+        for (name in eventActions) {
+            if (eventActions.hasOwnProperty(name)) {
+                action = eventActions[name];
+                callback(action);
+            }
+        }
+    }
+
+    /**
+     * Create custom event cross browser
+     * @param {String} eventName Event to trigger on
+     * @param {Object} subscriber Dom element
+     * @method create
+     * @private
+     */
+    function create(eventName, subscriber) {
+        var element = subscriber || document;
+
+        /* istanbul ignore else */
+        if (document.createEvent) {
+            element[eventName] = document.createEvent(&#x27;Event&#x27;);
+            element[eventName].initEvent(&#x27;thirdparty:&#x27; + eventName, true, true);
+        } else if (document.createEventObject) {
+            element[eventName] = document.createEventObject();
+            element[eventName].eventType = &#x27;thirdparty:&#x27; + eventName;
+        }
+    }
+
+    /**
+     * Listen to event cross browser
+     * @param {String} eventName
+     * @param {String} callback
+     * @method listen
+     * @private
+     */
+    function listen(eventName, callback, subscriber) {
+        var element = subscriber || document;
+
+        /* istanbul ignore else */
+        if (document.addEventListener) {
+            element.addEventListener(&#x27;thirdparty:&#x27; + eventName, callback, false);
+        } else {
+            element.documentElement.attachEvent(&#x27;onpropertychange&#x27;, function (e) {
+                if (e.propertyName === (&#x27;thirdparty:&#x27; + eventName)) {
+                    callback();
+                }
+            });
+        }
+    }
+
+    /**
+     * @method subscribeActionToCustomEvent
+     * @private
+     * @param {Object} action
+     */
+    function subscribeActionToCustomEvent(action) {
+        if (DEFAULT_CUSTOM_EVENT.hasOwnProperty(action.eventType)) {
+            create(DEFAULT_CUSTOM_EVENT[action.eventType], window);
+            create(action.eventType, window);
+            listen(action.eventType, function () {
+                Event.fire(&#x27;add:actions&#x27;, action.actions);
+            });
+        }
+    }
+
+    /**
+     * Dispatch event cross browser
+     * @param {String} event
+     * @method dispatch
+     * @private
+     */
+    function dispatch(event, subscriber) {
+        var element = subscriber || document;
+
+        /* istanbul ignore else */
+        if (document.dispatchEvent) {
+            element.dispatchEvent(event);
+        } else {
+            element.documentElement[event.eventType]++;
+        }
+    }
+
+    /* Public methods */
+    Lang.extend(ContentThirdParty, [Capability, Class], {
+        /**
+         * Function auto initiated when the class is instantiated
+         * @method initializer
+         * @public
+         * @param {Object} config
+         */
+        initializer: function (config) {
+            /* Set ID */
+            this.set(&#x27;nodeId&#x27;, config.id);
+
+            /* Store the  configObject */
+            this.set(&#x27;configObject&#x27;, config);
+
+            /* Subscribe listeners */
+            this.initializeListeners();
+
+            /* Register actions */
+            Event.fire(&#x27;register:Actions&#x27;, contentActions);
+        },
+
+        /**
+         * Function to initialize event listeners for this instance
+         *
+         * @method initializeListeners
+         */
+        initializeListeners: function () {
+            var root = this;
+
+            root.addEventListeners(
+                Event.on(EVENT_THIRDPARTY_START, function (eventData) {
+                    if (root.get(&#x27;nodeId&#x27;) === eventData.containerId) {
+                        root.startThirdParty();
+                    }
+                }),
+                Event.on(EVENT_THIRDPARTY_STOP, function (eventData) {
+                    if (root.get(&#x27;nodeId&#x27;) === eventData.containerId) {
+                        root.stopThirdParty();
+                    }
+                }),
+                Event.on(EVENT_THIRDPARTY_BROADCAST, function (eventData) {
+                    if (root.get(&#x27;nodeId&#x27;) === eventData.containerId) {
+                        root.broadcastThirdParty(eventData.name);
+                    }
+                }),
+                Event.on(EVENT_GLOBAL_SCREEN_STATUS, function (status) {
+                    if (root.get(&#x27;configObject&#x27;) &amp;&amp; root.get(&#x27;configObject&#x27;).resize) {
+                        root.resize(status, root.get(&#x27;configObject&#x27;));
+                    }
+                }),
+                // TODO: Possibly add this to Class as well.
+                Event.on(EVENT_GLOBAL_STOP_CONTENT, function () {
+                    root.stopThirdParty();
+                })
+            );
+        },
+
+        /**
+         * Start the third party
+         * @method startThirdParty
+         */
+        startThirdParty: function () {
+            var iframe = this.get(&#x27;node&#x27;);
+            var config = this.get(&#x27;configObject&#x27;);
+            var iframeContent;
+
+            if (config.thirdPartyConfig.hasOwnProperty(&#x27;iframe&#x27;) &amp;&amp; config.thirdPartyConfig.iframe &amp;&amp; iframe) {
+                iframeContent = (iframe.contentWindow || iframe.contentDocument);
+                iframeContent.postMessage(
+                    &#x27;YahooVideoStart&#x27;,
+                    &#x27;*&#x27;
+                );
+            }
+        },
+
+        /**
+         * Stop the third party
+         * @method stopThirdParty
+         */
+        stopThirdParty: function () {
+            var iframe = this.get(&#x27;node&#x27;);
+            var config = this.get(&#x27;configObject&#x27;);
+            var iframeContent;
+
+            if (config.thirdPartyConfig.hasOwnProperty(&#x27;iframe&#x27;) &amp;&amp; config.thirdPartyConfig.iframe &amp;&amp; iframe) {
+                iframeContent = (iframe.contentWindow || iframe.contentDocument);
+                iframeContent.postMessage(
+                    &#x27;YahooVideoPause&#x27;,
+                    &#x27;*&#x27;
+                );
+            }
+        },
+
+        /**
+         * Broadcast to third party
+         * @method broadcastThirdParty
+         */
+        broadcastThirdParty: function (name) {
+            if (typeof window[name] === &#x27;object&#x27;) {
+                dispatch(window[name]);
+            }
+        },
+
+        /**
+         * Function called when the instance is destroyed
+         * @method destructor
+         * @public
+         */
+        destructor: function () {
+            var node = this.get(&#x27;node&#x27;);
+
+            /* Remove the node from the DOM */
+            if (Dom.isDomElement(node) &amp;&amp; node.parentNode) {
+                node.parentNode.removeChild(node);
+            }
+        },
+
+        /**
+         * Render the node from given config object, environment and orientation state
+         *
+         * @method renderContent
+         * @param {Object} configObject
+         * @param {String} env
+         * @param {String} orientation
+         * @return {HTMLElement} node
+         */
+        renderContent: function (configObject) {
+            var thirdParty = document.getElementById(configObject.thirdPartyConfig.id);
+            var node = (configObject.thirdPartyConfig.iframe) ? renderIframe(configObject, thirdParty) : renderDiv(configObject, thirdParty);
+
+            genarateEventActions(configObject.eventActions, subscribeActionToCustomEvent);
+            node = this.applyNodeConfig(node, configObject);
+            return node;
+        },
+        /**
+         * Function generating the node &#x27;OBJECT&#x27;
+         * @method getContent
+         * @public
+         * @param {String} env Environment for rendering content such as html/flash/backup
+         * @param {String} orientation Orientation of current device such as landscape and portraits for mobile
+         * @return {Object}
+         */
+        getContent: function (env, orientation) {
+            var node = this.renderContent(this.get(&#x27;configObject&#x27;), env, orientation);
+            this.set(&#x27;node&#x27;, node);
+
+            return {
+                node: node
+            };
+        }
+    });
+
+    return ContentThirdParty;
+});
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

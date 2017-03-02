@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src/core/ACT_environment.js - ACT.js</title>
+    <link rel="stylesheet" href="https://s.yimg.com/zz/combo?yui-s:3.14.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="https://s.yimg.com/rz/l/favicon.ico">
+    <script src="https://s.yimg.com/zz/combo?yui-s:3.14.1/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../assets/css/logo.png" title="ACT.js" width="126" height="100"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 1.0.22</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                            <li><a href="#api-demos">Demo and Examples</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/ACT.html">ACT</a></li>
+                                <li><a href="../classes/ActionsQueue.html">ActionsQueue</a></li>
+                                <li><a href="../classes/Base.html">Base</a></li>
+                                <li><a href="../classes/Capability.html">Capability</a></li>
+                                <li><a href="../classes/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../classes/Class.html">Class</a></li>
+                                <li><a href="../classes/ContentAdfeedback.html">ContentAdfeedback</a></li>
+                                <li><a href="../classes/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../classes/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../classes/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../classes/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../classes/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../classes/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../classes/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../classes/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../classes/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../classes/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../classes/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../classes/ContentYtv.html">ContentYtv</a></li>
+                                <li><a href="../classes/Cookie.html">Cookie</a></li>
+                                <li><a href="../classes/CustomData.html">CustomData</a></li>
+                                <li><a href="../classes/Debug.html">Debug</a></li>
+                                <li><a href="../classes/Dom.html">Dom</a></li>
+                                <li><a href="../classes/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../classes/Enabler.html">Enabler</a></li>
+                                <li><a href="../classes/Environment.html">Environment</a></li>
+                                <li><a href="../classes/Event.html">Event</a></li>
+                                <li><a href="../classes/Flash.html">Flash</a></li>
+                                <li><a href="../classes/IO.html">IO</a></li>
+                                <li><a href="../classes/Json.html">Json</a></li>
+                                <li><a href="../classes/Lang.html">Lang</a></li>
+                                <li><a href="../classes/LayersList.html">LayersList</a></li>
+                                <li><a href="../classes/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../classes/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../classes/Screen.html">Screen</a></li>
+                                <li><a href="../classes/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../classes/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../classes/Tracking.html">Tracking</a></li>
+                                <li><a href="../classes/UA.html">UA</a></li>
+                                <li><a href="../classes/Util.html">Util</a></li>
+                                <li><a href="../classes/VideoEvents.html">VideoEvents</a></li>
+                            </ul>
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/ACT.html">ACT</a></li>
+                                <li><a href="../modules/actionsQueue.html">actionsQueue</a></li>
+                                <li><a href="../modules/Base.html">Base</a></li>
+                                <li><a href="../modules/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../modules/ContentAdfeedback.html">ContentAdfeedback</a></li>
+                                <li><a href="../modules/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../modules/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../modules/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../modules/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../modules/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../modules/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../modules/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../modules/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../modules/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../modules/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../modules/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../modules/ContentYtv.html">ContentYtv</a></li>
+                                <li><a href="../modules/Cookie.html">Cookie</a></li>
+                                <li><a href="../modules/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../modules/Enabler.html">Enabler</a></li>
+                                <li><a href="../modules/environment.html">environment</a></li>
+                                <li><a href="../modules/IO.html">IO</a></li>
+                                <li><a href="../modules/LayersList.html">LayersList</a></li>
+                                <li><a href="../modules/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../modules/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../modules/Screen.html">Screen</a></li>
+                                <li><a href="../modules/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../modules/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../modules/Tracking.html">Tracking</a></li>
+                            </ul>
+                
+                            <ul id="api-demos" class="apis demos">
+                                <li><a href="../demo/ACT_Demo_300x250.html">300x250</a></li>
+                                <li><a href="../demo/ACT_Demo_300x250_tracking.html">300x250_tracking</a></li>
+                                <li><a href="../demo/ACT_Demo_TrackingExample.html">TrackingExample</a></li>
+                                <li><a href="../demo/ACT_Demo_animation.html">animation</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard.html">billboard</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-enabler.html">billboard-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-expandable-enabler.html">billboard-expandable-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video.html">billboard_html_video</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video_rtl.html">billboard_html_video_rtl</a></li>
+                                <li><a href="../demo/ACT_Demo_carousel.html">carousel</a></li>
+                                <li><a href="../demo/ACT_Demo_dwelltime.html">dwelltime</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_expand.html">enabler_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_fullscreen_expand.html">enabler_fullscreen_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_target.html">enabler_target</a></li>
+                                <li><a href="../demo/ACT_Demo_floating.html">floating</a></li>
+                                <li><a href="../demo/ACT_Demo_force_env.html">force_env</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_enabler.html">html5_enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_standard.html">html5_standard</a></li>
+                                <li><a href="../demo/ACT_Demo_icons.html">icons</a></li>
+                                <li><a href="../demo/ACT_Demo_input_data.html">input_data</a></li>
+                                <li><a href="../demo/ACT_Demo_login_html.html">login_html</a></li>
+                                <li><a href="../demo/ACT_Demo_overwrite_env.html">overwrite_env</a></li>
+                                <li><a href="../demo/ACT_Demo_splash_ad.html">splash_ad</a></li>
+                                <li><a href="../demo/ACT_Demo_tablet_expandable.html">tablet_expandable</a></li>
+                                <li><a href="../demo/ACT_Demo_video_event.html">video_event</a></li>
+                                <li><a href="../demo/ACT_Demo_video_html.html">video_html</a></li>
+                            </ul>
+                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: src/core/ACT_environment.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+ * Copyright 2016, Yahoo Inc.
+ * Copyrights licensed under the New BSD License.
+ * See the accompanying LICENSE file for terms.
+ */
+
+/**
+ * Force browsers to play specific environments based on their capabilities,
+ * currently environment supported are flash, html, backup.
+ * &lt;br/&gt;
+ * __Default__ playing order is: HTML5 =&gt; Backup
+ * In order to play flash, it must be force it
+ * &lt;br/&gt;
+ *
+ * Steps to follow in order to force an environment:
+ * &lt;br/&gt;
+ * Add browser to be forced into configuration-object:
+ *
+ *     forceEnv = {
+ *         forcedBackupList: {
+ *             FireFox: &quot;*&quot;,
+ *         },
+ *         forcedFlashList: {
+ *             Safari: &quot;*&quot;
+ *         },
+ *             forcedHTML5List: {
+ *         },
+ *         forcedMobileList: {
+ *         },
+ *         forcedTabletList: {
+ *         }
+ *     };
+ *
+ * Add environment into capabilities env array, to associate them.
+ *
+ * Browser can be chosen by using the following options:
+ *
+ * All the browser versions:
+ *
+ *     // &lt;browser-name&gt;: &#x27;*&#x27;
+ *     Firefox: &#x27;*&#x27;
+ *
+ * Specific browser version:
+ *
+ *     // &lt;browser-name&gt;: &#x27;&lt;browser-version&gt;&#x27;
+ *     Firefox: &#x27;30&#x27;
+ *
+ * Greate than a version:
+ *
+ *      // &lt;browser-name&gt;: &#x27;&gt;=&lt;browser-version&gt;&#x27;
+ *      Firefox: &#x27;&gt;=30&#x27;
+ *
+ * Lower than a version:
+ *
+ *     // &lt;browser-name&gt;: &#x27;&lt;=&lt;browser-version&gt;&#x27;
+ *     Firefox: &#x27;&lt;=30&#x27;
+ *
+ * List of browser versions:
+ *
+ *     // &lt;browser-name&gt;: &#x27;&lt;browser-version0&gt;,&lt;browser-version1&gt;,&lt;browser-version2&gt;&#x27;
+ *     Firefox: &#x27;30,31,33&#x27;
+ *
+ * @module environment
+ * @main Environment
+ * @class Environment
+ * @requires Event,Lang, Class, UA
+ * @global
+ */
+
+/* global ACT */
+ACT.define(&#x27;Environment&#x27;, [/*@&lt;*/&#x27;Debug&#x27;, /*&gt;@*/ &#x27;Lang&#x27;, &#x27;Event&#x27;, &#x27;Class&#x27;, &#x27;UA&#x27;], function (ACT) {
+    &#x27;use strict&#x27;;
+
+    var Lang = ACT.Lang;
+    var Event = ACT.Event;
+    var Class = ACT.Class;
+    var UA = ACT.UA;
+
+    var ALLBROWSERS = &#x27;allBrowsers&#x27;;
+
+    /*@&lt;*/
+    var Debug = ACT.Debug;
+    Debug.log(&#x27;[ ACT_environment.js ]: loaded&#x27;);
+    /*&gt;@*/
+
+    /**
+     * @class Environment
+     * @param {Object} config
+     */
+    function Environment(config) {
+        this.init(config);
+        // Environment.superclass.constructor.apply(this, arguments);
+    }
+
+    /**
+     * Class&#x27; attribute list
+     */
+    Environment.ATTRS = {
+        NAME: &#x27;Environment&#x27;,
+        version: &#x27;1.0.41&#x27;,
+        forceEnv: {},
+        forcedFlash: {},
+        forcedHTML5: {},
+        forcedBackup: {},
+        forcedMobile: {},
+        forcedTablet: {},
+        currentEnvPlaying: &#x27;&#x27;
+    };
+
+    /**
+     * Force browser by list of browser versions,
+     * @method forceByBrowserVersion
+     * @param {String} listBrowsers List of browser versions to be forced browser to it
+     * @private
+     */
+    function forceByBrowserVersion(listBrowsers) {
+        var arrayBrowsers = listBrowsers.split(&#x27;,&#x27;);
+        var currentBrowser = parseInt(UA.browser.version, 10);
+        var itor;
+
+        for (itor = 0; itor &lt; arrayBrowsers.length; itor++) {
+            if (parseInt(arrayBrowsers[itor], 10) === currentBrowser) {
+                // found the browser version, dont need to go further with the loop
+                return true;
+            }
+        }
+        return false;
+    }
+
+    function testCases(attr) {
+        /* A list of tokens in an array, guarantees proper traversal in order.
+           This way, we never match &#x27;&lt;&#x27; before &#x27;&lt;=&#x27; */
+        var tokens = [&#x27;*&#x27;, &#x27;&lt;=&#x27;, &#x27;&gt;=&#x27;, &#x27;&lt;&#x27;, &#x27;&gt;&#x27;];
+        var currentBrowserVersion = parseInt(UA.browser.version, 10);
+        var itor;
+        var userSelectedBrowserVersion;
+        var myToken;
+        for (itor = 0; itor &lt; tokens.length; itor++) {
+            myToken = tokens[itor];
+            if (attr.indexOf(myToken) === 0) {
+                userSelectedBrowserVersion = parseInt(attr.replace(myToken, &#x27;&#x27;), 10);
+                /* It&#x27;s possible to use &#x27;eval&#x27; here and skip the switch statement.
+                    I&#x27;m not a big fan of using eval though, so switch it is.
+                    Example of using eval :
+                    if( myToken === &#x27;*&#x27;) {
+                        return true
+                    } else {
+                        return eval ( currentBrowserVersion + myToken  + userSelectedBrowserVersion );
+                    }
+                */
+                switch (myToken) {
+                    case &#x27;*&#x27;:
+                        return true;
+                    case &#x27;&lt;=&#x27;:
+                        return currentBrowserVersion &lt;= userSelectedBrowserVersion;
+                    case &#x27;&gt;=&#x27;:
+                        return currentBrowserVersion &gt;= userSelectedBrowserVersion;
+                    case &#x27;&lt;&#x27;:
+                        return currentBrowserVersion &lt; userSelectedBrowserVersion;
+                    case &#x27;&gt;&#x27;:
+                        return currentBrowserVersion &gt; userSelectedBrowserVersion;
+                    default:
+                        continue;
+                }
+            }
+        }
+        /* A single digit string &#x27;var digit = &#x27;5&#x27;; digit.split(&#x27;,&#x27;) === [&#x27;5&#x27;]; */
+        return forceByBrowserVersion(attr);
+    }
+
+    /**
+     * Private function which is used to check the current browser against forcedHTML5List,
+     * forcedFlashList and forcedBackupList lists. And returns true/false whether or not the current browser should be
+     * forced to play a specific build type i.e. Flash/HTML or the backup.
+     * @method forceBrowser
+     * @param {Object} forcedObj This is the object (list of browser) which is passed in to check whether
+     * or not the current browser is on the list of browsers passed in. If it is the it returns true or false.
+     * In the initializer this function is used 3 times when forcedHTML5List, forcedFlashList and forcedBackupList are passed in as forcedObj.
+     * @private
+     * @type Function
+     */
+    function forceBrowser(forcedObj) {
+        var allBrowsersShortHand = ALLBROWSERS.toLowerCase();
+        var currentBrowserName = UA.browser.name.toLowerCase();
+        var itor;
+
+        for (itor in forcedObj) {
+            /* istanbul ignore else */
+            if (forcedObj.hasOwnProperty(itor)) {
+                /* force all the browsers */
+                if (itor.toLowerCase() === allBrowsersShortHand) {
+                    return true;
+                }
+                /* if it&#x27;s not current browser, jump to the next case */
+                if (itor.toLowerCase() !== currentBrowserName) {
+                    continue;
+                }
+                /* istanbul ignore else */
+                if (testCases(forcedObj[itor]) === true) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Class prototypes
+     */
+    Lang.extend(Environment, Class, {
+
+        initializer: function (/* config */) {
+            var root = this;
+            root.forceEnv();
+            root.addEventListeners(
+                Event.on(&#x27;env:envRendered&#x27;, function () {
+                    /*@&lt;*/
+                    Debug.log(&#x27;[ ACT_environment.js ] env:envRendered: &#x27;, root.get(&#x27;currentEnvPlaying&#x27;));
+                    /*&gt;@*/
+                    Event.fire(&#x27;env:envRendered:Done&#x27;, root.get(&#x27;currentEnvPlaying&#x27;));
+                })
+            );
+        },
+
+        /*@&lt;*/
+        // LINT: Adding this, so lint doesn&#x27;t complain that this function is never used.
+        forceByBrowserVersion: forceByBrowserVersion,
+        /*&gt;@*/
+
+        forceEnv: function (newUA) {
+            /* Set of forced environments */
+            var forceSet = [&#x27;forcedFlash&#x27;, &#x27;forcedHTML5&#x27;, &#x27;forcedBackup&#x27;, &#x27;forcedMobile&#x27;, &#x27;forcedTablet&#x27;];
+            var itor;
+            var key;
+            var forceEnv;
+            UA = newUA || UA;
+            for (itor = 0; itor &lt; forceSet.length; itor++) {
+                key = forceSet[itor];
+
+                forceEnv = this.get(&#x27;forceEnv&#x27;) || {};
+                this.set(key, forceBrowser(forceEnv[key + &#x27;List&#x27;]));
+            }
+        },
+
+        /**
+         * Checks what env can be played by checking forced browsers agains current browser capabilities
+         * @method checkEnv
+         * @return {String} returns tablet, mobile, html, flash or backup
+         *
+         */
+        checkEnv: function () {
+            var isHtml5Supported = UA.isHtml5Supported;
+            var currentEnv = &#x27;backup&#x27;;
+            var environmentToPlay = -1;
+            var itor;
+            var envName;
+            var envPlayable;
+            var environments = [
+                [&#x27;Mobile&#x27;, !!UA.isMobile &amp;&amp; isHtml5Supported],
+                [&#x27;Tablet&#x27;, !!UA.isTablet &amp;&amp; isHtml5Supported],
+                [&#x27;HTML5&#x27;, isHtml5Supported],
+                [&#x27;Flash&#x27;, !!UA.flash],
+                [&#x27;Backup&#x27;, true]
+            ];
+
+            for (itor = 0; itor &lt; environments.length; itor++) {
+                envName = environments[itor][0];
+                envPlayable = environments[itor][1];
+                if (this.get(&#x27;forced&#x27; + envName)) {
+                    if (envPlayable) {
+                        environmentToPlay = itor;
+                    } else {
+                        /* Tried to force an environment that the user can not support - fall down to backup */
+                        environmentToPlay = 4;
+                    }
+                }
+                /* If nothing is forced, we want to default to playing the first playable environment in the set. */
+                if (environmentToPlay === -1 &amp;&amp; envPlayable) {
+                    environmentToPlay = itor;
+                }
+            }
+            /* Funny logic:
+                    to lower case &#x27;Mobile&#x27; =&gt; &#x27;mobile&#x27;
+                    to remove digits &#x27;HTML5&#x27; =&gt; &#x27;html&#x27;
+            */
+            currentEnv = environments[environmentToPlay][0].toLowerCase().replace(/\d+/, &#x27;&#x27;);
+            this.set(&#x27;currentEnvPlaying&#x27;, currentEnv);
+            return currentEnv;
+        },
+
+        /**
+         * Destructor function. Goes through the events that were attached and removes them.
+         * @method destructor
+         * @public
+         */
+        destructor: function () {
+            /*@&lt;*/
+            Debug.log(&#x27; [ACT_environment.js] : Destroying env instance&#x27;);
+            /*&gt;@*/
+        }
+    });
+
+    return Environment;
+});
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>
