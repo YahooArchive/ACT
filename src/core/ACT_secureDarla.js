@@ -11,10 +11,13 @@ ACT.define('SecureDarla', [/*@<*/'Debug', /*>@*/ 'Lang', 'Event', 'Json'], funct
 	/* shorthand */
 	var Event = ACT.Event;
 	var Lang = ACT.Lang;
-	var Debug = ACT.Debug;
 	var JSON = ACT.Json;
 	var Y = window.Y || null;
 	var yAPI = (Y && Y.SandBox && Y.SandBox.vendor) ? Y.SandBox.vendor : null;
+
+	/*@<*/
+	var Debug = ACT.Debug;
+	/*>@*/
 
 	/**
 	 * EVENTS CONSTANT
@@ -277,8 +280,7 @@ ACT.define('SecureDarla', [/*@<*/'Debug', /*>@*/ 'Lang', 'Event', 'Json'], funct
 	 * @initOnly
 	 */
 	secureDarla.ATTRS = {
-		NAME: 'SecureDarla',
-		version: '1.1.0'
+		NAME: 'SecureDarla'
 	};
 
 	secureDarla.prototype = {

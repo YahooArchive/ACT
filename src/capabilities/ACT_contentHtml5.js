@@ -132,12 +132,6 @@ ACT.define('ContentHtml5', [/*@<*/'Debug', /*>@*/ 'Dom', 'Lang', 'Event', 'Class
         NAME: 'ContentHtml5',
 
         /**
-         * @attribute version
-         * @type String
-         */
-        version: '1.1.0',
-
-        /**
          * @attribute configObject
          * @type Object
          */

@@ -109,12 +109,6 @@ ACT.define('Screen', [/*@<*/'Debug', /*>@*/ 'Event', 'Lang', 'Dom', 'Class', 'UA
 		NAME: 'Screen',
 
 		/**
-		 * @attribute version
-		 * @type String
-		 */
-		version: '1.1.0',
-
-		/**
 		 * @attribute sDarlaAPI
 		 * @type undefined
 		 */

@@ -236,13 +236,7 @@ ACT.define('VideoEvents', [/*@<*/'Debug', /*>@*/ 'Event', 'Lang', 'Dom', 'UA'], 
          * @attribute NAME
          * @type String
          */
-        NAME: 'VideoEvent',
-
-        /**
-         * @attribute version
-         * @type String
-         */
-        version: '1.1.0'
+        NAME: 'VideoEvent'
     };
 
     VideoEvent.prototype = {

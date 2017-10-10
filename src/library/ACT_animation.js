@@ -53,13 +53,7 @@ ACT.define('Animation', [/*@<*/'Debug', /*>@*/ 'Dom', 'Lang'], function (ACT) {
          * @attribute NAME
          * @type String
          */
-        NAME: 'Animation',
-
-        /**
-         * @attribute version
-         * @type String
-         */
-        version: '1.1.0'
+        NAME: 'Animation'
     };
 
     /**

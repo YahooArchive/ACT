@@ -37,14 +37,7 @@ ACT.define('AdobeEdgeBridge', [/*@<*/'Debug', /*>@*/ 'Event', 'Lang'], function 
 		 * @attribute NAME
 		 * @type String
 		 */
-		NAME: 'AdobeEdgeBridge',
-
-		/**
-		 * @attribute version
-		 * @type String
-		 */
-		version: '1.1.0'
-
+		NAME: 'AdobeEdgeBridge'
 	};
 
 	function fireEvent(compositionId, eventType, trackableName, special) {

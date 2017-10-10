@@ -299,12 +299,6 @@ ACT.define('ContentYoutube', [/*@<*/'Debug', /*>@*/ 'Dom', 'Lang', 'Event', 'Cla
         NAME: 'ContentYoutube',
 
         /**
-         * @attribute version
-         * @type String
-         */
-        version: '1.1.0',
-
-        /**
          * @attribute configObject
          * @type Object
          */

@@ -154,8 +154,7 @@ ACT.define('Tracking', [/*@<*/'Debug', /*>@*/ 'Util', 'Lang', 'Event', 'Class'],
      * @initOnly
      */
     Tracking.ATTRS = {
-        NAME: 'Tracking',
-        version: '1.1.0'
+        NAME: 'Tracking'
     };
 
     Lang.extend(Tracking, Class, {
