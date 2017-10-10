@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "ACT.js",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "ACT.js Library",
   "logoURL": "https://s.yimg.com/cv/ae/global/ACTJS/logo/ACT.js.logo.png",
   "scripts": {
