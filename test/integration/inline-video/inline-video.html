@@ -52,14 +52,17 @@
 					}
 				},
 				superConf: "config-object-billboard",
-				extend: {}
+				extend: {},
+				require: [ 'ContentVideoHtml', 'VideoEvents']
 			});
 		}
 	);
 })();
     </script>
     <!-- ActJS FrameWork -->
-    <script src="{{ACTJS_core_file}}"></script>
+    <script src="{{ACTJS_candidate_path}}ACT.core.js"></script>
+    <script src="{{ACTJS_candidate_path}}capabilities/ACT_contentVideoHtml.js"></script>
+    <script src="{{ACTJS_candidate_path}}library/ACT_VideoEvents.js"></script>
 	<script src="https://s.yimg.com/cv/ae/actjs/demo/obj/inline_video-config-object.js"></script>
 </body>
 </html>
