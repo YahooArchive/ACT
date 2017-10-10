@@ -38,8 +38,7 @@ ACT.define('Lang', [/*@<*/'Debug'/*>@*/], function (ACT) {
      * @initOnly
      */
     Lang.ATTRS = {
-        NAME: 'Lang',
-        version: '1.1.0'
+        NAME: 'Lang'
     };
 
     Lang.prototype = {
@@ -340,6 +339,16 @@ ACT.define('Lang', [/*@<*/'Debug'/*>@*/], function (ACT) {
 
             return !isNaN(value);
         },
+
+		/**
+		 * isUndefined returns true is value is undefined.
+		 * @method isUndefined
+		 * @param {Object} value To test
+		 * @return {boolean} true if value is undefined.
+		 */
+		isUndefined: function (value) {
+			return typeof value === 'undefined';
+		},
 
         /**
          * Checks if element value and type is a Number
