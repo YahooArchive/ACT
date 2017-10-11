@@ -89,7 +89,6 @@ ACT.define('Environment', [/*@<*/'Debug', /*>@*/ 'Lang', 'Event', 'Class', 'UA']
      */
     function Environment(config) {
         this.init(config);
-        // Environment.superclass.constructor.apply(this, arguments);
     }
 
     /**
@@ -97,7 +96,6 @@ ACT.define('Environment', [/*@<*/'Debug', /*>@*/ 'Lang', 'Event', 'Class', 'UA']
      */
     Environment.ATTRS = {
         NAME: 'Environment',
-        version: '1.1.0',
         forceEnv: {},
         forcedFlash: {},
         forcedHTML5: {},

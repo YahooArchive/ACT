@@ -17,7 +17,7 @@
                 <h1><img src="https://s.yimg.com/cv/ae/global/ACTJS/logo/ACT.js.logo.png" title="ACT.js" width="150"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 1.1.0</em>
+            <em>API Docs for: 1.1.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -41,6 +41,8 @@
                             <ul id="api-classes" class="apis classes">
                                 <li><a href="../classes/Dom.html">Dom</a></li>
                                 <li><a href="../classes/Enabler.html">Enabler</a></li>
+                                <li><a href="../classes/EnablerADTECH.html">EnablerADTECH</a></li>
+                                <li><a href="../classes/EnablerConfig.html">EnablerConfig</a></li>
                                 <li><a href="../classes/Event.html">Event</a></li>
                                 <li><a href="../classes/Json.html">Json</a></li>
                                 <li><a href="../classes/Lang.html">Lang</a></li>
@@ -51,6 +53,7 @@
                             <ul id="api-modules" class="apis modules">
                                 <li><a href="../modules/ACT.html">ACT</a></li>
                                 <li><a href="../modules/Enabler.html">Enabler</a></li>
+                                <li><a href="../modules/EnablerADTECH.html">EnablerADTECH</a></li>
                             </ul>
                 
                             <ul id="api-demos" class="apis demos">
@@ -99,7 +102,7 @@
 
 
         <div class="foundat">
-            Defined in: <a href="../files/temp_enabler_library_ACT_Enabler.js.html#l312"><code>temp_enabler&#x2F;library&#x2F;ACT_Enabler.js:312</code></a>
+            Defined in: <a href="../files/temp_enabler_library_ACT_Enabler.js.html#l2005"><code>temp_enabler&#x2F;library&#x2F;ACT_Enabler.js:2005</code></a>
         </div>
 
 </div>
@@ -107,7 +110,15 @@
 
 <div class="box intro">
     <p>ACT Enabler</p>
-<pre class="code prettyprint"><code>    var conf = {
+<p>Enabler takes a configuration object to initialize. Of-course it&#39;ll run in default mode if no config is provided.
+Below, is a basic example of such a configuration Object.</p>
+
+</div>
+
+    <div class="example">
+        <h4>Example:</h4>
+        <div class="example-content">
+            <pre class="code prettyprint"><code>    var conf = {
         tracking: {
             trackUnique: true
         },
@@ -123,12 +134,13 @@
         },
         enablerInteractionTracking : false,
         enablerTarget: &#39;http://cdn.path.here.com/ACT_Enabler.js&#39;,
+        eventPropagation: true || &#39;tracking&#39; || &#39;redirect&#39;,
         htmlRoot : &#39;http://cdn.path.here.com/&#39;
     };
     Enabler.setConfig( conf );
 </code></pre>
-</div>
-
+        </div>
+    </div>
 
 <div class="yui3-g">
     <div class="yui3-u-1-2">
@@ -138,6 +150,16 @@
                 <li class="module-class">
                     <a href="../classes/Enabler.html">
                         Enabler
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/EnablerADTECH.html">
+                        EnablerADTECH
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/EnablerConfig.html">
+                        EnablerConfig
                     </a>
                 </li>
             </ul>

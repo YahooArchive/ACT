@@ -70,12 +70,6 @@ ACT.define('ContentSwf', [/*@<*/'Debug', /*>@*/ 'Dom', 'Lang', 'Event', 'Class',
 		NAME: 'contentSwf',
 
 		/**
-		 * @attribute version
-		 * @type String
-		 */
-		version: '1.1.0',
-
-		/**
 		 * @attribute configObject
 		 * @type Object
 		 */

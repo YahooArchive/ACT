@@ -34,14 +34,7 @@ ACT.define('SWFBridge', [/*@<*/'Debug', /*>@*/ 'Lang'], function (ACT) {
          * @attribute NAME
          * @type String
          */
-		NAME: 'SWFBridge',
-
-        /**
-         * @attribute version
-         * @type String
-         */
-		version: '1.1.0'
-
+		NAME: 'SWFBridge'
 	};
 
 	SWFBridge.prototype = {

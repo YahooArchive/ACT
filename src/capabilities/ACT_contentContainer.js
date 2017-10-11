@@ -50,14 +50,13 @@
  * @requires Dom, lang, event, Class, Capability
  * @global
  */
-ACT.define('ContentContainer', [/*@<*/'Debug', /*>@*/ 'Dom', 'Lang', 'Event', 'Class', 'Capability', 'Animation'], function (ACT) {
+ACT.define('ContentContainer', [/*@<*/'Debug', /*>@*/ 'Dom', 'Lang', 'Event', 'Class', 'Capability'], function (ACT) {
     'use strict';
 
     /* Shorthand */
     var Dom = ACT.Dom;
     var Lang = ACT.Lang;
     var Event = ACT.Event;
-    var Animation = ACT.Animation;
     var Class = ACT.Class;
     var Capability = ACT.Capability;
 
@@ -338,13 +337,7 @@ ACT.define('ContentContainer', [/*@<*/'Debug', /*>@*/ 'Dom', 'Lang', 'Event', 'C
          * @attribute NAME
          * @type String
          */
-        NAME: 'ContentContainer',
-
-        /**
-         * @attribute version
-         * @type String
-         */
-        version: '1.1.0'
+        NAME: 'ContentContainer'
     };
 
     /* Private methods */
@@ -647,16 +640,18 @@ ACT.define('ContentContainer', [/*@<*/'Debug', /*>@*/ 'Dom', 'Lang', 'Event', 'C
                     clearTimeout(root.fire);
                 }
 
-                if (delay && delay > 0) {
+                if (delay && delay > 0 && ACT.Animation) {
                     root.fire = setTimeout(function () {
                         clearTimeout(root.fire);
                         if (target.style.opacity === '1') {
-                            Animation.anim(target, { opacity: '0' }, null, 500);
+                            ACT.Animation.anim(target, { opacity: '0' }, null, 500);
                         }
                     }, delay);
                 }
                 if (target.style.opacity === '0') {
-                    Animation.anim(target, { opacity: '1' }, null, 500);
+                    if (ACT.Animation) {
+                        ACT.Animation.anim(target, { opacity: '1' }, null, 500);
+                    }
                 }
             }, node);
         },
@@ -679,7 +674,11 @@ ACT.define('ContentContainer', [/*@<*/'Debug', /*>@*/ 'Dom', 'Lang', 'Event', 'C
          * @param {Function} done Optional function executed once the logic is done
          */
         animateContainer: function (from, to, duration, delay, done) {
-            Animation.anim(this.get('node'), from, to, duration, delay, null, done);
+            if (ACT.Animation) {
+                ACT.Animation.anim(this.get('node'), from, to, duration, delay, null, done);
+            } else {
+                done();
+            }
         },
 
         /**

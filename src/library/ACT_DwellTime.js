@@ -79,7 +79,6 @@ ACT.define('DwellTime', [/*@<*/'Debug', /*>@*/ 'Dom', 'Lang', 'Class', 'Event'],
      */
     DwellTime.ATTRS = {
         NAME: 'DwellTime',
-        version: '1.1.0',
 
         /**
          * @attribute targetElement

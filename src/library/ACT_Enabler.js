@@ -6,13 +6,236 @@
 
 /* global ACT, console */
 /* eslint spaced-comment: 0, no-unused-vars: 0, no-use-before-define: 0, no-console: 0, camelcase: 0, new-cap: 0, max-len: 0, no-shadow: 0, no-return-assign: 0, no-unused-expressions: 0 */
-ACT.define('Enabler', [/*@<*/'Debug', /*>@*/ 'Event', 'Lang', 'VideoEvents', 'Json', 'Tracking', 'Util', 'Dom', 'UA'], function (ACT) {
+ACT.define('EnablerADTECH', ['Enabler'], function (ACT) {
     'use strict';
+    var Enabler = window.Enabler;
+    var studio = window.studio;
+    /**
+     * ACT EnablerADTECH
+     *
+     * Enabler Wrapper for AOL 1 ADTECH API.
+     *
+     * ```
+     *     // Providing exposeADTECH `true` will create a reference in window.ADTECH = ACT.EnablerADTECH;
+     *     var conf = {
+     *         exposeADTECH: true
+     *     };
+     *     Enabler.setConfig( conf );
+     * ```
+     *
+     * @module EnablerADTECH
+     * @main EnablerADTECH
+     * @class EnablerADTECH
+     * @requires Enabler
+     */
+    var ADTECH = {
+        /**
+         * ADTECH wrapper for Enabler.exit. Opens a new window with the URL as identified by the given exit ID.
+         * @method EnablerADTECH.click
+         * @param {String} id The exit ID.
+         * @param {String} opt_url The URL to navigate to.
+         * @example
+               EnablerADTECH.click('Twitter', 'http://twitter.com/twittername');
+         */
+        click: function (id, url) {
+            Enabler.exit(id, url);
+        },
+
+        /**
+         * ADTECH wrapper for Enabler.exit. Opens a new window with the URL as identified by the given exit ID.
+         * @method EnablerADTECH.dynamicClick
+         * @param {String} id The exit ID.
+         * @param {String} opt_url The URL to navigate to.
+         * @example
+               EnablerADTECH.dynamicClick("Product page", "http://www.mysite.com/products?id=" + product_id );
+         */
+        dynamicClick: function (id, url) {
+            Enabler.exit(id, url);
+        },
+
+        /**
+         * ADTECH Wrapper for Enabler.counter. Tracks a counter event.
+         * @method EnablerADTECH.counter
+         * @param {String} eventId The string ID of the event to count.
+         * @param {Boolean} opt_isCumulative Optional parameter that indicates whether or not the counter event should
+         * be counted cumulatively. Defaults to true.
+         * @example
+              EnablerADTECH.event('Play Game');
+         */
+        event: function (eventId) {
+            Enabler.counter(eventId);
+        },
+
+        /**
+         * ADTECH wrapper for studio.video.Reporter.attach. Observes a video element for reporting
+         * @method EnablerADTECH.registerVideoPlayer
+         * @param {HTMLVideoElement} videoElement The video element to report on.
+         * @param {String} videoReportingIdentifier The name the video should report as.
+         * @example
+             EnablerADTECH.registerVideoPlayer(myVideoElement, "Video 1");
+         * for autoplay videos (the play event will always get tracked). This defaults to true.
+         */
+        registerVideoPlayer: function (videoElement, videoName) {
+            var trackAutoPlay = true;
+            var videoIdentifier = videoName || 'videoTracking';
+            studio.video.Reporter.attach(videoIdentifier, videoElement, trackAutoPlay);
+        },
+
+        /**
+         * ADTECH Wrapper for Event.ready and Enabler.callAfterInitialized.
+         * @method EnablerADTECH.ready
+         * @param {Function} callback The callback to invoke when the Enabler is initialized AND dom is ready
+         * The 'ready' function is a modified version of the JQuery 'ready' functionality found at http://api.jquery.com/ready/
+         * The code below is modified according to the JQuery MIT License https://github.com/jquery/jquery
+         */
+        ready: function (userFunction) {
+            /* Call the user function once DOMReady has fired and Enabler ahs initialized */
+            Enabler.Event.ready(function () {
+                Enabler.callAfterInitialized(userFunction);
+            });
+        },
+
+        /**
+         * ADTECH Wrapper to Subscribe to events
+         * @method EnablerADTECH.addEventListener
+         * @param {String} event event string
+         * @param {Object} callback method
+         * @param {Object} element DOM element listening for event (optional)
+         * @param {Object} scope event scope - default to this
+         * @return {Object} obj.remove A simple wrapper to remove this event listener.
+         * @public
+         *
+         * @example
+              EnablerADTECH.addEventListener("click", function( eventData ) { ... do something ...}, byId("el"));
+         *
+         */
+        addEventListener: Enabler.Event.on,
+
+        /**
+         * ADTECH Wrapper to remove event listeners from objects.
+         * @param {String} event Event to remove
+         * @param {Function} fn Function to remove from the object
+         * @param {Object} element Element to remove the event from
+         * @method EnablerADTECH.removeListener
+         */
+        removeEventListener: Enabler.Event.removeListener,
+
+        /**
+         * ADTECH Wrapper for Enabler.requestExpand.
+         * Initiates the expand lifecycle. This begins by calling requestExpand(), waiting for EXPAND_START
+         * event, animating your expand, then calling finishExpand() when the creative has fully expanded.
+         * Please use event listeners to invoke the expanded state of the ad as the expand may be dispatched
+         * by the environment independently of calling `studio.Enabler#requestExpand()`. Typical usage will
+         * look like:
+         *
+         * @method EnablerADTECH.expand
+         * @example
+             EnablerADTECH.expand();
+         */
+        expand: function () {
+            Enabler.requestExpand();
+        },
+
+        /**
+         * ADTECH Wrapper for Enabler.requestCollapse
+         * Initiates the collapse lifecycle. This begins by calling requestCollapse(), waiting for the
+         * COLLAPSE_START event, animating your collapse, then calling finishCollapse() when the
+         * creative has fully collapsed. Please use event listeners to invoke the collapsed state of
+         * the ad as the collapse event may be dispatched by the environment independently of calling
+         * studio.Enabler#requestCollapse().
+         *
+         * @method EnablerADTECH.contract
+         * @example
+             EnablerADTECH.contract();
+         */
+        contract: function () {
+            Enabler.requestCollapse();
+        },
+
+        /**
+         * ADTECh Wrapper for the reload functionality. This function has not been implemented yet.
+         *  - Ideally, it would fire replay event to the parent container.
+         * @method EnablerADTECH.reload
+         */
+        reload: function () {
+            Enabler.enablerLogger('@EnablerADTECH.reload: Is not supported in this version of EnablerADTECH.');
+        },
+
+        /**
+         * ADTECH Wrapper for Enabler.close. Closes floating and popup creative types. If it is an expanding creative,
+         * close acts as a proxy to collapse.
+         * @method EnablerADTECH.close
+         * @example
+             EnablerADTECH.close();
+         */
+        close: function () {
+            Enabler.close();
+        },
+
+        /* See EnablerADTECH.expand() */
+        show: function () {
+            Enabler.requestExpand();
+        },
+
+        /* See EnablerADTECH.close() */
+        hide: function () {
+            Enabler.close();
+        }
+    };
+    return ADTECH;
+});
+
+ACT.define('Enabler', [/*@<*/'Debug', /*>@*/ 'Environment', 'Event', 'Lang', 'VideoEvents', 'Json', 'Tracking', 'Util', 'Dom', 'UA'], function (ACT) {
+    'use strict';
+    /**
+     * ACT Enabler
+     *
+     * Enabler takes a configuration object to initialize. Of-course it'll run in default mode if no config is provided.
+     * Below, is a basic example of such a configuration Object.
+     *
+     * @example
+     * ```
+     *     var conf = {
+     *         tracking: {
+     *             trackUnique: true
+     *         },
+     *         exitUrls: {
+     *             clickTAG: 'https://www.yahoo.com/?clickTAG=true',
+     *             clickTAG1: 'https://www.yahoo.com/?clickTAG=true',
+     *             clickTAG2: 'https://www.yahoo.com/?clickTAG=true'
+     *         },
+     *         trackingLabels: {
+     *             video1:25 : 'billboard_view_video1_25percent',
+     *             video1:50 : 'billboard_view_video1_50percent',
+     *             video1:75 : 'billboard_view_video1_75percent'
+     *         },
+     *         enablerInteractionTracking : false,
+     *         enablerTarget: 'http://cdn.path.here.com/ACT_Enabler.js',
+     *         eventPropagation: true || 'tracking' || 'redirect',
+     *         htmlRoot : 'http://cdn.path.here.com/'
+     *     };
+     *     Enabler.setConfig( conf );
+     * ```
+     *
+     * @module Enabler
+     * @main Enabler
+     * @class Enabler
+     * @requires Dom
+     * @requires Event
+     * @requires Lang
+     * @requires UA
+     * @requires VideoEvents
+     * @requires Json
+     * @requires Tracking
+     * @requires Util
+     * @requires ActionsQueue
+     * @param conf
+     */
 
     /* Shorthand */
     var Event = ACT.Event;
     var Lang = ACT.Lang;
-    var VideoEvents = ACT.VideoEvents; // Fix to be VideoEvents (plural)
+    var VideoEvents = ACT.VideoEvents;
     var Json = ACT.Json;
     var Tracking = ACT.Tracking;
     var Util = ACT.Util;
@@ -22,10 +245,12 @@ ACT.define('Enabler', [/*@<*/'Debug', /*>@*/ 'Event', 'Lang', 'VideoEvents', 'Js
     /* Private Variables */
     var studio;
     var config = {
+        enableConsole: false,
         frameId: '',
         actTracking: {},
         trackingLabels: {},
         enablerInteractionTracking: false,
+        eventPropagation: false,
         callbacks: [],
         countersList: {},
         eventQueue: {},
@@ -37,6 +262,8 @@ ACT.define('Enabler', [/*@<*/'Debug', /*>@*/ 'Event', 'Lang', 'VideoEvents', 'Js
         videoTracking: {},
         videoListener: null,
         visible: false,
+        exposeADTECH: false,
+        currentEnv: 'generic',
         expand: {
             containerState: '',
             useCustomClose: false,
@@ -96,6 +323,7 @@ ACT.define('Enabler', [/*@<*/'Debug', /*>@*/ 'Event', 'Lang', 'VideoEvents', 'Js
     /**
      * Send data to parent of this iframe
      * @method sendToParent
+     * @private
      */
     function sendToParent(data) {
         /* istanbul ignore next */
@@ -133,6 +361,7 @@ ACT.define('Enabler', [/*@<*/'Debug', /*>@*/ 'Event', 'Lang', 'VideoEvents', 'Js
      * @method getFullUrl
      * @param {String} url
      * @param {String} params
+     * @private
      */
     function getFullUrl(url, params) {
         var fullUrl = Lang.isString(url) && url.length > 0 ? url : '';
@@ -162,12 +391,13 @@ ACT.define('Enabler', [/*@<*/'Debug', /*>@*/ 'Event', 'Lang', 'VideoEvents', 'Js
     }
 
     /**
-     * @method enablerLogger Notifies of issues / missing things inside Enabler. For Internal Use Only.
+     * Notifies of issues / missing things inside Enabler. For Internal Use Only.
+     * @method enablerLogger
      * @param {Mixed} A mixed message to display to the user
-     *
+     * @private
      */
     function enablerLogger() {
-        if (window.console && window.console.info) {
+        if (config.enableConsole && window.console && window.console.info) {
             console.info(arguments);
         }
     }
@@ -179,6 +409,7 @@ ACT.define('Enabler', [/*@<*/'Debug', /*>@*/ 'Event', 'Lang', 'VideoEvents', 'Js
      * @param {String} actionName More of the generic event/action ('track', 'redirect', etc)
      * @param {String} url If you have a redirect, you can pass in the URL to redirect to.
      * @param {Mix} special Extra parameter. For URL can have the queries, for others, can be an object with the desired key: value pairs.
+     * @private
      */
     function fireEvent(id, eventType, actionName, url, special) {
         /* get the label for tracking if the label does not exist then use 'id' as label */
@@ -197,6 +428,15 @@ ACT.define('Enabler', [/*@<*/'Debug', /*>@*/ 'Event', 'Lang', 'VideoEvents', 'Js
             label = config.trackingLabels[label];
         }
 
+        /* Put together the data object to pass around. */
+        dataToSend = {
+                        frameId: config.frameId,
+                        id: id,
+                        eventType: eventType,
+                        actionName: actionName,
+                        url: url,
+                        special: special
+                    };
         /*
             Open URL has to be done inside iframe due to Safari policy
             Other tracking can be sent to parent frame so we can do unique and non-unique
@@ -204,40 +444,53 @@ ACT.define('Enabler', [/*@<*/'Debug', /*>@*/ 'Event', 'Lang', 'VideoEvents', 'Js
         if (actionName === 'redirect') {
             // Tracking is fired when there is a tracking config info
             /* istanbul ignore else */
-            if (config.hasOwnProperty('actTracking') && Lang.isFunction(config.actTracking.redirect_track)) {
+            if (config.hasOwnProperty('actTracking') && Lang.isFunction(config.actTracking.track)) {
                 /* redirect_track is:         redirect_track: function(str, num, url) */
                 fullUrl = getFullUrl(url, special);
-                link = config.actTracking.redirect_track(label, Util.hashString(label), fullUrl) || fullUrl;
-                /*@<*/
-                Debug.log('[ ACT_Enabler.js ]: Generated Redirect : ', link);
-                /*>@*/
-                window.open(link, '_blank');
+                link = config.actTracking.track(label, Util.hashString(label), fullUrl, function (link) {
+                    /*@<*/
+                    Debug.log('[ ACT_Enabler.js ]: Generated Redirect : ', link);
+                    /*>@*/
+                    enablerLogger('[ ACT_Enabler.js ]: Generated Redirect Link: ', link);
+                    window.open(link, '_blank');
+                });
             } else {
                 /* If the actTracking is not defined, and a redirect is fired we fail silently. */
                 enablerLogger('[ ACT_Enabler.js ] : Attempted but did not redirect to: "' + getFullUrl(url, special) + '" identified by: "' + id + '"');
             }
+            propagateEvent(actionName, dataToSend);
         } else if (actionName === 'track' && config.hasOwnProperty('enablerInteractionTracking') && config.enablerInteractionTracking === true) {
             /* If we want enabler to fire off all the interaction tracks by itself */
             /* istanbul ignore else */
-            if (config.hasOwnProperty('actTracking') && Lang.isFunction(config.actTracking.interaction_track)) {
+            if (config.hasOwnProperty('actTracking') && Lang.isFunction(config.actTracking.track)) {
                 /*@<*/
                 Debug.log('[ ACT_Enabler.js ]: Generated Interaction Track : ', label);
                 /*>@*/
-                config.actTracking.interaction_track(label);
+                config.actTracking.track(label, null, null, function (result) {
+                    enablerLogger('[ ACT_Enabler.js ]: track fire result: ', result);
+                });
             } else {
                 enablerLogger('[ ACT_Enabler.js ]: Attempted but did not fire an Interaction Track : ' + label);
             }
+            propagateEvent(actionName, dataToSend);
         } else {
-			dataToSend = {
-							frameId: config.frameId,
-							id: id,
-							eventType: eventType,
-							actionName: actionName,
-							url: url,
-							special: special
-						};
-			enablerLogger('[ ACT_Enabler.js ]: Sending data to parent : ', dataToSend);
+            enablerLogger('[ ACT_Enabler.js ]: Sending data to parent : ', dataToSend);
             // send data to parent to do something
+            sendToParent(dataToSend);
+        }
+    }
+
+    /**
+     * Propagate Event - figure out if our user wants all or only some events to propagate to the parent frame.
+     * @method propagateEvent
+     * @param {String} actionName - either 'redirect' or 'track'
+     * @param {Object} dataToSend Data object that we send over to the parent.
+     * @private
+     */
+    function propagateEvent(actionName, dataToSend) {
+        var eventPropagation = config.eventPropagation || false;
+
+        if (eventPropagation === actionName || eventPropagation === true) {
             sendToParent(dataToSend);
         }
     }
@@ -247,6 +500,7 @@ ACT.define('Enabler', [/*@<*/'Debug', /*>@*/ 'Event', 'Lang', 'VideoEvents', 'Js
      * @method setExit
      * @param {String} id Exit Url id
      * @param [String] opt_url New URL to be added
+     * @private
      */
     function setExit(id, opt_url) {
         // only add if opt_url avaibler
@@ -310,44 +564,30 @@ ACT.define('Enabler', [/*@<*/'Debug', /*>@*/ 'Event', 'Lang', 'VideoEvents', 'Js
     }
 
     /**
-     * ACT Enabler
-     *
-     * ```
-     *     var conf = {
-     *         tracking: {
-     *             trackUnique: true
-     *         },
-     *         exitUrls: {
-     *             clickTAG: 'https://www.yahoo.com/?clickTAG=true',
-     *             clickTAG1: 'https://www.yahoo.com/?clickTAG=true',
-     *             clickTAG2: 'https://www.yahoo.com/?clickTAG=true'
-     *         },
-     *         trackingLabels: {
-     *             video1:25 : 'billboard_view_video1_25percent',
-     *             video1:50 : 'billboard_view_video1_50percent',
-     *             video1:75 : 'billboard_view_video1_75percent'
-     *         },
-     *         enablerInteractionTracking : false,
-     *         enablerTarget: 'http://cdn.path.here.com/ACT_Enabler.js',
-     *         htmlRoot : 'http://cdn.path.here.com/'
-     *     };
-     *     Enabler.setConfig( conf );
-     * ```
-     *
-     * @module Enabler
-     * @main Enabler
-     * @class Enabler
-     * @requires Dom
-     * @requires Event
-     * @requires Lang
-     * @requires UA
-     * @requires VideoEvents
-     * @requires Json
-     * @requires Tracking
-     * @requires Util
-     * @requires ActionsQueue
-     * @param conf
+     * @method runCallbacks
+     * @private
+     * Runs through the registered callbacks and executes them one by one. In reverse order. ( FILO )
+     * Before executing a callback, sets it's reference to null in our queue.
+     * On Error: logs the failed attempt - runtime error message, callback iterator and the callback function itself.
      */
+    function runCallbacks() {
+        var callbacks = config.callbacks || [];
+        var callbackFun = null;
+        var itor;
+
+        for (itor = callbacks.length - 1; itor >= 0; itor--) {
+            callbackFun = null;
+            if (Lang.isFunction(callbacks[itor]) === true) {
+                callbackFun = callbacks[itor];
+                callbacks[itor] = null;
+                try {
+                    callbackFun();
+                } catch (err) {
+                    enablerLogger('[ ACT_Enabler.js ] Error while running a callback: ', err.message, itor, callbackFun);
+                }
+            }
+        }
+    }
 
     function Enabler(conf) {
         var enablerConfigData = {};
@@ -356,6 +596,7 @@ ACT.define('Enabler', [/*@<*/'Debug', /*>@*/ 'Event', 'Lang', 'VideoEvents', 'Js
         var script;
         var head;
         var item;
+        var ev;
 
         /* istanbul ignore else */
         if (window.Enabler) {
@@ -394,9 +635,7 @@ ACT.define('Enabler', [/*@<*/'Debug', /*>@*/ 'Event', 'Lang', 'VideoEvents', 'Js
 
         /* reload enabler if config specify a target */
         enablerTarget = enablerConfigData.enablerTarget;
-        if (enablerTarget &&
-            Lang.isString(enablerTarget) &&
-            Lang.isSameOrigin(enablerTarget)) {
+        if (enablerTarget && Lang.isString(enablerTarget) && Lang.isSameOrigin(enablerTarget)) {
             head = document.head || document.getElementsByTagName('head')[0];
             script = document.createElement('script');
             enablerConfigData.enablerTarget = '';
@@ -412,6 +651,12 @@ ACT.define('Enabler', [/*@<*/'Debug', /*>@*/ 'Event', 'Lang', 'VideoEvents', 'Js
         /* Grab extra definitions / make request for extra definitions from "main page/frame" */
         config.initialized = true;
 
+        /* Initialize environment for Enabler. */
+        ev = new ACT.Environment({});
+        config.currentEnv = ev.checkEnv();
+
+        /* In case someone queued up callbacks, we are now officially initialized Run them all. */
+        runCallbacks();
         /* This should probably wait to be fired - since Enabler is laoded at the top of the page. */
         this.dispatchEvent(studio.events.StudioEvent.INIT);
         Event.ready(Lang.bind(this, null, this.dispatchPageLoaded));
@@ -423,18 +668,11 @@ ACT.define('Enabler', [/*@<*/'Debug', /*>@*/ 'Event', 'Lang', 'VideoEvents', 'Js
      * @initOnly
      */
     Enabler.ATTRS = {
-
         /**
          * @attribute NAME
          * @type String
          */
-        NAME: 'Enabler',
-
-        /**
-         * @attribute version
-         * @type String
-         */
-        version: '1.1.0'
+        NAME: 'Enabler'
     };
 
     Enabler.prototype = {
@@ -463,6 +701,7 @@ ACT.define('Enabler', [/*@<*/'Debug', /*>@*/ 'Event', 'Lang', 'VideoEvents', 'Js
             return getFullUrl(url, params);
         },
 
+        config: config,
         /*>@*/
 
         /**
@@ -531,6 +770,10 @@ ACT.define('Enabler', [/*@<*/'Debug', /*>@*/ 'Event', 'Lang', 'VideoEvents', 'Js
             if (config.hasOwnProperty('tracking') && Lang.isObject(config.tracking)) {
                 config.tracking.trackUnique = false; /* because Cookie is not availale in iFrame */
                 config.actTracking = new Tracking(config.tracking);
+            }
+
+            if (config.exposeADTECH === true) {
+                window.ADTECH = ACT.EnablerADTECH;
             }
 
             return this.getConfig(opt_element);
@@ -772,6 +1015,9 @@ ACT.define('Enabler', [/*@<*/'Debug', /*>@*/ 'Event', 'Lang', 'VideoEvents', 'Js
         callAfterInitialized: function (callback) {
             /* config.callbacks is a private variable to keep track of all the callbacks */
             config.callbacks.push(callback);
+            if (this.isInitialized() === true) {
+                runCallbacks();
+            }
         },
 
         /******************************************************************************************************************/
@@ -936,12 +1182,12 @@ ACT.define('Enabler', [/*@<*/'Debug', /*>@*/ 'Event', 'Lang', 'VideoEvents', 'Js
 
         /**
          * Collapsing flow:
-         *     1. Register event listeners.
+         *    1. Register event listeners.
          *    2. When you want to collapse call Enabler.requestCollapse().
          *    3. When the environment is ready to collapse the studio.events.StudioEvent.COLLAPSE_START is dispatched.
          *        This can get dispatched independently of Enabler.requestCollapse() as sometimes the environment provides a close button outside of the creative.
          *    4. The Ad optionally performs an animated collapse.
-         *     5. Ad then calls Enabler.finishCollapse() to complete collapse and close div.
+         *    5. Ad then calls Enabler.finishCollapse() to complete collapse and close div.
          *
          * Initiates the collapse lifecycle. This begins by calling requestCollapse(), waiting for the
          * COLLAPSE_START event, animating your collapse, then calling finishCollapse() when the
@@ -1419,6 +1665,13 @@ ACT.define('Enabler', [/*@<*/'Debug', /*>@*/ 'Event', 'Lang', 'VideoEvents', 'Js
         },
 
         /**
+         * Notifies of issues / missing things inside Enabler. For Internal Use Only.
+         * @method enablerLogger
+         * @param {Mixed} A mixed message to display to the user
+         */
+        enablerLogger: enablerLogger,
+
+        /**
          * Loads an additional script file
          * @method loadScript
          * @param {String} scriptUrl The url of the script to load
@@ -1746,3 +1999,181 @@ ACT.define('Enabler', [/*@<*/'Debug', /*>@*/ 'Event', 'Lang', 'VideoEvents', 'Js
 
     return window.Enabler;
 });
+
+/* Extra Space to define and document Enabler configuration params */
+
+/**
+ * Enabler Config Object contains all of the configuration options for this `Enabler` instance.
+ * This object is supplied by the implementer when using ACT Enabler.
+ * Properties have default values if they are not supplied by the implementer.
+ *
+ * ```
+ *     var conf = {
+ *         enableConsole: false,
+ *         frameId: '',
+ *         actTracking: {},
+ *         trackingLabels: {},
+ *         enablerInteractionTracking: false,
+ *         eventPropagation: false,
+ *         callbacks: [],
+ *         countersList: {},
+ *         eventQueue: {},
+ *         exitUrls: {},
+ *         htmlRoot: '',
+ *         initialized: false,
+ *         pageLoaded: false,
+ *         timerCollection: {},
+ *         videoTracking: {},
+ *         videoListener: null,
+ *         exposeADTECH: false,
+ *         currentEnv: 'generic',
+ *         visible: false,
+ *         expand: {
+ *             containerState: '',
+ *             useCustomClose: false,
+ *             expandingPixelOffsets: {},
+ *             floatingPixelDimensions: {},
+ *             isMultiDirectional: false,
+ *             startExpanded: false,
+ *             expandDirection: 'tl',
+ *             fsExpandWidth: 0,
+ *             fsExpandHeight: 0
+ *         }
+ *     };
+ * ```
+ *
+ * @class EnablerConfig
+ * @static
+ */
+
+ /**
+  * enableConsole Pass through true to enable consoles from Enabler, false otherwise.
+  * @property {Boolean} enableConsole
+  * @default false
+  */
+
+
+ /**
+  * exposeADTECH Enabler replacement for AOL 1's ADTECH Library - Wraps Enabler calls in ADTECH function API
+  * @property {Boolean} exposeADTECH
+  * @default false
+  */
+
+/**
+ * htmlRoot URI Of the HTML Root Assets.
+ * @property {String} htmlRoot
+ * @default Empty String
+ */
+
+/**
+ * tracking if set to an object that defines the tracking for this ad will setup a tracking system within Enabler.
+ * @property {Object} tracking
+ * @default Empty Object
+ **/
+
+/**
+ * eventPropagation Set to true will propagate both `redirect` and `track` requests from within the ad. Set to
+ * `track` will only propagate the tracking redirects.
+ * `redirect` will only propage when a redirect will get called
+ * @property {Mixed} eventPropagation
+ * @default false
+ **/
+
+/**
+ * enablerTarget CDN Location of the Enabler to load and use in the ad.
+ * @property {String} enablerTarget
+ * @default null
+ */
+
+/**
+ * exitUrls List of exit URLs.
+ * @example
+ * ```
+ *     exitUrls: {
+ *         clickTAG: 'http://www.example.com/siteOne',
+ *         clickTAG1: 'http://www.example.com/siteTwo',
+ *         clickTAG2: 'http://www.example.com/siteThree',
+ *     }
+ * ```
+ * @property {Object} exitUrls
+ * @default Empty Object
+ */
+
+/**
+ * enablerInteractionTracking Given this config param, once set to `true` will execute interaction tracks within Enabler.
+ * @property {Boolean} enablerInteractionTracking
+ * @default false
+ */
+
+/**
+ * trackingLabels provided this set, a label will be applied to simple key / value replacement
+ * @example
+ * ```
+ *     trackingLabels: {
+ *         video1:25 : 'billboard_view_video1_25percent',
+ *         video1:50 : 'billboard_view_video1_50percent',
+ *         video1:75 : 'billboard_view_video1_75percent'
+ *     }
+ * ```
+ *
+ * @property {Object} trackingLabels
+ * @default Empty Object
+ **/
+
+/* Private Definitions */
+
+/**
+ * currentEnv Keeps the current environment that this ad was rendered in.
+ * @property {String} currentEnv
+ * default 'generic'
+ * @private
+ */
+
+/**
+ * countersList List of counters that have been started.
+ * @property {Object} countersList
+ * @default Empty Object
+ * @private
+ */
+
+ /**
+ * callbacks Queue of callbacks to execute after initialized is called.
+ * @property {Array} callbacks
+ * @default Empty Array
+ * @private
+ */
+
+/**
+ * initialized Internal flag that signifies that Enabler has been initialized or not
+ * @property {Boolean} initialized
+ * @default false
+ * @private
+ */
+
+/**
+ * timerCollection Collection of timers used inside this Enabler instance.
+ * @property {Object} timerCollection
+ * @default Empty Object
+ * @private
+ */
+
+/**
+ * pageLoaded Internal flag that signifies that the Page `(on)load` event has fired
+ * @property {Boolean} pageLoaded
+ * @default false
+ * @private
+ */
+
+/**
+ * videoListener Internal flag that keeps track of video listeners applied to videos.
+ * @property {OBject} videoListener
+ * @default null
+ * @private
+ */
+
+/**
+ * videoTracking Internal set of video tracking references.
+ * @property {OBject} videoTracking
+ * @default null
+ * @private
+ */

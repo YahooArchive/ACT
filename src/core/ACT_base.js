@@ -3,9 +3,8 @@
  * Copyrights licensed under the New BSD License.
  * See the accompanying LICENSE file for terms.
  */
-
 /* global ACT */
-ACT.define('Base', [/*@<*/'Debug', /*>@*/ 'Event', 'Cookie', 'Lang', 'Tracking', 'SecureDarla', 'StandardAd', 'ActionsQueue', 'CustomData', 'IO', 'Environment', 'UA', 'Util'], function (ACT) {
+ACT.define('Base', [/*@<*/'Debug', /*>@*/ 'Event', 'Cookie', 'Lang', 'Tracking', 'SecureDarla', 'StandardAd', 'ActionsQueue', 'CustomData', 'Environment', 'UA', 'Util'], function (ACT) {
     'use strict';
 
     var Lang = ACT.Lang;
@@ -16,7 +15,6 @@ ACT.define('Base', [/*@<*/'Debug', /*>@*/ 'Event', 'Cookie', 'Lang', 'Tracking',
     var CustomData = ACT.CustomData;
     var ActionsQueue = ACT.ActionsQueue;
     var UA = ACT.UA;
-    var IO = ACT.IO;
     var Util = ACT.Util;
 
     /*@<*/
@@ -31,6 +29,7 @@ ACT.define('Base', [/*@<*/'Debug', /*>@*/ 'Event', 'Cookie', 'Lang', 'Tracking',
     *             tracking: {
     *                 id: ''
     *             },
+    *             loadType: 'ready', // 'domready' or 'inline' defaults to '(on)load'
     *             template: {
     *                 name: 'name_of_ad',
     *                 type: 'type_of_ad',
@@ -89,9 +88,13 @@ ACT.define('Base', [/*@<*/'Debug', /*>@*/ 'Event', 'Cookie', 'Lang', 'Tracking',
             this.config.standardAd = false;
         }
 
+        if (config.require) {
+            ACT.addRequired(config.require);
+        }
+
         ACT.ready(function () {
             root.start();
-        });
+        }, config.require);
     }
 
     /**
@@ -100,8 +103,7 @@ ACT.define('Base', [/*@<*/'Debug', /*>@*/ 'Event', 'Cookie', 'Lang', 'Tracking',
     * @initOnly
     */
     Base.ATTRS = {
-        NAME: 'Base',
-        version: '1.1.0'
+        NAME: 'Base'
     };
 
     Base.prototype = {
@@ -122,7 +124,6 @@ ACT.define('Base', [/*@<*/'Debug', /*>@*/ 'Event', 'Cookie', 'Lang', 'Tracking',
         register: function () {
             var conf = this.config;
             var root = this;
-            var comingData;
             var IOLoad;
             var superConfMerged;
 
@@ -130,9 +131,9 @@ ACT.define('Base', [/*@<*/'Debug', /*>@*/ 'Event', 'Cookie', 'Lang', 'Tracking',
                 // if the custom Data
                 if (conf.customData && !Lang.isObjectEmpty(conf.customData)) {
                     // if there any comming input
-                    if (conf.inputData) {
+                    if (conf.inputData && ACT.IO) {
                         /*@<*/
-                        debug.log('[ ACT_base.js ] comingData', comingData);
+                        debug.log('[ ACT_base.js ] inputData && ACT.IO Are defined - loading extra data set ');
                         /*>@*/
                         // loaded event
                         IOLoad = Event.on('IO:load:done', function (data) {
@@ -147,8 +148,8 @@ ACT.define('Base', [/*@<*/'Debug', /*>@*/ 'Event', 'Cookie', 'Lang', 'Tracking',
                             root.config = Lang.merge(conf, onEventSuperConfMerged);
                             root.loadStandardAd();
                         });
-                        // load input
-                        comingData = new IO(conf.inputData);
+                        /* Call ACT.IO with the config */
+                        this.IOInstance = new ACT.IO(conf.inputData);
                     } else {
                         superConfMerged = CustomData.map(conf.customData, ACT.getConfig(conf.superConf));
                         root.config = Lang.merge(conf, superConfMerged);
@@ -205,18 +206,13 @@ ACT.define('Base', [/*@<*/'Debug', /*>@*/ 'Event', 'Cookie', 'Lang', 'Tracking',
         start: function () {
             var conf = this.config;
 
-            this.loadListeners();
-
             /* istanbul ignore next */
             this.actionsQueue = new ActionsQueue({});
             this.cookie = new Cookie(conf.cookie || null, this);
             this.tracking = new Tracking(conf.tracking || null, this);
             this.secureDarla = new SecureDarla(this.config, this);
-
-            /*@<*/
-            debug.info('[ ACT_base.js ] SecureDarla INITIALIZE PASSED - NOW START AD STANDARD');
-            /*>@*/
-
+            /* LoadListeners at the bottom of start in case we want to load things inline. */
+            this.loadListeners();
             this.init();
         },
 
@@ -268,9 +264,31 @@ ACT.define('Base', [/*@<*/'Debug', /*>@*/ 'Event', 'Cookie', 'Lang', 'Tracking',
         * @static
         */
         loadListeners: function () {
-            /* Once 'domready' event is fully available, see about moving these from load to domready. */
-            this.adInitEvent = Event.on('load', this.ad_init, window, this);
-            this.registerEvent = Event.on('load', this.register, window, this);
+            var loadType = this.config.loadType || 'load';
+            switch (loadType.toLowerCase()) {
+                case 'inline':
+                    /*@<*/
+                    debug.info('[ ACT_base.js ] loadListeners calling `ad_init` and `register` inline');
+                    /*>@*/
+                    this.ad_init();
+                    this.register();
+                    break;
+                case 'domready':
+                    /*@<*/
+                    debug.info('[ ACT_base.js ] loadListeners calling `ad_init` and `register` DOMREADY');
+                    /*>@*/
+                    Event.ready(Lang.bind(this, null, this.ad_init));
+                    Event.ready(Lang.bind(this, null, this.register));
+                    break;
+                // case 'load':
+                default:
+                    /*@<*/
+                    debug.info('[ ACT_base.js ] loadListeners calling `ad_init` and `register` ON-LOAD (default) ');
+                    /*>@*/
+                    this.adInitEvent = Event.on('load', this.ad_init, window, this);
+                    this.registerEvent = Event.on('load', this.register, window, this);
+                    break;
+                }
         },
 
         /**

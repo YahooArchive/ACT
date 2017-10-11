@@ -17,7 +17,7 @@
                 <h1><img src="https://s.yimg.com/cv/ae/global/ACTJS/logo/ACT.js.logo.png" title="ACT.js" width="150"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 1.1.0</em>
+            <em>API Docs for: 1.1.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -62,6 +62,8 @@
                                 <li><a href="../classes/Dom.html">Dom</a></li>
                                 <li><a href="../classes/DwellTime.html">DwellTime</a></li>
                                 <li><a href="../classes/Enabler.html">Enabler</a></li>
+                                <li><a href="../classes/EnablerADTECH.html">EnablerADTECH</a></li>
+                                <li><a href="../classes/EnablerConfig.html">EnablerConfig</a></li>
                                 <li><a href="../classes/Environment.html">Environment</a></li>
                                 <li><a href="../classes/Event.html">Event</a></li>
                                 <li><a href="../classes/Flash.html">Flash</a></li>
@@ -99,6 +101,7 @@
                                 <li><a href="../modules/Cookie.html">Cookie</a></li>
                                 <li><a href="../modules/DwellTime.html">DwellTime</a></li>
                                 <li><a href="../modules/Enabler.html">Enabler</a></li>
+                                <li><a href="../modules/EnablerADTECH.html">EnablerADTECH</a></li>
                                 <li><a href="../modules/environment.html">environment</a></li>
                                 <li><a href="../modules/IO.html">IO</a></li>
                                 <li><a href="../modules/LayersList.html">LayersList</a></li>
@@ -187,9 +190,9 @@
  * The new ACT.js global namespace object. If the &#x60;ACT&#x60; object is already defined, the existing ACT object will only be overwritten
  * IF the new one being loaded has a greater version than the existing one. Usage example is as follows:
  *
- * 		ACT.define(&#x27;name_of_module&#x27;, [ &#x27;required&#x27;, &#x27;sub&#x27;, &#x27;modules&#x27;], function (ACT) {
- * 			// ACT is the global reference to the ACT instance with all the required modules loaded.
- * 		});
+ *         ACT.define(&#x27;name_of_module&#x27;, [ &#x27;required&#x27;, &#x27;sub&#x27;, &#x27;modules&#x27;], function (ACT) {
+ *             // ACT is the global reference to the ACT instance with all the required modules loaded.
+ *         });
  *
  * @module ACT
  * @main ACT
@@ -197,297 +200,336 @@
  * @global
  */
 (function (ACT_CURRENT) {
-	&#x27;use strict&#x27;;
+    &#x27;use strict&#x27;;
 
-	/* Define private variables */
-	var modules = {};
-	var queue = {};
-	var execQueue = [];
-	var configs = {};
-	var configQueue = {};
-	var actObj;
+    /* Define private variables */
+    var modules = {};
+    var queue = {};
+    var execQueue = [];
+    var configs = {};
+    var configQueue = {};
+    var actObj;
+    var waitForModules = {};
 
-	/* Define Private functions */
+    /* Define Private functions */
 
-	/**
-	 * Traverse the queue of modules, if all the requirements have been met load it in.
-	 * @method checkQueue
-	 * @private
-	 */
-	function checkQueue() {
-		var key;
-		var obj;
+    function checkExtraModules() {
+        var tmpSet = {};
+        var count = 0;
+        var itor;
+        for (itor in waitForModules) {
+            if (waitForModules.hasOwnProperty(itor)) {
+                if (!(itor in modules)) {
+                    tmpSet[itor] = 1;
+                    count++;
+                }
+            }
+        }
+        waitForModules = tmpSet;
+        return count === 0;
+    }
 
-		for (key in queue) {
-			/* istanbul ignore else */
-			if (queue.hasOwnProperty(key)) {
-				obj = queue[key];
-				includeModules(key, obj.requires, obj.factory);
-			}
-		}
-	}
+    /**
+     * Traverse the queue of modules, if all the requirements have been met load it in.
+     * @method checkQueue
+     * @private
+     */
+    function checkQueue() {
+        var key;
+        var obj;
 
-	/**
-	 * Given that we have no more modules to load, run through the queue of functions that need to execute and execute them
-	 * @method runQueue
-	 * @private
-	 */
-	function runQueue() {
-		var count = countProperties(queue);
-		var temp;
+        for (key in queue) {
+            /* istanbul ignore else */
+            if (queue.hasOwnProperty(key)) {
+                obj = queue[key];
+                includeModules(key, obj.requires, obj.factory);
+            }
+        }
+    }
 
-		if (count === 0) {
-			while (execQueue.length &gt; 0) {
-				temp = execQueue.shift();
-				temp();
-			}
-		}
-	}
+    /**
+     * Given that we have no more modules to load, run through the queue of functions that need to execute and execute them
+     * @method runQueue
+     * @private
+     */
+    function runQueue() {
+        var count = countProperties(queue);
+        var temp;
+        var itor;
 
-	/**
-	 * Given an object &#x27;{}&#x27; return the number of properties ( elements ) it contains.
-	 * @private
-	 * @method countProperties
-	 * @param {Object} obj Object to return the count from
-	 * @return {Number} count Number of properties contained in the object provided.
-	 */
-	function countProperties(obj) {
-		var count = 0;
-		var prop;
+        if (count === 0) {
+            for (itor = execQueue.length - 1; itor &gt;= 0; itor--) {
+                if (execQueue[itor] === null) {
+                    continue;
+                }
+                temp = execQueue[itor];
+                execQueue[itor] = null;
+                temp();
+            }
+        }
+    }
 
-		/* In case the object passed in is not of type &#x27;object&#x27; return 0 as the count */
-		if (typeof obj !== &#x27;object&#x27;) {
-			return count;
-		}
+    /**
+     * Given an object &#x27;{}&#x27; return the number of properties ( elements ) it contains.
+     * @private
+     * @method countProperties
+     * @param {Object} obj Object to return the count from
+     * @return {Number} count Number of properties contained in the object provided.
+     */
+    function countProperties(obj) {
+        var count = 0;
+        var prop;
 
-		for (prop in obj) {
-			/* istanbul ignore else */
-			if (obj.hasOwnProperty(prop)) {
-				count++;
-			}
-		}
-		return count;
-	}
+        /* In case the object passed in is not of type &#x27;object&#x27; return 0 as the count */
+        if (typeof obj !== &#x27;object&#x27;) {
+            return count;
+        }
 
-	/**
-	 * Include module being loaded in. Make sure to only load the new version.
-	 * @private
-	 * @method includeModules
-	 * @param {String} name Name of the module being loaded in
-	 * @param {Array} requires Array of the modules that this one has dependencies on.
-	 * @param {Function} factory Function that executes to load in this modules.
-	 */
-	function includeModules(name, requires, factory) {
-		var obj;
-		if (checkDependencies(requires)) {
-			/* Execute the factory, sending ACT as the parameter. */
-			obj = factory(ACT);
+        for (prop in obj) {
+            /* istanbul ignore else */
+            if (obj.hasOwnProperty(prop)) {
+                count++;
+            }
+        }
+        return count;
+    }
 
-			/* Check that this module has not been included already AND confirm that the version of the new module
-			 is bigger than the already loaded one - if one already exists.
-			 */
-			if (!modules[name] || (&#x27;factory&#x27; in modules[name] &amp;&amp; &#x27;ATTRS&#x27; in modules[name].factory &amp;&amp; modules[name].factory.ATTRS.version &lt; obj.ATTRS.version)) {
-				include(modules, name, requires, obj);
-				ACT[name] = obj;
-			}
-			/* Remove the module from the queue */
-			delete queue[name];
-			/* Once the module is included, cycle through the queue and load in any modules that are depending on this one. */
-			checkQueue();
-			ACT.ready();
-		} else {
-			/* Since we do not yet have all the required dependencies loaded, put this one into the queue */
-			include(queue, name, requires, factory);
-		}
-	}
+    /**
+     * Include module being loaded in. Make sure to only load the new version.
+     * @private
+     * @method includeModules
+     * @param {String} name Name of the module being loaded in
+     * @param {Array} requires Array of the modules that this one has dependencies on.
+     * @param {Function} factory Function that executes to load in this modules.
+     */
+    function includeModules(name, requires, factory) {
+        var obj;
+        if (checkDependencies(requires)) {
+            /* Execute the factory, sending ACT as the parameter. */
+            obj = factory(ACT);
 
-	/**
-	 * Check that the dependencies for a given module have been loaded in.
-	 * @private
-	 * @method checkDependencies
-	 * @param {Array} requires Array of the required dependencies for this module to function
-	 * @return {Boolean} true if all dependencies have been met, false otherwise.
-	 */
-	function checkDependencies(requires) {
-		var itor = 0;
-		for (itor; itor &lt; requires.length; itor++) {
-			if (!modules[requires[itor]]) {
-				return false;
-			}
-		}
-		return true;
-	}
+            /* Check that this module has not been included already AND confirm that the version of the new module
+             is bigger than the already loaded one - if one already exists.
+             */
+            if (!modules[name] || (&#x27;factory&#x27; in modules[name] &amp;&amp; &#x27;ATTRS&#x27; in modules[name].factory)) {
+                include(modules, name, requires, obj);
+                ACT[name] = obj;
+            }
+            /* Remove the module from the queue */
+            delete queue[name];
+            /* Once the module is included, cycle through the queue and load in any modules that are depending on this one. */
+            checkQueue();
+            ACT.ready();
+        } else {
+            /* Since we do not yet have all the required dependencies loaded, put this one into the queue */
+            include(queue, name, requires, factory);
+        }
+    }
 
-	/**
-	 * Include the defined module - either into the queue or the defined module set.
-	 * @private
-	 * @method include
-	 * @param {Object} group Set to add the new factory / module
-	 * @param {String} name The name of the  module
-	 * @param {Array} requires Array of dependencies
-	 * @param {Function} factory The function to execute once all the requirements have been met.
-	 */
-	function include(group, name, requires, factory) {
-		group[name] = group[name] || {};
-		group[name].requires = requires;
-		group[name].factory = factory;
-	}
+    /**
+     * Check that the dependencies for a given module have been loaded in.
+     * @private
+     * @method checkDependencies
+     * @param {Array} requires Array of the required dependencies for this module to function
+     * @return {Boolean} true if all dependencies have been met, false otherwise.
+     */
+    function checkDependencies(requires) {
+        var itor = 0;
+        for (itor; itor &lt; requires.length; itor++) {
+            if (!modules[requires[itor]]) {
+                return false;
+            }
+        }
+        return true;
+    }
 
-	actObj = {
-		/*@&lt;*/
-		/* Expose these internal elements for Debug purposes */
-		queue: queue,
-		execQueue: execQueue,
-		modules: modules,
-		configQueue: configQueue,
-		configs: configs,
-		store: [],
-		/*&gt;@*/
+    /**
+     * Include the defined module - either into the queue or the defined module set.
+     * @private
+     * @method include
+     * @param {Object} group Set to add the new factory / module
+     * @param {String} name The name of the  module
+     * @param {Array} requires Array of dependencies
+     * @param {Function} factory The function to execute once all the requirements have been met.
+     */
+    function include(group, name, requires, factory) {
+        group[name] = group[name] || {};
+        group[name].requires = requires;
+        group[name].factory = factory;
+    }
 
-		adQueue: [],
+    actObj = {
+        /*@&lt;*/
+        /* Expose these internal elements for Debug purposes */
+        queue: queue,
+        execQueue: execQueue,
+        modules: modules,
+        configQueue: configQueue,
+        configs: configs,
+        store: [],
+        waitForModules: waitForModules,
+        /*&gt;@*/
 
-		/**
-		 * @attribute ATTRS
-		 * @type {{NAME: string, version: number}}
-		 */
-		ATTRS: {
-			NAME: &#x27;ACT&#x27;,
-			version: &#x27;1.1.0&#x27;
-		},
+        adQueue: [],
 
-		/**
-		 * Define a new module to be used with ACT
-		 * @public
-		 * @method define
-		 * @param {String} name Module name
-		 * @param {Array} requires Module dependencies
-		 * @param {Object} factory Factory method
-		 */
-		define: function (name, requires, factory) {
-			/*@&lt;*/
-			this.store.push({ name: name, requires: requires, factory: factory });
-			/*&gt;@*/
-			includeModules(name, requires, factory);
-		},
+        /**
+         * @attribute ATTRS
+         * @type {{NAME: string, version: number}}
+         */
+        ATTRS: {
+            NAME: &#x27;ACT&#x27;
+        },
 
-		/**
-		 * Checks if all modules and dependencies were loaded
-		 * @public
-		 * @method ready
-		 * @param {Object} obj
-		 * @return {boolean}
-		 */
-		ready: function (obj) {
-			var temp;
-			var count = countProperties(queue);
-			var configCount = countProperties(configQueue);
+        /**
+         * Define a new module to be used with ACT
+         * @public
+         * @method define
+         * @param {String} name Module name
+         * @param {Array} requires Module dependencies
+         * @param {Object} factory Factory method
+         */
+        define: function (name, requires, factory) {
+            /*@&lt;*/
+            this.store.push({ name: name, requires: requires, factory: factory });
+            /*&gt;@*/
+            includeModules(name, requires, factory);
+        },
 
-			while (ACT.adQueue.length &gt; 0) {
-				temp = temp = ACT.adQueue.shift();
-				execQueue.push(temp);
-			}
+        /**
+         * Checks if all modules and dependencies were loaded
+         * @public
+         * @method ready
+         * @param {Object} obj
+         * @return {boolean}
+         */
+        ready: function (obj, extras) {
+            var temp;
+            var count = countProperties(queue);
+            var configCount = countProperties(configQueue);
 
-			if (obj) {
-				execQueue.push(obj);
-			}
+            while (ACT.adQueue.length &gt; 0) {
+                temp = temp = ACT.adQueue.shift();
+                execQueue.push(temp);
+            }
 
-			if (count === 0 &amp;&amp; configCount === 0) {
-				/* We&#x27;re ready, so run through the queue, and return true. */
-				runQueue();
-				return true;
-			}
-			/* The obj is already pushed into the queue. So return false. */
-			return false;
-		},
+            if (obj) {
+                execQueue.push(obj);
+            }
 
-		/**
-		 * Add a required module to the set of required modules
-		 * @public
-		 * @method addRequired
-		 * @param {String} String name of the modules
-		 * @return {boolean} true if already included, false otherwise.
-		 */
-		requireConfig: function (str) {
-			if (str in configs || str in configQueue) {
-				delete configQueue[str];
-				return true;
-			}
-			configQueue[str] = true;
-			return false;
-		},
+            if (extras) {
+                this.addRequired(extras);
+            }
 
-		/**
-		 * Return the configuration ( superConf ) by name.
-		 * @public
-		 * @method getConfig
-		 * @param {String} name Name of the configuration object to return.
-		 * @return {Object} Configuration object, empty if not found.
-		 */
-		getConfig: function (name) {
-			var ret = {};
-			/* If the config has been loaded, return it based on it&#x27;s name. Empty object otherwise */
-			/* istanbul ignore next */
-			if (name in configs) {
-				ret = configs[name];
-			}
-			return ret;
-		},
+            if (count === 0 &amp;&amp; configCount === 0 &amp;&amp; checkExtraModules() !== false) {
+                /* We&#x27;re ready, so run through the queue, and return true. */
+                runQueue();
+                return true;
+            }
+            /* The obj is already pushed into the queue. So return false. */
+            return false;
+        },
 
-		/**
-		 * Set the configuration object as it&#x27;s loaded.
-		 * @public
-		 * @method setConfig
-		 * @param {String} name Name of the configuration object that is being loaded in
-		 * @param {Object} obj Object defining the configuration that is being loaded.
-		 */
-		setConfig: function (name, obj) {
-			/* If something has requested this config before it loaded, it&#x27;s waiting in the config queue.
-			 Remove it once loaded.
-			 */
-			if (name in configQueue) {
-				delete configQueue[name];
-			}
-			/* Put the new config into the configs object for later user. */
-			configs[name] = obj;
-		}
-	};
+        addRequired: function (requiredSet) {
+            var itor;
+            if (typeof requiredSet === &#x27;string&#x27;) {
+                waitForModules[requiredSet] = 1;
+            } else {
+                for (itor = 0; itor &lt; requiredSet.length; itor++) {
+                    waitForModules[requiredSet[itor]] = 1;
+                }
+            }
+        },
 
-	/**
-	 NOTE: SafeFrames forces us to define the config before we include the library, like this:
+        /**
+         * Add a required module to the set of required modules
+         * @public
+         * @method addRequired
+         * @param {String} String name of the modules
+         * @return {boolean} true if already included, false otherwise.
+         */
+        requireConfig: function (str) {
+            if (str in configs || str in configQueue) {
+                delete configQueue[str];
+                return true;
+            }
+            configQueue[str] = true;
+            return false;
+        },
 
-	 Traditional approach:
-	 &lt;script language=&#x27;javascript&#x27; src=&#x27;library/files.js&#x27;&gt;&lt;/script&gt;
-	 &lt;script&gt;
-	 var ad = ACT.base({});
-	 &lt;/script&gt;
+        /**
+         * Return the configuration ( superConf ) by name.
+         * @public
+         * @method getConfig
+         * @param {String} name Name of the configuration object to return.
+         * @return {Object} Configuration object, empty if not found.
+         */
+        getConfig: function (name) {
+            var ret = {};
+            /* If the config has been loaded, return it based on it&#x27;s name. Empty object otherwise */
+            /* istanbul ignore next */
+            if (name in configs) {
+                ret = configs[name];
+            }
+            return ret;
+        },
 
-	 Because of the load sequence is async in some browsers due to SafeFrames, having the config queue up
-	 guarantees that we execute the ad after the full library loaded, and the traditional approach changes to:
+        /**
+         * Set the configuration object as it&#x27;s loaded.
+         * @public
+         * @method setConfig
+         * @param {String} name Name of the configuration object that is being loaded in
+         * @param {Object} obj Object defining the configuration that is being loaded.
+         */
+        setConfig: function (name, obj) {
+            /* If something has requested this config before it loaded, it&#x27;s waiting in the config queue.
+             Remove it once loaded.
+             */
+            if (name in configQueue) {
+                delete configQueue[name];
+            }
+            /* Put the new config into the configs object for later user. */
+            configs[name] = obj;
+            /* Received a config. Lets see if there are things waiting for it to load in. */
+            this.ready();
+        }
+    };
 
-	 &lt;script&gt;
+    /**
+     NOTE: SafeFrames forces us to define the config before we include the library, like this:
 
-	 if (!window.ACT) {
-				var ACT = {
-					adQueue:[];
-				};
-			}
-	 function MASTAD() {
-				var ad = ACT.base({});
-			}
-	 ACT.adQueue.push( MASTAD );
+     Traditional approach:
+     &lt;script language=&#x27;javascript&#x27; src=&#x27;library/files.js&#x27;&gt;&lt;/script&gt;
+     &lt;script&gt;
+     var ad = ACT.base({});
+     &lt;/script&gt;
 
-	 &lt;/script&gt;
-	 &lt;script language=&#x27;javascript&#x27; src=&#x27;library/files.js&#x27;&gt;&lt;/script&gt;
-	 */
-	if (ACT_CURRENT &amp;&amp; ACT_CURRENT.hasOwnProperty(&#x27;version&#x27;) &amp;&amp; ACT_CURRENT.version &lt; actObj.version) {
-		actObj = ACT_CURRENT;
-	} else {
-		if (ACT_CURRENT.adQueue) {
-			actObj.adQueue = ACT_CURRENT.adQueue;
-		}
-	}
+     Because of the load sequence is async in some browsers due to SafeFrames, having the config queue up
+     guarantees that we execute the ad after the full library loaded, and the traditional approach changes to:
 
-	window.ACT = actObj;
+     &lt;script&gt;
+
+     if (!window.ACT) {
+                var ACT = {
+                    adQueue:[];
+                };
+            }
+     function MASTAD() {
+                var ad = ACT.base({});
+            }
+     ACT.adQueue.push( MASTAD );
+
+     &lt;/script&gt;
+     &lt;script language=&#x27;javascript&#x27; src=&#x27;library/files.js&#x27;&gt;&lt;/script&gt;
+     */
+    if (ACT_CURRENT &amp;&amp; ACT_CURRENT.hasOwnProperty(&#x27;version&#x27;) &amp;&amp; ACT_CURRENT.version &lt; actObj.version) {
+        actObj = ACT_CURRENT;
+    } else {
+        if (ACT_CURRENT.adQueue) {
+            actObj.adQueue = ACT_CURRENT.adQueue;
+        }
+    }
+
+    window.ACT = actObj;
 }(window.ACT || {}));
 
     </pre>

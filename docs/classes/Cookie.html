@@ -17,7 +17,7 @@
                 <h1><img src="https://s.yimg.com/cv/ae/global/ACTJS/logo/ACT.js.logo.png" title="ACT.js" width="150"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 1.1.0</em>
+            <em>API Docs for: 1.1.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -62,6 +62,8 @@
                                 <li><a href="../classes/Dom.html">Dom</a></li>
                                 <li><a href="../classes/DwellTime.html">DwellTime</a></li>
                                 <li><a href="../classes/Enabler.html">Enabler</a></li>
+                                <li><a href="../classes/EnablerADTECH.html">EnablerADTECH</a></li>
+                                <li><a href="../classes/EnablerConfig.html">EnablerConfig</a></li>
                                 <li><a href="../classes/Environment.html">Environment</a></li>
                                 <li><a href="../classes/Event.html">Event</a></li>
                                 <li><a href="../classes/Flash.html">Flash</a></li>
@@ -99,6 +101,7 @@
                                 <li><a href="../modules/Cookie.html">Cookie</a></li>
                                 <li><a href="../modules/DwellTime.html">DwellTime</a></li>
                                 <li><a href="../modules/Enabler.html">Enabler</a></li>
+                                <li><a href="../modules/EnablerADTECH.html">EnablerADTECH</a></li>
                                 <li><a href="../modules/environment.html">environment</a></li>
                                 <li><a href="../modules/IO.html">IO</a></li>
                                 <li><a href="../modules/LayersList.html">LayersList</a></li>
@@ -192,7 +195,8 @@
     path: &#39;/&#39;,
     domain: &#39;yahoo.com&#39;,
     name: &#39;cookieName&#39;
-    freq_cap : 1
+    freq_cap : 1,
+    disabled: false
 };
 var cookie = new cookie( conf, this);
 </code></pre>
@@ -352,7 +356,7 @@ var cookie = new cookie( conf, this);
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_core_ACT_cookie.js.html#l812"><code>src&#x2F;core&#x2F;ACT_cookie.js:812</code></a>
+        <a href="../files/src_core_ACT_cookie.js.html#l816"><code>src&#x2F;core&#x2F;ACT_cookie.js:816</code></a>
         </p>
 
 
@@ -383,7 +387,7 @@ var cookie = new cookie( conf, this);
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_core_ACT_cookie.js.html#l547"><code>src&#x2F;core&#x2F;ACT_cookie.js:547</code></a>
+        <a href="../files/src_core_ACT_cookie.js.html#l548"><code>src&#x2F;core&#x2F;ACT_cookie.js:548</code></a>
         </p>
 
 
@@ -417,7 +421,7 @@ var cookie = new cookie( conf, this);
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_core_ACT_cookie.js.html#l947"><code>src&#x2F;core&#x2F;ACT_cookie.js:947</code></a>
+        <a href="../files/src_core_ACT_cookie.js.html#l951"><code>src&#x2F;core&#x2F;ACT_cookie.js:951</code></a>
         </p>
 
 
@@ -464,7 +468,7 @@ var cookie = new cookie( conf, this);
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_core_ACT_cookie.js.html#l913"><code>src&#x2F;core&#x2F;ACT_cookie.js:913</code></a>
+        <a href="../files/src_core_ACT_cookie.js.html#l917"><code>src&#x2F;core&#x2F;ACT_cookie.js:917</code></a>
         </p>
 
 
@@ -519,7 +523,7 @@ a EVENT_COOKIE_GETDATA_COMPLETE event.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_core_ACT_cookie.js.html#l680"><code>src&#x2F;core&#x2F;ACT_cookie.js:680</code></a>
+        <a href="../files/src_core_ACT_cookie.js.html#l684"><code>src&#x2F;core&#x2F;ACT_cookie.js:684</code></a>
         </p>
 
 
@@ -566,7 +570,7 @@ a EVENT_COOKIE_GETDATA_COMPLETE event.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_core_ACT_cookie.js.html#l507"><code>src&#x2F;core&#x2F;ACT_cookie.js:507</code></a>
+        <a href="../files/src_core_ACT_cookie.js.html#l508"><code>src&#x2F;core&#x2F;ACT_cookie.js:508</code></a>
         </p>
 
 
@@ -600,7 +604,7 @@ a EVENT_COOKIE_GETDATA_COMPLETE event.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_core_ACT_cookie.js.html#l797"><code>src&#x2F;core&#x2F;ACT_cookie.js:797</code></a>
+        <a href="../files/src_core_ACT_cookie.js.html#l801"><code>src&#x2F;core&#x2F;ACT_cookie.js:801</code></a>
         </p>
 
 
@@ -647,7 +651,7 @@ a EVENT_COOKIE_GETDATA_COMPLETE event.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_core_ACT_cookie.js.html#l748"><code>src&#x2F;core&#x2F;ACT_cookie.js:748</code></a>
+        <a href="../files/src_core_ACT_cookie.js.html#l752"><code>src&#x2F;core&#x2F;ACT_cookie.js:752</code></a>
         </p>
 
 
@@ -704,7 +708,7 @@ This also resets the &#39;cookie&#39; API to use from StandardCookie to SafeFram
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_core_ACT_cookie.js.html#l580"><code>src&#x2F;core&#x2F;ACT_cookie.js:580</code></a>
+        <a href="../files/src_core_ACT_cookie.js.html#l584"><code>src&#x2F;core&#x2F;ACT_cookie.js:584</code></a>
         </p>
 
 
@@ -758,7 +762,7 @@ When the whole process is done, event &#39;localRegister:registerAdComplete&#39;
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_core_ACT_cookie.js.html#l847"><code>src&#x2F;core&#x2F;ACT_cookie.js:847</code></a>
+        <a href="../files/src_core_ACT_cookie.js.html#l851"><code>src&#x2F;core&#x2F;ACT_cookie.js:851</code></a>
         </p>
 
 
@@ -1213,7 +1217,7 @@ However, the function only uses cookieName and cookieContent. &#39;domain&#39;, 
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_core_ACT_cookie.js.html#l651"><code>src&#x2F;core&#x2F;ACT_cookie.js:651</code></a>
+        <a href="../files/src_core_ACT_cookie.js.html#l655"><code>src&#x2F;core&#x2F;ACT_cookie.js:655</code></a>
         </p>
 
 
@@ -1280,7 +1284,7 @@ However, the function only uses cookieName and cookieContent. &#39;domain&#39;, 
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_core_ACT_cookie.js.html#l873"><code>src&#x2F;core&#x2F;ACT_cookie.js:873</code></a>
+        <a href="../files/src_core_ACT_cookie.js.html#l877"><code>src&#x2F;core&#x2F;ACT_cookie.js:877</code></a>
         </p>
 
 
@@ -1660,7 +1664,7 @@ However, the function only uses cookieName and cookieContent. &#39;domain&#39;, 
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_core_ACT_cookie.js.html#l571"><code>src&#x2F;core&#x2F;ACT_cookie.js:571</code></a>
+        <a href="../files/src_core_ACT_cookie.js.html#l572"><code>src&#x2F;core&#x2F;ACT_cookie.js:572</code></a>
         </p>
 
 
@@ -1668,7 +1672,7 @@ However, the function only uses cookieName and cookieContent. &#39;domain&#39;, 
     </div>
 
     <div class="description">
-        <p>Check if is possible to set|read cookie</p>
+        <p>Check if is possible to set|read cookie. Given the <code>disabled</code> config variable, forgo the test and return false.</p>
 
     </div>
 
@@ -1704,7 +1708,7 @@ However, the function only uses cookieName and cookieContent. &#39;domain&#39;, 
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_core_ACT_cookie.js.html#l703"><code>src&#x2F;core&#x2F;ACT_cookie.js:703</code></a>
+        <a href="../files/src_core_ACT_cookie.js.html#l707"><code>src&#x2F;core&#x2F;ACT_cookie.js:707</code></a>
         </p>
 
 
@@ -1762,7 +1766,7 @@ Finally saving the cookie</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/src_core_ACT_cookie.js.html#l487"><code>src&#x2F;core&#x2F;ACT_cookie.js:487</code></a>
+                            <a href="../files/src_core_ACT_cookie.js.html#l489"><code>src&#x2F;core&#x2F;ACT_cookie.js:489</code></a>
                             </p>
                     
                     

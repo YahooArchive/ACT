@@ -94,7 +94,6 @@ ACT.define('LayersList', [/*@<*/'Debug', /*>@*/ 'Lang', 'Dom', 'Event', 'Class',
 
     LayersList.ATTRS = {
         NAME: 'LayersList',
-        version: '1.1.0',
         envToPlay: undefined,
         layersList: [],
         layersConfig: {},

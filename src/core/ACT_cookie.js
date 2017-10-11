@@ -449,7 +449,8 @@ ACT.define('Cookie', [/*@<*/'Debug', /*>@*/ 'Json', 'Lang', 'Event'], function (
      *         path: '/',
      *         domain: 'yahoo.com',
      *         name: 'cookieName'
-     *         freq_cap : 1
+     *         freq_cap : 1,
+     *         disabled: false
      *     };
      *     var cookie = new cookie( conf, this);
      *
@@ -469,6 +470,7 @@ ACT.define('Cookie', [/*@<*/'Debug', /*>@*/ 'Json', 'Lang', 'Event'], function (
         this.DEFAULT_DOMAIN = cookieConf.domain || DEFAULT_DOMAIN;
         this.COOKIE_NAME = cookieConf.name || DEFAULT_NAME;
         this.FREQ_CAP = cookieConf.freq_cap || DEFAULT_FREQ_CAP;
+        this.DISABLED = cookieConf.disabled || false;
 
         if (ref) {
             this.ref = ref;
@@ -490,8 +492,7 @@ ACT.define('Cookie', [/*@<*/'Debug', /*>@*/ 'Json', 'Lang', 'Event'], function (
      * @initOnly
      */
     cookie.ATTRS = {
-        NAME: 'Cookie',
-        version: '1.1.0'
+        NAME: 'Cookie'
     };
 
     /**
@@ -569,11 +570,14 @@ ACT.define('Cookie', [/*@<*/'Debug', /*>@*/ 'Json', 'Lang', 'Event'], function (
         },
 
         /**
-         * Check if is possible to set|read cookie
+         * Check if is possible to set|read cookie. Given the `disabled` config variable, forgo the test and return false.
          * @method test
          * @return {*|Boolean}
          */
         test: function () {
+            if (this.DISABLED === true) {
+                return false;
+            }
             return this.cookie.test();
         },
 

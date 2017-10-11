@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>EnablerConfig - ACT.js</title>
+    <link rel="stylesheet" href="https://s.yimg.com/zz/combo?yui-s:3.14.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="https://s.yimg.com/rz/l/favicon.ico">
+    <script src="https://s.yimg.com/zz/combo?yui-s:3.14.1/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="https://s.yimg.com/cv/ae/global/ACTJS/logo/ACT.js.logo.png" title="ACT.js" width="150"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 1.1.1</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                            <li><a href="#api-demos">Demo and Examples</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/ACT.html">ACT</a></li>
+                                <li><a href="../classes/ActionsQueue.html">ActionsQueue</a></li>
+                                <li><a href="../classes/Base.html">Base</a></li>
+                                <li><a href="../classes/Capability.html">Capability</a></li>
+                                <li><a href="../classes/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../classes/Class.html">Class</a></li>
+                                <li><a href="../classes/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../classes/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../classes/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../classes/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../classes/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../classes/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../classes/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../classes/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../classes/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../classes/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../classes/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../classes/Cookie.html">Cookie</a></li>
+                                <li><a href="../classes/CustomData.html">CustomData</a></li>
+                                <li><a href="../classes/Debug.html">Debug</a></li>
+                                <li><a href="../classes/Dom.html">Dom</a></li>
+                                <li><a href="../classes/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../classes/Enabler.html">Enabler</a></li>
+                                <li><a href="../classes/EnablerADTECH.html">EnablerADTECH</a></li>
+                                <li><a href="../classes/EnablerConfig.html">EnablerConfig</a></li>
+                                <li><a href="../classes/Environment.html">Environment</a></li>
+                                <li><a href="../classes/Event.html">Event</a></li>
+                                <li><a href="../classes/Flash.html">Flash</a></li>
+                                <li><a href="../classes/IO.html">IO</a></li>
+                                <li><a href="../classes/Json.html">Json</a></li>
+                                <li><a href="../classes/Lang.html">Lang</a></li>
+                                <li><a href="../classes/LayersList.html">LayersList</a></li>
+                                <li><a href="../classes/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../classes/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../classes/Screen.html">Screen</a></li>
+                                <li><a href="../classes/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../classes/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../classes/Tracking.html">Tracking</a></li>
+                                <li><a href="../classes/UA.html">UA</a></li>
+                                <li><a href="../classes/Util.html">Util</a></li>
+                                <li><a href="../classes/VideoEvents.html">VideoEvents</a></li>
+                            </ul>
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/ACT.html">ACT</a></li>
+                                <li><a href="../modules/actionsQueue.html">actionsQueue</a></li>
+                                <li><a href="../modules/Base.html">Base</a></li>
+                                <li><a href="../modules/CapabilitySkeleton.html">CapabilitySkeleton</a></li>
+                                <li><a href="../modules/ContentAdobeEdge.html">ContentAdobeEdge</a></li>
+                                <li><a href="../modules/ContentCarousel.html">ContentCarousel</a></li>
+                                <li><a href="../modules/ContentContainer.html">ContentContainer</a></li>
+                                <li><a href="../modules/ContentHtml5.html">ContentHtml5</a></li>
+                                <li><a href="../modules/ContentImage.html">ContentImage</a></li>
+                                <li><a href="../modules/ContentProgressBar.html">ContentProgressBar</a></li>
+                                <li><a href="../modules/ContentSwf.html">ContentSwf</a></li>
+                                <li><a href="../modules/ContentThirdParty.html">ContentThirdParty</a></li>
+                                <li><a href="../modules/ContentVideoFlash.html">ContentVideoFlash</a></li>
+                                <li><a href="../modules/ContentVideoHtml.html">ContentVideoHtml</a></li>
+                                <li><a href="../modules/ContentYoutube.html">ContentYoutube</a></li>
+                                <li><a href="../modules/Cookie.html">Cookie</a></li>
+                                <li><a href="../modules/DwellTime.html">DwellTime</a></li>
+                                <li><a href="../modules/Enabler.html">Enabler</a></li>
+                                <li><a href="../modules/EnablerADTECH.html">EnablerADTECH</a></li>
+                                <li><a href="../modules/environment.html">environment</a></li>
+                                <li><a href="../modules/IO.html">IO</a></li>
+                                <li><a href="../modules/LayersList.html">LayersList</a></li>
+                                <li><a href="../modules/LayerStandard.html">LayerStandard</a></li>
+                                <li><a href="../modules/Scaffolding.html">Scaffolding</a></li>
+                                <li><a href="../modules/Screen.html">Screen</a></li>
+                                <li><a href="../modules/SecureDarla.html">SecureDarla</a></li>
+                                <li><a href="../modules/StandardAd.html">StandardAd</a></li>
+                                <li><a href="../modules/Tracking.html">Tracking</a></li>
+                            </ul>
+                
+                            <ul id="api-demos" class="apis demos">
+                                <li><a href="../demo/ACT_Demo_300x250.html">300x250</a></li>
+                                <li><a href="../demo/ACT_Demo_300x250_tracking.html">300x250_tracking</a></li>
+                                <li><a href="../demo/ACT_Demo_TrackingExample.html">TrackingExample</a></li>
+                                <li><a href="../demo/ACT_Demo_animation.html">animation</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard.html">billboard</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-enabler.html">billboard-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard-expandable-enabler.html">billboard-expandable-enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video.html">billboard_html_video</a></li>
+                                <li><a href="../demo/ACT_Demo_billboard_html_video_rtl.html">billboard_html_video_rtl</a></li>
+                                <li><a href="../demo/ACT_Demo_carousel.html">carousel</a></li>
+                                <li><a href="../demo/ACT_Demo_dwelltime.html">dwelltime</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_expand.html">enabler_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_fullscreen_expand.html">enabler_fullscreen_expand</a></li>
+                                <li><a href="../demo/ACT_Demo_enabler_target.html">enabler_target</a></li>
+                                <li><a href="../demo/ACT_Demo_floating.html">floating</a></li>
+                                <li><a href="../demo/ACT_Demo_force_env.html">force_env</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_enabler.html">html5_enabler</a></li>
+                                <li><a href="../demo/ACT_Demo_html5_standard.html">html5_standard</a></li>
+                                <li><a href="../demo/ACT_Demo_icons.html">icons</a></li>
+                                <li><a href="../demo/ACT_Demo_input_data.html">input_data</a></li>
+                                <li><a href="../demo/ACT_Demo_login_html.html">login_html</a></li>
+                                <li><a href="../demo/ACT_Demo_overwrite_env.html">overwrite_env</a></li>
+                                <li><a href="../demo/ACT_Demo_splash_ad.html">splash_ad</a></li>
+                                <li><a href="../demo/ACT_Demo_tablet_expandable.html">tablet_expandable</a></li>
+                                <li><a href="../demo/ACT_Demo_video_event.html">video_event</a></li>
+                                <li><a href="../demo/ACT_Demo_video_html.html">video_html</a></li>
+                            </ul>
+                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1>EnablerConfig Class</h1>
+<div class="box meta">
+
+
+        <div class="foundat">
+            Defined in: <a href="../files/src_library_ACT_Enabler.js.html#l2005"><code>src&#x2F;library&#x2F;ACT_Enabler.js:2005</code></a>
+        </div>
+
+            Module: <a href="../modules/Enabler.html">Enabler</a>
+
+</div>
+
+
+<div class="box intro">
+    <p>Enabler Config Object contains all of the configuration options for this <code>Enabler</code> instance.
+This object is supplied by the implementer when using ACT Enabler.
+Properties have default values if they are not supplied by the implementer.</p>
+<pre class="code prettyprint"><code>    var conf = {
+        enableConsole: false,
+        frameId: &#39;&#39;,
+        actTracking: {},
+        trackingLabels: {},
+        enablerInteractionTracking: false,
+        eventPropagation: false,
+        callbacks: [],
+        countersList: {},
+        eventQueue: {},
+        exitUrls: {},
+        htmlRoot: &#39;&#39;,
+        initialized: false,
+        pageLoaded: false,
+        timerCollection: {},
+        videoTracking: {},
+        videoListener: null,
+        exposeADTECH: false,
+        currentEnv: &#39;generic&#39;,
+        visible: false,
+        expand: {
+            containerState: &#39;&#39;,
+            useCustomClose: false,
+            expandingPixelOffsets: {},
+            floatingPixelDimensions: {},
+            isMultiDirectional: false,
+            startExpanded: false,
+            expandDirection: &#39;tl&#39;,
+            fsExpandWidth: 0,
+            fsExpandHeight: 0
+        }
+    };
+</code></pre>
+</div>
+
+
+<div id="classdocs" class="tabview">
+    <ul class="api-class-tabs">
+        <li class="api-class-tab index"><a href="#index">Index</a></li>
+
+            <li class="api-class-tab properties"><a href="#properties">Properties</a></li>
+    </ul>
+
+    <div>
+        <div id="index" class="api-class-tabpanel index">
+            <h2 class="off-left">Item Index</h2>
+
+
+                <div class="index-section properties">
+                    <h3>Properties</h3>
+
+                    <ul class="index-list properties">
+                            <li class="index-item property private">
+                                <a href="#property_callbacks">callbacks</a>
+
+                            </li>
+                            <li class="index-item property private">
+                                <a href="#property_countersList">countersList</a>
+
+                            </li>
+                            <li class="index-item property private">
+                                <a href="#property_currentEnv!~YUIDOC_LINE~!default &#x27;generic&#x27;">currentEnv!~YUIDOC_LINE~!default &#x27;generic&#x27;</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_enableConsole">enableConsole</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_enablerInteractionTracking">enablerInteractionTracking</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_enablerTarget">enablerTarget</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_eventPropagation">eventPropagation</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_exitUrls">exitUrls</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_exposeADTECH">exposeADTECH</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_htmlRoot">htmlRoot</a>
+
+                            </li>
+                            <li class="index-item property private">
+                                <a href="#property_initialized">initialized</a>
+
+                            </li>
+                            <li class="index-item property private">
+                                <a href="#property_pageLoaded">pageLoaded</a>
+
+                            </li>
+                            <li class="index-item property private">
+                                <a href="#property_timerCollection">timerCollection</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_tracking">tracking</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_trackingLabels">trackingLabels</a>
+
+                            </li>
+                            <li class="index-item property private">
+                                <a href="#property_videoListener">videoListener</a>
+
+                            </li>
+                            <li class="index-item property private">
+                                <a href="#property_videoTracking">videoTracking</a>
+
+                            </li>
+                    </ul>
+                </div>
+
+
+        </div>
+
+
+            <div id="properties" class="api-class-tabpanel">
+                <h2 class="off-left">Properties</h2>
+
+                    <div id="property_callbacks" class="property item private">
+                        <h3 class="name"><code>callbacks</code></h3>
+                        <span class="type">Array</span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_library_ACT_Enabler.js.html#l2139"><code>src&#x2F;library&#x2F;ACT_Enabler.js:2139</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>callbacks Queue of callbacks to execute after initialized is called.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> Empty Array</p>
+                    
+                    
+                    </div>
+                    <div id="property_countersList" class="property item private">
+                        <h3 class="name"><code>countersList</code></h3>
+                        <span class="type">Object</span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_library_ACT_Enabler.js.html#l2132"><code>src&#x2F;library&#x2F;ACT_Enabler.js:2132</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>countersList List of counters that have been started.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> Empty Object</p>
+                    
+                    
+                    </div>
+                    <div id="property_currentEnv!~YUIDOC_LINE~!default &#x27;generic&#x27;" class="property item private">
+                        <h3 class="name"><code>currentEnv!~YUIDOC_LINE~!default &#x27;generic&#x27;</code></h3>
+                        <span class="type">String</span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_library_ACT_Enabler.js.html#l2125"><code>src&#x2F;library&#x2F;ACT_Enabler.js:2125</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>currentEnv Keeps the current environment that this ad was rendered in.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_enableConsole" class="property item">
+                        <h3 class="name"><code>enableConsole</code></h3>
+                        <span class="type">Boolean</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_library_ACT_Enabler.js.html#l2049"><code>src&#x2F;library&#x2F;ACT_Enabler.js:2049</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>enableConsole Pass through true to enable consoles from Enabler, false otherwise.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> false</p>
+                    
+                    
+                    </div>
+                    <div id="property_enablerInteractionTracking" class="property item">
+                        <h3 class="name"><code>enablerInteractionTracking</code></h3>
+                        <span class="type">Boolean</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_library_ACT_Enabler.js.html#l2102"><code>src&#x2F;library&#x2F;ACT_Enabler.js:2102</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>enablerInteractionTracking Given this config param, once set to <code>true</code> will execute interaction tracks within Enabler.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> false</p>
+                    
+                    
+                    </div>
+                    <div id="property_enablerTarget" class="property item">
+                        <h3 class="name"><code>enablerTarget</code></h3>
+                        <span class="type">String</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_library_ACT_Enabler.js.html#l2082"><code>src&#x2F;library&#x2F;ACT_Enabler.js:2082</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>enablerTarget CDN Location of the Enabler to load and use in the ad.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> null</p>
+                    
+                    
+                    </div>
+                    <div id="property_eventPropagation" class="property item">
+                        <h3 class="name"><code>eventPropagation</code></h3>
+                        <span class="type">Mixed</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_library_ACT_Enabler.js.html#l2074"><code>src&#x2F;library&#x2F;ACT_Enabler.js:2074</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>eventPropagation Set to true will propagate both <code>redirect</code> and <code>track</code> requests from within the ad. Set to
+                    <code>track</code> will only propagate the tracking redirects.
+                    <code>redirect</code> will only propage when a redirect will get called</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> false</p>
+                    
+                    
+                    </div>
+                    <div id="property_exitUrls" class="property item">
+                        <h3 class="name"><code>exitUrls</code></h3>
+                        <span class="type">Object</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_library_ACT_Enabler.js.html#l2088"><code>src&#x2F;library&#x2F;ACT_Enabler.js:2088</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>exitUrls List of exit URLs.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> Empty Object</p>
+                    
+                            <div class="example">
+                                <h4>Example:</h4>
+                    
+                                <div class="example-content">
+                                    <pre class="code prettyprint"><code>    exitUrls: {
+                            clickTAG: &#39;http://www.example.com/siteOne&#39;,
+                            clickTAG1: &#39;http://www.example.com/siteTwo&#39;,
+                            clickTAG2: &#39;http://www.example.com/siteThree&#39;,
+                        }
+                    </code></pre>
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="property_exposeADTECH" class="property item">
+                        <h3 class="name"><code>exposeADTECH</code></h3>
+                        <span class="type">Boolean</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_library_ACT_Enabler.js.html#l2056"><code>src&#x2F;library&#x2F;ACT_Enabler.js:2056</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>exposeADTECH Enabler replacement for AOL 1&#39;s ADTECH Library - Wraps Enabler calls in ADTECH function API</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> false</p>
+                    
+                    
+                    </div>
+                    <div id="property_htmlRoot" class="property item">
+                        <h3 class="name"><code>htmlRoot</code></h3>
+                        <span class="type">String</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_library_ACT_Enabler.js.html#l2062"><code>src&#x2F;library&#x2F;ACT_Enabler.js:2062</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>htmlRoot URI Of the HTML Root Assets.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> Empty String</p>
+                    
+                    
+                    </div>
+                    <div id="property_initialized" class="property item private">
+                        <h3 class="name"><code>initialized</code></h3>
+                        <span class="type">Boolean</span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_library_ACT_Enabler.js.html#l2146"><code>src&#x2F;library&#x2F;ACT_Enabler.js:2146</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>initialized Internal flag that signifies that Enabler has been initialized or not</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> false</p>
+                    
+                    
+                    </div>
+                    <div id="property_pageLoaded" class="property item private">
+                        <h3 class="name"><code>pageLoaded</code></h3>
+                        <span class="type">Boolean</span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_library_ACT_Enabler.js.html#l2160"><code>src&#x2F;library&#x2F;ACT_Enabler.js:2160</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>pageLoaded Internal flag that signifies that the Page <code>(on)load</code> event has fired</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> false</p>
+                    
+                    
+                    </div>
+                    <div id="property_timerCollection" class="property item private">
+                        <h3 class="name"><code>timerCollection</code></h3>
+                        <span class="type">Object</span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_library_ACT_Enabler.js.html#l2153"><code>src&#x2F;library&#x2F;ACT_Enabler.js:2153</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>timerCollection Collection of timers used inside this Enabler instance.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> Empty Object</p>
+                    
+                    
+                    </div>
+                    <div id="property_tracking" class="property item">
+                        <h3 class="name"><code>tracking</code></h3>
+                        <span class="type">Object</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_library_ACT_Enabler.js.html#l2068"><code>src&#x2F;library&#x2F;ACT_Enabler.js:2068</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>tracking if set to an object that defines the tracking for this ad will setup a tracking system within Enabler.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> Empty Object</p>
+                    
+                    
+                    </div>
+                    <div id="property_trackingLabels" class="property item">
+                        <h3 class="name"><code>trackingLabels</code></h3>
+                        <span class="type">Object</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_library_ACT_Enabler.js.html#l2108"><code>src&#x2F;library&#x2F;ACT_Enabler.js:2108</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>trackingLabels provided this set, a label will be applied to simple key / value replacement</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> Empty Object</p>
+                    
+                            <div class="example">
+                                <h4>Example:</h4>
+                    
+                                <div class="example-content">
+                                    <pre class="code prettyprint"><code>    trackingLabels: {
+                            video1:25 : &#39;billboard_view_video1_25percent&#39;,
+                            video1:50 : &#39;billboard_view_video1_50percent&#39;,
+                            video1:75 : &#39;billboard_view_video1_75percent&#39;
+                        }
+                    </code></pre>
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="property_videoListener" class="property item private">
+                        <h3 class="name"><code>videoListener</code></h3>
+                        <span class="type">OBject</span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_library_ACT_Enabler.js.html#l2167"><code>src&#x2F;library&#x2F;ACT_Enabler.js:2167</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>videoListener Internal flag that keeps track of video listeners applied to videos.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> null</p>
+                    
+                    
+                    </div>
+                    <div id="property_videoTracking" class="property item private">
+                        <h3 class="name"><code>videoTracking</code></h3>
+                        <span class="type">OBject</span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_library_ACT_Enabler.js.html#l2174"><code>src&#x2F;library&#x2F;ACT_Enabler.js:2174</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>videoTracking Internal set of video tracking references.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> null</p>
+                    
+                    
+                    </div>
+            </div>
+
+
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

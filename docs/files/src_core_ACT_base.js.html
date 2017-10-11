@@ -17,7 +17,7 @@
                 <h1><img src="https://s.yimg.com/cv/ae/global/ACTJS/logo/ACT.js.logo.png" title="ACT.js" width="150"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 1.1.0</em>
+            <em>API Docs for: 1.1.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -62,6 +62,8 @@
                                 <li><a href="../classes/Dom.html">Dom</a></li>
                                 <li><a href="../classes/DwellTime.html">DwellTime</a></li>
                                 <li><a href="../classes/Enabler.html">Enabler</a></li>
+                                <li><a href="../classes/EnablerADTECH.html">EnablerADTECH</a></li>
+                                <li><a href="../classes/EnablerConfig.html">EnablerConfig</a></li>
                                 <li><a href="../classes/Environment.html">Environment</a></li>
                                 <li><a href="../classes/Event.html">Event</a></li>
                                 <li><a href="../classes/Flash.html">Flash</a></li>
@@ -99,6 +101,7 @@
                                 <li><a href="../modules/Cookie.html">Cookie</a></li>
                                 <li><a href="../modules/DwellTime.html">DwellTime</a></li>
                                 <li><a href="../modules/Enabler.html">Enabler</a></li>
+                                <li><a href="../modules/EnablerADTECH.html">EnablerADTECH</a></li>
                                 <li><a href="../modules/environment.html">environment</a></li>
                                 <li><a href="../modules/IO.html">IO</a></li>
                                 <li><a href="../modules/LayersList.html">LayersList</a></li>
@@ -180,9 +183,8 @@
  * Copyrights licensed under the New BSD License.
  * See the accompanying LICENSE file for terms.
  */
-
 /* global ACT */
-ACT.define(&#x27;Base&#x27;, [/*@&lt;*/&#x27;Debug&#x27;, /*&gt;@*/ &#x27;Event&#x27;, &#x27;Cookie&#x27;, &#x27;Lang&#x27;, &#x27;Tracking&#x27;, &#x27;SecureDarla&#x27;, &#x27;StandardAd&#x27;, &#x27;ActionsQueue&#x27;, &#x27;CustomData&#x27;, &#x27;IO&#x27;, &#x27;Environment&#x27;, &#x27;UA&#x27;, &#x27;Util&#x27;], function (ACT) {
+ACT.define(&#x27;Base&#x27;, [/*@&lt;*/&#x27;Debug&#x27;, /*&gt;@*/ &#x27;Event&#x27;, &#x27;Cookie&#x27;, &#x27;Lang&#x27;, &#x27;Tracking&#x27;, &#x27;SecureDarla&#x27;, &#x27;StandardAd&#x27;, &#x27;ActionsQueue&#x27;, &#x27;CustomData&#x27;, &#x27;Environment&#x27;, &#x27;UA&#x27;, &#x27;Util&#x27;], function (ACT) {
     &#x27;use strict&#x27;;
 
     var Lang = ACT.Lang;
@@ -193,7 +195,6 @@ ACT.define(&#x27;Base&#x27;, [/*@&lt;*/&#x27;Debug&#x27;, /*&gt;@*/ &#x27;Event&
     var CustomData = ACT.CustomData;
     var ActionsQueue = ACT.ActionsQueue;
     var UA = ACT.UA;
-    var IO = ACT.IO;
     var Util = ACT.Util;
 
     /*@&lt;*/
@@ -208,6 +209,7 @@ ACT.define(&#x27;Base&#x27;, [/*@&lt;*/&#x27;Debug&#x27;, /*&gt;@*/ &#x27;Event&
     *             tracking: {
     *                 id: &#x27;&#x27;
     *             },
+    *             loadType: &#x27;ready&#x27;, // &#x27;domready&#x27; or &#x27;inline&#x27; defaults to &#x27;(on)load&#x27;
     *             template: {
     *                 name: &#x27;name_of_ad&#x27;,
     *                 type: &#x27;type_of_ad&#x27;,
@@ -266,9 +268,13 @@ ACT.define(&#x27;Base&#x27;, [/*@&lt;*/&#x27;Debug&#x27;, /*&gt;@*/ &#x27;Event&
             this.config.standardAd = false;
         }
 
+        if (config.require) {
+            ACT.addRequired(config.require);
+        }
+
         ACT.ready(function () {
             root.start();
-        });
+        }, config.require);
     }
 
     /**
@@ -277,8 +283,7 @@ ACT.define(&#x27;Base&#x27;, [/*@&lt;*/&#x27;Debug&#x27;, /*&gt;@*/ &#x27;Event&
     * @initOnly
     */
     Base.ATTRS = {
-        NAME: &#x27;Base&#x27;,
-        version: &#x27;1.1.0&#x27;
+        NAME: &#x27;Base&#x27;
     };
 
     Base.prototype = {
@@ -299,7 +304,6 @@ ACT.define(&#x27;Base&#x27;, [/*@&lt;*/&#x27;Debug&#x27;, /*&gt;@*/ &#x27;Event&
         register: function () {
             var conf = this.config;
             var root = this;
-            var comingData;
             var IOLoad;
             var superConfMerged;
 
@@ -307,9 +311,9 @@ ACT.define(&#x27;Base&#x27;, [/*@&lt;*/&#x27;Debug&#x27;, /*&gt;@*/ &#x27;Event&
                 // if the custom Data
                 if (conf.customData &amp;&amp; !Lang.isObjectEmpty(conf.customData)) {
                     // if there any comming input
-                    if (conf.inputData) {
+                    if (conf.inputData &amp;&amp; ACT.IO) {
                         /*@&lt;*/
-                        debug.log(&#x27;[ ACT_base.js ] comingData&#x27;, comingData);
+                        debug.log(&#x27;[ ACT_base.js ] inputData &amp;&amp; ACT.IO Are defined - loading extra data set &#x27;);
                         /*&gt;@*/
                         // loaded event
                         IOLoad = Event.on(&#x27;IO:load:done&#x27;, function (data) {
@@ -324,8 +328,8 @@ ACT.define(&#x27;Base&#x27;, [/*@&lt;*/&#x27;Debug&#x27;, /*&gt;@*/ &#x27;Event&
                             root.config = Lang.merge(conf, onEventSuperConfMerged);
                             root.loadStandardAd();
                         });
-                        // load input
-                        comingData = new IO(conf.inputData);
+                        /* Call ACT.IO with the config */
+                        this.IOInstance = new ACT.IO(conf.inputData);
                     } else {
                         superConfMerged = CustomData.map(conf.customData, ACT.getConfig(conf.superConf));
                         root.config = Lang.merge(conf, superConfMerged);
@@ -382,18 +386,13 @@ ACT.define(&#x27;Base&#x27;, [/*@&lt;*/&#x27;Debug&#x27;, /*&gt;@*/ &#x27;Event&
         start: function () {
             var conf = this.config;
 
-            this.loadListeners();
-
             /* istanbul ignore next */
             this.actionsQueue = new ActionsQueue({});
             this.cookie = new Cookie(conf.cookie || null, this);
             this.tracking = new Tracking(conf.tracking || null, this);
             this.secureDarla = new SecureDarla(this.config, this);
-
-            /*@&lt;*/
-            debug.info(&#x27;[ ACT_base.js ] SecureDarla INITIALIZE PASSED - NOW START AD STANDARD&#x27;);
-            /*&gt;@*/
-
+            /* LoadListeners at the bottom of start in case we want to load things inline. */
+            this.loadListeners();
             this.init();
         },
 
@@ -445,9 +444,31 @@ ACT.define(&#x27;Base&#x27;, [/*@&lt;*/&#x27;Debug&#x27;, /*&gt;@*/ &#x27;Event&
         * @static
         */
         loadListeners: function () {
-            /* Once &#x27;domready&#x27; event is fully available, see about moving these from load to domready. */
-            this.adInitEvent = Event.on(&#x27;load&#x27;, this.ad_init, window, this);
-            this.registerEvent = Event.on(&#x27;load&#x27;, this.register, window, this);
+            var loadType = this.config.loadType || &#x27;load&#x27;;
+            switch (loadType.toLowerCase()) {
+                case &#x27;inline&#x27;:
+                    /*@&lt;*/
+                    debug.info(&#x27;[ ACT_base.js ] loadListeners calling &#x60;ad_init&#x60; and &#x60;register&#x60; inline&#x27;);
+                    /*&gt;@*/
+                    this.ad_init();
+                    this.register();
+                    break;
+                case &#x27;domready&#x27;:
+                    /*@&lt;*/
+                    debug.info(&#x27;[ ACT_base.js ] loadListeners calling &#x60;ad_init&#x60; and &#x60;register&#x60; DOMREADY&#x27;);
+                    /*&gt;@*/
+                    Event.ready(Lang.bind(this, null, this.ad_init));
+                    Event.ready(Lang.bind(this, null, this.register));
+                    break;
+                // case &#x27;load&#x27;:
+                default:
+                    /*@&lt;*/
+                    debug.info(&#x27;[ ACT_base.js ] loadListeners calling &#x60;ad_init&#x60; and &#x60;register&#x60; ON-LOAD (default) &#x27;);
+                    /*&gt;@*/
+                    this.adInitEvent = Event.on(&#x27;load&#x27;, this.ad_init, window, this);
+                    this.registerEvent = Event.on(&#x27;load&#x27;, this.register, window, this);
+                    break;
+                }
         },
 
         /**

@@ -36,8 +36,7 @@ ACT.define('Dom', [/*@<*/'Debug', /*>@*/ 'Lang', 'UA'], function (ACT) {
      * @initOnly
      */
     Dom.ATTRS = {
-        NAME: 'Dom',
-        version: '1.1.0'
+        NAME: 'Dom'
     };
 
     Dom.prototype = {

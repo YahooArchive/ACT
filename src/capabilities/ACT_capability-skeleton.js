@@ -103,14 +103,7 @@ ACT.define('CapabilitySkeleton', [/*@<*/'Debug', /*>@*/ 'Dom', 'Lang', 'Event', 
          * @attribute NAME
          * @type String
          */
-        NAME: 'CapabilitySkeleton',
-
-        /**
-         * @attribute version
-         * @type String
-         */
-        version: '1.1.0'
-
+        NAME: 'CapabilitySkeleton'
     };
 
     /* Public methods */

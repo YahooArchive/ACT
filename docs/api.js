@@ -24,6 +24,8 @@ YUI.add("yuidoc-meta", function(Y) {
         "Dom",
         "DwellTime",
         "Enabler",
+        "EnablerADTECH",
+        "EnablerConfig",
         "Environment",
         "Event",
         "Flash",
@@ -59,6 +61,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "Cookie",
         "DwellTime",
         "Enabler",
+        "EnablerADTECH",
         "IO",
         "LayerStandard",
         "LayersList",
@@ -74,7 +77,7 @@ YUI.add("yuidoc-meta", function(Y) {
         {
             "displayName": "ACT",
             "name": "ACT",
-            "description": "The new ACT.js global namespace object. If the `ACT` object is already defined, the existing ACT object will only be overwritten\nIF the new one being loaded has a greater version than the existing one. Usage example is as follows:\n\n\t\tACT.define('name_of_module', [ 'required', 'sub', 'modules'], function (ACT) {\n\t\t\t// ACT is the global reference to the ACT instance with all the required modules loaded.\n\t\t});"
+            "description": "The new ACT.js global namespace object. If the `ACT` object is already defined, the existing ACT object will only be overwritten\nIF the new one being loaded has a greater version than the existing one. Usage example is as follows:\n\n        ACT.define('name_of_module', [ 'required', 'sub', 'modules'], function (ACT) {\n            // ACT is the global reference to the ACT instance with all the required modules loaded.\n        });"
         },
         {
             "displayName": "actionsQueue",
@@ -84,7 +87,7 @@ YUI.add("yuidoc-meta", function(Y) {
         {
             "displayName": "Base",
             "name": "Base",
-            "description": "Base - starts up the basic ad framework\n\n    var conf = {\n        conf: {\n            tracking: {\n                id: ''\n            },\n            template: {\n                name: 'name_of_ad',\n                type: 'type_of_ad',\n                format: 'format_of_ad',\n                width: 300,\n                height: 250\n            },\n            inputData:{\n               type:'JSON',\n               id: 'myYT',\n               dataFeed: 'json_feed.js'\n           },\n           customData:{\n                \"layers.mpu.width\" : '500px'\n            }\n        },\n        superConf: 'mazda-ad-20150401',\n        extend:{\n            init: function () { ... },\n            ad_init: function () { ... },\n            happy: function () { ... }\n        }\n    }"
+            "description": "Base - starts up the basic ad framework\n\n    var conf = {\n        conf: {\n            tracking: {\n                id: ''\n            },\n            loadType: 'ready', // 'domready' or 'inline' defaults to '(on)load'\n            template: {\n                name: 'name_of_ad',\n                type: 'type_of_ad',\n                format: 'format_of_ad',\n                width: 300,\n                height: 250\n            },\n            inputData:{\n               type:'JSON',\n               id: 'myYT',\n               dataFeed: 'json_feed.js'\n           },\n           customData:{\n                \"layers.mpu.width\" : '500px'\n            }\n        },\n        superConf: 'mazda-ad-20150401',\n        extend:{\n            init: function () { ... },\n            ad_init: function () { ... },\n            happy: function () { ... }\n        }\n    }"
         },
         {
             "displayName": "CapabilitySkeleton",
@@ -147,7 +150,7 @@ YUI.add("yuidoc-meta", function(Y) {
         {
             "displayName": "Cookie",
             "name": "Cookie",
-            "description": "ACT Cookie functionality. Enables ads to set and get cookies.\n\n    var conf = {\n        expires: 172800000,\n        default_cookieName: 'CRZY',\n        path: '/',\n        domain: 'yahoo.com',\n        name: 'cookieName'\n        freq_cap : 1\n    };\n    var cookie = new cookie( conf, this);"
+            "description": "ACT Cookie functionality. Enables ads to set and get cookies.\n\n    var conf = {\n        expires: 172800000,\n        default_cookieName: 'CRZY',\n        path: '/',\n        domain: 'yahoo.com',\n        name: 'cookieName'\n        freq_cap : 1,\n        disabled: false\n    };\n    var cookie = new cookie( conf, this);"
         },
         {
             "displayName": "DwellTime",
@@ -157,7 +160,12 @@ YUI.add("yuidoc-meta", function(Y) {
         {
             "displayName": "Enabler",
             "name": "Enabler",
-            "description": "ACT Enabler\n\n```\n    var conf = {\n        tracking: {\n            trackUnique: true\n        },\n        exitUrls: {\n            clickTAG: 'https://www.yahoo.com/?clickTAG=true',\n            clickTAG1: 'https://www.yahoo.com/?clickTAG=true',\n            clickTAG2: 'https://www.yahoo.com/?clickTAG=true'\n        },\n        trackingLabels: {\n            video1:25 : 'billboard_view_video1_25percent',\n            video1:50 : 'billboard_view_video1_50percent',\n            video1:75 : 'billboard_view_video1_75percent'\n        },\n        enablerInteractionTracking : false,\n        enablerTarget: 'http://cdn.path.here.com/ACT_Enabler.js',\n        htmlRoot : 'http://cdn.path.here.com/'\n    };\n    Enabler.setConfig( conf );\n```"
+            "description": "ACT Enabler\n\nEnabler takes a configuration object to initialize. Of-course it'll run in default mode if no config is provided.\nBelow, is a basic example of such a configuration Object."
+        },
+        {
+            "displayName": "EnablerADTECH",
+            "name": "EnablerADTECH",
+            "description": "ACT EnablerADTECH\n\nEnabler Wrapper for AOL 1 ADTECH API.\n\n```\n    // Providing exposeADTECH `true` will create a reference in window.ADTECH = ACT.EnablerADTECH;\n    var conf = {\n        exposeADTECH: true\n    };\n    Enabler.setConfig( conf );\n```"
         },
         {
             "displayName": "environment",

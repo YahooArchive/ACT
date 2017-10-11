@@ -3,6 +3,8 @@ YUI.add("yuidoc-meta", function(Y) {
     "classes": [
         "Dom",
         "Enabler",
+        "EnablerADTECH",
+        "EnablerConfig",
         "Event",
         "Json",
         "Lang",
@@ -11,7 +13,8 @@ YUI.add("yuidoc-meta", function(Y) {
     ],
     "modules": [
         "ACT",
-        "Enabler"
+        "Enabler",
+        "EnablerADTECH"
     ],
     "allModules": [
         {
@@ -22,7 +25,12 @@ YUI.add("yuidoc-meta", function(Y) {
         {
             "displayName": "Enabler",
             "name": "Enabler",
-            "description": "ACT Enabler\n\n```\n    var conf = {\n        tracking: {\n            trackUnique: true\n        },\n        exitUrls: {\n            clickTAG: 'https://www.yahoo.com/?clickTAG=true',\n            clickTAG1: 'https://www.yahoo.com/?clickTAG=true',\n            clickTAG2: 'https://www.yahoo.com/?clickTAG=true'\n        },\n        trackingLabels: {\n            video1:25 : 'billboard_view_video1_25percent',\n            video1:50 : 'billboard_view_video1_50percent',\n            video1:75 : 'billboard_view_video1_75percent'\n        },\n        enablerInteractionTracking : false,\n        enablerTarget: 'http://cdn.path.here.com/ACT_Enabler.js',\n        htmlRoot : 'http://cdn.path.here.com/'\n    };\n    Enabler.setConfig( conf );\n```"
+            "description": "ACT Enabler\n\nEnabler takes a configuration object to initialize. Of-course it'll run in default mode if no config is provided.\nBelow, is a basic example of such a configuration Object."
+        },
+        {
+            "displayName": "EnablerADTECH",
+            "name": "EnablerADTECH",
+            "description": "ACT EnablerADTECH\n\nEnabler Wrapper for AOL 1 ADTECH API.\n\n```\n    // Providing exposeADTECH `true` will create a reference in window.ADTECH = ACT.EnablerADTECH;\n    var conf = {\n        exposeADTECH: true\n    };\n    Enabler.setConfig( conf );\n```"
         }
     ]
 } };

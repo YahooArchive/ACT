@@ -17,7 +17,7 @@
                 <h1><img src="https://s.yimg.com/cv/ae/global/ACTJS/logo/ACT.js.logo.png" title="ACT.js" width="150"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 1.1.0</em>
+            <em>API Docs for: 1.1.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -62,6 +62,8 @@
                                 <li><a href="../classes/Dom.html">Dom</a></li>
                                 <li><a href="../classes/DwellTime.html">DwellTime</a></li>
                                 <li><a href="../classes/Enabler.html">Enabler</a></li>
+                                <li><a href="../classes/EnablerADTECH.html">EnablerADTECH</a></li>
+                                <li><a href="../classes/EnablerConfig.html">EnablerConfig</a></li>
                                 <li><a href="../classes/Environment.html">Environment</a></li>
                                 <li><a href="../classes/Event.html">Event</a></li>
                                 <li><a href="../classes/Flash.html">Flash</a></li>
@@ -99,6 +101,7 @@
                                 <li><a href="../modules/Cookie.html">Cookie</a></li>
                                 <li><a href="../modules/DwellTime.html">DwellTime</a></li>
                                 <li><a href="../modules/Enabler.html">Enabler</a></li>
+                                <li><a href="../modules/EnablerADTECH.html">EnablerADTECH</a></li>
                                 <li><a href="../modules/environment.html">environment</a></li>
                                 <li><a href="../modules/IO.html">IO</a></li>
                                 <li><a href="../modules/LayersList.html">LayersList</a></li>
@@ -176,7 +179,7 @@
 
 
         <div class="foundat">
-            Defined in: <a href="../files/src_library_ACT_Enabler.js.html#l312"><code>src&#x2F;library&#x2F;ACT_Enabler.js:312</code></a>
+            Defined in: <a href="../files/src_library_ACT_Enabler.js.html#l190"><code>src&#x2F;library&#x2F;ACT_Enabler.js:190</code></a>
         </div>
 
             Module: <a href="../modules/Enabler.html">Enabler</a>
@@ -186,26 +189,9 @@
 
 <div class="box intro">
     <p>ACT Enabler</p>
-<pre class="code prettyprint"><code>    var conf = {
-        tracking: {
-            trackUnique: true
-        },
-        exitUrls: {
-            clickTAG: &#39;https://www.yahoo.com/?clickTAG=true&#39;,
-            clickTAG1: &#39;https://www.yahoo.com/?clickTAG=true&#39;,
-            clickTAG2: &#39;https://www.yahoo.com/?clickTAG=true&#39;
-        },
-        trackingLabels: {
-            video1:25 : &#39;billboard_view_video1_25percent&#39;,
-            video1:50 : &#39;billboard_view_video1_50percent&#39;,
-            video1:75 : &#39;billboard_view_video1_75percent&#39;
-        },
-        enablerInteractionTracking : false,
-        enablerTarget: &#39;http://cdn.path.here.com/ACT_Enabler.js&#39;,
-        htmlRoot : &#39;http://cdn.path.here.com/&#39;
-    };
-    Enabler.setConfig( conf );
-</code></pre>
+<p>Enabler takes a configuration object to initialize. Of-course it&#39;ll run in default mode if no config is provided.
+Below, is a basic example of such a configuration Object.</p>
+
 </div>
 
 
@@ -277,8 +263,12 @@
                                 <a href="#method_displayCompanion">displayCompanion</a>
 
                             </li>
+                            <li class="index-item method private">
+                                <a href="#method_enablerLogger">enablerLogger</a>
+
+                            </li>
                             <li class="index-item method">
-                                <a href="#method_enablerLogger Notifies of issues / missing things inside Enabler. For Internal Use Only.">enablerLogger Notifies of issues / missing things inside Enabler. For Internal Use Only.</a>
+                                <a href="#method_enablerLogger">enablerLogger</a>
 
                             </li>
                             <li class="index-item method">
@@ -309,7 +299,7 @@
                                 <a href="#method_finishFullscreenExpand">finishFullscreenExpand</a>
 
                             </li>
-                            <li class="index-item method">
+                            <li class="index-item method private">
                                 <a href="#method_fireEvent">fireEvent</a>
 
                             </li>
@@ -361,7 +351,7 @@
                                 <a href="#method_getExpandDirection">getExpandDirection</a>
 
                             </li>
-                            <li class="index-item method">
+                            <li class="index-item method private">
                                 <a href="#method_getFullUrl">getFullUrl</a>
 
                             </li>
@@ -461,6 +451,10 @@
                                 <a href="#method_parentMessageHandle">parentMessageHandle</a>
 
                             </li>
+                            <li class="index-item method private">
+                                <a href="#method_propagateEvent">propagateEvent</a>
+
+                            </li>
                             <li class="index-item method">
                                 <a href="#method_queryFullscreenDimensions">queryFullscreenDimensions</a>
 
@@ -509,7 +503,11 @@
                                 <a href="#method_requestFullscreenExpand">requestFullscreenExpand</a>
 
                             </li>
-                            <li class="index-item method">
+                            <li class="index-item method private">
+                                <a href="#method_runCallbacks">runCallbacks</a>
+
+                            </li>
+                            <li class="index-item method private">
                                 <a href="#method_sendToParent">sendToParent</a>
 
                             </li>
@@ -525,7 +523,7 @@
                                 <a href="#method_setDevDynamicContent">setDevDynamicContent</a>
 
                             </li>
-                            <li class="index-item method">
+                            <li class="index-item method private">
                                 <a href="#method_setExit">setExit</a>
 
                             </li>
@@ -583,9 +581,6 @@
                             <li class="index-item attr">
                                 <a href="#attr_NAME">NAME</a>
                             </li>
-                            <li class="index-item attr">
-                                <a href="#attr_version">version</a>
-                            </li>
                     </ul>
                 </div>
 
@@ -624,7 +619,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l539"><code>src&#x2F;library&#x2F;ACT_Enabler.js:539</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l782"><code>src&#x2F;library&#x2F;ACT_Enabler.js:782</code></a>
         </p>
 
 
@@ -717,7 +712,7 @@ during the capture or bubble phase of the event.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l1136"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1136</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1382"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1382</code></a>
         </p>
 
 
@@ -788,7 +783,7 @@ during the capture or bubble phase of the event.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l1638"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1638</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1891"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1891</code></a>
         </p>
 
 
@@ -883,10 +878,9 @@ during the capture or bubble phase of the event.</p>
 
 
     <div class="meta">
-                    <p>Provided by the <a href="../modules/DwellTime.html">DwellTime</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l291"><code>src&#x2F;library&#x2F;ACT_Enabler.js:291</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l545"><code>src&#x2F;library&#x2F;ACT_Enabler.js:545</code></a>
         </p>
 
 
@@ -922,7 +916,7 @@ during the capture or bubble phase of the event.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l766"><code>src&#x2F;library&#x2F;ACT_Enabler.js:766</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1009"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1009</code></a>
         </p>
 
 
@@ -971,7 +965,7 @@ initialized, call immediately.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l781"><code>src&#x2F;library&#x2F;ACT_Enabler.js:781</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1027"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1027</code></a>
         </p>
 
 
@@ -1003,7 +997,7 @@ as a proxy to collapse.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l1115"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1115</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1361"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1361</code></a>
         </p>
 
 
@@ -1033,10 +1027,9 @@ as a proxy to collapse.</p>
 
 
     <div class="meta">
-                    <p>Provided by the <a href="../modules/DwellTime.html">DwellTime</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l80"><code>src&#x2F;library&#x2F;ACT_Enabler.js:80</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l307"><code>src&#x2F;library&#x2F;ACT_Enabler.js:307</code></a>
         </p>
 
 
@@ -1075,7 +1068,7 @@ as a proxy to collapse.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l646"><code>src&#x2F;library&#x2F;ACT_Enabler.js:646</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l889"><code>src&#x2F;library&#x2F;ACT_Enabler.js:889</code></a>
         </p>
 
 
@@ -1141,7 +1134,7 @@ be counted cumulatively. Defaults to true.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l1721"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1721</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1974"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1974</code></a>
         </p>
 
 
@@ -1197,7 +1190,7 @@ be counted cumulatively. Defaults to true.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l584"><code>src&#x2F;library&#x2F;ACT_Enabler.js:584</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l827"><code>src&#x2F;library&#x2F;ACT_Enabler.js:827</code></a>
         </p>
 
 
@@ -1254,7 +1247,7 @@ be counted cumulatively. Defaults to true.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l738"><code>src&#x2F;library&#x2F;ACT_Enabler.js:738</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l981"><code>src&#x2F;library&#x2F;ACT_Enabler.js:981</code></a>
         </p>
 
 
@@ -1285,7 +1278,7 @@ be counted cumulatively. Defaults to true.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l1123"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1123</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1369"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1369</code></a>
         </p>
 
 
@@ -1301,8 +1294,63 @@ be counted cumulatively. Defaults to true.</p>
 
 
 </div>
-<div id="method_enablerLogger Notifies of issues / missing things inside Enabler. For Internal Use Only." class="method item">
-    <h3 class="name"><code>enablerLogger Notifies of issues / missing things inside Enabler. For Internal Use Only.</code></h3>
+<div id="method_enablerLogger" class="method item private">
+    <h3 class="name"><code>enablerLogger</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>A</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l393"><code>src&#x2F;library&#x2F;ACT_Enabler.js:393</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Notifies of issues / missing things inside Enabler. For Internal Use Only.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">A</code>
+                        <span class="type">Mixed</span>
+
+
+                    <div class="param-description">
+                        <p>mixed message to display to the user</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_enablerLogger" class="method item">
+    <h3 class="name"><code>enablerLogger</code></h3>
 
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
@@ -1320,10 +1368,9 @@ be counted cumulatively. Defaults to true.</p>
 
 
     <div class="meta">
-                    <p>Provided by the <a href="../modules/DwellTime.html">DwellTime</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l164"><code>src&#x2F;library&#x2F;ACT_Enabler.js:164</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1667"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1667</code></a>
         </p>
 
 
@@ -1331,7 +1378,8 @@ be counted cumulatively. Defaults to true.</p>
     </div>
 
     <div class="description">
-        
+        <p>Notifies of issues / missing things inside Enabler. For Internal Use Only.</p>
+
     </div>
 
         <div class="params">
@@ -1379,7 +1427,7 @@ be counted cumulatively. Defaults to true.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l597"><code>src&#x2F;library&#x2F;ACT_Enabler.js:597</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l840"><code>src&#x2F;library&#x2F;ACT_Enabler.js:840</code></a>
         </p>
 
 
@@ -1447,7 +1495,7 @@ be counted cumulatively. Defaults to true.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l617"><code>src&#x2F;library&#x2F;ACT_Enabler.js:617</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l860"><code>src&#x2F;library&#x2F;ACT_Enabler.js:860</code></a>
         </p>
 
 
@@ -1516,7 +1564,7 @@ URL value will always override the value modified in Studio or elsewhere.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l632"><code>src&#x2F;library&#x2F;ACT_Enabler.js:632</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l875"><code>src&#x2F;library&#x2F;ACT_Enabler.js:875</code></a>
         </p>
 
 
@@ -1575,7 +1623,7 @@ URL value will always override the value modified in Studio or elsewhere.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l970"><code>src&#x2F;library&#x2F;ACT_Enabler.js:970</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1216"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1216</code></a>
         </p>
 
 
@@ -1622,7 +1670,7 @@ be dispatched by the environment independently of calling studio.Enabler#request
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l924"><code>src&#x2F;library&#x2F;ACT_Enabler.js:924</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1170"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1170</code></a>
         </p>
 
 
@@ -1653,7 +1701,7 @@ be dispatched by the environment independently of calling studio.Enabler#request
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l1020"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1020</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1266"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1266</code></a>
         </p>
 
 
@@ -1684,7 +1732,7 @@ be dispatched by the environment independently of calling studio.Enabler#request
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l1030"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1030</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1276"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1276</code></a>
         </p>
 
 
@@ -1700,7 +1748,7 @@ be dispatched by the environment independently of calling studio.Enabler#request
 
 
 </div>
-<div id="method_fireEvent" class="method item">
+<div id="method_fireEvent" class="method item private">
     <h3 class="name"><code>fireEvent</code></h3>
 
         <div class="args">
@@ -1725,16 +1773,16 @@ be dispatched by the environment independently of calling studio.Enabler#request
 
 
 
+        <span class="flag private">private</span>
 
 
 
 
 
     <div class="meta">
-                    <p>Provided by the <a href="../modules/DwellTime.html">DwellTime</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l175"><code>src&#x2F;library&#x2F;ACT_Enabler.js:175</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l405"><code>src&#x2F;library&#x2F;ACT_Enabler.js:405</code></a>
         </p>
 
 
@@ -1834,7 +1882,7 @@ be dispatched by the environment independently of calling studio.Enabler#request
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l498"><code>src&#x2F;library&#x2F;ACT_Enabler.js:498</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l737"><code>src&#x2F;library&#x2F;ACT_Enabler.js:737</code></a>
         </p>
 
 
@@ -1899,7 +1947,7 @@ be dispatched by the environment independently of calling studio.Enabler#request
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l483"><code>src&#x2F;library&#x2F;ACT_Enabler.js:483</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l722"><code>src&#x2F;library&#x2F;ACT_Enabler.js:722</code></a>
         </p>
 
 
@@ -1956,7 +2004,7 @@ be dispatched by the environment independently of calling studio.Enabler#request
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l805"><code>src&#x2F;library&#x2F;ACT_Enabler.js:805</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1051"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1051</code></a>
         </p>
 
 
@@ -1995,10 +2043,9 @@ be dispatched by the environment independently of calling studio.Enabler#request
 
 
     <div class="meta">
-                    <p>Provided by the <a href="../modules/DwellTime.html">DwellTime</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l278"><code>src&#x2F;library&#x2F;ACT_Enabler.js:278</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l532"><code>src&#x2F;library&#x2F;ACT_Enabler.js:532</code></a>
         </p>
 
 
@@ -2031,7 +2078,7 @@ be dispatched by the environment independently of calling studio.Enabler#request
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l1351"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1351</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1597"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1597</code></a>
         </p>
 
 
@@ -2074,7 +2121,7 @@ be dispatched by the environment independently of calling studio.Enabler#request
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l1361"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1361</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1607"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1607</code></a>
         </p>
 
 
@@ -2117,7 +2164,7 @@ be dispatched by the environment independently of calling studio.Enabler#request
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l1371"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1371</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1617"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1617</code></a>
         </p>
 
 
@@ -2160,7 +2207,7 @@ be dispatched by the environment independently of calling studio.Enabler#request
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l1381"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1381</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1627"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1627</code></a>
         </p>
 
 
@@ -2203,7 +2250,7 @@ be dispatched by the environment independently of calling studio.Enabler#request
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l1391"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1391</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1637"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1637</code></a>
         </p>
 
 
@@ -2246,7 +2293,7 @@ be dispatched by the environment independently of calling studio.Enabler#request
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l1401"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1401</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1647"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1647</code></a>
         </p>
 
 
@@ -2289,7 +2336,7 @@ be dispatched by the environment independently of calling studio.Enabler#request
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l1411"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1411</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1657"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1657</code></a>
         </p>
 
 
@@ -2332,7 +2379,7 @@ be dispatched by the environment independently of calling studio.Enabler#request
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l817"><code>src&#x2F;library&#x2F;ACT_Enabler.js:817</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1063"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1063</code></a>
         </p>
 
 
@@ -2357,7 +2404,7 @@ be dispatched by the environment independently of calling studio.Enabler#request
 
 
 </div>
-<div id="method_getFullUrl" class="method item">
+<div id="method_getFullUrl" class="method item private">
     <h3 class="name"><code>getFullUrl</code></h3>
 
         <div class="args">
@@ -2373,16 +2420,16 @@ be dispatched by the environment independently of calling studio.Enabler#request
 
 
 
+        <span class="flag private">private</span>
 
 
 
 
 
     <div class="meta">
-                    <p>Provided by the <a href="../modules/DwellTime.html">DwellTime</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l131"><code>src&#x2F;library&#x2F;ACT_Enabler.js:131</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l359"><code>src&#x2F;library&#x2F;ACT_Enabler.js:359</code></a>
         </p>
 
 
@@ -2442,7 +2489,7 @@ be dispatched by the environment independently of calling studio.Enabler#request
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l1106"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1106</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1352"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1352</code></a>
         </p>
 
 
@@ -2483,7 +2530,7 @@ be dispatched by the environment independently of calling studio.Enabler#request
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l1155"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1155</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1401"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1401</code></a>
         </p>
 
 
@@ -2532,7 +2579,7 @@ be dispatched by the environment independently of calling studio.Enabler#request
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l1051"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1051</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1297"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1297</code></a>
         </p>
 
 
@@ -2596,7 +2643,7 @@ be dispatched by the environment independently of calling studio.Enabler#request
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l1079"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1079</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1325"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1325</code></a>
         </p>
 
 
@@ -2660,7 +2707,7 @@ be dispatched by the environment independently of calling studio.Enabler#request
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l1064"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1064</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1310"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1310</code></a>
         </p>
 
 
@@ -2718,7 +2765,7 @@ be dispatched by the environment independently of calling studio.Enabler#request
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l1332"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1332</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1578"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1578</code></a>
         </p>
 
 
@@ -2761,7 +2808,7 @@ be dispatched by the environment independently of calling studio.Enabler#request
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l1092"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1092</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1338"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1338</code></a>
         </p>
 
 
@@ -2808,7 +2855,7 @@ be dispatched by the environment independently of calling studio.Enabler#request
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l698"><code>src&#x2F;library&#x2F;ACT_Enabler.js:698</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l941"><code>src&#x2F;library&#x2F;ACT_Enabler.js:941</code></a>
         </p>
 
 
@@ -2868,7 +2915,7 @@ be dispatched by the environment independently of calling studio.Enabler#request
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l1165"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1165</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1411"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1411</code></a>
         </p>
 
 
@@ -2919,7 +2966,7 @@ be dispatched by the environment independently of calling studio.Enabler#request
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l1181"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1181</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1427"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1427</code></a>
         </p>
 
 
@@ -2962,7 +3009,7 @@ be dispatched by the environment independently of calling studio.Enabler#request
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l1191"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1191</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1437"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1437</code></a>
         </p>
 
 
@@ -3005,7 +3052,7 @@ be dispatched by the environment independently of calling studio.Enabler#request
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l1201"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1201</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1447"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1447</code></a>
         </p>
 
 
@@ -3048,7 +3095,7 @@ be dispatched by the environment independently of calling studio.Enabler#request
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l1211"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1211</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1457"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1457</code></a>
         </p>
 
 
@@ -3091,7 +3138,7 @@ be dispatched by the environment independently of calling studio.Enabler#request
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l1221"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1221</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1467"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1467</code></a>
         </p>
 
 
@@ -3137,7 +3184,7 @@ be dispatched by the environment independently of calling studio.Enabler#request
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l1231"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1231</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1477"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1477</code></a>
         </p>
 
 
@@ -3197,7 +3244,7 @@ be dispatched by the environment independently of calling studio.Enabler#request
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l1240"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1240</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1486"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1486</code></a>
         </p>
 
 
@@ -3270,7 +3317,7 @@ be dispatched by the environment independently of calling studio.Enabler#request
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l757"><code>src&#x2F;library&#x2F;ACT_Enabler.js:757</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1000"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1000</code></a>
         </p>
 
 
@@ -3313,7 +3360,7 @@ be dispatched by the environment independently of calling studio.Enabler#request
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l747"><code>src&#x2F;library&#x2F;ACT_Enabler.js:747</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l990"><code>src&#x2F;library&#x2F;ACT_Enabler.js:990</code></a>
         </p>
 
 
@@ -3357,7 +3404,7 @@ the StudioEvent.PAGE_LOADED event.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l1251"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1251</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1497"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1497</code></a>
         </p>
 
 
@@ -3400,7 +3447,7 @@ the StudioEvent.PAGE_LOADED event.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l1041"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1041</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1287"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1287</code></a>
         </p>
 
 
@@ -3447,7 +3494,7 @@ the StudioEvent.PAGE_LOADED event.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l1446"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1446</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1699"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1699</code></a>
         </p>
 
 
@@ -3515,7 +3562,7 @@ the StudioEvent.PAGE_LOADED event.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l1421"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1421</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1674"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1674</code></a>
         </p>
 
 
@@ -3573,10 +3620,9 @@ the StudioEvent.PAGE_LOADED event.</p>
 
 
     <div class="meta">
-                    <p>Provided by the <a href="../modules/DwellTime.html">DwellTime</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l299"><code>src&#x2F;library&#x2F;ACT_Enabler.js:299</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l553"><code>src&#x2F;library&#x2F;ACT_Enabler.js:553</code></a>
         </p>
 
 
@@ -3612,7 +3658,7 @@ the StudioEvent.PAGE_LOADED event.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l468"><code>src&#x2F;library&#x2F;ACT_Enabler.js:468</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l707"><code>src&#x2F;library&#x2F;ACT_Enabler.js:707</code></a>
         </p>
 
 
@@ -3645,6 +3691,77 @@ the StudioEvent.PAGE_LOADED event.</p>
 
 
 </div>
+<div id="method_propagateEvent" class="method item private">
+    <h3 class="name"><code>propagateEvent</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>actionName</code>
+                </li>
+                <li class="arg">
+                        <code>dataToSend</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l483"><code>src&#x2F;library&#x2F;ACT_Enabler.js:483</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Propagate Event - figure out if our user wants all or only some events to propagate to the parent frame.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">actionName</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <ul>
+<li>either &#39;redirect&#39; or &#39;track&#39;</li>
+</ul>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">dataToSend</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>Data object that we send over to the parent.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
 <div id="method_queryFullscreenDimensions" class="method item">
     <h3 class="name"><code>queryFullscreenDimensions</code></h3>
 
@@ -3660,7 +3777,7 @@ the StudioEvent.PAGE_LOADED event.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l1261"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1261</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1507"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1507</code></a>
         </p>
 
 
@@ -3692,7 +3809,7 @@ Some publishers may pad the fullscreen window for a lightbox-like experience. Be
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l1270"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1270</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1516"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1516</code></a>
         </p>
 
 
@@ -3729,7 +3846,7 @@ Some publishers may pad the fullscreen window for a lightbox-like experience. Be
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l1278"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1278</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1524"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1524</code></a>
         </p>
 
 
@@ -3783,7 +3900,7 @@ Some publishers may pad the fullscreen window for a lightbox-like experience. Be
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l569"><code>src&#x2F;library&#x2F;ACT_Enabler.js:569</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l812"><code>src&#x2F;library&#x2F;ACT_Enabler.js:812</code></a>
         </p>
 
 
@@ -3837,7 +3954,7 @@ Some publishers may pad the fullscreen window for a lightbox-like experience. Be
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l1146"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1146</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1392"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1392</code></a>
         </p>
 
 
@@ -3891,7 +4008,7 @@ Some publishers may pad the fullscreen window for a lightbox-like experience. Be
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l1287"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1287</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1533"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1533</code></a>
         </p>
 
 
@@ -3951,7 +4068,7 @@ Additionally, all question marks (?) and anything after the first question mark 
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l1300"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1300</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1546"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1546</code></a>
         </p>
 
 
@@ -4005,7 +4122,7 @@ Additionally, all question marks (?) and anything after the first question mark 
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l826"><code>src&#x2F;library&#x2F;ACT_Enabler.js:826</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1072"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1072</code></a>
         </p>
 
 
@@ -4036,7 +4153,7 @@ Additionally, all question marks (?) and anything after the first question mark 
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l937"><code>src&#x2F;library&#x2F;ACT_Enabler.js:937</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1183"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1183</code></a>
         </p>
 
 
@@ -4045,15 +4162,13 @@ Additionally, all question marks (?) and anything after the first question mark 
 
     <div class="description">
         <p>Collapsing flow:</p>
-<pre class="code prettyprint"><code>1. Register event listeners.
-</code></pre><ol>
+<ol>
+<li>Register event listeners.</li>
 <li>When you want to collapse call Enabler.requestCollapse().</li>
 <li>When the environment is ready to collapse the studio.events.StudioEvent.COLLAPSE_START is dispatched.
  This can get dispatched independently of Enabler.requestCollapse() as sometimes the environment provides a close button outside of the creative.</li>
-<li>The Ad optionally performs an animated collapse.<ol>
+<li>The Ad optionally performs an animated collapse.</li>
 <li>Ad then calls Enabler.finishCollapse() to complete collapse and close div.</li>
-</ol>
-</li>
 </ol>
 <p>Initiates the collapse lifecycle. This begins by calling requestCollapse(), waiting for the
 COLLAPSE_START event, animating your collapse, then calling finishCollapse() when the
@@ -4096,7 +4211,7 @@ studio.Enabler#requestCollapse().</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l890"><code>src&#x2F;library&#x2F;ACT_Enabler.js:890</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1136"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1136</code></a>
         </p>
 
 
@@ -4153,7 +4268,7 @@ look like:</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l991"><code>src&#x2F;library&#x2F;ACT_Enabler.js:991</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1237"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1237</code></a>
         </p>
 
 
@@ -4194,7 +4309,7 @@ event to start collapse.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l1002"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1002</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1248"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1248</code></a>
         </p>
 
 
@@ -4241,23 +4356,54 @@ mobile devices the browser window typically takes up the entire display.</p>
 
 
 </div>
-<div id="method_sendToParent" class="method item">
-    <h3 class="name"><code>sendToParent</code></h3>
+<div id="method_runCallbacks" class="method item private">
+    <h3 class="name"><code>runCallbacks</code></h3>
 
         <span class="paren">()</span>
 
 
 
+        <span class="flag private">private</span>
 
 
 
 
 
     <div class="meta">
-                    <p>Provided by the <a href="../modules/DwellTime.html">DwellTime</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l96"><code>src&#x2F;library&#x2F;ACT_Enabler.js:96</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l566"><code>src&#x2F;library&#x2F;ACT_Enabler.js:566</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+
+</div>
+<div id="method_sendToParent" class="method item private">
+    <h3 class="name"><code>sendToParent</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_library_ACT_Enabler.js.html#l323"><code>src&#x2F;library&#x2F;ACT_Enabler.js:323</code></a>
         </p>
 
 
@@ -4297,7 +4443,7 @@ mobile devices the browser window typically takes up the entire display.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l509"><code>src&#x2F;library&#x2F;ACT_Enabler.js:509</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l748"><code>src&#x2F;library&#x2F;ACT_Enabler.js:748</code></a>
         </p>
 
 
@@ -4353,10 +4499,9 @@ Just use the same config structure.</p>
 
 
     <div class="meta">
-                    <p>Provided by the <a href="../modules/DwellTime.html">DwellTime</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l260"><code>src&#x2F;library&#x2F;ACT_Enabler.js:260</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l514"><code>src&#x2F;library&#x2F;ACT_Enabler.js:514</code></a>
         </p>
 
 
@@ -4392,7 +4537,7 @@ Just use the same config structure.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l1313"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1313</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1559"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1559</code></a>
         </p>
 
 
@@ -4425,7 +4570,7 @@ Just use the same config structure.</p>
 
 
 </div>
-<div id="method_setExit" class="method item">
+<div id="method_setExit" class="method item private">
     <h3 class="name"><code>setExit</code></h3>
 
         <div class="args">
@@ -4441,16 +4586,16 @@ Just use the same config structure.</p>
 
 
 
+        <span class="flag private">private</span>
 
 
 
 
 
     <div class="meta">
-                    <p>Provided by the <a href="../modules/DwellTime.html">DwellTime</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l245"><code>src&#x2F;library&#x2F;ACT_Enabler.js:245</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l498"><code>src&#x2F;library&#x2F;ACT_Enabler.js:498</code></a>
         </p>
 
 
@@ -4525,7 +4670,7 @@ Just use the same config structure.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l834"><code>src&#x2F;library&#x2F;ACT_Enabler.js:834</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1080"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1080</code></a>
         </p>
 
 
@@ -4617,7 +4762,7 @@ by setting the marginLeft and marginTop of the body element which is set to rela
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l854"><code>src&#x2F;library&#x2F;ACT_Enabler.js:854</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1100"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1100</code></a>
         </p>
 
 
@@ -4685,7 +4830,7 @@ by setting the marginLeft and marginTop of the body element which is set to rela
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l1322"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1322</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1568"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1568</code></a>
         </p>
 
 
@@ -4750,7 +4895,7 @@ by setting the marginLeft and marginTop of the body element which is set to rela
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l868"><code>src&#x2F;library&#x2F;ACT_Enabler.js:868</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1114"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1114</code></a>
         </p>
 
 
@@ -4804,7 +4949,7 @@ by setting the marginLeft and marginTop of the body element which is set to rela
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l1342"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1342</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1588"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1588</code></a>
         </p>
 
 
@@ -4858,7 +5003,7 @@ by setting the marginLeft and marginTop of the body element which is set to rela
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l878"><code>src&#x2F;library&#x2F;ACT_Enabler.js:878</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1124"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1124</code></a>
         </p>
 
 
@@ -4914,7 +5059,7 @@ trigger an expansion timer.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l725"><code>src&#x2F;library&#x2F;ACT_Enabler.js:725</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l968"><code>src&#x2F;library&#x2F;ACT_Enabler.js:968</code></a>
         </p>
 
 
@@ -4969,7 +5114,7 @@ otherwise.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l793"><code>src&#x2F;library&#x2F;ACT_Enabler.js:793</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l1039"><code>src&#x2F;library&#x2F;ACT_Enabler.js:1039</code></a>
         </p>
 
 
@@ -5025,7 +5170,7 @@ provide one.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l661"><code>src&#x2F;library&#x2F;ACT_Enabler.js:661</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l904"><code>src&#x2F;library&#x2F;ACT_Enabler.js:904</code></a>
         </p>
 
 
@@ -5079,7 +5224,7 @@ provide one.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/src_library_ACT_Enabler.js.html#l677"><code>src&#x2F;library&#x2F;ACT_Enabler.js:677</code></a>
+        <a href="../files/src_library_ACT_Enabler.js.html#l920"><code>src&#x2F;library&#x2F;ACT_Enabler.js:920</code></a>
         </p>
 
 
@@ -5133,7 +5278,7 @@ provide one.</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/src_library_ACT_Enabler.js.html#l421"><code>src&#x2F;library&#x2F;ACT_Enabler.js:421</code></a>
+                            <a href="../files/src_library_ACT_Enabler.js.html#l666"><code>src&#x2F;library&#x2F;ACT_Enabler.js:666</code></a>
                             </p>
                     
                     
@@ -5161,35 +5306,7 @@ provide one.</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/src_library_ACT_Enabler.js.html#l427"><code>src&#x2F;library&#x2F;ACT_Enabler.js:427</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="attr_version" class="attr item">
-                        <a name="config_version"></a> 
-                        <h3 class="name"><code>version</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/src_library_ACT_Enabler.js.html#l433"><code>src&#x2F;library&#x2F;ACT_Enabler.js:433</code></a>
+                            <a href="../files/src_library_ACT_Enabler.js.html#l671"><code>src&#x2F;library&#x2F;ACT_Enabler.js:671</code></a>
                             </p>
                     
                     
