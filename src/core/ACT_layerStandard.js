@@ -201,7 +201,6 @@ ACT.define('LayerStandard', [/*@<*/'Debug', /*>@*/ 'Dom', 'Event', 'Lang', 'Scaf
      */
     LayerStandard.ATTRS = {
         NAME: 'LayerStandard',
-        version: '1.1.0',
 
         /**
          * Config Object for initializing layer instance

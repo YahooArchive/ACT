@@ -36,26 +36,6 @@ exports.config = {
     // https://docs.saucelabs.com/reference/platforms-configurator
     //
     capabilities: [
-
-        // {
-
-        //     browserName: 'internet explorer',
-        //     version: '7.0',
-        //     platform: 'Windows XP',
-        //     tags: ['html'],
-        //     name: 'ie7-WinXP'
-
-        // },
-
-         {
-
-            browserName: 'internet explorer',
-            version: '8.0',
-            platform: 'Windows XP',
-            tags: ['html'],
-            name: 'ie8-WinXP'
-
-        },
         {
             browserName: 'internet explorer',
             version: '8.0',

@@ -36,8 +36,7 @@ ACT.define('Debug', [], function () {
      * @initOnly
      */
     Debug.ATTRS = {
-        NAME: 'Debug',
-        version: '1.1.0'
+        NAME: 'Debug'
     };
 
     Debug.prototype = {

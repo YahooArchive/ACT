@@ -1,6 +1,6 @@
 var expect = chai.expect;
 
-describe("ACT.Base", function() {
+describe('ACT.Base:', function () {
 
     var simpleConfig = {
 	    baseConfig: {
@@ -10,17 +10,17 @@ describe("ACT.Base", function() {
 			flow: [],
     		layers: {
 	            mpu: {
-	                layerName: "mpu",
-	                base: "act-ad",
-	                type: "inline",
-	                width: "300px",
-	                height: "250px",
-	                x: "0",
-	                y: "0",
+	                layerName: 'mpu',
+	                base: 'act-ad',
+	                type: 'inline',
+	                width: '300px',
+	                height: '250px',
+	                x: '0',
+	                y: '0',
 	                contentLayer: {
-	                    type: "content-container",
-	                    id: "mpu_container",
-	                    env: ["flash", "html", "backup"],
+	                    type: 'content-container',
+	                    id: 'mpu_container',
+	                    env: ['flash', 'html', 'backup'],
 	                    content: []
 	                }
 	            }
@@ -29,37 +29,37 @@ describe("ACT.Base", function() {
 		}
     };
 
-    ACT.setConfig("simple-super-conf", simpleConfig);
-    for(var itor = 0; itor < 20; itor++){
-    	ACT.setConfig("simple-super-conf"+itor, simpleConfig);
+    ACT.setConfig('simple-super-conf', simpleConfig);
+    for (var itor = 0; itor < 20; itor++) {
+    	ACT.setConfig('simple-super-conf' + itor, simpleConfig);
     }
 
-	beforeEach(function(){
+	beforeEach(function () {
 //		refreshModule('Event');
 		sinon.stub(ACT.Event, 'on');
 		sinon.stub(ACT.Event, 'fire');
 	});
 
-	afterEach(function(){
+	afterEach(function () {
 		ACT.Event.on.restore();
 		ACT.Event.fire.restore();
 	});
 
 
-	describe("attributes", function() {
+	describe('attributes:', function () {
 
-		it("should have ATTRS.version defined", function() {
-			expect(ACT.Base.ATTRS.version).to.exist;
+		it('should have ATTRS defined', function () {
+			expect(ACT.Base.ATTRS).to.exist;
 		});
 
-		it("should have ATTRS.NAME defined", function() {
+		it('should have ATTRS.NAME defined', function () {
 			expect(ACT.Base.ATTRS.NAME).to.exist;
 		});
 	});
 
-	describe("initialise of instance", function(){
+	describe('initialise of instance:', function () {
 
-		before(function(){
+		before(function () {
 
 			noConf = {};
 
@@ -67,7 +67,7 @@ describe("ACT.Base", function() {
 				conf: {
 					adId: 'test_ad_id',
 					cookie: {
-						name: "${LIBRARYADID}",
+						name: '${LIBRARYADID}'
 					},
 					tracking: {
 						rB: 'https://beap-bc.yahoo.com/yc/bv=1.0.0&bs=(17go8ee5u(gid$yD7alTEwLjL99m35VVVHHiByNjYuMVVd6xoQiIHM,st$1432218394369790,si$2664532,sp$2142647235,cr$3939742532,v$2.0,aid$kOTTWArIEuE-,ct$25,ybx$jS9jIkzn3USrovO6qRYhyg,bi$280585532,mme$2946903901166084135,lng$de-de,r$1,yoo$1,agp$361430032,ap$LREC))/*',
@@ -83,7 +83,7 @@ describe("ACT.Base", function() {
 				conf: {
 					adId: 'test_ad_id',
 					cookie: {
-						name: "${LIBRARYADID}",
+						name: '${LIBRARYADID}'
 					},
 					tracking: {
 						rB: 'https://beap-bc.yahoo.com/yc/bv=1.0.0&bs=(17go8ee5u(gid$yD7alTEwLjL99m35VVVHHiByNjYuMVVd6xoQiIHM,st$1432218394369790,si$2664532,sp$2142647235,cr$3939742532,v$2.0,aid$kOTTWArIEuE-,ct$25,ybx$jS9jIkzn3USrovO6qRYhyg,bi$280585532,mme$2946903901166084135,lng$de-de,r$1,yoo$1,agp$361430032,ap$LREC))/*',
@@ -93,7 +93,7 @@ describe("ACT.Base", function() {
 					}
 				},
 				extend: {
-					init: function(){
+					init: function () {
 						console.log('customAdInitConf: init called');
 					}
 				}
@@ -104,7 +104,7 @@ describe("ACT.Base", function() {
 				conf: {
 					adId: 'test_ad_id',
 					cookie: {
-						name: "${LIBRARYADID}",
+						name: '${LIBRARYADID}'
 					},
 					tracking: {
 						rB: 'https://beap-bc.yahoo.com/yc/bv=1.0.0&bs=(17go8ee5u(gid$yD7alTEwLjL99m35VVVHHiByNjYuMVVd6xoQiIHM,st$1432218394369790,si$2664532,sp$2142647235,cr$3939742532,v$2.0,aid$kOTTWArIEuE-,ct$25,ybx$jS9jIkzn3USrovO6qRYhyg,bi$280585532,mme$2946903901166084135,lng$de-de,r$1,yoo$1,agp$361430032,ap$LREC))/*',
@@ -114,7 +114,7 @@ describe("ACT.Base", function() {
 					}
 				},
 				extend: {
-					ad_init: function(){
+					ad_init: function () {
 						return 'ad_init called';
 					}
 				}
@@ -125,7 +125,7 @@ describe("ACT.Base", function() {
 				conf: {
 					adId: 'test_ad_id',
 					cookie: {
-						name: "${LIBRARYADID}",
+						name: '${LIBRARYADID}'
 					},
 					tracking: {
 						rB: 'https://beap-bc.yahoo.com/yc/bv=1.0.0&bs=(17go8ee5u(gid$yD7alTEwLjL99m35VVVHHiByNjYuMVVd6xoQiIHM,st$1432218394369790,si$2664532,sp$2142647235,cr$3939742532,v$2.0,aid$kOTTWArIEuE-,ct$25,ybx$jS9jIkzn3USrovO6qRYhyg,bi$280585532,mme$2946903901166084135,lng$de-de,r$1,yoo$1,agp$361430032,ap$LREC))/*',
@@ -134,14 +134,14 @@ describe("ACT.Base", function() {
 						cb: '1432218394.443105'
 					}
 				},
-				superConf: "simple-super-conf1",
+				superConf: 'simple-super-conf1',
 				extend: {}
 			};
 
 
 		});
 
-		it("should not set data with an empty config", function(){
+		it('should not set data with an empty config', function () {
 
 			var ad = ACT.Base(noConf);
 
@@ -151,7 +151,7 @@ describe("ACT.Base", function() {
 		});
 
 
-		it("should set the supplied customAd config", function(){
+		it('should set the supplied customAd config', function () {
 
 			var ad = ACT.Base(customAdConf);
 
@@ -162,16 +162,16 @@ describe("ACT.Base", function() {
 			expect(ad.config.standardAd).to.equal(false);
 		});
 
-		it("should recognise a standard ad with supplied superConf", function(){
+		it('should recognise a standard ad with supplied superConf', function () {
 			var ad = ACT.Base(standardAdConf);
 			expect(ad.config.standardAd).to.equal(true);
 		});
 
 
-		it("should run the init function when defined", function(done){
+		it('should run the init function when defined', function (done) {
 
-        	sinon.stub(window.console, 'log', function(data){
-        		if(data === "customAdInitConf: init called"){
+        	sinon.stub(window.console, 'log', function (data) {
+        		if (data === 'customAdInitConf: init called') {
         			window.console.log.restore();
         			done();
         		}
@@ -181,7 +181,7 @@ describe("ACT.Base", function() {
 
 		});
 
-		it("should run an undefined ad_init function on load", function(){
+		it('should run an undefined ad_init function on load', function () {
 
 			var ad = ACT.Base(customAdInitConf);
 			var res = ad.ad_init();
@@ -189,7 +189,7 @@ describe("ACT.Base", function() {
 
 		});
 
-		it("should run an overwritten the ad_init function on load", function(){
+		it('should run an overwritten the ad_init function on load', function () {
 
 			var ad = ACT.Base(customAdAdInitConf);
 			var res = ad.ad_init();
@@ -200,15 +200,15 @@ describe("ACT.Base", function() {
 
 	});
 
-	describe("register function", function(){
+	describe('register function:', function () {
 
-		before(function(){
+		before(function () {
 
 			customAdConf = {
 				conf: {
 					adId: 'test_ad_id',
 					cookie: {
-						name: "${LIBRARYADID}",
+						name: '${LIBRARYADID}'
 					},
 					tracking: {
 						rB: 'https://beap-bc.yahoo.com/yc/bv=1.0.0&bs=(17go8ee5u(gid$yD7alTEwLjL99m35VVVHHiByNjYuMVVd6xoQiIHM,st$1432218394369790,si$2664532,sp$2142647235,cr$3939742532,v$2.0,aid$kOTTWArIEuE-,ct$25,ybx$jS9jIkzn3USrovO6qRYhyg,bi$280585532,mme$2946903901166084135,lng$de-de,r$1,yoo$1,agp$361430032,ap$LREC))/*',
@@ -224,7 +224,7 @@ describe("ACT.Base", function() {
 				conf: {
 					adId: 'test_ad_id',
 					cookie: {
-						name: "${LIBRARYADID}",
+						name: '${LIBRARYADID}'
 					},
 					tracking: {
 						rB: 'https://beap-bc.yahoo.com/yc/bv=1.0.0&bs=(17go8ee5u(gid$yD7alTEwLjL99m35VVVHHiByNjYuMVVd6xoQiIHM,st$1432218394369790,si$2664532,sp$2142647235,cr$3939742532,v$2.0,aid$kOTTWArIEuE-,ct$25,ybx$jS9jIkzn3USrovO6qRYhyg,bi$280585532,mme$2946903901166084135,lng$de-de,r$1,yoo$1,agp$361430032,ap$LREC))/*',
@@ -233,7 +233,7 @@ describe("ACT.Base", function() {
 						cb: '1432218394.443105'
 					}
 				},
-				superConf: "simple-super-conf2",
+				superConf: 'simple-super-conf2',
 				extend: {}
 			};
 
@@ -241,7 +241,7 @@ describe("ACT.Base", function() {
 				conf: {
 					adId: 'test_ad_id',
 					cookie: {
-						name: "${LIBRARYADID}",
+						name: '${LIBRARYADID}'
 					},
 					tracking: {
 						rB: 'https://beap-bc.yahoo.com/yc/bv=1.0.0&bs=(17go8ee5u(gid$yD7alTEwLjL99m35VVVHHiByNjYuMVVd6xoQiIHM,st$1432218394369790,si$2664532,sp$2142647235,cr$3939742532,v$2.0,aid$kOTTWArIEuE-,ct$25,ybx$jS9jIkzn3USrovO6qRYhyg,bi$280585532,mme$2946903901166084135,lng$de-de,r$1,yoo$1,agp$361430032,ap$LREC))/*',
@@ -250,10 +250,10 @@ describe("ACT.Base", function() {
 						cb: '1432218394.443105'
 					},
 					customData: {
-						"layers.mpu.mpu_container.css.height" : "500px"
+						'layers.mpu.mpu_container.css.height' : '500px'
 					}
 				},
-				superConf: "simple-super-conf3",
+				superConf: 'simple-super-conf3',
 				extend: {}
 			};
 
@@ -262,7 +262,7 @@ describe("ACT.Base", function() {
 				conf: {
 					adId: 'test_ad_id',
 					cookie: {
-						name: "${LIBRARYADID}",
+						name: '${LIBRARYADID}'
 					},
 					tracking: {
 						rB: 'https://beap-bc.yahoo.com/yc/bv=1.0.0&bs=(17go8ee5u(gid$yD7alTEwLjL99m35VVVHHiByNjYuMVVd6xoQiIHM,st$1432218394369790,si$2664532,sp$2142647235,cr$3939742532,v$2.0,aid$kOTTWArIEuE-,ct$25,ybx$jS9jIkzn3USrovO6qRYhyg,bi$280585532,mme$2946903901166084135,lng$de-de,r$1,yoo$1,agp$361430032,ap$LREC))/*',
@@ -271,12 +271,12 @@ describe("ACT.Base", function() {
 						cb: '1432218394.443105'
 					},
 					inputData: {
-	               		type:"JSON",
-	              		id: "myYT",
-	               		dataFeed: "https://s.yimg.com/cv/ae/default/161201/json_feed.js"
+	               		type:'JSON',
+	              		id: 'myYT',
+	               		dataFeed: 'https://s.yimg.com/cv/ae/default/161201/json_feed.js'
 					}
 				},
-				superConf: "simple-super-conf4",
+				superConf: 'simple-super-conf4',
 				extend: {}
 			};
 
@@ -284,7 +284,7 @@ describe("ACT.Base", function() {
 				conf: {
 					adId: 'test_ad_id',
 					cookie: {
-						name: "${LIBRARYADID}",
+						name: '${LIBRARYADID}'
 					},
 					tracking: {
 						rB: 'https://beap-bc.yahoo.com/yc/bv=1.0.0&bs=(17go8ee5u(gid$yD7alTEwLjL99m35VVVHHiByNjYuMVVd6xoQiIHM,st$1432218394369790,si$2664532,sp$2142647235,cr$3939742532,v$2.0,aid$kOTTWArIEuE-,ct$25,ybx$jS9jIkzn3USrovO6qRYhyg,bi$280585532,mme$2946903901166084135,lng$de-de,r$1,yoo$1,agp$361430032,ap$LREC))/*',
@@ -293,21 +293,21 @@ describe("ACT.Base", function() {
 						cb: '1432218394.443105'
 					},
 					inputData: {
-	               		type:"JS",
-	              		id: "myYT",
-	               		dataFeed: "https://s.yimg.com/cv/ae/default/161201/json_feed2.js"
+	               		type:'JS',
+	              		id: 'myYT',
+	               		dataFeed: 'https://s.yimg.com/cv/ae/default/161201/json_feed2.js'
 					}
 				},
-				superConf: "simple-super-conf5",
+				superConf: 'simple-super-conf5',
 				extend: {}
 			};
 
 		});
 
-		it("should track Pixels for custom ads only", function(done){
+		it('should track Pixels for custom ads only', function (done) {
 			var ad = ACT.Base(customAdConf);
 
-			sinon.stub(ad, 'trackPixel', function(pixels){
+			sinon.stub(ad, 'trackPixel', function (pixels) {
 				ad.trackPixel.restore();
 				done();
 			});
@@ -316,11 +316,11 @@ describe("ACT.Base", function() {
 
 		});
 
-		it("should call loadStandard ad for standard ads", function(done){
+		it('should call loadStandard ad for standard ads', function (done) {
 
 			var ad = ACT.Base(standardAdConf);
 
-			sinon.stub(ad, 'loadStandardAd', function(){
+			sinon.stub(ad, 'loadStandardAd', function () {
 				ad.loadStandardAd.restore();
 				done();
 			});
@@ -329,9 +329,9 @@ describe("ACT.Base", function() {
 
 		});
 
-		it("should merge config and customData for standard ads", function(done){
+		it('should merge config and customData for standard ads', function (done) {
 			var ad = ACT.Base(standardAdCustomDataConf);
-			sinon.stub(ad, 'loadStandardAd', function(){
+			sinon.stub(ad, 'loadStandardAd', function () {
 				expect(ad.config.format.layers.mpu).to.be.an('object');
 				ad.loadStandardAd.restore();
 				done();
@@ -340,7 +340,7 @@ describe("ACT.Base", function() {
 			ad.register();
 		});
 
-		it("should merge JSON inputData for standard ads", function(done){
+		it('should merge JSON inputData for standard ads', function (done) {
 			var ad = ACT.Base(standardAdInputDataConf);
 			expect(ad.config.format.layers.mpu).to.be.an('object');
 			done();
@@ -362,13 +362,13 @@ describe("ACT.Base", function() {
 		});
 	});
 
-	describe("loadStandardAd function", function(){
-		it("should call trackPixel for standard ads", function(done){
+	describe('loadStandardAd function:', function () {
+		it('should call trackPixel for standard ads', function (done) {
 			var standardAdConf = {
 				conf: {
 					adId: 'test_ad_id12',
 					cookie: {
-						name: "${LIBRARYADID}",
+						name: '${LIBRARYADID}'
 					},
 					tracking: {
 						rB: 'https://beap-bc.yahoo.com/yc/bv=1.0.0&bs=(17go8ee5u(gid$yD7alTEwLjL99m35VVVHHiByNjYuMVVd6xoQiIHM,st$1432218394369790,si$2664532,sp$2142647235,cr$3939742532,v$2.0,aid$kOTTWArIEuE-,ct$25,ybx$jS9jIkzn3USrovO6qRYhyg,bi$280585532,mme$2946903901166084135,lng$de-de,r$1,yoo$1,agp$361430032,ap$LREC))/*',
@@ -377,11 +377,11 @@ describe("ACT.Base", function() {
 						cb: '1432218394.443105'
 					}
 				},
-				superConf: "simple-super-conf7",
+				superConf: 'simple-super-conf7',
 				extend: {}
 			};
 			var ad = ACT.Base(standardAdConf);
-			sinon.stub(ad, 'trackPixel', function(){
+			sinon.stub(ad, 'trackPixel', function () {
 				ad.trackPixel.restore();
 				done();
 			});
@@ -390,13 +390,13 @@ describe("ACT.Base", function() {
 	});
 
 
-	describe("trackPixel function", function(){
-		before(function(){
+	describe('trackPixel function:', function () {
+		before(function () {
 			var customAdConf = {
 				conf: {
 					adId: 'test_ad_id',
 					cookie: {
-						name: "${LIBRARYADID}",
+						name: '${LIBRARYADID}'
 					},
 					tracking: {
 						rB: 'https://beap-bc.yahoo.com/yc/bv=1.0.0&bs=(17go8ee5u(gid$yD7alTEwLjL99m35VVVHHiByNjYuMVVd6xoQiIHM,st$1432218394369790,si$2664532,sp$2142647235,cr$3939742532,v$2.0,aid$kOTTWArIEuE-,ct$25,ybx$jS9jIkzn3USrovO6qRYhyg,bi$280585532,mme$2946903901166084135,lng$de-de,r$1,yoo$1,agp$361430032,ap$LREC))/*',
@@ -409,9 +409,9 @@ describe("ACT.Base", function() {
 			};
 		});
 
-		it("should get its environment from currentEnv", function(){
+		it('should get its environment from currentEnv', function () {
 			var ad = ACT.Base(customAdConf);
-			ad.currentEnv = "backup";
+			ad.currentEnv = 'backup';
 
 			var pixels = {
 				html: ['https://s.yimg.com/html-pixel.gif'],
@@ -419,7 +419,7 @@ describe("ACT.Base", function() {
 				backup: ['https://s.yimg.com/backup-pixel.gif']
 			};
 
-			sinon.stub(ACT.Util, 'pixelTrack', function(pixel){
+			sinon.stub(ACT.Util, 'pixelTrack', function (pixel) {
 				expect(pixel).to.equal(pixels.backup[0]);
 				ACT.Util.pixelTrack.restore();
 			});
@@ -427,16 +427,16 @@ describe("ACT.Base", function() {
 			ad.trackPixel(pixels);
 		});
 
-		it("should set its environment to html from UA", function(){
+		it('should set its environment to html from UA', function () {
 			var ad = ACT.Base(customAdConf);
-			ad.currentEnv = "html";
+			ad.currentEnv = 'html';
 			var pixels = {
 				html: ['https://s.yimg.com/html-pixel.gif'],
 				flash: ['https://s.yimg.com/flash-pixel.gif'],
 				backup: ['https://s.yimg.com/backup-pixel.gif']
 			};
 
-			sinon.stub(ACT.Util, 'pixelTrack', function(pixel){
+			sinon.stub(ACT.Util, 'pixelTrack', function (pixel) {
 				expect(pixel).to.equal(pixels.html[0]);
 				ACT.Util.pixelTrack.restore();
 			});
@@ -445,14 +445,14 @@ describe("ACT.Base", function() {
 
 		});
 
-		it("should send a pixel if param is an array", function(){
+		it('should send a pixel if param is an array', function () {
 
 			var ad = ACT.Base(customAdConf);
 
 			var pixelParam = ['https://s.yimg.com/html-pixel.gif'];
 
 
-			sinon.stub(ACT.Util, 'pixelTrack', function(pixel){
+			sinon.stub(ACT.Util, 'pixelTrack', function (pixel) {
 				expect(pixel).to.equal(pixelParam[0]);
 				ACT.Util.pixelTrack.restore();
 			});
@@ -461,14 +461,14 @@ describe("ACT.Base", function() {
 
 		});
 
-		it("should send a pixel if param is a string", function(){
+		it('should send a pixel if param is a string', function () {
 
 			var ad = ACT.Base(customAdConf);
 
 			var pixelParam = 'https://s.yimg.com/backup-pixel.gif';
 
 
-			sinon.stub(ACT.Util, 'pixelTrack', function(pixel){
+			sinon.stub(ACT.Util, 'pixelTrack', function (pixel) {
 				expect(pixel).to.equal(pixelParam);
 				ACT.Util.pixelTrack.restore();
 			});

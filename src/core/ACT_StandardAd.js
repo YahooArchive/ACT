@@ -88,7 +88,6 @@ ACT.define('StandardAd', [/*@<*/'Debug', /*>@*/ 'Lang', 'Event', 'Class', 'Envir
      */
     StandardAd.ATTRS = {
         NAME: 'StandardAd',
-        version: '1.1.0',
 
         /**
          * @attribute baseConfig

@@ -16,10 +16,6 @@ describe("ACT.Environment", function() {
             expect(ACT.Environment.ATTRS).to.exist;
         });
 
-        it("should have ATTRS.version defined", function() {
-            expect(ACT.Environment.ATTRS.version).to.exist;
-        });
-
         it("should have ATTRS.NAME defined", function() {
             expect(ACT.Environment.ATTRS.NAME).to.exist;
         });

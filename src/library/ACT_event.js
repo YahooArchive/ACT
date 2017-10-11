@@ -62,8 +62,7 @@ ACT.define('Event', [/*@<*/'Debug', /*>@*/ 'Lang'], function (ACT) {
      * @initOnly
      */
     Event.ATTRS = {
-        NAME: 'event',
-        version: '1.1.0'
+        NAME: 'event'
     };
 
 

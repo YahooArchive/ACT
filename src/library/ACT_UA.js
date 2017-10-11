@@ -16,6 +16,14 @@ ACT.define('UA', [/*@<*/'Debug', /*>@*/ 'Lang'], function (ACT) {
 
     /* Private Functions */
 
+    function getVersion(result) {
+        var ver = 0;
+        if (result && result[1]) {
+            ver = result[1].replace(/_/g, '.');
+        }
+        return ver;
+    }
+
     /**
      * Detect current OS
      * @private
@@ -35,24 +43,19 @@ ACT.define('UA', [/*@<*/'Debug', /*>@*/ 'Lang'], function (ACT) {
             os = 'macintosh';
         } else if ((/iphone|ipod|ipad/i).test(userAgent)) {
             os = 'ios';
-            tmp = (/CPU OS ([0-9_]+)/i).exec(userAgent);
-            if (tmp && tmp[1]) {
-                ver = tmp[1].replace('_', '.');
-            }
+            tmp = (/OS ([0-9_]+)/i).exec(userAgent);
+            ver = getVersion(tmp);
         } else if ((/windows phone/i).test(userAgent)) {
             os = 'Windows Phone';
             tmp = (/Windows Phone [OS]*\s*([0-9.]+)/).exec(userAgent);
-            /* istanbul ignore else  */
-            if (tmp && tmp[1]) {
-                ver = tmp[1];
-            }
+            ver = getVersion(tmp);
         } else if ((/android/i).test(userAgent)) {
             os = 'android';
             tmp = (/Android\s*([0-9.]+)/).exec(userAgent);
-            /* istanbul ignore else  */
-            if (tmp && tmp[1]) {
-                ver = tmp[1];
+            if (!tmp) {
+                tmp = (/Android;\s*([0-9.]+)/).exec(userAgent);
             }
+            ver = getVersion(tmp);
         } else if ((/linux/i).test(userAgent)) {
             os = 'linux';
         } else if ((/webOS/i).test(userAgent)) {
@@ -336,8 +339,7 @@ ACT.define('UA', [/*@<*/'Debug', /*>@*/ 'Lang'], function (ACT) {
      */
     var UA = {
         ATTRS: {
-            NAME: 'UA',
-            version: '1.1.0'
+            NAME: 'UA'
         },
 
         /**

@@ -1,6 +1,6 @@
 /* Function to assist with subbing SecureDarla */
-function refreshSecureDarla(which){
-	if(which){
+function refreshSecureDarla(which) {
+	if (which) {
 		window.Y = {
 			SandBox: {
 				vendor: {
@@ -26,9 +26,10 @@ function refreshSecureDarla(which){
 }
 
 /* Function to help clean up Event module */
-function cleanEvent(){
+function cleanEvent() {
 	var removable = ACT.Event.removable;
-	for(var itor = 0; itor < removable.length; itor++){
+	for (var itor = 0; itor < removable.length; itor++) {
+		if (removable[itor].eventType === 'env:envRendered') continue;
 		if (removable[itor].eventType === 'message') continue;
 		if (removable[itor].eventType === 'screen:status') continue;
 		if (removable[itor].eventType === 'collapseStart') continue;
@@ -45,11 +46,11 @@ function refreshModule(name) {
 	delete ACT.store;
 	ACT.store = [];
 
-	for(var itor = 0; itor < modules.length; itor++){
+	for (var itor = 0; itor < modules.length; itor++) {
 		var mod = modules[itor];
-		if(mod.name === 'Event'){
+		if (mod.name === 'Event') {
 			cleanEvent();
-		} else if(mod.name == name) {
+		} else if (mod.name == name) {
 			delete ACT[mod.name];
 			ACT[mod.name] = null;
 			ACT[mod.name] = mod.factory(ACT);
@@ -62,7 +63,7 @@ function refreshModule(name) {
 
 /* To keep logging to a minimum, we overwrite window.console - reduces clutter. */
 window.debug = window.console.log;
-window.console.warn = function() {};
-window.console.error = function() {};
-window.console.log = function() {};
-window.console.info = function() {};
+window.console.warn = function () {};
+window.console.error = function () {};
+window.console.log = function () {};
+window.console.info = function () {};

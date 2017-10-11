@@ -1,111 +1,146 @@
-var path = require('path');
-var tempAssets = [];
-var temCoreLink = "";
-
 function getFullPath(filesArr, path) {
-    var p = path ? path : "";
+    var p = path || '';
     var f = filesArr && filesArr.length > 0 ? filesArr : [];
     var res = [];
+    var itor = 0;
 
-    for (var i = 0; i < f.length; i++) {
-        res.push(p + f[i]);
+    for (itor = 0; itor < f.length; itor++) {
+        res.push(p + f[itor]);
     }
     return res;
 }
 
-module.exports = function(grunt) {
+module.exports = function (grunt) {
     var debug = 'build/debug/';
     var deploy = 'build/deploy/';
     var min = 'build/min/';
-    var base_files = [
-        "core/ACT.js",
-        "core/ACT_actionsQueue.js",
-        "core/ACT_base.js",
-        "core/ACT_cookie.js",
-        "core/ACT_environment.js",
-        "core/ACT_Layerslist.js",
-        "core/ACT_layerStandard.js",
-        "core/ACT_scaffolding.js",
-        "core/ACT_Screen.js",
-        "core/ACT_secureDarla.js",
-        "core/ACT_StandardAd.js",
-        "core/ACT_TrackingFacade.js",
-        "library/ACT_AdobeEdgeBridge.js",
-        "library/ACT_animation.js",
-        "library/ACT_capability.js",
-        "library/ACT_class.js",
-        "library/ACT_customData.js",
-        "library/ACT_DwellTime.js",
-        "library/ACT_dom.js",
-        "library/ACT_event.js",
-        "library/ACT_flash.js",
-        "library/ACT_IO.js",
-        "library/ACT_json.js",
-        "library/ACT_lang.js",
-        "library/ACT_SWFBridge.js",
-        "library/ACT_UA.js",
-        "library/ACT_util.js",
-        "library/ACT_VideoEvents.js",
+    var baseACTJSFiles = [
+        'core/ACT.js',
+        'core/ACT_actionsQueue.js',
+        'core/ACT_base.js',
+        'core/ACT_cookie.js',
+        'core/ACT_environment.js',
+        'core/ACT_Layerslist.js',
+        'core/ACT_layerStandard.js',
+        'core/ACT_scaffolding.js',
+        'core/ACT_Screen.js',
+        'core/ACT_secureDarla.js',
+        'core/ACT_StandardAd.js',
+        'core/ACT_TrackingFacade.js',
+        'library/ACT_AdobeEdgeBridge.js',
+        'library/ACT_animation.js',
+        'library/ACT_capability.js',
+        'library/ACT_class.js',
+        'library/ACT_customData.js',
+        'library/ACT_DwellTime.js',
+        'library/ACT_dom.js',
+        'library/ACT_event.js',
+        'library/ACT_flash.js',
+        'library/ACT_IO.js',
+        'library/ACT_json.js',
+        'library/ACT_lang.js',
+        'library/ACT_SWFBridge.js',
+        'library/ACT_UA.js',
+        'library/ACT_util.js',
+        'library/ACT_VideoEvents.js',
         // Adding back contentSwf
-        "capabilities/ACT_contentSwf.js",
+        'capabilities/ACT_contentSwf.js',
         // Adding back contentVideoFlash
-        "capabilities/ACT_contentVideoFlash.js",
-        "capabilities/ACT_contentContainer.js",
-        "capabilities/ACT_contentCarousel.js",
-        "capabilities/ACT_contentHtml5.js",
-        "capabilities/ACT_contentImage.js",
-        "capabilities/ACT_contentThirdParty.js",
-        "capabilities/ACT_contentVideoHtml.js",
-        "capabilities/ACT_contentYoutube.js",
-        "capabilities/ACT_contentYtv.js"
-
+        'capabilities/ACT_contentVideoFlash.js',
+        'capabilities/ACT_contentContainer.js',
+        'capabilities/ACT_contentCarousel.js',
+        'capabilities/ACT_contentHtml5.js',
+        'capabilities/ACT_contentImage.js',
+        'capabilities/ACT_contentThirdParty.js',
+        'capabilities/ACT_contentVideoHtml.js',
+        'capabilities/ACT_contentYoutube.js',
+        'capabilities/ACT_contentYtv.js'
+    ];
+    var actCoreFiles = [
+        'core/ACT.js',
+        'core/ACT_Layerslist.js',
+        'core/ACT_Screen.js',
+        'core/ACT_StandardAd.js',
+        'core/ACT_TrackingFacade.js',
+        'core/ACT_actionsQueue.js',
+        'core/ACT_base.js',
+        'core/ACT_cookie.js',
+        'core/ACT_environment.js',
+        'core/ACT_layerStandard.js',
+        'core/ACT_scaffolding.js',
+        'core/ACT_secureDarla.js',
+        'library/ACT_UA.js',
+        'library/ACT_capability.js',
+        'library/ACT_class.js',
+        'library/ACT_customData.js',
+        'library/ACT_dom.js',
+        'library/ACT_event.js',
+        'library/ACT_json.js',
+        'library/ACT_lang.js',
+        'library/ACT_util.js',
+        'capabilities/ACT_contentContainer.js',
+        'capabilities/ACT_contentImage.js',
+        'capabilities/ACT_contentHtml5.js'
     ];
     var enablerFiles = [
-        "core/ACT.js",
-        "library/ACT_dom.js",
-        "library/ACT_Enabler.js",
-        "library/ACT_event.js",
-        "library/ACT_class.js",
-        "library/ACT_lang.js",
-        "library/ACT_UA.js",
-        "library/ACT_VideoEvents.js",
-        "library/ACT_json.js",
-        "core/ACT_TrackingFacade.js",
-        "library/ACT_util.js",
-        "core/ACT_actionsQueue.js"
+        'core/ACT.js',
+        'core/ACT_TrackingFacade.js',
+        'core/ACT_environment.js',
+        'core/ACT_actionsQueue.js',
+        'library/ACT_dom.js',
+        'library/ACT_Enabler.js',
+        'library/ACT_event.js',
+        'library/ACT_class.js',
+        'library/ACT_lang.js',
+        'library/ACT_UA.js',
+        'library/ACT_VideoEvents.js',
+        'library/ACT_json.js',
+        'library/ACT_util.js'
     ];
     var enablerPublic = [
-        "library/ACT_dom.js",
-        "library/ACT_Enabler.js",
-        "library/ACT_event.js",
-        "library/ACT_lang.js",
-        "library/ACT_UA.js",
-        "library/ACT_json.js",
-        "library/ACT_util.js"
+        'library/ACT_dom.js',
+        'library/ACT_Enabler.js',
+        'library/ACT_event.js',
+        'library/ACT_lang.js',
+        'library/ACT_UA.js',
+        'library/ACT_json.js',
+        'library/ACT_util.js'
     ];
-    var baseDebug = getFullPath(base_files, debug);
-    var base = getFullPath(base_files, deploy);
-    var base_min = getFullPath(base_files, min);
+    var baseDebug = getFullPath(baseACTJSFiles, debug);
+    var base = getFullPath(baseACTJSFiles, deploy);
+
+    var baseActCoreDebug = getFullPath(actCoreFiles, debug);
+    var baseActCoreDeploy = getFullPath(actCoreFiles, deploy);
+
     var enabler = getFullPath(enablerFiles, deploy);
     var enablerDebug = getFullPath(enablerFiles, debug);
 
     baseDebug.push(debug + 'library/ACT_debug.js');
+    baseActCoreDebug.push(debug + 'library/ACT_debug.js');
     enablerDebug.push(debug + 'library/ACT_debug.js');
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         concat: {
-            debug: {
-                src: baseDebug,
+            coreDebug: {
+                src: baseActCoreDebug,
                 dest: debug + 'ACT.core.js'
+            },
+            coreDeploy: {
+                src: baseActCoreDeploy,
+                dest: deploy + 'ACT.core.js'
+            },
+            allDebug: {
+                src: baseDebug,
+                dest: debug + 'ACT.all.js'
+            },
+            allDeploy: {
+                src: base,
+                dest: deploy + 'ACT.all.js'
             },
             enablerDebug: {
                 src: enablerDebug,
                 dest: debug + 'ACT_Enabler.js'
-            },
-            deploy: {
-                src: base,
-                dest: deploy + 'ACT.core.js'
             },
             enabler: {
                 src: enabler,
@@ -124,6 +159,12 @@ module.exports = function(grunt) {
                 cwd: debug + 'assets/',
                 src: '**',
                 dest: min + 'assets/'
+            },
+            assetsDeploy: {
+                expand: true,
+                cwd: debug + 'assets/',
+                src: '**',
+                dest: deploy + 'assets/'
             },
             examples: {
                 expand: true,
@@ -149,7 +190,7 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     cwd: debug,
-                    src: ["**/*.js", 'assets/**'],
+                    src: ['**/*.js', 'assets/ACT_icons/*.css'],
                     dest: deploy
                 }]
             }
@@ -174,7 +215,7 @@ module.exports = function(grunt) {
                     singleRun: true,
                     frameworks: ['mocha'],
                     browsers: ['PhantomJS'],
-                    //browserNoActivityTimeout: 100000,
+                    // browserNoActivityTimeout: 100000,
                     reporters: ['progress', 'coverage', 'tap', 'junit'],
                     preprocessors: {
                         'src/**/*.js': ['coverage']
@@ -205,11 +246,14 @@ module.exports = function(grunt) {
             }
         },
         uglify: {
+            options: {
+                screwIE8: false
+            },
             my_target: {
                 files: [{
                     expand: true,
                     cwd: deploy,
-                    src: "**/*.js",
+                    src: '**/*.js',
                     dest: min
                 }]
             }
@@ -227,7 +271,7 @@ module.exports = function(grunt) {
                     themedir: 'doc_themes/default/',
                     outdir: 'temp_docs/',
                     tabtospace: 2,
-                    helpers: ["doc_themes/preprocessor/process.js"]
+                    helpers: ['doc_themes/preprocessor/process.js']
                 }
             },
             enabler: {
@@ -242,7 +286,7 @@ module.exports = function(grunt) {
                     themedir: 'doc_themes/default/',
                     outdir: 'temp_enabler_docs/',
                     tabtospace: 2,
-                    helpers: ["doc_themes/preprocessor/process.js"]
+                    helpers: ['doc_themes/preprocessor/process.js']
                 }
             }
         },
@@ -256,14 +300,14 @@ module.exports = function(grunt) {
             modules: {
                 src: ['src/**/**.js']
             }
-        },   
+        },
         'docs-demo': {
             demo: {
                 options: {
                     src: ['examples'],
                     storePath: 'temp_docs/demo/',
                     filter: {
-                        ok:['js', 'html', 'json'],
+                        ok: ['js', 'html', 'json'],
                         ignore: ['asset', '.DS_Store'],
                         folder_ok: false
                     },
@@ -275,16 +319,13 @@ module.exports = function(grunt) {
                     src: ['examples'],
                     storePath: 'temp_enabler_docs/demo/',
                     filter: {
-                        ok:['js', 'html', 'json'],
+                        ok: ['js', 'html', 'json'],
                         ignore: ['asset', '.DS_Store'],
                         folder_ok: ['enabler']
                     },
                     template: './doc_themes/default/layouts/main.handlebars'
                 }
             }
-        },
-        eslint: {
-            target: ['./src/']
         },
         'compile-handlebars': {
             'integration-tests': {
@@ -296,9 +337,13 @@ module.exports = function(grunt) {
                     ext: '.html'
                 }],
                 templateData: {
-                    'ACTJS_core_file': '<%= grunt.option("actjscore_candidate") %>'
+                    ACTJS_core_file: '<%= grunt.option("actjscore_candidate") %>',
+                    ACTJS_candidate_path: '<%= grunt.option("actjs_candidate_path") %>'
                 }
-            },
+            }
+        },
+        eslint: {
+            target: ['./src/', './test/integration/']
         },
         'string-replace': {
             dist: {
@@ -335,7 +380,7 @@ module.exports = function(grunt) {
                     }]
                 }
             }
-        },
+        }
     });
 
     grunt.loadNpmTasks('grunt-contrib-concat');
@@ -352,7 +397,8 @@ module.exports = function(grunt) {
     // load the extra tasks defined in the ./tasks folder
     grunt.loadTasks('tasks');
     grunt.registerTask('debug', ['debug_code_remover']);
-    grunt.registerTask('build', ['version', 'copy', 'concat:debug', 'concat:enablerDebug', 'debug_code_remover', 'concat:deploy', 'concat:enabler', 'uglify', 'copy:assets']);
+    grunt.registerTask('build', ['copy', 'concat', 'debug_code_remover', 'uglify', 'copy:assets', 'copy:assetsDeploy']);
+    // grunt.registerTask('build', ['copy', 'concat:debug', 'concat:enablerDebug', 'debug_code_remover', 'concat:deploy', 'concat:enabler', 'uglify', 'copy:assets']);
     grunt.registerTask('lint', ['eslint']);
     grunt.registerTask('test', ['karma']);
     grunt.registerTask('docs', ['yuidoc:all', 'copy:enabler_docs', 'yuidoc:enabler', 'docsdemo', 'string-replace', 'copy:examples', 'copy:src']);

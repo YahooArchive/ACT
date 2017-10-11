@@ -18,7 +18,6 @@ describe("VideoEvents Library", function() {
         expect(ACT.VideoEvents).to.exist;
 		expect(ACT.VideoEvents.ATTRS).to.exist;
 		expect(ACT.VideoEvents.ATTRS.NAME).to.exist;
-		expect(ACT.VideoEvents.ATTRS.version).to.exist;
     });
 
 	/* ACT.Event */

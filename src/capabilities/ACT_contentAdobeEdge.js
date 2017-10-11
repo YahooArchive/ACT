@@ -80,12 +80,6 @@ ACT.define('ContentAdobeEdge', [/*@<*/'Debug', /*>@*/ 'Dom', 'Lang', 'Event', 'C
         NAME: 'ContentAdobeEdge',
 
         /**
-         * @attribute version
-         * @type String
-         */
-        version: '1.1.0',
-
-        /**
          * @attributes instanceId
          */
         instanceId: '',

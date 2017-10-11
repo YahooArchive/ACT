@@ -75,7 +75,7 @@ describe('ContentThirdParty', function() {
             });
 
             it("Should have version", function() {
-                expect(contentThirdParty.ATTRS.version).to.exist;
+                expect(contentThirdParty.ATTRS).to.exist;
             });
 
             it("Should have configObject", function() {

@@ -34,8 +34,6 @@ ACT.define('Class', [/*@<*/'Debug', /*>@*/ 'Lang'], function (ACT) {
      */
     Class.ATTRS = {
         NAME: 'Class',
-        version: '1.1.0',
-
         /**
          * An array to keep references to all events created in the runtime of this class.
          * All events registered in this array will be removed when the instance is removed

@@ -18,13 +18,14 @@ exports.config = {
     /*
 		'./test/integration/loginad/*-html-specs.js',
 		'./test/integration/motion-loginad/*-html-specs.js',
+		'./test/integration/html5-loginad/*-html-specs.js',
+	*/
 		'./test/integration/billboard/*-html-specs.js',
 		'./test/integration/expandable/*-html-specs.js',
 		'./test/integration/floating/*-html-specs.js',
-		'./test/integration/html5-loginad/*-html-specs.js',
 		'./test/integration/inline-video/*-html-specs.js'
-	*/
-		'./test/integration/**/*-html-specs.js'
+
+//		'./test/integration/**/*-html-specs.js'
     ],
 
     // Patterns to exclude.
@@ -47,31 +48,15 @@ exports.config = {
     capabilities: [
         {
             browserName: 'chrome',
-            version: '45',
             platform: 'Windows 10',
             tags: ['html', 'windows', 'chrome'],
             name: 'Chrome45-Win10'
         },
         {
-            browserName: 'chrome',
-            version: '46',
-            platform: 'Windows 10',
-            tags: ['html', 'windows', 'chrome'],
-            name: 'Chrome46-Win10'
-        },
-        {
             browserName: 'firefox',
-            version: '41.0',
             platform: 'Windows 10',
             tags: ['html', 'windows', 'firefox'],
             name: 'firefox41-Win10'
-        },
-        {
-            browserName: 'firefox',
-            version: '42.0',
-            platform: 'Windows 10',
-            tags: ['html', 'windows', 'firefox'],
-            name: 'firefox42-Win10'
         },
         {
             browserName: 'internet explorer',
@@ -79,8 +64,8 @@ exports.config = {
             platform: 'Windows 10',
             tags: ['html', 'windows', 'ie'],
             name: 'ie11-Win10'
-        },
-        {
+        }
+        /* {
             browserName: 'internet explorer',
             version: '10.0',
             platform: 'Windows 8',
@@ -114,7 +99,7 @@ exports.config = {
             platform: 'OS X 10.10',
             tags: ['html', 'yosemite', 'safari'],
             name: 'safari8-yosemite'
-        }
+        }*/
     ],
     //
     // ===================

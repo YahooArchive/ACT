@@ -2,24 +2,22 @@ var expect = chai.expect;
 
 describe('ACT.Enabler', function() {
 
-	before(function(){
-		// fake parent postMessage
-		sinon.stub(parent, 'postMessage', function(data){
-			console.info('fake postMessage')
-			ACT.Event.fire('Enabler:actions', data.EnablerData)
-		});
+    before(function(){
+        // fake parent postMessage
+        sinon.stub(parent, 'postMessage', function(data){
+            ACT.Event.fire('Enabler:actions', data.EnablerData)
+        });
 
         // fake window.open so it will not open anything
         sinon.stub(window, 'open', function(data){
             return 'macros:' + data;
         });
+    });
 
-	});
-
-	after(function(){
-		parent.postMessage.restore();
+    after(function(){
+        parent.postMessage.restore();
         window.open.restore();
-	});
+    });
 
     describe('studio', function() {
 
@@ -50,13 +48,13 @@ describe('ACT.Enabler', function() {
 
             after(function() {
                 removeDummyElement('testVideo');
-				Enabler.counter.restore();
+                Enabler.counter.restore();
             });
 
             it('should have the attach method', function() {
                 expect(Reporter.attach).to.exist;
                 expect(ACT.VideoEvents).to.exist;
-                console.log(Reporter.getVideoTracking());
+                Reporter.getVideoTracking();
             });
 
             it('should attach a new video tracking', function() {
@@ -67,10 +65,10 @@ describe('ACT.Enabler', function() {
 
             });
 
-			/***************************************************************************************************************/
-			/* Test video:events and automatic tracking in Enabler */
-			/***************************************************************************************************************/
-			/* start */
+            /***************************************************************************************************************/
+            /* Test video:events and automatic tracking in Enabler */
+            /***************************************************************************************************************/
+            /* start */
             it('should listen to video:action event - start', function(){
                 ACT.Event.fire('video:action', {
                     "videoId": 'Video Tracking ID',
@@ -79,13 +77,10 @@ describe('ACT.Enabler', function() {
                     "eventType": 'start',
                     "event" : 'video:start'
                 });
-//                window.setTimeout(function(){
-                    expect(Enabler.counter.calledWith('Video Tracking ID:start')).to.be.true;
-//                    done();
-  //              }, 10);
+				expect(Enabler.counter.calledWith('Video Tracking ID:start')).to.be.equal(true);
             });
 
-			/* 25% */
+            /* 25% */
             it('should listen to video:action event - 25', function(){
                 ACT.Event.fire('video:action', {
                     "videoId": 'Video Tracking ID',
@@ -94,13 +89,10 @@ describe('ACT.Enabler', function() {
                     "eventType": '25',
                     "event" : 'video:25percent'
                 });
-//                window.setTimeout(function(){
-                    expect(Enabler.counter.calledWith('Video Tracking ID:25')).to.be.true;
-  //                  done();
-//                }, 10);
+				expect(Enabler.counter.calledWith('Video Tracking ID:25')).to.be.equal(true);
             });
 
-			/* 50% */
+            /* 50% */
             it('should listen to video:action event - 50', function(){
                 ACT.Event.fire('video:action', {
                     "videoId": 'Video Tracking ID',
@@ -109,13 +101,10 @@ describe('ACT.Enabler', function() {
                     "eventType": '50',
                     "event" : 'video:50percent'
                 });
-//                window.setTimeout(function(){
-                    expect(Enabler.counter.calledWith('Video Tracking ID:50')).to.be.true;
-  //                  done();
-    //            }, 10);
+				expect(Enabler.counter.calledWith('Video Tracking ID:50')).to.be.equal(true);
             });
 
-			/* 75% */
+            /* 75% */
             it('should listen to video:action event - 75', function(){
                 ACT.Event.fire('video:action', {
                     "videoId": 'Video Tracking ID',
@@ -124,13 +113,10 @@ describe('ACT.Enabler', function() {
                     "eventType": '75',
                     "event" : 'video:75percent'
                 });
-//                window.setTimeout(function(){
-                    expect(Enabler.counter.calledWith('Video Tracking ID:75')).to.be.true;
-  //                  done();
-    //            }, 10);
+				expect(Enabler.counter.calledWith('Video Tracking ID:75')).to.be.equal(true);
             });
 
-			/* ended/complete  */
+            /* ended/complete  */
             it('should listen to video:action event - ended/complete', function(){
                 ACT.Event.fire('video:action', {
                     "videoId": 'Video Tracking ID',
@@ -139,10 +125,7 @@ describe('ACT.Enabler', function() {
                     "eventType": 'ended',
                     "event" : 'video:complete'
                 });
-//                window.setTimeout(function(){
-                    expect(Enabler.counter.calledWith('Video Tracking ID:ended')).to.be.true;
-  //                  done();
-    //            }, 10);
+				expect(Enabler.counter.calledWith('Video Tracking ID:ended')).to.be.equal(true);
             });
 
             /* pause */
@@ -154,10 +137,7 @@ describe('ACT.Enabler', function() {
                     "eventType": 'pause',
                     "event" : 'video:pause'
                 });
-//                window.setTimeout(function(){
-                    expect(Enabler.counter.calledWith('Video Tracking ID:pause')).to.be.true;
-  //                  done();
-    //            }, 10);
+				expect(Enabler.counter.calledWith('Video Tracking ID:pause')).to.be.equal(true);
             });
 
             it('should detach a video identifier from reporting', function() {
@@ -225,17 +205,16 @@ describe('ACT.Enabler', function() {
     });
 
     describe('Enabler', function() {
-
         var Enabler = ACT.Enabler;
         var enablerEventStr = 'Enabler:actions';
 
         before(function(){
             Enabler.setConfig({
                 tracking: {
-                    "r0": "${CLICKURL}",
-                    "rB": "${CLICKURL?ClientSideEditable}",
-                    "z1": "${INTERACTION_URL}",
-                    "cb": "${REQUESTID}"
+                    "r0": "http://example.com/r0",
+                    "rB": "http://example.com/rB",
+                    "z1": "http://example.com/z1",
+                    "cb": Math.round(Math.random() * 10000)
                 },
                 trackingLabels: {
                     clickTAG: 'clicktag_tracking_label'
@@ -244,10 +223,6 @@ describe('ACT.Enabler', function() {
                     clickTAG: 'landingpage'
                 },
             }, 'tracking'); // need tracking here to avoid proble with JSON.stringify
-        });
-
-        after(function(){
-
         });
 
         it('should have ACT.Enabler', function() {
@@ -293,113 +268,82 @@ describe('ACT.Enabler', function() {
 
             it ('should open window for a simple exit', function() {
                 var eventId = 'clickTAG';
-
-                // No fireEvent checked need as window.open will be called by Enabler and nothing need to send to parent
-                /*
-                onEvent(eventId, function(e) {
-                    // checking if event fired is correct
-                    expect(e.id).to.equal(eventId);
-                    expect(e.eventType).to.equal('exit');
-                    expect(e.actionName).to.equal('redirect');
-                    expect(e.url).to.equal('landingpage');
-                    expect(e.special).to.not.exist;
-
-                });
-                */
-
                 Enabler.exit(eventId);
-
                 // window.open is called with correct URL
-                expect(window.open.calledWith('landingpage', '_blank')).to.be.true;
+                expect(window.open.calledWith('landingpage', '_blank')).to.be.equal(true);
             });
 
             it ('should fire for an exit with redirect', function() {
                 var eventId = 'clickTAG2';
-
-                // No fireEvent checked need as window.open will be called by Enabler and nothing need to send to parent
-                /*
-                onEvent(eventId, function(e) {
-                    expect(e.id).to.equal(eventId);
-                    expect(e.eventType).to.equal('exit');
-                    expect(e.actionName).to.equal('redirect');
-                    expect(e.url).to.equal('http://www.yahoo.com');
-                    expect(e.special).to.not.exist;
-
-                });
-                */
-
                 Enabler.exit(eventId, 'http://www.yahoo.com');
 
                 // window.open is called with correct URL
-                expect(window.open.calledWith('http://www.yahoo.com', '_blank')).to.be.true;
+                expect(window.open.calledWith('http://www.yahoo.com', '_blank')).to.be.equal(true);
 
                 // exit link need to be updated
                 expect(Enabler.getConfigObject('exitUrls').clickTAG2).to.be.equal('http://www.yahoo.com');
             });
 
-            describe('interaction tracking', function(){
-                it ('should fire event if enablerInteractionTracking is false', function(done) {
-                    var eventId = 'CountingStars';
+            describe('`enablerInteractionTracking` - interaction tracking', function(){
+            	describe('`enablerInteractionTracking: false`', function() {
+					it ('should fire event if enablerInteractionTracking is false', function(done) {
+						var eventId = 'CountingStars';
 
-                    onEvent(eventId, function(e) {
+						onEvent(eventId, function(e) {
+							expect(e.eventType).to.equal('interaction');
+							expect(e.actionName).to.equal('track');
+							expect(e.url).to.be.null;
+							expect(e.special).to.equal(1);
+							done();
+						});
 
-                        expect(e.eventType).to.equal('interaction');
-                        expect(e.actionName).to.equal('track');
-                        expect(e.url).to.be.null;
-                        expect(e.special).to.equal(1);
+						Enabler.counter(eventId);
+					});
+				});
+				
+            	describe('`enablerInteractionTracking: true`', function() {
+					before(function(){
+						Enabler.setConfig(true, 'enablerInteractionTracking');
+						Enabler.setConfig({
+							CountingTrackingLabels: 'tracking_label_counting_stars_::envRendered::',
+							CountingStars: 'tracking_label_counting_stars'
+						}, 'trackingLabels');
+					});
 
+					it ('should call actTracking.interaction_track', function() {
+						var actTracking = Enabler.getConfigObject('actTracking');
+						sinon.stub(actTracking, 'interaction_track');
+						// call the interaction
+						Enabler.counter('CountingStars');
+						// assert
+						expect(actTracking.interaction_track.calledWith('tracking_label_counting_stars')).to.be.equal(true);
 
-                        done();
-                    });
+						// restore actTracking
+						actTracking.interaction_track.restore();
+					});
+                
+					it ('should call actTracking.interaction_track with ::envRendered:: macro filled out.', function(done) {
+						var actTracking = Enabler.getConfigObject('actTracking');
+						sinon.stub(actTracking, 'interaction_track', function(stuff){
+							if (stuff.indexOf('tracking_label_counting_stars_') !== -1) {
+								// restore actTracking
+								actTracking.interaction_track.restore();
+								done();
+							}
+						});
 
-                    Enabler.counter(eventId);
-                    // test firing event
-                    // test tracking interaction
-                });
-
-                it ('should call actTracking.interaction_track if enablerInteractionTracking is true', function() {
-
-                    // change Enable config
-                    Enabler.setConfig(true, 'enablerInteractionTracking');
-                    Enabler.setConfig({
-                        CountingStars: 'tracking_label_counting_stars'
-                    }, 'trackingLabels');
-
-                    // mock interaction tracking
-                    var actTracking = Enabler.getConfigObject('actTracking');
-                    sinon.stub(actTracking, 'interaction_track');
-
-                    // call the interaction
-                    Enabler.counter('CountingStars');
-
-                    // assert
-                    expect(actTracking.interaction_track.calledWith('tracking_label_counting_stars')).to.be.true;
-
-                    // restore actTracking
-                    actTracking.interaction_track.restore();
+						Enabler.counter('CountingTrackingLabels');
+					});
                 });
             });
 
             describe('exitOverride', function() {
-
                 it('should fire for exitOverride', function() {
                     var eventId = 'clickTAG2';
-
-                    // No fireEvent checked need as window.open will be called by Enabler and nothing need to send to parent
-                    /*
-                    onEvent(eventId, function(e) {
-                        expect(e.id).to.equal(eventId);
-                        expect(e.eventType).to.equal('exit');
-                        expect(e.actionName).to.equal('redirect');
-                        expect(e.url).to.equal('https://vn.yahoo.com');
-
-                    });
-                    */
-
                     Enabler.exitOverride(eventId, 'https://vn.yahoo.com');
 
                     // window.open is called with correct URL
-                    expect(window.open.calledWith('https://vn.yahoo.com', '_blank')).to.be.true;
+                    expect(window.open.calledWith('https://vn.yahoo.com', '_blank')).to.be.equal(true);
 
                     // exit link need to be updated
                     expect(Enabler.getConfigObject('exitUrls').clickTAG2).to.be.equal('https://vn.yahoo.com');
@@ -429,7 +373,7 @@ describe('ACT.Enabler', function() {
                     Enabler.exitQueryString(eventId, '?type=test');
 
                     // window.open is called with correct URL
-                    expect(window.open.calledWith('https://www.yahoo.com?type=test', '_blank')).to.be.true;
+                    expect(window.open.calledWith('https://www.yahoo.com?type=test', '_blank')).to.be.equal(true);
                 });
             });
 
@@ -588,7 +532,7 @@ describe('ACT.Enabler', function() {
                     expect(result).to.be.truthy;
                 });
 
-				/* Query Params test */
+                /* Query Params test */
                 it ('should getParameter from query string plain.', function() {
                     sinon.stub(ACT.Util, 'getQStrVal', function(name){
                         return 'attrvalue';
@@ -600,7 +544,7 @@ describe('ACT.Enabler', function() {
 
                     // test with non-empty param
                     var result = Enabler.getParameter('attrName');
-                    expect(ACT.Util.getQStrVal.calledWith('attrName')).to.be.true;
+                    expect(ACT.Util.getQStrVal.calledWith('attrName')).to.be.equal(true);
                     expect(result).to.equal('attrvalue');
 
                     ACT.Util.getQStrVal.restore();
@@ -616,7 +560,7 @@ describe('ACT.Enabler', function() {
                         return '12';
                     });
                     result = Enabler.getParameterAsInteger('attrName');
-                    expect(ACT.Util.getQStrVal.calledWith('attrName')).to.be.true;
+                    expect(ACT.Util.getQStrVal.calledWith('attrName')).to.be.equal(true);
                     expect(result).to.be.equal(12);
                     ACT.Util.getQStrVal.restore();
 
@@ -625,7 +569,7 @@ describe('ACT.Enabler', function() {
                         return 'abc';
                     });
                     result = Enabler.getParameterAsInteger('attrName2');
-                    expect(ACT.Util.getQStrVal.calledWith('attrName2')).to.be.true;
+                    expect(ACT.Util.getQStrVal.calledWith('attrName2')).to.be.equal(true);
                     expect(result).to.be.equal(0);
                     ACT.Util.getQStrVal.restore();
 
@@ -641,13 +585,13 @@ describe('ACT.Enabler', function() {
                         return 'abc';
                     });
                     result = Enabler.getParameterAsNullableString('attrName');
-                    expect(ACT.Util.getQStrVal.calledWith('attrName')).to.be.true;
+                    expect(ACT.Util.getQStrVal.calledWith('attrName')).to.be.equal(true);
                     expect(result).to.equal('abc');
                     ACT.Util.getQStrVal.restore();
 
                 });
 
-				/* End Query Params test*/
+                /* End Query Params test*/
 
                 it('should set start expanded', function() {
                     var result = Enabler.setStartExpanded();
@@ -965,7 +909,7 @@ describe('ACT.Enabler', function() {
 
             it('should get default url', function() {
                 var res = Enabler.getUrl();
-                expect(Enabler.Dom.getCurrentLocation.calledOnce).to.be.true;
+                expect(Enabler.Dom.getCurrentLocation.calledOnce).to.be.equal(true);
                 expect(res).to.not.be.empty;
                 expect(res).to.be.a('string');
                 expect(res).to.contain('http');
@@ -975,7 +919,7 @@ describe('ACT.Enabler', function() {
             it('should get url with path', function() {
                 var res = Enabler.getUrl('file.html');
                 // getCurrentLocation is not called because htmlRoot is set after previous test
-                expect(Enabler.Dom.getCurrentLocation.calledOnce).to.be.true;
+                expect(Enabler.Dom.getCurrentLocation.calledOnce).to.be.equal(true);
                 expect(res).to.not.be.empty;
                 expect(res).to.be.a('string');
                 expect(res).to.contain('http');
@@ -986,7 +930,7 @@ describe('ACT.Enabler', function() {
                 Enabler.setUrl('https://www.yahoo.com');
                 var res = Enabler.getUrl();
                 // this test should call getCurrentLocation method
-                expect(Enabler.Dom.getCurrentLocation.calledOnce).to.be.true;
+                expect(Enabler.Dom.getCurrentLocation.calledOnce).to.be.equal(true);
                 expect(res).to.not.be.empty;
                 expect(res).to.be.a('string');
                 expect(res).to.contain('http');
@@ -1049,7 +993,7 @@ describe('ACT.Enabler', function() {
                 expect(res.length).to.equal(0);
             });
 
-			it ('should return null from config object when argument-key doesn\'t exist', function() {
+            it ('should return null from config object when argument-key doesn\'t exist', function() {
                 var res = Enabler.getConfigObject("big_fluffy_dog_yeah");
                 expect(res).to.be.null;
             });
@@ -1074,14 +1018,20 @@ describe('ACT.Enabler', function() {
         });
 
         describe('callAfterInitialized', function() {
-            it('should include a function to callback', function() {
+            it('should include a function to callback', function(done) {
                 expect(Enabler.getConfigObject('callbacks')).to.be.empty;
-
-                Enabler.callAfterInitialized(function(){console.log("Testing")});
-
-                var callbacks = Enabler.getConfigObject('callbacks');
-                expect(callbacks).to.not.be.empty;
-                expect(callbacks.length).to.equal(1);
+                
+                /**
+                 * callAfterInitiialized queues up the passed function into callbacks 
+                 * We test that the callbacks queue has something in it, AND that our function does in fact
+                 * get executed.
+                 */
+                Enabler.callAfterInitialized(function(){
+                    var callbacks = Enabler.getConfigObject('callbacks');
+                    expect(callbacks).to.not.be.empty;
+                    expect(callbacks.length).to.equal(1);
+                    done();
+                });
             });
         });
 
@@ -1111,14 +1061,14 @@ describe('ACT.Enabler', function() {
             it('should set the tracking config and new tracking obj', function() {
                 var result = Enabler.setConfig({
                     "tracking" : {
-                        "r0": "${CLICKURL}",
-                        "rB": "${CLICKURL?ClientSideEditable}",
-                        "z1": "${INTERACTION_URL}"
+						"r0": "http://example.com/r0",
+						"rB": "http://example.com/rB",
+						"z1": "http://example.com/z1"
                     }
                 }, 'tracking');
                 expect(result).to.exist;
                 expect(result).to.not.empty;
-                expect(result).to.include('${CLICKURL}');
+                expect(result).to.include('http://example.com/r0');
                 expect(result).to.include('r0');
                 expect(result).to.include('rB');
                 expect(result).to.include('z1');
@@ -1140,7 +1090,7 @@ describe('ACT.Enabler', function() {
                 script.onload();
 
                 expect(script.src).to.have.string('globals.js');
-                expect(callback.called).to.be.true;
+                expect(callback.called).to.be.equal(true);
                 expect(script.onload).to.be.null;
 
                 done();
@@ -1173,7 +1123,7 @@ describe('ACT.Enabler', function() {
                 var callback = sinon.spy();
                 var res = Enabler.loadModule(studio.module.ModuleId.VIDEO, callback);
 
-                expect(callback.calledWith(res)).to.be.true;
+                expect(callback.calledWith(res)).to.be.equal(true);
                 expect(res).to.exist;
             })
         });
@@ -1293,6 +1243,137 @@ describe('ACT.Enabler', function() {
 
     });
 
+    describe('Enabler Redirect with Event Propagation', function() {
+
+        var Enabler = ACT.Enabler;
+        var enablerEventStr = 'Enabler:actions';
+
+        describe('Listen to Enabler Events With Propagation', function() {
+            Enabler.setConfig({
+                tracking: {
+                    "r0": "http://example.com/r0",
+                    "rB": "http://example.com/rB",
+                    "z1": "http://example.com/z1",
+                    "cb": Math.round(Math.random() * 10000)
+                },
+                trackingLabels: {
+                    clickTAG: 'clicktag_tracking_label'
+                },
+                eventPropagation: true,
+                exitUrls: {
+                    clickTAG: 'landingpage'
+                },
+            }, 'tracking'); // need tracking here to avoid proble with JSON.stringify
+
+            window.parent = window;
+            var onEvent = function (eventId, check) {
+                var listener = ACT.Event.on(enablerEventStr, function(e) {
+                    if (e.id === eventId) {
+                        check(e);
+                        listener.remove();
+                    }
+                });
+
+                return listener;
+            };
+
+            it ('should open window for a simple exit', function(done) {
+                var eventId = 'clickTAG';
+                // No fireEvent checked need as window.open will be called by Enabler and nothing need to send to parent
+                onEvent(eventId, function(e) {
+                    // checking if event fired is correct
+                    expect(e.id).to.equal(eventId);
+                    expect(e.eventType).to.equal('exit');
+                    expect(e.actionName).to.equal('redirect');
+                    expect(e.url).to.equal('landingpage');
+                    expect(e.special).to.not.exist;
+                    done();
+                });
+                Enabler.exit(eventId);
+                // window.open is called with correct URL
+                expect(window.open.calledWith('landingpage', '_blank')).to.be.equal(true);
+            });
+
+            describe('interaction tracking', function(done){
+                it ('should fire event if enablerInteractionTracking is false', function(done) {
+                    var eventId = 'PropagatingStars_::envRendered::';
+                    onEvent(eventId, function(e) {
+                        expect(e.eventType).to.equal('interaction');
+                        expect(e.actionName).to.equal('track');
+                        expect(e.url).to.be.null;
+                        expect(e.special).to.equal(1);
+                        done();
+                    });
+
+                    Enabler.counter(eventId);
+                });
+            });
+        });
+    });
+    
+    describe('EnablerADTECH', function() {
+        var Enabler = ACT.Enabler;
+
+        describe('EnablerADTECH Should get configured', function() {
+            Enabler.setConfig({
+                exposeADTECH: true
+            });
+
+            it ('EnablerADTECH should exist', function() {
+            	expect(ACT.EnablerADTECH).to.be.a('object');
+            	expect(window.ADTECH).to.be.a('object');
+            });
+
+            describe('window.ADTECH tests', function() {
+            	it ('ADTECH.addEventListener to exist', function() {
+            		expect(window.ADTECH.addEventListener).to.be.a('function');
+            	});
+            	it ('ADTECH.removeEventListener to exist', function() {
+            		expect(window.ADTECH.removeEventListener).to.be.a('function');
+            	});
+
+            	it ('ADTECH.dynamicClick to exist', function() {
+            		expect(window.ADTECH.dynamicClick).to.be.a('function');
+            	});
+
+            	it ('ADTECH.click to exist', function() {
+            		expect(window.ADTECH.click).to.be.a('function');
+            	});
+
+				it ('ADTECH.event to exist', function() {
+            		expect(window.ADTECH.event).to.be.a('function');
+            	});
+
+            	it ('ADTECH.registerVideoPlayer to exist', function() {
+            		expect(window.ADTECH.registerVideoPlayer).to.be.a('function');
+            	});
+
+            	it ('ADTECH.ready to exist', function() {
+            		expect(window.ADTECH.ready).to.be.a('function');
+            	});
+
+            	it ('ADTECH.expand to exist', function() {
+            		expect(window.ADTECH.expand).to.be.a('function');
+            	});
+
+            	it ('ADTECH.contract to exist', function() {
+            		expect(window.ADTECH.contract).to.be.a('function');
+            	});
+
+            	it ('ADTECH.close to exist', function() {
+            		expect(window.ADTECH.close).to.be.a('function');
+            	});
+
+            	it ('ADTECH.show to exist', function() {
+            		expect(window.ADTECH.show).to.be.a('function');
+            	});
+
+            	it ('ADTECH.hide to exist', function() {
+            		expect(window.ADTECH.hide).to.be.a('function');
+            	});
+            });
+        });
+    });
 });
 
 function createDummyElement(id, tag) {

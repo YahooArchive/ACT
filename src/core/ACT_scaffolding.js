@@ -62,13 +62,7 @@ ACT.define('Scaffolding', [/*@<*/'Debug', /*>@*/ 'Lang', 'Class', 'Dom'], functi
         * @attribute NAME
         * @type String
         */
-        NAME: 'Scaffolding',
-
-        /**
-        * @attribute version
-        * @type String
-        */
-        version: '1.1.0'
+        NAME: 'Scaffolding'
     };
 
     /* Private methods */

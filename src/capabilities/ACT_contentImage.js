@@ -64,12 +64,6 @@ ACT.define('ContentImage', [/*@<*/'Debug', /*>@*/ 'Dom', 'Lang', 'Event', 'Class
         NAME: 'ContentImage',
 
         /**
-         * @attribute version
-         * @type String
-         */
-        version: '1.1.0',
-
-        /**
          * @attribute configObject
          * @type Object
          */

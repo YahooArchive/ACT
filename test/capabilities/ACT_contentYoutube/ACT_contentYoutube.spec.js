@@ -67,7 +67,7 @@ describe('ContentYoutube', function() {
             });
 
             it("Should have version", function() {
-                expect(contentYoutube.ATTRS.version).to.exist;
+                expect(contentYoutube.ATTRS).to.exist;
             });
 
             it("Should have configObject", function() {

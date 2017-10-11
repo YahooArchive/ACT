@@ -61,8 +61,7 @@ describe("ACT_contentHtml5", function() {
             });
 
             it("Should have version", function(done) {
-                expect(contentHtml5.ATTRS.version).to.exist;
-
+                expect(contentHtml5.ATTRS).to.exist;
                 done();
             });
 

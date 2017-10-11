@@ -9,12 +9,8 @@ describe("ACT.TrackingFacade.spec.js", function() {
     describe("Tracking basic requirements", function() {
 
         describe("attributes", function() {
-            it("should have ATTRS defined", function() {
+            it("should have ATTRS", function() {
                 expect(ACT.Tracking.ATTRS).to.exist;
-            });
-
-            it("should have ATTRS.version defined", function() {
-                expect(ACT.Tracking.ATTRS.version).to.exist;
             });
 
             it("should have ATTRS.NAME defined", function() {

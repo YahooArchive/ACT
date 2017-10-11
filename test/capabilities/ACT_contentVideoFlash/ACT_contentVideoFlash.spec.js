@@ -81,7 +81,7 @@ describe("ContentVideoFlash: Check the init state", function() {
         });
 
         it("Should have version", function() {
-            expect(ContentVideoFlash.ATTRS.version).to.exist;
+            expect(ContentVideoFlash.ATTRS).to.exist;
         });
 
         it("Should have configObject", function() {
