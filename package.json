@@ -38,7 +38,7 @@
     "grunt-execute": "~0.2.2",
     "grunt-http-upload": "^0.1.8",
     "grunt-karma": "~2.0.0",
-    "grunt-mocha": "^1.0.5",
+    "grunt-mocha": "^1.2.0",
     "grunt-string-replace": "~1.1.1",
     "grunt-upload-file": "0.0.2",
     "grunt-version": "~1.0.0",
