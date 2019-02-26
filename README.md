@@ -1,5 +1,7 @@
 # ACT.JS
 
+**Please Note:** This software has known security vulnerabilities and is no longer maintained. Use at your own risk!
+
 <img src="https://s.yimg.com/dh/ap/actjs/imgs/90x71.png">
 
 ACT.js - Advertising Creative Technology library.
